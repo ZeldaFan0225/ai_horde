@@ -21,14 +21,14 @@ class StableHorde {
         }
         if(Object.values(this.#cache_config).some(v => !Number.isSafeInteger(v) || v < 0)) throw new TypeError("Every cache duration must be a positive safe integer")
         this.#cache = {
-            users: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.users}),
-            generations_check: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_check}),
-            generations_status: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_status}),
-            models: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.models}),
-            modes: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.modes}),
-            news: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.news}),
-            performance: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.performance}),
-            workers: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.workers}),
+            users: this.#cache_config.users ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.users}) : undefined,
+            generations_check: this.#cache_config.generations_check ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_check}) : undefined,
+            generations_status: this.#cache_config.generations_status ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_status}) : undefined,
+            models: this.#cache_config.models ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.models}) : undefined,
+            modes: this.#cache_config.modes ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.modes}) : undefined,
+            news: this.#cache_config.news ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.news}) : undefined,
+            performance: this.#cache_config.performance ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.performance}) : undefined,
+            workers: this.#cache_config.workers ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.workers}) : undefined,
         }
 
         this.#api_route = options?.api_route ?? "https://stablehorde.net/api/v2"
@@ -72,12 +72,14 @@ class StableHorde {
     /**
      * Details and statistics about a specific user
      * @param id - The user ids to get
-     * @param token - The token of the requesting user; Has to me Moderator, Admin or Reuqested users token
+     * @param options.token - The token of the requesting user; Has to me Moderator, Admin or Reuqested users token
+     * @param options.force - Set to true to skip cache
      * @returns UserDetailsStable - The user data of the requested user
      */
-    async getUserDetails(id: number, token?: string): Promise<UserDetailsStable> {
-        const t = this.#getToken(token)
-        if(this.#cache_config.users && this.#cache.users?.has(id)) return this.#cache.users?.get(id)!
+    async getUserDetails(id: number, options?: {token?: string, force?: boolean}): Promise<UserDetailsStable> {
+        const t = this.#getToken(options?.token)
+        const temp = !options?.force && this.#cache.users?.get(id)
+        if(temp) return temp
         const res = await Centra(`${this.#api_route}/users/${id}`, "GET")
         .header("apikey", t)
         .send()
@@ -93,12 +95,14 @@ class StableHorde {
      * Details of a registered worker.
      * This can be used to verify a user exists
      * @param id - The 
-     * @param token  - Moderator or API key of workers owner (gives more information if requesting user is owner or moderator)
+     * @param options.token  - Moderator or API key of workers owner (gives more information if requesting user is owner or moderator)
+     * @param options.force - Set to true to skip cache
      * @returns UserDetailsStable - The user data of the requested user
      */
-    async getWorkerDetails(id: string, token?: string): Promise<WorkerDetailsStable> {
-        const t = this.#getToken(token)
-        if(this.#cache_config.workers && this.#cache.workers?.has(id)) return this.#cache.workers?.get(id)!
+    async getWorkerDetails(id: string, options?: {token?: string, force?: boolean}): Promise<WorkerDetailsStable> {
+        const t = this.#getToken(options?.token)
+        const temp = !options?.force && this.#cache.workers?.get(id)
+        if(temp) return temp
         const res = await Centra(`${this.#api_route}/workers/${id}`, "GET")
         .header("apikey", t)
         .send()
@@ -121,10 +125,12 @@ class StableHorde {
      * Retrieve the status of an Asynchronous generation request without images
      * Use this method to check the status of a currently running asynchronous request without consuming bandwidth.
      * @param id - The id of the generation
+     * @param force - Set to true to skip cache
      * @returns RequestStatusCheck - The Check data of the Generation 
      */
-    async getGenerationCheck(id: string): Promise<RequestStatusCheck> {
-        if(this.#cache_config.generations_check && this.#cache.generations_check?.has(id)) return this.#cache.generations_check?.get(id)!
+    async getGenerationCheck(id: string, force?: boolean): Promise<RequestStatusCheck> {
+        const temp = !force && this.#cache.generations_check?.get(id)
+        if(temp) return temp
         const res = await Centra(`${this.#api_route}/generate/check/${id}`, "GET")
         .send()
 
@@ -141,10 +147,12 @@ class StableHorde {
      * As such, you are requested to not retrieve this data often. Instead use the getGenerationCheck method first
      * This method is limited to 1 request per minute
      * @param id - The id of the generation
+     * @param force - Set to true to skip cache
      * @returns RequestStatusStable - The Status of the Generation 
      */
-    async getGenerationStatus(id: string): Promise<RequestStatusStable> {
-        if(this.#cache_config.generations_status && this.#cache.generations_status?.has(id)) return this.#cache.generations_status?.get(id)!
+    async getGenerationStatus(id: string, force?: boolean): Promise<RequestStatusStable> {
+        const temp = !force && this.#cache.generations_status?.get(id)
+        if(temp) return temp
         const res = await Centra(`${this.#api_route}/generate/status/${id}`, "GET")
         .send()
 
@@ -157,10 +165,12 @@ class StableHorde {
 
     /**
      * Returns a list of models active currently in this horde
+     * @param force - Set to true to skip cache
      * @returns ActiveModel[] - Array of Active Models
      */
-    async getModels(): Promise<ActiveModel[]> {
-        if(this.#cache_config.models && this.#cache.models?.has("CACHE-MODELS")) return this.#cache.models?.get("CACHE-MODELS")!
+    async getModels(force?: boolean): Promise<ActiveModel[]> {
+        const temp = !force && this.#cache.models?.get("CACHE-MODELS")
+        if(temp) return temp
         const res = await Centra(`${this.#api_route}/status/models`, "GET")
         .send()
 
@@ -171,11 +181,14 @@ class StableHorde {
     /**
      * Horde Maintenance Mode Status
      * Use this method to quicky determine if this horde is in maintenance, invite_only or raid mode
-     * @param token - Requires Admin or Owner API key
+     * @param options.token - Requires Admin or Owner API key
+     * @param options.force - Set to true to skip cache
      * @returns HordeModes - The current modes of the horde
      */
-    async getModes(token?: string): Promise<HordeModes> {
-        const t = this.#getToken(token)
+    async getModes(options?: {token?: string, force?: boolean}): Promise<HordeModes> {
+        const t = this.#getToken(options?.token)
+        const temp = !options?.force && this.#cache.modes?.get("CACHE-MODES")
+        if(temp) return temp
         if(this.#cache_config.modes && this.#cache.modes?.has("CACHE-MODES")) return this.#cache.modes?.get("CACHE-MODES")!
         const res = await Centra(`${this.#api_route}/status/modes`, "GET")
         .header("apikey", t)
@@ -190,8 +203,9 @@ class StableHorde {
      * Read the latest happenings on the horde
      * @returns Newspiece[] - Array of all news articles
      */
-    async getNews(): Promise<Newspiece[]> {
-        if(this.#cache_config.news && this.#cache.news?.has("CACHE-NEWS")) return this.#cache.news?.get("CACHE-NEWS")!
+    async getNews(force?: boolean): Promise<Newspiece[]> {
+        const temp = !force && this.#cache.news?.get("CACHE-NEWS")
+        if(temp) return temp
         const res = await Centra(`${this.#api_route}/status/news`, "GET")
         .send()
 
@@ -204,8 +218,9 @@ class StableHorde {
      * Details about the current performance of this Horde
      * @returns HordePerformanceStable - The hordes current performance
      */
-    async getPerformance(): Promise<HordePerformanceStable> {
-        if(this.#cache_config.performance && this.#cache.performance?.has("CACHE-PERFORMANCE")) return this.#cache.performance?.get("CACHE-PERFORMANCE")!
+    async getPerformance(force?: boolean): Promise<HordePerformanceStable> {
+        const temp = !force && this.#cache.performance?.get("CACHE-PERFORMANCE")
+        if(temp) return temp
         const res = await Centra(`${this.#api_route}/status/performance`, "GET")
         .send()
 
