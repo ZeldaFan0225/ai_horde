@@ -1,7 +1,7 @@
 {
   "name": "@zeldafan0225/stable_horde",
   "types": "./index.d.ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package to interact with the stable horde API",
   "bugs": "https://github.com/ZeldaFan0225/stable_horde/issues",
   "author": "ZeldaFan0225 (https://github.com/ZeldaFan0225)",
@@ -17,7 +17,7 @@
     "image generation"
   ],
   "scripts": {
-    "build": "node build.mjs && tsc --emitDeclarationOnly && sed -i 's/export = StableHorde;/\\/\\/@ts-expect-error\\n&/' index.d.ts",
+    "build": "node build.mjs && tsc --emitDeclarationOnly",
     "prepack": "npm run build",
     "test": "node test/test.js"
   },

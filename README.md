@@ -1,11 +1,11 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
     <p>
-        <a href="https://www.npmjs.com/package/@thunder04/supermap">
-            <img src="https://img.shields.io/npm/v/@thunder04/supermap.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Version" />
+        <a href="https://www.npmjs.com/package/@zeldafan0225/stable_horde">
+            <img src="https://img.shields.io/npm/v/@zeldafan0225/stable_horde.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Version" />
         </a>
-        <a href="https://www.npmjs.com/package/@thunder04/supermap">
-            <img src="https://img.shields.io/npm/dt/@thunder04/supermap.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Downloads" />
+        <a href="https://www.npmjs.com/package/@zeldafan0225/stable_horde">
+            <img src="https://img.shields.io/npm/dt/@zeldafan0225/stable_horde.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Downloads" />
         </a>
     </p>
 </div>
