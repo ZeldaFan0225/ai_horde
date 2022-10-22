@@ -7,31 +7,31 @@ class StableHorde {
     #cache_config: StableHordeCacheConfiguration
     #cache: StableHordeCache
     #api_route: string
-    constructor(options: StableHordeInitOptions) {
-        this.#default_token = options.default_token
+    constructor(options?: StableHordeInitOptions) {
+        this.#default_token = options?.default_token
         this.#cache_config = {
-            users: options.cache?.users ?? 0,
-            generations_check: options.cache?.generations_check ?? 0,
-            generations_status: options.cache?.generations_status ?? 0,
-            models: options.cache?.models ?? 0,
-            modes: options.cache?.modes ?? 0,
-            news: options.cache?.news ?? 0,
-            performance: options.cache?.performance ?? 0,
-            workers: options.cache?.workers ?? 0
+            users: options?.cache?.users ?? 0,
+            generations_check: options?.cache?.generations_check ?? 0,
+            generations_status: options?.cache?.generations_status ?? 0,
+            models: options?.cache?.models ?? 0,
+            modes: options?.cache?.modes ?? 0,
+            news: options?.cache?.news ?? 0,
+            performance: options?.cache?.performance ?? 0,
+            workers: options?.cache?.workers ?? 0
         }
         if(Object.values(this.#cache_config).some(v => !Number.isSafeInteger(v) || v < 0)) throw new TypeError("Every cache duration must be a positive safe integer")
         this.#cache = {
-            users: new SuperMap({intervalTime: options.cache_interval ?? 1000, expireAfter: this.#cache_config.users}),
-            generations_check: new SuperMap({intervalTime: options.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_check}),
-            generations_status: new SuperMap({intervalTime: options.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_status}),
-            models: new SuperMap({intervalTime: options.cache_interval ?? 1000, expireAfter: this.#cache_config.models}),
-            modes: new SuperMap({intervalTime: options.cache_interval ?? 1000, expireAfter: this.#cache_config.modes}),
-            news: new SuperMap({intervalTime: options.cache_interval ?? 1000, expireAfter: this.#cache_config.news}),
-            performance: new SuperMap({intervalTime: options.cache_interval ?? 1000, expireAfter: this.#cache_config.performance}),
-            workers: new SuperMap({intervalTime: options.cache_interval ?? 1000, expireAfter: this.#cache_config.workers}),
+            users: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.users}),
+            generations_check: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_check}),
+            generations_status: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_status}),
+            models: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.models}),
+            modes: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.modes}),
+            news: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.news}),
+            performance: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.performance}),
+            workers: new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.workers}),
         }
 
-        this.#api_route = options.api_route ?? "https://stablehorde.net/api/v2"
+        this.#api_route = options?.api_route ?? "https://stablehorde.net/api/v2"
     }
 
     /* GENERAL */

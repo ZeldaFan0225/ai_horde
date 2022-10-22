@@ -1,4 +1,4 @@
-const StableHorde = require( ".." )
+const StableHorde = require( "@zeldafan0225/stable_horde" )
 
 main()
 
