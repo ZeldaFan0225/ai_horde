@@ -103,7 +103,14 @@ class StableHorde {
         .header("apikey", t)
         .send()
 
-        if(res.statusCode === 404) throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+        switch(res.statusCode) {
+            case 401:
+            case 403:
+            case 404:
+                {
+                    throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+                }
+        }
 
         const data = await res.json() as WorkerDetailsStable
         if(this.#cache_config.workers) this.#cache.workers?.set(data.id!, data)
