@@ -22,7 +22,7 @@ You can contribute by adding new features, optimizing the currently existing cod
 
 The package exports the class `StableHorde` which includes basically everything you need.
 
-```
+```js
 const StableHorde = require( "@zeldafan0225/stable_horde" )
  
 /*
