@@ -12,9 +12,10 @@
 
 # @zeldafan0225/stable_horde
 
-**THIS PACKAGE/REPOSITORY IS IN NO WAY ASSOCIATED TO THE CREATORS OF STABLE HORDE**
-
 This package allows you to communicate with the [Stable Horde](https://stablehorde.net/) [API](https://stablehorde.net/)
+
+**DISCLAIMER:**
+THIS PACKAGE/REPOSITORY IS IN NO WAY ASSOCIATED TO THE CREATORS OF STABLE HORDE
 
 ## Features
 
