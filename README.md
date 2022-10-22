@@ -17,6 +17,12 @@ This package allows you to communicate with the [Stable Horde](https://stablehor
 **DISCLAIMER:**
 THIS PACKAGE/REPOSITORY IS IN NO WAY ASSOCIATED TO THE CREATORS OF STABLE HORDE
 
+You can support me and my projects on [Ko-Fi](https://ko-fi.com/slashbot)
+
+## Bugs
+
+To report bugs please [open an issue](https://github.com/ZeldaFan0225/stable_horde) on GitHub.
+
 ## Features
 
 - Configurable Caching
