@@ -40,6 +40,14 @@ class StableHorde {
         return token || this.#default_token || "0000000000"
     }
 
+    clearCache() {
+        Object.values(this.#cache).forEach(m => m.clear())
+    }
+
+    get cache() {
+        return this.#cache
+    }
+
     /* GET REQUESTS */
 
     /**
