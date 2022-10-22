@@ -1,4 +1,16 @@
-# Stable Horde
+<!-- markdownlint-disable MD033 MD041 -->
+<div align="center">
+    <p>
+        <a href="https://www.npmjs.com/package/@thunder04/supermap">
+            <img src="https://img.shields.io/npm/v/@thunder04/supermap.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Version" />
+        </a>
+        <a href="https://www.npmjs.com/package/@thunder04/supermap">
+            <img src="https://img.shields.io/npm/dt/@thunder04/supermap.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Downloads" />
+        </a>
+    </p>
+</div>
+
+# @zeldafan0225/stable_horde
 
 This package allows you to communicate with the [Stable Horde](https://stablehorde.net/) [API](https://stablehorde.net/)
 
