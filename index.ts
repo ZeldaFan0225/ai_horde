@@ -1108,6 +1108,8 @@ export interface WorkerDetails {
     info?: string,
     /** Whether this worker can generate NSFW requests or not. */
     nsfw?: boolean,
+    /** Whether this worker can generate img2img requests or not. */
+    img2img?: boolean,
     /** Privileged or public if the owner has allowed it. The alias of the owner of this worker. */
     owner?: string,
     /** The worker is trusted to return valid generations. */
