@@ -56,8 +56,8 @@ class StableHorde {
      * @param token - The token of the user; If none given the default from the contructor is used
      * @returns UserDetailsStable - The user data of the requested user
      */
-    async findUser(token?: string): Promise<UserDetailsStable> {
-        const t = this.#getToken(token)
+    async findUser(options?: {token?: string}): Promise<UserDetailsStable> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/find_user`, "GET")
         .header("apikey", t)
         .send()
@@ -125,11 +125,11 @@ class StableHorde {
      * Retrieve the status of an Asynchronous generation request without images
      * Use this method to check the status of a currently running asynchronous request without consuming bandwidth.
      * @param id - The id of the generation
-     * @param force - Set to true to skip cache
+     * @param options.force - Set to true to skip cache
      * @returns RequestStatusCheck - The Check data of the Generation 
      */
-    async getGenerationCheck(id: string, force?: boolean): Promise<RequestStatusCheck> {
-        const temp = !force && this.#cache.generations_check?.get(id)
+    async getGenerationCheck(id: string, options?: {force?: boolean}): Promise<RequestStatusCheck> {
+        const temp = !options?.force && this.#cache.generations_check?.get(id)
         if(temp) return temp
         const res = await Centra(`${this.#api_route}/generate/check/${id}`, "GET")
         .send()
@@ -147,11 +147,11 @@ class StableHorde {
      * As such, you are requested to not retrieve this data often. Instead use the getGenerationCheck method first
      * This method is limited to 1 request per minute
      * @param id - The id of the generation
-     * @param force - Set to true to skip cache
+     * @param options.force - Set to true to skip cache
      * @returns RequestStatusStable - The Status of the Generation 
      */
-    async getGenerationStatus(id: string, force?: boolean): Promise<RequestStatusStable> {
-        const temp = !force && this.#cache.generations_status?.get(id)
+    async getGenerationStatus(id: string, options?: {force?: boolean}): Promise<RequestStatusStable> {
+        const temp = !options?.force && this.#cache.generations_status?.get(id)
         if(temp) return temp
         const res = await Centra(`${this.#api_route}/generate/status/${id}`, "GET")
         .send()
@@ -165,11 +165,11 @@ class StableHorde {
 
     /**
      * Returns a list of models active currently in this horde
-     * @param force - Set to true to skip cache
+     * @param options.force - Set to true to skip cache
      * @returns ActiveModel[] - Array of Active Models
      */
-    async getModels(force?: boolean): Promise<ActiveModel[]> {
-        const temp = !force && this.#cache.models?.get("CACHE-MODELS")
+    async getModels(options?: {force?: boolean}): Promise<ActiveModel[]> {
+        const temp = !options?.force && this.#cache.models?.get("CACHE-MODELS")
         if(temp) return temp
         const res = await Centra(`${this.#api_route}/status/models`, "GET")
         .send()
@@ -201,10 +201,11 @@ class StableHorde {
 
     /**
      * Read the latest happenings on the horde
+     * @param options.force - Set to true to skip cache
      * @returns Newspiece[] - Array of all news articles
      */
-    async getNews(force?: boolean): Promise<Newspiece[]> {
-        const temp = !force && this.#cache.news?.get("CACHE-NEWS")
+    async getNews(options?: {force?: boolean}): Promise<Newspiece[]> {
+        const temp = !options?.force && this.#cache.news?.get("CACHE-NEWS")
         if(temp) return temp
         const res = await Centra(`${this.#api_route}/status/news`, "GET")
         .send()
@@ -216,10 +217,11 @@ class StableHorde {
 
     /**
      * Details about the current performance of this Horde
+     * @param options.force - Set to true to skip cache
      * @returns HordePerformanceStable - The hordes current performance
      */
-    async getPerformance(force?: boolean): Promise<HordePerformanceStable> {
-        const temp = !force && this.#cache.performance?.get("CACHE-PERFORMANCE")
+    async getPerformance(options?: {force?: boolean}): Promise<HordePerformanceStable> {
+        const temp = !options?.force && this.#cache.performance?.get("CACHE-PERFORMANCE")
         if(temp) return temp
         const res = await Centra(`${this.#api_route}/status/performance`, "GET")
         .send()
@@ -262,11 +264,11 @@ class StableHorde {
      * Perhaps some will appear in the next 10 minutes.
      * Asynchronous requests live for 10 minutes before being considered stale and being deleted.
      * @param generation_data - The data to generate the image
-     * @param token - The token of the requesting user
+     * @param options.token - The token of the requesting user
      * @returns RequestAsync - The id and message for the async generation request
      */
-    async postAsyncGenerate(generation_data: GenerationInput, token?: string): Promise<RequestAsync> {
-        const t = this.#getToken(token)
+    async postAsyncGenerate(generation_data: GenerationInput, options?: {token?: string}): Promise<RequestAsync> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/generate/async`, "POST")
         .header("apikey", t)
         .body(generation_data, "json")
@@ -290,11 +292,11 @@ class StableHorde {
      * This connection will only terminate when the images have been generated, or an error occured.
      * If your connection is interrupted, you will not have the request UUID, so you cannot retrieve the images asynchronously.
      * @param generation_data - The data to generate the image
-     * @param token - The token of the requesting user
+     * @param options.token - The token of the requesting user
      * @returns RequestStatusStable - The result of the generation. This is the same as calling getGenerationStatus after using postAsyncGenerate
      */
-    async postSyncGenerate(generation_data: GenerationInput, token?: string): Promise<RequestStatusStable> {
-        const t = this.#getToken(token)
+    async postSyncGenerate(generation_data: GenerationInput, options?: {token?: string}): Promise<RequestStatusStable> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/generate/sync`, "POST")
         .header("apikey", t)
         .body(generation_data, "json")
@@ -317,11 +319,11 @@ class StableHorde {
      * Check if there are generation requests queued for fulfillment
      * This endpoint is used by registered workers only
      * @param pop_input
-     * @param token - The token of the registered user
+     * @param options.token - The token of the registered user
      * @returns GenerationPayload
      */
-    async postGenerationPop(pop_input: PopInputStable, token?: string): Promise<GenerationPayload> {
-        const t = this.#getToken(token)
+    async postGenerationPop(pop_input: PopInputStable, options?: {token?: string}): Promise<GenerationPayload> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/generate/pop`, "POST")
         .header("apikey", t)
         .body(pop_input, "json")
@@ -342,11 +344,11 @@ class StableHorde {
      * Submit a generated image
      * This endpoint is used by registered workers only
      * @param generation_submit
-     * @param token - The workers owner API key
+     * @param options.token - The workers owner API key
      * @returns GenerationSubmitted
      */
-    async postGenerationSubmit(generation_submit: {id: string, generation: string, seed: string}, token?: string): Promise<GenerationSubmitted> {
-        const t = this.#getToken(token)
+    async postGenerationSubmit(generation_submit: {id: string, generation: string, seed: string}, options?: {token?: string}): Promise<GenerationSubmitted> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/generate/submit`, "POST")
         .header("apikey", t)
         .body(generation_submit, "json")
@@ -368,11 +370,11 @@ class StableHorde {
     /**
      * Transfer Kudos to a registered user
      * @param transfer_data - The data specifiying who to send how many kudos
-     * @param token - The sending users API key
+     * @param options.token - The sending users API key
      * @returns KudosTransferred
      */
-    async postKudosTransfer(transfer_data: {username: string, amount: number}, token?: string): Promise<KudosTransferred> {
-        const t = this.#getToken(token)
+    async postKudosTransfer(transfer_data: {username: string, amount: number}, options?: {token?: string}): Promise<KudosTransferred> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/kudos/transfer`, "POST")
         .header("apikey", t)
         .body(transfer_data, "json")
@@ -392,11 +394,11 @@ class StableHorde {
     /**
      * Change Horde Modes
      * @param modes - The new status of the Horde
-     * @param token - Requires Admin API key
+     * @param options.token - Requires Admin API key
      * @returns HordeModes
      */
-    async putStatusModes(modes: {maintenance: boolean, invite_only: boolean, raid: boolean}, token?: string): Promise<HordeModes> {
-        const t = this.#getToken(token)
+    async putStatusModes(modes: {maintenance: boolean, invite_only: boolean, raid: boolean}, options?: {token?: string}): Promise<HordeModes> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/status/modes`, "PUT")
         .header("apikey", t)
         .body(modes, "json")
@@ -417,11 +419,11 @@ class StableHorde {
      * Method for horde admins to perform operations on users
      * @param update_payload - The data to change on the target user
      * @param id - The targeted users ID
-     * @param token - Requires Admin API key
+     * @param options.token - Requires Admin API key
      * @returns ModifyUser
      */
-     async updateUser(update_payload: UpdateUserPayload, id: number, token?: string): Promise<ModifyUser> {
-        const t = this.#getToken(token)
+     async updateUser(update_payload: UpdateUserPayload, id: number, options?: {token?: string}): Promise<ModifyUser> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/users/${id}`, "PUT")
         .header("apikey", t)
         .body(update_payload, "json")
@@ -449,11 +451,11 @@ class StableHorde {
      * When in paused mode, the worker will not be given any requests to generate.
      * @param update_payload - The data to change on the target worker
      * @param id - The targeted workers ID
-     * @param token - The worker owners API key or Admin API key
+     * @param options.token - The worker owners API key or Admin API key
      * @returns ModifyWorker
      */
-     async updateWorker(update_payload: UpdateWorkerPayload, id: string, token?: string): Promise<ModifyWorker> {
-        const t = this.#getToken(token)
+     async updateWorker(update_payload: UpdateWorkerPayload, id: string, options?: {token?: string}): Promise<ModifyWorker> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/workers/${id}`, "PUT")
         .header("apikey", t)
         .body(update_payload, "json")
@@ -479,8 +481,8 @@ class StableHorde {
      * @param id - The targeted generations ID
      * @returns RequestStatusStable
      */
-     async deleteGenerationRequest(id: string, token?: string): Promise<RequestStatusStable> {
-        const t = this.#getToken(token)
+     async deleteGenerationRequest(id: string, options?: {token?: string}): Promise<RequestStatusStable> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/generate/status/${id}`, "DELETE")
         .header("apikey", t)
         .send()
@@ -502,11 +504,11 @@ class StableHorde {
      * Only the worker's owner and an admin can use this endpoint.
      * This action is unrecoverable!
      * @param id - The targeted workers ID
-     * @param token - The worker owners API key or a Moderators API key
+     * @param options.token - The worker owners API key or a Moderators API key
      * @returns DeletedWorker
      */
-     async deleteWorker(id: string, token?: string): Promise<DeletedWorker> {
-        const t = this.#getToken(token)
+     async deleteWorker(id: string, options?: {token?: string}): Promise<DeletedWorker> {
+        const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/workers/${id}`, "DELETE")
         .header("apikey", t)
         .send()
@@ -525,8 +527,6 @@ class StableHorde {
     }
 }
 
-// CAUTION TS currently doesn't include this comment in the generated index.d.ts file.
-// As a result it throws an error when "skipLibCheck" is false.
 // @ts-expect-error
 export = StableHorde
 
