@@ -647,7 +647,11 @@ export interface GenerationInput {
     /** Specify which models are allowed to be used for this request */
     models?: string[],
     /** The Base64-encoded webp to use for img2img, max siue 3072 * 3072 */
-    source_image?: string
+    source_image?: string,
+    /** If source_image is provided, specifies how to process it. */
+    source_processing?: SourceImageProcessingTypes,
+    /** If source_processing is set to 'inpainting' or 'outpainting', this parameter can be optionally provided as the Base64-encoded webp mask of the areas to inpaint. If this arg is not passed, the inpainting/outpainting mask has to be embedded as alpha channel */
+    source_mask?: string,
 }
 
 export interface ModelGenerationInputStable {
@@ -731,6 +735,12 @@ export enum ModelGenerationInputStableToggles {
     "k_dpm_2_a" = "k_dpm_2_a",
     "DDIM" = "DDIM",
     "PLMS" = "PLMS"
+} 
+
+export enum SourceImageProcessingTypes {
+    "img2img" = "img2img",
+    "inpainting" = "inpainting",
+    "outpainting" = "outpainting"
 } 
 
 export interface ModelPayloadRootStable {
