@@ -1093,7 +1093,11 @@ export interface WorkerDetailsStable extends WorkerDetails {
     /** The maximum pixels in resolution this workr can generate */
     max_pixels?: number,
     /** How many megapixelsteps this worker has generated until now */
-    megapixelsteps_generated?: number
+    megapixelsteps_generated?: number,
+    /** If True, this worker supports and allows img2img requests. */
+    img2img?: boolean
+    /** If True, this worker supports and allows inpainting requests. */
+    painting?: boolean
 }
 
 export interface WorkerDetails {
