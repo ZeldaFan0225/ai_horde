@@ -716,7 +716,7 @@ export interface ModelGenerationInputStable {
     use_upscaling?: boolean,
     /** 
      * @minimum 1
-     * @maximum 100
+     * @maximum 500
     */
     steps?: number,
     /** 
@@ -926,7 +926,7 @@ export interface ModelPayloadStable {
      * The height of the image to generate
      * @default 512
      * @minimum 64
-     * @maximum 1024
+     * @maximum 3072
      * 
      * Multiple of 64
     */
@@ -935,7 +935,7 @@ export interface ModelPayloadStable {
      * The width of the image to generate
      * @default 512
      * @minimum 64
-     * @maximum 1024
+     * @maximum 3072
      * 
      * Multiple of 64
     */
