@@ -2,6 +2,10 @@ import SuperMap from "@thunder04/supermap"
 import Centra from "centra"
 import { IncomingMessage } from "http"
 
+/*
+ * https://github.com/db0/AI-Horde/blob/main/CHANGELOG.md
+ */
+
 class StableHorde {
     #default_token?: string
     #cache_config: StableHordeCacheConfiguration
@@ -811,6 +815,10 @@ export interface RequestError {
 }
 
 export interface RequestStatusStable extends RequestStatusCheck {
+    /** The amount of total Kudos this request has consumed until now. */
+    kudos?: number,
+    /** If False, this request will not be able to be completed with the pool of workers currently available */
+    is_possible?: boolean
     generations?: GenerationStable[]
 }
 
