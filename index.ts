@@ -440,6 +440,35 @@ class StableHorde {
         return await res.json() as KudosTransferred
     }
     
+    
+    /**
+     * Create a new team
+     * Only trusted users can create new teams.
+     * @param create_payload - The data to create the team with
+     * @param options.token - The API key of a trusted user
+     * @returns ModifyTeam
+     */
+     async createTeam(create_payload: CreateTeamInput, options?: {token?: string}): Promise<ModifyTeam> {
+        const t = this.#getToken(options?.token)
+        const res = await Centra(`${this.#api_route}/teams`, "POST")
+        .header("apikey", t)
+        .body(create_payload, "json")
+        .send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 403:
+                {
+                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, create_payload)
+                }
+        }
+
+        return await res.json() as ModifyTeam
+    }
+
+    /** POST */
+    
     /**
      * Change Horde Modes
      * @param modes - The new status of the Horde
@@ -549,33 +578,6 @@ class StableHorde {
         }
 
         if(this.#cache_config.teams) this.#cache.teams?.delete(id)
-        return await res.json() as ModifyTeam
-    }
-    
-    
-    /**
-     * Create a new team
-     * Only trusted users can create new teams.
-     * @param create_payload - The data to create the team with
-     * @param options.token - The API key of a trusted user
-     * @returns ModifyTeam
-     */
-    async createTeam(create_payload: CreateTeamInput, options?: {token?: string}): Promise<ModifyTeam> {
-        const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/teams`, "PUT")
-        .header("apikey", t)
-        .body(create_payload, "json")
-        .send()
-
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 403:
-                {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, create_payload)
-                }
-        }
-
         return await res.json() as ModifyTeam
     }
     
@@ -1314,7 +1316,7 @@ export interface WorkerDetails extends WorkerDetailsLite {
     /** The average performance of this worker in human readable form. */
     performance?: string,
     /** The amount of seconds this worker has been online for this Horde. */
-    uptime?: string,
+    uptime?: number,
     /** When True, this worker will not pick up any new requests */
     maintenance_mode?: boolean,
     /** (Privileged) When True, this worker not be given any new requests. */
@@ -1338,11 +1340,7 @@ export interface WorkerDetails extends WorkerDetailsLite {
     uncompleted_jobs?: number,
     /** Which models this worker if offerring */
     models?: string[],
-    /** 
-     * The team ID towards which this worker contributes kudos. It an empty string ('') is passed, it will leave the worker without a team.
-     * @example Direct Action
-    */
-    team?: string,
+    team?: TeamDetailsLite,
     /** 
      * (Privileged) Contact details for the horde admins to reach the owner of this worker in emergencies.
      * @example email@example.com
@@ -1471,16 +1469,12 @@ export interface TeamDetailsStable extends TeamDetails {
     speed?: number
 }
 
-export interface TeamDetails {
-    /** The Name given to this team. */
-    name?: string,
+export interface TeamDetails extends TeamDetailsLite {
     /** 
      * Extra information or comments about this team provided by its owner
      * @example Anarchy is emergent order.
     */
     info?: string,
-    /** The UUID of this team */
-    id?: string,
     /** How many images this team's workers have generated */
     requests_fulfilled?: number,
     /** How many Kudos the workers in this team have been rewarded while part of this team. */
@@ -1494,6 +1488,14 @@ export interface TeamDetails {
     worker_count?: number,
     workers?: WorkerDetailsLite[],
     models?: ActiveModelLite[]
+}
+
+
+export interface TeamDetailsLite {
+    /** The Name given to this team. */
+    name?: string,
+    /** The UUID of this team */
+    id?: string,
 }
 
 export interface ModifyTeamInput {
@@ -1517,4 +1519,22 @@ export interface DeletedTeam {
     deleted_id?: string,
     /** The Name of the deleted team */
     deleted_name?: string
+}
+
+export interface DeleteTimeoutIPInput {
+    /**
+     * The IP address to remove from timeout
+     * @example 127.0.0.1
+     * @minLength 7
+     * @maxLength 15
+     */
+    ipaddr: string
+}
+
+export interface SimpleResponse {
+    /**
+     * The result of this operation
+     * @default OK
+     */
+    message: string
 }
