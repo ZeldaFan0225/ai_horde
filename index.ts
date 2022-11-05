@@ -1488,11 +1488,6 @@ export interface TeamDetails {
     /** The total amount of time workers have stayed online while on this team */
     uptime?: number,
     /**
-     * The alias of the user which created this team (misspelled in API - should be creator)
-     * @example db0#1
-    */
-    creater?: string,
-    /**
      * How many workers have been dedicated to this team
      * @example 10
     */
