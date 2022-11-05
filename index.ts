@@ -21,7 +21,8 @@ class StableHorde {
             modes: options?.cache?.modes ?? 0,
             news: options?.cache?.news ?? 0,
             performance: options?.cache?.performance ?? 0,
-            workers: options?.cache?.workers ?? 0
+            workers: options?.cache?.workers ?? 0,
+            teams: options?.cache?.teams ?? 0
         }
         if(Object.values(this.#cache_config).some(v => !Number.isSafeInteger(v) || v < 0)) throw new TypeError("Every cache duration must be a positive safe integer")
         this.#cache = {
@@ -33,6 +34,7 @@ class StableHorde {
             news: this.#cache_config.news ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.news}) : undefined,
             performance: this.#cache_config.performance ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.performance}) : undefined,
             workers: this.#cache_config.workers ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.workers}) : undefined,
+            teams: this.#cache_config.teams ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.teams}) : undefined,
         }
 
         this.#api_route = options?.api_route ?? "https://stablehorde.net/api/v2"
@@ -76,7 +78,7 @@ class StableHorde {
     /**
      * Details and statistics about a specific user
      * @param id - The user ids to get
-     * @param options.token - The token of the requesting user; Has to me Moderator, Admin or Reuqested users token
+     * @param options.token - The token of the requesting user; Has to be Moderator, Admin or Reuqested users token
      * @param options.force - Set to true to skip cache
      * @returns UserDetailsStable - The user data of the requested user
      */
@@ -92,6 +94,35 @@ class StableHorde {
 
         const data = await res.json() as UserDetailsStable
         if(this.#cache_config.users) this.#cache.users?.set(data.id!, data)
+        return data
+    }
+
+    /**
+     * Details of a worker Team
+     * @param id - The teams id to get
+     * @param options.token - The token of the requesting user
+     * @param options.force - Set to true to skip cache
+     * @returns TeamDetailsStable - The team data
+     */
+    async getTeam(id: string, options?: {token?: string, force?: boolean}): Promise<TeamDetailsStable> {
+        const t = this.#getToken(options?.token)
+        const temp = !options?.force && this.#cache.teams?.get(id)
+        if(temp) return temp
+        const res = await Centra(`${this.#api_route}/teams/${id}`, "GET")
+        .header("apikey", t)
+        .send()
+
+        switch(res.statusCode) {
+            case 401:
+            case 403:
+            case 404:
+                {
+                    throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+                }
+        }
+
+        const data = await res.json() as TeamDetailsStable
+        if(this.#cache_config.teams) this.#cache.teams?.set(data.id!, data)
         return data
     }
 
@@ -182,6 +213,7 @@ class StableHorde {
         if(this.#cache_config.models) this.#cache.models?.set("CACHE-MODELS", data)
         return data
     }
+
     /**
      * Horde Maintenance Mode Status
      * Use this method to quicky determine if this horde is in maintenance, invite_only or raid mode
@@ -256,6 +288,19 @@ class StableHorde {
         .send()
         const data =  await res.json() as WorkerDetailsStable[]
         if(this.#cache_config.workers) data.forEach(d => this.#cache.workers?.set(d.id!, d))
+        return data
+    }
+
+    /**
+     * A List with the details of all teams
+     * @returns TeamDetailsStable[] - Array of Team Details
+     */
+    async getTeams(): Promise<TeamDetailsStable[]> {
+        const res = await Centra(`${this.#api_route}/teams`, "GET")
+        .send()
+
+        const data = await res.json() as TeamDetailsStable[]
+        if(this.#cache_config.teams) data.forEach(d => this.#cache.teams?.set(d.id!, d))
         return data
     }
 
@@ -426,7 +471,7 @@ class StableHorde {
      * @param options.token - Requires Admin API key
      * @returns ModifyUser
      */
-     async updateUser(update_payload: UpdateUserPayload, id: number, options?: {token?: string}): Promise<ModifyUser> {
+    async updateUser(update_payload: ModifyUserInput, id: number, options?: {token?: string}): Promise<ModifyUser> {
         const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/users/${id}`, "PUT")
         .header("apikey", t)
@@ -458,7 +503,7 @@ class StableHorde {
      * @param options.token - The worker owners API key or Admin API key
      * @returns ModifyWorker
      */
-     async updateWorker(update_payload: UpdateWorkerPayload, id: string, options?: {token?: string}): Promise<ModifyWorker> {
+    async updateWorker(update_payload: ModifyWorkerInput, id: string, options?: {token?: string}): Promise<ModifyWorker> {
         const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/workers/${id}`, "PUT")
         .header("apikey", t)
@@ -479,13 +524,68 @@ class StableHorde {
         return await res.json() as ModifyWorker
     }
     
+    
+    /**
+     * Updates a Team's information
+     * @param update_payload - The data to update the team with
+     * @param options.token - The Moderator or Creator API key
+     * @returns ModifyTeam
+     */
+    async updateTeam(update_payload: ModifyTeamInput, id: string, options?: {token?: string}): Promise<ModifyTeam> {
+        const t = this.#getToken(options?.token)
+        const res = await Centra(`${this.#api_route}/teams/${id}`, "PATCH")
+        .header("apikey", t)
+        .body(update_payload, "json")
+        .send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 403:
+            case 404:
+                {
+                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, update_payload)
+                }
+        }
+
+        if(this.#cache_config.teams) this.#cache.teams?.delete(id)
+        return await res.json() as ModifyTeam
+    }
+    
+    
+    /**
+     * Create a new team
+     * Only trusted users can create new teams.
+     * @param create_payload - The data to create the team with
+     * @param options.token - The API key of a trusted user
+     * @returns ModifyTeam
+     */
+    async createTeam(create_payload: CreateTeamInput, options?: {token?: string}): Promise<ModifyTeam> {
+        const t = this.#getToken(options?.token)
+        const res = await Centra(`${this.#api_route}/teams`, "PUT")
+        .header("apikey", t)
+        .body(create_payload, "json")
+        .send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 403:
+                {
+                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, create_payload)
+                }
+        }
+
+        return await res.json() as ModifyTeam
+    }
+    
     /**
      * Cancel an unfinished request
      * This request will include all already generated images in base64 encoded .webp files.
      * @param id - The targeted generations ID
      * @returns RequestStatusStable
      */
-     async deleteGenerationRequest(id: string, options?: {token?: string}): Promise<RequestStatusStable> {
+    async deleteGenerationRequest(id: string, options?: {token?: string}): Promise<RequestStatusStable> {
         const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/generate/status/${id}`, "DELETE")
         .header("apikey", t)
@@ -503,7 +603,7 @@ class StableHorde {
     }
     
     /**
-     * Delete the entire worker
+     * Delete the worker entry
      * This will delete the worker and their statistics. Will not affect the kudos generated by that worker for their owner.
      * Only the worker's owner and an admin can use this endpoint.
      * This action is unrecoverable!
@@ -511,7 +611,7 @@ class StableHorde {
      * @param options.token - The worker owners API key or a Moderators API key
      * @returns DeletedWorker
      */
-     async deleteWorker(id: string, options?: {token?: string}): Promise<DeletedWorker> {
+    async deleteWorker(id: string, options?: {token?: string}): Promise<DeletedWorker> {
         const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/workers/${id}`, "DELETE")
         .header("apikey", t)
@@ -527,6 +627,34 @@ class StableHorde {
         }
         const data = await res.json() as DeletedWorker
         this.#cache.workers?.delete(id)
+        return data
+    }
+    
+    
+    /**
+     * Delete the team entry
+     * Only the team's creator or a horde moderator can use this endpoint.
+     * This action is unrecoverable!
+     * @param id - The targeted teams ID
+     * @param options.token - The worker owners API key or a Moderators API key
+     * @returns DeletedTeam
+     */
+     async deleteTeam(id: string, options?: {token?: string}): Promise<DeletedTeam> {
+        const t = this.#getToken(options?.token)
+        const res = await Centra(`${this.#api_route}/teams/${id}`, "DELETE")
+        .header("apikey", t)
+        .send()
+
+        switch(res.statusCode) {
+            case 401:
+            case 403:
+            case 404:
+                {
+                    throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+                }
+        }
+        const data = await res.json() as DeletedTeam
+        this.#cache.teams?.delete(id)
         return data
     }
 }
@@ -587,7 +715,9 @@ export interface StableHordeCacheConfiguration {
     /** How long to cache performance for in Milliseconds */
     performance?: number,
     /** How long to cache workers for in Milliseconds */
-    workers?: number
+    workers?: number,
+    /** How long to cache teams for in Milliseconds */
+    teams?: number,
 }
 
 interface StableHordeCache {
@@ -598,26 +728,88 @@ interface StableHordeCache {
     modes?: SuperMap<string, HordeModes>,
     news?: SuperMap<string, Newspiece[]>,
     performance?: SuperMap<string, HordePerformanceStable>,
-    workers?: SuperMap<string, WorkerDetailsStable>
+    workers?: SuperMap<string, WorkerDetailsStable>,
+    teams?: SuperMap<string, TeamDetails>
 }
 
-export interface UpdateUserPayload {
-    kudos: number,
-    concurrency: number,
-    usage_multiplier: number,
-    worker_invite: number,
-    moderator: boolean,
-    public_workers: boolean,
-    username: string,
-    monthly_kudos: number,
-    trusted: boolean
+export interface ModifyUserInput {
+    /** The amount of kudos to modify (can be negative) */
+    kudos?: number,
+    /**
+     * The amount of concurrent request this user can have
+     * @minimum 0
+     * @maximum 100
+    */
+    concurrency?: number,
+    /**
+     * The amount by which to multiply the users kudos consumption
+     * @minimum 0.1
+     * @maximum 10
+    */
+    usage_multiplier?: number,
+    /** Set to the amount of workers this user is allowed to join to the horde when in worker invite-only mode. */
+    worker_invited?: number,
+    /**
+     * Set to true to Make this user a horde moderator
+     * @example false
+    */
+    moderator?: boolean,
+    /**
+     * Set to true to Make this user a display their worker IDs
+     * @example false
+    */
+    public_workers?: boolean,
+    /** 
+     * When specified, will start assigning the user monthly kudos, starting now!
+     * @minimum 0
+    */
+    monthly_kudos?: number,
+    /** 
+     * When specified, will change the username. No profanity allowed!
+     * @minLength 3
+     * @maxLength 100
+    */
+    username?: string,
+    /** 
+     * When set to true,the user and their servers will not be affected by suspicion
+     * @example false
+    */
+    trusted?: boolean,
+    /** Set the user's suspicion back to 0 */
+    reset_suspicion?: boolean,
+    /** 
+     * Contact details for the horde admins to reach the user in case of emergency. This is only visible to horde moderators.
+     * @example email@example.com
+     * @minLength 5
+     * @maxLength 500
+    */
+    contact?: string
 }
 
-export interface UpdateWorkerPayload {
-    maintenance: boolean,
-    paused: boolean,
-    info: string,
-    name: string
+export interface ModifyWorkerInput {
+    /** (Mods only) Set to true to put this worker into maintenance. */
+    maintenance?: boolean,
+    /** (Mods only) Set to true to pause this worker. */
+    paused?: boolean,
+    /**
+     * You can optionally provide a server note which will be seen in the server details. No profanity allowed!
+     * @minLength 5
+     * @maxLength 1000
+    */
+    info?: string,
+    /**
+     * When this is set, it will change the worker's name. No profanity allowed!
+     * @minLength 5
+     * @maxLength 100
+    */
+    name?: string
+    /**
+     * The team towards which this worker contributes kudos. No profanity allowed!
+     * @example 0bed257b-e57c-4327-ac64-40cdfb1ac5e6
+     * @minLength 3
+     * @maxLength 100
+    */
+    team?: string
 }
 
 /* API TYPES */
@@ -1030,7 +1222,12 @@ export interface UserDetails {
     /** (Privileged) How much suspicion this user has accumulated */
     suspicious?: number,
     /** If true, this user has not registered using an oauth service. */
-    pseudonymous?: boolean
+    pseudonymous?: boolean,
+    /** 
+     * (Privileged) Contact details for the horde admins to reach the user in case of emergency.
+     * @example email@example.com
+    */
+    contact?: string,
 }
 
 export interface UserKudosDetails {
@@ -1108,11 +1305,7 @@ export interface WorkerDetailsStable extends WorkerDetails {
     painting?: boolean
 }
 
-export interface WorkerDetails {
-    /** The Name given to this worker. */
-    name?: string,
-    /** The UUID of this worker. */
-    id?: string,
+export interface WorkerDetails extends WorkerDetailsLite {
     /** How many images this worker has generated. */
     requests_fulfilled?: number,
     /** How many Kudos this worker has been rewarded in total. */
@@ -1138,8 +1331,32 @@ export interface WorkerDetails {
     trusted?: boolean,
     /** (Privileged) How much suspicion this worker has accumulated */
     suspicious?: number,
+    /** 
+     * How many jobs this worker has left uncompleted after it started them.
+     * @example 0
+    */
+    uncompleted_jobs?: number,
     /** Which models this worker if offerring */
-    models?: string[]
+    models?: string[],
+    /** 
+     * The team ID towards which this worker contributes kudos. It an empty string ('') is passed, it will leave the worker without a team.
+     * @example Direct Action
+    */
+    team?: string,
+    /** 
+     * (Privileged) Contact details for the horde admins to reach the owner of this worker in emergencies.
+     * @example email@example.com
+     * @minLength 5
+     * @maxLength 500
+    */
+    contact?: string
+}
+
+export interface WorkerDetailsLite {
+    /** The Name given to this worker. */
+    name?: string,
+    /** The UUID of this worker. */
+    id?: string,
 }
 
 export interface WorkerKudosDetails {
@@ -1167,17 +1384,20 @@ export interface DeletedWorker {
     deleted_name?: string
 }
 
-export interface ActiveModel {
-    /** The name of a model available by workers in this horde. */
-    name?: string,
-    /** How many workers in this horde are running this model. */
-    count?: number,
+export interface ActiveModel extends ActiveModelLite {
     /** The average speed of generation for this model */
     performance?: number
     /** The amount waiting to be generated by this model */
     queued?: number
     /** Estimated time in seconds for this model's queue to be cleared */
     eta?: number
+}
+
+export interface ActiveModelLite {
+    /** The name of a model available by workers in this horde. */
+    name?: string,
+    /** How many workers in this horde are running this model. */
+    count?: number,
 }
 
 export interface KudosTransferred {
@@ -1215,4 +1435,91 @@ export interface Newspiece {
     newspiece?: string,
     /** How critical this piece of news is. */
     importance?: string
+}
+
+export interface CreateTeamInput {
+    /** 
+     * The name of the team. No profanity allowed!
+     * @minLength 3
+     * @maxLength 100
+    */
+    name: string,
+    /** 
+     * Extra information or comments about this team.
+     * @example Anarchy is emergent order.
+     * @minLength 3
+     * @maxLength 1000
+    */
+    info?: string
+}
+
+export interface ModifyTeam {
+    /** The ID of the team */
+    id?: string,
+    /** The Name of the team */
+    name?: string,
+    /** The Info of the team */
+    info?: string
+}
+
+export interface TeamDetailsStable extends TeamDetails {
+    /** How many megapixelsteps the workers in this team have been rewarded while part of this team. */
+    contributions?: number,
+    /** The average performance of the workers in this team, in megapixelsteps per second. */
+    performance?: number,
+    /** The total expected speed of this team when all workers are working in parallel, in megapixelsteps per second. */
+    speed?: number
+}
+
+export interface TeamDetails {
+    /** The Name given to this team. */
+    name?: string,
+    /** 
+     * Extra information or comments about this team provided by its owner
+     * @example Anarchy is emergent order.
+    */
+    info?: string,
+    /** The UUID of this team */
+    id?: string,
+    /** How many images this team's workers have generated */
+    requests_fulfilled?: number,
+    /** How many Kudos the workers in this team have been rewarded while part of this team. */
+    kudos?: number,
+    /** The total amount of time workers have stayed online while on this team */
+    uptime?: number,
+    /**
+     * The alias of the user which created this team (misspelled in API - should be creator)
+     * @example db0#1
+    */
+    creater?: string,
+    /**
+     * How many workers have been dedicated to this team
+     * @example 10
+    */
+    worker_count?: number,
+    workers?: WorkerDetailsLite[],
+    models?: ActiveModelLite[]
+}
+
+export interface ModifyTeamInput {
+    /** 
+     * The name of the team. No profanity allowed!
+     * @minLength 3
+     * @maxLength 100
+    */
+    name?: string,
+    /** 
+     * Extra information or comments about this team.
+     * @example Anarchy is emergent order.
+     * @minLength 3
+     * @maxLength 1000
+    */
+    info?: string
+}
+
+export interface DeletedTeam {
+    /** The ID of the deleted team */
+    deleted_id?: string,
+    /** The Name of the deleted team */
+    deleted_name?: string
 }
