@@ -659,6 +659,33 @@ class StableHorde {
         this.#cache.teams?.delete(id)
         return data
     }
+    
+    
+    /**
+     * Remove an IP from timeout
+     * Only usable by horde moderators
+     * @param ip - The IP address
+     * @param options.token - Moderators API key
+     * @returns DeletedTeam
+     */
+     async deleteIPTimeout(delete_payload: DeleteTimeoutIPInput, options?: {token?: string}): Promise<SimpleResponse> {
+        const t = this.#getToken(options?.token)
+        const res = await Centra(`${this.#api_route}/operations/ipaddr`, "DELETE")
+        .header("apikey", t)
+        .body(delete_payload, "json")
+        .send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 403:
+                {
+                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, delete_payload)
+                }
+        }
+        const data = await res.json() as SimpleResponse
+        return data
+    }
 }
 
 // @ts-expect-error
