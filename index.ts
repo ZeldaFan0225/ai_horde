@@ -931,6 +931,8 @@ export interface ModelGenerationInputStable {
      * @maximum 1000
     */
     seed_variation?: number,
+    /** Set to True to enable karras noise scheduling tweaks */
+    karras?: boolean,
     /** Set to true to process the generated image with GFPGAN (face correction) */
     use_gfpgan?: boolean,
     /** Set to true to process the generated image with RealESRGAN */
