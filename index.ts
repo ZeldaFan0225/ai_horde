@@ -475,7 +475,7 @@ class StableHorde {
      * @param options.token - Requires Admin API key
      * @returns HordeModes
      */
-    async putStatusModes(modes: {maintenance: boolean, invite_only: boolean, raid: boolean}, options?: {token?: string}): Promise<HordeModes> {
+    async putStatusModes(modes: {maintenance: boolean, shutdown: number, invite_only: boolean, raid: boolean}, options?: {token?: string}): Promise<HordeModes> {
         const t = this.#getToken(options?.token)
         const res = await Centra(`${this.#api_route}/status/modes`, "PUT")
         .header("apikey", t)
@@ -933,13 +933,27 @@ export interface ModelGenerationInputStable {
     seed_variation?: number,
     /** Set to True to enable karras noise scheduling tweaks */
     karras?: boolean,
-    /** Set to true to process the generated image with GFPGAN (face correction) */
+    /** The list of post-processors to apply to the image, in the order to be applied */
+    post_processing?: ModelGenerationInputPostProcessingTypes[]
+    /** 
+     * Set to true to process the generated image with GFPGAN (face correction)
+     * @depreciated This property has been removed from the API
+    */
     use_gfpgan?: boolean,
-    /** Set to true to process the generated image with RealESRGAN */
+    /**
+     * Set to true to process the generated image with RealESRGAN
+     * @depreciated This property has been removed from the API
+    */
     use_real_esrgan?: boolean,
-    /** Set to true to process the generated image with LDSR */
+    /**
+     * Set to true to process the generated image with LDSR
+     * @depreciated This property has been removed from the API
+    */
     use_ldsr?: boolean,
-    /** Set to true to upscale the image */
+    /**
+     * Set to true to upscale the image
+     * @depreciated This property has been removed from the API
+    */
     use_upscaling?: boolean,
     /** 
      * @minimum 1
@@ -972,6 +986,11 @@ export enum SourceImageProcessingTypes {
     "img2img" = "img2img",
     "inpainting" = "inpainting",
     "outpainting" = "outpainting"
+} 
+
+export enum ModelGenerationInputPostProcessingTypes {
+    "GFPGAN" = "GFPGAN",
+    "RealESRGAN_x4plus " = "RealESRGAN_x4plus "
 } 
 
 export interface ModelPayloadRootStable {
@@ -1350,6 +1369,8 @@ export interface WorkerDetails extends WorkerDetailsLite {
     kudos_details?: WorkerKudosDetails,
     /** The average performance of this worker in human readable form. */
     performance?: string,
+    /** How many threads this worker is running. */
+    threads?: number,
     /** The amount of seconds this worker has been online for this Horde. */
     uptime?: number,
     /** When True, this worker will not pick up any new requests */
@@ -1390,6 +1411,8 @@ export interface WorkerDetailsLite {
     name?: string,
     /** The UUID of this worker. */
     id?: string,
+    /** True if the worker has checked-in the past 5 minutes. */
+    online?: boolean,
 }
 
 export interface WorkerKudosDetails {
