@@ -990,7 +990,7 @@ export enum SourceImageProcessingTypes {
 
 export enum ModelGenerationInputPostProcessingTypes {
     "GFPGAN" = "GFPGAN",
-    "RealESRGAN_x4plus " = "RealESRGAN_x4plus "
+    "RealESRGAN_x4plus" = "RealESRGAN_x4plus"
 } 
 
 export interface ModelPayloadRootStable {
