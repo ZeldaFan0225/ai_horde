@@ -342,7 +342,7 @@ class StableHorde {
             return true
         }).sort((a, b) => b.p - a.p)
         
-        const filtered = sorted.filter(el => el.p > 1.5)
+        const filtered = sorted.filter(el => el.p > (filter.minPerformance as number))
 
         return (filtered.length >= filter.minLength ? filtered : sorted.slice(0, filter.minLength)).map(worker => worker.id!)
     }
