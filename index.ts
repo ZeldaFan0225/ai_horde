@@ -129,18 +129,24 @@ class StableHorde {
     /**
      * Details of a registered worker.
      * This can be used to verify a user exists
-     * @param id - The 
+     * @param id - The id of the worker
+     * @param options.fields - Array of fields that will be included in the worker object
      * @param options.token  - Moderator or API key of workers owner (gives more information if requesting user is owner or moderator)
      * @param options.force - Set to true to skip cache
-     * @returns UserDetailsStable - The user data of the requested user
+     * @returns worker details for the requested worker
      */
-    async getWorkerDetails(id: string, options?: {token?: string, force?: boolean}): Promise<WorkerDetailsStable> {
+    async getWorkerDetails<
+        T extends keyof WorkerDetailsStable
+    >(id: string, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<WorkerDetailsStable, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const temp = !options?.force && this.#cache.workers?.get(id)
-        if(temp) return temp
-        const res = await Centra(`${this.#api_route}/workers/${id}`, "GET")
+        const temp = !options?.force && this.#cache.workers?.get(id + fields_string)
+        if(temp) return temp as Pick<WorkerDetailsStable, T>
+
+        const req = Centra(`${this.#api_route}/workers/${id}`, "GET")
         .header("apikey", t)
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 401:
@@ -151,8 +157,11 @@ class StableHorde {
                 }
         }
 
-        const data = await res.json() as WorkerDetailsStable
-        if(this.#cache_config.workers) this.#cache.workers?.set(data.id!, data)
+        const data = await res.json() as Pick<WorkerDetailsStable, T>
+        if(this.#cache_config.workers) {
+            const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
+            if('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, data)
+        }
         return data
     }
 
@@ -280,15 +289,59 @@ class StableHorde {
     }
     
     /**
-     * A Lis with the details of all registered and active workers
-     * @returns WorkerDetailsStable[] - An array of all workers data
+     * A List with the details of all registered and active workers
+     * @param fields - Array of fields that will be included in the worker object
+     * @returns An array of all workers data
      */
-    async getWorkers(): Promise<WorkerDetailsStable[]> {
-        const res = await Centra(`${this.#api_route}/workers`, "GET")
-        .send()
-        const data =  await res.json() as WorkerDetailsStable[]
-        if(this.#cache_config.workers) data.forEach(d => this.#cache.workers?.set(d.id!, d))
+    async getWorkers<
+        T extends keyof WorkerDetailsStable
+    >(fields?: T[]): Promise<Pick<WorkerDetailsStable, T>[]> {
+        const fields_string = fields?.length ? fields.join(',') : ''
+        const req = Centra(`${this.#api_route}/workers`, "GET")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+        const data =  await res.json() as Pick<WorkerDetailsStable, T>[]
+        if(this.#cache_config.workers) data.forEach(d => {
+            const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
+            if('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, d)
+        })
         return data
+    }
+
+    /**
+     * Filter workers by performance (and query)
+     * @param min_pixels - minimal value of max_pixels for worker
+     * @param filter - (optional) details of the query and filter parameters
+     * @returns ids of workers to use in the request to generate
+     */
+    async getWorkersByPerformance(min_pixels: number, filter = {} as WorkersPerformanceFilter) {
+        const fields: (keyof WorkerDetailsStable)[] = [
+            "id",
+            "performance",
+            "max_pixels",
+            "img2img",
+            "models"
+        ] 
+        if(!filter.size) filter.size = 5
+        if(!filter.performance) filter.performance = 1.5
+
+        const workers = await this.getWorkers(fields)
+        
+        const sorted = workers.map(worker => ({
+            ...worker,
+            p: worker.performance ? parseFloat(worker.performance) : 0
+        })).filter(worker => {
+            if(!worker.max_pixels || worker.max_pixels < min_pixels) return
+            if(filter?.models?.length && worker.models?.length) {
+                if(!worker.models.some(model => filter.models?.includes(model))) return
+            }
+            if(filter.img2img && !worker.img2img) return
+            return true
+        }).sort((a, b) => b.p - a.p)
+        
+        const filtered = sorted.filter(el => el.p > (filter.performance as number))
+
+        return (filtered.length >= filter.size ? filtered : sorted.slice(0, filter.size)).map(worker => worker.id!)
     }
 
     /**
@@ -1349,6 +1402,27 @@ export interface ModifyUser {
     monthly_kudos?: number,
     /** The user's new trusted status */
     trusted?: boolean
+}
+
+export interface WorkersPerformanceFilter {
+    /**
+     * Minimal value of performance for worker to have
+     * @default 1.5
+     */
+    performance?: number,
+    /**
+     * Minimal filtered workers amount to resort to the list of first `minLength` workers sorted by `performance` value
+     * @default 5
+     */
+    size?: number
+    /**
+     * Worker should support img2img
+     */
+    img2img?: boolean
+    /**
+     * List of models workers should have (at least one)
+     */
+    models?: string[]
 }
 
 export interface WorkerDetailsStable extends WorkerDetails {
