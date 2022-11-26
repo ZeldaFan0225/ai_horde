@@ -138,14 +138,14 @@ class StableHorde {
     async getWorkerDetails<
         T extends keyof WorkerDetailsStable
     >(id: string, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<WorkerDetailsStable, T>> {
-        const fieldsString = options?.fields?.length ? options.fields.join(',') : ''
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const temp = !options?.force && this.#cache.workers?.get(id + fieldsString)
+        const temp = !options?.force && this.#cache.workers?.get(id + fields_string)
         if(temp) return temp as Pick<WorkerDetailsStable, T>
 
         const req = Centra(`${this.#api_route}/workers/${id}`, "GET")
         .header("apikey", t)
-        if(fieldsString) req.header('X-Fields', fieldsString)
+        if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
         switch(res.statusCode) {
@@ -159,8 +159,8 @@ class StableHorde {
 
         const data = await res.json() as Pick<WorkerDetailsStable, T>
         if(this.#cache_config.workers) {
-            const dataWithId = data as Pick<WorkerDetailsStable, 'id'>
-            if('id' in dataWithId) this.#cache.workers?.set(dataWithId.id + fieldsString, data)
+            const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
+            if('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, data)
         }
         return data
     }
@@ -173,7 +173,6 @@ class StableHorde {
      * @returns RequestStatusCheck - The Check data of the Generation 
      */
     async getGenerationCheck(id: string, options?: {force?: boolean}): Promise<RequestStatusCheck> {
-        const workers = await this.getWorkers()
         const temp = !options?.force && this.#cache.generations_check?.get(id)
         if(temp) return temp
         const res = await Centra(`${this.#api_route}/generate/check/${id}`, "GET")
@@ -297,14 +296,14 @@ class StableHorde {
     async getWorkers<
         T extends keyof WorkerDetailsStable
     >(fields?: T[]): Promise<Pick<WorkerDetailsStable, T>[]> {
-        const fieldsString = fields?.length ? fields.join(',') : ''
+        const fields_string = fields?.length ? fields.join(',') : ''
         const req = Centra(`${this.#api_route}/workers`, "GET")
-        if(fieldsString) req.header('X-Fields', fieldsString)
+        if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
         const data =  await res.json() as Pick<WorkerDetailsStable, T>[]
         if(this.#cache_config.workers) data.forEach(d => {
-            const dataWithId = data as Pick<WorkerDetailsStable, 'id'>
-            if('id' in dataWithId) this.#cache.workers?.set(dataWithId.id + fieldsString, d)
+            const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
+            if('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, d)
         })
         return data
     }
