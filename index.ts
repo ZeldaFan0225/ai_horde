@@ -6,7 +6,45 @@ import { IncomingMessage } from "http"
  * https://github.com/db0/AI-Horde/blob/main/CHANGELOG.md
  */
 
+
+
+enum ModelGenerationInputStableToggles {
+    "k_lms" = "k_lms",
+    "k_heun" = "k_heun",
+    "k_euler" = "k_euler",
+    "k_dpm_2" = "k_dpm_2",
+    "k_dpm_2_a" = "k_dpm_2_a",
+    "DDIM" = "DDIM",
+    "PLMS" = "PLMS",
+    "k_dpm_fast" = "k_dpm_fast",
+    "k_dpm_adaptive" = "k_dpm_adaptive",
+    "k_dpmpp_2s_a" = "k_dpmpp_2s_a",
+    "k_dpmpp_2m" = "k_dpmpp_2m",
+    "dpmsolver" = "dpmsolver"
+} 
+
+enum SourceImageProcessingTypes {
+    "img2img" = "img2img",
+    "inpainting" = "inpainting",
+    "outpainting" = "outpainting"
+} 
+
+enum ModelGenerationInputPostProcessingTypes {
+    "GFPGAN" = "GFPGAN",
+    "RealESRGAN_x4plus" = "RealESRGAN_x4plus"
+} 
+
+
 class StableHorde {
+    static readonly ModelGenerationInputStableToggles = ModelGenerationInputStableToggles;
+    readonly ModelGenerationInputStableToggles = StableHorde.ModelGenerationInputStableToggles;
+    
+    static readonly SourceImageProcessingTypes = SourceImageProcessingTypes;
+    readonly SourceImageProcessingTypes = StableHorde.SourceImageProcessingTypes;
+    
+    static readonly ModelGenerationInputPostProcessingTypes = ModelGenerationInputPostProcessingTypes;
+    readonly ModelGenerationInputPostProcessingTypes = StableHorde.ModelGenerationInputPostProcessingTypes;
+
     #default_token?: string
     #cache_config: StableHordeCacheConfiguration
     #cache: StableHordeCache
@@ -927,7 +965,7 @@ export interface GenerationInput {
     /** The Base64-encoded webp to use for img2img, max siue 3072 * 3072 */
     source_image?: string,
     /** If source_image is provided, specifies how to process it. */
-    source_processing?: SourceImageProcessingTypes,
+    source_processing?: typeof StableHorde.SourceImageProcessingTypes,
     /** If source_processing is set to 'inpainting' or 'outpainting', this parameter can be optionally provided as the Base64-encoded webp mask of the areas to inpaint. If this arg is not passed, the inpainting/outpainting mask has to be embedded as alpha channel */
     source_mask?: string,
 }
@@ -936,7 +974,7 @@ export interface ModelGenerationInputStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: ModelGenerationInputStableToggles,
+    sampler_name?: typeof StableHorde.ModelGenerationInputPostProcessingTypes,
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */
@@ -987,7 +1025,7 @@ export interface ModelGenerationInputStable {
     /** Set to True to enable karras noise scheduling tweaks */
     karras?: boolean,
     /** The list of post-processors to apply to the image, in the order to be applied */
-    post_processing?: ModelGenerationInputPostProcessingTypes[]
+    post_processing?: (typeof StableHorde.ModelGenerationInputPostProcessingTypes)[]
     /** 
      * Set to true to process the generated image with GFPGAN (face correction)
      * @depreciated This property has been removed from the API
@@ -1021,37 +1059,11 @@ export interface ModelGenerationInputStable {
     n?: number
 }
 
-export enum ModelGenerationInputStableToggles {
-    "k_lms" = "k_lms",
-    "k_heun" = "k_heun",
-    "k_euler" = "k_euler",
-    "k_dpm_2" = "k_dpm_2",
-    "k_dpm_2_a" = "k_dpm_2_a",
-    "DDIM" = "DDIM",
-    "PLMS" = "PLMS",
-    "k_dpm_fast" = "k_dpm_fast",
-    "k_dpm_adaptive" = "k_dpm_adaptive",
-    "k_dpmpp_2s_a" = "k_dpmpp_2s_a",
-    "k_dpmpp_2m" = "k_dpmpp_2m",
-    "dpmsolver" = "dpmsolver"
-} 
-
-export enum SourceImageProcessingTypes {
-    "img2img" = "img2img",
-    "inpainting" = "inpainting",
-    "outpainting" = "outpainting"
-} 
-
-export enum ModelGenerationInputPostProcessingTypes {
-    "GFPGAN" = "GFPGAN",
-    "RealESRGAN_x4plus" = "RealESRGAN_x4plus"
-} 
-
 export interface ModelPayloadRootStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: ModelGenerationInputStableToggles,
+    sampler_name?: typeof StableHorde.ModelGenerationInputStableToggles,
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */
@@ -1208,7 +1220,7 @@ export interface ModelPayloadStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: ModelGenerationInputStableToggles,
+    sampler_name?: typeof StableHorde.ModelGenerationInputStableToggles,
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */

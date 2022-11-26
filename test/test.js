@@ -1,9 +1,8 @@
-const StableHorde = require( "@zeldafan0225/stable_horde" )
-const { SourceImageProcessingTypes } = require( ".." )
+const StableHorde = require( ".." )
 
-//main()
+main()
 
-console.log(SourceImageProcessingTypes)
+console.log(StableHorde.ModelGenerationInputPostProcessingTypes)
 
 async function main() {
     const stable_horde = new StableHorde({
