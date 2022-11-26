@@ -310,11 +310,11 @@ class StableHorde {
 
     /**
      * Filter workers by performance (and query)
-     * @param filter - details of the query and filter parameters
-     * @param options.force - Set to true to skip cache
+     * @param min_pixels - minimal value of max_pixels for worker
+     * @param filter - (optional) details of the query and filter parameters
      * @returns ids of workers to use in the request to generate
      */
-    async getWorkersByPerformance(filter: WorkersPerformanceFilter, options: { force: boolean }) {
+    async getWorkersByPerformance(min_pixels: number, filter = {} as WorkersPerformanceFilter) {
         const fields: (keyof WorkerDetailsStable)[] = [
             "id",
             "performance",
@@ -322,18 +322,16 @@ class StableHorde {
             "img2img",
             "models"
         ] 
-        if(!filter.minLength) filter.minLength = 5
-        if(!filter.minPerformance) filter.minPerformance = 1.5
+        if(!filter.size) filter.size = 5
+        if(!filter.performance) filter.performance = 1.5
 
-        const temp = !options?.force && this.#cache.workers?.filter((el, key) => key.endsWith(fields.join(',')))
-
-        const workers = temp && temp.size ? Array.from(temp.values()) : await this.getWorkers(fields)
+        const workers = await this.getWorkers(fields)
         
         const sorted = workers.map(worker => ({
             ...worker,
             p: worker.performance ? parseFloat(worker.performance) : 0
         })).filter(worker => {
-            if(!worker.max_pixels || worker.max_pixels < filter.minPixels) return
+            if(!worker.max_pixels || worker.max_pixels < min_pixels) return
             if(filter?.models?.length && worker.models?.length) {
                 if(!worker.models.some(model => filter.models?.includes(model))) return
             }
@@ -341,9 +339,9 @@ class StableHorde {
             return true
         }).sort((a, b) => b.p - a.p)
         
-        const filtered = sorted.filter(el => el.p > (filter.minPerformance as number))
+        const filtered = sorted.filter(el => el.p > (filter.performance as number))
 
-        return (filtered.length >= filter.minLength ? filtered : sorted.slice(0, filter.minLength)).map(worker => worker.id!)
+        return (filtered.length >= filter.size ? filtered : sorted.slice(0, filter.size)).map(worker => worker.id!)
     }
 
     /**
@@ -1407,18 +1405,16 @@ export interface ModifyUser {
 }
 
 export interface WorkersPerformanceFilter {
-    /** Width * Height */
-    minPixels: number,
     /**
-     * Value of performance to filter workers
+     * Minimal value of performance for worker to have
      * @default 1.5
      */
-    minPerformance?: number,
+    performance?: number,
     /**
-     * Minimum filtered workers amount to resort to the list of first `minLength` workers sorted by `performance` value
+     * Minimal filtered workers amount to resort to the list of first `minLength` workers sorted by `performance` value
      * @default 5
      */
-    minLength?: number
+    size?: number
     /**
      * Worker should support img2img
      */
