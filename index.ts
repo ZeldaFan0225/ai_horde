@@ -8,7 +8,7 @@ import { IncomingMessage } from "http"
 
 
 
-enum ModelGenerationInputStableToggles {
+enum ModelGenerationInputStableSamplers {
     "k_lms" = "k_lms",
     "k_heun" = "k_heun",
     "k_euler" = "k_euler",
@@ -36,8 +36,8 @@ enum ModelGenerationInputPostProcessingTypes {
 
 
 class StableHorde {
-    static readonly ModelGenerationInputStableToggles = ModelGenerationInputStableToggles;
-    readonly ModelGenerationInputStableToggles = StableHorde.ModelGenerationInputStableToggles;
+    static readonly ModelGenerationInputStableSamplers = ModelGenerationInputStableSamplers;
+    readonly ModelGenerationInputStableSamplers = StableHorde.ModelGenerationInputStableSamplers;
     
     static readonly SourceImageProcessingTypes = SourceImageProcessingTypes;
     readonly SourceImageProcessingTypes = StableHorde.SourceImageProcessingTypes;
@@ -974,7 +974,7 @@ export interface ModelGenerationInputStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: typeof StableHorde.ModelGenerationInputPostProcessingTypes[keyof typeof StableHorde.ModelGenerationInputPostProcessingTypes],
+    sampler_name?: typeof StableHorde.ModelGenerationInputStableSamplers[keyof typeof StableHorde.ModelGenerationInputStableSamplers],
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */
@@ -1063,7 +1063,7 @@ export interface ModelPayloadRootStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: typeof StableHorde.ModelGenerationInputStableToggles[keyof typeof StableHorde.ModelGenerationInputStableToggles],
+    sampler_name?: typeof StableHorde.ModelGenerationInputStableSamplers[keyof typeof StableHorde.ModelGenerationInputStableSamplers],
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */
@@ -1220,7 +1220,7 @@ export interface ModelPayloadStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: typeof StableHorde.ModelGenerationInputStableToggles[keyof typeof StableHorde.ModelGenerationInputStableToggles],
+    sampler_name?: typeof StableHorde.ModelGenerationInputStableSamplers[keyof typeof StableHorde.ModelGenerationInputStableSamplers],
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */
