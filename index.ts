@@ -32,7 +32,27 @@ enum SourceImageProcessingTypes {
 enum ModelGenerationInputPostProcessingTypes {
     "GFPGAN" = "GFPGAN",
     "RealESRGAN_x4plus" = "RealESRGAN_x4plus"
-} 
+}
+
+class StableHordeError extends Error {
+    rawError: RequestError;
+    status: number;
+    method: string;
+    url: string;
+    requestBody: any;
+    constructor(rawError: RequestError, core_res: IncomingMessage, requestBody?: any) {
+        super()
+        this.rawError = rawError
+        this.status = core_res.statusCode ?? 0
+        this.method = core_res.method ?? "GET"
+        this.url = core_res.url ?? ""
+        this.requestBody = requestBody
+    }
+
+    get name() {
+        return this.rawError.message
+    }
+}
 
 
 class StableHorde {
@@ -44,6 +64,9 @@ class StableHorde {
     
     static readonly ModelGenerationInputPostProcessingTypes = ModelGenerationInputPostProcessingTypes;
     readonly ModelGenerationInputPostProcessingTypes = StableHorde.ModelGenerationInputPostProcessingTypes;
+    
+    static readonly StableHordeError = StableHordeError;
+    readonly StableHordeError = StableHorde.StableHordeError;
 
     #default_token?: string
     #cache_config: StableHordeCacheConfiguration
@@ -106,7 +129,7 @@ class StableHorde {
         .header("apikey", t)
         .send()
 
-        if(res.statusCode === 404) throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+        if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
 
         const data = await res.json() as UserDetailsStable
         if(this.#cache_config.users) this.#cache.users?.set(data.id!, data)
@@ -128,7 +151,7 @@ class StableHorde {
         .header("apikey", t)
         .send()
 
-        if(res.statusCode === 404) throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+        if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
 
         const data = await res.json() as UserDetailsStable
         if(this.#cache_config.users) this.#cache.users?.set(data.id!, data)
@@ -155,7 +178,7 @@ class StableHorde {
             case 403:
             case 404:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
                 }
         }
 
@@ -191,7 +214,7 @@ class StableHorde {
             case 403:
             case 404:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
                 }
         }
 
@@ -216,7 +239,7 @@ class StableHorde {
         const res = await Centra(`${this.#api_route}/generate/check/${id}`, "GET")
         .send()
 
-        if(res.statusCode === 404) throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+        if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
 
         const data = await res.json() as RequestStatusCheck
         if(this.#cache_config.generations_check) this.#cache.generations_check?.set(id, data)
@@ -238,7 +261,7 @@ class StableHorde {
         const res = await Centra(`${this.#api_route}/generate/status/${id}`, "GET")
         .send()
 
-        if(res.statusCode === 404) throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+        if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
 
         const data = await res.json() as RequestStatusStable
         if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id, data)
@@ -420,7 +443,7 @@ class StableHorde {
             case 429:
             case 503:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, generation_data)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, generation_data)
                 }
         }
 
@@ -448,7 +471,7 @@ class StableHorde {
             case 429:
             case 503:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, generation_data)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, generation_data)
                 }
         }
 
@@ -473,7 +496,7 @@ class StableHorde {
             case 401:
             case 403:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, pop_input)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, pop_input)
                 }
         }
 
@@ -500,7 +523,7 @@ class StableHorde {
             case 402:
             case 404:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, generation_submit)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, generation_submit)
                 }
         }
 
@@ -524,7 +547,7 @@ class StableHorde {
             case 400:
             case 401:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, transfer_data)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, transfer_data)
                 }
         }
 
@@ -551,7 +574,7 @@ class StableHorde {
             case 401:
             case 403:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, create_payload)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, create_payload)
                 }
         }
 
@@ -577,7 +600,7 @@ class StableHorde {
             case 401:
             case 402:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, modes)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, modes)
                 }
         }
 
@@ -604,7 +627,7 @@ class StableHorde {
             case 402:
             case 404:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, update_payload)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, update_payload)
                 }
         }
 
@@ -636,7 +659,7 @@ class StableHorde {
             case 402:
             case 404:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, update_payload)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, update_payload)
                 }
         }
 
@@ -664,7 +687,7 @@ class StableHorde {
             case 403:
             case 404:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, update_payload)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, update_payload)
                 }
         }
 
@@ -687,7 +710,7 @@ class StableHorde {
         switch(res.statusCode) {
             case 404:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
                 }
         }
         const data = await res.json() as RequestStatusStable
@@ -715,7 +738,7 @@ class StableHorde {
             case 402:
             case 404:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
                 }
         }
         const data = await res.json() as DeletedWorker
@@ -743,7 +766,7 @@ class StableHorde {
             case 403:
             case 404:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
                 }
         }
         const data = await res.json() as DeletedTeam
@@ -771,7 +794,7 @@ class StableHorde {
             case 401:
             case 403:
                 {
-                    throw new StableHordeError(await res.json().then(res => res), res.coreRes, delete_payload)
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, delete_payload)
                 }
         }
         const data = await res.json() as SimpleResponse
@@ -781,26 +804,6 @@ class StableHorde {
 
 // @ts-expect-error
 export = StableHorde
-
-class StableHordeError extends Error {
-    rawError: RequestError;
-    status: number;
-    method: string;
-    url: string;
-    requestBody: any;
-    constructor(rawError: RequestError, core_res: IncomingMessage, requestBody?: any) {
-        super()
-        this.rawError = rawError
-        this.status = core_res.statusCode ?? 0
-        this.method = core_res.method ?? "GET"
-        this.url = core_res.url ?? ""
-        this.requestBody = requestBody
-    }
-
-    get name() {
-        return this.rawError.message
-    }
-}
 
 
 /* INTERNAL TYPES */
