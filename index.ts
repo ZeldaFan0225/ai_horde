@@ -121,19 +121,27 @@ class StableHorde {
     /**
      * Lookup user details based on their API key.
      * This can be used to verify a user exists
-     * @param token - The token of the user; If none given the default from the contructor is used
+     * @param options.token - The token of the user; If none given the default from the contructor is used
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns UserDetailsStable - The user data of the requested user
      */
-    async findUser(options?: {token?: string}): Promise<UserDetailsStable> {
+    async findUser<
+        T extends keyof UserDetailsStable
+    >(options?: {token?: string, fields?: T[]}): Promise<Pick<UserDetailsStable, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/find_user`, "GET")
+        const req = Centra(`${this.#api_route}/find_user`, "GET")
         .header("apikey", t)
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
 
-        const data = await res.json() as UserDetailsStable
-        if(this.#cache_config.users) this.#cache.users?.set(data.id!, data)
+        const data = await res.json() as Pick<UserDetailsStable, T>
+        if(this.#cache_config.users) {
+            const data_with_id = data as Pick<UserDetailsStable, 'id'>
+            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string, data)
+        }
         return data
     }
 
@@ -142,20 +150,28 @@ class StableHorde {
      * @param id - The user ids to get
      * @param options.token - The token of the requesting user; Has to be Moderator, Admin or Reuqested users token
      * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns UserDetailsStable - The user data of the requested user
      */
-    async getUserDetails(id: number, options?: {token?: string, force?: boolean}): Promise<UserDetailsStable> {
+    async getUserDetails<
+        T extends keyof UserDetailsStable
+    >(id: number, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<UserDetailsStable, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const temp = !options?.force && this.#cache.users?.get(id)
+        const temp = !options?.force && this.#cache.users?.get(id.toString() + fields_string)
         if(temp) return temp
-        const res = await Centra(`${this.#api_route}/users/${id}`, "GET")
+        const req = Centra(`${this.#api_route}/users/${id}`, "GET")
         .header("apikey", t)
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
 
-        const data = await res.json() as UserDetailsStable
-        if(this.#cache_config.users) this.#cache.users?.set(data.id!, data)
+        const data = await res.json() as Pick<UserDetailsStable, T>
+        if(this.#cache_config.users) {
+            const data_with_id = data as Pick<UserDetailsStable, 'id'>
+            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string, data)
+        }
         return data
     }
 
@@ -164,15 +180,20 @@ class StableHorde {
      * @param id - The teams id to get
      * @param options.token - The token of the requesting user
      * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns TeamDetailsStable - The team data
      */
-    async getTeam(id: string, options?: {token?: string, force?: boolean}): Promise<TeamDetailsStable> {
+    async getTeam<
+        T extends keyof TeamDetailsStable
+    >(id: string, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<TeamDetailsStable, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const temp = !options?.force && this.#cache.teams?.get(id)
-        if(temp) return temp
-        const res = await Centra(`${this.#api_route}/teams/${id}`, "GET")
+        const temp = !options?.force && this.#cache.teams?.get(id + fields_string)
+        if(temp) return temp as Pick<TeamDetailsStable, T>
+        const req = Centra(`${this.#api_route}/teams/${id}`, "GET")
         .header("apikey", t)
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 401:
@@ -183,8 +204,11 @@ class StableHorde {
                 }
         }
 
-        const data = await res.json() as TeamDetailsStable
-        if(this.#cache_config.teams) this.#cache.teams?.set(data.id!, data)
+        const data = await res.json() as Pick<TeamDetailsStable, T>
+        if(this.#cache_config.teams) {
+            const data_with_id = data as Pick<TeamDetailsStable, 'id'>
+            if('id' in data_with_id) this.#cache.teams?.set(data_with_id.id + fields_string, data)
+        }
         return data
     }
 
@@ -192,9 +216,9 @@ class StableHorde {
      * Details of a registered worker.
      * This can be used to verify a user exists
      * @param id - The id of the worker
-     * @param options.fields - Array of fields that will be included in the worker object
      * @param options.token  - Moderator or API key of workers owner (gives more information if requesting user is owner or moderator)
      * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns worker details for the requested worker
      */
     async getWorkerDetails<
@@ -232,18 +256,23 @@ class StableHorde {
      * Use this method to check the status of a currently running asynchronous request without consuming bandwidth.
      * @param id - The id of the generation
      * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns RequestStatusCheck - The Check data of the Generation 
      */
-    async getGenerationCheck(id: string, options?: {force?: boolean}): Promise<RequestStatusCheck> {
-        const temp = !options?.force && this.#cache.generations_check?.get(id)
-        if(temp) return temp
-        const res = await Centra(`${this.#api_route}/generate/check/${id}`, "GET")
-        .send()
+    async getGenerationCheck<
+        T extends keyof RequestStatusCheck
+    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusCheck, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const temp = !options?.force && this.#cache.generations_check?.get(id + fields_string)
+        if(temp) return temp as Pick<RequestStatusCheck, T>
+        const req = Centra(`${this.#api_route}/generate/check/${id}`, "GET")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
 
-        const data = await res.json() as RequestStatusCheck
-        if(this.#cache_config.generations_check) this.#cache.generations_check?.set(id, data)
+        const data = await res.json() as Pick<RequestStatusCheck, T>
+        if(this.#cache_config.generations_check) this.#cache.generations_check?.set(id + fields_string, data)
         return data
     }
 
@@ -254,34 +283,55 @@ class StableHorde {
      * This method is limited to 1 request per minute
      * @param id - The id of the generation
      * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns RequestStatusStable - The Status of the Generation 
      */
-    async getGenerationStatus(id: string, options?: {force?: boolean}): Promise<RequestStatusStable> {
+    async getGenerationStatus<
+        T extends keyof RequestStatusCheck
+    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.generations_status?.get(id)
-        if(temp) return temp
-        const res = await Centra(`${this.#api_route}/generate/status/${id}`, "GET")
-        .send()
+        if(temp) return temp as Pick<RequestStatusStable, T>
+        const req = Centra(`${this.#api_route}/generate/status/${id}`, "GET")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
 
-        const data = await res.json() as RequestStatusStable
-        if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id, data)
+        const data = await res.json() as Pick<RequestStatusStable, T>
+        if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
+    }
+
+    /**
+     * If this loads, this node is available
+     * @returns true - If request was successful, if not throws error
+     */
+    async getHeartbeat(): Promise<true> {
+        await Centra(`${this.#api_route}/status/heartbeat`, "GET")
+        .send()
+
+        return true
     }
 
     /**
      * Returns a list of models active currently in this horde
      * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns ActiveModel[] - Array of Active Models
      */
-    async getModels(options?: {force?: boolean}): Promise<ActiveModel[]> {
-        const temp = !options?.force && this.#cache.models?.get("CACHE-MODELS")
-        if(temp) return temp
-        const res = await Centra(`${this.#api_route}/status/models`, "GET")
-        .send()
+    async getModels<
+        T extends keyof ActiveModel
+    >(options?: {force?: boolean, fields?: T[]}): Promise<Pick<ActiveModel, T>[]> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const temp = !options?.force && this.#cache.models?.get("CACHE-MODELS" + fields_string)
+        if(temp) return temp as Pick<ActiveModel, T>[]
+        const req = Centra(`${this.#api_route}/status/models`, "GET")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
-        const data = await res.json() as ActiveModel[]
-        if(this.#cache_config.models) this.#cache.models?.set("CACHE-MODELS", data)
+        const data = await res.json() as Pick<ActiveModel, T>[]
+        if(this.#cache_config.models) this.#cache.models?.set("CACHE-MODELS" + fields_string, data)
         return data
     }
 
@@ -290,75 +340,97 @@ class StableHorde {
      * Use this method to quicky determine if this horde is in maintenance, invite_only or raid mode
      * @param options.token - Requires Admin or Owner API key
      * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns HordeModes - The current modes of the horde
      */
-    async getModes(options?: {token?: string, force?: boolean}): Promise<HordeModes> {
+    async getModes<
+        T extends keyof HordeModes
+    >(options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<HordeModes, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const temp = !options?.force && this.#cache.modes?.get("CACHE-MODES")
-        if(temp) return temp
-        if(this.#cache_config.modes && this.#cache.modes?.has("CACHE-MODES")) return this.#cache.modes?.get("CACHE-MODES")!
-        const res = await Centra(`${this.#api_route}/status/modes`, "GET")
+        const temp = !options?.force && this.#cache.modes?.get("CACHE-MODES" + fields_string)
+        if(temp) return temp as Pick<HordeModes, T>
+        const req = Centra(`${this.#api_route}/status/modes`, "GET")
         .header("apikey", t)
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
-        const data = await res.json() as HordeModes
-        if(this.#cache_config.modes) this.#cache.modes?.set("CACHE-MODES", data)
+        const data = await res.json() as Pick<HordeModes, T>
+        if(this.#cache_config.modes) this.#cache.modes?.set("CACHE-MODES" + fields_string, data)
         return data
     }
 
     /**
      * Read the latest happenings on the horde
      * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns Newspiece[] - Array of all news articles
      */
-    async getNews(options?: {force?: boolean}): Promise<Newspiece[]> {
-        const temp = !options?.force && this.#cache.news?.get("CACHE-NEWS")
-        if(temp) return temp
-        const res = await Centra(`${this.#api_route}/status/news`, "GET")
-        .send()
+    async getNews<
+        T extends keyof Newspiece
+    >(options?: {force?: boolean, fields?: T[]}): Promise<Pick<Newspiece, T>[]> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const temp = !options?.force && this.#cache.news?.get("CACHE-NEWS" + fields_string)
+        if(temp) return temp as Pick<Newspiece, T>[]
+        const req = Centra(`${this.#api_route}/status/news`, "GET")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
-        const data = await res.json() as Newspiece[]
-        if(this.#cache_config.news) this.#cache.news?.set("CACHE-NEWS", data)
+        const data = await res.json() as Pick<Newspiece, T>[]
+        if(this.#cache_config.news) this.#cache.news?.set("CACHE-NEWS" + fields_string, data)
         return data
     }
 
     /**
      * Details about the current performance of this Horde
      * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns HordePerformanceStable - The hordes current performance
      */
-    async getPerformance(options?: {force?: boolean}): Promise<HordePerformanceStable> {
-        const temp = !options?.force && this.#cache.performance?.get("CACHE-PERFORMANCE")
-        if(temp) return temp
-        const res = await Centra(`${this.#api_route}/status/performance`, "GET")
-        .send()
+    async getPerformance<
+        T extends keyof HordePerformanceStable
+    >(options?: {force?: boolean, fields?: T[]}): Promise<Pick<HordePerformanceStable, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const temp = !options?.force && this.#cache.performance?.get("CACHE-PERFORMANCE" + fields_string)
+        if(temp) return temp as Pick<HordePerformanceStable, T>
+        const req = Centra(`${this.#api_route}/status/performance`, "GET")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
-        const data = await res.json() as HordePerformanceStable
-        if(this.#cache_config.performance) this.#cache.performance?.set("CACHE-PERFORMANCE", data)
+        const data = await res.json() as Pick<HordePerformanceStable, T>
+        if(this.#cache_config.performance) this.#cache.performance?.set("CACHE-PERFORMANCE" + fields_string, data)
         return data
     }
     
     /**
      * A List with the details and statistic of all registered users
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns UserDetailsStable[] - An array of all users data
      */
-    async getUsers(): Promise<UserDetailsStable[]> {
-        const res = await Centra(`${this.#api_route}/users`, "GET")
-        .send()
-        const data =  await res.json() as UserDetailsStable[]
-        if(this.#cache_config.users) data.forEach(d => this.#cache.users?.set(d.id!, d))
+    async getUsers<
+        T extends keyof UserDetailsStable
+    >(options?: {fields?: T[]}): Promise<Pick<UserDetailsStable, T>[]> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const req = Centra(`${this.#api_route}/users`, "GET")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+        const data =  await res.json() as Pick<UserDetailsStable, T>[]
+        if(this.#cache_config.users) data.forEach(d => {
+            const data_with_id = d as Pick<UserDetailsStable, 'id'>
+            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string, d)
+        })
         return data
     }
     
     /**
      * A List with the details of all registered and active workers
-     * @param fields - Array of fields that will be included in the worker object
+     * @param options.fields - Array of fields that will be included in the returned object
      * @returns An array of all workers data
      */
     async getWorkers<
         T extends keyof WorkerDetailsStable
-    >(fields?: T[]): Promise<Pick<WorkerDetailsStable, T>[]> {
-        const fields_string = fields?.length ? fields.join(',') : ''
+    >(options?: {fields?: T[]}): Promise<Pick<WorkerDetailsStable, T>[]> {
+        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
         const req = Centra(`${this.#api_route}/workers`, "GET")
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
@@ -387,7 +459,7 @@ class StableHorde {
         if(!filter.size) filter.size = 5
         if(!filter.performance) filter.performance = 1.5
 
-        const workers = await this.getWorkers(fields)
+        const workers = await this.getWorkers({fields})
         
         const sorted = workers.map(worker => ({
             ...worker,
@@ -408,14 +480,22 @@ class StableHorde {
 
     /**
      * A List with the details of all teams
+     * @param options.fields - Array of fields that will be included in the returned object
      * @returns TeamDetailsStable[] - Array of Team Details
      */
-    async getTeams(): Promise<TeamDetailsStable[]> {
-        const res = await Centra(`${this.#api_route}/teams`, "GET")
-        .send()
+    async getTeams<
+        T extends keyof TeamDetailsStable
+    >(options?: {fields?: T[]}): Promise<Pick<TeamDetailsStable, T>[]> {
+        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
+        const req = Centra(`${this.#api_route}/teams`, "GET")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
-        const data = await res.json() as TeamDetailsStable[]
-        if(this.#cache_config.teams) data.forEach(d => this.#cache.teams?.set(d.id!, d))
+        const data = await res.json() as Pick<TeamDetailsStable, T>[]
+        if(this.#cache_config.teams) data.forEach(d => {
+            const data_with_id = d as Pick<TeamDetailsStable, 'id'>
+            if('id' in data_with_id) this.#cache.teams?.set(data_with_id.id + fields_string, d)
+        })
         return data
     }
 
@@ -429,14 +509,19 @@ class StableHorde {
      * Asynchronous requests live for 10 minutes before being considered stale and being deleted.
      * @param generation_data - The data to generate the image
      * @param options.token - The token of the requesting user
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns RequestAsync - The id and message for the async generation request
      */
-    async postAsyncGenerate(generation_data: GenerationInput, options?: {token?: string}): Promise<RequestAsync> {
+    async postAsyncGenerate<
+        T extends keyof RequestAsync
+    >(generation_data: GenerationInput, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestAsync, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/generate/async`, "POST")
+        const req = Centra(`${this.#api_route}/generate/async`, "POST")
         .header("apikey", t)
         .body(generation_data, "json")
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 400:
@@ -448,50 +533,28 @@ class StableHorde {
                 }
         }
 
-        return await res.json() as RequestAsync
+        return await res.json() as Pick<RequestAsync, T>
     }
-    
-    /**
-     * Initiate a Synchronous request to generate images
-     * This connection will only terminate when the images have been generated, or an error occured.
-     * If your connection is interrupted, you will not have the request UUID, so you cannot retrieve the images asynchronously.
-     * @param generation_data - The data to generate the image
-     * @param options.token - The token of the requesting user
-     * @returns RequestStatusStable - The result of the generation. This is the same as calling getGenerationStatus after using postAsyncGenerate
-     */
-    async postSyncGenerate(generation_data: GenerationInput, options?: {token?: string}): Promise<RequestStatusStable> {
-        const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/generate/sync`, "POST")
-        .header("apikey", t)
-        .body(generation_data, "json")
-        .send()
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 429:
-            case 503:
-                {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, generation_data)
-                }
-        }
-
-        return await res.json() as RequestStatusStable
-    }
     
     /**
      * Check if there are generation requests queued for fulfillment
      * This endpoint is used by registered workers only
      * @param pop_input
      * @param options.token - The token of the registered user
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns GenerationPayload
      */
-    async postGenerationPop(pop_input: PopInputStable, options?: {token?: string}): Promise<GenerationPayload> {
+    async postGenerationPop<
+        T extends keyof GenerationPayload
+    >(pop_input: PopInputStable, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationPayload, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/generate/pop`, "POST")
+        const req = Centra(`${this.#api_route}/generate/pop`, "POST")
         .header("apikey", t)
         .body(pop_input, "json")
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 401:
@@ -501,7 +564,7 @@ class StableHorde {
                 }
         }
 
-        return await res.json() as GenerationPayload
+        return await res.json() as Pick<GenerationPayload, T>
     }
     
     /**
@@ -509,14 +572,19 @@ class StableHorde {
      * This endpoint is used by registered workers only
      * @param generation_submit
      * @param options.token - The workers owner API key
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns GenerationSubmitted
      */
-    async postGenerationSubmit(generation_submit: {id: string, generation: string, seed: string}, options?: {token?: string}): Promise<GenerationSubmitted> {
+    async postGenerationSubmit<
+        T extends keyof GenerationSubmitted
+    >(generation_submit: {id: string, generation: string, seed: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/generate/submit`, "POST")
+        const req = Centra(`${this.#api_route}/generate/submit`, "POST")
         .header("apikey", t)
         .body(generation_submit, "json")
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 400:
@@ -528,21 +596,26 @@ class StableHorde {
                 }
         }
 
-        return await res.json() as GenerationSubmitted
+        return await res.json() as Pick<GenerationSubmitted, T>
     }
     
     /**
      * Transfer Kudos to a registered user
      * @param transfer_data - The data specifiying who to send how many kudos
      * @param options.token - The sending users API key
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns KudosTransferred
      */
-    async postKudosTransfer(transfer_data: {username: string, amount: number}, options?: {token?: string}): Promise<KudosTransferred> {
+    async postKudosTransfer<
+        T extends keyof KudosTransferred
+    >(transfer_data: {username: string, amount: number}, options?: {token?: string, fields?: T[]}): Promise<Pick<KudosTransferred, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/kudos/transfer`, "POST")
+        const req = Centra(`${this.#api_route}/kudos/transfer`, "POST")
         .header("apikey", t)
         .body(transfer_data, "json")
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 400:
@@ -552,7 +625,7 @@ class StableHorde {
                 }
         }
 
-        return await res.json() as KudosTransferred
+        return await res.json() as Pick<KudosTransferred, T>
     }
     
     
@@ -561,14 +634,19 @@ class StableHorde {
      * Only trusted users can create new teams.
      * @param create_payload - The data to create the team with
      * @param options.token - The API key of a trusted user
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns ModifyTeam
      */
-     async createTeam(create_payload: CreateTeamInput, options?: {token?: string}): Promise<ModifyTeam> {
+    async createTeam<
+        T extends keyof ModifyTeam
+    >(create_payload: CreateTeamInput, options?: {token?: string, fields?: T[]}): Promise<Pick<ModifyTeam, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/teams`, "POST")
+        const req = Centra(`${this.#api_route}/teams`, "POST")
         .header("apikey", t)
         .body(create_payload, "json")
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 400:
@@ -579,7 +657,7 @@ class StableHorde {
                 }
         }
 
-        return await res.json() as ModifyTeam
+        return await res.json() as Pick<ModifyTeam, T>
     }
 
     /** POST */
@@ -588,14 +666,19 @@ class StableHorde {
      * Change Horde Modes
      * @param modes - The new status of the Horde
      * @param options.token - Requires Admin API key
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns HordeModes
      */
-    async putStatusModes(modes: {maintenance: boolean, shutdown: number, invite_only: boolean, raid: boolean}, options?: {token?: string}): Promise<HordeModes> {
+    async putStatusModes<
+        T extends keyof HordeModes
+    >(modes: {maintenance: boolean, shutdown: number, invite_only: boolean, raid: boolean}, options?: {token?: string, fields?: T[]}): Promise<Pick<HordeModes, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/status/modes`, "PUT")
+        const req = Centra(`${this.#api_route}/status/modes`, "PUT")
         .header("apikey", t)
         .body(modes, "json")
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 401:
@@ -605,7 +688,7 @@ class StableHorde {
                 }
         }
 
-        return await res.json() as HordeModes
+        return await res.json() as Pick<HordeModes, T>
     }
     
     /**
@@ -613,14 +696,19 @@ class StableHorde {
      * @param update_payload - The data to change on the target user
      * @param id - The targeted users ID
      * @param options.token - Requires Admin API key
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns ModifyUser
      */
-    async updateUser(update_payload: ModifyUserInput, id: number, options?: {token?: string}): Promise<ModifyUser> {
+    async updateUser<
+        T extends keyof ModifyUser
+    >(update_payload: ModifyUserInput, id: number, options?: {token?: string, fields?: T[]}): Promise<Pick<ModifyUser, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/users/${id}`, "PUT")
+        const req = Centra(`${this.#api_route}/users/${id}`, "PUT")
         .header("apikey", t)
         .body(update_payload, "json")
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 400:
@@ -632,8 +720,8 @@ class StableHorde {
                 }
         }
 
-        if(this.#cache_config.users) this.#cache.users?.delete(id)
-        return await res.json() as ModifyUser
+        if(this.#cache_config.users) this.#cache.users?.delete(id.toString() + fields_string)
+        return await res.json() as Pick<ModifyUser, T>
     }
     
     /**
@@ -645,14 +733,19 @@ class StableHorde {
      * @param update_payload - The data to change on the target worker
      * @param id - The targeted workers ID
      * @param options.token - The worker owners API key or Admin API key
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns ModifyWorker
      */
-    async updateWorker(update_payload: ModifyWorkerInput, id: string, options?: {token?: string}): Promise<ModifyWorker> {
+    async updateWorker<
+        T extends keyof ModifyWorker
+    >(update_payload: ModifyWorkerInput, id: string, options?: {token?: string, fields?: T[]}): Promise<ModifyWorker> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/workers/${id}`, "PUT")
+        const req = Centra(`${this.#api_route}/workers/${id}`, "PUT")
         .header("apikey", t)
         .body(update_payload, "json")
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 400:
@@ -665,7 +758,7 @@ class StableHorde {
         }
 
         if(this.#cache_config.workers) this.#cache.workers?.delete(id)
-        return await res.json() as ModifyWorker
+        return await res.json() as Pick<ModifyWorker, T>
     }
     
     
@@ -673,14 +766,19 @@ class StableHorde {
      * Updates a Team's information
      * @param update_payload - The data to update the team with
      * @param options.token - The Moderator or Creator API key
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns ModifyTeam
      */
-    async updateTeam(update_payload: ModifyTeamInput, id: string, options?: {token?: string}): Promise<ModifyTeam> {
+    async updateTeam<
+        T extends keyof ModifyTeam
+    >(update_payload: ModifyTeamInput, id: string, options?: {token?: string, fields?: T[]}): Promise<ModifyTeam> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/teams/${id}`, "PATCH")
+        const req = Centra(`${this.#api_route}/teams/${id}`, "PATCH")
         .header("apikey", t)
         .body(update_payload, "json")
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 400:
@@ -693,20 +791,25 @@ class StableHorde {
         }
 
         if(this.#cache_config.teams) this.#cache.teams?.delete(id)
-        return await res.json() as ModifyTeam
+        return await res.json() as Pick<ModifyTeam, T>
     }
     
     /**
      * Cancel an unfinished request
      * This request will include all already generated images in base64 encoded .webp files.
      * @param id - The targeted generations ID
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns RequestStatusStable
      */
-    async deleteGenerationRequest(id: string, options?: {token?: string}): Promise<RequestStatusStable> {
+    async deleteGenerationRequest<
+        T extends keyof RequestStatusStable
+    >(id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/generate/status/${id}`, "DELETE")
+        const req = Centra(`${this.#api_route}/generate/status/${id}`, "DELETE")
         .header("apikey", t)
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 404:
@@ -714,8 +817,9 @@ class StableHorde {
                     throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
                 }
         }
-        const data = await res.json() as RequestStatusStable
-        if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id, data)
+
+        const data = await res.json() as Pick<RequestStatusStable, T>
+        if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
     
@@ -726,13 +830,18 @@ class StableHorde {
      * This action is unrecoverable!
      * @param id - The targeted workers ID
      * @param options.token - The worker owners API key or a Moderators API key
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns DeletedWorker
      */
-    async deleteWorker(id: string, options?: {token?: string}): Promise<DeletedWorker> {
+    async deleteWorker<
+        T extends keyof DeletedWorker
+    >(id: string, options?: {token?: string, fields?: T[]}): Promise<DeletedWorker> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/workers/${id}`, "DELETE")
+        const req = Centra(`${this.#api_route}/workers/${id}`, "DELETE")
         .header("apikey", t)
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 401:
@@ -742,7 +851,7 @@ class StableHorde {
                     throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
                 }
         }
-        const data = await res.json() as DeletedWorker
+        const data = await res.json() as Pick<DeletedWorker, T>
         this.#cache.workers?.delete(id)
         return data
     }
@@ -754,13 +863,18 @@ class StableHorde {
      * This action is unrecoverable!
      * @param id - The targeted teams ID
      * @param options.token - The worker owners API key or a Moderators API key
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns DeletedTeam
      */
-     async deleteTeam(id: string, options?: {token?: string}): Promise<DeletedTeam> {
+    async deleteTeam<
+        T extends keyof DeletedTeam
+    >(id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<DeletedTeam, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/teams/${id}`, "DELETE")
+        const req = Centra(`${this.#api_route}/teams/${id}`, "DELETE")
         .header("apikey", t)
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 401:
@@ -770,8 +884,8 @@ class StableHorde {
                     throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
                 }
         }
-        const data = await res.json() as DeletedTeam
-        this.#cache.teams?.delete(id)
+        const data = await res.json() as Pick<DeletedTeam, T>
+        this.#cache.teams?.delete(id + fields_string)
         return data
     }
     
@@ -781,14 +895,19 @@ class StableHorde {
      * Only usable by horde moderators
      * @param ip - The IP address
      * @param options.token - Moderators API key
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns DeletedTeam
      */
-     async deleteIPTimeout(delete_payload: DeleteTimeoutIPInput, options?: {token?: string}): Promise<SimpleResponse> {
+    async deleteIPTimeout<
+        T extends keyof SimpleResponse
+    >(delete_payload: DeleteTimeoutIPInput, options?: {token?: string, fields?: T[]}): Promise<Pick<SimpleResponse, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const res = await Centra(`${this.#api_route}/operations/ipaddr`, "DELETE")
+        const req = Centra(`${this.#api_route}/operations/ipaddr`, "DELETE")
         .header("apikey", t)
         .body(delete_payload, "json")
-        .send()
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
 
         switch(res.statusCode) {
             case 400:
@@ -798,7 +917,7 @@ class StableHorde {
                     throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, delete_payload)
                 }
         }
-        const data = await res.json() as SimpleResponse
+        const data = await res.json() as Pick<SimpleResponse, T>
         return data
     }
 }
@@ -845,7 +964,7 @@ export interface StableHordeCacheConfiguration {
 }
 
 interface StableHordeCache {
-    users?: SuperMap<number, UserDetailsStable>,
+    users?: SuperMap<string, UserDetailsStable>,
     generations_check?: SuperMap<string, RequestStatusCheck>,
     generations_status?: SuperMap<string, RequestStatusStable>,
     models?: SuperMap<string, ActiveModel[]>,
@@ -972,6 +1091,8 @@ export interface GenerationInput {
     source_processing?: typeof StableHorde.SourceImageProcessingTypes[keyof typeof StableHorde.SourceImageProcessingTypes],
     /** If source_processing is set to 'inpainting' or 'outpainting', this parameter can be optionally provided as the Base64-encoded webp mask of the areas to inpaint. If this arg is not passed, the inpainting/outpainting mask has to be embedded as alpha channel */
     source_mask?: string,
+    /** If True, the image will be sent via cloudflare r2 download link */
+    r2?: boolean,
 }
 
 export interface ModelGenerationInputStable {
@@ -1006,7 +1127,7 @@ export interface ModelGenerationInputStable {
      * The height of the image to generate
      * @default 512
      * @minimum 64
-     * @maximum 1024
+     * @maximum 3072
      * 
      * Multiple of 64
     */
@@ -1015,7 +1136,7 @@ export interface ModelGenerationInputStable {
      * The width of the image to generate
      * @default 512
      * @minimum 64
-     * @maximum 1024
+     * @maximum 3072
      * 
      * Multiple of 64
     */
@@ -1030,26 +1151,6 @@ export interface ModelGenerationInputStable {
     karras?: boolean,
     /** The list of post-processors to apply to the image, in the order to be applied */
     post_processing?: (typeof StableHorde.ModelGenerationInputPostProcessingTypes[keyof typeof StableHorde.ModelGenerationInputPostProcessingTypes])[]
-    /** 
-     * Set to true to process the generated image with GFPGAN (face correction)
-     * @depreciated This property has been removed from the API
-    */
-    use_gfpgan?: boolean,
-    /**
-     * Set to true to process the generated image with RealESRGAN
-     * @depreciated This property has been removed from the API
-    */
-    use_real_esrgan?: boolean,
-    /**
-     * Set to true to process the generated image with LDSR
-     * @depreciated This property has been removed from the API
-    */
-    use_ldsr?: boolean,
-    /**
-     * Set to true to upscale the image
-     * @depreciated This property has been removed from the API
-    */
-    use_upscaling?: boolean,
     /** 
      * @minimum 1
      * @maximum 500
@@ -1167,7 +1268,7 @@ export interface Generation {
 }
 
 export interface GenerationStable extends Generation {
-    /** The generated image as a Base64-encoded .webp file */
+    /** The generated image as a Base64-encoded .webp file OR a cloudflare r2 download link */
     img?: string,
     /** The seed which generated this image */
     seed?: string
