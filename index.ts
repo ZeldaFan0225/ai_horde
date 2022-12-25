@@ -31,7 +31,8 @@ enum SourceImageProcessingTypes {
 
 enum ModelGenerationInputPostProcessingTypes {
     "GFPGAN" = "GFPGAN",
-    "RealESRGAN_x4plus" = "RealESRGAN_x4plus"
+    "RealESRGAN_x4plus" = "RealESRGAN_x4plus",
+    "CodeFormers" = "CodeFormers"
 }
 
 class StableHordeError extends Error {
