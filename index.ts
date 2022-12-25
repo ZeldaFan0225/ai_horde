@@ -287,7 +287,7 @@ class StableHorde {
      * @returns RequestStatusStable - The Status of the Generation 
      */
     async getGenerationStatus<
-        T extends keyof RequestStatusCheck
+        T extends keyof RequestStatusStable
     >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.generations_status?.get(id)
@@ -424,7 +424,7 @@ class StableHorde {
     
     /**
      * A List with the details of all registered and active workers
-     * @param options.fields - Array of fields that will be included in the returned object
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns An array of all workers data
      */
     async getWorkers<
@@ -480,7 +480,7 @@ class StableHorde {
 
     /**
      * A List with the details of all teams
-     * @param options.fields - Array of fields that will be included in the returned object
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns TeamDetailsStable[] - Array of Team Details
      */
     async getTeams<
