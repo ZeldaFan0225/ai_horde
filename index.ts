@@ -1839,14 +1839,22 @@ export interface HordePerformanceStable extends HordePerformance {
     /** The amount of megapixelsteps in waiting and processing requests currently in this Horde */
     queued_megapixelsteps?: number,
     /** How many megapixelsteps this Horde generated in the last minute */
-    past_minute_megapixelsteps?: number
+    past_minute_megapixelsteps?: number,
+    /** The amount of image interrogations waiting and processing currently in this Horde */
+    queued_forms?: number,
+    /** How many workers are actively processing image interrogations in this Horde in the past 5 minutes */
+    interrogator_count?: number,
+    /** How many worker threads are actively processing image interrogation in this Horde in the past 5 minutes */
+    interrogator_thread_count?: number
 }
 
 export interface HordePerformance {
     /** The amount of waiting and processing requests currently in this Horde */
     queued_requests?: number,
     /** How many workers are actively processing image generations in this Horde in the past 5 minutes */
-    worker_count?: number
+    worker_count?: number,
+    /** How many worker threads are actively processing prompt generations in this Horde in the past 5 minutes */
+    thread_count?: number
 }
 
 export interface Newspiece {
