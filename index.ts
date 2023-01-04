@@ -41,11 +41,12 @@ enum ModelInterrogationFormTypes {
     "nsfw" = "nsfw"
 }
 
-enum InterrogationStatusStates {
+enum HordeAsyncRequestStates {
     "waiting" = "waiting",
     "processing" = "processing",
     "done" = "done",
-    "faulted" = "faulted"
+    "faulted" = "faulted",
+    "partial" = "partial"
 }
 
 class StableHordeError extends Error {
@@ -82,8 +83,8 @@ class StableHorde {
     static readonly ModelInterrogationFormTypes = ModelInterrogationFormTypes;
     readonly ModelInterrogationFormTypes = StableHorde.ModelInterrogationFormTypes;
     
-    static readonly InterrogationStatusStates = InterrogationStatusStates;
-    readonly InterrogationStatusStates = StableHorde.InterrogationStatusStates;
+    static readonly HordeAsyncRequestStates = HordeAsyncRequestStates;
+    readonly HordeAsyncRequestStates = StableHorde.HordeAsyncRequestStates;
     
     static readonly StableHordeError = StableHordeError;
     readonly StableHordeError = StableHorde.StableHordeError;
@@ -2062,12 +2063,12 @@ export interface InterrogationFormStatus {
     /** The name of this interrogation form */
     form?: string,
     /** title: Interrogation State */
-    state?: typeof StableHorde.InterrogationStatusStates[keyof typeof StableHorde.InterrogationStatusStates],
+    state?: typeof StableHorde.HordeAsyncRequestStates[keyof typeof StableHorde.HordeAsyncRequestStates],
     result?: InterrogationFormResult
 }
 
 export interface InterrogationStatus {
     /** title: Interrogation State */
-    state?: typeof StableHorde.InterrogationStatusStates[keyof typeof StableHorde.InterrogationStatusStates],
+    state?: typeof StableHorde.HordeAsyncRequestStates[keyof typeof StableHorde.HordeAsyncRequestStates],
     forms?: InterrogationFormStatus[]
 }
