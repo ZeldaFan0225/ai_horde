@@ -46,7 +46,7 @@ enum HordeAsyncRequestStates {
     "processing" = "processing",
     "done" = "done",
     "faulted" = "faulted",
-    "partial" = "partial"
+    "partial" = "partial",
     "cancelled" = "cancelled"
 }
 

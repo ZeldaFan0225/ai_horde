@@ -1,7 +1,7 @@
 {
   "name": "@zeldafan0225/stable_horde",
   "types": "./index.d.ts",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "A package to interact with the stable horde API",
   "bugs": "https://github.com/ZeldaFan0225/stable_horde/issues",
   "author": "ZeldaFan0225 (https://github.com/ZeldaFan0225)",
