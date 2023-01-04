@@ -35,6 +35,12 @@ enum ModelGenerationInputPostProcessingTypes {
     "CodeFormers" = "CodeFormers"
 }
 
+enum ModelInterrogationFormTypes {
+    "caption" = "caption",
+    "interrogation" = "interrogation",
+    "nsfw" = "nsfw"
+}
+
 class StableHordeError extends Error {
     rawError: RequestError;
     status: number;
@@ -66,6 +72,9 @@ class StableHorde {
     static readonly ModelGenerationInputPostProcessingTypes = ModelGenerationInputPostProcessingTypes;
     readonly ModelGenerationInputPostProcessingTypes = StableHorde.ModelGenerationInputPostProcessingTypes;
     
+    static readonly ModelInterrogationFormTypes = ModelInterrogationFormTypes;
+    readonly ModelInterrogationFormTypes = StableHorde.ModelInterrogationFormTypes;
+    
     static readonly StableHordeError = StableHordeError;
     readonly StableHordeError = StableHorde.StableHordeError;
 
@@ -79,6 +88,7 @@ class StableHorde {
             users: options?.cache?.users ?? 0,
             generations_check: options?.cache?.generations_check ?? 0,
             generations_status: options?.cache?.generations_status ?? 0,
+            interrogations_status: options?.cache?.interrogations_status ?? 0,
             models: options?.cache?.models ?? 0,
             modes: options?.cache?.modes ?? 0,
             news: options?.cache?.news ?? 0,
@@ -91,6 +101,7 @@ class StableHorde {
             users: this.#cache_config.users ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.users}) : undefined,
             generations_check: this.#cache_config.generations_check ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_check}) : undefined,
             generations_status: this.#cache_config.generations_status ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_status}) : undefined,
+            interrogations_status: this.#cache_config.interrogations_status ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.interrogations_status}) : undefined,
             models: this.#cache_config.models ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.models}) : undefined,
             modes: this.#cache_config.modes ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.modes}) : undefined,
             news: this.#cache_config.news ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.news}) : undefined,
@@ -300,6 +311,30 @@ class StableHorde {
 
         const data = await res.json() as Pick<RequestStatusStable, T>
         if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        return data
+    }
+
+    /**
+     * This request will include all already generated images.
+     * As such, you are requested to not retrieve this endpoint often. Instead use the /check/ endpoint first
+     * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns InterrogationStatus - The Status data of the Interrogation 
+     */
+    async getInterrogationStatus<
+        T extends keyof InterrogationStatus
+    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<InterrogationStatus, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const temp = !options?.force && this.#cache.interrogations_status?.get(id + fields_string)
+        if(temp) return temp as Pick<InterrogationStatus, T>
+        const req = Centra(`${this.#api_route}/interrogate/status/${id}`, "GET")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+
+        const data = await res.json() as Pick<InterrogationStatus, T>
+        if(this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
         return data
     }
 
@@ -600,6 +635,106 @@ class StableHorde {
     }
     
     /**
+     * Initiate an Asynchronous request to interrogate an image.
+     * This endpoint will immediately return with the UUID of the request for interrogation.
+     * This endpoint will always be accepted, even if there are no workers available currently to fulfill this request.
+     * Perhaps some will appear in the next 20 minutes.
+     * Asynchronous requests live for 20 minutes before being considered stale and being deleted.
+     * @param interrogate_payload
+     * @param options.token - The sending users API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestInterrogationResponse
+     */
+    async postAsyncInterrogate<
+        T extends keyof RequestInterrogationResponse
+    >(interrogate_payload: ModelInterrogationInputStable, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestInterrogationResponse, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/interrogate/async`, "POST")
+        .header("apikey", t)
+        .body(interrogate_payload, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 429:
+            case 503:
+                {
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, interrogate_payload)
+                }
+        }
+
+        return await res.json() as Pick<RequestInterrogationResponse, T>
+    }
+    
+
+    /**
+     * Check if there are interrogation requests queued for fulfillment
+     * This endpoint is used by registered workers only
+     * @param pop_input
+     * @param options.token - The token of the registered user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns InterrogationPopPayload
+     */
+    async postInterrogationPop<
+        T extends keyof InterrogationPopPayload
+    >(pop_input: InterrogationPopInput, options?: {token?: string, fields?: T[]}): Promise<Pick<InterrogationPopPayload, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/interrogate/pop`, "POST")
+        .header("apikey", t)
+        .body(pop_input, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 403:
+                {
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, pop_input)
+                }
+        }
+
+        return await res.json() as Pick<InterrogationPopPayload, T>
+    }
+    
+    
+    /**
+     * Submit the results of an interrogated image
+     * This endpoint is used by registered workers only
+     * @param generation_submit
+     * @param options.token - The workers owner API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationSubmitted
+     */
+    async postInterrogationSubmit<
+        T extends keyof GenerationSubmitted
+    >(interrogation_submit: {id: string, result: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/interrogate/submit`, "POST")
+        .header("apikey", t)
+        .body(interrogation_submit, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 403:
+            case 404:
+                {
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, interrogation_submit)
+                }
+        }
+
+        return await res.json() as Pick<GenerationSubmitted, T>
+    }
+    
+    /**
      * Transfer Kudos to a registered user
      * @param transfer_data - The data specifiying who to send how many kudos
      * @param options.token - The sending users API key
@@ -803,11 +938,9 @@ class StableHorde {
      */
     async deleteGenerationRequest<
         T extends keyof RequestStatusStable
-    >(id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
+    >(id: string, options?: {fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/generate/status/${id}`, "DELETE")
-        .header("apikey", t)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
@@ -820,6 +953,33 @@ class StableHorde {
 
         const data = await res.json() as Pick<RequestStatusStable, T>
         if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        return data
+    }
+    
+    /**
+     * Cancel an unfinished interrogation request
+     * This request will return all already interrogated image results.
+     * @param id - The targeted generations ID
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns InterrogationStatus
+     */
+    async deleteInterrogationRequest<
+        T extends keyof InterrogationStatus
+    >(id: string, options?: {fields?: T[]}): Promise<Pick<InterrogationStatus, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const req = Centra(`${this.#api_route}/interrogate/status/${id}`, "DELETE")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 404:
+                {
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+                }
+        }
+
+        const data = await res.json() as Pick<InterrogationStatus, T>
+        if(this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
         return data
     }
     
@@ -949,6 +1109,8 @@ export interface StableHordeCacheConfiguration {
     generations_check?: number,
     /** How long to cache generation status data for in Milliseconds */
     generations_status?: number,
+    /** How long to cache interrogation status data for in Milliseconds */
+    interrogations_status?: number,
     /** How long to cache models for in Milliseconds */
     models?: number,
     /** How long to cache modes for in Milliseconds */
@@ -967,6 +1129,7 @@ interface StableHordeCache {
     users?: SuperMap<string, UserDetailsStable>,
     generations_check?: SuperMap<string, RequestStatusCheck>,
     generations_status?: SuperMap<string, RequestStatusStable>,
+    interrogations_status?: SuperMap<string, InterrogationStatus>,
     models?: SuperMap<string, ActiveModel[]>,
     modes?: SuperMap<string, HordeModes>,
     news?: SuperMap<string, Newspiece[]>,
@@ -1787,4 +1950,106 @@ export interface SimpleResponse {
      * @default OK
      */
     message: string
+}
+
+export type InterrogationPopFormPayloadStable = Partial<Record<typeof StableHorde.ModelInterrogationFormTypes[keyof typeof StableHorde.ModelInterrogationFormTypes], string>>
+
+export type InterrogationFormResult = Partial<Record<typeof StableHorde.ModelInterrogationFormTypes[keyof typeof StableHorde.ModelInterrogationFormTypes], Record<string, any>>>
+
+export interface ModelInterrogationFormStable {
+    /**
+     * The type of interrogation this is
+     */
+    name: typeof StableHorde.ModelInterrogationFormTypes[keyof typeof StableHorde.ModelInterrogationFormTypes],
+    payload?: InterrogationPopFormPayload
+}
+
+export interface ModelInterrogationInputStable {
+    forms: ModelInterrogationFormStable[],
+    /** The public URL of the image to interrogate */
+    source_image: string
+}
+
+export interface RequestInterrogationResponse {
+    /** The UUID of the request. Use this to retrieve the request status in the future */
+    id?: string,
+    /** Any extra information from the horde about this request */
+    message?: string
+}
+
+export interface InterrogationPopInput {
+    /** The Name of the Worker */
+    name?: string,
+    /** Users with priority to use this worker */
+    priority_usernames?: string[],
+    /** The type of interrogation this worker can fulfull */
+    forms?: (typeof StableHorde.ModelInterrogationFormTypes[keyof typeof StableHorde.ModelInterrogationFormTypes])[],
+    /**
+     * The amount of forms to pop at the same time
+     * @default 1
+     */
+    amount?: number,
+    /**
+     * The version of the bridge used by this worker
+     * @default 1
+     */
+    bridge_version?: number,
+    /**
+     * How many threads this worker is running. This is used to accurately estimate the power available in the horde.
+     * @default 1
+     * @minimum 1
+     * @maximum 10
+     */
+    threads?: number
+}
+
+export interface InterrogationPopFormPayload {
+    /** The UUID of the interrogation form. Use this to post the results in the future  */
+    id?: string,
+    /** 
+     * The name of this interrogation form
+     * @example caption
+     */
+    name?: typeof StableHorde.ModelInterrogationFormTypes[keyof typeof StableHorde.ModelInterrogationFormTypes],
+    payload?: InterrogationPopFormPayloadStable,
+    /** The URL From which the source image can be downloaded */
+    source_image?: string
+}
+
+export interface NoValidInterrogationsFound {
+    /**
+     * How many waiting requests were skipped because they demanded a specific worker.
+     * @minimum 0
+     */
+    worker_id?: number,
+    /**
+     * How many waiting requests were skipped because they demanded a trusted worker which this worker is not.
+     * @minimum 0
+     */
+    untrusted?: number,
+    /**
+     * How many waiting requests were skipped because they require a higher version of the bridge than this worker is running (upgrade if you see this in your skipped list).
+     * @example 0
+     * @minimum 0
+     */
+    bridge_version?: number
+}
+
+export interface InterrogationPopPayload {
+    forms: InterrogationPopFormPayload,
+    skipped?: NoValidInterrogationsFound
+}
+
+export interface InterrogationFormStatus {
+    /** The name of this interrogation form */
+    form?: string,
+    /** title: Interrogation State */
+    state?: string,
+    result?: InterrogationFormResult
+}
+
+export interface InterrogationStatus {
+    /** title: Interrogation State */
+    state?: string,
+    forms?: InterrogationFormStatus
 }
