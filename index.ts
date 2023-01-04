@@ -2051,5 +2051,5 @@ export interface InterrogationFormStatus {
 export interface InterrogationStatus {
     /** title: Interrogation State */
     state?: string,
-    forms?: InterrogationFormStatus
+    forms?: InterrogationFormStatus[]
 }
