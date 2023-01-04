@@ -47,6 +47,7 @@ enum HordeAsyncRequestStates {
     "done" = "done",
     "faulted" = "faulted",
     "partial" = "partial"
+    "cancelled" = "cancelled"
 }
 
 class StableHordeError extends Error {
