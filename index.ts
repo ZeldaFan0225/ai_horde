@@ -1483,7 +1483,9 @@ export interface GenerationStable extends Generation {
     /** The generated image as a Base64-encoded .webp file OR a cloudflare r2 download link */
     img?: string,
     /** The seed which generated this image */
-    seed?: string
+    seed?: string,
+    /** The ID for this image */
+    id?: string
 }
 
 export interface RequestAsync {
