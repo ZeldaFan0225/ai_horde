@@ -1268,6 +1268,8 @@ export interface GenerationInput {
     source_mask?: string,
     /** If True, the image will be sent via cloudflare r2 download link */
     r2?: boolean,
+    /** If True, The image will be shared with LAION for improving their dataset. This will also reduce your kudos consumption by 2. For anonymous users, this is always True. */
+    shared?: boolean,
 }
 
 export interface ModelGenerationInputStable {
@@ -1656,6 +1658,8 @@ export interface MonthlyKudos {
 }
 
 export interface UsageDetailsStable extends UsageDetails {
+    /** How many images this user has requested */
+    requests?: number
     /** How many megapixelsteps this user has requested */
     megapixelsteps?: number
 }
@@ -1666,6 +1670,8 @@ export interface UsageDetails {
 }
 
 export interface ContributionsDetailsStable extends ContributionsDetails {
+    /** How many images this user has generated */
+    fulfillments?: number
     /** How many megapixelsteps this user has generated */
     megapixelsteps?: number
 }
@@ -1726,6 +1732,8 @@ export interface WorkerDetailsStable extends WorkerDetails {
     img2img?: boolean
     /** If True, this worker supports and allows inpainting requests. */
     painting?: boolean
+    /** If True, this worker supports and allows post-processing requests. */
+    "post-processing"?: boolean
 }
 
 export interface WorkerDetails extends WorkerDetailsLite {
@@ -1748,8 +1756,6 @@ export interface WorkerDetails extends WorkerDetailsLite {
     info?: string,
     /** Whether this worker can generate NSFW requests or not. */
     nsfw?: boolean,
-    /** Whether this worker can generate img2img requests or not. */
-    img2img?: boolean,
     /** Privileged or public if the owner has allowed it. The alias of the owner of this worker. */
     owner?: string,
     /** The worker is trusted to return valid generations. */
