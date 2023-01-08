@@ -582,6 +582,41 @@ class StableHorde {
 
         return await res.json() as Pick<RequestAsync, T>
     }
+    
+    /**
+     * Submit aesthetic ratings for generated images to be used by LAION
+     * The request has to have been sent as shared: true.
+     * You can select the best image in the set, and/or provide a rating for each or some images in the set.
+     * If you select best-of image, you will gain 4 kudos. Each rating is 5 kudos. Best-of will be ignored when ratings conflict with it.
+     * You can never gain more kudos than you spent for this generation. Your reward at max will be your kudos consumption - 1.
+     * @param generation_id - The ID of the generation to rate
+     * @param rating - The data to rating data
+     * @param options.token - The token of the requesting user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationSubmitted - The kudos awarded for the rating
+     */
+    async postRating<
+        T extends keyof GenerationSubmitted
+    >(generation_id: string, rating: AestheticsPayload, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/generate/rate/${generation_id}`, "POST")
+        .header("apikey", t)
+        .body(rating, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 429:
+                {
+                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, rating)
+                }
+        }
+
+        return await res.json() as Pick<GenerationSubmitted, T>
+    }
 
     
     /**
@@ -2078,4 +2113,38 @@ export interface InterrogationStatus {
     /** title: Interrogation State */
     state?: typeof StableHorde.HordeAsyncRequestStates[keyof typeof StableHorde.HordeAsyncRequestStates],
     forms?: InterrogationFormStatus[]
+}
+
+export interface AestheticsPayload {
+    /**
+     * The UUID of the best image in this generation batch (only used when 2+ images generated). If 2+ aesthetic ratings are also provided, then they take precedence if they're not tied.
+     * @example 6038971e-f0b0-4fdd-a3bb-148f561f815e
+     * @minLength 36
+     * @maxLength 36
+     */
+    best?: string,
+    /**
+     * The team towards which this ratings contributes. It not is passed, it will leave the ratings without a team.
+     * @example 0bed257b-e57c-4327-ac64-40cdfb1ac5e6
+     * @minLength 36
+     * @maxLength 36
+     */
+    team?: string,
+    ratings?: AestheticRating[]
+}
+
+export interface AestheticRating {
+    /**
+     * The UUID of image being rated
+     * @example 6038971e-f0b0-4fdd-a3bb-148f561f815e
+     * @minLength 36
+     * @maxLength 36
+     */
+    id: string,
+    /**
+     * The aesthetic rating 1-10 for this image
+     * @minimum 1
+     * @maximum 10
+     */
+    rating: number
 }
