@@ -2221,7 +2221,6 @@ class StableHordeRatings {
      */
     async getNewRating(dataset_id?: string, options?: {token?: string}): Promise<RatingsNewRating> {
         const t = this.#getToken(options?.token)
-        console.log(`${this.#api_route}/rating/new${dataset_id ? `/${dataset_id}` : ""}`)
         const req = Centra(`${this.#api_route}/rating/new${dataset_id ? `/${dataset_id}` : ""}`, "GET")
         .header("apikey", t)
         const res = await req.send()
