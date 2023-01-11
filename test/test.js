@@ -22,13 +22,3 @@ async function main() {
     console.log(check)
     console.log(stable_horde.cache.generations_check)
 }
-
-async function rating_test() {
-    const stable_horde = new StableHorde({
-        cache_interval: 1000 * 10,
-        cache: {
-            generations_check: 1000 * 30
-        }
-    })
-    const rating = await stable_horde.ratings.getNewRating(undefined, {token: "FxYt31IIp3tfXV1AMGvT3Q"})
-}
