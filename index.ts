@@ -7,7 +7,6 @@ import { IncomingMessage } from "http"
  */
 
 
-
 enum ModelGenerationInputStableSamplers {
     "k_lms" = "k_lms",
     "k_heun" = "k_heun",
@@ -50,7 +49,7 @@ enum HordeAsyncRequestStates {
     "cancelled" = "cancelled"
 }
 
-class StableHordeError extends Error {
+class APIError extends Error {
     rawError: RequestError;
     status: number;
     method: string;
@@ -87,13 +86,14 @@ class StableHorde {
     static readonly HordeAsyncRequestStates = HordeAsyncRequestStates;
     readonly HordeAsyncRequestStates = StableHorde.HordeAsyncRequestStates;
     
-    static readonly StableHordeError = StableHordeError;
-    readonly StableHordeError = StableHorde.StableHordeError;
+    static readonly APIError = APIError;
+    readonly APIError = StableHorde.APIError;
 
     #default_token?: string
     #cache_config: StableHordeCacheConfiguration
     #cache: StableHordeCache
     #api_route: string
+    ratings: StableHordeRatings
     constructor(options?: StableHordeInitOptions) {
         this.#default_token = options?.default_token
         this.#cache_config = {
@@ -123,6 +123,10 @@ class StableHorde {
         }
 
         this.#api_route = options?.api_route ?? "https://stablehorde.net/api/v2"
+        this.ratings = new StableHordeRatings({
+            api_route: options?.ratings_api_route ?? "https://ratings.droom.cloud/api/",
+            default_token: options?.default_token
+        })
     }
 
     /* GENERAL */
@@ -158,7 +162,7 @@ class StableHorde {
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
-        if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
 
         const data = await res.json() as Pick<UserDetailsStable, T>
         if(this.#cache_config.users) {
@@ -188,7 +192,7 @@ class StableHorde {
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
-        if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
 
         const data = await res.json() as Pick<UserDetailsStable, T>
         if(this.#cache_config.users) {
@@ -223,7 +227,7 @@ class StableHorde {
             case 403:
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
                 }
         }
 
@@ -262,7 +266,7 @@ class StableHorde {
             case 403:
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
                 }
         }
 
@@ -292,7 +296,7 @@ class StableHorde {
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
-        if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
 
         const data = await res.json() as Pick<RequestStatusCheck, T>
         if(this.#cache_config.generations_check) this.#cache.generations_check?.set(id + fields_string, data)
@@ -319,7 +323,7 @@ class StableHorde {
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
-        if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
 
         const data = await res.json() as Pick<RequestStatusStable, T>
         if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
@@ -343,7 +347,7 @@ class StableHorde {
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
-        if(res.statusCode === 404) throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
 
         const data = await res.json() as Pick<InterrogationStatus, T>
         if(this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
@@ -576,7 +580,7 @@ class StableHorde {
             case 429:
             case 503:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, generation_data)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, generation_data)
                 }
         }
 
@@ -611,7 +615,7 @@ class StableHorde {
             case 401:
             case 429:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, rating)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, rating)
                 }
         }
 
@@ -642,7 +646,7 @@ class StableHorde {
             case 401:
             case 403:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, pop_input)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, pop_input)
                 }
         }
 
@@ -674,7 +678,7 @@ class StableHorde {
             case 402:
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, generation_submit)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, generation_submit)
                 }
         }
 
@@ -709,7 +713,7 @@ class StableHorde {
             case 429:
             case 503:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, interrogate_payload)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, interrogate_payload)
                 }
         }
 
@@ -741,7 +745,7 @@ class StableHorde {
             case 401:
             case 403:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, pop_input)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, pop_input)
                 }
         }
 
@@ -774,7 +778,7 @@ class StableHorde {
             case 403:
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, interrogation_submit)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, interrogation_submit)
                 }
         }
 
@@ -803,7 +807,7 @@ class StableHorde {
             case 400:
             case 401:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, transfer_data)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, transfer_data)
                 }
         }
 
@@ -835,7 +839,7 @@ class StableHorde {
             case 401:
             case 403:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, create_payload)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, create_payload)
                 }
         }
 
@@ -866,7 +870,7 @@ class StableHorde {
             case 401:
             case 402:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, modes)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, modes)
                 }
         }
 
@@ -898,7 +902,7 @@ class StableHorde {
             case 402:
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, update_payload)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, update_payload)
                 }
         }
 
@@ -935,7 +939,7 @@ class StableHorde {
             case 402:
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, update_payload)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, update_payload)
                 }
         }
 
@@ -968,7 +972,7 @@ class StableHorde {
             case 403:
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, update_payload)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, update_payload)
                 }
         }
 
@@ -994,7 +998,7 @@ class StableHorde {
         switch(res.statusCode) {
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
                 }
         }
 
@@ -1021,7 +1025,7 @@ class StableHorde {
         switch(res.statusCode) {
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
                 }
         }
 
@@ -1055,7 +1059,7 @@ class StableHorde {
             case 402:
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
                 }
         }
         const data = await res.json() as Pick<DeletedWorker, T>
@@ -1088,7 +1092,7 @@ class StableHorde {
             case 403:
             case 404:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
                 }
         }
         const data = await res.json() as Pick<DeletedTeam, T>
@@ -1121,7 +1125,7 @@ class StableHorde {
             case 401:
             case 403:
                 {
-                    throw new this.StableHordeError(await res.json().then(res => res), res.coreRes, delete_payload)
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, delete_payload)
                 }
         }
         const data = await res.json() as Pick<SimpleResponse, T>
@@ -1146,7 +1150,9 @@ export interface StableHordeInitOptions {
     /** The default token to use for requests */
     default_token?: string,
     /** The base api domain + route to use for requests */
-    api_route?: string
+    api_route?: string,
+    /** The ratings api domain + route to use for requests */
+    ratings_api_route?: string
 }
 
 export interface StableHordeCacheConfiguration {
@@ -2149,4 +2155,165 @@ export interface AestheticRating {
      * @maximum 10
      */
     rating: number
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Stable Horde Ratings
+ */
+
+
+
+class StableHordeRatings {
+    static readonly APIError = APIError;
+    readonly APIError = StableHorde.APIError;
+
+    #default_token?: string
+    #api_route: string
+    constructor(options: StableHordeRatingsInitOptions) {
+        this.#default_token = options?.default_token
+        this.#api_route = options?.api_route ?? "https://ratings.droom.cloud/api/"
+    }
+
+    #getToken(token?: string): string {
+        return token || this.#default_token || "0000000000"
+    }
+
+    /**
+     * Display all datasets
+     * @returns RatingsDatasetResponse - The datasets
+     */
+    async getDatasets(): Promise<RatingsDatasetResponse> {
+        const req = Centra(`${this.#api_route}/datasets`, "GET")
+        const res = await req.send()
+
+        const data = await res.json() as RatingsDatasetResponse
+        return data
+    }
+
+    /**
+     * Display all public teams
+     * @returns RatingsTeamsResponse - The datasets
+     */
+    async getTeams(): Promise<RatingsTeamsResponse> {
+        const req = Centra(`${this.#api_route}/teams`, "GET")
+        const res = await req.send()
+
+        const data = await res.json() as RatingsTeamsResponse
+        return data
+    }
+
+    /**
+     * Retrieve an image to rate from the default dataset
+     * @param dataset_id - The ID of the dataset to get an image from
+     * @param options.token - The token of the requesting user
+     * @returns RatingsNewRating - An images data to rate
+     */
+    async getNewRating(dataset_id?: string, options?: {token?: string}): Promise<RatingsNewRating> {
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/rating/new${dataset_id ? `/${dataset_id}` : ""}`, "GET")
+        .header("apikey", t)
+        const res = await req.send()
+        
+        switch(res.statusCode) {
+            case 401:
+            case 403:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, {})
+                }
+        }
+
+        const data = await res.json() as RatingsNewRating
+        return data
+    }
+
+    /** POST ENDPOINTS */
+    
+    
+
+    /**
+     * Check if there are interrogation requests queued for fulfillment
+     * This endpoint is used by registered workers only
+     * @param image_id - The ID if the Image you want to rate
+     * @param rating
+     * @param options.token - The token of the requesting user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns InterrogationPopPayload
+     */
+    async postRating(image_id: string, rating: RatingRatingPayload, options?: {token?: string}): Promise<RatingRatingResponse> {
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/rating/${image_id}`, "POST")
+        .header("apikey", t)
+        .body(rating, "json")
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 403:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, rating)
+                }
+        }
+
+        return await res.json() as RatingRatingResponse
+    }
+}
+
+/**
+ * Internal Interfaces
+ */
+
+export interface StableHordeRatingsInitOptions {
+    /** The default token to use for requests */
+    default_token?: string,
+    /** The base api domain + route to use for requests */
+    api_route?: string,
+}
+
+/**
+ * API Interfaces
+ */
+
+export interface RatingsDatasetData {
+    id?: string,
+    name?: string,
+    description?: string
+}
+
+export interface RatingsDatasetResponse {
+    datasets?: RatingsDatasetData[]
+}
+
+export interface RatingsTeamsResponse {
+    teams?: Record<string, any>[]
+}
+
+export interface RatingsNewRating {
+    id?: string,
+    url?: string,
+    dataset_id?: string
+}
+
+export interface RatingRequestError {
+    /** The error message for this status code. */
+    message: string
+}
+
+export interface RatingRatingPayload {
+    rating: number
+}
+
+export interface RatingRatingResponse {
+    message: string
 }
