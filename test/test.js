@@ -1,7 +1,6 @@
 const StableHorde = require( ".." )
 
-//main()
-rating_test()
+main()
 
 console.log(StableHorde.ModelGenerationInputPostProcessingTypes)
 
