@@ -1,6 +1,7 @@
 const StableHorde = require( ".." )
 
-main()
+//main()
+rating_test()
 
 console.log(StableHorde.ModelGenerationInputPostProcessingTypes)
 
@@ -20,4 +21,14 @@ async function main() {
     const check = await stable_horde.getGenerationCheck(generation.id)
     console.log(check)
     console.log(stable_horde.cache.generations_check)
+}
+
+async function rating_test() {
+    const stable_horde = new StableHorde({
+        cache_interval: 1000 * 10,
+        cache: {
+            generations_check: 1000 * 30
+        }
+    })
+    const rating = await stable_horde.ratings.getNewRating(undefined, {token: "FxYt31IIp3tfXV1AMGvT3Q"})
 }

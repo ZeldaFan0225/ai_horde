@@ -124,7 +124,7 @@ class StableHorde {
 
         this.#api_route = options?.api_route ?? "https://stablehorde.net/api/v2"
         this.ratings = new StableHordeRatings({
-            api_route: options?.ratings_api_route ?? "https://ratings.droom.cloud/api/",
+            api_route: options?.ratings_api_route ?? "https://ratings.droom.cloud/api/v1",
             default_token: options?.default_token
         })
     }
@@ -2182,7 +2182,7 @@ class StableHordeRatings {
     #api_route: string
     constructor(options: StableHordeRatingsInitOptions) {
         this.#default_token = options?.default_token
-        this.#api_route = options?.api_route ?? "https://ratings.droom.cloud/api/"
+        this.#api_route = options?.api_route ?? "https://ratings.droom.cloud/api/v1"
     }
 
     #getToken(token?: string): string {
@@ -2221,6 +2221,7 @@ class StableHordeRatings {
      */
     async getNewRating(dataset_id?: string, options?: {token?: string}): Promise<RatingsNewRating> {
         const t = this.#getToken(options?.token)
+        console.log(`${this.#api_route}/rating/new${dataset_id ? `/${dataset_id}` : ""}`)
         const req = Centra(`${this.#api_route}/rating/new${dataset_id ? `/${dataset_id}` : ""}`, "GET")
         .header("apikey", t)
         const res = await req.send()
@@ -2315,5 +2316,6 @@ export interface RatingRatingPayload {
 }
 
 export interface RatingRatingResponse {
+    reward: number,
     message: string
 }
