@@ -1,6 +1,6 @@
 const StableHorde = require( ".." )
 
-main()
+//main()
 
 console.log(StableHorde.ModelGenerationInputPostProcessingTypes)
 

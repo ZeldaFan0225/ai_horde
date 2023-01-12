@@ -1,6 +1,7 @@
 import SuperMap from "@thunder04/supermap"
 import Centra from "centra"
 import { IncomingMessage } from "http"
+import { readFileSync } from "fs"
 
 /*
  * https://github.com/db0/AI-Horde/blob/main/CHANGELOG.md
@@ -93,9 +94,11 @@ class StableHorde {
     #cache_config: StableHordeCacheConfiguration
     #cache: StableHordeCache
     #api_route: string
+    #client_agent: string
     ratings: StableHordeRatings
     constructor(options?: StableHordeInitOptions) {
         this.#default_token = options?.default_token
+        this.#api_route = options?.api_route ?? "https://stablehorde.net/api/v2"
         this.#cache_config = {
             users: options?.cache?.users ?? 0,
             generations_check: options?.cache?.generations_check ?? 0,
@@ -121,11 +124,19 @@ class StableHorde {
             workers: this.#cache_config.workers ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.workers}) : undefined,
             teams: this.#cache_config.teams ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.teams}) : undefined,
         }
+        
+        try {
+            let pckg = JSON.parse(readFileSync("./package.json", "utf-8"))
+            this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:Zelda_Fan#0225`
+        } catch {
+            this.#client_agent = options?.client_agent ?? `@zeldafan0225/stable_horde:Version_Unknown:Zelda_Fan#0225`
+        }
 
-        this.#api_route = options?.api_route ?? "https://stablehorde.net/api/v2"
+        
         this.ratings = new StableHordeRatings({
             api_route: options?.ratings_api_route ?? "https://ratings.droom.cloud/api/v1",
-            default_token: options?.default_token
+            default_token: options?.default_token,
+            client_agent: this.#client_agent
         })
     }
 
@@ -158,6 +169,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/find_user`, "GET")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
@@ -188,6 +200,7 @@ class StableHorde {
         const temp = !options?.force && this.#cache.users?.get(id.toString() + fields_string)
         if(temp) return temp
         const req = Centra(`${this.#api_route}/users/${id}`, "GET")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
@@ -218,6 +231,7 @@ class StableHorde {
         const temp = !options?.force && this.#cache.teams?.get(id + fields_string)
         if(temp) return temp as Pick<TeamDetailsStable, T>
         const req = Centra(`${this.#api_route}/teams/${id}`, "GET")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
@@ -257,6 +271,7 @@ class StableHorde {
         if(temp) return temp as Pick<WorkerDetailsStable, T>
 
         const req = Centra(`${this.#api_route}/workers/${id}`, "GET")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
@@ -293,6 +308,7 @@ class StableHorde {
         const temp = !options?.force && this.#cache.generations_check?.get(id + fields_string)
         if(temp) return temp as Pick<RequestStatusCheck, T>
         const req = Centra(`${this.#api_route}/generate/check/${id}`, "GET")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
@@ -320,6 +336,7 @@ class StableHorde {
         const temp = !options?.force && this.#cache.generations_status?.get(id)
         if(temp) return temp as Pick<RequestStatusStable, T>
         const req = Centra(`${this.#api_route}/generate/status/${id}`, "GET")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
@@ -344,6 +361,7 @@ class StableHorde {
         const temp = !options?.force && this.#cache.interrogations_status?.get(id + fields_string)
         if(temp) return temp as Pick<InterrogationStatus, T>
         const req = Centra(`${this.#api_route}/interrogate/status/${id}`, "GET")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
@@ -360,6 +378,7 @@ class StableHorde {
      */
     async getHeartbeat(): Promise<true> {
         await Centra(`${this.#api_route}/status/heartbeat`, "GET")
+        .header("Client-Agent", this.#client_agent)
         .send()
 
         return true
@@ -378,6 +397,7 @@ class StableHorde {
         const temp = !options?.force && this.#cache.models?.get("CACHE-MODELS" + fields_string)
         if(temp) return temp as Pick<ActiveModel, T>[]
         const req = Centra(`${this.#api_route}/status/models`, "GET")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
@@ -402,6 +422,7 @@ class StableHorde {
         const temp = !options?.force && this.#cache.modes?.get("CACHE-MODES" + fields_string)
         if(temp) return temp as Pick<HordeModes, T>
         const req = Centra(`${this.#api_route}/status/modes`, "GET")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
@@ -424,6 +445,7 @@ class StableHorde {
         const temp = !options?.force && this.#cache.news?.get("CACHE-NEWS" + fields_string)
         if(temp) return temp as Pick<Newspiece, T>[]
         const req = Centra(`${this.#api_route}/status/news`, "GET")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
@@ -445,6 +467,7 @@ class StableHorde {
         const temp = !options?.force && this.#cache.performance?.get("CACHE-PERFORMANCE" + fields_string)
         if(temp) return temp as Pick<HordePerformanceStable, T>
         const req = Centra(`${this.#api_route}/status/performance`, "GET")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
@@ -463,6 +486,7 @@ class StableHorde {
     >(options?: {fields?: T[]}): Promise<Pick<UserDetailsStable, T>[]> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const req = Centra(`${this.#api_route}/users`, "GET")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
         const data =  await res.json() as Pick<UserDetailsStable, T>[]
@@ -483,6 +507,7 @@ class StableHorde {
     >(options?: {fields?: T[]}): Promise<Pick<WorkerDetailsStable, T>[]> {
         const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
         const req = Centra(`${this.#api_route}/workers`, "GET")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
         const data =  await res.json() as Pick<WorkerDetailsStable, T>[]
@@ -539,6 +564,7 @@ class StableHorde {
     >(options?: {fields?: T[]}): Promise<Pick<TeamDetailsStable, T>[]> {
         const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
         const req = Centra(`${this.#api_route}/teams`, "GET")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
@@ -569,6 +595,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/generate/async`, "POST")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(generation_data, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -605,6 +632,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/generate/rate/${generation_id}`, "POST")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(rating, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -637,6 +665,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/generate/pop`, "POST")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(pop_input, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -667,6 +696,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/generate/submit`, "POST")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(generation_submit, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -702,6 +732,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/interrogate/async`, "POST")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(interrogate_payload, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -735,6 +766,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/interrogate/pop`, "POST")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(pop_input, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -767,6 +799,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/interrogate/submit`, "POST")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(interrogation_submit, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -798,6 +831,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/kudos/transfer`, "POST")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(transfer_data, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -829,6 +863,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/teams`, "POST")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(create_payload, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -861,6 +896,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/status/modes`, "PUT")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(modes, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -891,6 +927,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/users/${id}`, "PUT")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(update_payload, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -928,6 +965,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/workers/${id}`, "PUT")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(update_payload, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -961,6 +999,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/teams/${id}`, "PATCH")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(update_payload, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -992,6 +1031,7 @@ class StableHorde {
     >(id: string, options?: {fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const req = Centra(`${this.#api_route}/generate/status/${id}`, "DELETE")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
@@ -1019,6 +1059,7 @@ class StableHorde {
     >(id: string, options?: {fields?: T[]}): Promise<Pick<InterrogationStatus, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const req = Centra(`${this.#api_route}/interrogate/status/${id}`, "DELETE")
+        .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
@@ -1050,6 +1091,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/workers/${id}`, "DELETE")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
@@ -1083,6 +1125,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/teams/${id}`, "DELETE")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
@@ -1115,6 +1158,7 @@ class StableHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/operations/ipaddr`, "DELETE")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(delete_payload, "json")
         if(fields_string) req.header('X-Fields', fields_string)
@@ -1152,7 +1196,9 @@ export interface StableHordeInitOptions {
     /** The base api domain + route to use for requests */
     api_route?: string,
     /** The ratings api domain + route to use for requests */
-    ratings_api_route?: string
+    ratings_api_route?: string,
+    /** The client agent to pass in the requests. */
+    client_agent?: string,
 }
 
 export interface StableHordeCacheConfiguration {
@@ -2180,9 +2226,11 @@ class StableHordeRatings {
 
     #default_token?: string
     #api_route: string
+    #client_agent: string
     constructor(options: StableHordeRatingsInitOptions) {
-        this.#default_token = options?.default_token
-        this.#api_route = options?.api_route ?? "https://ratings.droom.cloud/api/v1"
+        this.#default_token = options.default_token
+        this.#api_route = options.api_route ?? "https://ratings.droom.cloud/api/v1"
+        this.#client_agent = options.client_agent
     }
 
     #getToken(token?: string): string {
@@ -2195,6 +2243,7 @@ class StableHordeRatings {
      */
     async getDatasets(): Promise<RatingsDatasetResponse> {
         const req = Centra(`${this.#api_route}/datasets`, "GET")
+        .header("Client-Agent", this.#client_agent)
         const res = await req.send()
 
         const data = await res.json() as RatingsDatasetResponse
@@ -2207,6 +2256,7 @@ class StableHordeRatings {
      */
     async getTeams(): Promise<RatingsTeamsResponse> {
         const req = Centra(`${this.#api_route}/teams`, "GET")
+        .header("Client-Agent", this.#client_agent)
         const res = await req.send()
 
         const data = await res.json() as RatingsTeamsResponse
@@ -2222,6 +2272,7 @@ class StableHordeRatings {
     async getNewRating(dataset_id?: string, options?: {token?: string}): Promise<RatingsNewRating> {
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/rating/new${dataset_id ? `/${dataset_id}` : ""}`, "GET")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         const res = await req.send()
         
@@ -2253,6 +2304,7 @@ class StableHordeRatings {
     async postRating(image_id: string, rating: RatingRatingPayload, options?: {token?: string}): Promise<RatingRatingResponse> {
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/rating/${image_id}`, "POST")
+        .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(rating, "json")
         const res = await req.send()
@@ -2279,6 +2331,8 @@ export interface StableHordeRatingsInitOptions {
     default_token?: string,
     /** The base api domain + route to use for requests */
     api_route?: string,
+    /** The client agent to pass in the requests. */
+    client_agent: string,
 }
 
 /**
