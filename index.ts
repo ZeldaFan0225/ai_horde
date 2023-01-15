@@ -1537,7 +1537,9 @@ export interface GenerationStable extends Generation {
     /** The seed which generated this image */
     seed?: string,
     /** The ID for this image */
-    id?: string
+    id?: string,
+    /** When true this image has been censored by the worker's safety filter. */
+    censored?: boolean
 }
 
 export interface RequestAsync {
@@ -2220,7 +2222,20 @@ export interface AestheticRating {
 
 
 
+enum RatingArtifactsRatings {
+    "FLAWLESS",
+    "LITTLE_FLAWS",
+    "SOME_FLAWS",
+    "OBVIOUS_FLAWS",
+    "HARMFUL_FLAWS",
+    "GARBAGE"
+}
+
+
 class StableHordeRatings {
+    static readonly RatingArtifactsRatings = RatingArtifactsRatings;
+    readonly RatingArtifactsRatings = StableHordeRatings.RatingArtifactsRatings;
+
     static readonly APIError = APIError;
     readonly APIError = StableHorde.APIError;
 
@@ -2365,7 +2380,26 @@ export interface RatingRequestError {
 }
 
 export interface RatingRatingPayload {
-    rating: number
+    /**
+     * The aesthetic rating for this image. How much do you like this image subjectively and in isolation from comparison with other images or with its own prompt.
+     * @example 5
+     * @minimum 1
+     * @maximum 10
+     */
+    rating: number,
+    /**
+     * The artifacts rating for this image.
+     * 0 for flawless generation that perfectly fits to the prompt.
+     * 1 for small, hardly recognizable flaws.
+     * 2 small flaws that can easily be spotted, but don not harm the aesthetic experience.
+     * 3 for flaws that look obviously wrong, but only mildly harm the aesthetic experience.
+     * 4 for flaws that look obviously wrong & significantly harm the aesthetic experience.
+     * 5 for flaws that make the image look like total garbage
+     * @example 1
+     * @minimum 0
+     * @maximum 5
+     */
+    artifacts: typeof StableHordeRatings.RatingArtifactsRatings[keyof typeof StableHordeRatings.RatingArtifactsRatings]
 }
 
 export interface RatingRatingResponse {
