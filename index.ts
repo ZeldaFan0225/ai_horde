@@ -576,7 +576,82 @@ class StableHorde {
         return data
     }
 
+    /**
+     * A List of filters
+     * @param filter_type - The type of filter to show
+     * @param options.token - The sending users API key; User must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails[] - Array of Filter Details
+     */
+    async getFilters<
+        T extends keyof FilterDetails
+    >(filter_type?: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>[]> {
+        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/filters`, "GET")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        if(fields_string) req.header('X-Fields', fields_string)
+        if(filter_type) req.header("filter_type", filter_type)
+        const res = await req.send()
+
+        const data = await res.json() as Pick<FilterDetails, T>[]
+        return data
+    }
+
+    /**
+     * Gets Details for a specific filter
+     * @param filter_id - The filter to show
+     * @param options.token - The sending users API key; User must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails - Filter Details
+     */
+    async getFilter<
+        T extends keyof FilterDetails
+    >(filter_id?: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
+        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/filters/${filter_id}`, "GET")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        const data = await res.json() as Pick<FilterDetails, T>
+        return data
+    }
+
     /* POST REQUESTS */
+    
+    
+    /**
+     * Transfer Kudos to a registered user
+     * @param check_data - The prompt to check
+     * @param options.token - The sending users API key; User must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterPromptSuspicion
+     */
+    async postFilters<
+        T extends keyof FilterPromptSuspicion
+    >(check_data: FilterCheckPayload, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterPromptSuspicion, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/filters`, "POST")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        .body(check_data, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, check_data)
+                }
+        }
+
+        return await res.json() as Pick<FilterPromptSuspicion, T>
+    }
     
     /**
      * Initiate an Asynchronous request to generate images
@@ -995,7 +1070,7 @@ class StableHorde {
      */
     async updateTeam<
         T extends keyof ModifyTeam
-    >(update_payload: ModifyTeamInput, id: string, options?: {token?: string, fields?: T[]}): Promise<ModifyTeam> {
+    >(update_payload: ModifyTeamInput, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<ModifyTeam, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/teams/${id}`, "PATCH")
@@ -1017,6 +1092,69 @@ class StableHorde {
 
         if(this.#cache_config.teams) this.#cache.teams?.delete(id)
         return await res.json() as Pick<ModifyTeam, T>
+    }
+    
+    
+    /**
+     * Updates an existing regex filer
+     * @param update_payload - The data to update the filter with
+     * @param options.token - The Moderator API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails
+     */
+    async updateFilter<
+        T extends keyof FilterDetails
+    >(update_payload: PatchExistingFilter, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/filters/${id}`, "PATCH")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        .body(update_payload, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 404:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, update_payload)
+                }
+        }
+
+        return await res.json() as Pick<FilterDetails, T>
+    }
+    
+    
+    /**
+     * Adds a new regex filer
+     * @param create_payload - The data to create the filter with
+     * @param options.token - The Moderator API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails
+     */
+    async addFilter<
+        T extends keyof FilterDetails
+    >(create_payload: PutNewFilter, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/filters`, "PUT")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        .body(create_payload, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, create_payload)
+                }
+        }
+
+        return await res.json() as Pick<FilterDetails, T>
     }
     
     /**
@@ -1150,7 +1288,7 @@ class StableHorde {
      * @param ip - The IP address
      * @param options.token - Moderators API key
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns DeletedTeam
+     * @returns SimpleResponse
      */
     async deleteIPTimeout<
         T extends keyof SimpleResponse
@@ -1175,6 +1313,37 @@ class StableHorde {
         const data = await res.json() as Pick<SimpleResponse, T>
         return data
     }
+    
+    
+    /**
+     * Delete a regex filter
+     * @param filter_id - The ID of the filter to delete
+     * @param options.token - The sending users API key; User must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async deleteFilter<
+        T extends keyof SimpleResponse
+    >(filter_id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<SimpleResponse, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/filters/${filter_id}`, "DELETE")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 403:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
+                }
+        }
+        const data = await res.json() as Pick<SimpleResponse, T>
+        return data
+    }
 }
 
 // @ts-expect-error
@@ -1182,6 +1351,7 @@ export = StableHorde
 
 
 /* INTERNAL TYPES */
+
 
 export interface StableHordeInitOptions {
     /** The configuration for caching results */
@@ -2205,7 +2375,75 @@ export interface AestheticRating {
     rating: number
 }
 
+export interface FilterCheckPayload {
+    prompt: string
+}
 
+export interface FilterPromptSuspicion {
+    /** Rates how suspicious the provided prompt is. A suspicion over 2 means it would be blocked. */
+    suspicion: string,
+    matches: string[]
+}
+
+export interface FilterDetails {
+    /** The UUID of this filter */
+    id: string,
+    /**
+     * The regex for this filter.
+     * @example ac.*
+     */
+    regex: string,
+    /**
+     * The integer defining this filter type
+     * @minimum 10
+     * @maximum 29
+     */
+    filter_type: number,
+    /**
+     * Description about this regex
+     */
+    description?: string,
+    /**
+     * The moderator which added or last updated this regex
+     */
+    user: string
+}
+
+export interface PatchExistingFilter {
+    /**
+     * The regex for this filter.
+     * @example ac.*
+     */
+    regex?: string,
+    /**
+     * The integer defining this filter type
+     * @minimum 10
+     * @maximum 29
+     */
+    filter_type?: number,
+    /**
+     * Description about this regex
+     */
+    description?: string
+}
+
+export interface PutNewFilter {
+    /**
+     * The regex for this filter.
+     * @example ac.*
+     */
+    regex: string,
+    /**
+     * The integer defining this filter type
+     * @minimum 10
+     * @maximum 29
+     */
+    filter_type: number,
+    /**
+     * Description about this regex
+     */
+    description: string
+}
 
 
 
