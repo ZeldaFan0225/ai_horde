@@ -2399,7 +2399,7 @@ export interface RatingRatingPayload {
      * @minimum 0
      * @maximum 5
      */
-    artifacts: typeof StableHordeRatings.RatingArtifactsRatings[keyof typeof StableHordeRatings.RatingArtifactsRatings]
+    artifacts?: typeof StableHordeRatings.RatingArtifactsRatings[keyof typeof StableHordeRatings.RatingArtifactsRatings]
 }
 
 export interface RatingRatingResponse {
