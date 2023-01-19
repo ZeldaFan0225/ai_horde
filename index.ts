@@ -1906,6 +1906,8 @@ export interface UserKudosDetails {
     received?: number,
     /** The amount of Kudos this user has received from recurring rewards. */
     recurring?: number
+    /** The amount of Kudos this user has received from rating images. */
+    awarded?: number
 }
 
 export interface MonthlyKudos {
