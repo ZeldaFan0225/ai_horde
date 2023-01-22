@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / ActiveModelLite
+[@zeldafan0225/stable_horde](../modules.md) / [Exports](../modules.md) / ActiveModelLite
 
 # Interface: ActiveModelLite
 
@@ -25,7 +25,7 @@ How many workers in this horde are running this model.
 
 #### Defined in
 
-[index.ts:2092](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2092)
+[index.ts:2100](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2100)
 
 ___
 
@@ -37,4 +37,4 @@ The name of a model available by workers in this horde.
 
 #### Defined in
 
-[index.ts:2090](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2090)
+[index.ts:2098](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2098)

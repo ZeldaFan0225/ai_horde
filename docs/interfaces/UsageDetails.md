@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / UsageDetails
+[@zeldafan0225/stable_horde](../modules.md) / [Exports](../modules.md) / UsageDetails
 
 # Interface: UsageDetails
 
@@ -24,4 +24,4 @@ How many images this user has requested
 
 #### Defined in
 
-[index.ts:1932](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1932)
+[index.ts:1940](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1940)

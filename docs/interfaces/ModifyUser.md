@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / ModifyUser
+[@zeldafan0225/stable_horde](../modules.md) / [Exports](../modules.md) / ModifyUser
 
 # Interface: ModifyUser
 
@@ -26,7 +26,7 @@ The request concurrency this user has after this request
 
 #### Defined in
 
-[index.ts:1951](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1951)
+[index.ts:1959](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1959)
 
 ___
 
@@ -38,7 +38,7 @@ The user's new moderator status.
 
 #### Defined in
 
-[index.ts:1957](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1957)
+[index.ts:1965](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1965)
 
 ___
 
@@ -50,7 +50,7 @@ The user's new monthly kudos total
 
 #### Defined in
 
-[index.ts:1963](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1963)
+[index.ts:1971](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1971)
 
 ___
 
@@ -62,7 +62,7 @@ The new total Kudos this user has after this request
 
 #### Defined in
 
-[index.ts:1949](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1949)
+[index.ts:1957](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1957)
 
 ___
 
@@ -74,7 +74,7 @@ The user's new public_workers status.
 
 #### Defined in
 
-[index.ts:1959](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1959)
+[index.ts:1967](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1967)
 
 ___
 
@@ -86,7 +86,7 @@ The user's new trusted status
 
 #### Defined in
 
-[index.ts:1965](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1965)
+[index.ts:1973](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1973)
 
 ___
 
@@ -98,7 +98,7 @@ Multiplies the amount of kudos lost when generating images.
 
 #### Defined in
 
-[index.ts:1953](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1953)
+[index.ts:1961](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1961)
 
 ___
 
@@ -110,7 +110,7 @@ The user's new username.
 
 #### Defined in
 
-[index.ts:1961](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1961)
+[index.ts:1969](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1969)
 
 ___
 
@@ -122,4 +122,4 @@ This userWhether this user has been invited to join a worker to the horde and ho
 
 #### Defined in
 
-[index.ts:1955](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1955)
+[index.ts:1963](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1963)

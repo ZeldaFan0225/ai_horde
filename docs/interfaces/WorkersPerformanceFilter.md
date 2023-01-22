@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / WorkersPerformanceFilter
+[@zeldafan0225/stable_horde](../modules.md) / [Exports](../modules.md) / WorkersPerformanceFilter
 
 # Interface: WorkersPerformanceFilter
 
@@ -21,7 +21,7 @@ Worker should support img2img
 
 #### Defined in
 
-[index.ts:1982](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1982)
+[index.ts:1990](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1990)
 
 ___
 
@@ -33,7 +33,7 @@ List of models workers should have (at least one)
 
 #### Defined in
 
-[index.ts:1986](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1986)
+[index.ts:1994](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1994)
 
 ___
 
@@ -49,7 +49,7 @@ Minimal value of performance for worker to have
 
 #### Defined in
 
-[index.ts:1973](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1973)
+[index.ts:1981](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1981)
 
 ___
 
@@ -65,4 +65,4 @@ Minimal filtered workers amount to resort to the list of first `minLength` worke
 
 #### Defined in
 
-[index.ts:1978](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1978)
+[index.ts:1986](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1986)

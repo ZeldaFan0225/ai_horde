@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / InterrogationStatus
+[@zeldafan0225/stable_horde](../modules.md) / [Exports](../modules.md) / InterrogationStatus
 
 # Interface: InterrogationStatus
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[index.ts:2343](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2343)
+[index.ts:2351](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2351)
 
 ___
 
@@ -29,4 +29,4 @@ title: Interrogation State
 
 #### Defined in
 
-[index.ts:2342](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2342)
+[index.ts:2350](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2350)

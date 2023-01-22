@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / ModifyTeam
+[@zeldafan0225/stable_horde](../modules.md) / [Exports](../modules.md) / ModifyTeam
 
 # Interface: ModifyTeam
 
@@ -20,7 +20,7 @@ The ID of the team
 
 #### Defined in
 
-[index.ts:2158](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2158)
+[index.ts:2166](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2166)
 
 ___
 
@@ -32,7 +32,7 @@ The Info of the team
 
 #### Defined in
 
-[index.ts:2162](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2162)
+[index.ts:2170](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2170)
 
 ___
 
@@ -44,4 +44,4 @@ The Name of the team
 
 #### Defined in
 
-[index.ts:2160](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2160)
+[index.ts:2168](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2168)
