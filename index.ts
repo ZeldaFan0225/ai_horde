@@ -2494,52 +2494,70 @@ class StableHordeRatings {
 
     /**
      * Display all datasets
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns RatingsDatasetResponse - The datasets
      */
-    async getDatasets(): Promise<RatingsDatasetResponse> {
+    async getDatasets<
+        T extends keyof DatasetGetResponse
+    >(options?: {fields?: T[]}): Promise<Pick<DatasetGetResponse, T>[]> {
+        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
         const req = Centra(`${this.#api_route}/datasets`, "GET")
         .header("Client-Agent", this.#client_agent)
+        if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
-        const data = await res.json() as RatingsDatasetResponse
+        const data = await res.json() as Pick<DatasetGetResponse, T>[]
         return data
     }
 
     /**
      * Display all public teams
+     * @param options.fields - Array of fields that will be included in the returned data
      * @returns RatingsTeamsResponse - The datasets
      */
-    async getTeams(): Promise<RatingsTeamsResponse> {
+    async getTeams<
+        T extends keyof TeamsGetResponse
+    >(options?: {fields?: T[]}): Promise<Pick<TeamsGetResponse, T>[]> {
+        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
         const req = Centra(`${this.#api_route}/teams`, "GET")
         .header("Client-Agent", this.#client_agent)
+        if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
-        const data = await res.json() as RatingsTeamsResponse
+        const data = await res.json() as Pick<TeamsGetResponse, T>[]
         return data
     }
 
     /**
      * Retrieve an image to rate from the default dataset
-     * @param dataset_id - The ID of the dataset to get an image from
+     * @param image_options.dataset_id - The ID of the dataset to get an image from
+     * @param image_options.model_name - The model name to get an image from
      * @param options.token - The token of the requesting user
-     * @returns RatingsNewRating - An images data to rate
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns DatasetImagePopResponse - An images data to rate
      */
-    async getNewRating(dataset_id?: string, options?: {token?: string}): Promise<RatingsNewRating> {
+    async getNewRating<
+        T extends keyof DatasetImagePopResponse
+    >(image_options?: {dataset_id: string, model_name?: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<DatasetImagePopResponse, T>> {
+        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
         const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/rating/new${dataset_id ? `/${dataset_id}` : ""}`, "GET")
+        const req = Centra(`${this.#api_route}/rating/new${image_options?.dataset_id ? `/${image_options.dataset_id}${image_options?.model_name ? `/${image_options.model_name}` : ""}` : ""}`, "GET")
         .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
+        if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
         
         switch(res.statusCode) {
+            case 400:
             case 401:
             case 403:
+            case 500:
                 {
                     throw new this.APIError(await res.json().then(res => res), res.coreRes, {})
                 }
         }
 
-        const data = await res.json() as RatingsNewRating
+        const data = await res.json() as Pick<DatasetImagePopResponse, T>
         return data
     }
 
@@ -2556,12 +2574,16 @@ class StableHordeRatings {
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns InterrogationPopPayload
      */
-    async postRating(image_id: string, rating: RatingRatingPayload, options?: {token?: string}): Promise<RatingRatingResponse> {
+    async postRating<
+        T extends keyof RatePostResponse
+    >(image_id: string, rating: RatePostInput, options?: {token?: string, fields?: T[]}): Promise<Pick<RatePostResponse, T>> {
+        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/rating/${image_id}`, "POST")
         .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(rating, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
 
         switch(res.statusCode) {
@@ -2573,7 +2595,7 @@ class StableHordeRatings {
                 }
         }
 
-        return await res.json() as RatingRatingResponse
+        return await res.json() as Pick<RatePostResponse, T>
     }
 }
 
@@ -2594,23 +2616,62 @@ export interface StableHordeRatingsInitOptions {
  * API Interfaces
  */
 
-export interface RatingsDatasetData {
+export interface DatasetGetResponse {
+    /**
+     * The unique identifier for this dataset
+     * @example 00000000-0000-0000-0000-000000000000
+     */
     id?: string,
+    /**
+     * The name of this dataset
+     * @example My Dataset
+     */
     name?: string,
-    description?: string
+    /**
+     * The description of this dataset
+     * @example This is a dataset of images of cats
+     */
+    description?: string,
+    /**
+     * The number of images in this dataset
+     * @example 100
+     */
+    image_count?: number
 }
 
-export interface RatingsDatasetResponse {
-    datasets?: RatingsDatasetData[]
-}
-
-export interface RatingsTeamsResponse {
-    teams?: Record<string, any>[]
-}
-
-export interface RatingsNewRating {
+export interface TeamsGetResponse {
+    /**
+     * The unique identifier for this team
+     * @example 00000000-0000-0000-0000-000000000000
+     */
     id?: string,
+    /**
+     * The name of this team
+     * @example My Team
+     */
+    team_name?: string,
+    /**
+     * Whether this team is private or not
+     * @example false
+     */
+    is_private?: boolean
+}
+
+export interface DatasetImagePopResponse {
+    /** 
+     * The UUID of the image to rate
+     * @example 00000000-0000-0000-0000-000000000000
+     */
+    id?: string,
+    /** 
+     * The URL from which to download the image
+     * @example https://cdn.droom.cloud/00000000-0000-0000-0000-000000000000.webp
+     */
     url?: string,
+    /**
+     * The UUID of the dataset in which this image belongs
+     * @example 00000000-0000-0000-0000-000000000000
+     */
     dataset_id?: string
 }
 
@@ -2619,7 +2680,7 @@ export interface RatingRequestError {
     message: string
 }
 
-export interface RatingRatingPayload {
+export interface RatePostInput {
     /**
      * The aesthetic rating for this image. How much do you like this image subjectively and in isolation from comparison with other images or with its own prompt.
      * @example 5
@@ -2642,7 +2703,16 @@ export interface RatingRatingPayload {
     artifacts?: typeof StableHordeRatings.RatingArtifactsRatings[keyof typeof StableHordeRatings.RatingArtifactsRatings]
 }
 
-export interface RatingRatingResponse {
+export interface RatePostResponse {
+    /**
+     * The amount of kudos awarded for this rating
+     * @example 5
+     * @minimum 1
+     */
     reward: number,
+    /**
+     * Any extra information about the submitted rating
+     * @example Rating submitted
+     */
     message: string
 }
