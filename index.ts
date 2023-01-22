@@ -2382,7 +2382,7 @@ export interface FilterCheckPayload {
 }
 
 export interface FilterPromptSuspicion {
-    /** Rates how suspicious the provided prompt is. A suspicion over 2 means it would be blocked. */
+    /** Rates how suspicious the provided prompt is. A suspicion of 2 means it would be blocked. */
     suspicion: string,
     matches: string[]
 }
