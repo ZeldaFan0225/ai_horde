@@ -1,7 +1,7 @@
 {
   "name": "@zeldafan0225/stable_horde",
   "types": "./index.d.ts",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "A package to interact with the stable horde API",
   "bugs": "https://github.com/ZeldaFan0225/stable_horde/issues",
   "author": "ZeldaFan0225 (https://github.com/ZeldaFan0225)",
@@ -14,16 +14,21 @@
   "keywords": [
     "stable horde",
     "stable diffusion",
-    "image generation"
+    "image generation",
+    "stablehorde",
+    "stablediffusion"
   ],
   "scripts": {
     "build": "node build.mjs && tsc --emitDeclarationOnly",
     "prepack": "npm run build",
-    "test": "node test/test.js"
+    "test": "node test/test.js",
+    "docs": "typedoc"
   },
   "devDependencies": {
     "@types/centra": "^2.2.0",
     "@types/node": "^18.11.3",
+    "typedoc": "^0.23.24",
+    "typedoc-plugin-markdown": "^3.14.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
