@@ -27,7 +27,7 @@ The amount of forms to pop at the same time
 
 #### Defined in
 
-[index.ts:2288](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2288)
+[index.ts:2288](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2288)
 
 ___
 
@@ -43,7 +43,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:2293](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2293)
+[index.ts:2293](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2293)
 
 ___
 
@@ -55,7 +55,7 @@ The type of interrogation this worker can fulfull
 
 #### Defined in
 
-[index.ts:2283](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2283)
+[index.ts:2283](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2283)
 
 ___
 
@@ -67,7 +67,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:2279](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2279)
+[index.ts:2279](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2279)
 
 ___
 
@@ -79,7 +79,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:2281](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2281)
+[index.ts:2281](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2281)
 
 ___
 
@@ -103,4 +103,4 @@ How many threads this worker is running. This is used to accurately estimate the
 
 #### Defined in
 
-[index.ts:2300](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2300)
+[index.ts:2300](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2300)

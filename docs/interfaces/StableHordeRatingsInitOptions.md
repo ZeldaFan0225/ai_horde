@@ -22,7 +22,7 @@ The base api domain + route to use for requests
 
 #### Defined in
 
-[index.ts:2618](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2618)
+[index.ts:2618](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2618)
 
 ___
 
@@ -34,7 +34,7 @@ The client agent to pass in the requests.
 
 #### Defined in
 
-[index.ts:2620](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2620)
+[index.ts:2620](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2620)
 
 ___
 
@@ -46,4 +46,4 @@ The default token to use for requests
 
 #### Defined in
 
-[index.ts:2616](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2616)
+[index.ts:2616](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2616)
