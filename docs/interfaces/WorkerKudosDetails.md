@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / WorkerKudosDetails
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / WorkerKudosDetails
 
 # Interface: WorkerKudosDetails
 
@@ -19,7 +19,7 @@ How much Kudos this worker has received for generating images
 
 #### Defined in
 
-[index.ts:2056](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2056)
+[index.ts:2064](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2064)
 
 ___
 
@@ -31,4 +31,4 @@ How much Kudos this worker has received for staying online longer
 
 #### Defined in
 
-[index.ts:2058](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2058)
+[index.ts:2066](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2066)

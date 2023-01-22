@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / GenerationPayload
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / GenerationPayload
 
 # Interface: GenerationPayload
 
@@ -22,7 +22,7 @@ The UUID for this image generation
 
 #### Defined in
 
-[index.ts:1754](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1754)
+[index.ts:1762](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1762)
 
 ___
 
@@ -34,7 +34,7 @@ Which of the available models to use for this request
 
 #### Defined in
 
-[index.ts:1757](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1757)
+[index.ts:1765](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1765)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[index.ts:1752](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1752)
+[index.ts:1760](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1760)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[index.ts:1755](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1755)
+[index.ts:1763](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1763)
 
 ___
 
@@ -66,4 +66,4 @@ The Base64-encoded webp to use for img2img
 
 #### Defined in
 
-[index.ts:1759](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1759)
+[index.ts:1767](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1767)

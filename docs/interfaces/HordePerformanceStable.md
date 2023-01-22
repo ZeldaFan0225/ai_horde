@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / HordePerformanceStable
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / HordePerformanceStable
 
 # Interface: HordePerformanceStable
 
@@ -31,7 +31,7 @@ How many workers are actively processing image interrogations in this Horde in t
 
 #### Defined in
 
-[index.ts:2117](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2117)
+[index.ts:2125](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2125)
 
 ___
 
@@ -43,7 +43,7 @@ How many worker threads are actively processing image interrogation in this Hord
 
 #### Defined in
 
-[index.ts:2119](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2119)
+[index.ts:2127](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2127)
 
 ___
 
@@ -55,7 +55,7 @@ How many megapixelsteps this Horde generated in the last minute
 
 #### Defined in
 
-[index.ts:2113](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2113)
+[index.ts:2121](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2121)
 
 ___
 
@@ -67,7 +67,7 @@ The amount of image interrogations waiting and processing currently in this Hord
 
 #### Defined in
 
-[index.ts:2115](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2115)
+[index.ts:2123](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2123)
 
 ___
 
@@ -79,7 +79,7 @@ The amount of megapixelsteps in waiting and processing requests currently in thi
 
 #### Defined in
 
-[index.ts:2111](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2111)
+[index.ts:2119](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2119)
 
 ___
 
@@ -95,7 +95,7 @@ The amount of waiting and processing requests currently in this Horde
 
 #### Defined in
 
-[index.ts:2124](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2124)
+[index.ts:2132](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2132)
 
 ___
 
@@ -111,7 +111,7 @@ How many worker threads are actively processing prompt generations in this Horde
 
 #### Defined in
 
-[index.ts:2128](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2128)
+[index.ts:2136](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2136)
 
 ___
 
@@ -127,4 +127,4 @@ How many workers are actively processing image generations in this Horde in the 
 
 #### Defined in
 
-[index.ts:2126](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2126)
+[index.ts:2134](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2134)

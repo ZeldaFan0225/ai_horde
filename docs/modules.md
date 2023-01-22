@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](readme.md) / Exports
+[@zeldafan0225/stable_horde](README.md) / Exports
 
 # @zeldafan0225/stable_horde
 
@@ -17,6 +17,8 @@
 - [ContributionsDetails](interfaces/ContributionsDetails.md)
 - [ContributionsDetailsStable](interfaces/ContributionsDetailsStable.md)
 - [CreateTeamInput](interfaces/CreateTeamInput.md)
+- [DatasetGetResponse](interfaces/DatasetGetResponse.md)
+- [DatasetImagePopResponse](interfaces/DatasetImagePopResponse.md)
 - [DeleteTimeoutIPInput](interfaces/DeleteTimeoutIPInput.md)
 - [DeletedTeam](interfaces/DeletedTeam.md)
 - [DeletedWorker](interfaces/DeletedWorker.md)
@@ -57,13 +59,9 @@
 - [PopInput](interfaces/PopInput.md)
 - [PopInputStable](interfaces/PopInputStable.md)
 - [PutNewFilter](interfaces/PutNewFilter.md)
-- [RatingRatingPayload](interfaces/RatingRatingPayload.md)
-- [RatingRatingResponse](interfaces/RatingRatingResponse.md)
+- [RatePostInput](interfaces/RatePostInput.md)
+- [RatePostResponse](interfaces/RatePostResponse.md)
 - [RatingRequestError](interfaces/RatingRequestError.md)
-- [RatingsDatasetData](interfaces/RatingsDatasetData.md)
-- [RatingsDatasetResponse](interfaces/RatingsDatasetResponse.md)
-- [RatingsNewRating](interfaces/RatingsNewRating.md)
-- [RatingsTeamsResponse](interfaces/RatingsTeamsResponse.md)
 - [RequestAsync](interfaces/RequestAsync.md)
 - [RequestError](interfaces/RequestError.md)
 - [RequestInterrogationResponse](interfaces/RequestInterrogationResponse.md)
@@ -76,6 +74,7 @@
 - [TeamDetails](interfaces/TeamDetails.md)
 - [TeamDetailsLite](interfaces/TeamDetailsLite.md)
 - [TeamDetailsStable](interfaces/TeamDetailsStable.md)
+- [TeamsGetResponse](interfaces/TeamsGetResponse.md)
 - [UsageDetails](interfaces/UsageDetails.md)
 - [UsageDetailsStable](interfaces/UsageDetailsStable.md)
 - [UserDetails](interfaces/UserDetails.md)
@@ -100,7 +99,7 @@
 
 #### Defined in
 
-[index.ts:2246](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2246)
+[index.ts:2254](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2254)
 
 ___
 
@@ -110,4 +109,4 @@ ___
 
 #### Defined in
 
-[index.ts:2244](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2244)
+[index.ts:2252](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2252)
