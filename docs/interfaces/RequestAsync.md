@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / RequestAsync
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / RequestAsync
 
 # Interface: RequestAsync
 
@@ -19,7 +19,7 @@ The UUID of the request. Use this to retrieve the request status in the future
 
 #### Defined in
 
-[index.ts:1717](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1717)
+[index.ts:1725](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1725)
 
 ___
 
@@ -31,4 +31,4 @@ Any extra information from the horde about this request
 
 #### Defined in
 
-[index.ts:1719](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1719)
+[index.ts:1727](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1727)

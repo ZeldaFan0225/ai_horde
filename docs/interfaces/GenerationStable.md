@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / GenerationStable
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / GenerationStable
 
 # Interface: GenerationStable
 
@@ -30,7 +30,7 @@ When true this image has been censored by the worker's safety filter.
 
 #### Defined in
 
-[index.ts:1712](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1712)
+[index.ts:1720](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1720)
 
 ___
 
@@ -42,7 +42,7 @@ The ID for this image
 
 #### Defined in
 
-[index.ts:1710](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1710)
+[index.ts:1718](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1718)
 
 ___
 
@@ -54,7 +54,7 @@ The generated image as a Base64-encoded .webp file OR a cloudflare r2 download l
 
 #### Defined in
 
-[index.ts:1706](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1706)
+[index.ts:1714](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1714)
 
 ___
 
@@ -70,7 +70,7 @@ The model which generated this image
 
 #### Defined in
 
-[index.ts:1701](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1701)
+[index.ts:1709](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1709)
 
 ___
 
@@ -82,7 +82,7 @@ The seed which generated this image
 
 #### Defined in
 
-[index.ts:1708](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1708)
+[index.ts:1716](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1716)
 
 ___
 
@@ -98,7 +98,7 @@ The UUID of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1697](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1697)
+[index.ts:1705](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1705)
 
 ___
 
@@ -114,4 +114,4 @@ The name of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1699](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1699)
+[index.ts:1707](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1707)

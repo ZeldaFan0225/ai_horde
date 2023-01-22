@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / ModifyTeamInput
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / ModifyTeamInput
 
 # Interface: ModifyTeamInput
 
@@ -33,7 +33,7 @@ Anarchy is emergent order.
 
 #### Defined in
 
-[index.ts:2216](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2216)
+[index.ts:2224](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2224)
 
 ___
 
@@ -53,4 +53,4 @@ The name of the team. No profanity allowed!
 
 #### Defined in
 
-[index.ts:2209](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2209)
+[index.ts:2217](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2217)

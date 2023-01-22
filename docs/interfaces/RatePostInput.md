@@ -1,13 +1,13 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / RatingRatingPayload
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / RatePostInput
 
-# Interface: RatingRatingPayload
+# Interface: RatePostInput
 
 ## Table of contents
 
 ### Properties
 
-- [artifacts](RatingRatingPayload.md#artifacts)
-- [rating](RatingRatingPayload.md#rating)
+- [artifacts](RatePostInput.md#artifacts)
+- [rating](RatePostInput.md#rating)
 
 ## Properties
 
@@ -39,7 +39,7 @@ The artifacts rating for this image.
 
 #### Defined in
 
-[index.ts:2642](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2642)
+[index.ts:2711](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2711)
 
 ___
 
@@ -65,4 +65,4 @@ The aesthetic rating for this image. How much do you like this image subjectivel
 
 #### Defined in
 
-[index.ts:2629](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2629)
+[index.ts:2698](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2698)

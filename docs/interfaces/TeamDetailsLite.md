@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / TeamDetailsLite
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / TeamDetailsLite
 
 # Interface: TeamDetailsLite
 
@@ -25,7 +25,7 @@ The UUID of this team
 
 #### Defined in
 
-[index.ts:2200](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2200)
+[index.ts:2208](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2208)
 
 ___
 
@@ -37,4 +37,4 @@ The Name given to this team.
 
 #### Defined in
 
-[index.ts:2198](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2198)
+[index.ts:2206](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2206)

@@ -10,6 +10,5 @@
   "excludeProtected": true,
   "excludeExternals": true,
   "excludeInternal": true,
-  "githubPages": false,
-  "entryDocument": "modules.md"
+  "githubPages": false
 }
