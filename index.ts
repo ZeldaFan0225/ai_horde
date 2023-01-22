@@ -956,7 +956,7 @@ class StableHorde {
         return await res.json() as Pick<ModifyTeam, T>
     }
 
-    /** POST */
+    /** PUT */
     
     /**
      * Change Horde Modes
@@ -1059,6 +1059,8 @@ class StableHorde {
         if(this.#cache_config.workers) this.#cache.workers?.delete(id)
         return await res.json() as Pick<ModifyWorker, T>
     }
+
+    /** PATCH */
     
     
     /**
@@ -1096,6 +1098,39 @@ class StableHorde {
     
     
     /**
+     * Adds a new regex filer
+     * @param create_payload - The data to create the filter with
+     * @param options.token - The Moderator API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails
+     */
+    async addFilter<
+        T extends keyof FilterDetails
+    >(create_payload: PutNewFilter, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/filters`, "PUT")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        .body(create_payload, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, create_payload)
+                }
+        }
+
+        return await res.json() as Pick<FilterDetails, T>
+    }
+
+    /** PATCH */
+    
+    
+    /**
      * Updates an existing regex filer
      * @param update_payload - The data to update the filter with
      * @param options.token - The Moderator API key
@@ -1125,37 +1160,10 @@ class StableHorde {
 
         return await res.json() as Pick<FilterDetails, T>
     }
-    
-    
-    /**
-     * Adds a new regex filer
-     * @param create_payload - The data to create the filter with
-     * @param options.token - The Moderator API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns FilterDetails
-     */
-    async addFilter<
-        T extends keyof FilterDetails
-    >(create_payload: PutNewFilter, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/filters`, "PUT")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(create_payload, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, create_payload)
-                }
-        }
 
-        return await res.json() as Pick<FilterDetails, T>
-    }
+    /** DELETE */
+
     
     /**
      * Cancel an unfinished request
