@@ -14,8 +14,7 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: "16"
-            - run: npm i
-            - run: npm run docs
+            - run: npm i && npm run docs
             - name: Commit and push changes
               run: |
                 git config user.name github-actions
