@@ -10,5 +10,6 @@
   "excludeProtected": true,
   "excludeExternals": true,
   "excludeInternal": true,
-  "entryDocument": "readme.md"
+  "githubPages": false,
+  "entryDocument": "modules.md"
 }
