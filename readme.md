@@ -1,4 +1,4 @@
-@zeldafan0225/stable_horde / [Exports](modules.md)
+@zeldafan0225/stable_horde / [Exports](stable_horde/modules.md)
 
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
@@ -46,8 +46,8 @@ You can contribute by adding new features, optimizing the currently existing cod
 The package exports the class `StableHorde` which includes basically everything you need.
 
 ```js
-const StableHorde = require( "@zeldafan0225/stable_horde" )
- 
+const StableHorde = require("@zeldafan0225/stable_horde");
+
 /*
 Create new instance of the stable_horde class to communicate with the rest API
 You can configure which cache should contain the data for what time
@@ -59,19 +59,21 @@ The token is not a required argument in any method.
 A default API route is also in the contrictor for changing where the requests are directed to (e.g. when using a subdomain like https://test.stablehorde.net)
 */
 const stable_horde = new StableHorde({
-    cache_interval: 1000 * 10,
-    cache: {
-        generations_check: 1000 * 30
-    }
-})
+  cache_interval: 1000 * 10,
+  cache: {
+    generations_check: 1000 * 30,
+  },
+});
 
 // start the generation of an image with the given payload
 const generation = await stable_horde.postAsyncGenerate({
-    prompt: "The legend of Zelda"
-})
-console.log(generation)
+  prompt: "The legend of Zelda",
+});
+console.log(generation);
 
 // check the status of your generation using the generations id
-const check = await stable_horde.getGenerationCheck(generation.id)
-console.log(check)
+const check = await stable_horde.getGenerationCheck(generation.id);
+console.log(check);
 ```
+
+See the [auto-generated docs](./docs/classes/export_.md) for more info on methods and parameters.

@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / FilterPromptSuspicion
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / FilterPromptSuspicion
 
 # Interface: FilterPromptSuspicion
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[index.ts:2387](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2387)
+[index.ts:2387](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2387)
 
 ___
 
@@ -25,8 +25,8 @@ ___
 
 • **suspicion**: `string`
 
-Rates how suspicious the provided prompt is. A suspicion over 2 means it would be blocked.
+Rates how suspicious the provided prompt is. A suspicion of 2 means it would be blocked.
 
 #### Defined in
 
-[index.ts:2386](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2386)
+[index.ts:2386](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2386)

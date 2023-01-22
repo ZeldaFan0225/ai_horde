@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / WorkerDetailsLite
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / WorkerDetailsLite
 
 # Interface: WorkerDetailsLite
 
@@ -26,7 +26,7 @@ The UUID of this worker.
 
 #### Defined in
 
-[index.ts:2049](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2049)
+[index.ts:2049](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2049)
 
 ___
 
@@ -38,7 +38,7 @@ The Name given to this worker.
 
 #### Defined in
 
-[index.ts:2047](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2047)
+[index.ts:2047](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2047)
 
 ___
 
@@ -50,4 +50,4 @@ True if the worker has checked-in the past 5 minutes.
 
 #### Defined in
 
-[index.ts:2051](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2051)
+[index.ts:2051](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2051)

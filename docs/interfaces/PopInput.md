@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / PopInput
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / PopInput
 
 # Interface: PopInput
 
@@ -29,7 +29,7 @@ Words which, when detected will refuse to pick up any jobs
 
 #### Defined in
 
-[index.ts:1741](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1741)
+[index.ts:1741](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1741)
 
 ___
 
@@ -45,7 +45,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:1748](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1748)
+[index.ts:1748](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1748)
 
 ___
 
@@ -57,7 +57,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:1743](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1743)
+[index.ts:1743](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1743)
 
 ___
 
@@ -69,7 +69,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:1732](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1732)
+[index.ts:1732](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1732)
 
 ___
 
@@ -85,7 +85,7 @@ false
 
 #### Defined in
 
-[index.ts:1739](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1739)
+[index.ts:1739](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1739)
 
 ___
 
@@ -97,4 +97,4 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:1734](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1734)
+[index.ts:1734](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1734)

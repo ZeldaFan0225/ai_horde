@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / NoValidRequestFoundStable
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / NoValidRequestFoundStable
 
 # Interface: NoValidRequestFoundStable
 
@@ -33,7 +33,7 @@ How many waiting requests were skipped because they demanded a generation with a
 
 #### Defined in
 
-[index.ts:1848](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1848)
+[index.ts:1848](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1848)
 
 ___
 
@@ -45,7 +45,7 @@ How many waiting requests were skipped because they demanded a higher size than 
 
 #### Defined in
 
-[index.ts:1839](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1839)
+[index.ts:1839](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1839)
 
 ___
 
@@ -61,7 +61,7 @@ How many waiting requests were skipped because they demanded a different model t
 
 #### Defined in
 
-[index.ts:1852](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1852)
+[index.ts:1852](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1852)
 
 ___
 
@@ -77,7 +77,7 @@ How many waiting requests were skipped because they demanded a nsfw generation w
 
 #### Defined in
 
-[index.ts:1846](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1846)
+[index.ts:1846](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1846)
 
 ___
 
@@ -93,7 +93,7 @@ How many waiting requests were skipped because they demanded a trusted worker wh
 
 #### Defined in
 
-[index.ts:1850](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1850)
+[index.ts:1850](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1850)
 
 ___
 
@@ -109,4 +109,4 @@ How many waiting requests were skipped because they demanded a specific worker
 
 #### Defined in
 
-[index.ts:1844](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1844)
+[index.ts:1844](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1844)

@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / Newspiece
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / Newspiece
 
 # Interface: Newspiece
 
@@ -20,7 +20,7 @@ The date this newspiece was published
 
 #### Defined in
 
-[index.ts:2133](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2133)
+[index.ts:2133](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2133)
 
 ___
 
@@ -32,7 +32,7 @@ How critical this piece of news is.
 
 #### Defined in
 
-[index.ts:2137](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2137)
+[index.ts:2137](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2137)
 
 ___
 
@@ -44,4 +44,4 @@ The actual piece of news
 
 #### Defined in
 
-[index.ts:2135](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2135)
+[index.ts:2135](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2135)

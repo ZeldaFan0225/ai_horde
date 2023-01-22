@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / TeamDetailsStable
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / TeamDetailsStable
 
 # Interface: TeamDetailsStable
 
@@ -35,7 +35,7 @@ How many megapixelsteps the workers in this team have been rewarded while part o
 
 #### Defined in
 
-[index.ts:2167](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2167)
+[index.ts:2167](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2167)
 
 ___
 
@@ -51,7 +51,7 @@ The UUID of this team
 
 #### Defined in
 
-[index.ts:2200](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2200)
+[index.ts:2200](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2200)
 
 ___
 
@@ -73,7 +73,7 @@ Anarchy is emergent order.
 
 #### Defined in
 
-[index.ts:2179](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2179)
+[index.ts:2179](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2179)
 
 ___
 
@@ -89,7 +89,7 @@ How many Kudos the workers in this team have been rewarded while part of this te
 
 #### Defined in
 
-[index.ts:2183](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2183)
+[index.ts:2183](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2183)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[index.ts:2192](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2192)
+[index.ts:2192](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2192)
 
 ___
 
@@ -119,7 +119,7 @@ The Name given to this team.
 
 #### Defined in
 
-[index.ts:2198](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2198)
+[index.ts:2198](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2198)
 
 ___
 
@@ -131,7 +131,7 @@ The average performance of the workers in this team, in megapixelsteps per secon
 
 #### Defined in
 
-[index.ts:2169](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2169)
+[index.ts:2169](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2169)
 
 ___
 
@@ -147,7 +147,7 @@ How many images this team's workers have generated
 
 #### Defined in
 
-[index.ts:2181](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2181)
+[index.ts:2181](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2181)
 
 ___
 
@@ -159,7 +159,7 @@ The total expected speed of this team when all workers are working in parallel, 
 
 #### Defined in
 
-[index.ts:2171](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2171)
+[index.ts:2171](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2171)
 
 ___
 
@@ -175,7 +175,7 @@ The total amount of time workers have stayed online while on this team
 
 #### Defined in
 
-[index.ts:2185](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2185)
+[index.ts:2185](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2185)
 
 ___
 
@@ -197,7 +197,7 @@ How many workers have been dedicated to this team
 
 #### Defined in
 
-[index.ts:2190](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2190)
+[index.ts:2190](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2190)
 
 ___
 
@@ -211,4 +211,4 @@ ___
 
 #### Defined in
 
-[index.ts:2191](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2191)
+[index.ts:2191](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2191)

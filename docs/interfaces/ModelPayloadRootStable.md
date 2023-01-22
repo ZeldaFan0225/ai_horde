@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / ModelPayloadRootStable
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / ModelPayloadRootStable
 
 # Interface: ModelPayloadRootStable
 
@@ -44,7 +44,7 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:1618](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1618)
+[index.ts:1618](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1618)
 
 ___
 
@@ -66,7 +66,7 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:1626](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1626)
+[index.ts:1626](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1626)
 
 ___
 
@@ -92,7 +92,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1637](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1637)
+[index.ts:1637](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1637)
 
 ___
 
@@ -104,7 +104,7 @@ Set to True to enable karras noise scheduling tweaks
 
 #### Defined in
 
-[index.ts:1654](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1654)
+[index.ts:1654](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1654)
 
 ___
 
@@ -118,7 +118,7 @@ k_euler
 
 #### Defined in
 
-[index.ts:1605](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1605)
+[index.ts:1605](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1605)
 
 ___
 
@@ -130,7 +130,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:1628](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1628)
+[index.ts:1628](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1628)
 
 ___
 
@@ -150,7 +150,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:1652](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1652)
+[index.ts:1652](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1652)
 
 ___
 
@@ -162,7 +162,7 @@ Special Toggles used in the SD Webui. To be documented.
 
 #### Defined in
 
-[index.ts:1609](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1609)
+[index.ts:1609](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1609)
 
 ___
 
@@ -174,7 +174,7 @@ Set to true to process the generated image with GFPGAN (face correction)
 
 #### Defined in
 
-[index.ts:1656](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1656)
+[index.ts:1656](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1656)
 
 ___
 
@@ -186,7 +186,7 @@ Set to true to process the generated image with LDSR
 
 #### Defined in
 
-[index.ts:1660](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1660)
+[index.ts:1660](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1660)
 
 ___
 
@@ -198,7 +198,7 @@ Set to true to process the generated image with RealESRGAN
 
 #### Defined in
 
-[index.ts:1658](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1658)
+[index.ts:1658](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1658)
 
 ___
 
@@ -210,7 +210,7 @@ Set to true to upscale the image
 
 #### Defined in
 
-[index.ts:1662](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1662)
+[index.ts:1662](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1662)
 
 ___
 
@@ -236,4 +236,4 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1646](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1646)
+[index.ts:1646](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1646)

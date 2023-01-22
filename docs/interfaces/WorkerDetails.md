@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / WorkerDetails
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / WorkerDetails
 
 # Interface: WorkerDetails
 
@@ -59,7 +59,7 @@ email@example.com
 
 #### Defined in
 
-[index.ts:2042](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2042)
+[index.ts:2042](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2042)
 
 ___
 
@@ -75,7 +75,7 @@ The UUID of this worker.
 
 #### Defined in
 
-[index.ts:2049](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2049)
+[index.ts:2049](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2049)
 
 ___
 
@@ -87,7 +87,7 @@ Extra information or comments about this worker provided by its owner.
 
 #### Defined in
 
-[index.ts:2019](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2019)
+[index.ts:2019](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2019)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[index.ts:2007](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2007)
+[index.ts:2007](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2007)
 
 ___
 
@@ -109,7 +109,7 @@ How many Kudos this worker has been rewarded in total.
 
 #### Defined in
 
-[index.ts:2006](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2006)
+[index.ts:2006](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2006)
 
 ___
 
@@ -121,7 +121,7 @@ When True, this worker will not pick up any new requests
 
 #### Defined in
 
-[index.ts:2015](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2015)
+[index.ts:2015](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2015)
 
 ___
 
@@ -133,7 +133,7 @@ Which models this worker if offerring
 
 #### Defined in
 
-[index.ts:2034](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2034)
+[index.ts:2034](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2034)
 
 ___
 
@@ -149,7 +149,7 @@ The Name given to this worker.
 
 #### Defined in
 
-[index.ts:2047](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2047)
+[index.ts:2047](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2047)
 
 ___
 
@@ -161,7 +161,7 @@ Whether this worker can generate NSFW requests or not.
 
 #### Defined in
 
-[index.ts:2021](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2021)
+[index.ts:2021](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2021)
 
 ___
 
@@ -177,7 +177,7 @@ True if the worker has checked-in the past 5 minutes.
 
 #### Defined in
 
-[index.ts:2051](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2051)
+[index.ts:2051](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2051)
 
 ___
 
@@ -189,7 +189,7 @@ Privileged or public if the owner has allowed it. The alias of the owner of this
 
 #### Defined in
 
-[index.ts:2023](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2023)
+[index.ts:2023](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2023)
 
 ___
 
@@ -201,7 +201,7 @@ ___
 
 #### Defined in
 
-[index.ts:2017](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2017)
+[index.ts:2017](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2017)
 
 ___
 
@@ -213,7 +213,7 @@ The average performance of this worker in human readable form.
 
 #### Defined in
 
-[index.ts:2009](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2009)
+[index.ts:2009](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2009)
 
 ___
 
@@ -225,7 +225,7 @@ How many images this worker has generated.
 
 #### Defined in
 
-[index.ts:2004](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2004)
+[index.ts:2004](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2004)
 
 ___
 
@@ -237,7 +237,7 @@ ___
 
 #### Defined in
 
-[index.ts:2027](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2027)
+[index.ts:2027](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2027)
 
 ___
 
@@ -247,7 +247,7 @@ ___
 
 #### Defined in
 
-[index.ts:2035](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2035)
+[index.ts:2035](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2035)
 
 ___
 
@@ -259,7 +259,7 @@ How many threads this worker is running.
 
 #### Defined in
 
-[index.ts:2011](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2011)
+[index.ts:2011](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2011)
 
 ___
 
@@ -271,7 +271,7 @@ The worker is trusted to return valid generations.
 
 #### Defined in
 
-[index.ts:2025](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2025)
+[index.ts:2025](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2025)
 
 ___
 
@@ -289,7 +289,7 @@ How many jobs this worker has left uncompleted after it started them.
 
 #### Defined in
 
-[index.ts:2032](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2032)
+[index.ts:2032](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2032)
 
 ___
 
@@ -301,4 +301,4 @@ The amount of seconds this worker has been online for this Horde.
 
 #### Defined in
 
-[index.ts:2013](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2013)
+[index.ts:2013](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2013)

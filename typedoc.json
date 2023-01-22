@@ -10,5 +10,5 @@
   "excludeProtected": true,
   "excludeExternals": true,
   "excludeInternal": true,
-  "entryDocument": "readme.md"
+  "entryDocument": "../readme.md"
 }

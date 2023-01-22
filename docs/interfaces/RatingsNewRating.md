@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / RatingsNewRating
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / RatingsNewRating
 
 # Interface: RatingsNewRating
 
@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[index.ts:2614](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2614)
+[index.ts:2614](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2614)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[index.ts:2612](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2612)
+[index.ts:2612](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2612)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[index.ts:2613](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2613)
+[index.ts:2613](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2613)

@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / MonthlyKudos
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / MonthlyKudos
 
 # Interface: MonthlyKudos
 
@@ -19,7 +19,7 @@ How much recurring Kudos this user receives monthly.
 
 #### Defined in
 
-[index.ts:1915](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1915)
+[index.ts:1915](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1915)
 
 ___
 
@@ -31,4 +31,4 @@ Last date this user received monthly Kudos.
 
 #### Defined in
 
-[index.ts:1920](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1920)
+[index.ts:1920](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1920)

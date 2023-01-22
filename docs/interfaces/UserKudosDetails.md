@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / UserKudosDetails
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / UserKudosDetails
 
 # Interface: UserKudosDetails
 
@@ -23,7 +23,7 @@ The ammount of Kudos accumulated or used for generating images.
 
 #### Defined in
 
-[index.ts:1900](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1900)
+[index.ts:1900](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1900)
 
 ___
 
@@ -35,7 +35,7 @@ The amount of Kudos this user has been given by the Horde admins.
 
 #### Defined in
 
-[index.ts:1904](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1904)
+[index.ts:1904](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1904)
 
 ___
 
@@ -47,7 +47,7 @@ The amount of Kudos this user has received from rating images.
 
 #### Defined in
 
-[index.ts:1910](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1910)
+[index.ts:1910](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1910)
 
 ___
 
@@ -59,7 +59,7 @@ The amount of Kudos this user has given to other users.
 
 #### Defined in
 
-[index.ts:1902](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1902)
+[index.ts:1902](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1902)
 
 ___
 
@@ -71,7 +71,7 @@ The amount of Kudos this user has been given by other users.
 
 #### Defined in
 
-[index.ts:1906](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1906)
+[index.ts:1906](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1906)
 
 ___
 
@@ -83,4 +83,4 @@ The amount of Kudos this user has received from recurring rewards.
 
 #### Defined in
 
-[index.ts:1908](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1908)
+[index.ts:1908](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1908)

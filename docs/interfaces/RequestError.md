@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / RequestError
+[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / RequestError
 
 # Interface: RequestError
 
@@ -18,4 +18,4 @@ The error message for this status code.
 
 #### Defined in
 
-[index.ts:1667](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1667)
+[index.ts:1667](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1667)
