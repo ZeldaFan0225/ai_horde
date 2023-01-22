@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / GenerationSubmitted
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / GenerationSubmitted
 
 # Interface: GenerationSubmitted
 
@@ -18,4 +18,4 @@ The amount of kudos gained for submitting this request
 
 #### Defined in
 
-[index.ts:1857](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1857)
+[index.ts:1857](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L1857)

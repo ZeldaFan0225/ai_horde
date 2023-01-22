@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / ModelInterrogationInputStable
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / ModelInterrogationInputStable
 
 # Interface: ModelInterrogationInputStable
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[index.ts:2257](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2257)
+[index.ts:2257](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2257)
 
 ___
 
@@ -29,4 +29,4 @@ The public URL of the image to interrogate
 
 #### Defined in
 
-[index.ts:2259](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2259)
+[index.ts:2259](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2259)

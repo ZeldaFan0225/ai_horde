@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / InterrogationPopInput
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / InterrogationPopInput
 
 # Interface: InterrogationPopInput
 
@@ -27,7 +27,7 @@ The amount of forms to pop at the same time
 
 #### Defined in
 
-[index.ts:2280](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2280)
+[index.ts:2280](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2280)
 
 ___
 
@@ -43,7 +43,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:2285](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2285)
+[index.ts:2285](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2285)
 
 ___
 
@@ -55,7 +55,7 @@ The type of interrogation this worker can fulfull
 
 #### Defined in
 
-[index.ts:2275](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2275)
+[index.ts:2275](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2275)
 
 ___
 
@@ -67,7 +67,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:2271](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2271)
+[index.ts:2271](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2271)
 
 ___
 
@@ -79,7 +79,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:2273](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2273)
+[index.ts:2273](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2273)
 
 ___
 
@@ -103,4 +103,4 @@ How many threads this worker is running. This is used to accurately estimate the
 
 #### Defined in
 
-[index.ts:2292](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2292)
+[index.ts:2292](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2292)

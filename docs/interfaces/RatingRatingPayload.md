@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / RatingRatingPayload
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / RatingRatingPayload
 
 # Interface: RatingRatingPayload
 
@@ -39,7 +39,7 @@ The artifacts rating for this image.
 
 #### Defined in
 
-[index.ts:2642](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2642)
+[index.ts:2642](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2642)
 
 ___
 
@@ -65,4 +65,4 @@ The aesthetic rating for this image. How much do you like this image subjectivel
 
 #### Defined in
 
-[index.ts:2629](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2629)
+[index.ts:2629](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2629)

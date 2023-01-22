@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / FilterDetails
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / FilterDetails
 
 # Interface: FilterDetails
 
@@ -22,7 +22,7 @@ Description about this regex
 
 #### Defined in
 
-[index.ts:2407](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2407)
+[index.ts:2407](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2407)
 
 ___
 
@@ -42,7 +42,7 @@ The integer defining this filter type
 
 #### Defined in
 
-[index.ts:2403](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2403)
+[index.ts:2403](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2403)
 
 ___
 
@@ -54,7 +54,7 @@ The UUID of this filter
 
 #### Defined in
 
-[index.ts:2392](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2392)
+[index.ts:2392](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2392)
 
 ___
 
@@ -72,7 +72,7 @@ ac.*
 
 #### Defined in
 
-[index.ts:2397](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2397)
+[index.ts:2397](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2397)
 
 ___
 
@@ -84,4 +84,4 @@ The moderator which added or last updated this regex
 
 #### Defined in
 
-[index.ts:2411](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2411)
+[index.ts:2411](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2411)

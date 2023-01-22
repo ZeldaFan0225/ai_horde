@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / ContributionsDetailsStable
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / ContributionsDetailsStable
 
 # Interface: ContributionsDetailsStable
 
@@ -29,7 +29,7 @@ How many images this user has generated
 
 #### Defined in
 
-[index.ts:1937](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1937)
+[index.ts:1937](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L1937)
 
 ___
 
@@ -41,4 +41,4 @@ How many megapixelsteps this user has generated
 
 #### Defined in
 
-[index.ts:1939](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1939)
+[index.ts:1939](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L1939)

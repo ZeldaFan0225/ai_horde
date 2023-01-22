@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / ModelInterrogationFormStable
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / ModelInterrogationFormStable
 
 # Interface: ModelInterrogationFormStable
 
@@ -19,7 +19,7 @@ The type of interrogation this is
 
 #### Defined in
 
-[index.ts:2252](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2252)
+[index.ts:2252](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2252)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[index.ts:2253](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2253)
+[index.ts:2253](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2253)

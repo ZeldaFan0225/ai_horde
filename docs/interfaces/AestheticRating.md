@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / AestheticRating
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / AestheticRating
 
 # Interface: AestheticRating
 
@@ -33,7 +33,7 @@ The UUID of image being rated
 
 #### Defined in
 
-[index.ts:2371](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2371)
+[index.ts:2371](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2371)
 
 ___
 
@@ -53,4 +53,4 @@ The aesthetic rating 1-10 for this image
 
 #### Defined in
 
-[index.ts:2377](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2377)
+[index.ts:2377](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2377)

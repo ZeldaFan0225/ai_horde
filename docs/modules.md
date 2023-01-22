@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / Exports
+[@zeldafan0225/stable_horde](README.md) / Exports
 
 # @zeldafan0225/stable_horde
 
@@ -100,7 +100,7 @@
 
 #### Defined in
 
-[index.ts:2246](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2246)
+[index.ts:2246](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2246)
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 #### Defined in
 
-[index.ts:2244](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2244)
+[index.ts:2244](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2244)

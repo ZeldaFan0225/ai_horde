@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / RatingsTeamsResponse
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / RatingsTeamsResponse
 
 # Interface: RatingsTeamsResponse
 
@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[index.ts:2608](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2608)
+[index.ts:2608](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2608)

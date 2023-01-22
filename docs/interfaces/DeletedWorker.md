@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / DeletedWorker
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / DeletedWorker
 
 # Interface: DeletedWorker
 
@@ -19,7 +19,7 @@ The ID of the deleted worker
 
 #### Defined in
 
-[index.ts:2074](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2074)
+[index.ts:2074](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2074)
 
 ___
 
@@ -31,4 +31,4 @@ The Name of the deleted worker
 
 #### Defined in
 
-[index.ts:2076](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2076)
+[index.ts:2076](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2076)

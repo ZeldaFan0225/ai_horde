@@ -9,6 +9,5 @@
   "excludePrivate": true,
   "excludeProtected": true,
   "excludeExternals": true,
-  "excludeInternal": true,
-  "entryDocument": "../README.md"
+  "excludeInternal": true
 }

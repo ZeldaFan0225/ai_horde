@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / InterrogationPopFormPayload
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / InterrogationPopFormPayload
 
 # Interface: InterrogationPopFormPayload
 
@@ -21,7 +21,7 @@ The UUID of the interrogation form. Use this to post the results in the future
 
 #### Defined in
 
-[index.ts:2297](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2297)
+[index.ts:2297](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2297)
 
 ___
 
@@ -39,7 +39,7 @@ caption
 
 #### Defined in
 
-[index.ts:2302](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2302)
+[index.ts:2302](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2302)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[index.ts:2303](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2303)
+[index.ts:2303](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2303)
 
 ___
 
@@ -61,4 +61,4 @@ The URL From which the source image can be downloaded
 
 #### Defined in
 
-[index.ts:2305](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2305)
+[index.ts:2305](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2305)

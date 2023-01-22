@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / HordePerformance
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / HordePerformance
 
 # Interface: HordePerformance
 
@@ -26,7 +26,7 @@ The amount of waiting and processing requests currently in this Horde
 
 #### Defined in
 
-[index.ts:2124](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2124)
+[index.ts:2124](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2124)
 
 ___
 
@@ -38,7 +38,7 @@ How many worker threads are actively processing prompt generations in this Horde
 
 #### Defined in
 
-[index.ts:2128](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2128)
+[index.ts:2128](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2128)
 
 ___
 
@@ -50,4 +50,4 @@ How many workers are actively processing image generations in this Horde in the 
 
 #### Defined in
 
-[index.ts:2126](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2126)
+[index.ts:2126](https://github.com/MrlolDev/stable_horde/blob/07c9e41/index.ts#L2126)
