@@ -1,113 +1,79 @@
-[@zeldafan0225/stable_horde](readme.md) / Exports
+@zeldafan0225/stable_horde / Exports
+
+<!-- markdownlint-disable MD033 MD041 -->
+<div align="center">
+    <p>
+        <a href="https://www.npmjs.com/package/@zeldafan0225/stable_horde">
+            <img src="https://img.shields.io/npm/v/@zeldafan0225/stable_horde.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Version" />
+        </a>
+        <a href="https://www.npmjs.com/package/@zeldafan0225/stable_horde">
+            <img src="https://img.shields.io/npm/dt/@zeldafan0225/stable_horde.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Downloads" />
+        </a>
+    </p>
+</div>
 
 # @zeldafan0225/stable_horde
 
-## Table of contents
+This package allows you to communicate with the [Stable Horde](https://stablehorde.net/) [API](https://stablehorde.net/)
 
-### Classes
+**DISCLAIMER:**
+THIS PACKAGE/REPOSITORY IS IN NO WAY ASSOCIATED TO THE CREATORS OF STABLE HORDE
 
-- [export&#x3D;](classes/export_.md)
+You can support me and my projects on [Ko-Fi](https://ko-fi.com/slashbot)
 
-### Interfaces
+## Bugs
 
-- [ActiveModel](interfaces/ActiveModel.md)
-- [ActiveModelLite](interfaces/ActiveModelLite.md)
-- [AestheticRating](interfaces/AestheticRating.md)
-- [AestheticsPayload](interfaces/AestheticsPayload.md)
-- [ContributionsDetails](interfaces/ContributionsDetails.md)
-- [ContributionsDetailsStable](interfaces/ContributionsDetailsStable.md)
-- [CreateTeamInput](interfaces/CreateTeamInput.md)
-- [DeleteTimeoutIPInput](interfaces/DeleteTimeoutIPInput.md)
-- [DeletedTeam](interfaces/DeletedTeam.md)
-- [DeletedWorker](interfaces/DeletedWorker.md)
-- [FilterCheckPayload](interfaces/FilterCheckPayload.md)
-- [FilterDetails](interfaces/FilterDetails.md)
-- [FilterPromptSuspicion](interfaces/FilterPromptSuspicion.md)
-- [Generation](interfaces/Generation.md)
-- [GenerationInput](interfaces/GenerationInput.md)
-- [GenerationPayload](interfaces/GenerationPayload.md)
-- [GenerationStable](interfaces/GenerationStable.md)
-- [GenerationSubmitted](interfaces/GenerationSubmitted.md)
-- [HordeModes](interfaces/HordeModes.md)
-- [HordePerformance](interfaces/HordePerformance.md)
-- [HordePerformanceStable](interfaces/HordePerformanceStable.md)
-- [InterrogationFormStatus](interfaces/InterrogationFormStatus.md)
-- [InterrogationPopFormPayload](interfaces/InterrogationPopFormPayload.md)
-- [InterrogationPopInput](interfaces/InterrogationPopInput.md)
-- [InterrogationPopPayload](interfaces/InterrogationPopPayload.md)
-- [InterrogationStatus](interfaces/InterrogationStatus.md)
-- [KudosTransferred](interfaces/KudosTransferred.md)
-- [ModelGenerationInputStable](interfaces/ModelGenerationInputStable.md)
-- [ModelInterrogationFormStable](interfaces/ModelInterrogationFormStable.md)
-- [ModelInterrogationInputStable](interfaces/ModelInterrogationInputStable.md)
-- [ModelPayloadRootStable](interfaces/ModelPayloadRootStable.md)
-- [ModelPayloadStable](interfaces/ModelPayloadStable.md)
-- [ModifyTeam](interfaces/ModifyTeam.md)
-- [ModifyTeamInput](interfaces/ModifyTeamInput.md)
-- [ModifyUser](interfaces/ModifyUser.md)
-- [ModifyUserInput](interfaces/ModifyUserInput.md)
-- [ModifyWorker](interfaces/ModifyWorker.md)
-- [ModifyWorkerInput](interfaces/ModifyWorkerInput.md)
-- [MonthlyKudos](interfaces/MonthlyKudos.md)
-- [Newspiece](interfaces/Newspiece.md)
-- [NoValidInterrogationsFound](interfaces/NoValidInterrogationsFound.md)
-- [NoValidRequestFound](interfaces/NoValidRequestFound.md)
-- [NoValidRequestFoundStable](interfaces/NoValidRequestFoundStable.md)
-- [PatchExistingFilter](interfaces/PatchExistingFilter.md)
-- [PopInput](interfaces/PopInput.md)
-- [PopInputStable](interfaces/PopInputStable.md)
-- [PutNewFilter](interfaces/PutNewFilter.md)
-- [RatingRatingPayload](interfaces/RatingRatingPayload.md)
-- [RatingRatingResponse](interfaces/RatingRatingResponse.md)
-- [RatingRequestError](interfaces/RatingRequestError.md)
-- [RatingsDatasetData](interfaces/RatingsDatasetData.md)
-- [RatingsDatasetResponse](interfaces/RatingsDatasetResponse.md)
-- [RatingsNewRating](interfaces/RatingsNewRating.md)
-- [RatingsTeamsResponse](interfaces/RatingsTeamsResponse.md)
-- [RequestAsync](interfaces/RequestAsync.md)
-- [RequestError](interfaces/RequestError.md)
-- [RequestInterrogationResponse](interfaces/RequestInterrogationResponse.md)
-- [RequestStatusCheck](interfaces/RequestStatusCheck.md)
-- [RequestStatusStable](interfaces/RequestStatusStable.md)
-- [SimpleResponse](interfaces/SimpleResponse.md)
-- [StableHordeCacheConfiguration](interfaces/StableHordeCacheConfiguration.md)
-- [StableHordeInitOptions](interfaces/StableHordeInitOptions.md)
-- [StableHordeRatingsInitOptions](interfaces/StableHordeRatingsInitOptions.md)
-- [TeamDetails](interfaces/TeamDetails.md)
-- [TeamDetailsLite](interfaces/TeamDetailsLite.md)
-- [TeamDetailsStable](interfaces/TeamDetailsStable.md)
-- [UsageDetails](interfaces/UsageDetails.md)
-- [UsageDetailsStable](interfaces/UsageDetailsStable.md)
-- [UserDetails](interfaces/UserDetails.md)
-- [UserDetailsStable](interfaces/UserDetailsStable.md)
-- [UserKudosDetails](interfaces/UserKudosDetails.md)
-- [WorkerDetails](interfaces/WorkerDetails.md)
-- [WorkerDetailsLite](interfaces/WorkerDetailsLite.md)
-- [WorkerDetailsStable](interfaces/WorkerDetailsStable.md)
-- [WorkerKudosDetails](interfaces/WorkerKudosDetails.md)
-- [WorkersPerformanceFilter](interfaces/WorkersPerformanceFilter.md)
+To report bugs please [open an issue](https://github.com/ZeldaFan0225/stable_horde) on GitHub.
 
-### Type Aliases
+## Features
 
-- [InterrogationFormResult](modules.md#interrogationformresult)
-- [InterrogationPopFormPayloadStable](modules.md#interrogationpopformpayloadstable)
+- Configurable Caching
+- Methods for all endpoints on the API V2
+- Default Token
+- Types with comments and explanations (TS)
 
-## Type Aliases
+## Features that are currently missing
 
-### InterrogationFormResult
+- Ratelimit bucket
 
-Ƭ **InterrogationFormResult**: `Partial`<`Record`<typeof [`ModelInterrogationFormTypes`](classes/export_.md#modelinterrogationformtypes-1)[keyof typeof [`ModelInterrogationFormTypes`](classes/export_.md#modelinterrogationformtypes-1)], `Record`<`string`, `any`\>\>\>
+## Contribute
 
-#### Defined in
+I am always happy about contributions. You can contribute by forking this repository, updating or adding and then creating a pull request.
+You can contribute by adding new features, optimizing the currently existing code, adding examples or anything else I missed.
 
-[index.ts:2246](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2246)
+## How to use
 
-___
+The package exports the class `StableHorde` which includes basically everything you need.
 
-### InterrogationPopFormPayloadStable
+```js
+const StableHorde = require("@zeldafan0225/stable_horde");
 
-Ƭ **InterrogationPopFormPayloadStable**: `Partial`<`Record`<typeof [`ModelInterrogationFormTypes`](classes/export_.md#modelinterrogationformtypes-1)[keyof typeof [`ModelInterrogationFormTypes`](classes/export_.md#modelinterrogationformtypes-1)], `string`\>\>
+/*
+Create new instance of the stable_horde class to communicate with the rest API
+You can configure which cache should contain the data for what time
+You can also configure at what interval the cache is checking if there are any data that should be deleted
 
-#### Defined in
+The class also takes a default token. This is helpful if you want to use this package only using your own token.
+The token is not a required argument in any method.
 
-[index.ts:2244](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2244)
+A default API route is also in the contrictor for changing where the requests are directed to (e.g. when using a subdomain like https://test.stablehorde.net)
+*/
+const stable_horde = new StableHorde({
+  cache_interval: 1000 * 10,
+  cache: {
+    generations_check: 1000 * 30,
+  },
+});
+
+// start the generation of an image with the given payload
+const generation = await stable_horde.postAsyncGenerate({
+  prompt: "The legend of Zelda",
+});
+console.log(generation);
+
+// check the status of your generation using the generations id
+const check = await stable_horde.getGenerationCheck(generation.id);
+console.log(check);
+```
+
+See the [auto-generated docs](./docs/classes/export_.md) for more info on methods and parameters.

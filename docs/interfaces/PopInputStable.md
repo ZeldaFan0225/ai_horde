@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / PopInputStable
+[@zeldafan0225/stable_horde](../modules.md) / [Exports](../modules.md) / PopInputStable
 
 # Interface: PopInputStable
 
@@ -34,7 +34,7 @@ Words which, when detected will refuse to pick up any jobs
 
 #### Defined in
 
-[index.ts:1741](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1741)
+[index.ts:1749](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1749)
 
 ___
 
@@ -54,7 +54,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:1748](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1748)
+[index.ts:1756](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1756)
 
 ___
 
@@ -70,7 +70,7 @@ The maximum amount of pixels this worker can generate
 
 #### Defined in
 
-[index.ts:1727](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1727)
+[index.ts:1735](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1735)
 
 ___
 
@@ -86,7 +86,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:1743](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1743)
+[index.ts:1751](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1751)
 
 ___
 
@@ -102,7 +102,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:1732](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1732)
+[index.ts:1740](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1740)
 
 ___
 
@@ -122,7 +122,7 @@ false
 
 #### Defined in
 
-[index.ts:1739](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1739)
+[index.ts:1747](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1747)
 
 ___
 
@@ -138,4 +138,4 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:1734](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L1734)
+[index.ts:1742](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L1742)

@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../readme.md) / [Exports](../modules.md) / PatchExistingFilter
+[@zeldafan0225/stable_horde](../modules.md) / [Exports](../modules.md) / PatchExistingFilter
 
 # Interface: PatchExistingFilter
 
@@ -20,7 +20,7 @@ Description about this regex
 
 #### Defined in
 
-[index.ts:2429](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2429)
+[index.ts:2437](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2437)
 
 ___
 
@@ -40,7 +40,7 @@ The integer defining this filter type
 
 #### Defined in
 
-[index.ts:2425](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2425)
+[index.ts:2433](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2433)
 
 ___
 
@@ -58,4 +58,4 @@ ac.*
 
 #### Defined in
 
-[index.ts:2419](https://github.com/ZeldaFan0225/stable_horde/blob/b03d78a/index.ts#L2419)
+[index.ts:2427](https://github.com/ZeldaFan0225/stable_horde/blob/bf3b9d2/index.ts#L2427)
