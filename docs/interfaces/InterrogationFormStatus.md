@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / InterrogationFormStatus
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / InterrogationFormStatus
 
 # Interface: InterrogationFormStatus
 
@@ -20,7 +20,7 @@ The name of this interrogation form
 
 #### Defined in
 
-[index.ts:2334](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2334)
+[index.ts:2334](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2334)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[index.ts:2337](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2337)
+[index.ts:2337](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2337)
 
 ___
 
@@ -42,4 +42,4 @@ title: Interrogation State
 
 #### Defined in
 
-[index.ts:2336](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2336)
+[index.ts:2336](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2336)

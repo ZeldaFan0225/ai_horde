@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / DeletedTeam
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / DeletedTeam
 
 # Interface: DeletedTeam
 
@@ -19,7 +19,7 @@ The ID of the deleted team
 
 #### Defined in
 
-[index.ts:2221](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2221)
+[index.ts:2221](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2221)
 
 ___
 
@@ -31,4 +31,4 @@ The Name of the deleted team
 
 #### Defined in
 
-[index.ts:2223](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2223)
+[index.ts:2223](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2223)

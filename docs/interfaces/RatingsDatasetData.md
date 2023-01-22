@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / RatingsDatasetData
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / RatingsDatasetData
 
 # Interface: RatingsDatasetData
 
@@ -20,7 +20,7 @@ API Interfaces
 
 #### Defined in
 
-[index.ts:2600](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2600)
+[index.ts:2600](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2600)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[index.ts:2598](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2598)
+[index.ts:2598](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2598)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[index.ts:2599](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2599)
+[index.ts:2599](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2599)

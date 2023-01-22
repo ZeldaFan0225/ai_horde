@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / TeamDetails
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / TeamDetails
 
 # Interface: TeamDetails
 
@@ -38,7 +38,7 @@ The UUID of this team
 
 #### Defined in
 
-[index.ts:2200](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2200)
+[index.ts:2200](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2200)
 
 ___
 
@@ -56,7 +56,7 @@ Anarchy is emergent order.
 
 #### Defined in
 
-[index.ts:2179](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2179)
+[index.ts:2179](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2179)
 
 ___
 
@@ -68,7 +68,7 @@ How many Kudos the workers in this team have been rewarded while part of this te
 
 #### Defined in
 
-[index.ts:2183](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2183)
+[index.ts:2183](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2183)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[index.ts:2192](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2192)
+[index.ts:2192](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2192)
 
 ___
 
@@ -94,7 +94,7 @@ The Name given to this team.
 
 #### Defined in
 
-[index.ts:2198](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2198)
+[index.ts:2198](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2198)
 
 ___
 
@@ -106,7 +106,7 @@ How many images this team's workers have generated
 
 #### Defined in
 
-[index.ts:2181](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2181)
+[index.ts:2181](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2181)
 
 ___
 
@@ -118,7 +118,7 @@ The total amount of time workers have stayed online while on this team
 
 #### Defined in
 
-[index.ts:2185](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2185)
+[index.ts:2185](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2185)
 
 ___
 
@@ -136,7 +136,7 @@ How many workers have been dedicated to this team
 
 #### Defined in
 
-[index.ts:2190](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2190)
+[index.ts:2190](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2190)
 
 ___
 
@@ -146,4 +146,4 @@ ___
 
 #### Defined in
 
-[index.ts:2191](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2191)
+[index.ts:2191](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2191)

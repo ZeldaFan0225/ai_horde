@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / FilterCheckPayload
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / FilterCheckPayload
 
 # Interface: FilterCheckPayload
 
@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[index.ts:2381](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2381)
+[index.ts:2381](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2381)

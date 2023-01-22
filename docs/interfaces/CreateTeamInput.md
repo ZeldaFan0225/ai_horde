@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / CreateTeamInput
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / CreateTeamInput
 
 # Interface: CreateTeamInput
 
@@ -33,7 +33,7 @@ Anarchy is emergent order.
 
 #### Defined in
 
-[index.ts:2153](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2153)
+[index.ts:2153](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2153)
 
 ___
 
@@ -53,4 +53,4 @@ The name of the team. No profanity allowed!
 
 #### Defined in
 
-[index.ts:2146](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2146)
+[index.ts:2146](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2146)

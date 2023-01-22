@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / DeleteTimeoutIPInput
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / DeleteTimeoutIPInput
 
 # Interface: DeleteTimeoutIPInput
 
@@ -32,4 +32,4 @@ The IP address to remove from timeout
 
 #### Defined in
 
-[index.ts:2233](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2233)
+[index.ts:2233](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2233)

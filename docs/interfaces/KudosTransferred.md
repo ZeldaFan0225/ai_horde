@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / KudosTransferred
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / KudosTransferred
 
 # Interface: KudosTransferred
 
@@ -18,4 +18,4 @@ The amount of Kudos tranferred
 
 #### Defined in
 
-[index.ts:2097](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2097)
+[index.ts:2097](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2097)

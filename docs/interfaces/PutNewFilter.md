@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / PutNewFilter
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / PutNewFilter
 
 # Interface: PutNewFilter
 
@@ -20,7 +20,7 @@ Description about this regex
 
 #### Defined in
 
-[index.ts:2447](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2447)
+[index.ts:2447](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2447)
 
 ___
 
@@ -40,7 +40,7 @@ The integer defining this filter type
 
 #### Defined in
 
-[index.ts:2443](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2443)
+[index.ts:2443](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2443)
 
 ___
 
@@ -58,4 +58,4 @@ ac.*
 
 #### Defined in
 
-[index.ts:2437](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2437)
+[index.ts:2437](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2437)

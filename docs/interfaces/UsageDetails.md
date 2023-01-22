@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / UsageDetails
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / UsageDetails
 
 # Interface: UsageDetails
 
@@ -24,4 +24,4 @@ How many images this user has requested
 
 #### Defined in
 
-[index.ts:1932](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1932)
+[index.ts:1932](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1932)

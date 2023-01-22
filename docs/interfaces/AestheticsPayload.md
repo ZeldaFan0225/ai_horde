@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / AestheticsPayload
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / AestheticsPayload
 
 # Interface: AestheticsPayload
 
@@ -34,7 +34,7 @@ The UUID of the best image in this generation batch (only used when 2+ images ge
 
 #### Defined in
 
-[index.ts:2353](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2353)
+[index.ts:2353](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2353)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[index.ts:2361](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2361)
+[index.ts:2361](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2361)
 
 ___
 
@@ -70,4 +70,4 @@ The team towards which this ratings contributes. It not is passed, it will leave
 
 #### Defined in
 
-[index.ts:2360](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2360)
+[index.ts:2360](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2360)

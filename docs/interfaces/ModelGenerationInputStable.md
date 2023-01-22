@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / ModelGenerationInputStable
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / ModelGenerationInputStable
 
 # Interface: ModelGenerationInputStable
 
@@ -43,7 +43,7 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:1549](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1549)
+[index.ts:1549](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1549)
 
 ___
 
@@ -65,7 +65,7 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:1557](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1557)
+[index.ts:1557](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1557)
 
 ___
 
@@ -91,7 +91,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1568](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1568)
+[index.ts:1568](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1568)
 
 ___
 
@@ -103,7 +103,7 @@ Set to True to enable karras noise scheduling tweaks
 
 #### Defined in
 
-[index.ts:1585](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1585)
+[index.ts:1585](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1585)
 
 ___
 
@@ -123,7 +123,7 @@ The amount of images to generate
 
 #### Defined in
 
-[index.ts:1598](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1598)
+[index.ts:1598](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1598)
 
 ___
 
@@ -135,7 +135,7 @@ The list of post-processors to apply to the image, in the order to be applied
 
 #### Defined in
 
-[index.ts:1587](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1587)
+[index.ts:1587](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1587)
 
 ___
 
@@ -149,7 +149,7 @@ k_euler
 
 #### Defined in
 
-[index.ts:1536](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1536)
+[index.ts:1536](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1536)
 
 ___
 
@@ -161,7 +161,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:1559](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1559)
+[index.ts:1559](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1559)
 
 ___
 
@@ -181,7 +181,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:1583](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1583)
+[index.ts:1583](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1583)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[index.ts:1592](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1592)
+[index.ts:1592](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1592)
 
 ___
 
@@ -211,7 +211,7 @@ Special Toggles used in the SD Webui. To be documented.
 
 #### Defined in
 
-[index.ts:1540](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1540)
+[index.ts:1540](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1540)
 
 ___
 
@@ -237,4 +237,4 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1577](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1577)
+[index.ts:1577](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1577)

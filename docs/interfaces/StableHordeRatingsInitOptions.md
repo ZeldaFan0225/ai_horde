@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / StableHordeRatingsInitOptions
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / StableHordeRatingsInitOptions
 
 # Interface: StableHordeRatingsInitOptions
 
@@ -22,7 +22,7 @@ The base api domain + route to use for requests
 
 #### Defined in
 
-[index.ts:2588](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2588)
+[index.ts:2588](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2588)
 
 ___
 
@@ -34,7 +34,7 @@ The client agent to pass in the requests.
 
 #### Defined in
 
-[index.ts:2590](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2590)
+[index.ts:2590](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2590)
 
 ___
 
@@ -46,4 +46,4 @@ The default token to use for requests
 
 #### Defined in
 
-[index.ts:2586](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2586)
+[index.ts:2586](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2586)

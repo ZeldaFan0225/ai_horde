@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / RatingRequestError
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / RatingRequestError
 
 # Interface: RatingRequestError
 
@@ -18,4 +18,4 @@ The error message for this status code.
 
 #### Defined in
 
-[index.ts:2619](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L2619)
+[index.ts:2619](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L2619)

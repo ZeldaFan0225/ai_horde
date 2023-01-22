@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / UsageDetailsStable
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / UsageDetailsStable
 
 # Interface: UsageDetailsStable
 
@@ -25,7 +25,7 @@ How many megapixelsteps this user has requested
 
 #### Defined in
 
-[index.ts:1927](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1927)
+[index.ts:1927](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1927)
 
 ___
 
@@ -41,4 +41,4 @@ How many images this user has requested
 
 #### Defined in
 
-[index.ts:1925](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1925)
+[index.ts:1925](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1925)

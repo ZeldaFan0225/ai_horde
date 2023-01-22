@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../../readme.md) / [Exports](../modules.md) / GenerationStable
+[@zeldafan0225/stable_horde](../../README.md) / [Exports](../modules.md) / GenerationStable
 
 # Interface: GenerationStable
 
@@ -30,7 +30,7 @@ When true this image has been censored by the worker's safety filter.
 
 #### Defined in
 
-[index.ts:1712](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1712)
+[index.ts:1712](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1712)
 
 ___
 
@@ -42,7 +42,7 @@ The ID for this image
 
 #### Defined in
 
-[index.ts:1710](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1710)
+[index.ts:1710](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1710)
 
 ___
 
@@ -54,7 +54,7 @@ The generated image as a Base64-encoded .webp file OR a cloudflare r2 download l
 
 #### Defined in
 
-[index.ts:1706](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1706)
+[index.ts:1706](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1706)
 
 ___
 
@@ -70,7 +70,7 @@ The model which generated this image
 
 #### Defined in
 
-[index.ts:1701](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1701)
+[index.ts:1701](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1701)
 
 ___
 
@@ -82,7 +82,7 @@ The seed which generated this image
 
 #### Defined in
 
-[index.ts:1708](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1708)
+[index.ts:1708](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1708)
 
 ___
 
@@ -98,7 +98,7 @@ The UUID of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1697](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1697)
+[index.ts:1697](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1697)
 
 ___
 
@@ -114,4 +114,4 @@ The name of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1699](https://github.com/MrlolDev/stable_horde/blob/3c66504/index.ts#L1699)
+[index.ts:1699](https://github.com/MrlolDev/stable_horde/blob/2389aa8/index.ts#L1699)
