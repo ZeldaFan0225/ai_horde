@@ -1597,6 +1597,11 @@ export interface ModelGenerationInputStable {
      * @minimum 1
      * @maximum 500
     */
+    tiling?: boolean,
+    /** 
+     * Set to True to create images that stitch together seamlessly
+     * @default false
+    */
     steps?: number,
     /** 
      * The amount of images to generate
