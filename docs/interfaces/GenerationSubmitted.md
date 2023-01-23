@@ -18,4 +18,4 @@ The amount of kudos gained for submitting this request
 
 #### Defined in
 
-[index.ts:1870](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1870)
+[index.ts:1873](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1873)

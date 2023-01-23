@@ -38,7 +38,7 @@ The UUID of this team
 
 #### Defined in
 
-[index.ts:2213](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2213)
+[index.ts:2216](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2216)
 
 ___
 
@@ -56,7 +56,7 @@ Anarchy is emergent order.
 
 #### Defined in
 
-[index.ts:2192](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2192)
+[index.ts:2195](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2195)
 
 ___
 
@@ -68,7 +68,7 @@ How many Kudos the workers in this team have been rewarded while part of this te
 
 #### Defined in
 
-[index.ts:2196](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2196)
+[index.ts:2199](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2199)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[index.ts:2205](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2205)
+[index.ts:2208](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2208)
 
 ___
 
@@ -94,7 +94,7 @@ The Name given to this team.
 
 #### Defined in
 
-[index.ts:2211](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2211)
+[index.ts:2214](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2214)
 
 ___
 
@@ -106,7 +106,7 @@ How many images this team's workers have generated
 
 #### Defined in
 
-[index.ts:2194](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2194)
+[index.ts:2197](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2197)
 
 ___
 
@@ -118,7 +118,7 @@ The total amount of time workers have stayed online while on this team
 
 #### Defined in
 
-[index.ts:2198](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2198)
+[index.ts:2201](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2201)
 
 ___
 
@@ -136,7 +136,7 @@ How many workers have been dedicated to this team
 
 #### Defined in
 
-[index.ts:2203](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2203)
+[index.ts:2206](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2206)
 
 ___
 
@@ -146,4 +146,4 @@ ___
 
 #### Defined in
 
-[index.ts:2204](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2204)
+[index.ts:2207](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2207)
