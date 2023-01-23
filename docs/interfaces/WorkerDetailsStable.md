@@ -66,7 +66,7 @@ email@example.com
 
 #### Defined in
 
-[index.ts:2050](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2050)
+[index.ts:2055](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2055)
 
 ___
 
@@ -82,7 +82,7 @@ The UUID of this worker.
 
 #### Defined in
 
-[index.ts:2057](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2057)
+[index.ts:2062](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2062)
 
 ___
 
@@ -94,7 +94,7 @@ If True, this worker supports and allows img2img requests.
 
 #### Defined in
 
-[index.ts:2003](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2003)
+[index.ts:2008](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2008)
 
 ___
 
@@ -110,7 +110,7 @@ Extra information or comments about this worker provided by its owner.
 
 #### Defined in
 
-[index.ts:2027](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2027)
+[index.ts:2032](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2032)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[index.ts:2015](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2015)
+[index.ts:2020](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2020)
 
 ___
 
@@ -140,7 +140,7 @@ How many Kudos this worker has been rewarded in total.
 
 #### Defined in
 
-[index.ts:2014](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2014)
+[index.ts:2019](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2019)
 
 ___
 
@@ -156,7 +156,7 @@ When True, this worker will not pick up any new requests
 
 #### Defined in
 
-[index.ts:2023](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2023)
+[index.ts:2028](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2028)
 
 ___
 
@@ -168,7 +168,7 @@ The maximum pixels in resolution this workr can generate
 
 #### Defined in
 
-[index.ts:1999](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1999)
+[index.ts:2004](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2004)
 
 ___
 
@@ -180,7 +180,7 @@ How many megapixelsteps this worker has generated until now
 
 #### Defined in
 
-[index.ts:2001](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2001)
+[index.ts:2006](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2006)
 
 ___
 
@@ -196,7 +196,7 @@ Which models this worker if offerring
 
 #### Defined in
 
-[index.ts:2042](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2042)
+[index.ts:2047](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2047)
 
 ___
 
@@ -212,7 +212,7 @@ The Name given to this worker.
 
 #### Defined in
 
-[index.ts:2055](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2055)
+[index.ts:2060](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2060)
 
 ___
 
@@ -228,7 +228,7 @@ Whether this worker can generate NSFW requests or not.
 
 #### Defined in
 
-[index.ts:2029](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2029)
+[index.ts:2034](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2034)
 
 ___
 
@@ -244,7 +244,7 @@ True if the worker has checked-in the past 5 minutes.
 
 #### Defined in
 
-[index.ts:2059](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2059)
+[index.ts:2064](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2064)
 
 ___
 
@@ -260,7 +260,7 @@ Privileged or public if the owner has allowed it. The alias of the owner of this
 
 #### Defined in
 
-[index.ts:2031](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2031)
+[index.ts:2036](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2036)
 
 ___
 
@@ -272,7 +272,7 @@ If True, this worker supports and allows inpainting requests.
 
 #### Defined in
 
-[index.ts:2005](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2005)
+[index.ts:2010](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2010)
 
 ___
 
@@ -288,7 +288,7 @@ ___
 
 #### Defined in
 
-[index.ts:2025](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2025)
+[index.ts:2030](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2030)
 
 ___
 
@@ -304,7 +304,7 @@ The average performance of this worker in human readable form.
 
 #### Defined in
 
-[index.ts:2017](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2017)
+[index.ts:2022](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2022)
 
 ___
 
@@ -316,7 +316,7 @@ If True, this worker supports and allows post-processing requests.
 
 #### Defined in
 
-[index.ts:2007](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2007)
+[index.ts:2012](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2012)
 
 ___
 
@@ -332,7 +332,7 @@ How many images this worker has generated.
 
 #### Defined in
 
-[index.ts:2012](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2012)
+[index.ts:2017](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2017)
 
 ___
 
@@ -348,7 +348,7 @@ ___
 
 #### Defined in
 
-[index.ts:2035](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2035)
+[index.ts:2040](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2040)
 
 ___
 
@@ -362,7 +362,7 @@ ___
 
 #### Defined in
 
-[index.ts:2043](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2043)
+[index.ts:2048](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2048)
 
 ___
 
@@ -378,7 +378,7 @@ How many threads this worker is running.
 
 #### Defined in
 
-[index.ts:2019](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2019)
+[index.ts:2024](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2024)
 
 ___
 
@@ -394,7 +394,7 @@ The worker is trusted to return valid generations.
 
 #### Defined in
 
-[index.ts:2033](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2033)
+[index.ts:2038](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2038)
 
 ___
 
@@ -416,7 +416,7 @@ How many jobs this worker has left uncompleted after it started them.
 
 #### Defined in
 
-[index.ts:2040](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2040)
+[index.ts:2045](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2045)
 
 ___
 
@@ -432,4 +432,4 @@ The amount of seconds this worker has been online for this Horde.
 
 #### Defined in
 
-[index.ts:2021](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L2021)
+[index.ts:2026](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L2026)
