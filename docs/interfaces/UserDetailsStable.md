@@ -44,7 +44,7 @@ How many concurrent generations this user may request.
 
 #### Defined in
 
-[index.ts:1883](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1883)
+[index.ts:1888](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1888)
 
 ___
 
@@ -66,7 +66,7 @@ email@example.com
 
 #### Defined in
 
-[index.ts:1903](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1903)
+[index.ts:1908](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1908)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[index.ts:1870](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1870)
+[index.ts:1875](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1875)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[index.ts:1881](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1881)
+[index.ts:1886](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1886)
 
 ___
 
@@ -108,7 +108,7 @@ The user unique ID. It is always an integer.
 
 #### Defined in
 
-[index.ts:1877](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1877)
+[index.ts:1882](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1882)
 
 ___
 
@@ -124,7 +124,7 @@ The amount of Kudos this user has. The amount of Kudos determines the priority w
 
 #### Defined in
 
-[index.ts:1879](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1879)
+[index.ts:1884](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1884)
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-[index.ts:1888](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1888)
+[index.ts:1893](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1893)
 
 ___
 
@@ -154,7 +154,7 @@ This user is a Horde moderator.
 
 #### Defined in
 
-[index.ts:1887](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1887)
+[index.ts:1892](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1892)
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 #### Defined in
 
-[index.ts:1892](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1892)
+[index.ts:1897](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1897)
 
 ___
 
@@ -184,7 +184,7 @@ If true, this user has not registered using an oauth service.
 
 #### Defined in
 
-[index.ts:1898](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1898)
+[index.ts:1903](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1903)
 
 ___
 
@@ -200,7 +200,7 @@ ___
 
 #### Defined in
 
-[index.ts:1896](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1896)
+[index.ts:1901](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1901)
 
 ___
 
@@ -216,7 +216,7 @@ This user is a trusted member of the Horde.
 
 #### Defined in
 
-[index.ts:1894](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1894)
+[index.ts:1899](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1899)
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 #### Defined in
 
-[index.ts:1869](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1869)
+[index.ts:1874](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1874)
 
 ___
 
@@ -242,7 +242,7 @@ The user's unique Username. It is a combination of their chosen alias plus their
 
 #### Defined in
 
-[index.ts:1875](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1875)
+[index.ts:1880](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1880)
 
 ___
 
@@ -258,7 +258,7 @@ How many workers this user has created (active or inactive)
 
 #### Defined in
 
-[index.ts:1890](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1890)
+[index.ts:1895](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1895)
 
 ___
 
@@ -272,7 +272,7 @@ ___
 
 #### Defined in
 
-[index.ts:1891](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1891)
+[index.ts:1896](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1896)
 
 ___
 
@@ -288,4 +288,4 @@ Whether this user has been invited to join a worker to the horde and how many of
 
 #### Defined in
 
-[index.ts:1885](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1885)
+[index.ts:1890](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1890)
