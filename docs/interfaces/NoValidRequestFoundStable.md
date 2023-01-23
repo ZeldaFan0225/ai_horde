@@ -33,7 +33,7 @@ How many waiting requests were skipped because they demanded a generation with a
 
 #### Defined in
 
-[index.ts:1856](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1856)
+[index.ts:1861](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1861)
 
 ___
 
@@ -45,7 +45,7 @@ How many waiting requests were skipped because they demanded a higher size than 
 
 #### Defined in
 
-[index.ts:1847](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1847)
+[index.ts:1852](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1852)
 
 ___
 
@@ -61,7 +61,7 @@ How many waiting requests were skipped because they demanded a different model t
 
 #### Defined in
 
-[index.ts:1860](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1860)
+[index.ts:1865](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1865)
 
 ___
 
@@ -77,7 +77,7 @@ How many waiting requests were skipped because they demanded a nsfw generation w
 
 #### Defined in
 
-[index.ts:1854](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1854)
+[index.ts:1859](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1859)
 
 ___
 
@@ -93,7 +93,7 @@ How many waiting requests were skipped because they demanded a trusted worker wh
 
 #### Defined in
 
-[index.ts:1858](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1858)
+[index.ts:1863](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1863)
 
 ___
 
@@ -109,4 +109,4 @@ How many waiting requests were skipped because they demanded a specific worker
 
 #### Defined in
 
-[index.ts:1852](https://github.com/ZeldaFan0225/stable_horde/blob/da4b9dc/index.ts#L1852)
+[index.ts:1857](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1857)
