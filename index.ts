@@ -157,6 +157,15 @@ class StableHorde {
         return this.#cache
     }
 
+    parseAgent(agent: string) {
+        const [name, version, link] = agent.split(":")
+        return {
+            name,
+            version,
+            link
+        }
+    }
+
     /* GET REQUESTS */
 
     /**
@@ -2056,6 +2065,13 @@ export interface WorkerDetails extends WorkerDetailsLite {
      * @maxLength 500
     */
     contact?: string
+    /** 
+     * The bridge agent name, version and website
+     * @default: unknown:0:unknown
+     * @example: AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
+     * @maxLength: 1000
+    */
+    bridge_agent?: string
 }
 
 export interface WorkerDetailsLite {
