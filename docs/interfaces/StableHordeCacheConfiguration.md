@@ -27,7 +27,7 @@ How long to cache generation check data for in Milliseconds
 
 #### Defined in
 
-[index.ts:1386](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1386)
+[index.ts:1389](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1389)
 
 ___
 
@@ -39,7 +39,7 @@ How long to cache generation status data for in Milliseconds
 
 #### Defined in
 
-[index.ts:1388](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1388)
+[index.ts:1391](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1391)
 
 ___
 
@@ -51,7 +51,7 @@ How long to cache interrogation status data for in Milliseconds
 
 #### Defined in
 
-[index.ts:1390](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1390)
+[index.ts:1393](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1393)
 
 ___
 
@@ -63,7 +63,7 @@ How long to cache models for in Milliseconds
 
 #### Defined in
 
-[index.ts:1392](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1392)
+[index.ts:1395](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1395)
 
 ___
 
@@ -75,7 +75,7 @@ How long to cache modes for in Milliseconds
 
 #### Defined in
 
-[index.ts:1394](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1394)
+[index.ts:1397](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1397)
 
 ___
 
@@ -87,7 +87,7 @@ How long to cache news for in Milliseconds
 
 #### Defined in
 
-[index.ts:1396](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1396)
+[index.ts:1399](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1399)
 
 ___
 
@@ -99,7 +99,7 @@ How long to cache performance for in Milliseconds
 
 #### Defined in
 
-[index.ts:1398](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1398)
+[index.ts:1401](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1401)
 
 ___
 
@@ -111,7 +111,7 @@ How long to cache teams for in Milliseconds
 
 #### Defined in
 
-[index.ts:1402](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1402)
+[index.ts:1405](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1405)
 
 ___
 
@@ -123,7 +123,7 @@ How long to cache a specific user for in Milliseconds
 
 #### Defined in
 
-[index.ts:1384](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1384)
+[index.ts:1387](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1387)
 
 ___
 
@@ -135,4 +135,4 @@ How long to cache workers for in Milliseconds
 
 #### Defined in
 
-[index.ts:1400](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1400)
+[index.ts:1403](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1403)

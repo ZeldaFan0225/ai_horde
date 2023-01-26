@@ -44,7 +44,7 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:1557](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1557)
+[index.ts:1560](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1560)
 
 ___
 
@@ -66,7 +66,7 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:1565](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1565)
+[index.ts:1568](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1568)
 
 ___
 
@@ -92,7 +92,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1576](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1576)
+[index.ts:1579](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1579)
 
 ___
 
@@ -104,7 +104,7 @@ Set to True to enable karras noise scheduling tweaks
 
 #### Defined in
 
-[index.ts:1593](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1593)
+[index.ts:1596](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1596)
 
 ___
 
@@ -124,7 +124,7 @@ The amount of images to generate
 
 #### Defined in
 
-[index.ts:1611](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1611)
+[index.ts:1614](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1614)
 
 ___
 
@@ -136,7 +136,7 @@ The list of post-processors to apply to the image, in the order to be applied
 
 #### Defined in
 
-[index.ts:1595](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1595)
+[index.ts:1598](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1598)
 
 ___
 
@@ -150,7 +150,7 @@ k_euler
 
 #### Defined in
 
-[index.ts:1544](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1544)
+[index.ts:1547](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1547)
 
 ___
 
@@ -162,7 +162,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:1567](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1567)
+[index.ts:1570](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1570)
 
 ___
 
@@ -182,7 +182,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:1591](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1591)
+[index.ts:1594](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1594)
 
 ___
 
@@ -198,7 +198,7 @@ false
 
 #### Defined in
 
-[index.ts:1605](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1605)
+[index.ts:1608](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1608)
 
 ___
 
@@ -216,7 +216,7 @@ ___
 
 #### Defined in
 
-[index.ts:1600](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1600)
+[index.ts:1603](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1603)
 
 ___
 
@@ -228,7 +228,7 @@ Special Toggles used in the SD Webui. To be documented.
 
 #### Defined in
 
-[index.ts:1548](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1548)
+[index.ts:1551](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1551)
 
 ___
 
@@ -254,4 +254,4 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1585](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1585)
+[index.ts:1588](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1588)

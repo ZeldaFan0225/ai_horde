@@ -26,7 +26,7 @@ The model which generated this image
 
 #### Defined in
 
-[index.ts:1714](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1714)
+[index.ts:1717](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1717)
 
 ___
 
@@ -38,7 +38,7 @@ The UUID of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1710](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1710)
+[index.ts:1713](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1713)
 
 ___
 
@@ -50,4 +50,4 @@ The name of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1712](https://github.com/ZeldaFan0225/stable_horde/blob/cc34adc/index.ts#L1712)
+[index.ts:1715](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1715)
