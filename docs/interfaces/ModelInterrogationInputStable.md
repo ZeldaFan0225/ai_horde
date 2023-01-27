@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[index.ts:2273](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2273)
+[index.ts:2273](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L2273)
 
 ___
 
@@ -29,4 +29,4 @@ The public URL of the image to interrogate
 
 #### Defined in
 
-[index.ts:2275](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L2275)
+[index.ts:2275](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L2275)
