@@ -29,7 +29,7 @@ Words which, when detected will refuse to pick up any jobs
 
 #### Defined in
 
-[index.ts:1757](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1757)
+[index.ts:1757](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1757)
 
 ___
 
@@ -45,7 +45,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:1764](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1764)
+[index.ts:1764](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1764)
 
 ___
 
@@ -57,7 +57,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:1759](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1759)
+[index.ts:1759](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1759)
 
 ___
 
@@ -69,7 +69,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:1748](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1748)
+[index.ts:1748](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1748)
 
 ___
 
@@ -85,7 +85,7 @@ false
 
 #### Defined in
 
-[index.ts:1755](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1755)
+[index.ts:1755](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1755)
 
 ___
 
@@ -97,4 +97,4 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:1750](https://github.com/ZeldaFan0225/stable_horde/blob/6d32b90/index.ts#L1750)
+[index.ts:1750](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1750)
