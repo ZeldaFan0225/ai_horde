@@ -128,7 +128,7 @@ class StableHorde {
         }
         
         try {
-            let pckg = JSON.parse(join(__dirname, readFileSync("./package.json", "utf-8")))
+            let pckg = JSON.parse(readFileSync(join(__dirname, "./package.json"), "utf-8"))
             this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
             this.VERSION = pckg.version
         } catch {
