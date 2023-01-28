@@ -99,7 +99,7 @@
 
 #### Defined in
 
-[index.ts:2262](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L2262)
+[index.ts:2279](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2279)
 
 ___
 
@@ -109,4 +109,4 @@ ___
 
 #### Defined in
 
-[index.ts:2260](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L2260)
+[index.ts:2277](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2277)

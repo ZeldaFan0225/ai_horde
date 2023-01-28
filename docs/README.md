@@ -63,6 +63,7 @@ const stable_horde = new StableHorde({
   cache: {
     generations_check: 1000 * 30,
   },
+  client_agent: "My-Project:v0.0.1:My-Contact"
 });
 
 // start the generation of an image with the given payload

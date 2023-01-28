@@ -20,7 +20,7 @@ The ID of the team
 
 #### Defined in
 
-[index.ts:2174](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L2174)
+[index.ts:2191](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2191)
 
 ___
 
@@ -32,7 +32,7 @@ The Info of the team
 
 #### Defined in
 
-[index.ts:2178](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L2178)
+[index.ts:2195](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2195)
 
 ___
 
@@ -44,4 +44,4 @@ The Name of the team
 
 #### Defined in
 
-[index.ts:2176](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L2176)
+[index.ts:2193](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2193)
