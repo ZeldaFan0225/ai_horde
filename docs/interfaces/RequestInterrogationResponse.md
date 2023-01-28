@@ -19,7 +19,7 @@ The UUID of the request. Use this to retrieve the request status in the future
 
 #### Defined in
 
-[index.ts:2280](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L2280)
+[index.ts:2297](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2297)
 
 ___
 
@@ -31,4 +31,4 @@ Any extra information from the horde about this request
 
 #### Defined in
 
-[index.ts:2282](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L2282)
+[index.ts:2299](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2299)
