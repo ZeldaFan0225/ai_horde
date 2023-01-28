@@ -129,10 +129,10 @@ class StableHorde {
         
         try {
             let pckg = JSON.parse(join(__dirname, readFileSync("./package.json", "utf-8")))
-            this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:Zelda_Fan#0225`
+            this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
             this.VERSION = pckg.version
         } catch {
-            this.#client_agent = options?.client_agent ?? `@zeldafan0225/stable_horde:Version_Unknown:Zelda_Fan#0225`
+            this.#client_agent = options?.client_agent ?? `@zeldafan0225/stable_horde:Version_Unknown:github.com/ZeldaFan0225/stable_horde/issues`
             this.VERSION = "Unknown"
         }
 
