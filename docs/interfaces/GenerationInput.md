@@ -37,7 +37,7 @@ false
 
 #### Defined in
 
-[index.ts:1526](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1526)
+[index.ts:1536](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1536)
 
 ___
 
@@ -49,7 +49,7 @@ Specify which models are allowed to be used for this request
 
 #### Defined in
 
-[index.ts:1530](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1530)
+[index.ts:1540](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1540)
 
 ___
 
@@ -65,7 +65,7 @@ false
 
 #### Defined in
 
-[index.ts:1516](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1516)
+[index.ts:1526](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1526)
 
 ___
 
@@ -77,7 +77,7 @@ The parameters for the generation
 
 #### Defined in
 
-[index.ts:1511](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1511)
+[index.ts:1521](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1521)
 
 ___
 
@@ -89,7 +89,7 @@ The prompt which will be sent to Stable Diffusion to generate an image
 
 #### Defined in
 
-[index.ts:1509](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1509)
+[index.ts:1519](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1519)
 
 ___
 
@@ -101,7 +101,7 @@ If True, the image will be sent via cloudflare r2 download link
 
 #### Defined in
 
-[index.ts:1538](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1538)
+[index.ts:1548](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1548)
 
 ___
 
@@ -113,7 +113,7 @@ If True, The image will be shared with LAION for improving their dataset. This w
 
 #### Defined in
 
-[index.ts:1540](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1540)
+[index.ts:1550](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1550)
 
 ___
 
@@ -125,7 +125,7 @@ The Base64-encoded webp to use for img2img, max siue 3072 * 3072
 
 #### Defined in
 
-[index.ts:1532](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1532)
+[index.ts:1542](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1542)
 
 ___
 
@@ -137,7 +137,7 @@ If source_processing is set to 'inpainting' or 'outpainting', this parameter can
 
 #### Defined in
 
-[index.ts:1536](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1536)
+[index.ts:1546](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1546)
 
 ___
 
@@ -149,7 +149,7 @@ If source_image is provided, specifies how to process it.
 
 #### Defined in
 
-[index.ts:1534](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1534)
+[index.ts:1544](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1544)
 
 ___
 
@@ -165,7 +165,7 @@ true
 
 #### Defined in
 
-[index.ts:1521](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1521)
+[index.ts:1531](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1531)
 
 ___
 
@@ -177,4 +177,4 @@ Specify which workers are allowed to service this request
 
 #### Defined in
 
-[index.ts:1528](https://github.com/ZeldaFan0225/stable_horde/blob/e31e830/index.ts#L1528)
+[index.ts:1538](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1538)
