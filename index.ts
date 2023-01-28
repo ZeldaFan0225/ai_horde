@@ -2,6 +2,7 @@ import SuperMap from "@thunder04/supermap"
 import Centra from "centra"
 import { IncomingMessage } from "http"
 import { readFileSync } from "fs"
+import { join } from "path";
 
 /*
  * https://github.com/db0/AI-Horde/blob/main/CHANGELOG.md
@@ -127,7 +128,7 @@ class StableHorde {
         }
         
         try {
-            let pckg = JSON.parse(readFileSync("./package.json", "utf-8"))
+            let pckg = JSON.parse(join(__dirname, readFileSync("./package.json", "utf-8")))
             this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:Zelda_Fan#0225`
             this.VERSION = pckg.version
         } catch {

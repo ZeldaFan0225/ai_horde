@@ -1,8 +1,20 @@
 const StableHorde = require( ".." )
 
 //main()
+version()
 
 console.log(StableHorde.ModelGenerationInputPostProcessingTypes)
+
+function version() {
+    const stable_horde = new StableHorde({
+        cache_interval: 1000 * 10,
+        cache: {
+            generations_check: 1000 * 30
+        }
+    })
+
+    console.log(stable_horde.VERSION)
+}
 
 async function main() {
     const stable_horde = new StableHorde({
