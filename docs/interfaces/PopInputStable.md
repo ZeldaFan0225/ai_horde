@@ -34,7 +34,7 @@ Words which, when detected will refuse to pick up any jobs
 
 #### Defined in
 
-[index.ts:1767](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1767)
+[index.ts:1795](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1795)
 
 ___
 
@@ -54,7 +54,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:1774](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1774)
+[index.ts:1802](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1802)
 
 ___
 
@@ -70,7 +70,7 @@ The maximum amount of pixels this worker can generate
 
 #### Defined in
 
-[index.ts:1753](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1753)
+[index.ts:1781](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1781)
 
 ___
 
@@ -86,7 +86,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:1769](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1769)
+[index.ts:1797](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1797)
 
 ___
 
@@ -102,7 +102,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:1758](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1758)
+[index.ts:1786](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1786)
 
 ___
 
@@ -122,7 +122,7 @@ false
 
 #### Defined in
 
-[index.ts:1765](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1765)
+[index.ts:1793](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1793)
 
 ___
 
@@ -138,4 +138,4 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:1760](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1760)
+[index.ts:1788](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1788)

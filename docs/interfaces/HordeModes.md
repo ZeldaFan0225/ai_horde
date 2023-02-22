@@ -20,7 +20,7 @@ When True, this Horde will not only accept worker explicitly invited to join.
 
 #### Defined in
 
-[index.ts:2137](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2137)
+[index.ts:2165](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2165)
 
 ___
 
@@ -32,7 +32,7 @@ When True, this Horde will not accept new requests for image generation, but wil
 
 #### Defined in
 
-[index.ts:2135](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2135)
+[index.ts:2163](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2163)
 
 ___
 
@@ -44,4 +44,4 @@ When True, this Horde will not always provide full information in order to throw
 
 #### Defined in
 
-[index.ts:2139](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2139)
+[index.ts:2167](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2167)
