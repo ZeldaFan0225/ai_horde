@@ -29,7 +29,7 @@ This is a dataset of images of cats
 
 #### Defined in
 
-[index.ts:2667](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2667)
+[index.ts:2695](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2695)
 
 ___
 
@@ -47,7 +47,7 @@ The unique identifier for this dataset
 
 #### Defined in
 
-[index.ts:2657](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2657)
+[index.ts:2685](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2685)
 
 ___
 
@@ -65,7 +65,7 @@ The number of images in this dataset
 
 #### Defined in
 
-[index.ts:2672](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2672)
+[index.ts:2700](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2700)
 
 ___
 
@@ -83,4 +83,4 @@ My Dataset
 
 #### Defined in
 
-[index.ts:2662](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L2662)
+[index.ts:2690](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2690)
