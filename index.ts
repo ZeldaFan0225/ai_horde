@@ -51,6 +51,18 @@ enum HordeAsyncRequestStates {
     "cancelled" = "cancelled"
 }
 
+enum ModelGenerationInputControlTypes {
+    "canny" = "canny",
+    "hed" = "hed",
+    "depth" = "depth",
+    "normal" = "normal",
+    "openpose" = "openpose",
+    "seg" = "seg",
+    "scribble" = "scribble",
+    "fakescribbles" = "fakescribbles",
+    "hough" = "hough"
+}
+
 class APIError extends Error {
     rawError: RequestError;
     status: number;
@@ -81,6 +93,9 @@ class StableHorde {
     
     static readonly ModelGenerationInputPostProcessingTypes = ModelGenerationInputPostProcessingTypes;
     readonly ModelGenerationInputPostProcessingTypes = StableHorde.ModelGenerationInputPostProcessingTypes;
+    
+    static readonly ModelGenerationInputControlTypes = ModelGenerationInputControlTypes;
+    readonly ModelGenerationInputControlTypes = StableHorde.ModelGenerationInputControlTypes;
     
     static readonly ModelInterrogationFormTypes = ModelInterrogationFormTypes;
     readonly ModelInterrogationFormTypes = StableHorde.ModelInterrogationFormTypes;
@@ -1607,13 +1622,26 @@ export interface ModelGenerationInputStable {
     /** The list of post-processors to apply to the image, in the order to be applied */
     post_processing?: (typeof StableHorde.ModelGenerationInputPostProcessingTypes[keyof typeof StableHorde.ModelGenerationInputPostProcessingTypes])[]
     /** 
-     * @minimum 1
-     * @maximum 500
+     * Set to True to create images that stitch together seamlessly
+     * @default false
     */
     tiling?: boolean,
     /** 
-     * Set to True to create images that stitch together seamlessly
+     * Set to True to process the image at base resolution before upscaling and re-processing
      * @default false
+    */
+    hires_fix?: boolean,
+    /** 
+     * The number of CLIP language processor layers to skip
+     * @minimum 1
+     * @maximum 12
+    */
+    clip_skip?: (typeof StableHorde.ModelGenerationInputControlTypes[keyof typeof StableHorde.ModelGenerationInputControlTypes]),
+    control_type?: number,
+    /** 
+     * @default 30
+     * @minimum 1
+     * @maximum 500
     */
     steps?: number,
     /** 
