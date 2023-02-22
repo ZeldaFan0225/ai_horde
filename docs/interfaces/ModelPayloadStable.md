@@ -47,7 +47,7 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:1805](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1805)
+[index.ts:1833](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1833)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[index.ts:1853](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1853)
+[index.ts:1881](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1881)
 
 ___
 
@@ -83,7 +83,7 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:1813](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1813)
+[index.ts:1841](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1841)
 
 ___
 
@@ -109,7 +109,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1824](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1824)
+[index.ts:1852](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1852)
 
 ___
 
@@ -125,7 +125,7 @@ The amount of images to generate
 
 #### Defined in
 
-[index.ts:1858](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1858)
+[index.ts:1886](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1886)
 
 ___
 
@@ -137,7 +137,7 @@ The prompt which will be sent to Stable Diffusion to generate an image
 
 #### Defined in
 
-[index.ts:1849](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1849)
+[index.ts:1877](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1877)
 
 ___
 
@@ -151,7 +151,7 @@ k_euler
 
 #### Defined in
 
-[index.ts:1792](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1792)
+[index.ts:1820](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1820)
 
 ___
 
@@ -163,7 +163,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:1815](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1815)
+[index.ts:1843](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1843)
 
 ___
 
@@ -183,7 +183,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:1839](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1839)
+[index.ts:1867](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1867)
 
 ___
 
@@ -195,7 +195,7 @@ Special Toggles used in the SD Webui. To be documented.
 
 #### Defined in
 
-[index.ts:1796](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1796)
+[index.ts:1824](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1824)
 
 ___
 
@@ -207,7 +207,7 @@ Set to true to process the generated image with GFPGAN (face correction)
 
 #### Defined in
 
-[index.ts:1841](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1841)
+[index.ts:1869](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1869)
 
 ___
 
@@ -219,7 +219,7 @@ Set to true to process the generated image with LDSR
 
 #### Defined in
 
-[index.ts:1845](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1845)
+[index.ts:1873](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1873)
 
 ___
 
@@ -231,7 +231,7 @@ When true will apply NSFW censoring model on the generation
 
 #### Defined in
 
-[index.ts:1860](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1860)
+[index.ts:1888](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1888)
 
 ___
 
@@ -243,7 +243,7 @@ Set to true to process the generated image with RealESRGAN
 
 #### Defined in
 
-[index.ts:1843](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1843)
+[index.ts:1871](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1871)
 
 ___
 
@@ -255,7 +255,7 @@ Set to true to upscale the image
 
 #### Defined in
 
-[index.ts:1847](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1847)
+[index.ts:1875](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1875)
 
 ___
 
@@ -281,4 +281,4 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1833](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1833)
+[index.ts:1861](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1861)
