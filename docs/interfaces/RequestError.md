@@ -18,4 +18,4 @@ The error message for this status code.
 
 #### Defined in
 
-[index.ts:1693](https://github.com/ZeldaFan0225/stable_horde/blob/4f15ca1/index.ts#L1693)
+[index.ts:1721](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1721)
