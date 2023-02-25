@@ -1,25 +1,27 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / NoValidRequestFoundStable
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / NoValidRequestFoundKobold
 
-# Interface: NoValidRequestFoundStable
+# Interface: NoValidRequestFoundKobold
 
 ## Hierarchy
 
 - [`NoValidRequestFound`](NoValidRequestFound.md)
 
-  ↳ **`NoValidRequestFoundStable`**
+  ↳ **`NoValidRequestFoundKobold`**
 
 ## Table of contents
 
 ### Properties
 
-- [blacklist](NoValidRequestFoundStable.md#blacklist)
-- [bridge\_version](NoValidRequestFoundStable.md#bridge_version)
-- [max\_pixels](NoValidRequestFoundStable.md#max_pixels)
-- [models](NoValidRequestFoundStable.md#models)
-- [nsfw](NoValidRequestFoundStable.md#nsfw)
-- [performance](NoValidRequestFoundStable.md#performance)
-- [untrusted](NoValidRequestFoundStable.md#untrusted)
-- [worker\_id](NoValidRequestFoundStable.md#worker_id)
+- [blacklist](NoValidRequestFoundKobold.md#blacklist)
+- [bridge\_version](NoValidRequestFoundKobold.md#bridge_version)
+- [matching\_softprompt](NoValidRequestFoundKobold.md#matching_softprompt)
+- [max\_context\_length](NoValidRequestFoundKobold.md#max_context_length)
+- [max\_length](NoValidRequestFoundKobold.md#max_length)
+- [models](NoValidRequestFoundKobold.md#models)
+- [nsfw](NoValidRequestFoundKobold.md#nsfw)
+- [performance](NoValidRequestFoundKobold.md#performance)
+- [untrusted](NoValidRequestFoundKobold.md#untrusted)
+- [worker\_id](NoValidRequestFoundKobold.md#worker_id)
 
 ## Properties
 
@@ -55,15 +57,39 @@ How many waiting requests were skipped because they require a higher version of 
 
 ___
 
-### max\_pixels
+### matching\_softprompt
 
-• `Optional` **max\_pixels**: `number`
+• `Optional` **matching\_softprompt**: `number`
 
-How many waiting requests were skipped because they demanded a higher size than this worker provides
+How many waiting requests were skipped because they demanded an available soft-prompt which this worker does not have.
 
 #### Defined in
 
-[index.ts:2364](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2364)
+[index.ts:2359](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2359)
+
+___
+
+### max\_context\_length
+
+• `Optional` **max\_context\_length**: `number`
+
+How many waiting requests were skipped because they demanded a higher max_context_length than what this worker provides.
+
+#### Defined in
+
+[index.ts:2355](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2355)
+
+___
+
+### max\_length
+
+• `Optional` **max\_length**: `number`
+
+How many waiting requests were skipped because they demanded more generated tokens that what this worker can provide.
+
+#### Defined in
+
+[index.ts:2357](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2357)
 
 ___
 

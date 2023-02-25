@@ -27,7 +27,10 @@
 - [FilterPromptSuspicion](interfaces/FilterPromptSuspicion.md)
 - [Generation](interfaces/Generation.md)
 - [GenerationInput](interfaces/GenerationInput.md)
-- [GenerationPayload](interfaces/GenerationPayload.md)
+- [GenerationInputKobold](interfaces/GenerationInputKobold.md)
+- [GenerationKobold](interfaces/GenerationKobold.md)
+- [GenerationPayloadKobold](interfaces/GenerationPayloadKobold.md)
+- [GenerationPayloadStable](interfaces/GenerationPayloadStable.md)
 - [GenerationStable](interfaces/GenerationStable.md)
 - [GenerationSubmitted](interfaces/GenerationSubmitted.md)
 - [HordeModes](interfaces/HordeModes.md)
@@ -39,9 +42,11 @@
 - [InterrogationPopPayload](interfaces/InterrogationPopPayload.md)
 - [InterrogationStatus](interfaces/InterrogationStatus.md)
 - [KudosTransferred](interfaces/KudosTransferred.md)
+- [ModelGenerationInputKobold](interfaces/ModelGenerationInputKobold.md)
 - [ModelGenerationInputStable](interfaces/ModelGenerationInputStable.md)
 - [ModelInterrogationFormStable](interfaces/ModelInterrogationFormStable.md)
 - [ModelInterrogationInputStable](interfaces/ModelInterrogationInputStable.md)
+- [ModelPayloadKobold](interfaces/ModelPayloadKobold.md)
 - [ModelPayloadRootStable](interfaces/ModelPayloadRootStable.md)
 - [ModelPayloadStable](interfaces/ModelPayloadStable.md)
 - [ModifyTeam](interfaces/ModifyTeam.md)
@@ -54,9 +59,11 @@
 - [Newspiece](interfaces/Newspiece.md)
 - [NoValidInterrogationsFound](interfaces/NoValidInterrogationsFound.md)
 - [NoValidRequestFound](interfaces/NoValidRequestFound.md)
+- [NoValidRequestFoundKobold](interfaces/NoValidRequestFoundKobold.md)
 - [NoValidRequestFoundStable](interfaces/NoValidRequestFoundStable.md)
 - [PatchExistingFilter](interfaces/PatchExistingFilter.md)
 - [PopInput](interfaces/PopInput.md)
+- [PopInputKobold](interfaces/PopInputKobold.md)
 - [PopInputStable](interfaces/PopInputStable.md)
 - [PutNewFilter](interfaces/PutNewFilter.md)
 - [RatePostInput](interfaces/RatePostInput.md)
@@ -66,6 +73,7 @@
 - [RequestError](interfaces/RequestError.md)
 - [RequestInterrogationResponse](interfaces/RequestInterrogationResponse.md)
 - [RequestStatusCheck](interfaces/RequestStatusCheck.md)
+- [RequestStatusKobold](interfaces/RequestStatusKobold.md)
 - [RequestStatusStable](interfaces/RequestStatusStable.md)
 - [SimpleResponse](interfaces/SimpleResponse.md)
 - [StableHordeCacheConfiguration](interfaces/StableHordeCacheConfiguration.md)
@@ -78,8 +86,9 @@
 - [UsageDetails](interfaces/UsageDetails.md)
 - [UsageDetailsStable](interfaces/UsageDetailsStable.md)
 - [UserDetails](interfaces/UserDetails.md)
-- [UserDetails](interfaces/UserDetails.md)
 - [UserKudosDetails](interfaces/UserKudosDetails.md)
+- [UserRecords](interfaces/UserRecords.md)
+- [UserThingRecords](interfaces/UserThingRecords.md)
 - [WorkerDetails](interfaces/WorkerDetails.md)
 - [WorkerDetailsLite](interfaces/WorkerDetailsLite.md)
 - [WorkerDetailsStable](interfaces/WorkerDetailsStable.md)
@@ -99,7 +108,7 @@
 
 #### Defined in
 
-[index.ts:2307](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2307)
+[index.ts:2814](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2814)
 
 ___
 
@@ -109,4 +118,4 @@ ___
 
 #### Defined in
 
-[index.ts:2305](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2305)
+[index.ts:2812](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2812)

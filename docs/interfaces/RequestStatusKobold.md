@@ -1,27 +1,27 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / RequestStatusStable
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / RequestStatusKobold
 
-# Interface: RequestStatusStable
+# Interface: RequestStatusKobold
 
 ## Hierarchy
 
 - [`RequestStatusCheck`](RequestStatusCheck.md)
 
-  ↳ **`RequestStatusStable`**
+  ↳ **`RequestStatusKobold`**
 
 ## Table of contents
 
 ### Properties
 
-- [done](RequestStatusStable.md#done)
-- [faulted](RequestStatusStable.md#faulted)
-- [finished](RequestStatusStable.md#finished)
-- [generations](RequestStatusStable.md#generations)
-- [is\_possible](RequestStatusStable.md#is_possible)
-- [kudos](RequestStatusStable.md#kudos)
-- [processing](RequestStatusStable.md#processing)
-- [queue\_position](RequestStatusStable.md#queue_position)
-- [wait\_time](RequestStatusStable.md#wait_time)
-- [waiting](RequestStatusStable.md#waiting)
+- [done](RequestStatusKobold.md#done)
+- [faulted](RequestStatusKobold.md#faulted)
+- [finished](RequestStatusKobold.md#finished)
+- [generations](RequestStatusKobold.md#generations)
+- [is\_possible](RequestStatusKobold.md#is_possible)
+- [kudos](RequestStatusKobold.md#kudos)
+- [processing](RequestStatusKobold.md#processing)
+- [queue\_position](RequestStatusKobold.md#queue_position)
+- [wait\_time](RequestStatusKobold.md#wait_time)
+- [waiting](RequestStatusKobold.md#waiting)
 
 ## Properties
 
@@ -75,11 +75,11 @@ ___
 
 ### generations
 
-• `Optional` **generations**: [`GenerationStable`](GenerationStable.md)[]
+• `Optional` **generations**: [`GenerationKobold`](GenerationKobold.md)[]
 
 #### Defined in
 
-[index.ts:2116](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2116)
+[index.ts:2120](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2120)
 
 ___
 
