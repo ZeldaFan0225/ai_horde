@@ -19,7 +19,7 @@ The ID of the deleted worker
 
 #### Defined in
 
-[index.ts:2135](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2135)
+[index.ts:2642](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2642)
 
 ___
 
@@ -31,4 +31,4 @@ The Name of the deleted worker
 
 #### Defined in
 
-[index.ts:2137](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2137)
+[index.ts:2644](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2644)

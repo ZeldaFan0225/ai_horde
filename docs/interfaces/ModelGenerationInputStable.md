@@ -47,13 +47,13 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:1585](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1585)
+[index.ts:1976](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1976)
 
 ___
 
 ### clip\_skip
 
-• `Optional` **clip\_skip**: `canny` \| `hed` \| `depth` \| `normal` \| `openpose` \| `seg` \| `scribble` \| `fakescribbles` \| `hough`
+• `Optional` **clip\_skip**: `number`
 
 The number of CLIP language processor layers to skip
 
@@ -67,17 +67,17 @@ The number of CLIP language processor layers to skip
 
 #### Defined in
 
-[index.ts:1639](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1639)
+[index.ts:2030](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2030)
 
 ___
 
 ### control\_type
 
-• `Optional` **control\_type**: `number`
+• `Optional` **control\_type**: `canny` \| `hed` \| `depth` \| `normal` \| `openpose` \| `seg` \| `scribble` \| `fakescribbles` \| `hough`
 
 #### Defined in
 
-[index.ts:1640](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1640)
+[index.ts:2031](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2031)
 
 ___
 
@@ -99,7 +99,7 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:1593](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1593)
+[index.ts:1984](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1984)
 
 ___
 
@@ -125,7 +125,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1604](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1604)
+[index.ts:1995](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1995)
 
 ___
 
@@ -141,7 +141,7 @@ false
 
 #### Defined in
 
-[index.ts:1633](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1633)
+[index.ts:2024](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2024)
 
 ___
 
@@ -153,7 +153,7 @@ Set to True to enable karras noise scheduling tweaks
 
 #### Defined in
 
-[index.ts:1621](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1621)
+[index.ts:2012](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2012)
 
 ___
 
@@ -173,7 +173,7 @@ The amount of images to generate
 
 #### Defined in
 
-[index.ts:1652](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1652)
+[index.ts:2043](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2043)
 
 ___
 
@@ -185,7 +185,7 @@ The list of post-processors to apply to the image, in the order to be applied
 
 #### Defined in
 
-[index.ts:1623](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1623)
+[index.ts:2014](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2014)
 
 ___
 
@@ -199,7 +199,7 @@ k_euler
 
 #### Defined in
 
-[index.ts:1572](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1572)
+[index.ts:1963](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1963)
 
 ___
 
@@ -211,7 +211,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:1595](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1595)
+[index.ts:1986](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1986)
 
 ___
 
@@ -231,7 +231,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:1619](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1619)
+[index.ts:2010](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2010)
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-[index.ts:1646](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1646)
+[index.ts:2037](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2037)
 
 ___
 
@@ -269,7 +269,7 @@ false
 
 #### Defined in
 
-[index.ts:1628](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1628)
+[index.ts:2019](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2019)
 
 ___
 
@@ -281,7 +281,7 @@ Special Toggles used in the SD Webui. To be documented.
 
 #### Defined in
 
-[index.ts:1576](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1576)
+[index.ts:1967](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1967)
 
 ___
 
@@ -307,4 +307,4 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1613](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1613)
+[index.ts:2004](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2004)

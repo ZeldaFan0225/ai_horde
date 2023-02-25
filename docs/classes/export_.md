@@ -39,8 +39,10 @@
 - [deleteFilter](export_.md#deletefilter)
 - [deleteGenerationRequest](export_.md#deletegenerationrequest)
 - [deleteIPTimeout](export_.md#deleteiptimeout)
+- [deleteImageGenerationRequest](export_.md#deleteimagegenerationrequest)
 - [deleteInterrogationRequest](export_.md#deleteinterrogationrequest)
 - [deleteTeam](export_.md#deleteteam)
+- [deleteTextGenerationRequest](export_.md#deletetextgenerationrequest)
 - [deleteWorker](export_.md#deleteworker)
 - [findUser](export_.md#finduser)
 - [getFilter](export_.md#getfilter)
@@ -48,6 +50,8 @@
 - [getGenerationCheck](export_.md#getgenerationcheck)
 - [getGenerationStatus](export_.md#getgenerationstatus)
 - [getHeartbeat](export_.md#getheartbeat)
+- [getImageGenerationCheck](export_.md#getimagegenerationcheck)
+- [getImageGenerationStatus](export_.md#getimagegenerationstatus)
 - [getInterrogationStatus](export_.md#getinterrogationstatus)
 - [getModels](export_.md#getmodels)
 - [getModes](export_.md#getmodes)
@@ -55,6 +59,7 @@
 - [getPerformance](export_.md#getperformance)
 - [getTeam](export_.md#getteam)
 - [getTeams](export_.md#getteams)
+- [getTextGenerationStatus](export_.md#gettextgenerationstatus)
 - [getUserDetails](export_.md#getuserdetails)
 - [getUsers](export_.md#getusers)
 - [getWorkerDetails](export_.md#getworkerdetails)
@@ -62,14 +67,21 @@
 - [getWorkersByPerformance](export_.md#getworkersbyperformance)
 - [parseAgent](export_.md#parseagent)
 - [postAsyncGenerate](export_.md#postasyncgenerate)
+- [postAsyncImageGenerate](export_.md#postasyncimagegenerate)
 - [postAsyncInterrogate](export_.md#postasyncinterrogate)
+- [postAsyncTextGenerate](export_.md#postasynctextgenerate)
 - [postFilters](export_.md#postfilters)
 - [postGenerationPop](export_.md#postgenerationpop)
 - [postGenerationSubmit](export_.md#postgenerationsubmit)
+- [postImageGenerationPop](export_.md#postimagegenerationpop)
+- [postImageGenerationSubmit](export_.md#postimagegenerationsubmit)
 - [postInterrogationPop](export_.md#postinterrogationpop)
 - [postInterrogationSubmit](export_.md#postinterrogationsubmit)
+- [postKoboldTransfer](export_.md#postkoboldtransfer)
 - [postKudosTransfer](export_.md#postkudostransfer)
 - [postRating](export_.md#postrating)
+- [postTextGenerationPop](export_.md#posttextgenerationpop)
+- [postTextGenerationSubmit](export_.md#posttextgenerationsubmit)
 - [putStatusModes](export_.md#putstatusmodes)
 - [updateFilter](export_.md#updatefilter)
 - [updateTeam](export_.md#updateteam)
@@ -90,7 +102,7 @@
 
 #### Defined in
 
-[index.ts:116](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L116)
+[index.ts:116](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L116)
 
 ## Properties
 
@@ -100,7 +112,7 @@
 
 #### Defined in
 
-[index.ts:107](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L107)
+[index.ts:107](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L107)
 
 ___
 
@@ -110,7 +122,7 @@ ___
 
 #### Defined in
 
-[index.ts:104](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L104)
+[index.ts:104](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L104)
 
 ___
 
@@ -120,7 +132,7 @@ ___
 
 #### Defined in
 
-[index.ts:98](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L98)
+[index.ts:98](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L98)
 
 ___
 
@@ -130,7 +142,7 @@ ___
 
 #### Defined in
 
-[index.ts:95](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L95)
+[index.ts:95](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L95)
 
 ___
 
@@ -140,7 +152,7 @@ ___
 
 #### Defined in
 
-[index.ts:89](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L89)
+[index.ts:89](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L89)
 
 ___
 
@@ -150,7 +162,7 @@ ___
 
 #### Defined in
 
-[index.ts:101](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L101)
+[index.ts:101](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L101)
 
 ___
 
@@ -160,7 +172,7 @@ ___
 
 #### Defined in
 
-[index.ts:92](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L92)
+[index.ts:92](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L92)
 
 ___
 
@@ -170,7 +182,7 @@ ___
 
 #### Defined in
 
-[index.ts:113](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L113)
+[index.ts:113](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L113)
 
 ___
 
@@ -180,7 +192,7 @@ ___
 
 #### Defined in
 
-[index.ts:115](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L115)
+[index.ts:115](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L115)
 
 ___
 
@@ -190,7 +202,7 @@ ___
 
 #### Defined in
 
-[index.ts:106](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L106)
+[index.ts:106](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L106)
 
 ___
 
@@ -200,7 +212,7 @@ ___
 
 #### Defined in
 
-[index.ts:103](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L103)
+[index.ts:103](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L103)
 
 ___
 
@@ -210,7 +222,7 @@ ___
 
 #### Defined in
 
-[index.ts:97](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L97)
+[index.ts:97](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L97)
 
 ___
 
@@ -220,7 +232,7 @@ ___
 
 #### Defined in
 
-[index.ts:94](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L94)
+[index.ts:94](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L94)
 
 ___
 
@@ -230,7 +242,7 @@ ___
 
 #### Defined in
 
-[index.ts:88](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L88)
+[index.ts:88](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L88)
 
 ___
 
@@ -240,7 +252,7 @@ ___
 
 #### Defined in
 
-[index.ts:100](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L100)
+[index.ts:100](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L100)
 
 ___
 
@@ -250,7 +262,7 @@ ___
 
 #### Defined in
 
-[index.ts:91](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L91)
+[index.ts:91](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L91)
 
 ## Accessors
 
@@ -264,7 +276,7 @@ ___
 
 #### Defined in
 
-[index.ts:172](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L172)
+[index.ts:172](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L172)
 
 ## Methods
 
@@ -298,7 +310,7 @@ FilterDetails
 
 #### Defined in
 
-[index.ts:1135](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1135)
+[index.ts:1397](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1397)
 
 ___
 
@@ -312,7 +324,7 @@ ___
 
 #### Defined in
 
-[index.ts:168](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L168)
+[index.ts:168](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L168)
 
 ___
 
@@ -346,7 +358,7 @@ ModifyTeam
 
 #### Defined in
 
-[index.ts:963](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L963)
+[index.ts:1225](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1225)
 
 ___
 
@@ -379,7 +391,7 @@ SimpleResponse
 
 #### Defined in
 
-[index.ts:1361](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1361)
+[index.ts:1653](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1653)
 
 ___
 
@@ -389,6 +401,10 @@ ___
 
 Cancel an unfinished request
 This request will include all already generated images in base64 encoded .webp files.
+
+**`Deprecated`**
+
+Use deleteImageGenerationRequest instead
 
 #### Type parameters
 
@@ -412,7 +428,7 @@ RequestStatusStable
 
 #### Defined in
 
-[index.ts:1203](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1203)
+[index.ts:282](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L282)
 
 ___
 
@@ -446,7 +462,40 @@ SimpleResponse
 
 #### Defined in
 
-[index.ts:1329](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1329)
+[index.ts:1621](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1621)
+
+___
+
+### deleteImageGenerationRequest
+
+▸ **deleteImageGenerationRequest**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusStable`](../interfaces/RequestStatusStable.md), `T`\>\>
+
+Cancel an unfinished request
+This request will include all already generated images in base64 encoded .webp files.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`RequestStatusStable`](../interfaces/RequestStatusStable.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The targeted generations ID |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+
+#### Returns
+
+`Promise`<`Pick`<[`RequestStatusStable`](../interfaces/RequestStatusStable.md), `T`\>\>
+
+RequestStatusStable
+
+#### Defined in
+
+[index.ts:1465](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1465)
 
 ___
 
@@ -479,7 +528,7 @@ InterrogationStatus
 
 #### Defined in
 
-[index.ts:1231](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1231)
+[index.ts:1523](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1523)
 
 ___
 
@@ -514,7 +563,40 @@ DeletedTeam
 
 #### Defined in
 
-[index.ts:1296](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1296)
+[index.ts:1588](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1588)
+
+___
+
+### deleteTextGenerationRequest
+
+▸ **deleteTextGenerationRequest**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusKobold`](../interfaces/RequestStatusKobold.md), `T`\>\>
+
+Cancel an unfinished request
+This request will include all already generated images in base64 encoded .webp files.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`RequestStatusKobold`](../interfaces/RequestStatusKobold.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The targeted generations ID |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+
+#### Returns
+
+`Promise`<`Pick`<[`RequestStatusKobold`](../interfaces/RequestStatusKobold.md), `T`\>\>
+
+RequestStatusKobold
+
+#### Defined in
+
+[index.ts:1494](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1494)
 
 ___
 
@@ -550,7 +632,7 @@ DeletedWorker
 
 #### Defined in
 
-[index.ts:1262](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1262)
+[index.ts:1554](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1554)
 
 ___
 
@@ -583,7 +665,7 @@ UserDetails - The user data of the requested user
 
 #### Defined in
 
-[index.ts:194](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L194)
+[index.ts:299](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L299)
 
 ___
 
@@ -616,7 +698,7 @@ FilterDetails - Filter Details
 
 #### Defined in
 
-[index.ts:637](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L637)
+[index.ts:768](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L768)
 
 ___
 
@@ -649,13 +731,109 @@ FilterDetails[] - Array of Filter Details
 
 #### Defined in
 
-[index.ts:614](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L614)
+[index.ts:745](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L745)
 
 ___
 
 ### getGenerationCheck
 
 ▸ **getGenerationCheck**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusCheck`](../interfaces/RequestStatusCheck.md), `T`\>\>
+
+Retrieve the status of an Asynchronous generation request without images
+Use this method to check the status of a currently running asynchronous request without consuming bandwidth.
+
+**`Deprecated`**
+
+Use getImageGenerationCheck instead
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`RequestStatusCheck`](../interfaces/RequestStatusCheck.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The id of the generation |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.force?` | `boolean` | Set to true to skip cache |
+
+#### Returns
+
+`Promise`<`Pick`<[`RequestStatusCheck`](../interfaces/RequestStatusCheck.md), `T`\>\>
+
+RequestStatusCheck - The Check data of the Generation
+
+#### Defined in
+
+[index.ts:198](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L198)
+
+___
+
+### getGenerationStatus
+
+▸ **getGenerationStatus**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusStable`](../interfaces/RequestStatusStable.md), `T`\>\>
+
+Retrieve the full status of an Asynchronous generation request
+This method will include all already generated images in base64 encoded .webp files. 
+As such, you are requested to not retrieve this data often. Instead use the getGenerationCheck method first
+This method is limited to 1 request per minute
+
+**`Deprecated`**
+
+Use getImageGenerationStatus instead
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`RequestStatusStable`](../interfaces/RequestStatusStable.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The id of the generation |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.force?` | `boolean` | Set to true to skip cache |
+
+#### Returns
+
+`Promise`<`Pick`<[`RequestStatusStable`](../interfaces/RequestStatusStable.md), `T`\>\>
+
+RequestStatusStable - The Status of the Generation
+
+#### Defined in
+
+[index.ts:216](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L216)
+
+___
+
+### getHeartbeat
+
+▸ **getHeartbeat**(): `Promise`<``true``\>
+
+If this loads, this node is available
+
+#### Returns
+
+`Promise`<``true``\>
+
+true - If request was successful, if not throws error
+
+#### Defined in
+
+[index.ts:537](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L537)
+
+___
+
+### getImageGenerationCheck
+
+▸ **getImageGenerationCheck**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusCheck`](../interfaces/RequestStatusCheck.md), `T`\>\>
 
 Retrieve the status of an Asynchronous generation request without images
 Use this method to check the status of a currently running asynchronous request without consuming bandwidth.
@@ -683,13 +861,13 @@ RequestStatusCheck - The Check data of the Generation
 
 #### Defined in
 
-[index.ts:332](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L332)
+[index.ts:437](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L437)
 
 ___
 
-### getGenerationStatus
+### getImageGenerationStatus
 
-▸ **getGenerationStatus**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusStable`](../interfaces/RequestStatusStable.md), `T`\>\>
+▸ **getImageGenerationStatus**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusStable`](../interfaces/RequestStatusStable.md), `T`\>\>
 
 Retrieve the full status of an Asynchronous generation request
 This method will include all already generated images in base64 encoded .webp files. 
@@ -719,25 +897,7 @@ RequestStatusStable - The Status of the Generation
 
 #### Defined in
 
-[index.ts:360](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L360)
-
-___
-
-### getHeartbeat
-
-▸ **getHeartbeat**(): `Promise`<``true``\>
-
-If this loads, this node is available
-
-#### Returns
-
-`Promise`<``true``\>
-
-true - If request was successful, if not throws error
-
-#### Defined in
-
-[index.ts:407](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L407)
+[index.ts:465](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L465)
 
 ___
 
@@ -771,7 +931,7 @@ InterrogationStatus - The Status data of the Interrogation
 
 #### Defined in
 
-[index.ts:385](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L385)
+[index.ts:515](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L515)
 
 ___
 
@@ -803,7 +963,7 @@ ActiveModel[] - Array of Active Models
 
 #### Defined in
 
-[index.ts:421](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L421)
+[index.ts:551](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L551)
 
 ___
 
@@ -837,7 +997,7 @@ HordeModes - The current modes of the horde
 
 #### Defined in
 
-[index.ts:445](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L445)
+[index.ts:575](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L575)
 
 ___
 
@@ -869,7 +1029,7 @@ Newspiece[] - Array of all news articles
 
 #### Defined in
 
-[index.ts:469](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L469)
+[index.ts:599](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L599)
 
 ___
 
@@ -901,7 +1061,7 @@ HordePerformanceStable - The hordes current performance
 
 #### Defined in
 
-[index.ts:491](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L491)
+[index.ts:621](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L621)
 
 ___
 
@@ -935,7 +1095,7 @@ TeamDetailsStable - The team data
 
 #### Defined in
 
-[index.ts:254](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L254)
+[index.ts:359](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L359)
 
 ___
 
@@ -966,7 +1126,40 @@ TeamDetailsStable[] - Array of Team Details
 
 #### Defined in
 
-[index.ts:590](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L590)
+[index.ts:721](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L721)
+
+___
+
+### getTextGenerationStatus
+
+▸ **getTextGenerationStatus**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusKobold`](../interfaces/RequestStatusKobold.md), `T`\>\>
+
+This request will include all already generated texts.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`RequestStatusKobold`](../interfaces/RequestStatusKobold.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The id of the generation |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.force?` | `boolean` | Set to true to skip cache |
+
+#### Returns
+
+`Promise`<`Pick`<[`RequestStatusKobold`](../interfaces/RequestStatusKobold.md), `T`\>\>
+
+RequestStatusStable - The Status of the Generation
+
+#### Defined in
+
+[index.ts:490](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L490)
 
 ___
 
@@ -1000,7 +1193,7 @@ UserDetails - The user data of the requested user
 
 #### Defined in
 
-[index.ts:223](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L223)
+[index.ts:328](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L328)
 
 ___
 
@@ -1031,7 +1224,7 @@ UserDetails[] - An array of all users data
 
 #### Defined in
 
-[index.ts:512](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L512)
+[index.ts:642](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L642)
 
 ___
 
@@ -1066,7 +1259,7 @@ worker details for the requested worker
 
 #### Defined in
 
-[index.ts:293](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L293)
+[index.ts:398](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L398)
 
 ___
 
@@ -1097,7 +1290,7 @@ An array of all workers data
 
 #### Defined in
 
-[index.ts:533](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L533)
+[index.ts:663](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L663)
 
 ___
 
@@ -1106,6 +1299,10 @@ ___
 ▸ **getWorkersByPerformance**(`min_pixels`, `filter?`): `Promise`<`string`[]\>
 
 Filter workers by performance (and query)
+
+**`Deprecated`**
+
+This method will be removed in a future update
 
 #### Parameters
 
@@ -1122,7 +1319,7 @@ ids of workers to use in the request to generate
 
 #### Defined in
 
-[index.ts:555](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L555)
+[index.ts:686](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L686)
 
 ___
 
@@ -1148,13 +1345,54 @@ ___
 
 #### Defined in
 
-[index.ts:176](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L176)
+[index.ts:176](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L176)
 
 ___
 
 ### postAsyncGenerate
 
 ▸ **postAsyncGenerate**<`T`\>(`generation_data`, `options?`): `Promise`<`Pick`<[`RequestAsync`](../interfaces/RequestAsync.md), `T`\>\>
+
+Initiate an Asynchronous request to generate images
+This method will immediately return with the UUID of the request for generation.
+This method will always be accepted, even if there are no workers available currently to fulfill this request.
+Perhaps some will appear in the next 10 minutes.
+Asynchronous requests live for 10 minutes before being considered stale and being deleted.
+
+**`Deprecated`**
+
+Use postAsyncImageGenerate instead
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`RequestAsync`](../interfaces/RequestAsync.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `generation_data` | [`GenerationInput`](../interfaces/GenerationInput.md) | The data to generate the image |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.token?` | `string` | The token of the requesting user |
+
+#### Returns
+
+`Promise`<`Pick`<[`RequestAsync`](../interfaces/RequestAsync.md), `T`\>\>
+
+RequestAsync - The id and message for the async generation request
+
+#### Defined in
+
+[index.ts:235](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L235)
+
+___
+
+### postAsyncImageGenerate
+
+▸ **postAsyncImageGenerate**<`T`\>(`generation_data`, `options?`): `Promise`<`Pick`<[`RequestAsync`](../interfaces/RequestAsync.md), `T`\>\>
 
 Initiate an Asynchronous request to generate images
 This method will immediately return with the UUID of the request for generation.
@@ -1185,7 +1423,7 @@ RequestAsync - The id and message for the async generation request
 
 #### Defined in
 
-[index.ts:695](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L695)
+[index.ts:826](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L826)
 
 ___
 
@@ -1222,7 +1460,44 @@ RequestInterrogationResponse
 
 #### Defined in
 
-[index.ts:832](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L832)
+[index.ts:1067](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1067)
+
+___
+
+### postAsyncTextGenerate
+
+▸ **postAsyncTextGenerate**<`T`\>(`generation_data`, `options?`): `Promise`<`Pick`<[`RequestAsync`](../interfaces/RequestAsync.md), `T`\>\>
+
+Initiate an Asynchronous request to generate text
+This endpoint will immediately return with the UUID of the request for generation.
+This endpoint will always be accepted, even if there are no workers available currently to fulfill this request.
+Perhaps some will appear in the next 20 minutes.
+Asynchronous requests live for 20 minutes before being considered stale and being deleted.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`RequestAsync`](../interfaces/RequestAsync.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `generation_data` | [`GenerationInputKobold`](../interfaces/GenerationInputKobold.md) | The data to generate the text |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.token?` | `string` | The token of the requesting user |
+
+#### Returns
+
+`Promise`<`Pick`<[`RequestAsync`](../interfaces/RequestAsync.md), `T`\>\>
+
+RequestAsync - The id and message for the async generation request
+
+#### Defined in
+
+[index.ts:863](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L863)
 
 ___
 
@@ -1255,22 +1530,26 @@ FilterPromptSuspicion
 
 #### Defined in
 
-[index.ts:662](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L662)
+[index.ts:793](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L793)
 
 ___
 
 ### postGenerationPop
 
-▸ **postGenerationPop**<`T`\>(`pop_input`, `options?`): `Promise`<`Pick`<[`GenerationPayload`](../interfaces/GenerationPayload.md), `T`\>\>
+▸ **postGenerationPop**<`T`\>(`pop_input`, `options?`): `Promise`<`Pick`<[`GenerationPayloadStable`](../interfaces/GenerationPayloadStable.md), `T`\>\>
 
 Check if there are generation requests queued for fulfillment
 This endpoint is used by registered workers only
+
+**`Deprecated`**
+
+Use postImageGenerationPop instead
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends keyof [`GenerationPayload`](../interfaces/GenerationPayload.md) |
+| `T` | extends keyof [`GenerationPayloadStable`](../interfaces/GenerationPayloadStable.md) |
 
 #### Parameters
 
@@ -1283,19 +1562,94 @@ This endpoint is used by registered workers only
 
 #### Returns
 
-`Promise`<`Pick`<[`GenerationPayload`](../interfaces/GenerationPayload.md), `T`\>\>
+`Promise`<`Pick`<[`GenerationPayloadStable`](../interfaces/GenerationPayloadStable.md), `T`\>\>
 
-GenerationPayload
+GenerationPayloadStable
 
 #### Defined in
 
-[index.ts:765](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L765)
+[index.ts:251](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L251)
 
 ___
 
 ### postGenerationSubmit
 
 ▸ **postGenerationSubmit**<`T`\>(`generation_submit`, `options?`): `Promise`<`Pick`<[`GenerationSubmitted`](../interfaces/GenerationSubmitted.md), `T`\>\>
+
+Submit a generated image
+This endpoint is used by registered workers only
+
+**`Deprecated`**
+
+Use postImageGenerationSubmit instead
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends ``"reward"`` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `generation_submit` | `Object` |  |
+| `generation_submit.generation` | `string` | - |
+| `generation_submit.id` | `string` | - |
+| `generation_submit.seed` | `string` | - |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.token?` | `string` | The workers owner API key |
+
+#### Returns
+
+`Promise`<`Pick`<[`GenerationSubmitted`](../interfaces/GenerationSubmitted.md), `T`\>\>
+
+GenerationSubmitted
+
+#### Defined in
+
+[index.ts:267](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L267)
+
+___
+
+### postImageGenerationPop
+
+▸ **postImageGenerationPop**<`T`\>(`pop_input`, `options?`): `Promise`<`Pick`<[`GenerationPayloadStable`](../interfaces/GenerationPayloadStable.md), `T`\>\>
+
+Check if there are generation requests queued for fulfillment
+This endpoint is used by registered workers only
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`GenerationPayloadStable`](../interfaces/GenerationPayloadStable.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `pop_input` | [`PopInputStable`](../interfaces/PopInputStable.md) |  |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.token?` | `string` | The token of the registered user |
+
+#### Returns
+
+`Promise`<`Pick`<[`GenerationPayloadStable`](../interfaces/GenerationPayloadStable.md), `T`\>\>
+
+GenerationPayloadStable
+
+#### Defined in
+
+[index.ts:933](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L933)
+
+___
+
+### postImageGenerationSubmit
+
+▸ **postImageGenerationSubmit**<`T`\>(`generation_submit`, `options?`): `Promise`<`Pick`<[`GenerationSubmitted`](../interfaces/GenerationSubmitted.md), `T`\>\>
 
 Submit a generated image
 This endpoint is used by registered workers only
@@ -1326,7 +1680,7 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:796](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L796)
+[index.ts:997](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L997)
 
 ___
 
@@ -1360,7 +1714,7 @@ InterrogationPopPayload
 
 #### Defined in
 
-[index.ts:866](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L866)
+[index.ts:1101](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1101)
 
 ___
 
@@ -1396,7 +1750,37 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:899](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L899)
+[index.ts:1134](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1134)
+
+___
+
+### postKoboldTransfer
+
+▸ **postKoboldTransfer**(`user_id`, `transfer_data`, `options?`): `Promise`<``null``\>
+
+Receive kudos from the KoboldAI Horde
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `user_id` | `string` | The stable horde user id of the receiving user |
+| `transfer_data` | `Object` | The data specifiying who to send how many kudos |
+| `transfer_data.kai_id` | `string` | - |
+| `transfer_data.kudos_amount` | `number` | - |
+| `transfer_data.trusted` | `boolean` | - |
+| `options?` | `Object` | - |
+| `options.token?` | `string` | The sending users API key |
+
+#### Returns
+
+`Promise`<``null``\>
+
+null
+
+#### Defined in
+
+[index.ts:1197](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1197)
 
 ___
 
@@ -1431,7 +1815,7 @@ KudosTransferred
 
 #### Defined in
 
-[index.ts:931](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L931)
+[index.ts:1166](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1166)
 
 ___
 
@@ -1469,7 +1853,78 @@ GenerationSubmitted - The kudos awarded for the rating
 
 #### Defined in
 
-[index.ts:732](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L732)
+[index.ts:900](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L900)
+
+___
+
+### postTextGenerationPop
+
+▸ **postTextGenerationPop**<`T`\>(`pop_input`, `options?`): `Promise`<`Pick`<[`GenerationPayloadKobold`](../interfaces/GenerationPayloadKobold.md), `T`\>\>
+
+Check if there are generation requests queued for fulfillment
+This endpoint is used by registered workers only
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`GenerationPayloadKobold`](../interfaces/GenerationPayloadKobold.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `pop_input` | [`PopInputKobold`](../interfaces/PopInputKobold.md) |  |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.token?` | `string` | The token of the registered user |
+
+#### Returns
+
+`Promise`<`Pick`<[`GenerationPayloadKobold`](../interfaces/GenerationPayloadKobold.md), `T`\>\>
+
+GenerationPayloadKobold
+
+#### Defined in
+
+[index.ts:965](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L965)
+
+___
+
+### postTextGenerationSubmit
+
+▸ **postTextGenerationSubmit**<`T`\>(`generation_submit`, `options?`): `Promise`<`Pick`<[`GenerationSubmitted`](../interfaces/GenerationSubmitted.md), `T`\>\>
+
+Submit generated text
+This endpoint is used by registered workers only
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends ``"reward"`` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `generation_submit` | `Object` |  |
+| `generation_submit.generation` | `string` | - |
+| `generation_submit.id` | `string` | - |
+| `generation_submit.state` | ``"faulted"`` \| ``"ok"`` \| ``"censored"`` | - |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.token?` | `string` | The workers owner API key |
+
+#### Returns
+
+`Promise`<`Pick`<[`GenerationSubmitted`](../interfaces/GenerationSubmitted.md), `T`\>\>
+
+GenerationSubmitted
+
+#### Defined in
+
+[index.ts:1031](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1031)
 
 ___
 
@@ -1506,7 +1961,7 @@ HordeModes
 
 #### Defined in
 
-[index.ts:996](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L996)
+[index.ts:1258](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1258)
 
 ___
 
@@ -1540,7 +1995,7 @@ FilterDetails
 
 #### Defined in
 
-[index.ts:1168](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1168)
+[index.ts:1430](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1430)
 
 ___
 
@@ -1574,7 +2029,7 @@ ModifyTeam
 
 #### Defined in
 
-[index.ts:1101](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1101)
+[index.ts:1363](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1363)
 
 ___
 
@@ -1608,7 +2063,7 @@ ModifyUser
 
 #### Defined in
 
-[index.ts:1027](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1027)
+[index.ts:1289](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1289)
 
 ___
 
@@ -1646,4 +2101,4 @@ ModifyWorker
 
 #### Defined in
 
-[index.ts:1065](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1065)
+[index.ts:1327](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L1327)

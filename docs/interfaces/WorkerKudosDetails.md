@@ -19,7 +19,7 @@ How much Kudos this worker has received for generating images
 
 #### Defined in
 
-[index.ts:2117](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2117)
+[index.ts:2624](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2624)
 
 ___
 
@@ -31,4 +31,4 @@ How much Kudos this worker has received for staying online longer
 
 #### Defined in
 
-[index.ts:2119](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2119)
+[index.ts:2626](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2626)
