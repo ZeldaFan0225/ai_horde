@@ -556,7 +556,7 @@ ___
 
 ### findUser
 
-▸ **findUser**<`T`\>(`options?`): `Promise`<`Pick`<[`UserDetailsStable`](../interfaces/UserDetailsStable.md), `T`\>\>
+▸ **findUser**<`T`\>(`options?`): `Promise`<`Pick`<[`UserDetails`](../interfaces/UserDetails.md), `T`\>\>
 
 Lookup user details based on their API key.
 This can be used to verify a user exists
@@ -565,7 +565,7 @@ This can be used to verify a user exists
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends keyof [`UserDetailsStable`](../interfaces/UserDetailsStable.md) |
+| `T` | extends keyof [`UserDetails`](../interfaces/UserDetails.md) |
 
 #### Parameters
 
@@ -577,9 +577,9 @@ This can be used to verify a user exists
 
 #### Returns
 
-`Promise`<`Pick`<[`UserDetailsStable`](../interfaces/UserDetailsStable.md), `T`\>\>
+`Promise`<`Pick`<[`UserDetails`](../interfaces/UserDetails.md), `T`\>\>
 
-UserDetailsStable - The user data of the requested user
+UserDetails - The user data of the requested user
 
 #### Defined in
 
@@ -972,7 +972,7 @@ ___
 
 ### getUserDetails
 
-▸ **getUserDetails**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`UserDetailsStable`](../interfaces/UserDetailsStable.md), `T`\>\>
+▸ **getUserDetails**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`UserDetails`](../interfaces/UserDetails.md), `T`\>\>
 
 Details and statistics about a specific user
 
@@ -980,7 +980,7 @@ Details and statistics about a specific user
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends keyof [`UserDetailsStable`](../interfaces/UserDetailsStable.md) |
+| `T` | extends keyof [`UserDetails`](../interfaces/UserDetails.md) |
 
 #### Parameters
 
@@ -994,9 +994,9 @@ Details and statistics about a specific user
 
 #### Returns
 
-`Promise`<`Pick`<[`UserDetailsStable`](../interfaces/UserDetailsStable.md), `T`\>\>
+`Promise`<`Pick`<[`UserDetails`](../interfaces/UserDetails.md), `T`\>\>
 
-UserDetailsStable - The user data of the requested user
+UserDetails - The user data of the requested user
 
 #### Defined in
 
@@ -1006,7 +1006,7 @@ ___
 
 ### getUsers
 
-▸ **getUsers**<`T`\>(`options?`): `Promise`<`Pick`<[`UserDetailsStable`](../interfaces/UserDetailsStable.md), `T`\>[]\>
+▸ **getUsers**<`T`\>(`options?`): `Promise`<`Pick`<[`UserDetails`](../interfaces/UserDetails.md), `T`\>[]\>
 
 A List with the details and statistic of all registered users
 
@@ -1014,7 +1014,7 @@ A List with the details and statistic of all registered users
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends keyof [`UserDetailsStable`](../interfaces/UserDetailsStable.md) |
+| `T` | extends keyof [`UserDetails`](../interfaces/UserDetails.md) |
 
 #### Parameters
 
@@ -1025,9 +1025,9 @@ A List with the details and statistic of all registered users
 
 #### Returns
 
-`Promise`<`Pick`<[`UserDetailsStable`](../interfaces/UserDetailsStable.md), `T`\>[]\>
+`Promise`<`Pick`<[`UserDetails`](../interfaces/UserDetails.md), `T`\>[]\>
 
-UserDetailsStable[] - An array of all users data
+UserDetails[] - An array of all users data
 
 #### Defined in
 

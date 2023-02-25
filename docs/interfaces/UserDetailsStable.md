@@ -1,34 +1,34 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / UserDetailsStable
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / UserDetails
 
-# Interface: UserDetailsStable
+# Interface: UserDetails
 
 ## Hierarchy
 
 - [`UserDetails`](UserDetails.md)
 
-  ↳ **`UserDetailsStable`**
+  ↳ **`UserDetails`**
 
 ## Table of contents
 
 ### Properties
 
-- [concurrency](UserDetailsStable.md#concurrency)
-- [contact](UserDetailsStable.md#contact)
-- [contributions](UserDetailsStable.md#contributions)
-- [evaluating\_kudos](UserDetailsStable.md#evaluating_kudos)
-- [id](UserDetailsStable.md#id)
-- [kudos](UserDetailsStable.md#kudos)
-- [kudos\_details](UserDetailsStable.md#kudos_details)
-- [moderator](UserDetailsStable.md#moderator)
-- [monthly\_kudos](UserDetailsStable.md#monthly_kudos)
-- [pseudonymous](UserDetailsStable.md#pseudonymous)
-- [suspicious](UserDetailsStable.md#suspicious)
-- [trusted](UserDetailsStable.md#trusted)
-- [usage](UserDetailsStable.md#usage)
-- [username](UserDetailsStable.md#username)
-- [worker\_count](UserDetailsStable.md#worker_count)
-- [worker\_ids](UserDetailsStable.md#worker_ids)
-- [worker\_invited](UserDetailsStable.md#worker_invited)
+- [concurrency](UserDetails.md#concurrency)
+- [contact](UserDetails.md#contact)
+- [contributions](UserDetails.md#contributions)
+- [evaluating\_kudos](UserDetails.md#evaluating_kudos)
+- [id](UserDetails.md#id)
+- [kudos](UserDetails.md#kudos)
+- [kudos\_details](UserDetails.md#kudos_details)
+- [moderator](UserDetails.md#moderator)
+- [monthly\_kudos](UserDetails.md#monthly_kudos)
+- [pseudonymous](UserDetails.md#pseudonymous)
+- [suspicious](UserDetails.md#suspicious)
+- [trusted](UserDetails.md#trusted)
+- [usage](UserDetails.md#usage)
+- [username](UserDetails.md#username)
+- [worker\_count](UserDetails.md#worker_count)
+- [worker\_ids](UserDetails.md#worker_ids)
+- [worker\_invited](UserDetails.md#worker_invited)
 
 ## Properties
 
