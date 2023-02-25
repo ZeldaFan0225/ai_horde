@@ -78,7 +78,7 @@
 - [UsageDetails](interfaces/UsageDetails.md)
 - [UsageDetailsStable](interfaces/UsageDetailsStable.md)
 - [UserDetails](interfaces/UserDetails.md)
-- [UserDetailsStable](interfaces/UserDetailsStable.md)
+- [UserDetails](interfaces/UserDetails.md)
 - [UserKudosDetails](interfaces/UserKudosDetails.md)
 - [WorkerDetails](interfaces/WorkerDetails.md)
 - [WorkerDetailsLite](interfaces/WorkerDetailsLite.md)

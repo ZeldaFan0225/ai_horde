@@ -182,18 +182,123 @@ class StableHorde {
         }
     }
 
+
+    /* DEPRECIATED METHODS */
+
+    
+    /**
+     * Retrieve the status of an Asynchronous generation request without images
+     * Use this method to check the status of a currently running asynchronous request without consuming bandwidth.
+     * @param id - The id of the generation
+     * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestStatusCheck - The Check data of the Generation 
+     * @deprecated Use getImageGenerationCheck instead
+     */
+    async getGenerationCheck<
+        T extends keyof RequestStatusCheck
+    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusCheck, T>> {
+        return await this.getImageGenerationCheck(id, options)
+    }
+    
+
+    /**
+     * Retrieve the full status of an Asynchronous generation request
+     * This method will include all already generated images in base64 encoded .webp files. 
+     * As such, you are requested to not retrieve this data often. Instead use the getGenerationCheck method first
+     * This method is limited to 1 request per minute
+     * @param id - The id of the generation
+     * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestStatusStable - The Status of the Generation
+     * @deprecated Use getImageGenerationStatus instead
+     */
+    async getGenerationStatus<
+        T extends keyof RequestStatusStable
+    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
+        return await this.getImageGenerationStatus(id, options)
+    }
+
+    
+    /**
+     * Initiate an Asynchronous request to generate images
+     * This method will immediately return with the UUID of the request for generation.
+     * This method will always be accepted, even if there are no workers available currently to fulfill this request.
+     * Perhaps some will appear in the next 10 minutes.
+     * Asynchronous requests live for 10 minutes before being considered stale and being deleted.
+     * @param generation_data - The data to generate the image
+     * @param options.token - The token of the requesting user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestAsync - The id and message for the async generation request
+     * @deprecated Use postAsyncImageGenerate instead
+     */
+    async postAsyncGenerate<
+        T extends keyof RequestAsync
+    >(generation_data: GenerationInput, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestAsync, T>> {
+        return await this.postAsyncImageGenerate(generation_data, options)
+    }
+    
+    
+    /**
+     * Check if there are generation requests queued for fulfillment
+     * This endpoint is used by registered workers only
+     * @param pop_input
+     * @param options.token - The token of the registered user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationPayloadStable
+     * @deprecated Use postImageGenerationPop instead
+     */
+    async postGenerationPop<
+        T extends keyof GenerationPayloadStable
+    >(pop_input: PopInputStable, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationPayloadStable, T>> {
+        return await this.postImageGenerationPop(pop_input, options)
+    }
+    
+    
+    /**
+     * Submit a generated image
+     * This endpoint is used by registered workers only
+     * @param generation_submit
+     * @param options.token - The workers owner API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationSubmitted
+     * @deprecated Use postImageGenerationSubmit instead
+     */
+    async postGenerationSubmit<
+        T extends keyof GenerationSubmitted
+    >(generation_submit: {id: string, generation: string, seed: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
+        return await this.postImageGenerationSubmit(generation_submit, options)
+    }
+    
+    
+    /**
+     * Cancel an unfinished request
+     * This request will include all already generated images in base64 encoded .webp files.
+     * @param id - The targeted generations ID
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestStatusStable
+     * @deprecated Use deleteImageGenerationRequest instead
+     */
+    async deleteGenerationRequest<
+        T extends keyof RequestStatusStable
+    >(id: string, options?: {fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
+        return await this.deleteImageGenerationRequest(id, options)
+    }
+
+
     /* GET REQUESTS */
+
 
     /**
      * Lookup user details based on their API key.
      * This can be used to verify a user exists
      * @param options.token - The token of the user; If none given the default from the contructor is used
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns UserDetailsStable - The user data of the requested user
+     * @returns UserDetails - The user data of the requested user
      */
     async findUser<
-        T extends keyof UserDetailsStable
-    >(options?: {token?: string, fields?: T[]}): Promise<Pick<UserDetailsStable, T>> {
+        T extends keyof UserDetails
+    >(options?: {token?: string, fields?: T[]}): Promise<Pick<UserDetails, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/find_user`, "GET")
@@ -204,9 +309,9 @@ class StableHorde {
 
         if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
 
-        const data = await res.json() as Pick<UserDetailsStable, T>
+        const data = await res.json() as Pick<UserDetails, T>
         if(this.#cache_config.users) {
-            const data_with_id = data as Pick<UserDetailsStable, 'id'>
+            const data_with_id = data as Pick<UserDetails, 'id'>
             if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string, data)
         }
         return data
@@ -218,11 +323,11 @@ class StableHorde {
      * @param options.token - The token of the requesting user; Has to be Moderator, Admin or Reuqested users token
      * @param options.force - Set to true to skip cache
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns UserDetailsStable - The user data of the requested user
+     * @returns UserDetails - The user data of the requested user
      */
     async getUserDetails<
-        T extends keyof UserDetailsStable
-    >(id: number, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<UserDetailsStable, T>> {
+        T extends keyof UserDetails
+    >(id: number, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<UserDetails, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const temp = !options?.force && this.#cache.users?.get(id.toString() + fields_string)
@@ -235,9 +340,9 @@ class StableHorde {
 
         if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
 
-        const data = await res.json() as Pick<UserDetailsStable, T>
+        const data = await res.json() as Pick<UserDetails, T>
         if(this.#cache_config.users) {
-            const data_with_id = data as Pick<UserDetailsStable, 'id'>
+            const data_with_id = data as Pick<UserDetails, 'id'>
             if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string, data)
         }
         return data
@@ -329,7 +434,7 @@ class StableHorde {
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns RequestStatusCheck - The Check data of the Generation 
      */
-    async getGenerationCheck<
+    async getImageGenerationCheck<
         T extends keyof RequestStatusCheck
     >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusCheck, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
@@ -357,7 +462,7 @@ class StableHorde {
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns RequestStatusStable - The Status of the Generation 
      */
-    async getGenerationStatus<
+    async getImageGenerationStatus<
         T extends keyof RequestStatusStable
     >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
@@ -371,6 +476,31 @@ class StableHorde {
         if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
 
         const data = await res.json() as Pick<RequestStatusStable, T>
+        if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        return data
+    }
+
+    /**
+     * This request will include all already generated texts.
+     * @param id - The id of the generation
+     * @param options.force - Set to true to skip cache
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestStatusStable - The Status of the Generation 
+     */
+    async getTextGenerationStatus<
+        T extends keyof RequestStatusKobold
+    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusKobold, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const temp = !options?.force && this.#cache.generations_status?.get(id)
+        if(temp) return temp as Pick<RequestStatusKobold, T>
+        const req = Centra(`${this.#api_route}/generate/text/status/${id}`, "GET")
+        .header("Client-Agent", this.#client_agent)
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
+
+        const data = await res.json() as Pick<RequestStatusKobold, T>
         if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
@@ -507,19 +637,19 @@ class StableHorde {
     /**
      * A List with the details and statistic of all registered users
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns UserDetailsStable[] - An array of all users data
+     * @returns UserDetails[] - An array of all users data
      */
     async getUsers<
-        T extends keyof UserDetailsStable
-    >(options?: {fields?: T[]}): Promise<Pick<UserDetailsStable, T>[]> {
+        T extends keyof UserDetails
+    >(options?: {fields?: T[]}): Promise<Pick<UserDetails, T>[]> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const req = Centra(`${this.#api_route}/users`, "GET")
         .header("Client-Agent", this.#client_agent)
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
-        const data =  await res.json() as Pick<UserDetailsStable, T>[]
+        const data =  await res.json() as Pick<UserDetails, T>[]
         if(this.#cache_config.users) data.forEach(d => {
-            const data_with_id = d as Pick<UserDetailsStable, 'id'>
+            const data_with_id = d as Pick<UserDetails, 'id'>
             if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string, d)
         })
         return data
@@ -551,6 +681,7 @@ class StableHorde {
      * @param min_pixels - minimal value of max_pixels for worker
      * @param filter - (optional) details of the query and filter parameters
      * @returns ids of workers to use in the request to generate
+     * @deprecated This method will be removed in a future update
      */
     async getWorkersByPerformance(min_pixels: number, filter = {} as WorkersPerformanceFilter) {
         const fields: (keyof WorkerDetailsStable)[] = [
@@ -692,12 +823,49 @@ class StableHorde {
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns RequestAsync - The id and message for the async generation request
      */
-    async postAsyncGenerate<
+    async postAsyncImageGenerate<
         T extends keyof RequestAsync
     >(generation_data: GenerationInput, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestAsync, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/generate/async`, "POST")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        .body(generation_data, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 429:
+            case 503:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, generation_data)
+                }
+        }
+
+        return await res.json() as Pick<RequestAsync, T>
+    }
+    
+
+    /**
+     * Initiate an Asynchronous request to generate text
+     * This endpoint will immediately return with the UUID of the request for generation.
+     * This endpoint will always be accepted, even if there are no workers available currently to fulfill this request.
+     * Perhaps some will appear in the next 20 minutes.
+     * Asynchronous requests live for 20 minutes before being considered stale and being deleted.
+     * @param generation_data - The data to generate the text
+     * @param options.token - The token of the requesting user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestAsync - The id and message for the async generation request
+     */
+    async postAsyncTextGenerate<
+        T extends keyof RequestAsync
+    >(generation_data: GenerationInputKobold, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestAsync, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/generate/text/async`, "POST")
         .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(generation_data, "json")
@@ -760,11 +928,11 @@ class StableHorde {
      * @param pop_input
      * @param options.token - The token of the registered user
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns GenerationPayload
+     * @returns GenerationPayloadStable
      */
-    async postGenerationPop<
-        T extends keyof GenerationPayload
-    >(pop_input: PopInputStable, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationPayload, T>> {
+    async postImageGenerationPop<
+        T extends keyof GenerationPayloadStable
+    >(pop_input: PopInputStable, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationPayloadStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/generate/pop`, "POST")
@@ -782,8 +950,41 @@ class StableHorde {
                 }
         }
 
-        return await res.json() as Pick<GenerationPayload, T>
+        return await res.json() as Pick<GenerationPayloadStable, T>
     }
+
+    
+    /**
+     * Check if there are generation requests queued for fulfillment
+     * This endpoint is used by registered workers only
+     * @param pop_input
+     * @param options.token - The token of the registered user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationPayloadKobold
+     */
+    async postTextGenerationPop<
+        T extends keyof GenerationPayloadKobold
+    >(pop_input: PopInputKobold, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationPayloadKobold, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/generate/text/pop`, "POST")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        .body(pop_input, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 401:
+            case 403:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, pop_input)
+                }
+        }
+
+        return await res.json() as Pick<GenerationPayloadKobold, T>
+    }
+
     
     /**
      * Submit a generated image
@@ -793,12 +994,46 @@ class StableHorde {
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns GenerationSubmitted
      */
-    async postGenerationSubmit<
+    async postImageGenerationSubmit<
         T extends keyof GenerationSubmitted
     >(generation_submit: {id: string, generation: string, seed: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}/generate/submit`, "POST")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        .body(generation_submit, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+            case 402:
+            case 404:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, generation_submit)
+                }
+        }
+
+        return await res.json() as Pick<GenerationSubmitted, T>
+    }
+
+    
+    /**
+     * Submit generated text
+     * This endpoint is used by registered workers only
+     * @param generation_submit
+     * @param options.token - The workers owner API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationSubmitted
+     */
+    async postTextGenerationSubmit<
+        T extends keyof GenerationSubmitted
+    >(generation_submit: {id: string, generation: string, state: "ok" | "censored" | "faulted"}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/generate/text/submit`, "POST")
         .header("Client-Agent", this.#client_agent)
         .header("apikey", t)
         .body(generation_submit, "json")
@@ -949,6 +1184,33 @@ class StableHorde {
         }
 
         return await res.json() as Pick<KudosTransferred, T>
+    }
+    
+    /**
+     * Receive kudos from the KoboldAI Horde
+     * @param user_id - The stable horde user id of the receiving user
+     * @param transfer_data - The data specifiying who to send how many kudos
+     * @param options.token - The sending users API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns null
+     */
+    async postKoboldTransfer(user_id: string, transfer_data: {kai_id: string, kudos_amount: number, trusted: boolean}, options?: {token?: string}): Promise<null> {
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}/kudos/kai/${user_id}`, "POST")
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        .body(transfer_data, "json")
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 400:
+            case 401:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes, transfer_data)
+                }
+        }
+
+        return null
     }
     
     
@@ -1200,7 +1462,7 @@ class StableHorde {
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns RequestStatusStable
      */
-    async deleteGenerationRequest<
+    async deleteImageGenerationRequest<
         T extends keyof RequestStatusStable
     >(id: string, options?: {fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
@@ -1220,6 +1482,36 @@ class StableHorde {
         if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
+    
+    
+    /**
+     * Cancel an unfinished request
+     * This request will include all already generated images in base64 encoded .webp files.
+     * @param id - The targeted generations ID
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestStatusKobold
+     */
+    async deleteTextGenerationRequest<
+        T extends keyof RequestStatusKobold
+    >(id: string, options?: {fields?: T[]}): Promise<Pick<RequestStatusKobold, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const req = Centra(`${this.#api_route}/generate/text/status/${id}`, "DELETE")
+        .header("Client-Agent", this.#client_agent)
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+
+        switch(res.statusCode) {
+            case 404:
+                {
+                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
+                }
+        }
+
+        const data = await res.json() as Pick<RequestStatusKobold, T>
+        if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        return data
+    }
+
     
     /**
      * Cancel an unfinished interrogation request
@@ -1431,7 +1723,7 @@ export interface StableHordeCacheConfiguration {
 }
 
 interface StableHordeCache {
-    users?: SuperMap<string, UserDetailsStable>,
+    users?: SuperMap<string, UserDetails>,
     generations_check?: SuperMap<string, RequestStatusCheck>,
     generations_status?: SuperMap<string, RequestStatusStable>,
     interrogations_status?: SuperMap<string, InterrogationStatus>,
@@ -1528,6 +1820,105 @@ export interface ModifyWorkerInput {
 /**
  * @link https://stablehorde.net/api/ 
 */
+
+export interface GenerationInputKobold {
+    /** The prompt which will be sent to KoboldAI to generate text */
+    prompt?: string,
+    params?: ModelGenerationInputKobold,
+    /**
+     * Specify which softpompt needs to be used to service this request
+     * @minLength 1
+     */
+    softprompt?: string,
+    /**
+     * When true, only trusted workers will serve this request. When False, Evaluating workers will also be used which can increase speed but adds more risk!
+     * @default true
+     */
+    trusted_workers?: boolean,
+    /** Specify which workers are allowed to service this request */
+    workers?: string[],
+    /** Specify which models are allowed to be used for this request */
+    models?: string[]
+}
+
+export interface ModelGenerationInputKobold {
+    /**
+     * @example 1
+     * @minimum 1
+     * @maximum 20
+     */
+    n?: number,
+    /**
+     * Input formatting option. When enabled, adds a leading space to your input if there is no trailing whitespace at the end of the previous action.
+     * @example false
+     */
+    frmtadsnsp?: boolean,
+    /**
+     * Output formatting option. When enabled, replaces all occurrences of two or more consecutive newlines in the output with one newline.
+     * @example false
+     */
+    frmtrmblln?: boolean,
+    /**
+     * Output formatting option. When enabled, removes #/@%}{+=~|^<> from the output.
+     * @example false
+     */
+    frmtrmspch?: boolean,
+    /**
+     * Output formatting option. When enabled, removes some characters from the end of the output such that the output doesn't end in the middle of a sentence. If the output is less than one sentence long, does nothing.
+     * @example false
+     */
+    frmttriminc?: boolean,
+    /**
+     * Maximum number of tokens to send to the model.
+     * @example 1024
+     * @minimum 80
+     * @maximum 2048
+     */
+    max_context_length?: number,
+    /**
+     * Number of tokens to generate.
+     * @minimum 16
+     * @maximum 512
+     */
+    max_length?: number,
+    /**
+     * Base repetition penalty value.
+     * @maximum 1
+     */
+    rep_pen?: number,
+    /** Repetition penalty range. */
+    rep_pen_range?: number,
+    /** Repetition penalty slope. */
+    rep_pen_slope?: number,
+    /**
+     * Output formatting option. When enabled, removes everything after the first line of the output, including the newline.
+     * @example false
+     */
+    singleline?: boolean,
+    /** Soft prompt to use when generating. If set to the empty string or any other string containing no non-whitespace characters, uses no soft prompt. */
+    soft_prompt?: string,
+    /**
+     * Temperature value.
+     * @minimum 0
+     */
+    temperature?: number,
+    /** Tail free sampling value. */
+    tfs?: number,
+    /** Top-a sampling value. */
+    top_a?: number,
+    /** Top-k sampling value. */
+    top_k?: number,
+    /** Top-p sampling value. */
+    top_p?: number,
+    /** Typical sampling value. */
+    typical?: number,
+    /** Array of integers representing the sampler order to be used */
+    sample_order?: number[]
+}
+
+export interface ModelPayloadKobold extends ModelGenerationInputKobold {
+    prompt?: string
+}
 
 export interface GenerationInput {
     /** The prompt which will be sent to Stable Diffusion to generate an image */
@@ -1636,8 +2027,8 @@ export interface ModelGenerationInputStable {
      * @minimum 1
      * @maximum 12
     */
-    clip_skip?: (typeof StableHorde.ModelGenerationInputControlTypes[keyof typeof StableHorde.ModelGenerationInputControlTypes]),
-    control_type?: number,
+    clip_skip?: number,
+    control_type?: (typeof StableHorde.ModelGenerationInputControlTypes[keyof typeof StableHorde.ModelGenerationInputControlTypes]),
     /** 
      * @default 30
      * @minimum 1
@@ -1725,6 +2116,10 @@ export interface RequestStatusStable extends RequestStatusCheck {
     generations?: GenerationStable[]
 }
 
+export interface RequestStatusKobold extends RequestStatusCheck {
+    generations?: GenerationKobold[]
+}
+
 export interface RequestStatusCheck {
     /** The amount of finished images in this request */
     finished?: number,
@@ -1766,6 +2161,19 @@ export interface GenerationStable extends Generation {
     censored?: boolean
 }
 
+export interface GenerationKobold extends Generation {
+    /**
+     * The state of the generation,
+     * @default ok
+     * @example ok
+     */
+    state: "ok" | "censored",
+    /** The generated text */
+    text?: string,
+    /** The seed which generated this text */
+    seed: number
+}
+
 export interface RequestAsync {
     /** The UUID of the request. Use this to retrieve the request status in the future */
     id?: string,
@@ -1778,7 +2186,19 @@ export interface PopInputStable extends PopInput {
      * The maximum amount of pixels this worker can generate
      * @default 262144
     */
-    max_pixels?: number
+    max_pixels?: number,
+    /** Words which, when detected will refuse to pick up any jobs */
+    blacklist?: string[],
+}
+
+export interface PopInputKobold extends PopInput {
+    /**
+     * The maximum amount of pixels this worker can generate
+     * @default 262144
+    */
+    max_pixels?: number,
+    /** Words which, when detected will refuse to pick up any jobs */
+    blacklist?: string[],
 }
 
 export interface PopInput {
@@ -1791,18 +2211,36 @@ export interface PopInput {
      * @default false
     */
     nsfw?: boolean,
-    /** Words which, when detected will refuse to pick up any jobs */
-    blacklist?: string[],
     /** Which models this worker is serving */
     models?: string[],
     /**
      * The version of the bridge used by this worker
      * @default 1
     */
-    bridge_version: number
+    bridge_version: number,
+    /**
+     * The worker name, version and website
+     * @default unknown:0:unknown
+     * @example AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
+     * @maxLength 1000
+     */
+    bridge_agent?: string,
+    /**
+     * How many threads this worker is running. This is used to accurately the current power available in the horde
+     * @default 1
+     * @minimum 1
+     * @maximum 10
+     */
+    threads?: number,
+    /**
+     * If True, this worker will only pick up requests where the owner has the required kudos to consume already available
+     * @default false
+     * @example false
+     */
+    require_upfront_kudos?: boolean
 }
 
-export interface GenerationPayload {
+export interface GenerationPayloadStable {
     payload?: ModelPayloadStable,
     /** The UUID for this image generation */
     id?: string,
@@ -1811,6 +2249,17 @@ export interface GenerationPayload {
     model?: string,
     /** The Base64-encoded webp to use for img2img */
     source_image?: string
+}
+
+export interface GenerationPayloadKobold {
+    payload?: ModelPayloadKobold,
+    /** The UUID for this text */
+    id?: string,
+    skipped?: NoValidRequestFoundKobold,
+    /** The soft prompt requested for this generation */
+    softprompt?: string,
+    /** Which of the available models to use for this request */
+    model?: string
 }
 
 export interface ModelPayloadStable {
@@ -1865,14 +2314,27 @@ export interface ModelPayloadStable {
      * @maximum 1000
     */
     seed_variation?: number,
-    /** Set to true to process the generated image with GFPGAN (face correction) */
-    use_gfpgan?: boolean,
-    /** Set to true to process the generated image with RealESRGAN */
-    use_real_esrgan?: boolean,
-    /** Set to true to process the generated image with LDSR */
-    use_ldsr?: boolean,
-    /** Set to true to upscale the image */
-    use_upscaling?: boolean,
+    /** Set to True to enable karras noise scheduling tweaks */
+    karras?: boolean,
+    /** The list of post-processors to apply to the image, in the order to be applied */
+    post_processing?: (typeof StableHorde.ModelGenerationInputPostProcessingTypes[keyof typeof StableHorde.ModelGenerationInputPostProcessingTypes])[]
+    /** 
+     * Set to True to create images that stitch together seamlessly
+     * @default false
+    */
+    tiling?: boolean,
+    /** 
+     * Set to True to process the image at base resolution before upscaling and re-processing
+     * @default false
+    */
+    hires_fix?: boolean,
+    /** 
+     * The number of CLIP language processor layers to skip
+     * @minimum 1
+     * @maximum 12
+    */
+    clip_skip?: number,
+    control_type?: (typeof StableHorde.ModelGenerationInputControlTypes[keyof typeof StableHorde.ModelGenerationInputControlTypes]),
     /** The prompt which will be sent to Stable Diffusion to generate an image */
     prompt?: string,
     /** 
@@ -1888,6 +2350,15 @@ export interface ModelPayloadStable {
     use_nsfw_censor?: boolean,
 }
 
+export interface NoValidRequestFoundKobold extends NoValidRequestFound {
+    /** How many waiting requests were skipped because they demanded a higher max_context_length than what this worker provides. */
+    max_context_length?: number,
+    /** How many waiting requests were skipped because they demanded more generated tokens that what this worker can provide. */
+    max_length?: number,
+    /** How many waiting requests were skipped because they demanded an available soft-prompt which this worker does not have. */
+    matching_softprompt?: number
+}
+
 export interface NoValidRequestFoundStable extends NoValidRequestFound {
     /** How many waiting requests were skipped because they demanded a higher size than this worker provides */
     max_pixels?: number
@@ -1896,6 +2367,8 @@ export interface NoValidRequestFoundStable extends NoValidRequestFound {
 export interface NoValidRequestFound {
     /** How many waiting requests were skipped because they demanded a specific worker */
     worker_id?: number,
+    /** How many waiting requests were skipped because they required higher performance */
+    performance?: number,
     /** How many waiting requests were skipped because they demanded a nsfw generation which this worker does not provide */
     nsfw?: number,
     /** How many waiting requests were skipped because they demanded a generation with a word that this worker does not accept */
@@ -1904,6 +2377,8 @@ export interface NoValidRequestFound {
     untrusted?: number,
     /** How many waiting requests were skipped because they demanded a different model than what this worker provides */
     models?: number
+    /** How many waiting requests were skipped because they require a higher version of the bridge than this worker is running (upgrade if you see this in your skipped list) */
+    bridge_version?: number
 }
 
 export interface GenerationSubmitted {
@@ -1911,10 +2386,26 @@ export interface GenerationSubmitted {
     reward?: number
 }
 
-export interface UserDetailsStable extends UserDetails {
-    usage?: UsageDetailsStable,
-    contributions?: ContributionsDetailsStable
+export interface UserThingRecords {
+    /**
+     * How many megapixelsteps this user has generated or requested
+     * @default 0
+     */
+    megapixelsteps?: number,
+    /**
+     * How many tokens this user has generated or requested
+     * @default 0
+     */
+    tokens?: number
 }
+
+export interface UserRecords {
+    usage?: UserThingRecords,
+    contribution?: UserThingRecords,
+    fulfillment?: UserThingRecords,
+    request?: UserThingRecords
+}
+
 
 export interface UserDetails {
     /** The user's unique Username. It is a combination of their chosen alias plus their ID. */
@@ -1938,6 +2429,8 @@ export interface UserDetails {
     monthly_kudos?: MonthlyKudos,
     /** This user is a trusted member of the Horde. */
     trusted?: boolean,
+    /** This user has been flagged for suspicious activity. */
+    flagged?: boolean,
     /** (Privileged) How much suspicion this user has accumulated */
     suspicious?: number,
     /** If true, this user has not registered using an oauth service. */
@@ -1947,6 +2440,20 @@ export interface UserDetails {
      * @example email@example.com
     */
     contact?: string,
+    /**
+     * How many seconds since this account was created
+     * @example 60
+     */
+    account_age?: number,
+    /**
+     * @deprecated
+     */
+    usage?: UsageDetailsStable,
+    /**
+     * @deprecated
+     */
+    contributions?: ContributionsDetailsStable
+    records?: UserRecords
 }
 
 export interface UserKudosDetails {

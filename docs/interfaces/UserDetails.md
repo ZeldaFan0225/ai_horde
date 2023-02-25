@@ -6,7 +6,7 @@
 
 - **`UserDetails`**
 
-  ↳ [`UserDetailsStable`](UserDetailsStable.md)
+  ↳ [`UserDetails`](UserDetails.md)
 
 ## Table of contents
 
