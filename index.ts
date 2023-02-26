@@ -2386,7 +2386,7 @@ export interface GenerationSubmitted {
     reward?: number
 }
 
-export interface UserThingRecords {
+export interface UserThingUsageRecords {
     /**
      * How many megapixelsteps this user has generated or requested
      * @default 0
@@ -2399,61 +2399,83 @@ export interface UserThingRecords {
     tokens?: number
 }
 
+export interface UserThingFulfillmentRecords {
+    /**
+     * How many images were generated or requested
+     * @default 0
+     */
+    image?: number,
+    /**
+     * How many images were interrogated generated or requested
+     * @default 0
+     */
+    interrogation?: number,
+    /**
+     * How many texts were generated or requested
+     * @default 0
+     */
+    text?: number
+}
+
 export interface UserRecords {
-    usage?: UserThingRecords,
-    contribution?: UserThingRecords,
-    fulfillment?: UserThingRecords,
-    request?: UserThingRecords
+    usage?: UserThingUsageRecords,
+    contribution?: UserThingUsageRecords,
+    fulfillment?: UserThingFulfillmentRecords,
+    request?: UserThingFulfillmentRecords
 }
 
 
 export interface UserDetails {
-    /** The user's unique Username. It is a combination of their chosen alias plus their ID. */
-    username?: string,
-    /** The user unique ID. It is always an integer. */
-    id?: number,
-    /** The amount of Kudos this user has. The amount of Kudos determines the priority when requesting image generations. */
-    kudos?: number,
-    /** (Privileged) The amount of Evaluating Kudos this untrusted user has from generations and uptime. When this number reaches 50000, they automatically become trusted. */
-    evaluating_kudos?: number,
-    /** How many concurrent generations this user may request. */
-    concurrency?: number,
-    /** Whether this user has been invited to join a worker to the horde and how many of them. When 0, this user cannot add (new) workers to the horde. */
-    worker_invited?: number,
-    /** This user is a Horde moderator. */
-    moderator?: boolean,
-    kudos_details?: UserKudosDetails,
-    /** How many workers this user has created (active or inactive) */
-    worker_count?: number,
-    worker_ids?: string[],
-    monthly_kudos?: MonthlyKudos,
-    /** This user is a trusted member of the Horde. */
-    trusted?: boolean,
-    /** This user has been flagged for suspicious activity. */
-    flagged?: boolean,
-    /** (Privileged) How much suspicion this user has accumulated */
-    suspicious?: number,
-    /** If true, this user has not registered using an oauth service. */
-    pseudonymous?: boolean,
-    /** 
-     * (Privileged) Contact details for the horde admins to reach the user in case of emergency.
-     * @example email@example.com
-    */
-    contact?: string,
     /**
      * How many seconds since this account was created
      * @example 60
      */
     account_age?: number,
+    /** How many concurrent generations this user may request. */
+    concurrency?: number,
+    /**
+     * @deprecated
+     */
+    contributions?: ContributionsDetailsStable,
+    /** This user has been flagged for suspicious activity. */
+    flagged?: boolean,
+    /** The user unique ID. It is always an integer. */
+    id?: number,
+    /** The amount of Kudos this user has. The amount of Kudos determines the priority when requesting image generations. */
+    kudos?: number,
+    kudos_details?: UserKudosDetails,
+    /** This user is a Horde moderator. */
+    moderator?: boolean,
+    /** If true, this user has not registered using an oauth service. */
+    pseudonymous?: boolean,
+    records?: UserRecords
+    /** This user is a trusted member of the Horde. */
+    trusted?: boolean,
     /**
      * @deprecated
      */
     usage?: UsageDetailsStable,
+    /** The user's unique Username. It is a combination of their chosen alias plus their ID. */
+    username?: string,
+    /** How many workers this user has created (active or inactive) */
+    worker_count?: number,
+    worker_ids?: string[],
+    /** Whether this user has been invited to join a worker to the horde and how many of them. When 0, this user cannot add (new) workers to the horde. */
+    worker_invited?: number,
+    
     /**
-     * @deprecated
+     * These variables are in the API documentation, but are not seen in test requests.
      */
-    contributions?: ContributionsDetailsStable
-    records?: UserRecords
+    /** (Privileged) The amount of Evaluating Kudos this untrusted user has from generations and uptime. When this number reaches 50000, they automatically become trusted. */
+    evaluating_kudos?: number,
+    monthly_kudos?: MonthlyKudos,
+    /** (Privileged) How much suspicion this user has accumulated */
+    suspicious?: number,
+    /** 
+     * (Privileged) Contact details for the horde admins to reach the user in case of emergency.
+     * @example email@example.com
+    */
+    contact?: string
 }
 
 export interface UserKudosDetails {
