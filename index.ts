@@ -2386,7 +2386,7 @@ export interface GenerationSubmitted {
     reward?: number
 }
 
-export interface UserThingRecords {
+export interface UserThingUsageRecords {
     /**
      * How many megapixelsteps this user has generated or requested
      * @default 0
@@ -2399,11 +2399,29 @@ export interface UserThingRecords {
     tokens?: number
 }
 
+export interface UserThingFulfillmentRecords {
+    /**
+     * How many images were generated or requested
+     * @default 0
+     */
+    image?: number,
+    /**
+     * How many images were interrogated generated or requested
+     * @default 0
+     */
+    interrogation?: number,
+    /**
+     * How many texts were generated or requested
+     * @default 0
+     */
+    text?: number
+}
+
 export interface UserRecords {
-    usage?: UserThingRecords,
-    contribution?: UserThingRecords,
-    fulfillment?: UserThingRecords,
-    request?: UserThingRecords
+    usage?: UserThingUsageRecords,
+    contribution?: UserThingUsageRecords,
+    fulfillment?: UserThingFulfillmentRecords,
+    request?: UserThingFulfillmentRecords
 }
 
 
