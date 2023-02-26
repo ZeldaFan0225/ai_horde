@@ -568,7 +568,6 @@ class StableHorde {
      * Horde Maintenance Mode Status
      * Use this method to quicky determine if this horde is in maintenance, invite_only or raid mode
      * @param options.token - Requires Admin or Owner API key
-     
      * @param options.force - Set to true to skip cache
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns HordeModes - The current modes of the horde
