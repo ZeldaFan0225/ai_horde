@@ -15,38 +15,38 @@
 
 ### contribution
 
-• `Optional` **contribution**: [`UserThingRecords`](UserThingRecords.md)
+• `Optional` **contribution**: [`UserThingUsageRecords`](UserThingUsageRecords.md)
 
 #### Defined in
 
-[index.ts:2404](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2404)
+[index.ts:2422](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2422)
 
 ___
 
 ### fulfillment
 
-• `Optional` **fulfillment**: [`UserThingRecords`](UserThingRecords.md)
+• `Optional` **fulfillment**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
 
 #### Defined in
 
-[index.ts:2405](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2405)
+[index.ts:2423](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2423)
 
 ___
 
 ### request
 
-• `Optional` **request**: [`UserThingRecords`](UserThingRecords.md)
+• `Optional` **request**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
 
 #### Defined in
 
-[index.ts:2406](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2406)
+[index.ts:2424](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2424)
 
 ___
 
 ### usage
 
-• `Optional` **usage**: [`UserThingRecords`](UserThingRecords.md)
+• `Optional` **usage**: [`UserThingUsageRecords`](UserThingUsageRecords.md)
 
 #### Defined in
 
-[index.ts:2403](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2403)
+[index.ts:2421](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2421)
