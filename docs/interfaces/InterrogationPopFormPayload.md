@@ -21,7 +21,7 @@ The UUID of the interrogation form. Use this to post the results in the future
 
 #### Defined in
 
-[index.ts:2865](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2865)
+[index.ts:2883](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2883)
 
 ___
 
@@ -39,7 +39,7 @@ caption
 
 #### Defined in
 
-[index.ts:2870](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2870)
+[index.ts:2888](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2888)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[index.ts:2871](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2871)
+[index.ts:2889](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2889)
 
 ___
 
@@ -61,4 +61,4 @@ The URL From which the source image can be downloaded
 
 #### Defined in
 
-[index.ts:2873](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2873)
+[index.ts:2891](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2891)

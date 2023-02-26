@@ -88,7 +88,8 @@
 - [UserDetails](interfaces/UserDetails.md)
 - [UserKudosDetails](interfaces/UserKudosDetails.md)
 - [UserRecords](interfaces/UserRecords.md)
-- [UserThingRecords](interfaces/UserThingRecords.md)
+- [UserThingFulfillmentRecords](interfaces/UserThingFulfillmentRecords.md)
+- [UserThingUsageRecords](interfaces/UserThingUsageRecords.md)
 - [WorkerDetails](interfaces/WorkerDetails.md)
 - [WorkerDetailsLite](interfaces/WorkerDetailsLite.md)
 - [WorkerDetailsStable](interfaces/WorkerDetailsStable.md)
@@ -108,7 +109,7 @@
 
 #### Defined in
 
-[index.ts:2814](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2814)
+[index.ts:2832](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2832)
 
 ___
 
@@ -118,4 +119,4 @@ ___
 
 #### Defined in
 
-[index.ts:2812](https://github.com/ZeldaFan0225/stable_horde/blob/9241243/index.ts#L2812)
+[index.ts:2830](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2830)
