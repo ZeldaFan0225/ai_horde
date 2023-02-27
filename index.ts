@@ -182,6 +182,22 @@ class StableHorde {
         }
     }
 
+    generateFieldsString(fields?: string[]) {
+        return fields?.join(',')
+    }
+
+    async #request(route: string, method: string, options?: {token?: string, fields?: string[], fields_string?: string, body?: any}): Promise<{result: Centra.Response, fields_string?: string}> {
+        const fields_string = options?.fields?.join(',') || options?.fields_string
+        const t = this.#getToken(options?.token)
+        const req = Centra(`${this.#api_route}${route}`, method)
+        .header("Client-Agent", this.#client_agent)
+        .header("apikey", t)
+        if(options?.body) req.body(options.body, "json")
+        if(fields_string) req.header('X-Fields', fields_string)
+        const res = await req.send()
+        return {result: res, fields_string}
+    }
+
 
     /* DEPRECIATED METHODS */
 
@@ -299,20 +315,14 @@ class StableHorde {
     async findUser<
         T extends keyof UserDetails
     >(options?: {token?: string, fields?: T[]}): Promise<Pick<UserDetails, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/find_user`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const {result, fields_string} = await this.#request("/find_user", "GET", options)
 
-        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
+        if(result.statusCode === 404) throw new this.APIError(await result.json().then(res => res), result.coreRes)
 
-        const data = await res.json() as Pick<UserDetails, T>
+        const data = await result.json() as Pick<UserDetails, T>
         if(this.#cache_config.users) {
             const data_with_id = data as Pick<UserDetails, 'id'>
-            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string, data)
+            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string!, data)
         }
         return data
     }
@@ -328,22 +338,18 @@ class StableHorde {
     async getUserDetails<
         T extends keyof UserDetails
     >(id: number, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<UserDetails, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const fields_string = this.generateFieldsString(options?.fields)
         const t = this.#getToken(options?.token)
         const temp = !options?.force && this.#cache.users?.get(id.toString() + fields_string)
         if(temp) return temp
-        const req = Centra(`${this.#api_route}/users/${id}`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const {result} = await this.#request(`/users/${id}`, "GET", {fields_string, token: t})
 
-        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
+        if(result.statusCode === 404) throw new this.APIError(await result.json().then(res => res), result.coreRes)
 
-        const data = await res.json() as Pick<UserDetails, T>
+        const data = await result.json() as Pick<UserDetails, T>
         if(this.#cache_config.users) {
             const data_with_id = data as Pick<UserDetails, 'id'>
-            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string, data)
+            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string!, data)
         }
         return data
     }
