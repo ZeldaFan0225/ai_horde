@@ -5,7 +5,7 @@ version()
 
 console.log(StableHorde.ModelGenerationInputPostProcessingTypes)
 
-function version() {
+async function version() {
     const stable_horde = new StableHorde({
         cache_interval: 1000 * 10,
         cache: {
@@ -13,7 +13,7 @@ function version() {
         }
     })
 
-    console.log(stable_horde.VERSION)
+    console.log(await stable_horde.findUser({token: ""}))
 }
 
 async function main() {
