@@ -20,7 +20,7 @@ The date this newspiece was published
 
 #### Defined in
 
-[index.ts:2719](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2719)
+[index.ts:2725](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L2725)
 
 ___
 
@@ -32,7 +32,7 @@ How critical this piece of news is.
 
 #### Defined in
 
-[index.ts:2723](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2723)
+[index.ts:2729](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L2729)
 
 ___
 
@@ -44,4 +44,4 @@ The actual piece of news
 
 #### Defined in
 
-[index.ts:2721](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2721)
+[index.ts:2727](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L2727)

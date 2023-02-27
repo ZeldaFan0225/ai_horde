@@ -19,7 +19,7 @@ The ID of the deleted team
 
 #### Defined in
 
-[index.ts:2807](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2807)
+[index.ts:2813](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L2813)
 
 ___
 
@@ -31,4 +31,4 @@ The Name of the deleted team
 
 #### Defined in
 
-[index.ts:2809](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2809)
+[index.ts:2815](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L2815)

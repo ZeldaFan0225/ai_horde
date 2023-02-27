@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[index.ts:2967](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2967)
+[index.ts:2973](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L2973)

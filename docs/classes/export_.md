@@ -45,6 +45,7 @@
 - [deleteTextGenerationRequest](export_.md#deletetextgenerationrequest)
 - [deleteWorker](export_.md#deleteworker)
 - [findUser](export_.md#finduser)
+- [generateFieldsString](export_.md#generatefieldsstring)
 - [getFilter](export_.md#getfilter)
 - [getFilters](export_.md#getfilters)
 - [getGenerationCheck](export_.md#getgenerationcheck)
@@ -102,7 +103,7 @@
 
 #### Defined in
 
-[index.ts:116](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L116)
+[index.ts:116](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L116)
 
 ## Properties
 
@@ -112,7 +113,7 @@
 
 #### Defined in
 
-[index.ts:107](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L107)
+[index.ts:107](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L107)
 
 ___
 
@@ -122,7 +123,7 @@ ___
 
 #### Defined in
 
-[index.ts:104](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L104)
+[index.ts:104](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L104)
 
 ___
 
@@ -132,7 +133,7 @@ ___
 
 #### Defined in
 
-[index.ts:98](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L98)
+[index.ts:98](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L98)
 
 ___
 
@@ -142,7 +143,7 @@ ___
 
 #### Defined in
 
-[index.ts:95](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L95)
+[index.ts:95](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L95)
 
 ___
 
@@ -152,7 +153,7 @@ ___
 
 #### Defined in
 
-[index.ts:89](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L89)
+[index.ts:89](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L89)
 
 ___
 
@@ -162,7 +163,7 @@ ___
 
 #### Defined in
 
-[index.ts:101](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L101)
+[index.ts:101](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L101)
 
 ___
 
@@ -172,7 +173,7 @@ ___
 
 #### Defined in
 
-[index.ts:92](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L92)
+[index.ts:92](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L92)
 
 ___
 
@@ -182,7 +183,7 @@ ___
 
 #### Defined in
 
-[index.ts:113](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L113)
+[index.ts:113](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L113)
 
 ___
 
@@ -192,7 +193,7 @@ ___
 
 #### Defined in
 
-[index.ts:115](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L115)
+[index.ts:115](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L115)
 
 ___
 
@@ -202,7 +203,7 @@ ___
 
 #### Defined in
 
-[index.ts:106](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L106)
+[index.ts:106](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L106)
 
 ___
 
@@ -212,7 +213,7 @@ ___
 
 #### Defined in
 
-[index.ts:103](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L103)
+[index.ts:103](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L103)
 
 ___
 
@@ -222,7 +223,7 @@ ___
 
 #### Defined in
 
-[index.ts:97](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L97)
+[index.ts:97](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L97)
 
 ___
 
@@ -232,7 +233,7 @@ ___
 
 #### Defined in
 
-[index.ts:94](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L94)
+[index.ts:94](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L94)
 
 ___
 
@@ -242,7 +243,7 @@ ___
 
 #### Defined in
 
-[index.ts:88](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L88)
+[index.ts:88](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L88)
 
 ___
 
@@ -252,7 +253,7 @@ ___
 
 #### Defined in
 
-[index.ts:100](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L100)
+[index.ts:100](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L100)
 
 ___
 
@@ -262,7 +263,7 @@ ___
 
 #### Defined in
 
-[index.ts:91](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L91)
+[index.ts:91](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L91)
 
 ## Accessors
 
@@ -276,7 +277,7 @@ ___
 
 #### Defined in
 
-[index.ts:172](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L172)
+[index.ts:172](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L172)
 
 ## Methods
 
@@ -310,7 +311,7 @@ FilterDetails
 
 #### Defined in
 
-[index.ts:1397](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1397)
+[index.ts:1403](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1403)
 
 ___
 
@@ -324,7 +325,7 @@ ___
 
 #### Defined in
 
-[index.ts:168](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L168)
+[index.ts:168](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L168)
 
 ___
 
@@ -358,7 +359,7 @@ ModifyTeam
 
 #### Defined in
 
-[index.ts:1225](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1225)
+[index.ts:1231](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1231)
 
 ___
 
@@ -391,7 +392,7 @@ SimpleResponse
 
 #### Defined in
 
-[index.ts:1653](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1653)
+[index.ts:1659](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1659)
 
 ___
 
@@ -428,7 +429,7 @@ RequestStatusStable
 
 #### Defined in
 
-[index.ts:282](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L282)
+[index.ts:298](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L298)
 
 ___
 
@@ -462,7 +463,7 @@ SimpleResponse
 
 #### Defined in
 
-[index.ts:1621](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1621)
+[index.ts:1627](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1627)
 
 ___
 
@@ -495,7 +496,7 @@ RequestStatusStable
 
 #### Defined in
 
-[index.ts:1465](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1465)
+[index.ts:1471](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1471)
 
 ___
 
@@ -528,7 +529,7 @@ InterrogationStatus
 
 #### Defined in
 
-[index.ts:1523](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1523)
+[index.ts:1529](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1529)
 
 ___
 
@@ -563,7 +564,7 @@ DeletedTeam
 
 #### Defined in
 
-[index.ts:1588](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1588)
+[index.ts:1594](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1594)
 
 ___
 
@@ -596,7 +597,7 @@ RequestStatusKobold
 
 #### Defined in
 
-[index.ts:1494](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1494)
+[index.ts:1500](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1500)
 
 ___
 
@@ -632,7 +633,7 @@ DeletedWorker
 
 #### Defined in
 
-[index.ts:1554](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1554)
+[index.ts:1560](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1560)
 
 ___
 
@@ -665,7 +666,27 @@ UserDetails - The user data of the requested user
 
 #### Defined in
 
-[index.ts:299](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L299)
+[index.ts:315](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L315)
+
+___
+
+### generateFieldsString
+
+▸ **generateFieldsString**(`fields?`): `undefined` \| `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fields?` | `string`[] |
+
+#### Returns
+
+`undefined` \| `string`
+
+#### Defined in
+
+[index.ts:185](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L185)
 
 ___
 
@@ -698,7 +719,7 @@ FilterDetails - Filter Details
 
 #### Defined in
 
-[index.ts:768](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L768)
+[index.ts:774](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L774)
 
 ___
 
@@ -731,7 +752,7 @@ FilterDetails[] - Array of Filter Details
 
 #### Defined in
 
-[index.ts:745](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L745)
+[index.ts:751](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L751)
 
 ___
 
@@ -769,7 +790,7 @@ RequestStatusCheck - The Check data of the Generation
 
 #### Defined in
 
-[index.ts:198](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L198)
+[index.ts:214](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L214)
 
 ___
 
@@ -809,7 +830,7 @@ RequestStatusStable - The Status of the Generation
 
 #### Defined in
 
-[index.ts:216](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L216)
+[index.ts:232](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L232)
 
 ___
 
@@ -827,7 +848,7 @@ true - If request was successful, if not throws error
 
 #### Defined in
 
-[index.ts:537](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L537)
+[index.ts:543](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L543)
 
 ___
 
@@ -861,7 +882,7 @@ RequestStatusCheck - The Check data of the Generation
 
 #### Defined in
 
-[index.ts:437](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L437)
+[index.ts:443](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L443)
 
 ___
 
@@ -897,7 +918,7 @@ RequestStatusStable - The Status of the Generation
 
 #### Defined in
 
-[index.ts:465](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L465)
+[index.ts:471](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L471)
 
 ___
 
@@ -931,7 +952,7 @@ InterrogationStatus - The Status data of the Interrogation
 
 #### Defined in
 
-[index.ts:515](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L515)
+[index.ts:521](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L521)
 
 ___
 
@@ -963,7 +984,7 @@ ActiveModel[] - Array of Active Models
 
 #### Defined in
 
-[index.ts:551](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L551)
+[index.ts:557](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L557)
 
 ___
 
@@ -997,7 +1018,7 @@ HordeModes - The current modes of the horde
 
 #### Defined in
 
-[index.ts:575](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L575)
+[index.ts:581](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L581)
 
 ___
 
@@ -1029,7 +1050,7 @@ Newspiece[] - Array of all news articles
 
 #### Defined in
 
-[index.ts:599](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L599)
+[index.ts:605](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L605)
 
 ___
 
@@ -1061,7 +1082,7 @@ HordePerformanceStable - The hordes current performance
 
 #### Defined in
 
-[index.ts:621](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L621)
+[index.ts:627](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L627)
 
 ___
 
@@ -1095,7 +1116,7 @@ TeamDetailsStable - The team data
 
 #### Defined in
 
-[index.ts:359](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L359)
+[index.ts:365](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L365)
 
 ___
 
@@ -1126,7 +1147,7 @@ TeamDetailsStable[] - Array of Team Details
 
 #### Defined in
 
-[index.ts:721](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L721)
+[index.ts:727](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L727)
 
 ___
 
@@ -1159,7 +1180,7 @@ RequestStatusStable - The Status of the Generation
 
 #### Defined in
 
-[index.ts:490](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L490)
+[index.ts:496](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L496)
 
 ___
 
@@ -1193,7 +1214,7 @@ UserDetails - The user data of the requested user
 
 #### Defined in
 
-[index.ts:328](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L328)
+[index.ts:338](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L338)
 
 ___
 
@@ -1224,7 +1245,7 @@ UserDetails[] - An array of all users data
 
 #### Defined in
 
-[index.ts:642](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L642)
+[index.ts:648](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L648)
 
 ___
 
@@ -1259,7 +1280,7 @@ worker details for the requested worker
 
 #### Defined in
 
-[index.ts:398](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L398)
+[index.ts:404](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L404)
 
 ___
 
@@ -1290,7 +1311,7 @@ An array of all workers data
 
 #### Defined in
 
-[index.ts:663](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L663)
+[index.ts:669](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L669)
 
 ___
 
@@ -1319,7 +1340,7 @@ ids of workers to use in the request to generate
 
 #### Defined in
 
-[index.ts:686](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L686)
+[index.ts:692](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L692)
 
 ___
 
@@ -1345,7 +1366,7 @@ ___
 
 #### Defined in
 
-[index.ts:176](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L176)
+[index.ts:176](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L176)
 
 ___
 
@@ -1386,7 +1407,7 @@ RequestAsync - The id and message for the async generation request
 
 #### Defined in
 
-[index.ts:235](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L235)
+[index.ts:251](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L251)
 
 ___
 
@@ -1423,7 +1444,7 @@ RequestAsync - The id and message for the async generation request
 
 #### Defined in
 
-[index.ts:826](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L826)
+[index.ts:832](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L832)
 
 ___
 
@@ -1460,7 +1481,7 @@ RequestInterrogationResponse
 
 #### Defined in
 
-[index.ts:1067](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1067)
+[index.ts:1073](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1073)
 
 ___
 
@@ -1497,7 +1518,7 @@ RequestAsync - The id and message for the async generation request
 
 #### Defined in
 
-[index.ts:863](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L863)
+[index.ts:869](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L869)
 
 ___
 
@@ -1530,7 +1551,7 @@ FilterPromptSuspicion
 
 #### Defined in
 
-[index.ts:793](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L793)
+[index.ts:799](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L799)
 
 ___
 
@@ -1568,7 +1589,7 @@ GenerationPayloadStable
 
 #### Defined in
 
-[index.ts:251](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L251)
+[index.ts:267](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L267)
 
 ___
 
@@ -1609,7 +1630,7 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:267](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L267)
+[index.ts:283](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L283)
 
 ___
 
@@ -1643,7 +1664,7 @@ GenerationPayloadStable
 
 #### Defined in
 
-[index.ts:933](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L933)
+[index.ts:939](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L939)
 
 ___
 
@@ -1680,7 +1701,7 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:997](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L997)
+[index.ts:1003](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1003)
 
 ___
 
@@ -1714,7 +1735,7 @@ InterrogationPopPayload
 
 #### Defined in
 
-[index.ts:1101](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1101)
+[index.ts:1107](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1107)
 
 ___
 
@@ -1750,7 +1771,7 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:1134](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1134)
+[index.ts:1140](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1140)
 
 ___
 
@@ -1780,7 +1801,7 @@ null
 
 #### Defined in
 
-[index.ts:1197](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1197)
+[index.ts:1203](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1203)
 
 ___
 
@@ -1815,7 +1836,7 @@ KudosTransferred
 
 #### Defined in
 
-[index.ts:1166](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1166)
+[index.ts:1172](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1172)
 
 ___
 
@@ -1853,7 +1874,7 @@ GenerationSubmitted - The kudos awarded for the rating
 
 #### Defined in
 
-[index.ts:900](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L900)
+[index.ts:906](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L906)
 
 ___
 
@@ -1887,7 +1908,7 @@ GenerationPayloadKobold
 
 #### Defined in
 
-[index.ts:965](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L965)
+[index.ts:971](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L971)
 
 ___
 
@@ -1924,7 +1945,7 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:1031](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1031)
+[index.ts:1037](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1037)
 
 ___
 
@@ -1961,7 +1982,7 @@ HordeModes
 
 #### Defined in
 
-[index.ts:1258](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1258)
+[index.ts:1264](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1264)
 
 ___
 
@@ -1995,7 +2016,7 @@ FilterDetails
 
 #### Defined in
 
-[index.ts:1430](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1430)
+[index.ts:1436](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1436)
 
 ___
 
@@ -2029,7 +2050,7 @@ ModifyTeam
 
 #### Defined in
 
-[index.ts:1363](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1363)
+[index.ts:1369](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1369)
 
 ___
 
@@ -2063,7 +2084,7 @@ ModifyUser
 
 #### Defined in
 
-[index.ts:1289](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1289)
+[index.ts:1295](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1295)
 
 ___
 
@@ -2101,4 +2122,4 @@ ModifyWorker
 
 #### Defined in
 
-[index.ts:1327](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L1327)
+[index.ts:1333](https://github.com/ZeldaFan0225/stable_horde/blob/c25ea19/index.ts#L1333)
