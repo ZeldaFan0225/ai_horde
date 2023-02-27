@@ -8,28 +8,46 @@
 
   ↳ [`PopInputStable`](PopInputStable.md)
 
+  ↳ [`PopInputKobold`](PopInputKobold.md)
+
 ## Table of contents
 
 ### Properties
 
-- [blacklist](PopInput.md#blacklist)
+- [bridge\_agent](PopInput.md#bridge_agent)
 - [bridge\_version](PopInput.md#bridge_version)
 - [models](PopInput.md#models)
 - [name](PopInput.md#name)
 - [nsfw](PopInput.md#nsfw)
 - [priority\_usernames](PopInput.md#priority_usernames)
+- [require\_upfront\_kudos](PopInput.md#require_upfront_kudos)
+- [threads](PopInput.md#threads)
 
 ## Properties
 
-### blacklist
+### bridge\_agent
 
-• `Optional` **blacklist**: `string`[]
+• `Optional` **bridge\_agent**: `string`
 
-Words which, when detected will refuse to pick up any jobs
+The worker name, version and website
+
+**`Default`**
+
+unknown:0:unknown
+
+**`Example`**
+
+```ts
+AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
+```
+
+**`Max Length`**
+
+1000
 
 #### Defined in
 
-[index.ts:1795](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1795)
+[index.ts:2227](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2227)
 
 ___
 
@@ -45,7 +63,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:1802](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1802)
+[index.ts:2220](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2220)
 
 ___
 
@@ -57,7 +75,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:1797](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1797)
+[index.ts:2215](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2215)
 
 ___
 
@@ -69,7 +87,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:1786](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1786)
+[index.ts:2206](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2206)
 
 ___
 
@@ -85,7 +103,7 @@ false
 
 #### Defined in
 
-[index.ts:1793](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1793)
+[index.ts:2213](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2213)
 
 ___
 
@@ -97,4 +115,50 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:1788](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1788)
+[index.ts:2208](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2208)
+
+___
+
+### require\_upfront\_kudos
+
+• `Optional` **require\_upfront\_kudos**: `boolean`
+
+If True, this worker will only pick up requests where the owner has the required kudos to consume already available
+
+**`Default`**
+
+false
+
+**`Example`**
+
+```ts
+false
+```
+
+#### Defined in
+
+[index.ts:2240](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2240)
+
+___
+
+### threads
+
+• `Optional` **threads**: `number`
+
+How many threads this worker is running. This is used to accurately the current power available in the horde
+
+**`Default`**
+
+1
+
+**`Minimum`**
+
+1
+
+**`Maximum`**
+
+10
+
+#### Defined in
+
+[index.ts:2234](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2234)
