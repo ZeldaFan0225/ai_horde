@@ -26,7 +26,7 @@ The request concurrency this user has after this request
 
 #### Defined in
 
-[index.ts:2005](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2005)
+[index.ts:2530](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2530)
 
 ___
 
@@ -38,7 +38,7 @@ The user's new moderator status.
 
 #### Defined in
 
-[index.ts:2011](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2011)
+[index.ts:2536](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2536)
 
 ___
 
@@ -50,7 +50,7 @@ The user's new monthly kudos total
 
 #### Defined in
 
-[index.ts:2017](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2017)
+[index.ts:2542](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2542)
 
 ___
 
@@ -62,7 +62,7 @@ The new total Kudos this user has after this request
 
 #### Defined in
 
-[index.ts:2003](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2003)
+[index.ts:2528](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2528)
 
 ___
 
@@ -74,7 +74,7 @@ The user's new public_workers status.
 
 #### Defined in
 
-[index.ts:2013](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2013)
+[index.ts:2538](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2538)
 
 ___
 
@@ -86,7 +86,7 @@ The user's new trusted status
 
 #### Defined in
 
-[index.ts:2019](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2019)
+[index.ts:2544](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2544)
 
 ___
 
@@ -98,7 +98,7 @@ Multiplies the amount of kudos lost when generating images.
 
 #### Defined in
 
-[index.ts:2007](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2007)
+[index.ts:2532](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2532)
 
 ___
 
@@ -110,7 +110,7 @@ The user's new username.
 
 #### Defined in
 
-[index.ts:2015](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2015)
+[index.ts:2540](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2540)
 
 ___
 
@@ -122,4 +122,4 @@ This userWhether this user has been invited to join a worker to the horde and ho
 
 #### Defined in
 
-[index.ts:2009](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2009)
+[index.ts:2534](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2534)

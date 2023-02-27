@@ -8,6 +8,8 @@
 
   ↳ [`GenerationStable`](GenerationStable.md)
 
+  ↳ [`GenerationKobold`](GenerationKobold.md)
+
 ## Table of contents
 
 ### Properties
@@ -26,7 +28,7 @@ The model which generated this image
 
 #### Defined in
 
-[index.ts:1755](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1755)
+[index.ts:2150](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2150)
 
 ___
 
@@ -38,7 +40,7 @@ The UUID of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1751](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1751)
+[index.ts:2146](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2146)
 
 ___
 
@@ -50,4 +52,4 @@ The name of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1753](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1753)
+[index.ts:2148](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2148)

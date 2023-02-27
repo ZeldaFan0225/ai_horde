@@ -1,29 +1,41 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / PopInput
+[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / PopInputKobold
 
-# Interface: PopInput
+# Interface: PopInputKobold
 
 ## Hierarchy
 
-- **`PopInput`**
+- [`PopInput`](PopInput.md)
 
-  ↳ [`PopInputStable`](PopInputStable.md)
-
-  ↳ [`PopInputKobold`](PopInputKobold.md)
+  ↳ **`PopInputKobold`**
 
 ## Table of contents
 
 ### Properties
 
-- [bridge\_agent](PopInput.md#bridge_agent)
-- [bridge\_version](PopInput.md#bridge_version)
-- [models](PopInput.md#models)
-- [name](PopInput.md#name)
-- [nsfw](PopInput.md#nsfw)
-- [priority\_usernames](PopInput.md#priority_usernames)
-- [require\_upfront\_kudos](PopInput.md#require_upfront_kudos)
-- [threads](PopInput.md#threads)
+- [blacklist](PopInputKobold.md#blacklist)
+- [bridge\_agent](PopInputKobold.md#bridge_agent)
+- [bridge\_version](PopInputKobold.md#bridge_version)
+- [max\_pixels](PopInputKobold.md#max_pixels)
+- [models](PopInputKobold.md#models)
+- [name](PopInputKobold.md#name)
+- [nsfw](PopInputKobold.md#nsfw)
+- [priority\_usernames](PopInputKobold.md#priority_usernames)
+- [require\_upfront\_kudos](PopInputKobold.md#require_upfront_kudos)
+- [threads](PopInputKobold.md#threads)
 
 ## Properties
+
+### blacklist
+
+• `Optional` **blacklist**: `string`[]
+
+Words which, when detected will refuse to pick up any jobs
+
+#### Defined in
+
+[index.ts:2201](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2201)
+
+___
 
 ### bridge\_agent
 
@@ -45,6 +57,10 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 1000
 
+#### Inherited from
+
+[PopInput](PopInput.md).[bridge_agent](PopInput.md#bridge_agent)
+
 #### Defined in
 
 [index.ts:2227](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2227)
@@ -61,9 +77,29 @@ The version of the bridge used by this worker
 
 1
 
+#### Inherited from
+
+[PopInput](PopInput.md).[bridge_version](PopInput.md#bridge_version)
+
 #### Defined in
 
 [index.ts:2220](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2220)
+
+___
+
+### max\_pixels
+
+• `Optional` **max\_pixels**: `number`
+
+The maximum amount of pixels this worker can generate
+
+**`Default`**
+
+262144
+
+#### Defined in
+
+[index.ts:2199](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2199)
 
 ___
 
@@ -72,6 +108,10 @@ ___
 • `Optional` **models**: `string`[]
 
 Which models this worker is serving
+
+#### Inherited from
+
+[PopInput](PopInput.md).[models](PopInput.md#models)
 
 #### Defined in
 
@@ -84,6 +124,10 @@ ___
 • `Optional` **name**: `string`
 
 The Name of the Worker
+
+#### Inherited from
+
+[PopInput](PopInput.md).[name](PopInput.md#name)
 
 #### Defined in
 
@@ -101,6 +145,10 @@ Whether this worker can generate NSFW requests or not.
 
 false
 
+#### Inherited from
+
+[PopInput](PopInput.md).[nsfw](PopInput.md#nsfw)
+
 #### Defined in
 
 [index.ts:2213](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2213)
@@ -112,6 +160,10 @@ ___
 • `Optional` **priority\_usernames**: `string`[]
 
 Users with priority to use this worker
+
+#### Inherited from
+
+[PopInput](PopInput.md).[priority_usernames](PopInput.md#priority_usernames)
 
 #### Defined in
 
@@ -134,6 +186,10 @@ false
 ```ts
 false
 ```
+
+#### Inherited from
+
+[PopInput](PopInput.md).[require_upfront_kudos](PopInput.md#require_upfront_kudos)
 
 #### Defined in
 
@@ -158,6 +214,10 @@ How many threads this worker is running. This is used to accurately the current 
 **`Maximum`**
 
 10
+
+#### Inherited from
+
+[PopInput](PopInput.md).[threads](PopInput.md#threads)
 
 #### Defined in
 

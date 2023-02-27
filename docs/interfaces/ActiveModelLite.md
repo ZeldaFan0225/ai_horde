@@ -25,7 +25,7 @@ How many workers in this horde are running this model.
 
 #### Defined in
 
-[index.ts:2153](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2153)
+[index.ts:2678](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2678)
 
 ___
 
@@ -37,4 +37,4 @@ The name of a model available by workers in this horde.
 
 #### Defined in
 
-[index.ts:2151](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L2151)
+[index.ts:2676](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2676)

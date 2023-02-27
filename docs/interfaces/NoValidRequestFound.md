@@ -6,6 +6,8 @@
 
 - **`NoValidRequestFound`**
 
+  ↳ [`NoValidRequestFoundKobold`](NoValidRequestFoundKobold.md)
+
   ↳ [`NoValidRequestFoundStable`](NoValidRequestFoundStable.md)
 
 ## Table of contents
@@ -13,8 +15,10 @@
 ### Properties
 
 - [blacklist](NoValidRequestFound.md#blacklist)
+- [bridge\_version](NoValidRequestFound.md#bridge_version)
 - [models](NoValidRequestFound.md#models)
 - [nsfw](NoValidRequestFound.md#nsfw)
+- [performance](NoValidRequestFound.md#performance)
 - [untrusted](NoValidRequestFound.md#untrusted)
 - [worker\_id](NoValidRequestFound.md#worker_id)
 
@@ -28,7 +32,19 @@ How many waiting requests were skipped because they demanded a generation with a
 
 #### Defined in
 
-[index.ts:1902](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1902)
+[index.ts:2375](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2375)
+
+___
+
+### bridge\_version
+
+• `Optional` **bridge\_version**: `number`
+
+How many waiting requests were skipped because they require a higher version of the bridge than this worker is running (upgrade if you see this in your skipped list)
+
+#### Defined in
+
+[index.ts:2381](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2381)
 
 ___
 
@@ -40,7 +56,7 @@ How many waiting requests were skipped because they demanded a different model t
 
 #### Defined in
 
-[index.ts:1906](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1906)
+[index.ts:2379](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2379)
 
 ___
 
@@ -52,7 +68,19 @@ How many waiting requests were skipped because they demanded a nsfw generation w
 
 #### Defined in
 
-[index.ts:1900](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1900)
+[index.ts:2373](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2373)
+
+___
+
+### performance
+
+• `Optional` **performance**: `number`
+
+How many waiting requests were skipped because they required higher performance
+
+#### Defined in
+
+[index.ts:2371](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2371)
 
 ___
 
@@ -64,7 +92,7 @@ How many waiting requests were skipped because they demanded a trusted worker wh
 
 #### Defined in
 
-[index.ts:1904](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1904)
+[index.ts:2377](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2377)
 
 ___
 
@@ -76,4 +104,4 @@ How many waiting requests were skipped because they demanded a specific worker
 
 #### Defined in
 
-[index.ts:1898](https://github.com/ZeldaFan0225/stable_horde/blob/3b7418e/index.ts#L1898)
+[index.ts:2369](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2369)
