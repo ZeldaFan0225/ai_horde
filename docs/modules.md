@@ -10,6 +10,9 @@
 
 ### Interfaces
 
+- [AIHordeCacheConfiguration](interfaces/AIHordeCacheConfiguration.md)
+- [AIHordeInitOptions](interfaces/AIHordeInitOptions.md)
+- [AIHordeRatingsInitOptions](interfaces/AIHordeRatingsInitOptions.md)
 - [ActiveModel](interfaces/ActiveModel.md)
 - [ActiveModelLite](interfaces/ActiveModelLite.md)
 - [AestheticRating](interfaces/AestheticRating.md)
@@ -76,9 +79,6 @@
 - [RequestStatusKobold](interfaces/RequestStatusKobold.md)
 - [RequestStatusStable](interfaces/RequestStatusStable.md)
 - [SimpleResponse](interfaces/SimpleResponse.md)
-- [StableHordeCacheConfiguration](interfaces/StableHordeCacheConfiguration.md)
-- [StableHordeInitOptions](interfaces/StableHordeInitOptions.md)
-- [StableHordeRatingsInitOptions](interfaces/StableHordeRatingsInitOptions.md)
 - [TeamDetails](interfaces/TeamDetails.md)
 - [TeamDetailsLite](interfaces/TeamDetailsLite.md)
 - [TeamDetailsStable](interfaces/TeamDetailsStable.md)
@@ -109,7 +109,7 @@
 
 #### Defined in
 
-[index.ts:2838](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2838)
+[index.ts:2838](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2838)
 
 ___
 
@@ -119,4 +119,4 @@ ___
 
 #### Defined in
 
-[index.ts:2836](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2836)
+[index.ts:2836](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2836)
