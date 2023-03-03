@@ -84,36 +84,36 @@ class APIError extends Error {
 }
 
 
-class StableHorde {
+class AIHorde {
     static readonly ModelGenerationInputStableSamplers = ModelGenerationInputStableSamplers;
-    readonly ModelGenerationInputStableSamplers = StableHorde.ModelGenerationInputStableSamplers;
+    readonly ModelGenerationInputStableSamplers = AIHorde.ModelGenerationInputStableSamplers;
     
     static readonly SourceImageProcessingTypes = SourceImageProcessingTypes;
-    readonly SourceImageProcessingTypes = StableHorde.SourceImageProcessingTypes;
+    readonly SourceImageProcessingTypes = AIHorde.SourceImageProcessingTypes;
     
     static readonly ModelGenerationInputPostProcessingTypes = ModelGenerationInputPostProcessingTypes;
-    readonly ModelGenerationInputPostProcessingTypes = StableHorde.ModelGenerationInputPostProcessingTypes;
+    readonly ModelGenerationInputPostProcessingTypes = AIHorde.ModelGenerationInputPostProcessingTypes;
     
     static readonly ModelGenerationInputControlTypes = ModelGenerationInputControlTypes;
-    readonly ModelGenerationInputControlTypes = StableHorde.ModelGenerationInputControlTypes;
+    readonly ModelGenerationInputControlTypes = AIHorde.ModelGenerationInputControlTypes;
     
     static readonly ModelInterrogationFormTypes = ModelInterrogationFormTypes;
-    readonly ModelInterrogationFormTypes = StableHorde.ModelInterrogationFormTypes;
+    readonly ModelInterrogationFormTypes = AIHorde.ModelInterrogationFormTypes;
     
     static readonly HordeAsyncRequestStates = HordeAsyncRequestStates;
-    readonly HordeAsyncRequestStates = StableHorde.HordeAsyncRequestStates;
+    readonly HordeAsyncRequestStates = AIHorde.HordeAsyncRequestStates;
     
     static readonly APIError = APIError;
-    readonly APIError = StableHorde.APIError;
+    readonly APIError = AIHorde.APIError;
 
     #default_token?: string
-    #cache_config: StableHordeCacheConfiguration
-    #cache: StableHordeCache
+    #cache_config: AIHordeCacheConfiguration
+    #cache: AIHordeCache
     #api_route: string
     VERSION: string
     #client_agent: string
-    ratings: StableHordeRatings
-    constructor(options?: StableHordeInitOptions) {
+    ratings: AIHordeRatings
+    constructor(options?: AIHordeInitOptions) {
         this.#default_token = options?.default_token
         this.#api_route = options?.api_route ?? "https://aihorde.net/api/v2"
         this.#cache_config = {
@@ -152,7 +152,7 @@ class StableHorde {
         }
 
         
-        this.ratings = new StableHordeRatings({
+        this.ratings = new AIHordeRatings({
             api_route: options?.ratings_api_route ?? "https://ratings.droom.cloud/api/v1",
             default_token: options?.default_token,
             client_agent: this.#client_agent
@@ -1681,15 +1681,15 @@ class StableHorde {
 }
 
 // @ts-expect-error
-export = StableHorde
+export = AIHorde
 
 
 /* INTERNAL TYPES */
 
 
-export interface StableHordeInitOptions {
+export interface AIHordeInitOptions {
     /** The configuration for caching results */
-    cache?: StableHordeCacheConfiguration,
+    cache?: AIHordeCacheConfiguration,
     /** 
      * The interval to check expired data in the cache
      * @default 1000
@@ -1705,7 +1705,7 @@ export interface StableHordeInitOptions {
     client_agent?: string,
 }
 
-export interface StableHordeCacheConfiguration {
+export interface AIHordeCacheConfiguration {
     /** How long to cache a specific user for in Milliseconds */
     users?: number,
     /** How long to cache generation check data for in Milliseconds */
@@ -1728,7 +1728,7 @@ export interface StableHordeCacheConfiguration {
     teams?: number,
 }
 
-interface StableHordeCache {
+interface AIHordeCache {
     users?: SuperMap<string, UserDetails>,
     generations_check?: SuperMap<string, RequestStatusCheck>,
     generations_status?: SuperMap<string, RequestStatusStable>,
@@ -1953,7 +1953,7 @@ export interface GenerationInput {
     /** The Base64-encoded webp to use for img2img, max siue 3072 * 3072 */
     source_image?: string,
     /** If source_image is provided, specifies how to process it. */
-    source_processing?: typeof StableHorde.SourceImageProcessingTypes[keyof typeof StableHorde.SourceImageProcessingTypes],
+    source_processing?: typeof AIHorde.SourceImageProcessingTypes[keyof typeof AIHorde.SourceImageProcessingTypes],
     /** If source_processing is set to 'inpainting' or 'outpainting', this parameter can be optionally provided as the Base64-encoded webp mask of the areas to inpaint. If this arg is not passed, the inpainting/outpainting mask has to be embedded as alpha channel */
     source_mask?: string,
     /** If True, the image will be sent via cloudflare r2 download link */
@@ -1966,7 +1966,7 @@ export interface ModelGenerationInputStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: typeof StableHorde.ModelGenerationInputStableSamplers[keyof typeof StableHorde.ModelGenerationInputStableSamplers],
+    sampler_name?: typeof AIHorde.ModelGenerationInputStableSamplers[keyof typeof AIHorde.ModelGenerationInputStableSamplers],
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */
@@ -2017,7 +2017,7 @@ export interface ModelGenerationInputStable {
     /** Set to True to enable karras noise scheduling tweaks */
     karras?: boolean,
     /** The list of post-processors to apply to the image, in the order to be applied */
-    post_processing?: (typeof StableHorde.ModelGenerationInputPostProcessingTypes[keyof typeof StableHorde.ModelGenerationInputPostProcessingTypes])[]
+    post_processing?: (typeof AIHorde.ModelGenerationInputPostProcessingTypes[keyof typeof AIHorde.ModelGenerationInputPostProcessingTypes])[]
     /** 
      * Set to True to create images that stitch together seamlessly
      * @default false
@@ -2034,7 +2034,7 @@ export interface ModelGenerationInputStable {
      * @maximum 12
     */
     clip_skip?: number,
-    control_type?: (typeof StableHorde.ModelGenerationInputControlTypes[keyof typeof StableHorde.ModelGenerationInputControlTypes]),
+    control_type?: (typeof AIHorde.ModelGenerationInputControlTypes[keyof typeof AIHorde.ModelGenerationInputControlTypes]),
     /** 
      * @default 30
      * @minimum 1
@@ -2053,7 +2053,7 @@ export interface ModelPayloadRootStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: typeof StableHorde.ModelGenerationInputStableSamplers[keyof typeof StableHorde.ModelGenerationInputStableSamplers],
+    sampler_name?: typeof AIHorde.ModelGenerationInputStableSamplers[keyof typeof AIHorde.ModelGenerationInputStableSamplers],
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */
@@ -2272,7 +2272,7 @@ export interface ModelPayloadStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: typeof StableHorde.ModelGenerationInputStableSamplers[keyof typeof StableHorde.ModelGenerationInputStableSamplers],
+    sampler_name?: typeof AIHorde.ModelGenerationInputStableSamplers[keyof typeof AIHorde.ModelGenerationInputStableSamplers],
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */
@@ -2323,7 +2323,7 @@ export interface ModelPayloadStable {
     /** Set to True to enable karras noise scheduling tweaks */
     karras?: boolean,
     /** The list of post-processors to apply to the image, in the order to be applied */
-    post_processing?: (typeof StableHorde.ModelGenerationInputPostProcessingTypes[keyof typeof StableHorde.ModelGenerationInputPostProcessingTypes])[]
+    post_processing?: (typeof AIHorde.ModelGenerationInputPostProcessingTypes[keyof typeof AIHorde.ModelGenerationInputPostProcessingTypes])[]
     /** 
      * Set to True to create images that stitch together seamlessly
      * @default false
@@ -2340,7 +2340,7 @@ export interface ModelPayloadStable {
      * @maximum 12
     */
     clip_skip?: number,
-    control_type?: (typeof StableHorde.ModelGenerationInputControlTypes[keyof typeof StableHorde.ModelGenerationInputControlTypes]),
+    control_type?: (typeof AIHorde.ModelGenerationInputControlTypes[keyof typeof AIHorde.ModelGenerationInputControlTypes]),
     /** The prompt which will be sent to Stable Diffusion to generate an image */
     prompt?: string,
     /** 
@@ -2833,15 +2833,15 @@ export interface SimpleResponse {
     message: string
 }
 
-export type InterrogationPopFormPayloadStable = Partial<Record<typeof StableHorde.ModelInterrogationFormTypes[keyof typeof StableHorde.ModelInterrogationFormTypes], string>>
+export type InterrogationPopFormPayloadStable = Partial<Record<typeof AIHorde.ModelInterrogationFormTypes[keyof typeof AIHorde.ModelInterrogationFormTypes], string>>
 
-export type InterrogationFormResult = Partial<Record<typeof StableHorde.ModelInterrogationFormTypes[keyof typeof StableHorde.ModelInterrogationFormTypes], Record<string, any>>>
+export type InterrogationFormResult = Partial<Record<typeof AIHorde.ModelInterrogationFormTypes[keyof typeof AIHorde.ModelInterrogationFormTypes], Record<string, any>>>
 
 export interface ModelInterrogationFormStable {
     /**
      * The type of interrogation this is
      */
-    name: typeof StableHorde.ModelInterrogationFormTypes[keyof typeof StableHorde.ModelInterrogationFormTypes],
+    name: typeof AIHorde.ModelInterrogationFormTypes[keyof typeof AIHorde.ModelInterrogationFormTypes],
     payload?: InterrogationPopFormPayload
 }
 
@@ -2864,7 +2864,7 @@ export interface InterrogationPopInput {
     /** Users with priority to use this worker */
     priority_usernames?: string[],
     /** The type of interrogation this worker can fulfull */
-    forms?: (typeof StableHorde.ModelInterrogationFormTypes[keyof typeof StableHorde.ModelInterrogationFormTypes])[],
+    forms?: (typeof AIHorde.ModelInterrogationFormTypes[keyof typeof AIHorde.ModelInterrogationFormTypes])[],
     /**
      * The amount of forms to pop at the same time
      * @default 1
@@ -2891,7 +2891,7 @@ export interface InterrogationPopFormPayload {
      * The name of this interrogation form
      * @example caption
      */
-    name?: typeof StableHorde.ModelInterrogationFormTypes[keyof typeof StableHorde.ModelInterrogationFormTypes],
+    name?: typeof AIHorde.ModelInterrogationFormTypes[keyof typeof AIHorde.ModelInterrogationFormTypes],
     payload?: InterrogationPopFormPayloadStable,
     /** The URL From which the source image can be downloaded */
     source_image?: string
@@ -2925,13 +2925,13 @@ export interface InterrogationFormStatus {
     /** The name of this interrogation form */
     form?: string,
     /** title: Interrogation State */
-    state?: typeof StableHorde.HordeAsyncRequestStates[keyof typeof StableHorde.HordeAsyncRequestStates],
+    state?: typeof AIHorde.HordeAsyncRequestStates[keyof typeof AIHorde.HordeAsyncRequestStates],
     result?: InterrogationFormResult
 }
 
 export interface InterrogationStatus {
     /** title: Interrogation State */
-    state?: typeof StableHorde.HordeAsyncRequestStates[keyof typeof StableHorde.HordeAsyncRequestStates],
+    state?: typeof AIHorde.HordeAsyncRequestStates[keyof typeof AIHorde.HordeAsyncRequestStates],
     forms?: InterrogationFormStatus[]
 }
 
@@ -3064,17 +3064,17 @@ enum RatingArtifactsRatings {
 }
 
 
-class StableHordeRatings {
+class AIHordeRatings {
     static readonly RatingArtifactsRatings = RatingArtifactsRatings;
-    readonly RatingArtifactsRatings = StableHordeRatings.RatingArtifactsRatings;
+    readonly RatingArtifactsRatings = AIHordeRatings.RatingArtifactsRatings;
 
     static readonly APIError = APIError;
-    readonly APIError = StableHorde.APIError;
+    readonly APIError = AIHorde.APIError;
 
     #default_token?: string
     #api_route: string
     #client_agent: string
-    constructor(options: StableHordeRatingsInitOptions) {
+    constructor(options: AIHordeRatingsInitOptions) {
         this.#default_token = options.default_token
         this.#api_route = options.api_route ?? "https://ratings.aihorde.net/api/v1"
         this.#client_agent = options.client_agent
@@ -3195,7 +3195,7 @@ class StableHordeRatings {
  * Internal Interfaces
  */
 
-export interface StableHordeRatingsInitOptions {
+export interface AIHordeRatingsInitOptions {
     /** The default token to use for requests */
     default_token?: string,
     /** The base api domain + route to use for requests */
@@ -3292,7 +3292,7 @@ export interface RatePostInput {
      * @minimum 0
      * @maximum 5
      */
-    artifacts?: typeof StableHordeRatings.RatingArtifactsRatings[keyof typeof StableHordeRatings.RatingArtifactsRatings]
+    artifacts?: typeof AIHordeRatings.RatingArtifactsRatings[keyof typeof AIHordeRatings.RatingArtifactsRatings]
 }
 
 export interface RatePostResponse {

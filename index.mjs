@@ -1,3 +1,3 @@
-import StableHorde from './index.js'
-export default StableHorde
-export { StableHorde }
+import AIHorde from './index.js'
+export default AIHorde
+export { AIHorde }
