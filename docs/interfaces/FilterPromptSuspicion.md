@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[index.ts:2979](https://github.com/ZeldaFan0225/ai_horde/blob/af05e2d/index.ts#L2979)
+[index.ts:2979](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2979)
 
 ___
 
@@ -29,4 +29,4 @@ Rates how suspicious the provided prompt is. A suspicion of 2 means it would be 
 
 #### Defined in
 
-[index.ts:2978](https://github.com/ZeldaFan0225/ai_horde/blob/af05e2d/index.ts#L2978)
+[index.ts:2978](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2978)
