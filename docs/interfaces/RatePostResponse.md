@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / RatePostResponse
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / RatePostResponse
 
 # Interface: RatePostResponse
 
@@ -25,7 +25,7 @@ Rating submitted
 
 #### Defined in
 
-[index.ts:3303](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3303)
+[index.ts:3303](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3303)
 
 ___
 
@@ -47,4 +47,4 @@ The amount of kudos awarded for this rating
 
 #### Defined in
 
-[index.ts:3298](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3298)
+[index.ts:3298](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3298)

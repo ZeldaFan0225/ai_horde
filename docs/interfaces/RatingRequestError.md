@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / RatingRequestError
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / RatingRequestError
 
 # Interface: RatingRequestError
 
@@ -18,4 +18,4 @@ The error message for this status code.
 
 #### Defined in
 
-[index.ts:3266](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3266)
+[index.ts:3266](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3266)

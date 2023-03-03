@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / NoValidInterrogationsFound
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / NoValidInterrogationsFound
 
 # Interface: NoValidInterrogationsFound
 
@@ -30,7 +30,7 @@ How many waiting requests were skipped because they require a higher version of 
 
 #### Defined in
 
-[index.ts:2910](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2910)
+[index.ts:2910](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2910)
 
 ___
 
@@ -46,7 +46,7 @@ How many waiting requests were skipped because they demanded a trusted worker wh
 
 #### Defined in
 
-[index.ts:2904](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2904)
+[index.ts:2904](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2904)
 
 ___
 
@@ -62,4 +62,4 @@ How many waiting requests were skipped because they demanded a specific worker.
 
 #### Defined in
 
-[index.ts:2899](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2899)
+[index.ts:2899](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2899)

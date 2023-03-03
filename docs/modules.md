@@ -1,6 +1,6 @@
-[@zeldafan0225/stable_horde](README.md) / Exports
+[@zeldafan0225/ai_horde](README.md) / Exports
 
-# @zeldafan0225/stable_horde
+# @zeldafan0225/ai_horde
 
 ## Table of contents
 
@@ -109,7 +109,7 @@
 
 #### Defined in
 
-[index.ts:2832](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2832)
+[index.ts:2832](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2832)
 
 ___
 
@@ -119,4 +119,4 @@ ___
 
 #### Defined in
 
-[index.ts:2830](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2830)
+[index.ts:2830](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2830)

@@ -6,30 +6,30 @@ version()
 console.log(StableHorde.ModelGenerationInputPostProcessingTypes)
 
 async function version() {
-    const stable_horde = new StableHorde({
+    const ai_horde = new StableHorde({
         cache_interval: 1000 * 10,
         cache: {
             generations_check: 1000 * 30
         }
     })
 
-    console.log(await stable_horde.findUser({token: ""}))
+    console.log(await ai_horde.findUser({token: ""}))
 }
 
 async function main() {
-    const stable_horde = new StableHorde({
+    const ai_horde = new StableHorde({
         cache_interval: 1000 * 10,
         cache: {
             generations_check: 1000 * 30
         }
     })
     
-    const generation = await stable_horde.postAsyncGenerate({
+    const generation = await ai_horde.postAsyncGenerate({
         prompt: "The legend of Zelda"
     })
     console.log(generation)
     
-    const check = await stable_horde.getGenerationCheck(generation.id)
+    const check = await ai_horde.getGenerationCheck(generation.id)
     console.log(check)
-    console.log(stable_horde.cache.generations_check)
+    console.log(ai_horde.cache.generations_check)
 }

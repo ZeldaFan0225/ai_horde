@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / ModifyWorker
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ModifyWorker
 
 # Interface: ModifyWorker
 
@@ -21,7 +21,7 @@ The new state of the 'info' var for this worker.
 
 #### Defined in
 
-[index.ts:2653](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2653)
+[index.ts:2653](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2653)
 
 ___
 
@@ -33,7 +33,7 @@ The new state of the 'maintenance' var for this worker. When True, this worker w
 
 #### Defined in
 
-[index.ts:2649](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2649)
+[index.ts:2649](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2649)
 
 ___
 
@@ -45,7 +45,7 @@ The new name for this this worker.
 
 #### Defined in
 
-[index.ts:2655](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2655)
+[index.ts:2655](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2655)
 
 ___
 
@@ -57,4 +57,4 @@ The new state of the 'paused' var for this worker. When True, this worker will n
 
 #### Defined in
 
-[index.ts:2651](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2651)
+[index.ts:2651](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2651)

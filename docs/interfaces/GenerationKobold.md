@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / GenerationKobold
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / GenerationKobold
 
 # Interface: GenerationKobold
 
@@ -33,7 +33,7 @@ The model which generated this image
 
 #### Defined in
 
-[index.ts:2150](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2150)
+[index.ts:2150](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2150)
 
 ___
 
@@ -45,7 +45,7 @@ The seed which generated this text
 
 #### Defined in
 
-[index.ts:2174](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2174)
+[index.ts:2174](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2174)
 
 ___
 
@@ -67,7 +67,7 @@ ok
 
 #### Defined in
 
-[index.ts:2170](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2170)
+[index.ts:2170](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2170)
 
 ___
 
@@ -79,7 +79,7 @@ The generated text
 
 #### Defined in
 
-[index.ts:2172](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2172)
+[index.ts:2172](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2172)
 
 ___
 
@@ -95,7 +95,7 @@ The UUID of the worker which generated this image
 
 #### Defined in
 
-[index.ts:2146](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2146)
+[index.ts:2146](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2146)
 
 ___
 
@@ -111,4 +111,4 @@ The name of the worker which generated this image
 
 #### Defined in
 
-[index.ts:2148](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2148)
+[index.ts:2148](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2148)

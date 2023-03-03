@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / FilterPromptSuspicion
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / FilterPromptSuspicion
 
 # Interface: FilterPromptSuspicion
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[index.ts:2973](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2973)
+[index.ts:2973](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2973)
 
 ___
 
@@ -29,4 +29,4 @@ Rates how suspicious the provided prompt is. A suspicion of 2 means it would be 
 
 #### Defined in
 
-[index.ts:2972](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2972)
+[index.ts:2972](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2972)

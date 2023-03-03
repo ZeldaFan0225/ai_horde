@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / KudosTransferred
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / KudosTransferred
 
 # Interface: KudosTransferred
 
@@ -18,4 +18,4 @@ The amount of Kudos tranferred
 
 #### Defined in
 
-[index.ts:2683](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2683)
+[index.ts:2683](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2683)

@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / PopInputKobold
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / PopInputKobold
 
 # Interface: PopInputKobold
 
@@ -33,7 +33,7 @@ Words which, when detected will refuse to pick up any jobs
 
 #### Defined in
 
-[index.ts:2201](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2201)
+[index.ts:2201](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2201)
 
 ___
 
@@ -63,7 +63,7 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 #### Defined in
 
-[index.ts:2227](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2227)
+[index.ts:2227](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2227)
 
 ___
 
@@ -83,7 +83,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:2220](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2220)
+[index.ts:2220](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2220)
 
 ___
 
@@ -99,7 +99,7 @@ The maximum amount of pixels this worker can generate
 
 #### Defined in
 
-[index.ts:2199](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2199)
+[index.ts:2199](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2199)
 
 ___
 
@@ -115,7 +115,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:2215](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2215)
+[index.ts:2215](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2215)
 
 ___
 
@@ -131,7 +131,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:2206](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2206)
+[index.ts:2206](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2206)
 
 ___
 
@@ -151,7 +151,7 @@ false
 
 #### Defined in
 
-[index.ts:2213](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2213)
+[index.ts:2213](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2213)
 
 ___
 
@@ -167,7 +167,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:2208](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2208)
+[index.ts:2208](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2208)
 
 ___
 
@@ -193,7 +193,7 @@ false
 
 #### Defined in
 
-[index.ts:2240](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2240)
+[index.ts:2240](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2240)
 
 ___
 
@@ -221,4 +221,4 @@ How many threads this worker is running. This is used to accurately the current 
 
 #### Defined in
 
-[index.ts:2234](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2234)
+[index.ts:2234](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2234)
