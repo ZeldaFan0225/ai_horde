@@ -14,12 +14,10 @@
 
 # @zeldafan0225/ai_horde
 
-This package allows you to communicate with the [Stable Horde](https://aihorde.net/) [API](https://aihorde.net/)
+This package allows you to communicate with the [AI Horde](https://aihorde.net/) [API](https://aihorde.net/)
 
 **DISCLAIMER:**
-THIS PACKAGE/REPOSITORY IS IN NO WAY ASSOCIATED TO THE CREATORS OF STABLE HORDE
-
-You can support me and my projects on [Ko-Fi](https://ko-fi.com/slashbot)
+THIS PACKAGE/REPOSITORY IS IN NO WAY ASSOCIATED TO THE CREATORS OF AI HORDE
 
 ## Bugs
 
@@ -43,10 +41,10 @@ You can contribute by adding new features, optimizing the currently existing cod
 
 ## How to use
 
-The package exports the class `StableHorde` which includes basically everything you need.
+The package exports the class `AIHorde` which includes basically everything you need.
 
 ```js
-const StableHorde = require("@zeldafan0225/ai_horde");
+const AIHorde = require("@zeldafan0225/ai_horde");
 
 /*
 Create new instance of the ai_horde class to communicate with the rest API
@@ -58,7 +56,7 @@ The token is not a required argument in any method.
 
 A default API route is also in the contrictor for changing where the requests are directed to (e.g. when using a subdomain like https://test.aihorde.net)
 */
-const ai_horde = new StableHorde({
+const ai_horde = new AIHorde({
   cache_interval: 1000 * 10,
   cache: {
     generations_check: 1000 * 30,
@@ -67,13 +65,13 @@ const ai_horde = new StableHorde({
 });
 
 // start the generation of an image with the given payload
-const generation = await ai_horde.postAsyncGenerate({
+const generation = await ai_horde.postAsyncImageGenerate({
   prompt: "The legend of Zelda",
 });
 console.log(generation);
 
 // check the status of your generation using the generations id
-const check = await ai_horde.getGenerationCheck(generation.id);
+const check = await ai_horde.getImageGenerationCheck(generation.id);
 console.log(check);
 ```
 
