@@ -1,8 +1,8 @@
 {
   "name": "@zeldafan0225/ai_horde",
   "types": "./index.d.ts",
-  "version": "2.4.1",
-  "description": "A package to interact with the stable horde API",
+  "version": "3.0.0",
+  "description": "A package to interact with the ai horde API",
   "bugs": "https://github.com/ZeldaFan0225/ai_horde/issues",
   "author": "ZeldaFan0225 (https://github.com/ZeldaFan0225)",
   "repository": "github:ZeldaFan0225/ai_horde",
@@ -13,9 +13,11 @@
   },
   "keywords": [
     "stable horde",
+    "ai horde",
     "stable diffusion",
     "image generation",
     "stablehorde",
+    "aihorde",
     "stablediffusion"
   ],
   "scripts": {

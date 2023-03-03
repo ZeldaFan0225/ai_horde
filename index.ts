@@ -3076,7 +3076,7 @@ class StableHordeRatings {
     #client_agent: string
     constructor(options: StableHordeRatingsInitOptions) {
         this.#default_token = options.default_token
-        this.#api_route = options.api_route ?? "https://ratings.droom.cloud/api/v1"
+        this.#api_route = options.api_route ?? "https://ratings.aihorde.net/api/v1"
         this.#client_agent = options.client_agent
     }
 
