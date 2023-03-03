@@ -26,7 +26,7 @@ The unique identifier for this team
 
 #### Defined in
 
-[index.ts:3239](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L3239)
+[index.ts:3239](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L3239)
 
 ___
 
@@ -44,7 +44,7 @@ false
 
 #### Defined in
 
-[index.ts:3249](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L3249)
+[index.ts:3249](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L3249)
 
 ___
 
@@ -62,4 +62,4 @@ My Team
 
 #### Defined in
 
-[index.ts:3244](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L3244)
+[index.ts:3244](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L3244)

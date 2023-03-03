@@ -47,7 +47,7 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 #### Defined in
 
-[index.ts:2233](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2233)
+[index.ts:2233](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2233)
 
 ___
 
@@ -63,7 +63,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:2226](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2226)
+[index.ts:2226](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2226)
 
 ___
 
@@ -75,7 +75,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:2221](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2221)
+[index.ts:2221](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2221)
 
 ___
 
@@ -87,7 +87,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:2212](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2212)
+[index.ts:2212](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2212)
 
 ___
 
@@ -103,7 +103,7 @@ false
 
 #### Defined in
 
-[index.ts:2219](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2219)
+[index.ts:2219](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2219)
 
 ___
 
@@ -115,7 +115,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:2214](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2214)
+[index.ts:2214](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2214)
 
 ___
 
@@ -137,7 +137,7 @@ false
 
 #### Defined in
 
-[index.ts:2246](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2246)
+[index.ts:2246](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2246)
 
 ___
 
@@ -161,4 +161,4 @@ How many threads this worker is running. This is used to accurately the current 
 
 #### Defined in
 
-[index.ts:2240](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2240)
+[index.ts:2240](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2240)

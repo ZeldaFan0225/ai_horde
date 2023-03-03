@@ -31,7 +31,7 @@ How many workers are actively processing image interrogations in this Horde in t
 
 #### Defined in
 
-[index.ts:2709](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2709)
+[index.ts:2709](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2709)
 
 ___
 
@@ -43,7 +43,7 @@ How many worker threads are actively processing image interrogation in this Hord
 
 #### Defined in
 
-[index.ts:2711](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2711)
+[index.ts:2711](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2711)
 
 ___
 
@@ -55,7 +55,7 @@ How many megapixelsteps this Horde generated in the last minute
 
 #### Defined in
 
-[index.ts:2705](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2705)
+[index.ts:2705](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2705)
 
 ___
 
@@ -67,7 +67,7 @@ The amount of image interrogations waiting and processing currently in this Hord
 
 #### Defined in
 
-[index.ts:2707](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2707)
+[index.ts:2707](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2707)
 
 ___
 
@@ -79,7 +79,7 @@ The amount of megapixelsteps in waiting and processing requests currently in thi
 
 #### Defined in
 
-[index.ts:2703](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2703)
+[index.ts:2703](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2703)
 
 ___
 
@@ -95,7 +95,7 @@ The amount of waiting and processing requests currently in this Horde
 
 #### Defined in
 
-[index.ts:2716](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2716)
+[index.ts:2716](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2716)
 
 ___
 
@@ -111,7 +111,7 @@ How many worker threads are actively processing prompt generations in this Horde
 
 #### Defined in
 
-[index.ts:2720](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2720)
+[index.ts:2720](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2720)
 
 ___
 
@@ -127,4 +127,4 @@ How many workers are actively processing image generations in this Horde in the 
 
 #### Defined in
 
-[index.ts:2718](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2718)
+[index.ts:2718](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2718)
