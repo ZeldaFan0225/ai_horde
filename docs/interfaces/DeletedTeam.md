@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / DeletedTeam
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / DeletedTeam
 
 # Interface: DeletedTeam
 
@@ -19,7 +19,7 @@ The ID of the deleted team
 
 #### Defined in
 
-[index.ts:2807](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2807)
+[index.ts:2807](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2807)
 
 ___
 
@@ -31,4 +31,4 @@ The Name of the deleted team
 
 #### Defined in
 
-[index.ts:2809](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2809)
+[index.ts:2809](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2809)

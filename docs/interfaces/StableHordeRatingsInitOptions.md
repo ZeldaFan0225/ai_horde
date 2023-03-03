@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / StableHordeRatingsInitOptions
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / StableHordeRatingsInitOptions
 
 # Interface: StableHordeRatingsInitOptions
 
@@ -22,7 +22,7 @@ The base api domain + route to use for requests
 
 #### Defined in
 
-[index.ts:3196](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3196)
+[index.ts:3196](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3196)
 
 ___
 
@@ -34,7 +34,7 @@ The client agent to pass in the requests.
 
 #### Defined in
 
-[index.ts:3198](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3198)
+[index.ts:3198](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3198)
 
 ___
 
@@ -46,4 +46,4 @@ The default token to use for requests
 
 #### Defined in
 
-[index.ts:3194](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3194)
+[index.ts:3194](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3194)

@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / SimpleResponse
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / SimpleResponse
 
 # Interface: SimpleResponse
 
@@ -22,4 +22,4 @@ OK
 
 #### Defined in
 
-[index.ts:2827](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2827)
+[index.ts:2827](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2827)

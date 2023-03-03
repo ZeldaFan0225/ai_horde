@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / DatasetGetResponse
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / DatasetGetResponse
 
 # Interface: DatasetGetResponse
 
@@ -29,7 +29,7 @@ This is a dataset of images of cats
 
 #### Defined in
 
-[index.ts:3220](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3220)
+[index.ts:3220](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3220)
 
 ___
 
@@ -47,7 +47,7 @@ The unique identifier for this dataset
 
 #### Defined in
 
-[index.ts:3210](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3210)
+[index.ts:3210](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3210)
 
 ___
 
@@ -65,7 +65,7 @@ The number of images in this dataset
 
 #### Defined in
 
-[index.ts:3225](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3225)
+[index.ts:3225](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3225)
 
 ___
 
@@ -83,4 +83,4 @@ My Dataset
 
 #### Defined in
 
-[index.ts:3215](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3215)
+[index.ts:3215](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3215)

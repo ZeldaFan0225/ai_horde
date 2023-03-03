@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / ContributionsDetails
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ContributionsDetails
 
 # Interface: ContributionsDetails
 
@@ -24,4 +24,4 @@ How many images this user has generated
 
 #### Defined in
 
-[index.ts:2523](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2523)
+[index.ts:2523](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2523)

@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / UsageDetailsStable
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / UsageDetailsStable
 
 # Interface: UsageDetailsStable
 
@@ -25,7 +25,7 @@ How many megapixelsteps this user has requested
 
 #### Defined in
 
-[index.ts:2506](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2506)
+[index.ts:2506](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2506)
 
 ___
 
@@ -41,4 +41,4 @@ How many images this user has requested
 
 #### Defined in
 
-[index.ts:2504](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2504)
+[index.ts:2504](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2504)

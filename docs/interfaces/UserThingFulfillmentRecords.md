@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / UserThingFulfillmentRecords
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / UserThingFulfillmentRecords
 
 # Interface: UserThingFulfillmentRecords
 
@@ -24,7 +24,7 @@ How many images were generated or requested
 
 #### Defined in
 
-[index.ts:2407](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2407)
+[index.ts:2407](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2407)
 
 ___
 
@@ -40,7 +40,7 @@ How many images were interrogated generated or requested
 
 #### Defined in
 
-[index.ts:2412](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2412)
+[index.ts:2412](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2412)
 
 ___
 
@@ -56,4 +56,4 @@ How many texts were generated or requested
 
 #### Defined in
 
-[index.ts:2417](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2417)
+[index.ts:2417](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2417)

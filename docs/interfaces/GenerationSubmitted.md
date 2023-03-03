@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / GenerationSubmitted
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / GenerationSubmitted
 
 # Interface: GenerationSubmitted
 
@@ -18,4 +18,4 @@ The amount of kudos gained for submitting this request
 
 #### Defined in
 
-[index.ts:2386](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2386)
+[index.ts:2386](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2386)

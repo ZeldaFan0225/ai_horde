@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / UserThingUsageRecords
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / UserThingUsageRecords
 
 # Interface: UserThingUsageRecords
 
@@ -23,7 +23,7 @@ How many megapixelsteps this user has generated or requested
 
 #### Defined in
 
-[index.ts:2394](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2394)
+[index.ts:2394](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2394)
 
 ___
 
@@ -39,4 +39,4 @@ How many tokens this user has generated or requested
 
 #### Defined in
 
-[index.ts:2399](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2399)
+[index.ts:2399](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2399)

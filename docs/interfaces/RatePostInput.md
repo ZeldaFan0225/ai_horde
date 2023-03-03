@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / RatePostInput
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / RatePostInput
 
 # Interface: RatePostInput
 
@@ -39,7 +39,7 @@ The artifacts rating for this image.
 
 #### Defined in
 
-[index.ts:3289](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3289)
+[index.ts:3289](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3289)
 
 ___
 
@@ -65,4 +65,4 @@ The aesthetic rating for this image. How much do you like this image subjectivel
 
 #### Defined in
 
-[index.ts:3276](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3276)
+[index.ts:3276](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3276)

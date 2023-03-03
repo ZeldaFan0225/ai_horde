@@ -1,18 +1,18 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
     <p>
-        <a href="https://www.npmjs.com/package/@zeldafan0225/stable_horde">
-            <img src="https://img.shields.io/npm/v/@zeldafan0225/stable_horde.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Version" />
+        <a href="https://www.npmjs.com/package/@zeldafan0225/ai_horde">
+            <img src="https://img.shields.io/npm/v/@zeldafan0225/ai_horde.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Version" />
         </a>
-        <a href="https://www.npmjs.com/package/@zeldafan0225/stable_horde">
-            <img src="https://img.shields.io/npm/dt/@zeldafan0225/stable_horde.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Downloads" />
+        <a href="https://www.npmjs.com/package/@zeldafan0225/ai_horde">
+            <img src="https://img.shields.io/npm/dt/@zeldafan0225/ai_horde.svg?maxAge=3600&style=flat&logo=npm&color=ff5540" alt="Downloads" />
         </a>
     </p>
 </div>
 
-# @zeldafan0225/stable_horde
+# @zeldafan0225/ai_horde
 
-This package allows you to communicate with the [Stable Horde](https://stablehorde.net/) [API](https://stablehorde.net/)
+This package allows you to communicate with the [Stable Horde](https://aihorde.net/) [API](https://aihorde.net/)
 
 **DISCLAIMER:**
 THIS PACKAGE/REPOSITORY IS IN NO WAY ASSOCIATED TO THE CREATORS OF STABLE HORDE
@@ -21,7 +21,7 @@ You can support me and my projects on [Ko-Fi](https://ko-fi.com/slashbot)
 
 ## Bugs
 
-To report bugs please [open an issue](https://github.com/ZeldaFan0225/stable_horde) on GitHub.
+To report bugs please [open an issue](https://github.com/ZeldaFan0225/ai_horde) on GitHub.
 
 ## Features
 
@@ -44,19 +44,19 @@ You can contribute by adding new features, optimizing the currently existing cod
 The package exports the class `StableHorde` which includes basically everything you need.
 
 ```js
-const StableHorde = require("@zeldafan0225/stable_horde");
+const StableHorde = require("@zeldafan0225/ai_horde");
 
 /*
-Create new instance of the stable_horde class to communicate with the rest API
+Create new instance of the ai_horde class to communicate with the rest API
 You can configure which cache should contain the data for what time
 You can also configure at what interval the cache is checking if there are any data that should be deleted
 
 The class also takes a default token. This is helpful if you want to use this package only using your own token.
 The token is not a required argument in any method.
 
-A default API route is also in the contrictor for changing where the requests are directed to (e.g. when using a subdomain like https://test.stablehorde.net)
+A default API route is also in the contrictor for changing where the requests are directed to (e.g. when using a subdomain like https://test.aihorde.net)
 */
-const stable_horde = new StableHorde({
+const ai_horde = new StableHorde({
   cache_interval: 1000 * 10,
   cache: {
     generations_check: 1000 * 30,
@@ -65,13 +65,13 @@ const stable_horde = new StableHorde({
 });
 
 // start the generation of an image with the given payload
-const generation = await stable_horde.postAsyncGenerate({
+const generation = await ai_horde.postAsyncGenerate({
   prompt: "The legend of Zelda",
 });
 console.log(generation);
 
 // check the status of your generation using the generations id
-const check = await stable_horde.getGenerationCheck(generation.id);
+const check = await ai_horde.getGenerationCheck(generation.id);
 console.log(check);
 ```
 

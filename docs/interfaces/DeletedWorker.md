@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / DeletedWorker
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / DeletedWorker
 
 # Interface: DeletedWorker
 
@@ -19,7 +19,7 @@ The ID of the deleted worker
 
 #### Defined in
 
-[index.ts:2660](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2660)
+[index.ts:2660](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2660)
 
 ___
 
@@ -31,4 +31,4 @@ The Name of the deleted worker
 
 #### Defined in
 
-[index.ts:2662](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2662)
+[index.ts:2662](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2662)

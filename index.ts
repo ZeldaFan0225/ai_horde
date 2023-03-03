@@ -115,7 +115,7 @@ class StableHorde {
     ratings: StableHordeRatings
     constructor(options?: StableHordeInitOptions) {
         this.#default_token = options?.default_token
-        this.#api_route = options?.api_route ?? "https://stablehorde.net/api/v2"
+        this.#api_route = options?.api_route ?? "https://aihorde.net/api/v2"
         this.#cache_config = {
             users: options?.cache?.users ?? 0,
             generations_check: options?.cache?.generations_check ?? 0,
@@ -147,7 +147,7 @@ class StableHorde {
             this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
             this.VERSION = pckg.version
         } catch {
-            this.#client_agent = options?.client_agent ?? `@zeldafan0225/stable_horde:Version_Unknown:github.com/ZeldaFan0225/stable_horde/issues`
+            this.#client_agent = options?.client_agent ?? `@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues`
             this.VERSION = "Unknown"
         }
 
@@ -1824,7 +1824,7 @@ export interface ModifyWorkerInput {
 /* API TYPES */
 
 /**
- * @link https://stablehorde.net/api/ 
+ * @link https://aihorde.net/api/ 
 */
 
 export interface GenerationInputKobold {

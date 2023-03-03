@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / FilterCheckPayload
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / FilterCheckPayload
 
 # Interface: FilterCheckPayload
 
@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[index.ts:2967](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2967)
+[index.ts:2967](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2967)

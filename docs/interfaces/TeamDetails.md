@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / TeamDetails
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / TeamDetails
 
 # Interface: TeamDetails
 
@@ -38,7 +38,7 @@ The UUID of this team
 
 #### Defined in
 
-[index.ts:2786](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2786)
+[index.ts:2786](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2786)
 
 ___
 
@@ -56,7 +56,7 @@ Anarchy is emergent order.
 
 #### Defined in
 
-[index.ts:2765](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2765)
+[index.ts:2765](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2765)
 
 ___
 
@@ -68,7 +68,7 @@ How many Kudos the workers in this team have been rewarded while part of this te
 
 #### Defined in
 
-[index.ts:2769](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2769)
+[index.ts:2769](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2769)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[index.ts:2778](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2778)
+[index.ts:2778](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2778)
 
 ___
 
@@ -94,7 +94,7 @@ The Name given to this team.
 
 #### Defined in
 
-[index.ts:2784](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2784)
+[index.ts:2784](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2784)
 
 ___
 
@@ -106,7 +106,7 @@ How many images this team's workers have generated
 
 #### Defined in
 
-[index.ts:2767](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2767)
+[index.ts:2767](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2767)
 
 ___
 
@@ -118,7 +118,7 @@ The total amount of time workers have stayed online while on this team
 
 #### Defined in
 
-[index.ts:2771](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2771)
+[index.ts:2771](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2771)
 
 ___
 
@@ -136,7 +136,7 @@ How many workers have been dedicated to this team
 
 #### Defined in
 
-[index.ts:2776](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2776)
+[index.ts:2776](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2776)
 
 ___
 
@@ -146,4 +146,4 @@ ___
 
 #### Defined in
 
-[index.ts:2777](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2777)
+[index.ts:2777](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2777)

@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / InterrogationPopPayload
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / InterrogationPopPayload
 
 # Interface: InterrogationPopPayload
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[index.ts:2914](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2914)
+[index.ts:2914](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2914)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[index.ts:2915](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L2915)
+[index.ts:2915](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L2915)

@@ -1,4 +1,4 @@
-[@zeldafan0225/stable_horde](../README.md) / [Exports](../modules.md) / DatasetImagePopResponse
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / DatasetImagePopResponse
 
 # Interface: DatasetImagePopResponse
 
@@ -26,7 +26,7 @@ The UUID of the dataset in which this image belongs
 
 #### Defined in
 
-[index.ts:3261](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3261)
+[index.ts:3261](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3261)
 
 ___
 
@@ -44,7 +44,7 @@ The UUID of the image to rate
 
 #### Defined in
 
-[index.ts:3251](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3251)
+[index.ts:3251](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3251)
 
 ___
 
@@ -62,4 +62,4 @@ https://cdn.droom.cloud/00000000-0000-0000-0000-000000000000.webp
 
 #### Defined in
 
-[index.ts:3256](https://github.com/ZeldaFan0225/stable_horde/blob/ca96654/index.ts#L3256)
+[index.ts:3256](https://github.com/ZeldaFan0225/ai_horde/blob/ca96654/index.ts#L3256)
