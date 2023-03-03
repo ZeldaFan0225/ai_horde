@@ -19,7 +19,7 @@ The ID of the deleted worker
 
 #### Defined in
 
-[index.ts:2666](https://github.com/ZeldaFan0225/ai_horde/blob/af05e2d/index.ts#L2666)
+[index.ts:2666](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2666)
 
 ___
 
@@ -31,4 +31,4 @@ The Name of the deleted worker
 
 #### Defined in
 
-[index.ts:2668](https://github.com/ZeldaFan0225/ai_horde/blob/af05e2d/index.ts#L2668)
+[index.ts:2668](https://github.com/ZeldaFan0225/ai_horde/blob/3212b20/index.ts#L2668)
