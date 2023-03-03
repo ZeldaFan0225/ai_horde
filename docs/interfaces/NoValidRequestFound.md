@@ -32,7 +32,7 @@ How many waiting requests were skipped because they demanded a generation with a
 
 #### Defined in
 
-[index.ts:2381](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2381)
+[index.ts:2381](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2381)
 
 ___
 
@@ -44,7 +44,7 @@ How many waiting requests were skipped because they require a higher version of 
 
 #### Defined in
 
-[index.ts:2387](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2387)
+[index.ts:2387](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2387)
 
 ___
 
@@ -56,7 +56,7 @@ How many waiting requests were skipped because they demanded a different model t
 
 #### Defined in
 
-[index.ts:2385](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2385)
+[index.ts:2385](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2385)
 
 ___
 
@@ -68,7 +68,7 @@ How many waiting requests were skipped because they demanded a nsfw generation w
 
 #### Defined in
 
-[index.ts:2379](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2379)
+[index.ts:2379](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2379)
 
 ___
 
@@ -80,7 +80,7 @@ How many waiting requests were skipped because they required higher performance
 
 #### Defined in
 
-[index.ts:2377](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2377)
+[index.ts:2377](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2377)
 
 ___
 
@@ -92,7 +92,7 @@ How many waiting requests were skipped because they demanded a trusted worker wh
 
 #### Defined in
 
-[index.ts:2383](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2383)
+[index.ts:2383](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2383)
 
 ___
 
@@ -104,4 +104,4 @@ How many waiting requests were skipped because they demanded a specific worker
 
 #### Defined in
 
-[index.ts:2375](https://github.com/ZeldaFan0225/ai_horde/blob/2b1ed8a/index.ts#L2375)
+[index.ts:2375](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2375)
