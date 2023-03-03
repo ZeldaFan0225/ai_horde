@@ -153,7 +153,7 @@ class AIHorde {
 
         
         this.ratings = new AIHordeRatings({
-            api_route: options?.ratings_api_route ?? "https://ratings.droom.cloud/api/v1",
+            api_route: options?.ratings_api_route ?? "https://ratings.aihorde.net/api/v1",
             default_token: options?.default_token,
             client_agent: this.#client_agent
         })
@@ -3049,7 +3049,7 @@ export interface PutNewFilter {
 
 
 /**
- * Stable Horde Ratings
+ * AI Horde Ratings
  */
 
 
