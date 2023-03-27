@@ -39,6 +39,8 @@
 - [HordeModes](interfaces/HordeModes.md)
 - [HordePerformance](interfaces/HordePerformance.md)
 - [HordePerformanceStable](interfaces/HordePerformanceStable.md)
+- [ImageModelStats](interfaces/ImageModelStats.md)
+- [ImageTotalStats](interfaces/ImageTotalStats.md)
 - [InterrogationFormStatus](interfaces/InterrogationFormStatus.md)
 - [InterrogationPopFormPayload](interfaces/InterrogationPopFormPayload.md)
 - [InterrogationPopInput](interfaces/InterrogationPopInput.md)
@@ -79,10 +81,14 @@
 - [RequestStatusKobold](interfaces/RequestStatusKobold.md)
 - [RequestStatusStable](interfaces/RequestStatusStable.md)
 - [SimpleResponse](interfaces/SimpleResponse.md)
+- [SinglePeriodImageStats](interfaces/SinglePeriodImageStats.md)
+- [SinglePeriodTextStats](interfaces/SinglePeriodTextStats.md)
 - [TeamDetails](interfaces/TeamDetails.md)
 - [TeamDetailsLite](interfaces/TeamDetailsLite.md)
 - [TeamDetailsStable](interfaces/TeamDetailsStable.md)
 - [TeamsGetResponse](interfaces/TeamsGetResponse.md)
+- [TextModelStats](interfaces/TextModelStats.md)
+- [TextTotalStats](interfaces/TextTotalStats.md)
 - [UsageDetails](interfaces/UsageDetails.md)
 - [UsageDetailsStable](interfaces/UsageDetailsStable.md)
 - [UserDetails](interfaces/UserDetails.md)
@@ -100,6 +106,8 @@
 
 - [InterrogationFormResult](modules.md#interrogationformresult)
 - [InterrogationPopFormPayloadStable](modules.md#interrogationpopformpayloadstable)
+- [SinglePeriodImageModelStats](modules.md#singleperiodimagemodelstats)
+- [SinglePeriodTextModelStats](modules.md#singleperiodtextmodelstats)
 
 ## Type Aliases
 
@@ -109,7 +117,7 @@
 
 #### Defined in
 
-[index.ts:2838](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2838)
+[index.ts:2795](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2795)
 
 ___
 
@@ -119,4 +127,30 @@ ___
 
 #### Defined in
 
-[index.ts:2836](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2836)
+[index.ts:2793](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2793)
+
+___
+
+### SinglePeriodImageModelStats
+
+Ƭ **SinglePeriodImageModelStats**: `Record`<`string`, `number`\>
+
+string - Model Name
+number - The amount of requests fulfilled for this model
+
+#### Defined in
+
+[index.ts:3009](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L3009)
+
+___
+
+### SinglePeriodTextModelStats
+
+Ƭ **SinglePeriodTextModelStats**: `Record`<`string`, `number`\>
+
+string - Model Name
+number - The amount of requests fulfilled for this model
+
+#### Defined in
+
+[index.ts:3039](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L3039)

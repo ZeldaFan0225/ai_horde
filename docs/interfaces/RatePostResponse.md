@@ -25,7 +25,7 @@ Rating submitted
 
 #### Defined in
 
-[index.ts:3309](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L3309)
+[index.ts:3321](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L3321)
 
 ___
 
@@ -47,4 +47,4 @@ The amount of kudos awarded for this rating
 
 #### Defined in
 
-[index.ts:3304](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L3304)
+[index.ts:3316](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L3316)

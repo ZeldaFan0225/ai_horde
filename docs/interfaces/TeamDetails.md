@@ -38,7 +38,7 @@ The UUID of this team
 
 #### Defined in
 
-[index.ts:2792](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2792)
+[index.ts:2749](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2749)
 
 ___
 
@@ -56,7 +56,7 @@ Anarchy is emergent order.
 
 #### Defined in
 
-[index.ts:2771](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2771)
+[index.ts:2728](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2728)
 
 ___
 
@@ -68,7 +68,7 @@ How many Kudos the workers in this team have been rewarded while part of this te
 
 #### Defined in
 
-[index.ts:2775](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2775)
+[index.ts:2732](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2732)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[index.ts:2784](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2784)
+[index.ts:2741](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2741)
 
 ___
 
@@ -94,7 +94,7 @@ The Name given to this team.
 
 #### Defined in
 
-[index.ts:2790](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2790)
+[index.ts:2747](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2747)
 
 ___
 
@@ -106,7 +106,7 @@ How many images this team's workers have generated
 
 #### Defined in
 
-[index.ts:2773](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2773)
+[index.ts:2730](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2730)
 
 ___
 
@@ -118,7 +118,7 @@ The total amount of time workers have stayed online while on this team
 
 #### Defined in
 
-[index.ts:2777](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2777)
+[index.ts:2734](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2734)
 
 ___
 
@@ -136,7 +136,7 @@ How many workers have been dedicated to this team
 
 #### Defined in
 
-[index.ts:2782](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2782)
+[index.ts:2739](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2739)
 
 ___
 
@@ -146,4 +146,4 @@ ___
 
 #### Defined in
 
-[index.ts:2783](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2783)
+[index.ts:2740](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2740)

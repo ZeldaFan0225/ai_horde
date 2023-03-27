@@ -26,7 +26,7 @@ The UUID of this worker.
 
 #### Defined in
 
-[index.ts:2641](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2641)
+[index.ts:2598](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2598)
 
 ___
 
@@ -38,7 +38,7 @@ The Name given to this worker.
 
 #### Defined in
 
-[index.ts:2639](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2639)
+[index.ts:2596](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2596)
 
 ___
 
@@ -50,4 +50,4 @@ True if the worker has checked-in the past 5 minutes.
 
 #### Defined in
 
-[index.ts:2643](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2643)
+[index.ts:2600](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2600)

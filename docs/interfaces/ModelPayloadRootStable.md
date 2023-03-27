@@ -44,7 +44,7 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:2069](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2069)
+[index.ts:2026](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2026)
 
 ___
 
@@ -66,7 +66,7 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:2077](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2077)
+[index.ts:2034](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2034)
 
 ___
 
@@ -92,7 +92,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:2088](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2088)
+[index.ts:2045](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2045)
 
 ___
 
@@ -104,7 +104,7 @@ Set to True to enable karras noise scheduling tweaks
 
 #### Defined in
 
-[index.ts:2105](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2105)
+[index.ts:2062](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2062)
 
 ___
 
@@ -118,7 +118,7 @@ k_euler
 
 #### Defined in
 
-[index.ts:2056](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2056)
+[index.ts:2013](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2013)
 
 ___
 
@@ -130,7 +130,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:2079](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2079)
+[index.ts:2036](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2036)
 
 ___
 
@@ -150,7 +150,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:2103](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2103)
+[index.ts:2060](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2060)
 
 ___
 
@@ -162,7 +162,7 @@ Special Toggles used in the SD Webui. To be documented.
 
 #### Defined in
 
-[index.ts:2060](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2060)
+[index.ts:2017](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2017)
 
 ___
 
@@ -174,7 +174,7 @@ Set to true to process the generated image with GFPGAN (face correction)
 
 #### Defined in
 
-[index.ts:2107](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2107)
+[index.ts:2064](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2064)
 
 ___
 
@@ -186,7 +186,7 @@ Set to true to process the generated image with LDSR
 
 #### Defined in
 
-[index.ts:2111](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2111)
+[index.ts:2068](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2068)
 
 ___
 
@@ -198,7 +198,7 @@ Set to true to process the generated image with RealESRGAN
 
 #### Defined in
 
-[index.ts:2109](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2109)
+[index.ts:2066](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2066)
 
 ___
 
@@ -210,7 +210,7 @@ Set to true to upscale the image
 
 #### Defined in
 
-[index.ts:2113](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2113)
+[index.ts:2070](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2070)
 
 ___
 
@@ -236,4 +236,4 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:2097](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2097)
+[index.ts:2054](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2054)
