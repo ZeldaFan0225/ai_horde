@@ -39,7 +39,14 @@ enum ModelGenerationInputPostProcessingTypes {
 enum ModelInterrogationFormTypes {
     "caption" = "caption",
     "interrogation" = "interrogation",
-    "nsfw" = "nsfw"
+    "nsfw" = "nsfw",
+    "GFPGAN" = "GFPGAN",
+    "RealESRGAN_x4plus" = "RealESRGAN_x4plus",
+    "RealESRGAN_x4plus_anime_6B" = "RealESRGAN_x4plus_anime_6B",
+    "NMKD_Siax" = "NMKD_Siax",
+    "4x_AnimeSharp" = "4x_AnimeSharp",
+    "CodeFormers" = "CodeFormers",
+    "strip_background" = "strip_background"
 }
 
 enum HordeAsyncRequestStates {
@@ -196,109 +203,6 @@ class AIHorde {
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()
         return {result: res, fields_string}
-    }
-
-
-    /* DEPRECIATED METHODS */
-
-    
-    /**
-     * Retrieve the status of an Asynchronous generation request without images
-     * Use this method to check the status of a currently running asynchronous request without consuming bandwidth.
-     * @param id - The id of the generation
-     * @param options.force - Set to true to skip cache
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns RequestStatusCheck - The Check data of the Generation 
-     * @deprecated Use getImageGenerationCheck instead
-     */
-    async getGenerationCheck<
-        T extends keyof RequestStatusCheck
-    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusCheck, T>> {
-        return await this.getImageGenerationCheck(id, options)
-    }
-    
-
-    /**
-     * Retrieve the full status of an Asynchronous generation request
-     * This method will include all already generated images in base64 encoded .webp files. 
-     * As such, you are requested to not retrieve this data often. Instead use the getGenerationCheck method first
-     * This method is limited to 1 request per minute
-     * @param id - The id of the generation
-     * @param options.force - Set to true to skip cache
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns RequestStatusStable - The Status of the Generation
-     * @deprecated Use getImageGenerationStatus instead
-     */
-    async getGenerationStatus<
-        T extends keyof RequestStatusStable
-    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
-        return await this.getImageGenerationStatus(id, options)
-    }
-
-    
-    /**
-     * Initiate an Asynchronous request to generate images
-     * This method will immediately return with the UUID of the request for generation.
-     * This method will always be accepted, even if there are no workers available currently to fulfill this request.
-     * Perhaps some will appear in the next 10 minutes.
-     * Asynchronous requests live for 10 minutes before being considered stale and being deleted.
-     * @param generation_data - The data to generate the image
-     * @param options.token - The token of the requesting user
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns RequestAsync - The id and message for the async generation request
-     * @deprecated Use postAsyncImageGenerate instead
-     */
-    async postAsyncGenerate<
-        T extends keyof RequestAsync
-    >(generation_data: GenerationInput, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestAsync, T>> {
-        return await this.postAsyncImageGenerate(generation_data, options)
-    }
-    
-    
-    /**
-     * Check if there are generation requests queued for fulfillment
-     * This endpoint is used by registered workers only
-     * @param pop_input
-     * @param options.token - The token of the registered user
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns GenerationPayloadStable
-     * @deprecated Use postImageGenerationPop instead
-     */
-    async postGenerationPop<
-        T extends keyof GenerationPayloadStable
-    >(pop_input: PopInputStable, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationPayloadStable, T>> {
-        return await this.postImageGenerationPop(pop_input, options)
-    }
-    
-    
-    /**
-     * Submit a generated image
-     * This endpoint is used by registered workers only
-     * @param generation_submit
-     * @param options.token - The workers owner API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns GenerationSubmitted
-     * @deprecated Use postImageGenerationSubmit instead
-     */
-    async postGenerationSubmit<
-        T extends keyof GenerationSubmitted
-    >(generation_submit: {id: string, generation: string, seed: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
-        return await this.postImageGenerationSubmit(generation_submit, options)
-    }
-    
-    
-    /**
-     * Cancel an unfinished request
-     * This request will include all already generated images in base64 encoded .webp files.
-     * @param id - The targeted generations ID
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns RequestStatusStable
-     * @deprecated Use deleteImageGenerationRequest instead
-     */
-    async deleteGenerationRequest<
-        T extends keyof RequestStatusStable
-    >(id: string, options?: {fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
-        return await this.deleteImageGenerationRequest(id, options)
     }
 
 
@@ -681,42 +585,69 @@ class AIHorde {
         })
         return data
     }
+    
 
     /**
-     * Filter workers by performance (and query)
-     * @param min_pixels - minimal value of max_pixels for worker
-     * @param filter - (optional) details of the query and filter parameters
-     * @returns ids of workers to use in the request to generate
-     * @deprecated This method will be removed in a future update
+     * Details how many images were generated per model for the past day, month and total
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns ImageModelStats - The stats
      */
-    async getWorkersByPerformance(min_pixels: number, filter = {} as WorkersPerformanceFilter) {
-        const fields: (keyof WorkerDetailsStable)[] = [
-            "id",
-            "performance",
-            "max_pixels",
-            "img2img",
-            "models"
-        ] 
-        if(!filter.size) filter.size = 5
-        if(!filter.performance) filter.performance = 1.5
+    async getImageModelStats<
+        T extends keyof ImageModelStats
+    >(options?: {fields?: T[]}): Promise<Pick<ImageModelStats, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const {result} = await this.#request("/stats/img/models", "GET", {fields: options?.fields, fields_string})
 
-        const workers = await this.getWorkers({fields})
-        
-        const sorted = workers.map(worker => ({
-            ...worker,
-            p: worker.performance ? parseFloat(worker.performance) : 0
-        })).filter(worker => {
-            if(!worker.max_pixels || worker.max_pixels < min_pixels) return
-            if(filter?.models?.length && worker.models?.length) {
-                if(!worker.models.some(model => filter.models?.includes(model))) return
-            }
-            if(filter.img2img && !worker.img2img) return
-            return true
-        }).sort((a, b) => b.p - a.p)
-        
-        const filtered = sorted.filter(el => el.p > (filter.performance as number))
+        const data = await result.json() as Pick<ImageModelStats, T>
+        return data
+    }
+    
 
-        return (filtered.length >= filter.size ? filtered : sorted.slice(0, filter.size)).map(worker => worker.id!)
+    /**
+     * Details how many images have been generated in the past minux,hour,day,month and total
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns ImageTotalStats - The stats
+     */
+    async getImageTotalStats<
+        T extends keyof ImageModelStats
+    >(options?: {fields?: T[]}): Promise<Pick<ImageTotalStats, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const {result} = await this.#request("/stats/img/totals", "GET", {fields: options?.fields, fields_string})
+
+        const data = await result.json() as Pick<ImageTotalStats, T>
+        return data
+    }
+    
+
+    /**
+     * Details how many texts were generated per model for the past day, month and total
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns TextModelStats - The stats
+     */
+    async getTextModelStats<
+        T extends keyof ImageModelStats
+    >(options?: {fields?: T[]}): Promise<Pick<TextModelStats, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const {result} = await this.#request("/stats/text/models", "GET", {fields: options?.fields, fields_string})
+
+        const data = await result.json() as Pick<TextModelStats, T>
+        return data
+    }
+    
+
+    /**
+     * Details how many images have been generated in the past minux,hour,day,month and total
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns TextTotalStats - The stats
+     */
+    async getTextTotalStats<
+        T extends keyof ImageModelStats
+    >(options?: {fields?: T[]}): Promise<Pick<TextTotalStats, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+        const {result} = await this.#request("/stats/text/totals", "GET", {fields: options?.fields, fields_string})
+
+        const data = await result.json() as Pick<TextTotalStats, T>
+        return data
     }
 
     /**
@@ -1942,6 +1873,11 @@ export interface GenerationInput {
     */
     trusted_workers?: boolean,
     /** 
+     * When True, allows slower workers to pick up this request. Disabling this incurs an extra kudos cost.
+     * @default true
+    */
+    slow_workers?: boolean,
+    /** 
      * If the request is SFW, and the worker accidentaly generates NSFW, it will send back a censored image.
      * @default false
     */
@@ -1960,6 +1896,11 @@ export interface GenerationInput {
     r2?: boolean,
     /** If True, The image will be shared with LAION for improving their dataset. This will also reduce your kudos consumption by 2. For anonymous users, this is always True. */
     shared?: boolean,
+    /** 
+     * If enabled, suspicious prompts are sanitized through a string replacement filter instead.
+     * @default true
+    */
+    replacement_filter?: boolean,
 }
 
 export interface ModelGenerationInputStable {
@@ -2035,6 +1976,22 @@ export interface ModelGenerationInputStable {
     */
     clip_skip?: number,
     control_type?: (typeof AIHorde.ModelGenerationInputControlTypes[keyof typeof AIHorde.ModelGenerationInputControlTypes]),
+    /**
+     * Set to True if the image submitted is a pre-generated control map for ControlNet use
+     * @default false
+     */
+    image_is_control?: boolean,
+    /**
+     * Set to True if you want the ControlNet map returned instead of a generated image
+     * @default false
+     */
+    return_control_map?: boolean,
+    /**
+     * @example 0.75
+     * @minimum 0
+     * @maximum 1
+     */
+    facefixer_strength?: number
     /** 
      * @default 30
      * @minimum 1
@@ -3039,8 +2996,63 @@ export interface PutNewFilter {
     description: string
 }
 
+export interface ImageModelStats {
+    day?: SinglePeriodImageModelStats,
+    month?: SinglePeriodImageModelStats,
+    total?: SinglePeriodImageModelStats
+}
+
+/**
+ * string - Model Name
+ * number - The amount of requests fulfilled for this model
+ */
+export type SinglePeriodImageModelStats = Record<string, number>
 
 
+export interface ImageTotalStats {
+    minute?: SinglePeriodImageStats,
+    hour?: SinglePeriodImageStats,
+    day?: SinglePeriodImageStats,
+    month?: SinglePeriodImageStats,
+    total?: SinglePeriodImageStats
+}
+
+export interface SinglePeriodImageStats {
+    /** The amount of text requests generated during this period. */
+    requests?: number,
+    /** The amount of tokens generated during this period. */
+    tokens?: number
+}
+
+
+
+export interface TextModelStats {
+    day?: SinglePeriodTextModelStats,
+    month?: SinglePeriodTextModelStats,
+    total?: SinglePeriodTextModelStats
+}
+
+/**
+ * string - Model Name
+ * number - The amount of requests fulfilled for this model
+ */
+export type SinglePeriodTextModelStats = Record<string, number>
+
+
+export interface TextTotalStats {
+    minute?: SinglePeriodTextStats,
+    hour?: SinglePeriodTextStats,
+    day?: SinglePeriodTextStats,
+    month?: SinglePeriodTextStats,
+    total?: SinglePeriodTextStats
+}
+
+export interface SinglePeriodTextStats {
+    /** The amount of text requests generated during this period. */
+    requests?: number,
+    /** The amount of tokens generated during this period. */
+    tokens?: number
+}
 
 
 
