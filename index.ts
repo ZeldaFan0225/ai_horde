@@ -198,7 +198,7 @@ class AIHorde {
         const t = this.#getToken(options?.token)
         const req = Centra(`${this.#api_route}${route}`, method)
         .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
+        if(options?.token) req.header("apikey", t)
         if(options?.body) req.body(options.body, "json")
         if(fields_string) req.header('X-Fields', fields_string)
         const res = await req.send()

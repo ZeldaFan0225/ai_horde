@@ -13,7 +13,7 @@ async function version() {
         }
     })
 
-    console.log(await ai_horde.findUser({token: ""}))
+    console.log(await ai_horde.getUserDetails(1))
 }
 
 async function main() {
