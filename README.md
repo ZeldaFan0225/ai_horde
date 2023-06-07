@@ -17,6 +17,14 @@ This package allows you to communicate with the [AI Horde](https://aihorde.net/)
 **DISCLAIMER:**
 THIS PACKAGE/REPOSITORY IS IN NO WAY ASSOCIATED TO THE CREATORS OF AI HORDE
 
+## Version 5.0.0
+
+Version 5.0.0 introduces some breaking changes:
+- Node 18.0.0 or higher is required
+- The way some things are exported is changed
+
+It also features an internal restructure to reduce complexity and improve performance.
+
 ## Bugs
 
 To report bugs please [open an issue](https://github.com/ZeldaFan0225/ai_horde) on GitHub.
