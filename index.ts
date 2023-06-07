@@ -7,74 +7,74 @@ import { join } from "path";
  */
 
 
-enum ModelGenerationInputStableSamplers {
-    "k_lms" = "k_lms",
-    "k_heun" = "k_heun",
-    "k_euler" = "k_euler",
-    "k_dpm_2" = "k_dpm_2",
-    "k_dpm_2_a" = "k_dpm_2_a",
-    "DDIM" = "DDIM",
-    "PLMS" = "PLMS",
-    "k_dpm_fast" = "k_dpm_fast",
-    "k_dpm_adaptive" = "k_dpm_adaptive",
-    "k_dpmpp_2s_a" = "k_dpmpp_2s_a",
-    "k_dpmpp_2m" = "k_dpmpp_2m",
-    "dpmsolver" = "dpmsolver",
-    "k_dpmpp_sde" = "k_dpmpp_sde"
-} 
+export const ModelGenerationInputStableSamplers = Object.freeze({
+    "k_lms": "k_lms",
+    "k_heun" : "k_heun",
+    "k_euler" : "k_euler",
+    "k_dpm_2" : "k_dpm_2",
+    "k_dpm_2_a" : "k_dpm_2_a",
+    "DDIM" : "DDIM",
+    "PLMS" : "PLMS",
+    "k_dpm_fast" : "k_dpm_fast",
+    "k_dpm_adaptive" : "k_dpm_adaptive",
+    "k_dpmpp_2s_a" : "k_dpmpp_2s_a",
+    "k_dpmpp_2m" : "k_dpmpp_2m",
+    "dpmsolver" : "dpmsolver",
+    "k_dpmpp_sde" : "k_dpmpp_sde"
+} as const)
 
-enum SourceImageProcessingTypes {
-    "img2img" = "img2img",
-    "inpainting" = "inpainting",
-    "outpainting" = "outpainting"
-} 
+export const SourceImageProcessingTypes = Object.freeze( {
+    "img2img" : "img2img",
+    "inpainting" : "inpainting",
+    "outpainting" : "outpainting"
+} as const)
 
-enum ModelGenerationInputPostProcessingTypes {
-    "GFPGAN" = "GFPGAN",
-    "RealESRGAN_x4plus" = "RealESRGAN_x4plus",
-    "RealESRGAN_x2plus" = "RealESRGAN_x2plus",
-    "RealESRGAN_x4plus_anime_6B" = "RealESRGAN_x4plus_anime_6B",
-    "NMKD_Siax" = "NMKD_Siax",
-    "4x_AnimeSharp" = "4x_AnimeSharp",
-    "strip_background" = "strip_background",
-    "CodeFormers" = "CodeFormers"
-}
+export const ModelGenerationInputPostProcessingTypes = Object.freeze( {
+    "GFPGAN" : "GFPGAN",
+    "RealESRGAN_x4plus" : "RealESRGAN_x4plus",
+    "RealESRGAN_x2plus" : "RealESRGAN_x2plus",
+    "RealESRGAN_x4plus_anime_6B" : "RealESRGAN_x4plus_anime_6B",
+    "NMKD_Siax" : "NMKD_Siax",
+    "4x_AnimeSharp" : "4x_AnimeSharp",
+    "strip_background" : "strip_background",
+    "CodeFormers" : "CodeFormers"
+} as const)
 
-enum ModelInterrogationFormTypes {
-    "caption" = "caption",
-    "interrogation" = "interrogation",
-    "nsfw" = "nsfw",
-    "GFPGAN" = "GFPGAN",
-    "RealESRGAN_x4plus" = "RealESRGAN_x4plus",
-    "RealESRGAN_x4plus_anime_6B" = "RealESRGAN_x4plus_anime_6B",
-    "NMKD_Siax" = "NMKD_Siax",
-    "4x_AnimeSharp" = "4x_AnimeSharp",
-    "CodeFormers" = "CodeFormers",
-    "strip_background" = "strip_background"
-}
+export const ModelInterrogationFormTypes = Object.freeze( {
+    "caption" : "caption",
+    "interrogation" : "interrogation",
+    "nsfw" : "nsfw",
+    "GFPGAN" : "GFPGAN",
+    "RealESRGAN_x4plus" : "RealESRGAN_x4plus",
+    "RealESRGAN_x4plus_anime_6B" : "RealESRGAN_x4plus_anime_6B",
+    "NMKD_Siax" : "NMKD_Siax",
+    "4x_AnimeSharp" : "4x_AnimeSharp",
+    "CodeFormers" : "CodeFormers",
+    "strip_background" : "strip_background"
+} as const)
 
-enum HordeAsyncRequestStates {
-    "waiting" = "waiting",
-    "processing" = "processing",
-    "done" = "done",
-    "faulted" = "faulted",
-    "partial" = "partial",
-    "cancelled" = "cancelled"
-}
+export const HordeAsyncRequestStates = Object.freeze( {
+    "waiting" : "waiting",
+    "processing" : "processing",
+    "done" : "done",
+    "faulted" : "faulted",
+    "partial" : "partial",
+    "cancelled" : "cancelled"
+} as const)
 
-enum ModelGenerationInputControlTypes {
-    "canny" = "canny",
-    "hed" = "hed",
-    "depth" = "depth",
-    "normal" = "normal",
-    "openpose" = "openpose",
-    "seg" = "seg",
-    "scribble" = "scribble",
-    "fakescribbles" = "fakescribbles",
-    "hough" = "hough"
-}
+export const ModelGenerationInputControlTypes = Object.freeze( {
+    "canny" : "canny",
+    "hed" : "hed",
+    "depth" : "depth",
+    "normal" : "normal",
+    "openpose" : "openpose",
+    "seg" : "seg",
+    "scribble" : "scribble",
+    "fakescribbles" : "fakescribbles",
+    "hough" : "hough"
+} as const)
 
-class APIError extends Error {
+export class APIError extends Error {
     rawError: RequestError;
     status: number;
     method: string;
@@ -96,27 +96,6 @@ class APIError extends Error {
 
 
 export class AIHorde {
-    static readonly ModelGenerationInputStableSamplers = ModelGenerationInputStableSamplers;
-    readonly ModelGenerationInputStableSamplers = AIHorde.ModelGenerationInputStableSamplers;
-    
-    static readonly SourceImageProcessingTypes = SourceImageProcessingTypes;
-    readonly SourceImageProcessingTypes = AIHorde.SourceImageProcessingTypes;
-    
-    static readonly ModelGenerationInputPostProcessingTypes = ModelGenerationInputPostProcessingTypes;
-    readonly ModelGenerationInputPostProcessingTypes = AIHorde.ModelGenerationInputPostProcessingTypes;
-    
-    static readonly ModelGenerationInputControlTypes = ModelGenerationInputControlTypes;
-    readonly ModelGenerationInputControlTypes = AIHorde.ModelGenerationInputControlTypes;
-    
-    static readonly ModelInterrogationFormTypes = ModelInterrogationFormTypes;
-    readonly ModelInterrogationFormTypes = AIHorde.ModelInterrogationFormTypes;
-    
-    static readonly HordeAsyncRequestStates = HordeAsyncRequestStates;
-    readonly HordeAsyncRequestStates = AIHorde.HordeAsyncRequestStates;
-    
-    static readonly APIError = APIError;
-    readonly APIError = AIHorde.APIError;
-
     #default_token?: string
     #cache_config: AIHordeCacheConfiguration
     #cache: AIHordeCache
@@ -216,7 +195,7 @@ export class AIHorde {
             body: options?.body ? JSON.stringify(options.body) : undefined
         })
 
-        if(!res.status.toString().startsWith("2")) throw new this.APIError(await res.json(), res, method, options?.body)
+        if(!res.status.toString().startsWith("2")) throw new APIError(await res.json(), res, method, options?.body)
 
         return {result: res, fields_string}
     }
@@ -1561,7 +1540,7 @@ export interface ImageGenerationInput {
     /** The Base64-encoded webp to use for img2img, max siue 3072 * 3072 */
     source_image?: string,
     /** If source_image is provided, specifies how to process it. */
-    source_processing?: typeof AIHorde.SourceImageProcessingTypes[keyof typeof AIHorde.SourceImageProcessingTypes],
+    source_processing?: typeof SourceImageProcessingTypes[keyof typeof SourceImageProcessingTypes],
     /** If source_processing is set to 'inpainting' or 'outpainting', this parameter can be optionally provided as the Base64-encoded webp mask of the areas to inpaint. If this arg is not passed, the inpainting/outpainting mask has to be embedded as alpha channel */
     source_mask?: string,
     /** If True, the image will be sent via cloudflare r2 download link */
@@ -1584,7 +1563,7 @@ export interface ModelGenerationInputStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: typeof AIHorde.ModelGenerationInputStableSamplers[keyof typeof AIHorde.ModelGenerationInputStableSamplers],
+    sampler_name?: typeof ModelGenerationInputStableSamplers[keyof typeof ModelGenerationInputStableSamplers],
     /** 
      * Special Toggles used in the SD Webui. To be documented.
      * @deprecated
@@ -1636,7 +1615,7 @@ export interface ModelGenerationInputStable {
     /** Set to True to enable karras noise scheduling tweaks */
     karras?: boolean,
     /** The list of post-processors to apply to the image, in the order to be applied */
-    post_processing?: (typeof AIHorde.ModelGenerationInputPostProcessingTypes[keyof typeof AIHorde.ModelGenerationInputPostProcessingTypes])[]
+    post_processing?: (typeof ModelGenerationInputPostProcessingTypes[keyof typeof ModelGenerationInputPostProcessingTypes])[]
     /** 
      * Set to True to create images that stitch together seamlessly
      * @default false
@@ -1653,7 +1632,7 @@ export interface ModelGenerationInputStable {
      * @maximum 12
     */
     clip_skip?: number,
-    control_type?: (typeof AIHorde.ModelGenerationInputControlTypes[keyof typeof AIHorde.ModelGenerationInputControlTypes]),
+    control_type?: (typeof ModelGenerationInputControlTypes[keyof typeof ModelGenerationInputControlTypes]),
     /**
      * Set to True if the image submitted is a pre-generated control map for ControlNet use
      * @default false
@@ -1718,7 +1697,7 @@ export interface ModelPayloadRootStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: typeof AIHorde.ModelGenerationInputStableSamplers[keyof typeof AIHorde.ModelGenerationInputStableSamplers],
+    sampler_name?: typeof ModelGenerationInputStableSamplers[keyof typeof ModelGenerationInputStableSamplers],
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */
@@ -1937,7 +1916,7 @@ export interface ModelPayloadStable {
     /** 
      * @default k_euler
     */
-    sampler_name?: typeof AIHorde.ModelGenerationInputStableSamplers[keyof typeof AIHorde.ModelGenerationInputStableSamplers],
+    sampler_name?: typeof ModelGenerationInputStableSamplers[keyof typeof ModelGenerationInputStableSamplers],
     /** 
      * Special Toggles used in the SD Webui. To be documented.
     */
@@ -1988,7 +1967,7 @@ export interface ModelPayloadStable {
     /** Set to True to enable karras noise scheduling tweaks */
     karras?: boolean,
     /** The list of post-processors to apply to the image, in the order to be applied */
-    post_processing?: (typeof AIHorde.ModelGenerationInputPostProcessingTypes[keyof typeof AIHorde.ModelGenerationInputPostProcessingTypes])[]
+    post_processing?: (typeof ModelGenerationInputPostProcessingTypes[keyof typeof ModelGenerationInputPostProcessingTypes])[]
     /** 
      * Set to True to create images that stitch together seamlessly
      * @default false
@@ -2005,7 +1984,7 @@ export interface ModelPayloadStable {
      * @maximum 12
     */
     clip_skip?: number,
-    control_type?: (typeof AIHorde.ModelGenerationInputControlTypes[keyof typeof AIHorde.ModelGenerationInputControlTypes]),
+    control_type?: (typeof ModelGenerationInputControlTypes[keyof typeof ModelGenerationInputControlTypes]),
     /** The prompt which will be sent to Stable Diffusion to generate an image */
     prompt?: string,
     /** 
@@ -2498,15 +2477,15 @@ export interface SimpleResponse {
     message: string
 }
 
-export type InterrogationPopFormPayloadStable = Partial<Record<typeof AIHorde.ModelInterrogationFormTypes[keyof typeof AIHorde.ModelInterrogationFormTypes], string>>
+export type InterrogationPopFormPayloadStable = Partial<Record<typeof ModelInterrogationFormTypes[keyof typeof ModelInterrogationFormTypes], string>>
 
-export type InterrogationFormResult = Partial<Record<typeof AIHorde.ModelInterrogationFormTypes[keyof typeof AIHorde.ModelInterrogationFormTypes], Record<string, any>>>
+export type InterrogationFormResult = Partial<Record<typeof ModelInterrogationFormTypes[keyof typeof ModelInterrogationFormTypes], Record<string, any>>>
 
 export interface ModelInterrogationFormStable {
     /**
      * The type of interrogation this is
      */
-    name: typeof AIHorde.ModelInterrogationFormTypes[keyof typeof AIHorde.ModelInterrogationFormTypes],
+    name: typeof ModelInterrogationFormTypes[keyof typeof ModelInterrogationFormTypes],
     payload?: InterrogationPopFormPayload
 }
 
@@ -2531,7 +2510,7 @@ export interface InterrogationPopInput {
     /** Users with priority to use this worker */
     priority_usernames?: string[],
     /** The type of interrogation this worker can fulfull */
-    forms?: (typeof AIHorde.ModelInterrogationFormTypes[keyof typeof AIHorde.ModelInterrogationFormTypes])[],
+    forms?: (typeof ModelInterrogationFormTypes[keyof typeof ModelInterrogationFormTypes])[],
     /**
      * The amount of forms to pop at the same time
      * @default 1
@@ -2558,7 +2537,7 @@ export interface InterrogationPopFormPayload {
      * The name of this interrogation form
      * @example caption
      */
-    name?: typeof AIHorde.ModelInterrogationFormTypes[keyof typeof AIHorde.ModelInterrogationFormTypes],
+    name?: typeof ModelInterrogationFormTypes[keyof typeof ModelInterrogationFormTypes],
     payload?: InterrogationPopFormPayloadStable,
     /** The URL From which the source image can be downloaded */
     source_image?: string
@@ -2592,13 +2571,13 @@ export interface InterrogationFormStatus {
     /** The name of this interrogation form */
     form?: string,
     /** title: Interrogation State */
-    state?: typeof AIHorde.HordeAsyncRequestStates[keyof typeof AIHorde.HordeAsyncRequestStates],
+    state?: typeof HordeAsyncRequestStates[keyof typeof HordeAsyncRequestStates],
     result?: InterrogationFormResult
 }
 
 export interface InterrogationStatus {
     /** title: Interrogation State */
-    state?: typeof AIHorde.HordeAsyncRequestStates[keyof typeof AIHorde.HordeAsyncRequestStates],
+    state?: typeof HordeAsyncRequestStates[keyof typeof HordeAsyncRequestStates],
     forms?: InterrogationFormStatus[]
 }
 
@@ -2821,24 +2800,17 @@ export interface SharedKeyDetails {
  */
 
 
-
-enum RatingArtifactsRatings {
-    "FLAWLESS",
-    "LITTLE_FLAWS",
-    "SOME_FLAWS",
-    "OBVIOUS_FLAWS",
-    "HARMFUL_FLAWS",
-    "GARBAGE"
-}
+export const RatingArtifactsRatings = Object.freeze({
+    "FLAWLESS": "FLAWLESS",
+    "LITTLE_FLAWS": "LITTLE_FLAWS",
+    "SOME_FLAWS": "SOME_FLAWS",
+    "OBVIOUS_FLAWS": "OBVIOUS_FLAWS",
+    "HARMFUL_FLAWS": "HARMFUL_FLAWS",
+    "GARBAGE": "GARBAGE"
+} as const)
 
 
 class AIHordeRatings {
-    static readonly RatingArtifactsRatings = RatingArtifactsRatings;
-    readonly RatingArtifactsRatings = AIHordeRatings.RatingArtifactsRatings;
-
-    static readonly APIError = APIError;
-    readonly APIError = AIHorde.APIError;
-
     #default_token?: string
     #api_route: string
     #client_agent: string
@@ -2870,7 +2842,7 @@ class AIHordeRatings {
             body: options?.body ? JSON.stringify(options.body) : undefined
         })
 
-        if(!res.status.toString().startsWith("2")) throw new this.APIError(await res.json(), res, method, options?.body)
+        if(!res.status.toString().startsWith("2")) throw new APIError(await res.json(), res, method, options?.body)
 
         return {result: res, fields_string}
     }
@@ -3047,7 +3019,7 @@ export interface RatePostInput {
      * @minimum 0
      * @maximum 5
      */
-    artifacts?: typeof AIHordeRatings.RatingArtifactsRatings[keyof typeof AIHordeRatings.RatingArtifactsRatings]
+    artifacts?: typeof RatingArtifactsRatings[keyof typeof RatingArtifactsRatings]
 }
 
 export interface RatePostResponse {
