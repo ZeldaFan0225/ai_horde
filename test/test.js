@@ -1,9 +1,9 @@
-const {AIHorde} = require( ".." )
+const {AIHorde, RatingArtifactsRatings, ModelGenerationInputPostProcessingTypes} = require( ".." )
 
 main()
 version()
 
-console.log(AIHorde.ModelGenerationInputPostProcessingTypes)
+console.log(ModelGenerationInputPostProcessingTypes)
 
 async function version() {
     const ai_horde = new AIHorde({
@@ -13,6 +13,7 @@ async function version() {
         }
     })
 
+    console.log(RatingArtifactsRatings)
     console.log(await ai_horde.getUserDetails(1))
 }
 
