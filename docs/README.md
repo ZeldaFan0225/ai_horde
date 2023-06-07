@@ -19,6 +19,14 @@ This package allows you to communicate with the [AI Horde](https://aihorde.net/)
 **DISCLAIMER:**
 THIS PACKAGE/REPOSITORY IS IN NO WAY ASSOCIATED TO THE CREATORS OF AI HORDE
 
+## Versions 5.0.0 and later
+
+Version 5.0.0 introduces some breaking changes:
+- Node 18.0.0 or higher is required
+- The way some things are exported is changed
+
+It also features an internal restructure to reduce complexity and improve performance.
+
 ## Bugs
 
 To report bugs please [open an issue](https://github.com/ZeldaFan0225/ai_horde) on GitHub.
@@ -41,10 +49,11 @@ You can contribute by adding new features, optimizing the currently existing cod
 
 ## How to use
 
-The package exports the class `AIHorde` which includes basically everything you need.
+The package exports the class `AIHorde` which includes basically everything you need, when using typescript you can also export types.
+The package also exports constant values used in the hordes API request payloads
 
 ```js
-const AIHorde = require("@zeldafan0225/ai_horde");
+const { AIHorde } = require("@zeldafan0225/ai_horde");
 
 /*
 Create new instance of the ai_horde class to communicate with the rest API

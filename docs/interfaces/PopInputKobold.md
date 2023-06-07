@@ -33,7 +33,7 @@ Words which, when detected will refuse to pick up any jobs
 
 #### Defined in
 
-[index.ts:2164](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2164)
+[index.ts:1852](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1852)
 
 ___
 
@@ -45,7 +45,9 @@ The worker name, version and website
 
 **`Default`**
 
+```ts
 unknown:0:unknown
+```
 
 **`Example`**
 
@@ -63,7 +65,7 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 #### Defined in
 
-[index.ts:2190](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2190)
+[index.ts:1878](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1878)
 
 ___
 
@@ -75,7 +77,9 @@ The version of the bridge used by this worker
 
 **`Default`**
 
+```ts
 1
+```
 
 #### Inherited from
 
@@ -83,7 +87,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:2183](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2183)
+[index.ts:1871](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1871)
 
 ___
 
@@ -95,11 +99,13 @@ The maximum amount of pixels this worker can generate
 
 **`Default`**
 
+```ts
 262144
+```
 
 #### Defined in
 
-[index.ts:2162](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2162)
+[index.ts:1850](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1850)
 
 ___
 
@@ -115,7 +121,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:2178](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2178)
+[index.ts:1866](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1866)
 
 ___
 
@@ -131,7 +137,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:2169](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2169)
+[index.ts:1857](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1857)
 
 ___
 
@@ -143,7 +149,9 @@ Whether this worker can generate NSFW requests or not.
 
 **`Default`**
 
+```ts
 false
+```
 
 #### Inherited from
 
@@ -151,7 +159,7 @@ false
 
 #### Defined in
 
-[index.ts:2176](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2176)
+[index.ts:1864](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1864)
 
 ___
 
@@ -167,7 +175,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:2171](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2171)
+[index.ts:1859](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1859)
 
 ___
 
@@ -179,7 +187,9 @@ If True, this worker will only pick up requests where the owner has the required
 
 **`Default`**
 
+```ts
 false
+```
 
 **`Example`**
 
@@ -193,7 +203,7 @@ false
 
 #### Defined in
 
-[index.ts:2203](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2203)
+[index.ts:1891](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1891)
 
 ___
 
@@ -205,7 +215,9 @@ How many threads this worker is running. This is used to accurately the current 
 
 **`Default`**
 
+```ts
 1
+```
 
 **`Minimum`**
 
@@ -221,4 +233,4 @@ How many threads this worker is running. This is used to accurately the current 
 
 #### Defined in
 
-[index.ts:2197](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2197)
+[index.ts:1885](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1885)

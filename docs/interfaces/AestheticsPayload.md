@@ -34,7 +34,7 @@ The UUID of the best image in this generation batch (only used when 2+ images ge
 
 #### Defined in
 
-[index.ts:2902](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2902)
+[index.ts:2592](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2592)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[index.ts:2910](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2910)
+[index.ts:2600](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2600)
 
 ___
 
@@ -70,4 +70,4 @@ The team towards which this ratings contributes. It not is passed, it will leave
 
 #### Defined in
 
-[index.ts:2909](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2909)
+[index.ts:2599](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2599)

@@ -6,7 +6,8 @@
 
 ### Classes
 
-- [export&#x3D;](classes/export_.md)
+- [AIHorde](classes/AIHorde.md)
+- [APIError](classes/APIError.md)
 
 ### Interfaces
 
@@ -29,7 +30,6 @@
 - [FilterDetails](interfaces/FilterDetails.md)
 - [FilterPromptSuspicion](interfaces/FilterPromptSuspicion.md)
 - [Generation](interfaces/Generation.md)
-- [GenerationInput](interfaces/GenerationInput.md)
 - [GenerationInputKobold](interfaces/GenerationInputKobold.md)
 - [GenerationKobold](interfaces/GenerationKobold.md)
 - [GenerationPayloadKobold](interfaces/GenerationPayloadKobold.md)
@@ -39,6 +39,7 @@
 - [HordeModes](interfaces/HordeModes.md)
 - [HordePerformance](interfaces/HordePerformance.md)
 - [HordePerformanceStable](interfaces/HordePerformanceStable.md)
+- [ImageGenerationInput](interfaces/ImageGenerationInput.md)
 - [ImageModelStats](interfaces/ImageModelStats.md)
 - [ImageTotalStats](interfaces/ImageTotalStats.md)
 - [InterrogationFormStatus](interfaces/InterrogationFormStatus.md)
@@ -80,6 +81,8 @@
 - [RequestStatusCheck](interfaces/RequestStatusCheck.md)
 - [RequestStatusKobold](interfaces/RequestStatusKobold.md)
 - [RequestStatusStable](interfaces/RequestStatusStable.md)
+- [SharedKeyDetails](interfaces/SharedKeyDetails.md)
+- [SharedKeyInput](interfaces/SharedKeyInput.md)
 - [SimpleResponse](interfaces/SimpleResponse.md)
 - [SinglePeriodImageStats](interfaces/SinglePeriodImageStats.md)
 - [SinglePeriodTextStats](interfaces/SinglePeriodTextStats.md)
@@ -109,25 +112,35 @@
 - [SinglePeriodImageModelStats](modules.md#singleperiodimagemodelstats)
 - [SinglePeriodTextModelStats](modules.md#singleperiodtextmodelstats)
 
+### Variables
+
+- [HordeAsyncRequestStates](modules.md#hordeasyncrequeststates)
+- [ModelGenerationInputControlTypes](modules.md#modelgenerationinputcontroltypes)
+- [ModelGenerationInputPostProcessingTypes](modules.md#modelgenerationinputpostprocessingtypes)
+- [ModelGenerationInputStableSamplers](modules.md#modelgenerationinputstablesamplers)
+- [ModelInterrogationFormTypes](modules.md#modelinterrogationformtypes)
+- [RatingArtifactsRatings](modules.md#ratingartifactsratings)
+- [SourceImageProcessingTypes](modules.md#sourceimageprocessingtypes)
+
 ## Type Aliases
 
 ### InterrogationFormResult
 
-Ƭ **InterrogationFormResult**: `Partial`<`Record`<typeof [`ModelInterrogationFormTypes`](classes/export_.md#modelinterrogationformtypes-1)[keyof typeof [`ModelInterrogationFormTypes`](classes/export_.md#modelinterrogationformtypes-1)], `Record`<`string`, `any`\>\>\>
+Ƭ **InterrogationFormResult**: `Partial`<`Record`<typeof [`ModelInterrogationFormTypes`](modules.md#modelinterrogationformtypes)[keyof typeof [`ModelInterrogationFormTypes`](modules.md#modelinterrogationformtypes)], `Record`<`string`, `any`\>\>\>
 
 #### Defined in
 
-[index.ts:2795](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2795)
+[index.ts:2483](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2483)
 
 ___
 
 ### InterrogationPopFormPayloadStable
 
-Ƭ **InterrogationPopFormPayloadStable**: `Partial`<`Record`<typeof [`ModelInterrogationFormTypes`](classes/export_.md#modelinterrogationformtypes-1)[keyof typeof [`ModelInterrogationFormTypes`](classes/export_.md#modelinterrogationformtypes-1)], `string`\>\>
+Ƭ **InterrogationPopFormPayloadStable**: `Partial`<`Record`<typeof [`ModelInterrogationFormTypes`](modules.md#modelinterrogationformtypes)[keyof typeof [`ModelInterrogationFormTypes`](modules.md#modelinterrogationformtypes)], `string`\>\>
 
 #### Defined in
 
-[index.ts:2793](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2793)
+[index.ts:2481](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2481)
 
 ___
 
@@ -140,7 +153,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:3009](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L3009)
+[index.ts:2699](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2699)
 
 ___
 
@@ -153,4 +166,76 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:3039](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L3039)
+[index.ts:2729](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2729)
+
+## Variables
+
+### HordeAsyncRequestStates
+
+• `Const` **HordeAsyncRequestStates**: `Readonly`<{ `cancelled`: ``"cancelled"`` = "cancelled"; `done`: ``"done"`` = "done"; `faulted`: ``"faulted"`` = "faulted"; `partial`: ``"partial"`` = "partial"; `processing`: ``"processing"`` = "processing"; `waiting`: ``"waiting"`` = "waiting" }\>
+
+#### Defined in
+
+[index.ts:57](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L57)
+
+___
+
+### ModelGenerationInputControlTypes
+
+• `Const` **ModelGenerationInputControlTypes**: `Readonly`<{ `canny`: ``"canny"`` = "canny"; `depth`: ``"depth"`` = "depth"; `fakescribbles`: ``"fakescribbles"`` = "fakescribbles"; `hed`: ``"hed"`` = "hed"; `hough`: ``"hough"`` = "hough"; `normal`: ``"normal"`` = "normal"; `openpose`: ``"openpose"`` = "openpose"; `scribble`: ``"scribble"`` = "scribble"; `seg`: ``"seg"`` = "seg" }\>
+
+#### Defined in
+
+[index.ts:66](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L66)
+
+___
+
+### ModelGenerationInputPostProcessingTypes
+
+• `Const` **ModelGenerationInputPostProcessingTypes**: `Readonly`<{ `4x_AnimeSharp`: ``"4x_AnimeSharp"`` = "4x\_AnimeSharp"; `CodeFormers`: ``"CodeFormers"`` = "CodeFormers"; `GFPGAN`: ``"GFPGAN"`` = "GFPGAN"; `NMKD_Siax`: ``"NMKD_Siax"`` = "NMKD\_Siax"; `RealESRGAN_x2plus`: ``"RealESRGAN_x2plus"`` = "RealESRGAN\_x2plus"; `RealESRGAN_x4plus`: ``"RealESRGAN_x4plus"`` = "RealESRGAN\_x4plus"; `RealESRGAN_x4plus_anime_6B`: ``"RealESRGAN_x4plus_anime_6B"`` = "RealESRGAN\_x4plus\_anime\_6B"; `strip_background`: ``"strip_background"`` = "strip\_background" }\>
+
+#### Defined in
+
+[index.ts:33](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L33)
+
+___
+
+### ModelGenerationInputStableSamplers
+
+• `Const` **ModelGenerationInputStableSamplers**: `Readonly`<{ `DDIM`: ``"DDIM"`` = "DDIM"; `PLMS`: ``"PLMS"`` = "PLMS"; `dpmsolver`: ``"dpmsolver"`` = "dpmsolver"; `k_dpm_2`: ``"k_dpm_2"`` = "k\_dpm\_2"; `k_dpm_2_a`: ``"k_dpm_2_a"`` = "k\_dpm\_2\_a"; `k_dpm_adaptive`: ``"k_dpm_adaptive"`` = "k\_dpm\_adaptive"; `k_dpm_fast`: ``"k_dpm_fast"`` = "k\_dpm\_fast"; `k_dpmpp_2m`: ``"k_dpmpp_2m"`` = "k\_dpmpp\_2m"; `k_dpmpp_2s_a`: ``"k_dpmpp_2s_a"`` = "k\_dpmpp\_2s\_a"; `k_dpmpp_sde`: ``"k_dpmpp_sde"`` = "k\_dpmpp\_sde"; `k_euler`: ``"k_euler"`` = "k\_euler"; `k_heun`: ``"k_heun"`` = "k\_heun"; `k_lms`: ``"k_lms"`` = "k\_lms" }\>
+
+#### Defined in
+
+[index.ts:11](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L11)
+
+___
+
+### ModelInterrogationFormTypes
+
+• `Const` **ModelInterrogationFormTypes**: `Readonly`<{ `4x_AnimeSharp`: ``"4x_AnimeSharp"`` = "4x\_AnimeSharp"; `CodeFormers`: ``"CodeFormers"`` = "CodeFormers"; `GFPGAN`: ``"GFPGAN"`` = "GFPGAN"; `NMKD_Siax`: ``"NMKD_Siax"`` = "NMKD\_Siax"; `RealESRGAN_x4plus`: ``"RealESRGAN_x4plus"`` = "RealESRGAN\_x4plus"; `RealESRGAN_x4plus_anime_6B`: ``"RealESRGAN_x4plus_anime_6B"`` = "RealESRGAN\_x4plus\_anime\_6B"; `caption`: ``"caption"`` = "caption"; `interrogation`: ``"interrogation"`` = "interrogation"; `nsfw`: ``"nsfw"`` = "nsfw"; `strip_background`: ``"strip_background"`` = "strip\_background" }\>
+
+#### Defined in
+
+[index.ts:44](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L44)
+
+___
+
+### RatingArtifactsRatings
+
+• `Const` **RatingArtifactsRatings**: `Readonly`<{ `FLAWLESS`: ``"FLAWLESS"`` = "FLAWLESS"; `GARBAGE`: ``"GARBAGE"`` = "GARBAGE"; `HARMFUL_FLAWS`: ``"HARMFUL_FLAWS"`` = "HARMFUL\_FLAWS"; `LITTLE_FLAWS`: ``"LITTLE_FLAWS"`` = "LITTLE\_FLAWS"; `OBVIOUS_FLAWS`: ``"OBVIOUS_FLAWS"`` = "OBVIOUS\_FLAWS"; `SOME_FLAWS`: ``"SOME_FLAWS"`` = "SOME\_FLAWS" }\>
+
+AI Horde Ratings
+
+#### Defined in
+
+[index.ts:2804](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2804)
+
+___
+
+### SourceImageProcessingTypes
+
+• `Const` **SourceImageProcessingTypes**: `Readonly`<{ `img2img`: ``"img2img"`` = "img2img"; `inpainting`: ``"inpainting"`` = "inpainting"; `outpainting`: ``"outpainting"`` = "outpainting" }\>
+
+#### Defined in
+
+[index.ts:27](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L27)

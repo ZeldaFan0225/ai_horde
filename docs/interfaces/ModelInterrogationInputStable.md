@@ -7,6 +7,7 @@
 ### Properties
 
 - [forms](ModelInterrogationInputStable.md#forms)
+- [slow\_workers](ModelInterrogationInputStable.md#slow_workers)
 - [source\_image](ModelInterrogationInputStable.md#source_image)
 
 ## Properties
@@ -17,7 +18,19 @@
 
 #### Defined in
 
-[index.ts:2806](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2806)
+[index.ts:2494](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2494)
+
+___
+
+### slow\_workers
+
+• `Optional` **slow\_workers**: `boolean`
+
+When True, allows slower workers to pick up this request. Disabling this incurs an extra kudos cost.
+
+#### Defined in
+
+[index.ts:2498](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2498)
 
 ___
 
@@ -29,4 +42,4 @@ The public URL of the image to interrogate
 
 #### Defined in
 
-[index.ts:2808](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2808)
+[index.ts:2496](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2496)
