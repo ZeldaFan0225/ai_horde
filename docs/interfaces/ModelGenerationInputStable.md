@@ -10,11 +10,14 @@
 - [clip\_skip](ModelGenerationInputStable.md#clip_skip)
 - [control\_type](ModelGenerationInputStable.md#control_type)
 - [denoising\_strength](ModelGenerationInputStable.md#denoising_strength)
+- [facefixer\_strength](ModelGenerationInputStable.md#facefixer_strength)
 - [height](ModelGenerationInputStable.md#height)
 - [hires\_fix](ModelGenerationInputStable.md#hires_fix)
+- [image\_is\_control](ModelGenerationInputStable.md#image_is_control)
 - [karras](ModelGenerationInputStable.md#karras)
 - [n](ModelGenerationInputStable.md#n)
 - [post\_processing](ModelGenerationInputStable.md#post_processing)
+- [return\_control\_map](ModelGenerationInputStable.md#return_control_map)
 - [sampler\_name](ModelGenerationInputStable.md#sampler_name)
 - [seed](ModelGenerationInputStable.md#seed)
 - [seed\_variation](ModelGenerationInputStable.md#seed_variation)
@@ -47,7 +50,7 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:1982](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1982)
+[index.ts:1923](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1923)
 
 ___
 
@@ -67,7 +70,7 @@ The number of CLIP language processor layers to skip
 
 #### Defined in
 
-[index.ts:2036](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2036)
+[index.ts:1977](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1977)
 
 ___
 
@@ -77,7 +80,7 @@ ___
 
 #### Defined in
 
-[index.ts:2037](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2037)
+[index.ts:1978](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1978)
 
 ___
 
@@ -99,7 +102,31 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:1990](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1990)
+[index.ts:1931](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1931)
+
+___
+
+### facefixer\_strength
+
+• `Optional` **facefixer\_strength**: `number`
+
+**`Example`**
+
+```ts
+0.75
+```
+
+**`Minimum`**
+
+0
+
+**`Maximum`**
+
+1
+
+#### Defined in
+
+[index.ts:1994](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1994)
 
 ___
 
@@ -125,7 +152,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:2001](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2001)
+[index.ts:1942](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1942)
 
 ___
 
@@ -141,7 +168,23 @@ false
 
 #### Defined in
 
-[index.ts:2030](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2030)
+[index.ts:1971](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1971)
+
+___
+
+### image\_is\_control
+
+• `Optional` **image\_is\_control**: `boolean`
+
+Set to True if the image submitted is a pre-generated control map for ControlNet use
+
+**`Default`**
+
+false
+
+#### Defined in
+
+[index.ts:1983](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1983)
 
 ___
 
@@ -153,7 +196,7 @@ Set to True to enable karras noise scheduling tweaks
 
 #### Defined in
 
-[index.ts:2018](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2018)
+[index.ts:1959](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1959)
 
 ___
 
@@ -173,7 +216,7 @@ The amount of images to generate
 
 #### Defined in
 
-[index.ts:2049](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2049)
+[index.ts:2006](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2006)
 
 ___
 
@@ -185,7 +228,23 @@ The list of post-processors to apply to the image, in the order to be applied
 
 #### Defined in
 
-[index.ts:2020](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2020)
+[index.ts:1961](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1961)
+
+___
+
+### return\_control\_map
+
+• `Optional` **return\_control\_map**: `boolean`
+
+Set to True if you want the ControlNet map returned instead of a generated image
+
+**`Default`**
+
+false
+
+#### Defined in
+
+[index.ts:1988](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1988)
 
 ___
 
@@ -199,7 +258,7 @@ k_euler
 
 #### Defined in
 
-[index.ts:1969](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1969)
+[index.ts:1910](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1910)
 
 ___
 
@@ -211,7 +270,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:1992](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1992)
+[index.ts:1933](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1933)
 
 ___
 
@@ -231,7 +290,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:2016](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2016)
+[index.ts:1957](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1957)
 
 ___
 
@@ -253,7 +312,7 @@ ___
 
 #### Defined in
 
-[index.ts:2043](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2043)
+[index.ts:2000](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2000)
 
 ___
 
@@ -269,7 +328,7 @@ false
 
 #### Defined in
 
-[index.ts:2025](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2025)
+[index.ts:1966](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1966)
 
 ___
 
@@ -281,7 +340,7 @@ Special Toggles used in the SD Webui. To be documented.
 
 #### Defined in
 
-[index.ts:1973](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1973)
+[index.ts:1914](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1914)
 
 ___
 
@@ -307,4 +366,4 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:2010](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L2010)
+[index.ts:1951](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1951)
