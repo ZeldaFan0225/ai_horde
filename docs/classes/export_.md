@@ -37,7 +37,6 @@
 - [clearCache](export_.md#clearcache)
 - [createTeam](export_.md#createteam)
 - [deleteFilter](export_.md#deletefilter)
-- [deleteGenerationRequest](export_.md#deletegenerationrequest)
 - [deleteIPTimeout](export_.md#deleteiptimeout)
 - [deleteImageGenerationRequest](export_.md#deleteimagegenerationrequest)
 - [deleteInterrogationRequest](export_.md#deleteinterrogationrequest)
@@ -48,11 +47,11 @@
 - [generateFieldsString](export_.md#generatefieldsstring)
 - [getFilter](export_.md#getfilter)
 - [getFilters](export_.md#getfilters)
-- [getGenerationCheck](export_.md#getgenerationcheck)
-- [getGenerationStatus](export_.md#getgenerationstatus)
 - [getHeartbeat](export_.md#getheartbeat)
 - [getImageGenerationCheck](export_.md#getimagegenerationcheck)
 - [getImageGenerationStatus](export_.md#getimagegenerationstatus)
+- [getImageModelStats](export_.md#getimagemodelstats)
+- [getImageTotalStats](export_.md#getimagetotalstats)
 - [getInterrogationStatus](export_.md#getinterrogationstatus)
 - [getModels](export_.md#getmodels)
 - [getModes](export_.md#getmodes)
@@ -61,19 +60,17 @@
 - [getTeam](export_.md#getteam)
 - [getTeams](export_.md#getteams)
 - [getTextGenerationStatus](export_.md#gettextgenerationstatus)
+- [getTextModelStats](export_.md#gettextmodelstats)
+- [getTextTotalStats](export_.md#gettexttotalstats)
 - [getUserDetails](export_.md#getuserdetails)
 - [getUsers](export_.md#getusers)
 - [getWorkerDetails](export_.md#getworkerdetails)
 - [getWorkers](export_.md#getworkers)
-- [getWorkersByPerformance](export_.md#getworkersbyperformance)
 - [parseAgent](export_.md#parseagent)
-- [postAsyncGenerate](export_.md#postasyncgenerate)
 - [postAsyncImageGenerate](export_.md#postasyncimagegenerate)
 - [postAsyncInterrogate](export_.md#postasyncinterrogate)
 - [postAsyncTextGenerate](export_.md#postasynctextgenerate)
 - [postFilters](export_.md#postfilters)
-- [postGenerationPop](export_.md#postgenerationpop)
-- [postGenerationSubmit](export_.md#postgenerationsubmit)
 - [postImageGenerationPop](export_.md#postimagegenerationpop)
 - [postImageGenerationSubmit](export_.md#postimagegenerationsubmit)
 - [postInterrogationPop](export_.md#postinterrogationpop)
@@ -103,7 +100,7 @@
 
 #### Defined in
 
-[index.ts:116](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L116)
+[index.ts:123](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L123)
 
 ## Properties
 
@@ -113,7 +110,7 @@
 
 #### Defined in
 
-[index.ts:107](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L107)
+[index.ts:114](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L114)
 
 ___
 
@@ -123,7 +120,7 @@ ___
 
 #### Defined in
 
-[index.ts:104](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L104)
+[index.ts:111](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L111)
 
 ___
 
@@ -133,7 +130,7 @@ ___
 
 #### Defined in
 
-[index.ts:98](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L98)
+[index.ts:105](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L105)
 
 ___
 
@@ -143,7 +140,7 @@ ___
 
 #### Defined in
 
-[index.ts:95](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L95)
+[index.ts:102](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L102)
 
 ___
 
@@ -153,7 +150,7 @@ ___
 
 #### Defined in
 
-[index.ts:89](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L89)
+[index.ts:96](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L96)
 
 ___
 
@@ -163,7 +160,7 @@ ___
 
 #### Defined in
 
-[index.ts:101](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L101)
+[index.ts:108](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L108)
 
 ___
 
@@ -173,7 +170,7 @@ ___
 
 #### Defined in
 
-[index.ts:92](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L92)
+[index.ts:99](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L99)
 
 ___
 
@@ -183,7 +180,7 @@ ___
 
 #### Defined in
 
-[index.ts:113](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L113)
+[index.ts:120](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L120)
 
 ___
 
@@ -193,7 +190,7 @@ ___
 
 #### Defined in
 
-[index.ts:115](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L115)
+[index.ts:122](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L122)
 
 ___
 
@@ -203,7 +200,7 @@ ___
 
 #### Defined in
 
-[index.ts:106](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L106)
+[index.ts:113](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L113)
 
 ___
 
@@ -213,7 +210,7 @@ ___
 
 #### Defined in
 
-[index.ts:103](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L103)
+[index.ts:110](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L110)
 
 ___
 
@@ -223,7 +220,7 @@ ___
 
 #### Defined in
 
-[index.ts:97](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L97)
+[index.ts:104](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L104)
 
 ___
 
@@ -233,7 +230,7 @@ ___
 
 #### Defined in
 
-[index.ts:94](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L94)
+[index.ts:101](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L101)
 
 ___
 
@@ -243,7 +240,7 @@ ___
 
 #### Defined in
 
-[index.ts:88](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L88)
+[index.ts:95](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L95)
 
 ___
 
@@ -253,7 +250,7 @@ ___
 
 #### Defined in
 
-[index.ts:100](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L100)
+[index.ts:107](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L107)
 
 ___
 
@@ -263,7 +260,7 @@ ___
 
 #### Defined in
 
-[index.ts:91](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L91)
+[index.ts:98](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L98)
 
 ## Accessors
 
@@ -277,7 +274,7 @@ ___
 
 #### Defined in
 
-[index.ts:172](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L172)
+[index.ts:179](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L179)
 
 ## Methods
 
@@ -311,7 +308,7 @@ FilterDetails
 
 #### Defined in
 
-[index.ts:1403](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1403)
+[index.ts:1334](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1334)
 
 ___
 
@@ -325,7 +322,7 @@ ___
 
 #### Defined in
 
-[index.ts:168](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L168)
+[index.ts:175](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L175)
 
 ___
 
@@ -359,7 +356,7 @@ ModifyTeam
 
 #### Defined in
 
-[index.ts:1231](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1231)
+[index.ts:1162](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1162)
 
 ___
 
@@ -392,44 +389,7 @@ SimpleResponse
 
 #### Defined in
 
-[index.ts:1659](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1659)
-
-___
-
-### deleteGenerationRequest
-
-▸ **deleteGenerationRequest**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusStable`](../interfaces/RequestStatusStable.md), `T`\>\>
-
-Cancel an unfinished request
-This request will include all already generated images in base64 encoded .webp files.
-
-**`Deprecated`**
-
-Use deleteImageGenerationRequest instead
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends keyof [`RequestStatusStable`](../interfaces/RequestStatusStable.md) |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | The targeted generations ID |
-| `options?` | `Object` | - |
-| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
-
-#### Returns
-
-`Promise`<`Pick`<[`RequestStatusStable`](../interfaces/RequestStatusStable.md), `T`\>\>
-
-RequestStatusStable
-
-#### Defined in
-
-[index.ts:298](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L298)
+[index.ts:1590](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1590)
 
 ___
 
@@ -463,7 +423,7 @@ SimpleResponse
 
 #### Defined in
 
-[index.ts:1627](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1627)
+[index.ts:1558](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1558)
 
 ___
 
@@ -496,7 +456,7 @@ RequestStatusStable
 
 #### Defined in
 
-[index.ts:1471](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1471)
+[index.ts:1402](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1402)
 
 ___
 
@@ -529,7 +489,7 @@ InterrogationStatus
 
 #### Defined in
 
-[index.ts:1529](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1529)
+[index.ts:1460](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1460)
 
 ___
 
@@ -564,7 +524,7 @@ DeletedTeam
 
 #### Defined in
 
-[index.ts:1594](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1594)
+[index.ts:1525](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1525)
 
 ___
 
@@ -597,7 +557,7 @@ RequestStatusKobold
 
 #### Defined in
 
-[index.ts:1500](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1500)
+[index.ts:1431](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1431)
 
 ___
 
@@ -633,7 +593,7 @@ DeletedWorker
 
 #### Defined in
 
-[index.ts:1560](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1560)
+[index.ts:1491](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1491)
 
 ___
 
@@ -666,7 +626,7 @@ UserDetails - The user data of the requested user
 
 #### Defined in
 
-[index.ts:315](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L315)
+[index.ts:219](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L219)
 
 ___
 
@@ -686,7 +646,7 @@ ___
 
 #### Defined in
 
-[index.ts:185](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L185)
+[index.ts:192](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L192)
 
 ___
 
@@ -719,7 +679,7 @@ FilterDetails - Filter Details
 
 #### Defined in
 
-[index.ts:774](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L774)
+[index.ts:705](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L705)
 
 ___
 
@@ -752,85 +712,7 @@ FilterDetails[] - Array of Filter Details
 
 #### Defined in
 
-[index.ts:751](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L751)
-
-___
-
-### getGenerationCheck
-
-▸ **getGenerationCheck**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusCheck`](../interfaces/RequestStatusCheck.md), `T`\>\>
-
-Retrieve the status of an Asynchronous generation request without images
-Use this method to check the status of a currently running asynchronous request without consuming bandwidth.
-
-**`Deprecated`**
-
-Use getImageGenerationCheck instead
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends keyof [`RequestStatusCheck`](../interfaces/RequestStatusCheck.md) |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | The id of the generation |
-| `options?` | `Object` | - |
-| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
-| `options.force?` | `boolean` | Set to true to skip cache |
-
-#### Returns
-
-`Promise`<`Pick`<[`RequestStatusCheck`](../interfaces/RequestStatusCheck.md), `T`\>\>
-
-RequestStatusCheck - The Check data of the Generation
-
-#### Defined in
-
-[index.ts:214](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L214)
-
-___
-
-### getGenerationStatus
-
-▸ **getGenerationStatus**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`RequestStatusStable`](../interfaces/RequestStatusStable.md), `T`\>\>
-
-Retrieve the full status of an Asynchronous generation request
-This method will include all already generated images in base64 encoded .webp files. 
-As such, you are requested to not retrieve this data often. Instead use the getGenerationCheck method first
-This method is limited to 1 request per minute
-
-**`Deprecated`**
-
-Use getImageGenerationStatus instead
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends keyof [`RequestStatusStable`](../interfaces/RequestStatusStable.md) |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | The id of the generation |
-| `options?` | `Object` | - |
-| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
-| `options.force?` | `boolean` | Set to true to skip cache |
-
-#### Returns
-
-`Promise`<`Pick`<[`RequestStatusStable`](../interfaces/RequestStatusStable.md), `T`\>\>
-
-RequestStatusStable - The Status of the Generation
-
-#### Defined in
-
-[index.ts:232](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L232)
+[index.ts:682](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L682)
 
 ___
 
@@ -848,7 +730,7 @@ true - If request was successful, if not throws error
 
 #### Defined in
 
-[index.ts:543](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L543)
+[index.ts:447](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L447)
 
 ___
 
@@ -882,7 +764,7 @@ RequestStatusCheck - The Check data of the Generation
 
 #### Defined in
 
-[index.ts:443](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L443)
+[index.ts:347](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L347)
 
 ___
 
@@ -918,7 +800,69 @@ RequestStatusStable - The Status of the Generation
 
 #### Defined in
 
-[index.ts:471](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L471)
+[index.ts:375](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L375)
+
+___
+
+### getImageModelStats
+
+▸ **getImageModelStats**<`T`\>(`options?`): `Promise`<`Pick`<[`ImageModelStats`](../interfaces/ImageModelStats.md), `T`\>\>
+
+Details how many images were generated per model for the past day, month and total
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`ImageModelStats`](../interfaces/ImageModelStats.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+
+#### Returns
+
+`Promise`<`Pick`<[`ImageModelStats`](../interfaces/ImageModelStats.md), `T`\>\>
+
+ImageModelStats - The stats
+
+#### Defined in
+
+[index.ts:595](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L595)
+
+___
+
+### getImageTotalStats
+
+▸ **getImageTotalStats**<`T`\>(`options?`): `Promise`<`Pick`<[`ImageTotalStats`](../interfaces/ImageTotalStats.md), `T`\>\>
+
+Details how many images have been generated in the past minux,hour,day,month and total
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`ImageModelStats`](../interfaces/ImageModelStats.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+
+#### Returns
+
+`Promise`<`Pick`<[`ImageTotalStats`](../interfaces/ImageTotalStats.md), `T`\>\>
+
+ImageTotalStats - The stats
+
+#### Defined in
+
+[index.ts:611](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L611)
 
 ___
 
@@ -952,7 +896,7 @@ InterrogationStatus - The Status data of the Interrogation
 
 #### Defined in
 
-[index.ts:521](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L521)
+[index.ts:425](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L425)
 
 ___
 
@@ -984,7 +928,7 @@ ActiveModel[] - Array of Active Models
 
 #### Defined in
 
-[index.ts:557](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L557)
+[index.ts:461](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L461)
 
 ___
 
@@ -1018,7 +962,7 @@ HordeModes - The current modes of the horde
 
 #### Defined in
 
-[index.ts:581](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L581)
+[index.ts:485](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L485)
 
 ___
 
@@ -1050,7 +994,7 @@ Newspiece[] - Array of all news articles
 
 #### Defined in
 
-[index.ts:605](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L605)
+[index.ts:509](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L509)
 
 ___
 
@@ -1082,7 +1026,7 @@ HordePerformanceStable - The hordes current performance
 
 #### Defined in
 
-[index.ts:627](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L627)
+[index.ts:531](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L531)
 
 ___
 
@@ -1116,7 +1060,7 @@ TeamDetailsStable - The team data
 
 #### Defined in
 
-[index.ts:365](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L365)
+[index.ts:269](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L269)
 
 ___
 
@@ -1147,7 +1091,7 @@ TeamDetailsStable[] - Array of Team Details
 
 #### Defined in
 
-[index.ts:727](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L727)
+[index.ts:658](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L658)
 
 ___
 
@@ -1180,7 +1124,69 @@ RequestStatusStable - The Status of the Generation
 
 #### Defined in
 
-[index.ts:496](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L496)
+[index.ts:400](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L400)
+
+___
+
+### getTextModelStats
+
+▸ **getTextModelStats**<`T`\>(`options?`): `Promise`<`Pick`<[`TextModelStats`](../interfaces/TextModelStats.md), `T`\>\>
+
+Details how many texts were generated per model for the past day, month and total
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`ImageModelStats`](../interfaces/ImageModelStats.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+
+#### Returns
+
+`Promise`<`Pick`<[`TextModelStats`](../interfaces/TextModelStats.md), `T`\>\>
+
+TextModelStats - The stats
+
+#### Defined in
+
+[index.ts:627](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L627)
+
+___
+
+### getTextTotalStats
+
+▸ **getTextTotalStats**<`T`\>(`options?`): `Promise`<`Pick`<[`TextTotalStats`](../interfaces/TextTotalStats.md), `T`\>\>
+
+Details how many images have been generated in the past minux,hour,day,month and total
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`ImageModelStats`](../interfaces/ImageModelStats.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+
+#### Returns
+
+`Promise`<`Pick`<[`TextTotalStats`](../interfaces/TextTotalStats.md), `T`\>\>
+
+TextTotalStats - The stats
+
+#### Defined in
+
+[index.ts:643](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L643)
 
 ___
 
@@ -1214,7 +1220,7 @@ UserDetails - The user data of the requested user
 
 #### Defined in
 
-[index.ts:338](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L338)
+[index.ts:242](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L242)
 
 ___
 
@@ -1245,7 +1251,7 @@ UserDetails[] - An array of all users data
 
 #### Defined in
 
-[index.ts:648](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L648)
+[index.ts:552](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L552)
 
 ___
 
@@ -1280,7 +1286,7 @@ worker details for the requested worker
 
 #### Defined in
 
-[index.ts:404](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L404)
+[index.ts:308](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L308)
 
 ___
 
@@ -1311,36 +1317,7 @@ An array of all workers data
 
 #### Defined in
 
-[index.ts:669](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L669)
-
-___
-
-### getWorkersByPerformance
-
-▸ **getWorkersByPerformance**(`min_pixels`, `filter?`): `Promise`<`string`[]\>
-
-Filter workers by performance (and query)
-
-**`Deprecated`**
-
-This method will be removed in a future update
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `min_pixels` | `number` | minimal value of max_pixels for worker |
-| `filter` | [`WorkersPerformanceFilter`](../interfaces/WorkersPerformanceFilter.md) | (optional) details of the query and filter parameters |
-
-#### Returns
-
-`Promise`<`string`[]\>
-
-ids of workers to use in the request to generate
-
-#### Defined in
-
-[index.ts:692](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L692)
+[index.ts:573](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L573)
 
 ___
 
@@ -1366,48 +1343,7 @@ ___
 
 #### Defined in
 
-[index.ts:176](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L176)
-
-___
-
-### postAsyncGenerate
-
-▸ **postAsyncGenerate**<`T`\>(`generation_data`, `options?`): `Promise`<`Pick`<[`RequestAsync`](../interfaces/RequestAsync.md), `T`\>\>
-
-Initiate an Asynchronous request to generate images
-This method will immediately return with the UUID of the request for generation.
-This method will always be accepted, even if there are no workers available currently to fulfill this request.
-Perhaps some will appear in the next 10 minutes.
-Asynchronous requests live for 10 minutes before being considered stale and being deleted.
-
-**`Deprecated`**
-
-Use postAsyncImageGenerate instead
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends keyof [`RequestAsync`](../interfaces/RequestAsync.md) |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `generation_data` | [`GenerationInput`](../interfaces/GenerationInput.md) | The data to generate the image |
-| `options?` | `Object` | - |
-| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
-| `options.token?` | `string` | The token of the requesting user |
-
-#### Returns
-
-`Promise`<`Pick`<[`RequestAsync`](../interfaces/RequestAsync.md), `T`\>\>
-
-RequestAsync - The id and message for the async generation request
-
-#### Defined in
-
-[index.ts:251](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L251)
+[index.ts:183](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L183)
 
 ___
 
@@ -1444,7 +1380,7 @@ RequestAsync - The id and message for the async generation request
 
 #### Defined in
 
-[index.ts:832](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L832)
+[index.ts:763](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L763)
 
 ___
 
@@ -1481,7 +1417,7 @@ RequestInterrogationResponse
 
 #### Defined in
 
-[index.ts:1073](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1073)
+[index.ts:1004](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1004)
 
 ___
 
@@ -1518,7 +1454,7 @@ RequestAsync - The id and message for the async generation request
 
 #### Defined in
 
-[index.ts:869](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L869)
+[index.ts:800](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L800)
 
 ___
 
@@ -1551,86 +1487,7 @@ FilterPromptSuspicion
 
 #### Defined in
 
-[index.ts:799](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L799)
-
-___
-
-### postGenerationPop
-
-▸ **postGenerationPop**<`T`\>(`pop_input`, `options?`): `Promise`<`Pick`<[`GenerationPayloadStable`](../interfaces/GenerationPayloadStable.md), `T`\>\>
-
-Check if there are generation requests queued for fulfillment
-This endpoint is used by registered workers only
-
-**`Deprecated`**
-
-Use postImageGenerationPop instead
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends keyof [`GenerationPayloadStable`](../interfaces/GenerationPayloadStable.md) |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `pop_input` | [`PopInputStable`](../interfaces/PopInputStable.md) |  |
-| `options?` | `Object` | - |
-| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
-| `options.token?` | `string` | The token of the registered user |
-
-#### Returns
-
-`Promise`<`Pick`<[`GenerationPayloadStable`](../interfaces/GenerationPayloadStable.md), `T`\>\>
-
-GenerationPayloadStable
-
-#### Defined in
-
-[index.ts:267](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L267)
-
-___
-
-### postGenerationSubmit
-
-▸ **postGenerationSubmit**<`T`\>(`generation_submit`, `options?`): `Promise`<`Pick`<[`GenerationSubmitted`](../interfaces/GenerationSubmitted.md), `T`\>\>
-
-Submit a generated image
-This endpoint is used by registered workers only
-
-**`Deprecated`**
-
-Use postImageGenerationSubmit instead
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends ``"reward"`` |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `generation_submit` | `Object` |  |
-| `generation_submit.generation` | `string` | - |
-| `generation_submit.id` | `string` | - |
-| `generation_submit.seed` | `string` | - |
-| `options?` | `Object` | - |
-| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
-| `options.token?` | `string` | The workers owner API key |
-
-#### Returns
-
-`Promise`<`Pick`<[`GenerationSubmitted`](../interfaces/GenerationSubmitted.md), `T`\>\>
-
-GenerationSubmitted
-
-#### Defined in
-
-[index.ts:283](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L283)
+[index.ts:730](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L730)
 
 ___
 
@@ -1664,7 +1521,7 @@ GenerationPayloadStable
 
 #### Defined in
 
-[index.ts:939](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L939)
+[index.ts:870](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L870)
 
 ___
 
@@ -1701,7 +1558,7 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:1003](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1003)
+[index.ts:934](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L934)
 
 ___
 
@@ -1735,7 +1592,7 @@ InterrogationPopPayload
 
 #### Defined in
 
-[index.ts:1107](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1107)
+[index.ts:1038](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1038)
 
 ___
 
@@ -1771,7 +1628,7 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:1140](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1140)
+[index.ts:1071](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1071)
 
 ___
 
@@ -1801,7 +1658,7 @@ null
 
 #### Defined in
 
-[index.ts:1203](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1203)
+[index.ts:1134](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1134)
 
 ___
 
@@ -1836,7 +1693,7 @@ KudosTransferred
 
 #### Defined in
 
-[index.ts:1172](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1172)
+[index.ts:1103](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1103)
 
 ___
 
@@ -1874,7 +1731,7 @@ GenerationSubmitted - The kudos awarded for the rating
 
 #### Defined in
 
-[index.ts:906](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L906)
+[index.ts:837](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L837)
 
 ___
 
@@ -1908,7 +1765,7 @@ GenerationPayloadKobold
 
 #### Defined in
 
-[index.ts:971](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L971)
+[index.ts:902](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L902)
 
 ___
 
@@ -1945,7 +1802,7 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:1037](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1037)
+[index.ts:968](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L968)
 
 ___
 
@@ -1982,7 +1839,7 @@ HordeModes
 
 #### Defined in
 
-[index.ts:1264](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1264)
+[index.ts:1195](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1195)
 
 ___
 
@@ -2016,7 +1873,7 @@ FilterDetails
 
 #### Defined in
 
-[index.ts:1436](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1436)
+[index.ts:1367](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1367)
 
 ___
 
@@ -2050,7 +1907,7 @@ ModifyTeam
 
 #### Defined in
 
-[index.ts:1369](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1369)
+[index.ts:1300](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1300)
 
 ___
 
@@ -2084,7 +1941,7 @@ ModifyUser
 
 #### Defined in
 
-[index.ts:1295](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1295)
+[index.ts:1226](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1226)
 
 ___
 
@@ -2122,4 +1979,4 @@ ModifyWorker
 
 #### Defined in
 
-[index.ts:1333](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1333)
+[index.ts:1264](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1264)

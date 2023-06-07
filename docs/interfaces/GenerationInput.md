@@ -12,7 +12,9 @@
 - [params](GenerationInput.md#params)
 - [prompt](GenerationInput.md#prompt)
 - [r2](GenerationInput.md#r2)
+- [replacement\_filter](GenerationInput.md#replacement_filter)
 - [shared](GenerationInput.md#shared)
+- [slow\_workers](GenerationInput.md#slow_workers)
 - [source\_image](GenerationInput.md#source_image)
 - [source\_mask](GenerationInput.md#source_mask)
 - [source\_processing](GenerationInput.md#source_processing)
@@ -33,7 +35,7 @@ false
 
 #### Defined in
 
-[index.ts:1948](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1948)
+[index.ts:1884](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1884)
 
 ___
 
@@ -45,7 +47,7 @@ Specify which models are allowed to be used for this request
 
 #### Defined in
 
-[index.ts:1952](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1952)
+[index.ts:1888](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1888)
 
 ___
 
@@ -61,7 +63,7 @@ false
 
 #### Defined in
 
-[index.ts:1938](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1938)
+[index.ts:1869](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1869)
 
 ___
 
@@ -73,7 +75,7 @@ The parameters for the generation
 
 #### Defined in
 
-[index.ts:1933](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1933)
+[index.ts:1864](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1864)
 
 ___
 
@@ -85,7 +87,7 @@ The prompt which will be sent to Stable Diffusion to generate an image
 
 #### Defined in
 
-[index.ts:1931](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1931)
+[index.ts:1862](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1862)
 
 ___
 
@@ -97,7 +99,23 @@ If True, the image will be sent via cloudflare r2 download link
 
 #### Defined in
 
-[index.ts:1960](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1960)
+[index.ts:1896](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1896)
+
+___
+
+### replacement\_filter
+
+• `Optional` **replacement\_filter**: `boolean`
+
+If enabled, suspicious prompts are sanitized through a string replacement filter instead.
+
+**`Default`**
+
+true
+
+#### Defined in
+
+[index.ts:1903](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1903)
 
 ___
 
@@ -109,7 +127,23 @@ If True, The image will be shared with LAION for improving their dataset. This w
 
 #### Defined in
 
-[index.ts:1962](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1962)
+[index.ts:1898](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1898)
+
+___
+
+### slow\_workers
+
+• `Optional` **slow\_workers**: `boolean`
+
+When True, allows slower workers to pick up this request. Disabling this incurs an extra kudos cost.
+
+**`Default`**
+
+true
+
+#### Defined in
+
+[index.ts:1879](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1879)
 
 ___
 
@@ -121,7 +155,7 @@ The Base64-encoded webp to use for img2img, max siue 3072 * 3072
 
 #### Defined in
 
-[index.ts:1954](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1954)
+[index.ts:1890](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1890)
 
 ___
 
@@ -133,7 +167,7 @@ If source_processing is set to 'inpainting' or 'outpainting', this parameter can
 
 #### Defined in
 
-[index.ts:1958](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1958)
+[index.ts:1894](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1894)
 
 ___
 
@@ -145,7 +179,7 @@ If source_image is provided, specifies how to process it.
 
 #### Defined in
 
-[index.ts:1956](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1956)
+[index.ts:1892](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1892)
 
 ___
 
@@ -161,7 +195,7 @@ true
 
 #### Defined in
 
-[index.ts:1943](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1943)
+[index.ts:1874](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1874)
 
 ___
 
@@ -173,4 +207,4 @@ Specify which workers are allowed to service this request
 
 #### Defined in
 
-[index.ts:1950](https://github.com/ZeldaFan0225/ai_horde/blob/f6fd59f/index.ts#L1950)
+[index.ts:1886](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1886)
