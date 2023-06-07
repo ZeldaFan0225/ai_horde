@@ -1,6 +1,4 @@
 import SuperMap from "@thunder04/supermap"
-import Centra from "centra"
-import { IncomingMessage } from "http"
 import { readFileSync } from "fs"
 import { join } from "path";
 
@@ -21,7 +19,8 @@ enum ModelGenerationInputStableSamplers {
     "k_dpm_adaptive" = "k_dpm_adaptive",
     "k_dpmpp_2s_a" = "k_dpmpp_2s_a",
     "k_dpmpp_2m" = "k_dpmpp_2m",
-    "dpmsolver" = "dpmsolver"
+    "dpmsolver" = "dpmsolver",
+    "k_dpmpp_sde" = "k_dpmpp_sde"
 } 
 
 enum SourceImageProcessingTypes {
@@ -33,6 +32,11 @@ enum SourceImageProcessingTypes {
 enum ModelGenerationInputPostProcessingTypes {
     "GFPGAN" = "GFPGAN",
     "RealESRGAN_x4plus" = "RealESRGAN_x4plus",
+    "RealESRGAN_x2plus" = "RealESRGAN_x2plus",
+    "RealESRGAN_x4plus_anime_6B" = "RealESRGAN_x4plus_anime_6B",
+    "NMKD_Siax" = "NMKD_Siax",
+    "4x_AnimeSharp" = "4x_AnimeSharp",
+    "strip_background" = "strip_background",
     "CodeFormers" = "CodeFormers"
 }
 
@@ -76,11 +80,11 @@ class APIError extends Error {
     method: string;
     url: string;
     requestBody: any;
-    constructor(rawError: RequestError, core_res: IncomingMessage, requestBody?: any) {
+    constructor(rawError: RequestError, core_res: Response, method: string = "GET", requestBody?: any) {
         super()
         this.rawError = rawError
-        this.status = core_res.statusCode ?? 0
-        this.method = core_res.method ?? "GET"
+        this.status = core_res.status ?? 0
+        this.method = method
         this.url = core_res.url ?? ""
         this.requestBody = requestBody
     }
@@ -91,7 +95,7 @@ class APIError extends Error {
 }
 
 
-class AIHorde {
+export class AIHorde {
     static readonly ModelGenerationInputStableSamplers = ModelGenerationInputStableSamplers;
     readonly ModelGenerationInputStableSamplers = AIHorde.ModelGenerationInputStableSamplers;
     
@@ -133,7 +137,8 @@ class AIHorde {
             news: options?.cache?.news ?? 0,
             performance: options?.cache?.performance ?? 0,
             workers: options?.cache?.workers ?? 0,
-            teams: options?.cache?.teams ?? 0
+            teams: options?.cache?.teams ?? 0,
+            sharedkeys: options?.cache?.sharedkeys ?? 0
         }
         if(Object.values(this.#cache_config).some(v => !Number.isSafeInteger(v) || v < 0)) throw new TypeError("Every cache duration must be a positive safe integer")
         this.#cache = {
@@ -147,6 +152,7 @@ class AIHorde {
             performance: this.#cache_config.performance ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.performance}) : undefined,
             workers: this.#cache_config.workers ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.workers}) : undefined,
             teams: this.#cache_config.teams ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.teams}) : undefined,
+            sharedkeys: this.#cache_config.sharedkeys ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.sharedkeys}) : undefined,
         }
         
         try {
@@ -193,15 +199,25 @@ class AIHorde {
         return fields?.join(',')
     }
 
-    async #request(route: string, method: string, options?: {token?: string, fields?: string[], fields_string?: string, body?: any}): Promise<{result: Centra.Response, fields_string?: string}> {
-        const fields_string = options?.fields?.join(',') || options?.fields_string
+    async #request(route: string, method: string, options?: {token?: string, fields?: string[], fields_string?: string, body?: any}): Promise<{result: Response, fields_string: string}> {
+        const fields_string = options?.fields?.join(',') || options?.fields_string || ''
         const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}${route}`, method)
-        .header("Client-Agent", this.#client_agent)
-        if(options?.token) req.header("apikey", t)
-        if(options?.body) req.body(options.body, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+
+        const headers: HeadersInit = {
+            "Client-Agent": this.#client_agent,
+            "Content-Type": "application/json"
+        }
+        if(options?.token) headers["apikey"] = t;
+        if(fields_string) headers["X-Fields"] = fields_string
+
+        const res = await fetch(`${this.#api_route}${route}`, {
+            method,
+            headers,
+            body: options?.body ? JSON.stringify(options.body) : undefined
+        })
+
+        if(!res.status.toString().startsWith("2")) throw new this.APIError(await res.json(), res, method, options?.body)
+
         return {result: res, fields_string}
     }
 
@@ -220,8 +236,6 @@ class AIHorde {
         T extends keyof UserDetails
     >(options?: {token?: string, fields?: T[]}): Promise<Pick<UserDetails, T>> {
         const {result, fields_string} = await this.#request("/find_user", "GET", options)
-
-        if(result.statusCode === 404) throw new this.APIError(await result.json().then(res => res), result.coreRes)
 
         const data = await result.json() as Pick<UserDetails, T>
         if(this.#cache_config.users) {
@@ -243,12 +257,10 @@ class AIHorde {
         T extends keyof UserDetails
     >(id: number, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<UserDetails, T>> {
         const fields_string = this.generateFieldsString(options?.fields)
-        const t = this.#getToken(options?.token)
+        const token = this.#getToken(options?.token)
         const temp = !options?.force && this.#cache.users?.get(id.toString() + fields_string)
         if(temp) return temp
-        const {result} = await this.#request(`/users/${id}`, "GET", {fields_string, token: t})
-
-        if(result.statusCode === 404) throw new this.APIError(await result.json().then(res => res), result.coreRes)
+        const {result} = await this.#request(`/users/${id}`, "GET", {fields_string, token})
 
         const data = await result.json() as Pick<UserDetails, T>
         if(this.#cache_config.users) {
@@ -270,25 +282,14 @@ class AIHorde {
         T extends keyof TeamDetailsStable
     >(id: string, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<TeamDetailsStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
+        const token = this.#getToken(options?.token)
         const temp = !options?.force && this.#cache.teams?.get(id + fields_string)
         if(temp) return temp as Pick<TeamDetailsStable, T>
-        const req = Centra(`${this.#api_route}/teams/${id}`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
 
-        switch(res.statusCode) {
-            case 401:
-            case 403:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
-                }
-        }
+        const {result} = await this.#request(`/teams/${id}`, "GET", {token, fields_string})
 
-        const data = await res.json() as Pick<TeamDetailsStable, T>
+        const data = await result.json() as Pick<TeamDetailsStable, T>
+
         if(this.#cache_config.teams) {
             const data_with_id = data as Pick<TeamDetailsStable, 'id'>
             if('id' in data_with_id) this.#cache.teams?.set(data_with_id.id + fields_string, data)
@@ -309,26 +310,13 @@ class AIHorde {
         T extends keyof WorkerDetailsStable
     >(id: string, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<WorkerDetailsStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
+        const token = this.#getToken(options?.token)
         const temp = !options?.force && this.#cache.workers?.get(id + fields_string)
         if(temp) return temp as Pick<WorkerDetailsStable, T>
 
-        const req = Centra(`${this.#api_route}/workers/${id}`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const {result} = await this.#request(`/workers/${id}`, "GET", {token, fields_string})
 
-        switch(res.statusCode) {
-            case 401:
-            case 403:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
-                }
-        }
-
-        const data = await res.json() as Pick<WorkerDetailsStable, T>
+        const data = await result.json() as Pick<WorkerDetailsStable, T>
         if(this.#cache_config.workers) {
             const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
             if('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, data)
@@ -350,14 +338,10 @@ class AIHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.generations_check?.get(id + fields_string)
         if(temp) return temp as Pick<RequestStatusCheck, T>
-        const req = Centra(`${this.#api_route}/generate/check/${id}`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
 
-        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
+        const {result} = await this.#request(`/generate/check/${id}`, "GET", {fields_string})
 
-        const data = await res.json() as Pick<RequestStatusCheck, T>
+        const data = await result.json() as Pick<RequestStatusCheck, T>
         if(this.#cache_config.generations_check) this.#cache.generations_check?.set(id + fields_string, data)
         return data
     }
@@ -376,16 +360,12 @@ class AIHorde {
         T extends keyof RequestStatusStable
     >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const temp = !options?.force && this.#cache.generations_status?.get(id)
+        const temp = !options?.force && this.#cache.generations_status?.get(id + fields_string)
         if(temp) return temp as Pick<RequestStatusStable, T>
-        const req = Centra(`${this.#api_route}/generate/status/${id}`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
 
-        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
+        const {result} = await this.#request(`/generate/status/${id}`, "GET", {fields_string})
 
-        const data = await res.json() as Pick<RequestStatusStable, T>
+        const data = await result.json() as Pick<RequestStatusStable, T>
         if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
@@ -401,16 +381,12 @@ class AIHorde {
         T extends keyof RequestStatusKobold
     >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusKobold, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const temp = !options?.force && this.#cache.generations_status?.get(id)
+        const temp = !options?.force && this.#cache.generations_status?.get(id + fields_string)
         if(temp) return temp as Pick<RequestStatusKobold, T>
-        const req = Centra(`${this.#api_route}/generate/text/status/${id}`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
 
-        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
+        const {result} = await this.#request(`/generate/text/status/${id}`, "GET", {fields_string})
 
-        const data = await res.json() as Pick<RequestStatusKobold, T>
+        const data = await result.json() as Pick<RequestStatusKobold, T>
         if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
@@ -428,14 +404,10 @@ class AIHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.interrogations_status?.get(id + fields_string)
         if(temp) return temp as Pick<InterrogationStatus, T>
-        const req = Centra(`${this.#api_route}/interrogate/status/${id}`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
 
-        if(res.statusCode === 404) throw new this.APIError(await res.json().then(res => res), res.coreRes)
+        const {result} = await this.#request(`/interrogate/status/${id}`, "GET", {fields_string})
 
-        const data = await res.json() as Pick<InterrogationStatus, T>
+        const data = await result.json() as Pick<InterrogationStatus, T>
         if(this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
         return data
     }
@@ -445,9 +417,7 @@ class AIHorde {
      * @returns true - If request was successful, if not throws error
      */
     async getHeartbeat(): Promise<true> {
-        await Centra(`${this.#api_route}/status/heartbeat`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        .send()
+        await this.#request(`/status/heartbeat`, "GET")
 
         return true
     }
@@ -464,13 +434,26 @@ class AIHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.models?.get("CACHE-MODELS" + fields_string)
         if(temp) return temp as Pick<ActiveModel, T>[]
-        const req = Centra(`${this.#api_route}/status/models`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
 
-        const data = await res.json() as Pick<ActiveModel, T>[]
+        const {result} = await this.#request(`/status/models`, "GET", {fields_string})
+
+        const data = await result.json() as Pick<ActiveModel, T>[]
         if(this.#cache_config.models) this.#cache.models?.set("CACHE-MODELS" + fields_string, data)
+        return data
+    }
+
+    /**
+     * Returns the statistics of a specific model in this horde
+     * @param model_name - The name of the model to fetch
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns ActiveModel - The active model
+     */
+    async getModel<
+        T extends keyof ActiveModel
+    >(model_name: string, options?: {fields?: T[]}): Promise<Pick<ActiveModel, T>[]> {
+        const {result} = await this.#request(`/status/models/${model_name}`, "GET", {fields: options?.fields})
+
+        const data = await result.json() as Pick<ActiveModel, T>[]
         return data
     }
 
@@ -486,16 +469,13 @@ class AIHorde {
         T extends keyof HordeModes
     >(options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<HordeModes, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
+        const token = this.#getToken(options?.token)
         const temp = !options?.force && this.#cache.modes?.get("CACHE-MODES" + fields_string)
         if(temp) return temp as Pick<HordeModes, T>
-        const req = Centra(`${this.#api_route}/status/modes`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
 
-        const data = await res.json() as Pick<HordeModes, T>
+        const {result} = await this.#request(`/status/modes`, "GET", {token, fields_string})
+
+        const data = await result.json() as Pick<HordeModes, T>
         if(this.#cache_config.modes) this.#cache.modes?.set("CACHE-MODES" + fields_string, data)
         return data
     }
@@ -512,12 +492,10 @@ class AIHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.news?.get("CACHE-NEWS" + fields_string)
         if(temp) return temp as Pick<Newspiece, T>[]
-        const req = Centra(`${this.#api_route}/status/news`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
 
-        const data = await res.json() as Pick<Newspiece, T>[]
+        const {result} = await this.#request(`/status/news`, "GET", {fields_string})
+
+        const data = await result.json() as Pick<Newspiece, T>[]
         if(this.#cache_config.news) this.#cache.news?.set("CACHE-NEWS" + fields_string, data)
         return data
     }
@@ -534,12 +512,10 @@ class AIHorde {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.performance?.get("CACHE-PERFORMANCE" + fields_string)
         if(temp) return temp as Pick<HordePerformanceStable, T>
-        const req = Centra(`${this.#api_route}/status/performance`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
 
-        const data = await res.json() as Pick<HordePerformanceStable, T>
+        const {result} = await this.#request(`/status/performance`, "GET", {fields_string})
+
+        const data = await result.json() as Pick<HordePerformanceStable, T>
         if(this.#cache_config.performance) this.#cache.performance?.set("CACHE-PERFORMANCE" + fields_string, data)
         return data
     }
@@ -551,16 +527,13 @@ class AIHorde {
      */
     async getUsers<
         T extends keyof UserDetails
-    >(options?: {fields?: T[]}): Promise<Pick<UserDetails, T>[]> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const req = Centra(`${this.#api_route}/users`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
-        const data =  await res.json() as Pick<UserDetails, T>[]
+    >(options?: {force?: boolean, fields?: T[]}): Promise<Pick<UserDetails, T>[]> {
+        const {result, fields_string} = await this.#request(`/users`, "GET", {fields: options?.fields})
+
+        const data =  await result.json() as Pick<UserDetails, T>[]
         if(this.#cache_config.users) data.forEach(d => {
             const data_with_id = d as Pick<UserDetails, 'id'>
-            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string, d)
+            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id! + fields_string, d)
         })
         return data
     }
@@ -573,12 +546,9 @@ class AIHorde {
     async getWorkers<
         T extends keyof WorkerDetailsStable
     >(options?: {fields?: T[]}): Promise<Pick<WorkerDetailsStable, T>[]> {
-        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
-        const req = Centra(`${this.#api_route}/workers`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
-        const data =  await res.json() as Pick<WorkerDetailsStable, T>[]
+        const {result, fields_string} = await this.#request(`/workers`, "GET", {fields: options?.fields})
+
+        const data =  await result.json() as Pick<WorkerDetailsStable, T>[]
         if(this.#cache_config.workers) data.forEach(d => {
             const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
             if('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, d)
@@ -595,8 +565,7 @@ class AIHorde {
     async getImageModelStats<
         T extends keyof ImageModelStats
     >(options?: {fields?: T[]}): Promise<Pick<ImageModelStats, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const {result} = await this.#request("/stats/img/models", "GET", {fields: options?.fields, fields_string})
+        const {result} = await this.#request("/stats/img/models", "GET", {fields: options?.fields})
 
         const data = await result.json() as Pick<ImageModelStats, T>
         return data
@@ -611,8 +580,7 @@ class AIHorde {
     async getImageTotalStats<
         T extends keyof ImageModelStats
     >(options?: {fields?: T[]}): Promise<Pick<ImageTotalStats, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const {result} = await this.#request("/stats/img/totals", "GET", {fields: options?.fields, fields_string})
+        const {result} = await this.#request("/stats/img/totals", "GET", {fields: options?.fields})
 
         const data = await result.json() as Pick<ImageTotalStats, T>
         return data
@@ -627,8 +595,7 @@ class AIHorde {
     async getTextModelStats<
         T extends keyof ImageModelStats
     >(options?: {fields?: T[]}): Promise<Pick<TextModelStats, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const {result} = await this.#request("/stats/text/models", "GET", {fields: options?.fields, fields_string})
+        const {result} = await this.#request("/stats/text/models", "GET", {fields: options?.fields})
 
         const data = await result.json() as Pick<TextModelStats, T>
         return data
@@ -643,8 +610,7 @@ class AIHorde {
     async getTextTotalStats<
         T extends keyof ImageModelStats
     >(options?: {fields?: T[]}): Promise<Pick<TextTotalStats, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const {result} = await this.#request("/stats/text/totals", "GET", {fields: options?.fields, fields_string})
+        const {result} = await this.#request("/stats/text/totals", "GET", {fields: options?.fields})
 
         const data = await result.json() as Pick<TextTotalStats, T>
         return data
@@ -658,13 +624,9 @@ class AIHorde {
     async getTeams<
         T extends keyof TeamDetailsStable
     >(options?: {fields?: T[]}): Promise<Pick<TeamDetailsStable, T>[]> {
-        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
-        const req = Centra(`${this.#api_route}/teams`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const {result, fields_string} = await this.#request(`/teams`, "GET", {fields: options?.fields})
 
-        const data = await res.json() as Pick<TeamDetailsStable, T>[]
+        const data = await result.json() as Pick<TeamDetailsStable, T>[]
         if(this.#cache_config.teams) data.forEach(d => {
             const data_with_id = d as Pick<TeamDetailsStable, 'id'>
             if('id' in data_with_id) this.#cache.teams?.set(data_with_id.id + fields_string, d)
@@ -674,24 +636,23 @@ class AIHorde {
 
     /**
      * A List of filters
-     * @param filter_type - The type of filter to show
+     * @param query.filter_type - The type of filter to show
+     * @param query.contains - Only return filter containing this word
      * @param options.token - The sending users API key; User must be a moderator
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns FilterDetails[] - Array of Filter Details
      */
     async getFilters<
         T extends keyof FilterDetails
-    >(filter_type?: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>[]> {
-        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/filters`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        if(filter_type) req.header("filter_type", filter_type)
-        const res = await req.send()
+    >(query?: {filter_type?: string, contains?: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>[]> {
+        const token = this.#getToken(options?.token)
+        const params = new URLSearchParams()
+        if(query?.filter_type) params.set("filter_type", query?.filter_type)
+        if(query?.contains) params.set("contains", query?.contains)
 
-        const data = await res.json() as Pick<FilterDetails, T>[]
+        const {result} = await this.#request(`/filters${params.toString() ? `?${params.toString()}` : ""}`, "GET", {token, fields: options?.fields})
+
+        const data = await result.json() as Pick<FilterDetails, T>[]
         return data
     }
 
@@ -705,17 +666,31 @@ class AIHorde {
     async getFilter<
         T extends keyof FilterDetails
     >(filter_id?: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
-        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/filters/${filter_id}`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        const data = await res.json() as Pick<FilterDetails, T>
+        const {result} = await this.#request(`/filters/${filter_id}`, "GET", {token, fields: options?.fields})
+
+        const data = await result.json() as Pick<FilterDetails, T>
         return data
     }
+    
+
+    /**
+     * Gets Details about an existing Shared Key for this user
+     * @param sharedkey_id - The shared key to show
+     * @param options.token - The sending users API key; User must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails - Filter Details
+     */
+    async getSharedKey<
+        T extends keyof SharedKeyDetails
+    >(sharedkey_id?: string, options?: {token?: string, fields?: T[]}): Promise<Pick<SharedKeyDetails, T>> {
+        const {result} = await this.#request(`/sharedkeys/${sharedkey_id}`, "GET", {fields: options?.fields})
+
+        const data = await result.json() as Pick<SharedKeyDetails, T>
+        return data
+    }
+
 
     /* POST REQUESTS */
     
@@ -730,23 +705,11 @@ class AIHorde {
     async postFilters<
         T extends keyof FilterPromptSuspicion
     >(check_data: FilterCheckPayload, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterPromptSuspicion, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/filters`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(check_data, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, check_data)
-                }
-        }
+        const {result} = await this.#request(`/filters`, "POST", {token, fields: options?.fields, body: check_data})
 
-        return await res.json() as Pick<FilterPromptSuspicion, T>
+        return await result.json() as Pick<FilterPromptSuspicion, T>
     }
     
     /**
@@ -762,27 +725,12 @@ class AIHorde {
      */
     async postAsyncImageGenerate<
         T extends keyof RequestAsync
-    >(generation_data: GenerationInput, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestAsync, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/generate/async`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(generation_data, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+    >(generation_data: ImageGenerationInput, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestAsync, T>> {
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 429:
-            case 503:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, generation_data)
-                }
-        }
+        const {result} = await this.#request(`/generate/async`, "POST", {token, fields: options?.fields, body: generation_data})
 
-        return await res.json() as Pick<RequestAsync, T>
+        return await result.json() as Pick<RequestAsync, T>
     }
     
 
@@ -800,26 +748,11 @@ class AIHorde {
     async postAsyncTextGenerate<
         T extends keyof RequestAsync
     >(generation_data: GenerationInputKobold, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestAsync, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/generate/text/async`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(generation_data, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 429:
-            case 503:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, generation_data)
-                }
-        }
+        const {result} = await this.#request(`/generate/text/async`, "POST", {token, fields: options?.fields, body: generation_data})
 
-        return await res.json() as Pick<RequestAsync, T>
+        return await result.json() as Pick<RequestAsync, T>
     }
     
     /**
@@ -837,25 +770,11 @@ class AIHorde {
     async postRating<
         T extends keyof GenerationSubmitted
     >(generation_id: string, rating: AestheticsPayload, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/generate/rate/${generation_id}`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(rating, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 429:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, rating)
-                }
-        }
+        const {result} = await this.#request(`/generate/rate/${generation_id}`, "POST", {token, fields: options?.fields, body: rating})
 
-        return await res.json() as Pick<GenerationSubmitted, T>
+        return await result.json() as Pick<GenerationSubmitted, T>
     }
 
     
@@ -870,24 +789,11 @@ class AIHorde {
     async postImageGenerationPop<
         T extends keyof GenerationPayloadStable
     >(pop_input: PopInputStable, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationPayloadStable, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/generate/pop`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(pop_input, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 401:
-            case 403:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, pop_input)
-                }
-        }
+        const {result} = await this.#request(`/generate/pop`, "POST", {token, fields: options?.fields, body: pop_input})
 
-        return await res.json() as Pick<GenerationPayloadStable, T>
+        return await result.json() as Pick<GenerationPayloadStable, T>
     }
 
     
@@ -902,24 +808,11 @@ class AIHorde {
     async postTextGenerationPop<
         T extends keyof GenerationPayloadKobold
     >(pop_input: PopInputKobold, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationPayloadKobold, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/generate/text/pop`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(pop_input, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 401:
-            case 403:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, pop_input)
-                }
-        }
+        const {result} = await this.#request(`/generate/text/pop`, "POST", {token, fields: options?.fields, body: pop_input})
 
-        return await res.json() as Pick<GenerationPayloadKobold, T>
+        return await result.json() as Pick<GenerationPayloadKobold, T>
     }
 
     
@@ -934,26 +827,11 @@ class AIHorde {
     async postImageGenerationSubmit<
         T extends keyof GenerationSubmitted
     >(generation_submit: {id: string, generation: string, seed: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/generate/submit`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(generation_submit, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 402:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, generation_submit)
-                }
-        }
+        const {result} = await this.#request(`/generate/submit`, "POST", {token, fields: options?.fields, body: generation_submit})
 
-        return await res.json() as Pick<GenerationSubmitted, T>
+        return await result.json() as Pick<GenerationSubmitted, T>
     }
 
     
@@ -968,26 +846,11 @@ class AIHorde {
     async postTextGenerationSubmit<
         T extends keyof GenerationSubmitted
     >(generation_submit: {id: string, generation: string, state: "ok" | "censored" | "faulted"}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/generate/text/submit`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(generation_submit, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 402:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, generation_submit)
-                }
-        }
+        const {result} = await this.#request(`/generate/text/submit`, "POST", {token, fields: options?.fields, body: generation_submit})
 
-        return await res.json() as Pick<GenerationSubmitted, T>
+        return await result.json() as Pick<GenerationSubmitted, T>
     }
     
     /**
@@ -1004,26 +867,11 @@ class AIHorde {
     async postAsyncInterrogate<
         T extends keyof RequestInterrogationResponse
     >(interrogate_payload: ModelInterrogationInputStable, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestInterrogationResponse, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/interrogate/async`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(interrogate_payload, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 429:
-            case 503:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, interrogate_payload)
-                }
-        }
+        const {result} = await this.#request(`/interrogate/async`, "POST", {token, fields: options?.fields, body: interrogate_payload})
 
-        return await res.json() as Pick<RequestInterrogationResponse, T>
+        return await result.json() as Pick<RequestInterrogationResponse, T>
     }
     
 
@@ -1038,25 +886,11 @@ class AIHorde {
     async postInterrogationPop<
         T extends keyof InterrogationPopPayload
     >(pop_input: InterrogationPopInput, options?: {token?: string, fields?: T[]}): Promise<Pick<InterrogationPopPayload, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/interrogate/pop`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(pop_input, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 403:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, pop_input)
-                }
-        }
+        const {result} = await this.#request(`/interrogate/pop`, "POST", {token, fields: options?.fields, body: pop_input})
 
-        return await res.json() as Pick<InterrogationPopPayload, T>
+        return await result.json() as Pick<InterrogationPopPayload, T>
     }
     
     
@@ -1071,26 +905,11 @@ class AIHorde {
     async postInterrogationSubmit<
         T extends keyof GenerationSubmitted
     >(interrogation_submit: {id: string, result: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/interrogate/submit`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(interrogation_submit, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 403:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, interrogation_submit)
-                }
-        }
+        const {result} = await this.#request(`/interrogate/submit`, "POST", {token, fields: options?.fields, body: interrogation_submit})
 
-        return await res.json() as Pick<GenerationSubmitted, T>
+        return await result.json() as Pick<GenerationSubmitted, T>
     }
     
     /**
@@ -1103,24 +922,11 @@ class AIHorde {
     async postKudosTransfer<
         T extends keyof KudosTransferred
     >(transfer_data: {username: string, amount: number}, options?: {token?: string, fields?: T[]}): Promise<Pick<KudosTransferred, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/kudos/transfer`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(transfer_data, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, transfer_data)
-                }
-        }
+        const {result} = await this.#request(`/kudos/transfer`, "POST", {token, fields: options?.fields, body: transfer_data})
 
-        return await res.json() as Pick<KudosTransferred, T>
+        return await result.json() as Pick<KudosTransferred, T>
     }
     
     /**
@@ -1132,20 +938,9 @@ class AIHorde {
      * @returns null
      */
     async postKoboldTransfer(user_id: string, transfer_data: {kai_id: string, kudos_amount: number, trusted: boolean}, options?: {token?: string}): Promise<null> {
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/kudos/kai/${user_id}`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(transfer_data, "json")
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, transfer_data)
-                }
-        }
+        await this.#request(`/kudos/kai/${user_id}`, "POST", {token, body: transfer_data})
 
         return null
     }
@@ -1162,25 +957,11 @@ class AIHorde {
     async createTeam<
         T extends keyof ModifyTeam
     >(create_payload: CreateTeamInput, options?: {token?: string, fields?: T[]}): Promise<Pick<ModifyTeam, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/teams`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(create_payload, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 403:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, create_payload)
-                }
-        }
+        const {result} = await this.#request(`/teams`, "POST", {token, fields: options?.fields, body: create_payload})
 
-        return await res.json() as Pick<ModifyTeam, T>
+        return await result.json() as Pick<ModifyTeam, T>
     }
 
     /** PUT */
@@ -1195,24 +976,11 @@ class AIHorde {
     async putStatusModes<
         T extends keyof HordeModes
     >(modes: {maintenance: boolean, shutdown: number, invite_only: boolean, raid: boolean}, options?: {token?: string, fields?: T[]}): Promise<Pick<HordeModes, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/status/modes`, "PUT")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(modes, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 401:
-            case 402:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, modes)
-                }
-        }
+        const {result} = await this.#request(`/status/modes`, "PUT", {token, fields: options?.fields, body: modes})
 
-        return await res.json() as Pick<HordeModes, T>
+        return await result.json() as Pick<HordeModes, T>
     }
     
     /**
@@ -1226,27 +994,12 @@ class AIHorde {
     async updateUser<
         T extends keyof ModifyUser
     >(update_payload: ModifyUserInput, id: number, options?: {token?: string, fields?: T[]}): Promise<Pick<ModifyUser, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/users/${id}`, "PUT")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(update_payload, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 402:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, update_payload)
-                }
-        }
+        const {result, fields_string} = await this.#request(`/users/${id}`, "PUT", {token, fields: options?.fields, body: update_payload})
 
         if(this.#cache_config.users) this.#cache.users?.delete(id.toString() + fields_string)
-        return await res.json() as Pick<ModifyUser, T>
+        return await result.json() as Pick<ModifyUser, T>
     }
     
     /**
@@ -1264,28 +1017,50 @@ class AIHorde {
     async updateWorker<
         T extends keyof ModifyWorker
     >(update_payload: ModifyWorkerInput, id: string, options?: {token?: string, fields?: T[]}): Promise<ModifyWorker> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/workers/${id}`, "PUT")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(update_payload, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 402:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, update_payload)
-                }
-        }
+        const {result} = await this.#request(`/workers/${id}`, "PUT", {token, fields: options?.fields, body: update_payload})
 
         if(this.#cache_config.workers) this.#cache.workers?.delete(id)
-        return await res.json() as Pick<ModifyWorker, T>
+        return await result.json() as Pick<ModifyWorker, T>
     }
+    
+    
+    /**
+     * Adds a new regex filer
+     * @param create_payload - The data to create the filter with
+     * @param options.token - The Moderator API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails
+     */
+    async addFilter<
+        T extends keyof FilterDetails
+    >(create_payload: PutNewFilter, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
+        const token = this.#getToken(options?.token)
+
+        const {result} = await this.#request(`/filters`, "PUT", {token, fields: options?.fields, body: create_payload})
+
+        return await result.json() as Pick<FilterDetails, T>
+    }
+    
+    
+    /**
+     * Create a new SharedKey for this user
+     * @param create_payload - The data to create the shared key with
+     * @param options.token - The User API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SharedKeyInput
+     */
+    async putSharedKey<
+        T extends keyof SharedKeyDetails
+    >(create_payload: SharedKeyInput, options?: {token?: string, fields?: T[]}): Promise<Pick<SharedKeyDetails, T>> {
+        const token = this.#getToken(options?.token)
+
+        const {result} = await this.#request(`/sharedkeys`, "PUT", {token, fields: options?.fields, body: create_payload})
+
+        return await result.json() as Pick<SharedKeyDetails, T>
+    }
+
 
     /** PATCH */
     
@@ -1300,66 +1075,19 @@ class AIHorde {
     async updateTeam<
         T extends keyof ModifyTeam
     >(update_payload: ModifyTeamInput, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<ModifyTeam, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/teams/${id}`, "PATCH")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(update_payload, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 403:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, update_payload)
-                }
-        }
+        const {result} = await this.#request(`/teams/${id}`, "PATCH", {token, fields: options?.fields, body: update_payload})
 
         if(this.#cache_config.teams) this.#cache.teams?.delete(id)
-        return await res.json() as Pick<ModifyTeam, T>
+        return await result.json() as Pick<ModifyTeam, T>
     }
-    
-    
-    /**
-     * Adds a new regex filer
-     * @param create_payload - The data to create the filter with
-     * @param options.token - The Moderator API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns FilterDetails
-     */
-    async addFilter<
-        T extends keyof FilterDetails
-    >(create_payload: PutNewFilter, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/filters`, "PUT")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(create_payload, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
-
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, create_payload)
-                }
-        }
-
-        return await res.json() as Pick<FilterDetails, T>
-    }
-
-    /** PATCH */
     
     
     /**
      * Updates an existing regex filer
      * @param update_payload - The data to update the filter with
+     * @param id - The ID of the filter
      * @param options.token - The Moderator API key
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns FilterDetails
@@ -1367,25 +1095,30 @@ class AIHorde {
     async updateFilter<
         T extends keyof FilterDetails
     >(update_payload: PatchExistingFilter, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/filters/${id}`, "PATCH")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(update_payload, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, update_payload)
-                }
-        }
+        const {result} = await this.#request(`/filters/${id}`, "PATCH", {token, fields: options?.fields, body: update_payload})
 
-        return await res.json() as Pick<FilterDetails, T>
+        return await result.json() as Pick<FilterDetails, T>
+    }
+    
+    
+    /**
+     * Modify an existing Shared Key
+     * @param update_payload - The data to update the shared key with
+     * @param id - The ID of the shared key
+     * @param options.token - The User API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SharedKeyDetails
+     */
+    async updateSharedKey<
+        T extends keyof SharedKeyDetails
+    >(update_payload: SharedKeyInput, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<SharedKeyDetails, T>> {
+        const token = this.#getToken(options?.token)
+
+        const {result} = await this.#request(`/sharedkeys/${id}`, "PATCH", {token, fields: options?.fields, body: update_payload})
+
+        return await result.json() as Pick<SharedKeyDetails, T>
     }
 
 
@@ -1402,20 +1135,9 @@ class AIHorde {
     async deleteImageGenerationRequest<
         T extends keyof RequestStatusStable
     >(id: string, options?: {fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const req = Centra(`${this.#api_route}/generate/status/${id}`, "DELETE")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const {result, fields_string} = await this.#request(`/generate/status/${id}`, "DELETE", {fields: options?.fields})
 
-        switch(res.statusCode) {
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
-                }
-        }
-
-        const data = await res.json() as Pick<RequestStatusStable, T>
+        const data = await result.json() as Pick<RequestStatusStable, T>
         if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
@@ -1431,20 +1153,9 @@ class AIHorde {
     async deleteTextGenerationRequest<
         T extends keyof RequestStatusKobold
     >(id: string, options?: {fields?: T[]}): Promise<Pick<RequestStatusKobold, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const req = Centra(`${this.#api_route}/generate/text/status/${id}`, "DELETE")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const {result, fields_string} = await this.#request(`/generate/text/status/${id}`, "DELETE", {fields: options?.fields})
 
-        switch(res.statusCode) {
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
-                }
-        }
-
-        const data = await res.json() as Pick<RequestStatusKobold, T>
+        const data = await result.json() as Pick<RequestStatusKobold, T>
         if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
@@ -1460,20 +1171,9 @@ class AIHorde {
     async deleteInterrogationRequest<
         T extends keyof InterrogationStatus
     >(id: string, options?: {fields?: T[]}): Promise<Pick<InterrogationStatus, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const req = Centra(`${this.#api_route}/interrogate/status/${id}`, "DELETE")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const {result, fields_string} = await this.#request(`/interrogate/status/${id}`, "DELETE", {fields: options?.fields})
 
-        switch(res.statusCode) {
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
-                }
-        }
-
-        const data = await res.json() as Pick<InterrogationStatus, T>
+        const data = await result.json() as Pick<InterrogationStatus, T>
         if(this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
         return data
     }
@@ -1490,25 +1190,32 @@ class AIHorde {
      */
     async deleteWorker<
         T extends keyof DeletedWorker
-    >(id: string, options?: {token?: string, fields?: T[]}): Promise<DeletedWorker> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/workers/${id}`, "DELETE")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+    >(id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<DeletedWorker, T>> {
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 401:
-            case 402:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
-                }
-        }
-        const data = await res.json() as Pick<DeletedWorker, T>
+        const {result} = await this.#request(`/workers/${id}`, "DELETE", {token, fields: options?.fields})
+
+        const data = await result.json() as Pick<DeletedWorker, T>
         this.#cache.workers?.delete(id)
+        return data
+    }
+    
+    /**
+     * Delete an existing SharedKey for this user
+     * @param id - The targeted Shared Key's ID
+     * @param options.token - The worker owners API key or a Moderators API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async deleteSharedKey<
+        T extends keyof SimpleResponse
+    >(id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<SimpleResponse, T>> {
+        const token = this.#getToken(options?.token)
+
+        const {result} = await this.#request(`/sharedkeys/${id}`, "DELETE", {token, fields: options?.fields})
+
+        const data = await result.json() as Pick<SimpleResponse, T>
+        this.#cache.sharedkeys?.delete(id)
         return data
     }
     
@@ -1525,23 +1232,11 @@ class AIHorde {
     async deleteTeam<
         T extends keyof DeletedTeam
     >(id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<DeletedTeam, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/teams/${id}`, "DELETE")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 401:
-            case 403:
-            case 404:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
-                }
-        }
-        const data = await res.json() as Pick<DeletedTeam, T>
+        const {result, fields_string} = await this.#request(`/teams/${id}`, "DELETE", {token, fields: options?.fields})
+
+        const data = await result.json() as Pick<DeletedTeam, T>
         this.#cache.teams?.delete(id + fields_string)
         return data
     }
@@ -1558,24 +1253,11 @@ class AIHorde {
     async deleteIPTimeout<
         T extends keyof SimpleResponse
     >(delete_payload: DeleteTimeoutIPInput, options?: {token?: string, fields?: T[]}): Promise<Pick<SimpleResponse, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/operations/ipaddr`, "DELETE")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(delete_payload, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 403:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, delete_payload)
-                }
-        }
-        const data = await res.json() as Pick<SimpleResponse, T>
+        const {result} = await this.#request(`/operations/ipaddr`, "DELETE", {token, fields: options?.fields, body: delete_payload})
+
+        const data = await result.json() as Pick<SimpleResponse, T>
         return data
     }
     
@@ -1590,29 +1272,14 @@ class AIHorde {
     async deleteFilter<
         T extends keyof SimpleResponse
     >(filter_id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<SimpleResponse, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/filters/${filter_id}`, "DELETE")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 403:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes)
-                }
-        }
-        const data = await res.json() as Pick<SimpleResponse, T>
+        const {result} = await this.#request(`/filters/${filter_id}`, "DELETE", {token, fields: options?.fields})
+
+        const data = await result.json() as Pick<SimpleResponse, T>
         return data
     }
 }
-
-// @ts-expect-error
-export = AIHorde
 
 
 /* INTERNAL TYPES */
@@ -1657,6 +1324,8 @@ export interface AIHordeCacheConfiguration {
     workers?: number,
     /** How long to cache teams for in Milliseconds */
     teams?: number,
+    /** How long to cache sharedkeys for in Milliseconds */
+    sharedkeys?: number,
 }
 
 interface AIHordeCache {
@@ -1669,7 +1338,8 @@ interface AIHordeCache {
     news?: SuperMap<string, Newspiece[]>,
     performance?: SuperMap<string, HordePerformanceStable>,
     workers?: SuperMap<string, WorkerDetailsStable>,
-    teams?: SuperMap<string, TeamDetails>
+    teams?: SuperMap<string, TeamDetails>,
+    sharedkeys?: SuperMap<string, SharedKeyDetails>
 }
 
 export interface ModifyUserInput {
@@ -1857,7 +1527,7 @@ export interface ModelPayloadKobold extends ModelGenerationInputKobold {
     prompt?: string
 }
 
-export interface GenerationInput {
+export interface ImageGenerationInput {
     /** The prompt which will be sent to Stable Diffusion to generate an image */
     prompt: string,
     /** The parameters for the generation */
@@ -1884,6 +1554,8 @@ export interface GenerationInput {
     censor_nsfw?: boolean,
     /** Specify which workers are allowed to service this request */
     workers?: string[],
+    /** If true, the worker list will be treated as a blacklist instead of a whitelist. */
+    worker_blacklist?: boolean,
     /** Specify which models are allowed to be used for this request */
     models?: string[],
     /** The Base64-encoded webp to use for img2img, max siue 3072 * 3072 */
@@ -1901,6 +1573,11 @@ export interface GenerationInput {
      * @default true
     */
     replacement_filter?: boolean,
+    /** 
+     * When false, the endpoint will simply return the cost of the request in kudos and exit.
+     * @default false
+    */
+    dry_run?: boolean,
 }
 
 export interface ModelGenerationInputStable {
@@ -1910,6 +1587,7 @@ export interface ModelGenerationInputStable {
     sampler_name?: typeof AIHorde.ModelGenerationInputStableSamplers[keyof typeof AIHorde.ModelGenerationInputStableSamplers],
     /** 
      * Special Toggles used in the SD Webui. To be documented.
+     * @deprecated
     */
     toggles?: number[],
     /** 
@@ -1991,7 +1669,37 @@ export interface ModelGenerationInputStable {
      * @minimum 0
      * @maximum 1
      */
-    facefixer_strength?: number
+    facefixer_strength?: number,
+    loras?: {
+        /**
+         * The exact name of the LoRa
+         * @example GlowingRunesAIV6
+         * @minLength 1
+         * @maxLength 255
+         */
+        name: string,
+        /**
+         * The strength of the LoRa to apply to the SD model.
+         * @default 1
+         * @minimum 0
+         * @maximum 5
+         */
+        model?: number,
+        /**
+         * The strength of the LoRa to apply to the clip model.
+         * @default 1
+         * @minimum 0
+         * @maximum 5
+         */
+        clip?: number,
+        /**
+         * If set, will try to discover a trigger for this LoRa which matches or is similar to this string and inject it into the prompt. I 'any' is specified it will be pick the first trigger.
+         * @minLength 1
+         * @maxLength 30
+         */
+        inject_trigger: string,
+    }[]
+    special?: Record<string, any>
     /** 
      * @default 30
      * @minimum 1
@@ -2805,7 +2513,9 @@ export interface ModelInterrogationFormStable {
 export interface ModelInterrogationInputStable {
     forms: ModelInterrogationFormStable[],
     /** The public URL of the image to interrogate */
-    source_image: string
+    source_image: string,
+    /** When True, allows slower workers to pick up this request. Disabling this incurs an extra kudos cost. */
+    slow_workers?: boolean
 }
 
 export interface RequestInterrogationResponse {
@@ -3054,6 +2764,52 @@ export interface SinglePeriodTextStats {
     tokens?: number
 }
 
+export interface SharedKeyInput {
+    /**
+     * The Kudos limit assigned to this key. If -1, then anyone with this key can use an unlimited amount of kudos from this account.
+     * @default 5000
+     * @minimum 1
+     * @maximum 50000000
+     */
+    kudos?: number,
+    /**
+     * The amount of days after which this key will expire. If -1, this key will not expire
+     * @default -1
+     * @example 30
+     * @minimum -1
+     */
+    expiry?: number,
+    /**
+     * A descriptive name for this key
+     * @example Mutual Aid
+     * @minLength 3
+     * @maxLength 255
+     */
+    name?: string
+}
+
+export interface SharedKeyDetails {
+    /**
+     * The SharedKey ID
+     */
+    id?: string,
+    /**
+     * The owning user's unique Username. It is a combination of their chosen alias plus their ID.
+     */
+    username?: string,
+    /**
+     * The Kudos limit assigned to this key
+     */
+    kudos?: number,
+    /**
+     * The date at which this API key will expire.
+     */
+    expiry?: string,
+    /**
+     * How mych kudos has been utilized via this shared key until now.
+     */
+    utilized?: number
+}
 
 
 
@@ -3096,6 +2852,29 @@ class AIHordeRatings {
         return token || this.#default_token || "0000000000"
     }
 
+    async #request(route: string, method: string, options?: {token?: string, fields?: string[], fields_string?: string, body?: any, additional_headers?: Record<string, any>}): Promise<{result: Response, fields_string: string}> {
+        const fields_string = options?.fields?.join(',') || options?.fields_string || ''
+        const t = this.#getToken(options?.token)
+
+        const headers: HeadersInit = {
+            ...options?.additional_headers,
+            "Client-Agent": this.#client_agent,
+            "Content-Type": "application/json"
+        }
+        if(options?.token) headers["apikey"] = t;
+        if(fields_string) headers["X-Fields"] = fields_string
+
+        const res = await fetch(`${this.#api_route}${route}`, {
+            method,
+            headers,
+            body: options?.body ? JSON.stringify(options.body) : undefined
+        })
+
+        if(!res.status.toString().startsWith("2")) throw new this.APIError(await res.json(), res, method, options?.body)
+
+        return {result: res, fields_string}
+    }
+
     /**
      * Display all datasets
      * @param options.fields - Array of fields that will be included in the returned data
@@ -3104,13 +2883,9 @@ class AIHordeRatings {
     async getDatasets<
         T extends keyof DatasetGetResponse
     >(options?: {fields?: T[]}): Promise<Pick<DatasetGetResponse, T>[]> {
-        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
-        const req = Centra(`${this.#api_route}/datasets`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const {result} = await this.#request(`/datasets`, "GET", {fields: options?.fields})
 
-        const data = await res.json() as Pick<DatasetGetResponse, T>[]
+        const data = await result.json() as Pick<DatasetGetResponse, T>[]
         return data
     }
 
@@ -3122,13 +2897,9 @@ class AIHordeRatings {
     async getTeams<
         T extends keyof TeamsGetResponse
     >(options?: {fields?: T[]}): Promise<Pick<TeamsGetResponse, T>[]> {
-        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
-        const req = Centra(`${this.#api_route}/teams`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const {result} = await this.#request(`/teams`, "GET", {fields: options?.fields})
 
-        const data = await res.json() as Pick<TeamsGetResponse, T>[]
+        const data = await result.json() as Pick<TeamsGetResponse, T>[]
         return data
     }
 
@@ -3143,30 +2914,16 @@ class AIHordeRatings {
     async getNewRating<
         T extends keyof DatasetImagePopResponse
     >(image_options?: {dataset_id: string, model_name?: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<DatasetImagePopResponse, T>> {
-        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/rating/new${image_options?.dataset_id ? `/${image_options.dataset_id}${image_options?.model_name ? `/${image_options.model_name}` : ""}` : ""}`, "GET")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
-        
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 403:
-            case 500:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, {})
-                }
-        }
+        const token = this.#getToken(options?.token)
 
-        const data = await res.json() as Pick<DatasetImagePopResponse, T>
+        const {result} = await this.#request(`/rating/new${image_options?.dataset_id ? `/${image_options.dataset_id}${image_options?.model_name ? `/${image_options.model_name}` : ""}` : ""}`, "GET", {token, fields: options?.fields})
+
+        const data = await result.json() as Pick<DatasetImagePopResponse, T>
         return data
     }
 
+
     /** POST ENDPOINTS */
-    
     
 
     /**
@@ -3181,25 +2938,11 @@ class AIHordeRatings {
     async postRating<
         T extends keyof RatePostResponse
     >(image_id: string, rating: RatePostInput, options?: {token?: string, fields?: T[]}): Promise<Pick<RatePostResponse, T>> {
-        const fields_string = options?.fields?.length ? options?.fields.join(',') : ''
-        const t = this.#getToken(options?.token)
-        const req = Centra(`${this.#api_route}/rating/${image_id}`, "POST")
-        .header("Client-Agent", this.#client_agent)
-        .header("apikey", t)
-        .body(rating, "json")
-        if(fields_string) req.header('X-Fields', fields_string)
-        const res = await req.send()
+        const token = this.#getToken(options?.token)
 
-        switch(res.statusCode) {
-            case 400:
-            case 401:
-            case 403:
-                {
-                    throw new this.APIError(await res.json().then(res => res), res.coreRes, rating)
-                }
-        }
+        const {result} = await this.#request(`/rating/${image_id}`, "POST", {token, fields: options?.fields, body: rating})
 
-        return await res.json() as Pick<RatePostResponse, T>
+        return await result.json() as Pick<RatePostResponse, T>
     }
 }
 

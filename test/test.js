@@ -1,6 +1,6 @@
-const AIHorde = require( ".." )
+const {AIHorde} = require( ".." )
 
-//main()
+main()
 version()
 
 console.log(AIHorde.ModelGenerationInputPostProcessingTypes)
