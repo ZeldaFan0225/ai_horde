@@ -1,96 +1,87 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / export=
+[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / AIHorde
 
-# Class: export=
+# Class: AIHorde
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](export_.md#constructor)
+- [constructor](AIHorde.md#constructor)
 
 ### Properties
 
-- [APIError](export_.md#apierror)
-- [HordeAsyncRequestStates](export_.md#hordeasyncrequeststates)
-- [ModelGenerationInputControlTypes](export_.md#modelgenerationinputcontroltypes)
-- [ModelGenerationInputPostProcessingTypes](export_.md#modelgenerationinputpostprocessingtypes)
-- [ModelGenerationInputStableSamplers](export_.md#modelgenerationinputstablesamplers)
-- [ModelInterrogationFormTypes](export_.md#modelinterrogationformtypes)
-- [SourceImageProcessingTypes](export_.md#sourceimageprocessingtypes)
-- [VERSION](export_.md#version)
-- [ratings](export_.md#ratings)
-- [APIError](export_.md#apierror-1)
-- [HordeAsyncRequestStates](export_.md#hordeasyncrequeststates-1)
-- [ModelGenerationInputControlTypes](export_.md#modelgenerationinputcontroltypes-1)
-- [ModelGenerationInputPostProcessingTypes](export_.md#modelgenerationinputpostprocessingtypes-1)
-- [ModelGenerationInputStableSamplers](export_.md#modelgenerationinputstablesamplers-1)
-- [ModelInterrogationFormTypes](export_.md#modelinterrogationformtypes-1)
-- [SourceImageProcessingTypes](export_.md#sourceimageprocessingtypes-1)
+- [VERSION](AIHorde.md#version)
+- [ratings](AIHorde.md#ratings)
 
 ### Accessors
 
-- [cache](export_.md#cache)
+- [cache](AIHorde.md#cache)
 
 ### Methods
 
-- [addFilter](export_.md#addfilter)
-- [clearCache](export_.md#clearcache)
-- [createTeam](export_.md#createteam)
-- [deleteFilter](export_.md#deletefilter)
-- [deleteIPTimeout](export_.md#deleteiptimeout)
-- [deleteImageGenerationRequest](export_.md#deleteimagegenerationrequest)
-- [deleteInterrogationRequest](export_.md#deleteinterrogationrequest)
-- [deleteTeam](export_.md#deleteteam)
-- [deleteTextGenerationRequest](export_.md#deletetextgenerationrequest)
-- [deleteWorker](export_.md#deleteworker)
-- [findUser](export_.md#finduser)
-- [generateFieldsString](export_.md#generatefieldsstring)
-- [getFilter](export_.md#getfilter)
-- [getFilters](export_.md#getfilters)
-- [getHeartbeat](export_.md#getheartbeat)
-- [getImageGenerationCheck](export_.md#getimagegenerationcheck)
-- [getImageGenerationStatus](export_.md#getimagegenerationstatus)
-- [getImageModelStats](export_.md#getimagemodelstats)
-- [getImageTotalStats](export_.md#getimagetotalstats)
-- [getInterrogationStatus](export_.md#getinterrogationstatus)
-- [getModels](export_.md#getmodels)
-- [getModes](export_.md#getmodes)
-- [getNews](export_.md#getnews)
-- [getPerformance](export_.md#getperformance)
-- [getTeam](export_.md#getteam)
-- [getTeams](export_.md#getteams)
-- [getTextGenerationStatus](export_.md#gettextgenerationstatus)
-- [getTextModelStats](export_.md#gettextmodelstats)
-- [getTextTotalStats](export_.md#gettexttotalstats)
-- [getUserDetails](export_.md#getuserdetails)
-- [getUsers](export_.md#getusers)
-- [getWorkerDetails](export_.md#getworkerdetails)
-- [getWorkers](export_.md#getworkers)
-- [parseAgent](export_.md#parseagent)
-- [postAsyncImageGenerate](export_.md#postasyncimagegenerate)
-- [postAsyncInterrogate](export_.md#postasyncinterrogate)
-- [postAsyncTextGenerate](export_.md#postasynctextgenerate)
-- [postFilters](export_.md#postfilters)
-- [postImageGenerationPop](export_.md#postimagegenerationpop)
-- [postImageGenerationSubmit](export_.md#postimagegenerationsubmit)
-- [postInterrogationPop](export_.md#postinterrogationpop)
-- [postInterrogationSubmit](export_.md#postinterrogationsubmit)
-- [postKoboldTransfer](export_.md#postkoboldtransfer)
-- [postKudosTransfer](export_.md#postkudostransfer)
-- [postRating](export_.md#postrating)
-- [postTextGenerationPop](export_.md#posttextgenerationpop)
-- [postTextGenerationSubmit](export_.md#posttextgenerationsubmit)
-- [putStatusModes](export_.md#putstatusmodes)
-- [updateFilter](export_.md#updatefilter)
-- [updateTeam](export_.md#updateteam)
-- [updateUser](export_.md#updateuser)
-- [updateWorker](export_.md#updateworker)
+- [addFilter](AIHorde.md#addfilter)
+- [clearCache](AIHorde.md#clearcache)
+- [createTeam](AIHorde.md#createteam)
+- [deleteFilter](AIHorde.md#deletefilter)
+- [deleteIPTimeout](AIHorde.md#deleteiptimeout)
+- [deleteImageGenerationRequest](AIHorde.md#deleteimagegenerationrequest)
+- [deleteInterrogationRequest](AIHorde.md#deleteinterrogationrequest)
+- [deleteSharedKey](AIHorde.md#deletesharedkey)
+- [deleteTeam](AIHorde.md#deleteteam)
+- [deleteTextGenerationRequest](AIHorde.md#deletetextgenerationrequest)
+- [deleteWorker](AIHorde.md#deleteworker)
+- [findUser](AIHorde.md#finduser)
+- [generateFieldsString](AIHorde.md#generatefieldsstring)
+- [getFilter](AIHorde.md#getfilter)
+- [getFilters](AIHorde.md#getfilters)
+- [getHeartbeat](AIHorde.md#getheartbeat)
+- [getImageGenerationCheck](AIHorde.md#getimagegenerationcheck)
+- [getImageGenerationStatus](AIHorde.md#getimagegenerationstatus)
+- [getImageModelStats](AIHorde.md#getimagemodelstats)
+- [getImageTotalStats](AIHorde.md#getimagetotalstats)
+- [getInterrogationStatus](AIHorde.md#getinterrogationstatus)
+- [getModel](AIHorde.md#getmodel)
+- [getModels](AIHorde.md#getmodels)
+- [getModes](AIHorde.md#getmodes)
+- [getNews](AIHorde.md#getnews)
+- [getPerformance](AIHorde.md#getperformance)
+- [getSharedKey](AIHorde.md#getsharedkey)
+- [getTeam](AIHorde.md#getteam)
+- [getTeams](AIHorde.md#getteams)
+- [getTextGenerationStatus](AIHorde.md#gettextgenerationstatus)
+- [getTextModelStats](AIHorde.md#gettextmodelstats)
+- [getTextTotalStats](AIHorde.md#gettexttotalstats)
+- [getUserDetails](AIHorde.md#getuserdetails)
+- [getUsers](AIHorde.md#getusers)
+- [getWorkerDetails](AIHorde.md#getworkerdetails)
+- [getWorkers](AIHorde.md#getworkers)
+- [parseAgent](AIHorde.md#parseagent)
+- [postAsyncImageGenerate](AIHorde.md#postasyncimagegenerate)
+- [postAsyncInterrogate](AIHorde.md#postasyncinterrogate)
+- [postAsyncTextGenerate](AIHorde.md#postasynctextgenerate)
+- [postFilters](AIHorde.md#postfilters)
+- [postImageGenerationPop](AIHorde.md#postimagegenerationpop)
+- [postImageGenerationSubmit](AIHorde.md#postimagegenerationsubmit)
+- [postInterrogationPop](AIHorde.md#postinterrogationpop)
+- [postInterrogationSubmit](AIHorde.md#postinterrogationsubmit)
+- [postKoboldTransfer](AIHorde.md#postkoboldtransfer)
+- [postKudosTransfer](AIHorde.md#postkudostransfer)
+- [postRating](AIHorde.md#postrating)
+- [postTextGenerationPop](AIHorde.md#posttextgenerationpop)
+- [postTextGenerationSubmit](AIHorde.md#posttextgenerationsubmit)
+- [putSharedKey](AIHorde.md#putsharedkey)
+- [putStatusModes](AIHorde.md#putstatusmodes)
+- [updateFilter](AIHorde.md#updatefilter)
+- [updateSharedKey](AIHorde.md#updatesharedkey)
+- [updateTeam](AIHorde.md#updateteam)
+- [updateUser](AIHorde.md#updateuser)
+- [updateWorker](AIHorde.md#updateworker)
 
 ## Constructors
 
 ### constructor
 
-• **new export=**(`options?`)
+• **new AIHorde**(`options?`)
 
 #### Parameters
 
@@ -100,79 +91,9 @@
 
 #### Defined in
 
-[index.ts:123](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L123)
+[index.ts:107](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L107)
 
 ## Properties
-
-### APIError
-
-• `Readonly` **APIError**: typeof `APIError` = `AIHorde.APIError`
-
-#### Defined in
-
-[index.ts:114](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L114)
-
-___
-
-### HordeAsyncRequestStates
-
-• `Readonly` **HordeAsyncRequestStates**: typeof `HordeAsyncRequestStates` = `AIHorde.HordeAsyncRequestStates`
-
-#### Defined in
-
-[index.ts:111](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L111)
-
-___
-
-### ModelGenerationInputControlTypes
-
-• `Readonly` **ModelGenerationInputControlTypes**: typeof `ModelGenerationInputControlTypes` = `AIHorde.ModelGenerationInputControlTypes`
-
-#### Defined in
-
-[index.ts:105](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L105)
-
-___
-
-### ModelGenerationInputPostProcessingTypes
-
-• `Readonly` **ModelGenerationInputPostProcessingTypes**: typeof `ModelGenerationInputPostProcessingTypes` = `AIHorde.ModelGenerationInputPostProcessingTypes`
-
-#### Defined in
-
-[index.ts:102](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L102)
-
-___
-
-### ModelGenerationInputStableSamplers
-
-• `Readonly` **ModelGenerationInputStableSamplers**: typeof `ModelGenerationInputStableSamplers` = `AIHorde.ModelGenerationInputStableSamplers`
-
-#### Defined in
-
-[index.ts:96](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L96)
-
-___
-
-### ModelInterrogationFormTypes
-
-• `Readonly` **ModelInterrogationFormTypes**: typeof `ModelInterrogationFormTypes` = `AIHorde.ModelInterrogationFormTypes`
-
-#### Defined in
-
-[index.ts:108](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L108)
-
-___
-
-### SourceImageProcessingTypes
-
-• `Readonly` **SourceImageProcessingTypes**: typeof `SourceImageProcessingTypes` = `AIHorde.SourceImageProcessingTypes`
-
-#### Defined in
-
-[index.ts:99](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L99)
-
-___
 
 ### VERSION
 
@@ -180,7 +101,7 @@ ___
 
 #### Defined in
 
-[index.ts:120](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L120)
+[index.ts:104](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L104)
 
 ___
 
@@ -190,77 +111,7 @@ ___
 
 #### Defined in
 
-[index.ts:122](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L122)
-
-___
-
-### APIError
-
-▪ `Static` `Readonly` **APIError**: typeof `APIError` = `APIError`
-
-#### Defined in
-
-[index.ts:113](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L113)
-
-___
-
-### HordeAsyncRequestStates
-
-▪ `Static` `Readonly` **HordeAsyncRequestStates**: typeof `HordeAsyncRequestStates` = `HordeAsyncRequestStates`
-
-#### Defined in
-
-[index.ts:110](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L110)
-
-___
-
-### ModelGenerationInputControlTypes
-
-▪ `Static` `Readonly` **ModelGenerationInputControlTypes**: typeof `ModelGenerationInputControlTypes` = `ModelGenerationInputControlTypes`
-
-#### Defined in
-
-[index.ts:104](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L104)
-
-___
-
-### ModelGenerationInputPostProcessingTypes
-
-▪ `Static` `Readonly` **ModelGenerationInputPostProcessingTypes**: typeof `ModelGenerationInputPostProcessingTypes` = `ModelGenerationInputPostProcessingTypes`
-
-#### Defined in
-
-[index.ts:101](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L101)
-
-___
-
-### ModelGenerationInputStableSamplers
-
-▪ `Static` `Readonly` **ModelGenerationInputStableSamplers**: typeof `ModelGenerationInputStableSamplers` = `ModelGenerationInputStableSamplers`
-
-#### Defined in
-
-[index.ts:95](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L95)
-
-___
-
-### ModelInterrogationFormTypes
-
-▪ `Static` `Readonly` **ModelInterrogationFormTypes**: typeof `ModelInterrogationFormTypes` = `ModelInterrogationFormTypes`
-
-#### Defined in
-
-[index.ts:107](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L107)
-
-___
-
-### SourceImageProcessingTypes
-
-▪ `Static` `Readonly` **SourceImageProcessingTypes**: typeof `SourceImageProcessingTypes` = `SourceImageProcessingTypes`
-
-#### Defined in
-
-[index.ts:98](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L98)
+[index.ts:106](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L106)
 
 ## Accessors
 
@@ -274,7 +125,7 @@ ___
 
 #### Defined in
 
-[index.ts:179](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L179)
+[index.ts:165](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L165)
 
 ## Methods
 
@@ -308,7 +159,7 @@ FilterDetails
 
 #### Defined in
 
-[index.ts:1334](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1334)
+[index.ts:1016](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1016)
 
 ___
 
@@ -322,7 +173,7 @@ ___
 
 #### Defined in
 
-[index.ts:175](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L175)
+[index.ts:161](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L161)
 
 ___
 
@@ -356,7 +207,7 @@ ModifyTeam
 
 #### Defined in
 
-[index.ts:1162](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1162)
+[index.ts:937](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L937)
 
 ___
 
@@ -389,7 +240,7 @@ SimpleResponse
 
 #### Defined in
 
-[index.ts:1590](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1590)
+[index.ts:1252](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1252)
 
 ___
 
@@ -423,7 +274,7 @@ SimpleResponse
 
 #### Defined in
 
-[index.ts:1558](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1558)
+[index.ts:1233](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1233)
 
 ___
 
@@ -456,7 +307,7 @@ RequestStatusStable
 
 #### Defined in
 
-[index.ts:1402](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1402)
+[index.ts:1115](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1115)
 
 ___
 
@@ -489,7 +340,40 @@ InterrogationStatus
 
 #### Defined in
 
-[index.ts:1460](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1460)
+[index.ts:1151](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1151)
+
+___
+
+### deleteSharedKey
+
+▸ **deleteSharedKey**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`SimpleResponse`](../interfaces/SimpleResponse.md), `T`\>\>
+
+Delete an existing SharedKey for this user
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends ``"message"`` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The targeted Shared Key's ID |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.token?` | `string` | The worker owners API key or a Moderators API key |
+
+#### Returns
+
+`Promise`<`Pick`<[`SimpleResponse`](../interfaces/SimpleResponse.md), `T`\>\>
+
+SimpleResponse
+
+#### Defined in
+
+[index.ts:1190](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1190)
 
 ___
 
@@ -524,7 +408,7 @@ DeletedTeam
 
 #### Defined in
 
-[index.ts:1525](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1525)
+[index.ts:1212](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1212)
 
 ___
 
@@ -557,13 +441,13 @@ RequestStatusKobold
 
 #### Defined in
 
-[index.ts:1431](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1431)
+[index.ts:1133](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1133)
 
 ___
 
 ### deleteWorker
 
-▸ **deleteWorker**<`T`\>(`id`, `options?`): `Promise`<[`DeletedWorker`](../interfaces/DeletedWorker.md)\>
+▸ **deleteWorker**<`T`\>(`id`, `options?`): `Promise`<`Pick`<[`DeletedWorker`](../interfaces/DeletedWorker.md), `T`\>\>
 
 Delete the worker entry
 This will delete the worker and their statistics. Will not affect the kudos generated by that worker for their owner.
@@ -587,13 +471,13 @@ This action is unrecoverable!
 
 #### Returns
 
-`Promise`<[`DeletedWorker`](../interfaces/DeletedWorker.md)\>
+`Promise`<`Pick`<[`DeletedWorker`](../interfaces/DeletedWorker.md), `T`\>\>
 
 DeletedWorker
 
 #### Defined in
 
-[index.ts:1491](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1491)
+[index.ts:1171](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1171)
 
 ___
 
@@ -626,7 +510,7 @@ UserDetails - The user data of the requested user
 
 #### Defined in
 
-[index.ts:219](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L219)
+[index.ts:215](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L215)
 
 ___
 
@@ -646,7 +530,7 @@ ___
 
 #### Defined in
 
-[index.ts:192](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L192)
+[index.ts:178](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L178)
 
 ___
 
@@ -679,13 +563,13 @@ FilterDetails - Filter Details
 
 #### Defined in
 
-[index.ts:705](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L705)
+[index.ts:646](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L646)
 
 ___
 
 ### getFilters
 
-▸ **getFilters**<`T`\>(`filter_type?`, `options?`): `Promise`<`Pick`<[`FilterDetails`](../interfaces/FilterDetails.md), `T`\>[]\>
+▸ **getFilters**<`T`\>(`query?`, `options?`): `Promise`<`Pick`<[`FilterDetails`](../interfaces/FilterDetails.md), `T`\>[]\>
 
 A List of filters
 
@@ -699,7 +583,9 @@ A List of filters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `filter_type?` | `string` | The type of filter to show |
+| `query?` | `Object` | - |
+| `query.contains?` | `string` | Only return filter containing this word |
+| `query.filter_type?` | `string` | The type of filter to show |
 | `options?` | `Object` | - |
 | `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
 | `options.token?` | `string` | The sending users API key; User must be a moderator |
@@ -712,7 +598,7 @@ FilterDetails[] - Array of Filter Details
 
 #### Defined in
 
-[index.ts:682](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L682)
+[index.ts:625](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L625)
 
 ___
 
@@ -730,7 +616,7 @@ true - If request was successful, if not throws error
 
 #### Defined in
 
-[index.ts:447](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L447)
+[index.ts:399](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L399)
 
 ___
 
@@ -764,7 +650,7 @@ RequestStatusCheck - The Check data of the Generation
 
 #### Defined in
 
-[index.ts:347](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L347)
+[index.ts:315](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L315)
 
 ___
 
@@ -800,7 +686,7 @@ RequestStatusStable - The Status of the Generation
 
 #### Defined in
 
-[index.ts:375](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L375)
+[index.ts:339](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L339)
 
 ___
 
@@ -831,7 +717,7 @@ ImageModelStats - The stats
 
 #### Defined in
 
-[index.ts:595](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L595)
+[index.ts:545](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L545)
 
 ___
 
@@ -862,7 +748,7 @@ ImageTotalStats - The stats
 
 #### Defined in
 
-[index.ts:611](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L611)
+[index.ts:560](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L560)
 
 ___
 
@@ -896,7 +782,39 @@ InterrogationStatus - The Status data of the Interrogation
 
 #### Defined in
 
-[index.ts:425](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L425)
+[index.ts:381](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L381)
+
+___
+
+### getModel
+
+▸ **getModel**<`T`\>(`model_name`, `options?`): `Promise`<`Pick`<[`ActiveModel`](../interfaces/ActiveModel.md), `T`\>[]\>
+
+Returns the statistics of a specific model in this horde
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`ActiveModel`](../interfaces/ActiveModel.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `model_name` | `string` | The name of the model to fetch |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+
+#### Returns
+
+`Promise`<`Pick`<[`ActiveModel`](../interfaces/ActiveModel.md), `T`\>[]\>
+
+ActiveModel - The active model
+
+#### Defined in
+
+[index.ts:431](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L431)
 
 ___
 
@@ -928,7 +846,7 @@ ActiveModel[] - Array of Active Models
 
 #### Defined in
 
-[index.ts:461](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L461)
+[index.ts:411](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L411)
 
 ___
 
@@ -962,7 +880,7 @@ HordeModes - The current modes of the horde
 
 #### Defined in
 
-[index.ts:485](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L485)
+[index.ts:448](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L448)
 
 ___
 
@@ -994,7 +912,7 @@ Newspiece[] - Array of all news articles
 
 #### Defined in
 
-[index.ts:509](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L509)
+[index.ts:469](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L469)
 
 ___
 
@@ -1026,7 +944,40 @@ HordePerformanceStable - The hordes current performance
 
 #### Defined in
 
-[index.ts:531](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L531)
+[index.ts:489](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L489)
+
+___
+
+### getSharedKey
+
+▸ **getSharedKey**<`T`\>(`sharedkey_id?`, `options?`): `Promise`<`Pick`<[`SharedKeyDetails`](../interfaces/SharedKeyDetails.md), `T`\>\>
+
+Gets Details about an existing Shared Key for this user
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`SharedKeyDetails`](../interfaces/SharedKeyDetails.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `sharedkey_id?` | `string` | The shared key to show |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.token?` | `string` | The sending users API key; User must be a moderator |
+
+#### Returns
+
+`Promise`<`Pick`<[`SharedKeyDetails`](../interfaces/SharedKeyDetails.md), `T`\>\>
+
+FilterDetails - Filter Details
+
+#### Defined in
+
+[index.ts:665](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L665)
 
 ___
 
@@ -1060,7 +1011,7 @@ TeamDetailsStable - The team data
 
 #### Defined in
 
-[index.ts:269](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L269)
+[index.ts:261](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L261)
 
 ___
 
@@ -1091,7 +1042,7 @@ TeamDetailsStable[] - Array of Team Details
 
 #### Defined in
 
-[index.ts:658](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L658)
+[index.ts:604](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L604)
 
 ___
 
@@ -1124,7 +1075,7 @@ RequestStatusStable - The Status of the Generation
 
 #### Defined in
 
-[index.ts:400](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L400)
+[index.ts:360](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L360)
 
 ___
 
@@ -1155,7 +1106,7 @@ TextModelStats - The stats
 
 #### Defined in
 
-[index.ts:627](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L627)
+[index.ts:575](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L575)
 
 ___
 
@@ -1186,7 +1137,7 @@ TextTotalStats - The stats
 
 #### Defined in
 
-[index.ts:643](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L643)
+[index.ts:590](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L590)
 
 ___
 
@@ -1220,7 +1171,7 @@ UserDetails - The user data of the requested user
 
 #### Defined in
 
-[index.ts:242](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L242)
+[index.ts:236](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L236)
 
 ___
 
@@ -1242,6 +1193,7 @@ A List with the details and statistic of all registered users
 | :------ | :------ | :------ |
 | `options?` | `Object` | - |
 | `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.force?` | `boolean` | - |
 
 #### Returns
 
@@ -1251,7 +1203,7 @@ UserDetails[] - An array of all users data
 
 #### Defined in
 
-[index.ts:552](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L552)
+[index.ts:508](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L508)
 
 ___
 
@@ -1286,7 +1238,7 @@ worker details for the requested worker
 
 #### Defined in
 
-[index.ts:308](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L308)
+[index.ts:289](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L289)
 
 ___
 
@@ -1317,7 +1269,7 @@ An array of all workers data
 
 #### Defined in
 
-[index.ts:573](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L573)
+[index.ts:526](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L526)
 
 ___
 
@@ -1343,7 +1295,7 @@ ___
 
 #### Defined in
 
-[index.ts:183](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L183)
+[index.ts:169](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L169)
 
 ___
 
@@ -1367,7 +1319,7 @@ Asynchronous requests live for 10 minutes before being considered stale and bein
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `generation_data` | [`GenerationInput`](../interfaces/GenerationInput.md) | The data to generate the image |
+| `generation_data` | [`ImageGenerationInput`](../interfaces/ImageGenerationInput.md) | The data to generate the image |
 | `options?` | `Object` | - |
 | `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
 | `options.token?` | `string` | The token of the requesting user |
@@ -1380,7 +1332,7 @@ RequestAsync - The id and message for the async generation request
 
 #### Defined in
 
-[index.ts:763](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L763)
+[index.ts:706](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L706)
 
 ___
 
@@ -1417,7 +1369,7 @@ RequestInterrogationResponse
 
 #### Defined in
 
-[index.ts:1004](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1004)
+[index.ts:847](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L847)
 
 ___
 
@@ -1454,7 +1406,7 @@ RequestAsync - The id and message for the async generation request
 
 #### Defined in
 
-[index.ts:800](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L800)
+[index.ts:728](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L728)
 
 ___
 
@@ -1487,7 +1439,7 @@ FilterPromptSuspicion
 
 #### Defined in
 
-[index.ts:730](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L730)
+[index.ts:685](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L685)
 
 ___
 
@@ -1521,7 +1473,7 @@ GenerationPayloadStable
 
 #### Defined in
 
-[index.ts:870](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L870)
+[index.ts:769](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L769)
 
 ___
 
@@ -1558,7 +1510,7 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:934](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L934)
+[index.ts:807](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L807)
 
 ___
 
@@ -1592,7 +1544,7 @@ InterrogationPopPayload
 
 #### Defined in
 
-[index.ts:1038](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1038)
+[index.ts:866](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L866)
 
 ___
 
@@ -1628,7 +1580,7 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:1071](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1071)
+[index.ts:885](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L885)
 
 ___
 
@@ -1658,7 +1610,7 @@ null
 
 #### Defined in
 
-[index.ts:1134](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1134)
+[index.ts:920](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L920)
 
 ___
 
@@ -1693,7 +1645,7 @@ KudosTransferred
 
 #### Defined in
 
-[index.ts:1103](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1103)
+[index.ts:902](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L902)
 
 ___
 
@@ -1731,7 +1683,7 @@ GenerationSubmitted - The kudos awarded for the rating
 
 #### Defined in
 
-[index.ts:837](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L837)
+[index.ts:750](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L750)
 
 ___
 
@@ -1765,7 +1717,7 @@ GenerationPayloadKobold
 
 #### Defined in
 
-[index.ts:902](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L902)
+[index.ts:788](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L788)
 
 ___
 
@@ -1802,7 +1754,40 @@ GenerationSubmitted
 
 #### Defined in
 
-[index.ts:968](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L968)
+[index.ts:826](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L826)
+
+___
+
+### putSharedKey
+
+▸ **putSharedKey**<`T`\>(`create_payload`, `options?`): `Promise`<`Pick`<[`SharedKeyDetails`](../interfaces/SharedKeyDetails.md), `T`\>\>
+
+Create a new SharedKey for this user
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`SharedKeyDetails`](../interfaces/SharedKeyDetails.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `create_payload` | [`SharedKeyInput`](../interfaces/SharedKeyInput.md) | The data to create the shared key with |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.token?` | `string` | The User API key |
+
+#### Returns
+
+`Promise`<`Pick`<[`SharedKeyDetails`](../interfaces/SharedKeyDetails.md), `T`\>\>
+
+SharedKeyInput
+
+#### Defined in
+
+[index.ts:1034](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1034)
 
 ___
 
@@ -1839,7 +1824,7 @@ HordeModes
 
 #### Defined in
 
-[index.ts:1195](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1195)
+[index.ts:956](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L956)
 
 ___
 
@@ -1860,7 +1845,7 @@ Updates an existing regex filer
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `update_payload` | [`PatchExistingFilter`](../interfaces/PatchExistingFilter.md) | The data to update the filter with |
-| `id` | `string` | - |
+| `id` | `string` | The ID of the filter |
 | `options?` | `Object` | - |
 | `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
 | `options.token?` | `string` | The Moderator API key |
@@ -1873,7 +1858,41 @@ FilterDetails
 
 #### Defined in
 
-[index.ts:1367](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1367)
+[index.ts:1075](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1075)
+
+___
+
+### updateSharedKey
+
+▸ **updateSharedKey**<`T`\>(`update_payload`, `id`, `options?`): `Promise`<`Pick`<[`SharedKeyDetails`](../interfaces/SharedKeyDetails.md), `T`\>\>
+
+Modify an existing Shared Key
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends keyof [`SharedKeyDetails`](../interfaces/SharedKeyDetails.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `update_payload` | [`SharedKeyInput`](../interfaces/SharedKeyInput.md) | The data to update the shared key with |
+| `id` | `string` | The ID of the shared key |
+| `options?` | `Object` | - |
+| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+| `options.token?` | `string` | The User API key |
+
+#### Returns
+
+`Promise`<`Pick`<[`SharedKeyDetails`](../interfaces/SharedKeyDetails.md), `T`\>\>
+
+SharedKeyDetails
+
+#### Defined in
+
+[index.ts:1094](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1094)
 
 ___
 
@@ -1907,7 +1926,7 @@ ModifyTeam
 
 #### Defined in
 
-[index.ts:1300](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1300)
+[index.ts:1055](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1055)
 
 ___
 
@@ -1941,7 +1960,7 @@ ModifyUser
 
 #### Defined in
 
-[index.ts:1226](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1226)
+[index.ts:974](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L974)
 
 ___
 
@@ -1979,4 +1998,4 @@ ModifyWorker
 
 #### Defined in
 
-[index.ts:1264](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L1264)
+[index.ts:997](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L997)

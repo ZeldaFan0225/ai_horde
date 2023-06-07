@@ -23,11 +23,13 @@ The amount of forms to pop at the same time
 
 **`Default`**
 
+```ts
 1
+```
 
 #### Defined in
 
-[index.ts:2829](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2829)
+[index.ts:2519](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2519)
 
 ___
 
@@ -39,23 +41,25 @@ The version of the bridge used by this worker
 
 **`Default`**
 
+```ts
 1
+```
 
 #### Defined in
 
-[index.ts:2834](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2834)
+[index.ts:2524](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2524)
 
 ___
 
 ### forms
 
-• `Optional` **forms**: `ModelInterrogationFormTypes`[]
+• `Optional` **forms**: (``"GFPGAN"`` \| ``"RealESRGAN_x4plus"`` \| ``"RealESRGAN_x4plus_anime_6B"`` \| ``"NMKD_Siax"`` \| ``"4x_AnimeSharp"`` \| ``"strip_background"`` \| ``"CodeFormers"`` \| ``"caption"`` \| ``"interrogation"`` \| ``"nsfw"``)[]
 
 The type of interrogation this worker can fulfull
 
 #### Defined in
 
-[index.ts:2824](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2824)
+[index.ts:2514](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2514)
 
 ___
 
@@ -67,7 +71,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:2820](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2820)
+[index.ts:2510](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2510)
 
 ___
 
@@ -79,7 +83,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:2822](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2822)
+[index.ts:2512](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2512)
 
 ___
 
@@ -91,7 +95,9 @@ How many threads this worker is running. This is used to accurately estimate the
 
 **`Default`**
 
+```ts
 1
+```
 
 **`Minimum`**
 
@@ -103,4 +109,4 @@ How many threads this worker is running. This is used to accurately estimate the
 
 #### Defined in
 
-[index.ts:2841](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2841)
+[index.ts:2531](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2531)

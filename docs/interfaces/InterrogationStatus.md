@@ -17,16 +17,16 @@
 
 #### Defined in
 
-[index.ts:2892](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2892)
+[index.ts:2582](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2582)
 
 ___
 
 ### state
 
-• `Optional` **state**: `waiting` \| `processing` \| `done` \| `faulted` \| `partial` \| `cancelled`
+• `Optional` **state**: ``"waiting"`` \| ``"processing"`` \| ``"done"`` \| ``"faulted"`` \| ``"partial"`` \| ``"cancelled"``
 
 title: Interrogation State
 
 #### Defined in
 
-[index.ts:2891](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2891)
+[index.ts:2581](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2581)
