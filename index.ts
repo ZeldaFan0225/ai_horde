@@ -2811,7 +2811,7 @@ export const RatingArtifactsRatings = Object.freeze({
 } as const)
 
 
-class AIHordeRatings {
+export class AIHordeRatings {
     #default_token?: string
     #api_route: string
     #client_agent: string
