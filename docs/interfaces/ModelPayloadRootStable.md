@@ -30,7 +30,9 @@ its how much the AI listens to your prompt, essentially.
 
 **`Default`**
 
+```ts
 5
+```
 
 **`Minimum`**
 
@@ -44,7 +46,7 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:2026](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2026)
+[index.ts:1714](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1714)
 
 ___
 
@@ -66,7 +68,7 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:2034](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2034)
+[index.ts:1722](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1722)
 
 ___
 
@@ -78,7 +80,9 @@ The height of the image to generate
 
 **`Default`**
 
+```ts
 512
+```
 
 **`Minimum`**
 
@@ -92,7 +96,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:2045](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2045)
+[index.ts:1733](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1733)
 
 ___
 
@@ -104,21 +108,23 @@ Set to True to enable karras noise scheduling tweaks
 
 #### Defined in
 
-[index.ts:2062](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2062)
+[index.ts:1750](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1750)
 
 ___
 
 ### sampler\_name
 
-• `Optional` **sampler\_name**: `k_lms` \| `k_heun` \| `k_euler` \| `k_dpm_2` \| `k_dpm_2_a` \| `DDIM` \| `PLMS` \| `k_dpm_fast` \| `k_dpm_adaptive` \| `k_dpmpp_2s_a` \| `k_dpmpp_2m` \| `dpmsolver`
+• `Optional` **sampler\_name**: ``"k_lms"`` \| ``"k_heun"`` \| ``"k_euler"`` \| ``"k_dpm_2"`` \| ``"k_dpm_2_a"`` \| ``"DDIM"`` \| ``"PLMS"`` \| ``"k_dpm_fast"`` \| ``"k_dpm_adaptive"`` \| ``"k_dpmpp_2s_a"`` \| ``"k_dpmpp_2m"`` \| ``"dpmsolver"`` \| ``"k_dpmpp_sde"``
 
 **`Default`**
 
+```ts
 k_euler
+```
 
 #### Defined in
 
-[index.ts:2013](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2013)
+[index.ts:1701](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1701)
 
 ___
 
@@ -130,7 +136,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:2036](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2036)
+[index.ts:1724](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1724)
 
 ___
 
@@ -150,7 +156,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:2060](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2060)
+[index.ts:1748](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1748)
 
 ___
 
@@ -162,7 +168,7 @@ Special Toggles used in the SD Webui. To be documented.
 
 #### Defined in
 
-[index.ts:2017](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2017)
+[index.ts:1705](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1705)
 
 ___
 
@@ -174,7 +180,7 @@ Set to true to process the generated image with GFPGAN (face correction)
 
 #### Defined in
 
-[index.ts:2064](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2064)
+[index.ts:1752](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1752)
 
 ___
 
@@ -186,7 +192,7 @@ Set to true to process the generated image with LDSR
 
 #### Defined in
 
-[index.ts:2068](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2068)
+[index.ts:1756](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1756)
 
 ___
 
@@ -198,7 +204,7 @@ Set to true to process the generated image with RealESRGAN
 
 #### Defined in
 
-[index.ts:2066](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2066)
+[index.ts:1754](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1754)
 
 ___
 
@@ -210,7 +216,7 @@ Set to true to upscale the image
 
 #### Defined in
 
-[index.ts:2070](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2070)
+[index.ts:1758](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1758)
 
 ___
 
@@ -222,7 +228,9 @@ The width of the image to generate
 
 **`Default`**
 
+```ts
 512
+```
 
 **`Minimum`**
 
@@ -236,4 +244,4 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:2054](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2054)
+[index.ts:1742](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L1742)

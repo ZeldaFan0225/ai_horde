@@ -21,13 +21,13 @@ The UUID of the interrogation form. Use this to post the results in the future
 
 #### Defined in
 
-[index.ts:2846](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2846)
+[index.ts:2536](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2536)
 
 ___
 
 ### name
 
-• `Optional` **name**: `caption` \| `interrogation` \| `nsfw` \| `GFPGAN` \| `RealESRGAN_x4plus` \| `RealESRGAN_x4plus_anime_6B` \| `NMKD_Siax` \| `any`[`any`] \| `CodeFormers` \| `strip_background`
+• `Optional` **name**: ``"GFPGAN"`` \| ``"RealESRGAN_x4plus"`` \| ``"RealESRGAN_x4plus_anime_6B"`` \| ``"NMKD_Siax"`` \| ``"4x_AnimeSharp"`` \| ``"strip_background"`` \| ``"CodeFormers"`` \| ``"caption"`` \| ``"interrogation"`` \| ``"nsfw"``
 
 The name of this interrogation form
 
@@ -39,17 +39,17 @@ caption
 
 #### Defined in
 
-[index.ts:2851](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2851)
+[index.ts:2541](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2541)
 
 ___
 
 ### payload
 
-• `Optional` **payload**: `Partial`<`Record`<`ModelInterrogationFormTypes`, `string`\>\>
+• `Optional` **payload**: `Partial`<`Record`<``"GFPGAN"`` \| ``"RealESRGAN_x4plus"`` \| ``"RealESRGAN_x4plus_anime_6B"`` \| ``"NMKD_Siax"`` \| ``"4x_AnimeSharp"`` \| ``"strip_background"`` \| ``"CodeFormers"`` \| ``"caption"`` \| ``"interrogation"`` \| ``"nsfw"``, `string`\>\>
 
 #### Defined in
 
-[index.ts:2852](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2852)
+[index.ts:2542](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2542)
 
 ___
 
@@ -61,4 +61,4 @@ The URL From which the source image can be downloaded
 
 #### Defined in
 
-[index.ts:2854](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2854)
+[index.ts:2544](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2544)

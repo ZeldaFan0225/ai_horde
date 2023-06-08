@@ -13,7 +13,7 @@
 
 ### artifacts
 
-• `Optional` **artifacts**: `FLAWLESS` \| `LITTLE_FLAWS` \| `SOME_FLAWS` \| `OBVIOUS_FLAWS` \| `HARMFUL_FLAWS` \| `GARBAGE`
+• `Optional` **artifacts**: ``"FLAWLESS"`` \| ``"LITTLE_FLAWS"`` \| ``"SOME_FLAWS"`` \| ``"OBVIOUS_FLAWS"`` \| ``"HARMFUL_FLAWS"`` \| ``"GARBAGE"``
 
 The artifacts rating for this image.
 0 for flawless generation that perfectly fits to the prompt.
@@ -39,7 +39,7 @@ The artifacts rating for this image.
 
 #### Defined in
 
-[index.ts:3307](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L3307)
+[index.ts:3023](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L3023)
 
 ___
 
@@ -65,4 +65,4 @@ The aesthetic rating for this image. How much do you like this image subjectivel
 
 #### Defined in
 
-[index.ts:3294](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L3294)
+[index.ts:3010](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L3010)

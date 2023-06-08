@@ -35,7 +35,7 @@ How many waiting requests were skipped because they demanded a generation with a
 
 #### Defined in
 
-[index.ts:2338](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2338)
+[index.ts:2026](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2026)
 
 ___
 
@@ -51,7 +51,7 @@ How many waiting requests were skipped because they require a higher version of 
 
 #### Defined in
 
-[index.ts:2344](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2344)
+[index.ts:2032](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2032)
 
 ___
 
@@ -63,7 +63,7 @@ How many waiting requests were skipped because they demanded a higher size than 
 
 #### Defined in
 
-[index.ts:2327](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2327)
+[index.ts:2015](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2015)
 
 ___
 
@@ -79,7 +79,7 @@ How many waiting requests were skipped because they demanded a different model t
 
 #### Defined in
 
-[index.ts:2342](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2342)
+[index.ts:2030](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2030)
 
 ___
 
@@ -95,7 +95,7 @@ How many waiting requests were skipped because they demanded a nsfw generation w
 
 #### Defined in
 
-[index.ts:2336](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2336)
+[index.ts:2024](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2024)
 
 ___
 
@@ -111,7 +111,7 @@ How many waiting requests were skipped because they required higher performance
 
 #### Defined in
 
-[index.ts:2334](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2334)
+[index.ts:2022](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2022)
 
 ___
 
@@ -127,7 +127,7 @@ How many waiting requests were skipped because they demanded a trusted worker wh
 
 #### Defined in
 
-[index.ts:2340](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2340)
+[index.ts:2028](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2028)
 
 ___
 
@@ -143,4 +143,4 @@ How many waiting requests were skipped because they demanded a specific worker
 
 #### Defined in
 
-[index.ts:2332](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2332)
+[index.ts:2020](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2020)

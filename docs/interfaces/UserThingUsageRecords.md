@@ -19,11 +19,13 @@ How many megapixelsteps this user has generated or requested
 
 **`Default`**
 
+```ts
 0
+```
 
 #### Defined in
 
-[index.ts:2357](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2357)
+[index.ts:2045](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2045)
 
 ___
 
@@ -35,8 +37,10 @@ How many tokens this user has generated or requested
 
 **`Default`**
 
+```ts
 0
+```
 
 #### Defined in
 
-[index.ts:2362](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2362)
+[index.ts:2050](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2050)
