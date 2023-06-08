@@ -1676,7 +1676,7 @@ export interface ModelGenerationInputStable {
          * @minLength 1
          * @maxLength 30
          */
-        inject_trigger: string,
+        inject_trigger?: string,
     }[]
     special?: Record<string, any>
     /** 
