@@ -22,7 +22,7 @@ The date at which this API key will expire.
 
 #### Defined in
 
-[index.ts:2787](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2787)
+[index.ts:2787](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2787)
 
 ___
 
@@ -34,7 +34,7 @@ The SharedKey ID
 
 #### Defined in
 
-[index.ts:2775](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2775)
+[index.ts:2775](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2775)
 
 ___
 
@@ -46,7 +46,7 @@ The Kudos limit assigned to this key
 
 #### Defined in
 
-[index.ts:2783](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2783)
+[index.ts:2783](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2783)
 
 ___
 
@@ -58,7 +58,7 @@ The owning user's unique Username. It is a combination of their chosen alias plu
 
 #### Defined in
 
-[index.ts:2779](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2779)
+[index.ts:2779](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2779)
 
 ___
 
@@ -70,4 +70,4 @@ How mych kudos has been utilized via this shared key until now.
 
 #### Defined in
 
-[index.ts:2791](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2791)
+[index.ts:2791](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2791)
