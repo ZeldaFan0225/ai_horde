@@ -18,8 +18,10 @@ The result of this operation
 
 **`Default`**
 
+```ts
 OK
+```
 
 #### Defined in
 
-[index.ts:2790](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2790)
+[index.ts:2478](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2478)

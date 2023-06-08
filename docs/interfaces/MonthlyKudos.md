@@ -19,7 +19,7 @@ How much recurring Kudos this user receives monthly.
 
 #### Defined in
 
-[index.ts:2457](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2457)
+[index.ts:2145](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2145)
 
 ___
 
@@ -31,4 +31,4 @@ Last date this user received monthly Kudos.
 
 #### Defined in
 
-[index.ts:2462](https://github.com/ZeldaFan0225/ai_horde/blob/79ac96e/index.ts#L2462)
+[index.ts:2150](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2150)
