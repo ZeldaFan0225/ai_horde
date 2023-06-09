@@ -47,7 +47,7 @@ Error.constructor
 
 #### Defined in
 
-[index.ts:84](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L84)
+[index.ts:84](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L84)
 
 ## Properties
 
@@ -57,7 +57,7 @@ Error.constructor
 
 #### Defined in
 
-[index.ts:81](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L81)
+[index.ts:81](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L81)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[index.ts:79](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L79)
+[index.ts:79](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L79)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[index.ts:83](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L83)
+[index.ts:83](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L83)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 #### Defined in
 
-[index.ts:80](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L80)
+[index.ts:80](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L80)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[index.ts:82](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L82)
+[index.ts:82](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L82)
 
 ## Accessors
 
@@ -115,4 +115,4 @@ Error.name
 
 #### Defined in
 
-[index.ts:93](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L93)
+[index.ts:93](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L93)

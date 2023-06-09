@@ -39,7 +39,7 @@ false
 
 #### Defined in
 
-[index.ts:1534](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1534)
+[index.ts:1534](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1534)
 
 ___
 
@@ -57,7 +57,7 @@ false
 
 #### Defined in
 
-[index.ts:1560](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1560)
+[index.ts:1560](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1560)
 
 ___
 
@@ -69,7 +69,7 @@ Specify which models are allowed to be used for this request
 
 #### Defined in
 
-[index.ts:1540](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1540)
+[index.ts:1540](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1540)
 
 ___
 
@@ -87,7 +87,7 @@ false
 
 #### Defined in
 
-[index.ts:1519](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1519)
+[index.ts:1519](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1519)
 
 ___
 
@@ -99,7 +99,7 @@ The parameters for the generation
 
 #### Defined in
 
-[index.ts:1514](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1514)
+[index.ts:1514](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1514)
 
 ___
 
@@ -111,7 +111,7 @@ The prompt which will be sent to Stable Diffusion to generate an image
 
 #### Defined in
 
-[index.ts:1512](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1512)
+[index.ts:1512](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1512)
 
 ___
 
@@ -123,7 +123,7 @@ If True, the image will be sent via cloudflare r2 download link
 
 #### Defined in
 
-[index.ts:1548](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1548)
+[index.ts:1548](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1548)
 
 ___
 
@@ -141,7 +141,7 @@ true
 
 #### Defined in
 
-[index.ts:1555](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1555)
+[index.ts:1555](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1555)
 
 ___
 
@@ -153,7 +153,7 @@ If True, The image will be shared with LAION for improving their dataset. This w
 
 #### Defined in
 
-[index.ts:1550](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1550)
+[index.ts:1550](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1550)
 
 ___
 
@@ -171,7 +171,7 @@ true
 
 #### Defined in
 
-[index.ts:1529](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1529)
+[index.ts:1529](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1529)
 
 ___
 
@@ -183,7 +183,7 @@ The Base64-encoded webp to use for img2img, max siue 3072 * 3072
 
 #### Defined in
 
-[index.ts:1542](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1542)
+[index.ts:1542](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1542)
 
 ___
 
@@ -195,7 +195,7 @@ If source_processing is set to 'inpainting' or 'outpainting', this parameter can
 
 #### Defined in
 
-[index.ts:1546](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1546)
+[index.ts:1546](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1546)
 
 ___
 
@@ -207,7 +207,7 @@ If source_image is provided, specifies how to process it.
 
 #### Defined in
 
-[index.ts:1544](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1544)
+[index.ts:1544](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1544)
 
 ___
 
@@ -225,7 +225,7 @@ true
 
 #### Defined in
 
-[index.ts:1524](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1524)
+[index.ts:1524](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1524)
 
 ___
 
@@ -237,7 +237,7 @@ If true, the worker list will be treated as a blacklist instead of a whitelist.
 
 #### Defined in
 
-[index.ts:1538](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1538)
+[index.ts:1538](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1538)
 
 ___
 
@@ -249,4 +249,4 @@ Specify which workers are allowed to service this request
 
 #### Defined in
 
-[index.ts:1536](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L1536)
+[index.ts:1536](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1536)
