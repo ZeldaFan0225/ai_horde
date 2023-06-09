@@ -1572,16 +1572,16 @@ export interface ModelGenerationInputStable {
     toggles?: number[],
     /** 
      * its how much the AI listens to your prompt, essentially.
-     * @default 5
-     * @minimum -40
-     * @maximum 30
+     * @default 7.5
+     * @minimum 0
+     * @maximum 100
      * 
      * Multiple of 0.5
     */
     cfg_scale?: number,
     /** 
      * The strength of denoising
-     * @minimum 0
+     * @minimum 0.01
      * @maximum 1
      * 
      * Multiple of 0.01
