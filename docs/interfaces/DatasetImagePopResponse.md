@@ -26,7 +26,7 @@ The UUID of the dataset in which this image belongs
 
 #### Defined in
 
-[index.ts:2995](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2995)
+[index.ts:2995](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2995)
 
 ___
 
@@ -44,7 +44,7 @@ The UUID of the image to rate
 
 #### Defined in
 
-[index.ts:2985](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2985)
+[index.ts:2985](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2985)
 
 ___
 
@@ -62,4 +62,4 @@ https://cdn.droom.cloud/00000000-0000-0000-0000-000000000000.webp
 
 #### Defined in
 
-[index.ts:2990](https://github.com/ZeldaFan0225/ai_horde/blob/99a73d4/index.ts#L2990)
+[index.ts:2990](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2990)
