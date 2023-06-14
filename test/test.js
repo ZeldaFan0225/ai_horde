@@ -33,4 +33,5 @@ async function main() {
     const check = await ai_horde.getImageGenerationCheck(generation.id)
     console.log(check)
     console.log(ai_horde.cache.generations_check)
+    await ai_horde.deleteImageGenerationRequest(generation.id)
 }
