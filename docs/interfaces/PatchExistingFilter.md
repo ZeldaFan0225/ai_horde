@@ -20,7 +20,7 @@ Description about this regex
 
 #### Defined in
 
-[index.ts:2668](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2668)
+[index.ts:2668](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2668)
 
 ___
 
@@ -40,7 +40,7 @@ The integer defining this filter type
 
 #### Defined in
 
-[index.ts:2664](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2664)
+[index.ts:2664](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2664)
 
 ___
 
@@ -58,4 +58,4 @@ ac.*
 
 #### Defined in
 
-[index.ts:2658](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2658)
+[index.ts:2658](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2658)
