@@ -25,7 +25,7 @@ The UUID of this team
 
 #### Defined in
 
-[index.ts:2437](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2437)
+[index.ts:2437](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2437)
 
 ___
 
@@ -37,4 +37,4 @@ The Name given to this team.
 
 #### Defined in
 
-[index.ts:2435](https://github.com/ZeldaFan0225/ai_horde/blob/100bbe4/index.ts#L2435)
+[index.ts:2435](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2435)
