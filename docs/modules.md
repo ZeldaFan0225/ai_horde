@@ -120,6 +120,7 @@
 - [ModelGenerationInputPostProcessingTypes](modules.md#modelgenerationinputpostprocessingtypes)
 - [ModelGenerationInputStableSamplers](modules.md#modelgenerationinputstablesamplers)
 - [ModelInterrogationFormTypes](modules.md#modelinterrogationformtypes)
+- [ModelPayloadTextInversionsStable](modules.md#modelpayloadtextinversionsstable)
 - [RatingArtifactsRatings](modules.md#ratingartifactsratings)
 - [SourceImageProcessingTypes](modules.md#sourceimageprocessingtypes)
 
@@ -131,7 +132,7 @@
 
 #### Defined in
 
-[index.ts:2483](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2483)
+[index.ts:2503](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2503)
 
 ___
 
@@ -141,7 +142,7 @@ ___
 
 #### Defined in
 
-[index.ts:2481](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2481)
+[index.ts:2501](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2501)
 
 ___
 
@@ -154,7 +155,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:2699](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2699)
+[index.ts:2719](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2719)
 
 ___
 
@@ -167,7 +168,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:2729](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2729)
+[index.ts:2749](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2749)
 
 ## Variables
 
@@ -177,7 +178,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:57](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L57)
+[index.ts:57](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L57)
 
 ___
 
@@ -187,7 +188,7 @@ ___
 
 #### Defined in
 
-[index.ts:66](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L66)
+[index.ts:66](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L66)
 
 ___
 
@@ -197,7 +198,7 @@ ___
 
 #### Defined in
 
-[index.ts:33](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L33)
+[index.ts:33](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L33)
 
 ___
 
@@ -207,7 +208,7 @@ ___
 
 #### Defined in
 
-[index.ts:11](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L11)
+[index.ts:11](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L11)
 
 ___
 
@@ -217,7 +218,17 @@ ___
 
 #### Defined in
 
-[index.ts:44](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L44)
+[index.ts:44](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L44)
+
+___
+
+### ModelPayloadTextInversionsStable
+
+• `Const` **ModelPayloadTextInversionsStable**: `Readonly`<{ `negrpompt`: ``"negprompt"`` = "negprompt"; `prompt`: ``"prompt"`` = "prompt" }\>
+
+#### Defined in
+
+[index.ts:78](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L78)
 
 ___
 
@@ -229,7 +240,7 @@ AI Horde Ratings
 
 #### Defined in
 
-[index.ts:2804](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2804)
+[index.ts:2824](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2824)
 
 ___
 
@@ -239,4 +250,4 @@ ___
 
 #### Defined in
 
-[index.ts:27](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L27)
+[index.ts:27](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L27)
