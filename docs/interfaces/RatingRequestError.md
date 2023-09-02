@@ -18,4 +18,4 @@ The error message for this status code.
 
 #### Defined in
 
-[index.ts:3020](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L3020)
+[index.ts:3020](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L3020)
