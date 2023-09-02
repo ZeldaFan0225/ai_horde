@@ -23,7 +23,7 @@ The ammount of Kudos accumulated or used for generating images.
 
 #### Defined in
 
-[index.ts:2150](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2150)
+[index.ts:2150](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2150)
 
 ___
 
@@ -35,7 +35,7 @@ The amount of Kudos this user has been given by the Horde admins.
 
 #### Defined in
 
-[index.ts:2154](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2154)
+[index.ts:2154](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2154)
 
 ___
 
@@ -47,7 +47,7 @@ The amount of Kudos this user has received from rating images.
 
 #### Defined in
 
-[index.ts:2160](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2160)
+[index.ts:2160](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2160)
 
 ___
 
@@ -59,7 +59,7 @@ The amount of Kudos this user has given to other users.
 
 #### Defined in
 
-[index.ts:2152](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2152)
+[index.ts:2152](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2152)
 
 ___
 
@@ -71,7 +71,7 @@ The amount of Kudos this user has been given by other users.
 
 #### Defined in
 
-[index.ts:2156](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2156)
+[index.ts:2156](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2156)
 
 ___
 
@@ -83,4 +83,4 @@ The amount of Kudos this user has received from recurring rewards.
 
 #### Defined in
 
-[index.ts:2158](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2158)
+[index.ts:2158](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2158)
