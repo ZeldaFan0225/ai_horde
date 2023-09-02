@@ -26,7 +26,7 @@ The amount of waiting and processing requests currently in this Horde
 
 #### Defined in
 
-[index.ts:2361](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2361)
+[index.ts:2381](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2381)
 
 ___
 
@@ -38,7 +38,7 @@ How many worker threads are actively processing prompt generations in this Horde
 
 #### Defined in
 
-[index.ts:2365](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2365)
+[index.ts:2385](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2385)
 
 ___
 
@@ -50,4 +50,4 @@ How many workers are actively processing image generations in this Horde in the 
 
 #### Defined in
 
-[index.ts:2363](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2363)
+[index.ts:2383](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2383)

@@ -22,7 +22,7 @@ The UUID for this text
 
 #### Defined in
 
-[index.ts:1908](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1908)
+[index.ts:1928](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1928)
 
 ___
 
@@ -34,7 +34,7 @@ Which of the available models to use for this request
 
 #### Defined in
 
-[index.ts:1913](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1913)
+[index.ts:1933](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1933)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[index.ts:1906](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1906)
+[index.ts:1926](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1926)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[index.ts:1909](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1909)
+[index.ts:1929](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1929)
 
 ___
 
@@ -66,4 +66,4 @@ The soft prompt requested for this generation
 
 #### Defined in
 
-[index.ts:1911](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1911)
+[index.ts:1931](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1931)
