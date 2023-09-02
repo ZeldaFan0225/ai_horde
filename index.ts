@@ -75,6 +75,11 @@ export const ModelGenerationInputControlTypes = Object.freeze( {
     "hough" : "hough"
 } as const)
 
+export const ModelPayloadTextInversionsStable = Object.freeze({
+    prompt: "prompt",
+    negrpompt: "negprompt"
+} as const)
+
 export class APIError extends Error {
     rawError: RequestError;
     status: number;
@@ -1566,11 +1571,6 @@ export interface ModelGenerationInputStable {
     */
     sampler_name?: typeof ModelGenerationInputStableSamplers[keyof typeof ModelGenerationInputStableSamplers],
     /** 
-     * Special Toggles used in the SD Webui. To be documented.
-     * @deprecated
-    */
-    toggles?: number[],
-    /** 
      * its how much the AI listens to your prompt, essentially.
      * @default 7.5
      * @minimum 0
@@ -1678,6 +1678,26 @@ export interface ModelGenerationInputStable {
          * @maxLength 30
          */
         inject_trigger?: string,
+    }[],
+    tis: {
+        /**
+         * The exact name or CivitAI ID of the Textual Inversion.
+         * @example 7808
+         * @minLength 1
+         * @maxLength 255
+         */
+        name: string,
+        /**
+         * if set, will automatically add this TI filename to the prompt or negative prompt accordingly using the provided strength. If this is set to None, then the user will have to manually add the embed to the prompt themselves.
+         */
+        inject_ti?: (typeof ModelPayloadTextInversionsStable[keyof typeof ModelPayloadTextInversionsStable]),
+        /**
+         * The strength with which to apply the TI to the prompt. Only used when inject_ti is not None
+         * @default 1
+         * @minimum -5
+         * @maximum 5
+         */
+        strength?: number
     }[]
     special?: Record<string, any>
     /** 
