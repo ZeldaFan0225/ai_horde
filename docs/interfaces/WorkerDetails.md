@@ -49,7 +49,7 @@ The bridge agent name, version and website
 
 #### Defined in
 
-[index.ts:2279](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2279)
+[index.ts:2299](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2299)
 
 ___
 
@@ -75,7 +75,7 @@ email@example.com
 
 #### Defined in
 
-[index.ts:2272](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2272)
+[index.ts:2292](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2292)
 
 ___
 
@@ -91,7 +91,7 @@ The UUID of this worker.
 
 #### Defined in
 
-[index.ts:2286](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2286)
+[index.ts:2306](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2306)
 
 ___
 
@@ -103,7 +103,7 @@ Extra information or comments about this worker provided by its owner.
 
 #### Defined in
 
-[index.ts:2249](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2249)
+[index.ts:2269](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2269)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[index.ts:2237](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2237)
+[index.ts:2257](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2257)
 
 ___
 
@@ -125,7 +125,7 @@ How many Kudos this worker has been rewarded in total.
 
 #### Defined in
 
-[index.ts:2236](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2236)
+[index.ts:2256](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2256)
 
 ___
 
@@ -137,7 +137,7 @@ When True, this worker will not pick up any new requests
 
 #### Defined in
 
-[index.ts:2245](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2245)
+[index.ts:2265](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2265)
 
 ___
 
@@ -149,7 +149,7 @@ Which models this worker if offerring
 
 #### Defined in
 
-[index.ts:2264](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2264)
+[index.ts:2284](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2284)
 
 ___
 
@@ -165,7 +165,7 @@ The Name given to this worker.
 
 #### Defined in
 
-[index.ts:2284](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2284)
+[index.ts:2304](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2304)
 
 ___
 
@@ -177,7 +177,7 @@ Whether this worker can generate NSFW requests or not.
 
 #### Defined in
 
-[index.ts:2251](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2251)
+[index.ts:2271](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2271)
 
 ___
 
@@ -193,7 +193,7 @@ True if the worker has checked-in the past 5 minutes.
 
 #### Defined in
 
-[index.ts:2288](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2288)
+[index.ts:2308](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2308)
 
 ___
 
@@ -205,7 +205,7 @@ Privileged or public if the owner has allowed it. The alias of the owner of this
 
 #### Defined in
 
-[index.ts:2253](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2253)
+[index.ts:2273](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2273)
 
 ___
 
@@ -217,7 +217,7 @@ ___
 
 #### Defined in
 
-[index.ts:2247](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2247)
+[index.ts:2267](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2267)
 
 ___
 
@@ -229,7 +229,7 @@ The average performance of this worker in human readable form.
 
 #### Defined in
 
-[index.ts:2239](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2239)
+[index.ts:2259](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2259)
 
 ___
 
@@ -241,7 +241,7 @@ How many images this worker has generated.
 
 #### Defined in
 
-[index.ts:2234](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2234)
+[index.ts:2254](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2254)
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-[index.ts:2257](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2257)
+[index.ts:2277](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2277)
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-[index.ts:2265](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2265)
+[index.ts:2285](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2285)
 
 ___
 
@@ -275,7 +275,7 @@ How many threads this worker is running.
 
 #### Defined in
 
-[index.ts:2241](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2241)
+[index.ts:2261](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2261)
 
 ___
 
@@ -287,7 +287,7 @@ The worker is trusted to return valid generations.
 
 #### Defined in
 
-[index.ts:2255](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2255)
+[index.ts:2275](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2275)
 
 ___
 
@@ -305,7 +305,7 @@ How many jobs this worker has left uncompleted after it started them.
 
 #### Defined in
 
-[index.ts:2262](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2262)
+[index.ts:2282](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2282)
 
 ___
 
@@ -317,4 +317,4 @@ The amount of seconds this worker has been online for this Horde.
 
 #### Defined in
 
-[index.ts:2243](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L2243)
+[index.ts:2263](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2263)
