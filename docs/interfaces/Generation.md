@@ -28,7 +28,7 @@ The model which generated this image
 
 #### Defined in
 
-[index.ts:1801](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1801)
+[index.ts:1821](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1821)
 
 ___
 
@@ -40,7 +40,7 @@ The UUID of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1797](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1797)
+[index.ts:1817](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1817)
 
 ___
 
@@ -52,4 +52,4 @@ The name of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1799](https://github.com/ZeldaFan0225/ai_horde/blob/4b01aad/index.ts#L1799)
+[index.ts:1819](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1819)
