@@ -1679,7 +1679,7 @@ export interface ModelGenerationInputStable {
          */
         inject_trigger?: string,
     }[],
-    tis: {
+    tis?: {
         /**
          * The exact name or CivitAI ID of the Textual Inversion.
          * @example 7808
