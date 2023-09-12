@@ -36,7 +36,7 @@ The amount of concurrent request this user can have
 
 #### Defined in
 
-[index.ts:1338](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1338)
+[index.ts:1338](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1338)
 
 ___
 
@@ -62,7 +62,7 @@ email@example.com
 
 #### Defined in
 
-[index.ts:1381](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1381)
+[index.ts:1381](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1381)
 
 ___
 
@@ -74,7 +74,7 @@ The amount of kudos to modify (can be negative)
 
 #### Defined in
 
-[index.ts:1332](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1332)
+[index.ts:1332](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1332)
 
 ___
 
@@ -92,7 +92,7 @@ false
 
 #### Defined in
 
-[index.ts:1351](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1351)
+[index.ts:1351](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1351)
 
 ___
 
@@ -108,7 +108,7 @@ When specified, will start assigning the user monthly kudos, starting now!
 
 #### Defined in
 
-[index.ts:1361](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1361)
+[index.ts:1361](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1361)
 
 ___
 
@@ -126,7 +126,7 @@ false
 
 #### Defined in
 
-[index.ts:1356](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1356)
+[index.ts:1356](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1356)
 
 ___
 
@@ -138,7 +138,7 @@ Set the user's suspicion back to 0
 
 #### Defined in
 
-[index.ts:1374](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1374)
+[index.ts:1374](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1374)
 
 ___
 
@@ -156,7 +156,7 @@ false
 
 #### Defined in
 
-[index.ts:1372](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1372)
+[index.ts:1372](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1372)
 
 ___
 
@@ -176,7 +176,7 @@ The amount by which to multiply the users kudos consumption
 
 #### Defined in
 
-[index.ts:1344](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1344)
+[index.ts:1344](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1344)
 
 ___
 
@@ -196,7 +196,7 @@ When specified, will change the username. No profanity allowed!
 
 #### Defined in
 
-[index.ts:1367](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1367)
+[index.ts:1367](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1367)
 
 ___
 
@@ -208,4 +208,4 @@ Set to the amount of workers this user is allowed to join to the horde when in w
 
 #### Defined in
 
-[index.ts:1346](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1346)
+[index.ts:1346](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1346)

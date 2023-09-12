@@ -39,7 +39,7 @@ The artifacts rating for this image.
 
 #### Defined in
 
-[index.ts:3043](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L3043)
+[index.ts:3043](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L3043)
 
 ___
 
@@ -65,4 +65,4 @@ The aesthetic rating for this image. How much do you like this image subjectivel
 
 #### Defined in
 
-[index.ts:3030](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L3030)
+[index.ts:3030](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L3030)

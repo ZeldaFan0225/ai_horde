@@ -23,7 +23,7 @@ The base api domain + route to use for requests
 
 #### Defined in
 
-[index.ts:1284](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1284)
+[index.ts:1284](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1284)
 
 ___
 
@@ -35,7 +35,7 @@ The configuration for caching results
 
 #### Defined in
 
-[index.ts:1275](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1275)
+[index.ts:1275](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1275)
 
 ___
 
@@ -53,7 +53,7 @@ The interval to check expired data in the cache
 
 #### Defined in
 
-[index.ts:1280](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1280)
+[index.ts:1280](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1280)
 
 ___
 
@@ -65,7 +65,7 @@ The client agent to pass in the requests.
 
 #### Defined in
 
-[index.ts:1288](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1288)
+[index.ts:1288](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1288)
 
 ___
 
@@ -77,7 +77,7 @@ The default token to use for requests
 
 #### Defined in
 
-[index.ts:1282](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1282)
+[index.ts:1282](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1282)
 
 ___
 
@@ -89,4 +89,4 @@ The ratings api domain + route to use for requests
 
 #### Defined in
 
-[index.ts:1286](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1286)
+[index.ts:1286](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1286)

@@ -29,7 +29,7 @@ The amount of forms to pop at the same time
 
 #### Defined in
 
-[index.ts:2539](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2539)
+[index.ts:2539](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2539)
 
 ___
 
@@ -47,7 +47,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:2544](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2544)
+[index.ts:2544](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2544)
 
 ___
 
@@ -59,7 +59,7 @@ The type of interrogation this worker can fulfull
 
 #### Defined in
 
-[index.ts:2534](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2534)
+[index.ts:2534](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2534)
 
 ___
 
@@ -71,7 +71,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:2530](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2530)
+[index.ts:2530](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2530)
 
 ___
 
@@ -83,7 +83,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:2532](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2532)
+[index.ts:2532](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2532)
 
 ___
 
@@ -109,4 +109,4 @@ How many threads this worker is running. This is used to accurately estimate the
 
 #### Defined in
 
-[index.ts:2551](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L2551)
+[index.ts:2551](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2551)
