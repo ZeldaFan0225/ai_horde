@@ -86,13 +86,15 @@ export class APIError extends Error {
     method: string;
     url: string;
     requestBody: any;
-    constructor(rawError: RequestError, core_res: Response, method: string = "GET", requestBody?: any) {
+    errors: Record<string, string>
+    constructor(rawError: RequestError | ValidationError, core_res: Response, method: string = "GET", requestBody?: any) {
         super()
         this.rawError = rawError
         this.status = core_res.status ?? 0
         this.method = method
         this.url = core_res.url ?? ""
         this.requestBody = requestBody
+        this.errors = "errors" in rawError ? rawError.errors : {}
     }
 
     get name() {
@@ -1776,6 +1778,10 @@ export interface ModelPayloadRootStable {
     use_ldsr?: boolean,
     /** Set to true to upscale the image */
     use_upscaling?: boolean,
+}
+
+export interface ValidationError extends RequestError {
+    errors: Record<string, string>
 }
 
 export interface RequestError {
