@@ -49,7 +49,7 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 #### Defined in
 
-[index.ts:1898](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1898)
+[index.ts:1898](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1898)
 
 ___
 
@@ -67,7 +67,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:1891](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1891)
+[index.ts:1891](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1891)
 
 ___
 
@@ -79,7 +79,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:1886](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1886)
+[index.ts:1886](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1886)
 
 ___
 
@@ -91,7 +91,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:1877](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1877)
+[index.ts:1877](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1877)
 
 ___
 
@@ -109,7 +109,7 @@ false
 
 #### Defined in
 
-[index.ts:1884](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1884)
+[index.ts:1884](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1884)
 
 ___
 
@@ -121,7 +121,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:1879](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1879)
+[index.ts:1879](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1879)
 
 ___
 
@@ -145,7 +145,7 @@ false
 
 #### Defined in
 
-[index.ts:1911](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1911)
+[index.ts:1911](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1911)
 
 ___
 
@@ -171,4 +171,4 @@ How many threads this worker is running. This is used to accurately the current 
 
 #### Defined in
 
-[index.ts:1905](https://github.com/ZeldaFan0225/ai_horde/blob/89ead18/index.ts#L1905)
+[index.ts:1905](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1905)
