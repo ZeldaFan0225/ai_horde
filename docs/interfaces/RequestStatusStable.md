@@ -15,6 +15,7 @@
 - [done](RequestStatusStable.md#done)
 - [faulted](RequestStatusStable.md#faulted)
 - [finished](RequestStatusStable.md#finished)
+- [gen\_metadata](RequestStatusStable.md#gen_metadata)
 - [generations](RequestStatusStable.md#generations)
 - [is\_possible](RequestStatusStable.md#is_possible)
 - [kudos](RequestStatusStable.md#kudos)
@@ -37,7 +38,7 @@ True when all images in this request are done. Else False.
 
 #### Defined in
 
-[index.ts:1802](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1802)
+[index.ts:1816](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1816)
 
 ___
 
@@ -53,7 +54,7 @@ rue when this request caused an internal server error and cannot be completed.
 
 #### Defined in
 
-[index.ts:1804](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1804)
+[index.ts:1818](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1818)
 
 ___
 
@@ -69,7 +70,17 @@ The amount of finished images in this request
 
 #### Defined in
 
-[index.ts:1796](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1796)
+[index.ts:1810](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1810)
+
+___
+
+### gen\_metadata
+
+• `Optional` **gen\_metadata**: { `ref`: `string` ; `type`: `string` ; `value`: `string`  }[]
+
+#### Defined in
+
+[index.ts:1797](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1797)
 
 ___
 
@@ -79,7 +90,7 @@ ___
 
 #### Defined in
 
-[index.ts:1787](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1787)
+[index.ts:1796](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1796)
 
 ___
 
@@ -95,7 +106,7 @@ If False, this request will not be able to be completed with the pool of workers
 
 #### Defined in
 
-[index.ts:1812](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1812)
+[index.ts:1826](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1826)
 
 ___
 
@@ -111,7 +122,7 @@ The amount of total Kudos this request has consumed until now.
 
 #### Defined in
 
-[index.ts:1810](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1810)
+[index.ts:1824](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1824)
 
 ___
 
@@ -127,7 +138,7 @@ The amount of still processing images in this request
 
 #### Defined in
 
-[index.ts:1798](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1798)
+[index.ts:1812](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1812)
 
 ___
 
@@ -143,7 +154,7 @@ The position in the requests queue. This position is determined by relative Kudo
 
 #### Defined in
 
-[index.ts:1808](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1808)
+[index.ts:1822](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1822)
 
 ___
 
@@ -159,7 +170,7 @@ The expected amount to wait (in seconds) to generate all images in this request
 
 #### Defined in
 
-[index.ts:1806](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1806)
+[index.ts:1820](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1820)
 
 ___
 
@@ -175,4 +186,4 @@ The amount of images waiting to be picked up by a worker
 
 #### Defined in
 
-[index.ts:1800](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1800)
+[index.ts:1814](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1814)

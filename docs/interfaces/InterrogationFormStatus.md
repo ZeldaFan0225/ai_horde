@@ -20,7 +20,7 @@ The name of this interrogation form
 
 #### Defined in
 
-[index.ts:2593](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2593)
+[index.ts:2607](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2607)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[index.ts:2596](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2596)
+[index.ts:2610](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2610)
 
 ___
 
@@ -42,4 +42,4 @@ title: Interrogation State
 
 #### Defined in
 
-[index.ts:2595](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2595)
+[index.ts:2609](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2609)

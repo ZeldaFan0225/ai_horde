@@ -100,6 +100,7 @@
 - [UserRecords](interfaces/UserRecords.md)
 - [UserThingFulfillmentRecords](interfaces/UserThingFulfillmentRecords.md)
 - [UserThingUsageRecords](interfaces/UserThingUsageRecords.md)
+- [ValidationError](interfaces/ValidationError.md)
 - [WorkerDetails](interfaces/WorkerDetails.md)
 - [WorkerDetailsLite](interfaces/WorkerDetailsLite.md)
 - [WorkerDetailsStable](interfaces/WorkerDetailsStable.md)
@@ -132,7 +133,7 @@
 
 #### Defined in
 
-[index.ts:2503](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2503)
+[index.ts:2517](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2517)
 
 ___
 
@@ -142,7 +143,7 @@ ___
 
 #### Defined in
 
-[index.ts:2501](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2501)
+[index.ts:2515](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2515)
 
 ___
 
@@ -155,7 +156,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:2719](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2719)
+[index.ts:2733](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2733)
 
 ___
 
@@ -168,7 +169,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:2749](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2749)
+[index.ts:2763](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2763)
 
 ## Variables
 
@@ -178,7 +179,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:57](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L57)
+[index.ts:58](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L58)
 
 ___
 
@@ -188,7 +189,7 @@ ___
 
 #### Defined in
 
-[index.ts:66](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L66)
+[index.ts:67](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L67)
 
 ___
 
@@ -198,17 +199,17 @@ ___
 
 #### Defined in
 
-[index.ts:33](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L33)
+[index.ts:34](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L34)
 
 ___
 
 ### ModelGenerationInputStableSamplers
 
-• `Const` **ModelGenerationInputStableSamplers**: `Readonly`<{ `DDIM`: ``"DDIM"`` = "DDIM"; `PLMS`: ``"PLMS"`` = "PLMS"; `dpmsolver`: ``"dpmsolver"`` = "dpmsolver"; `k_dpm_2`: ``"k_dpm_2"`` = "k\_dpm\_2"; `k_dpm_2_a`: ``"k_dpm_2_a"`` = "k\_dpm\_2\_a"; `k_dpm_adaptive`: ``"k_dpm_adaptive"`` = "k\_dpm\_adaptive"; `k_dpm_fast`: ``"k_dpm_fast"`` = "k\_dpm\_fast"; `k_dpmpp_2m`: ``"k_dpmpp_2m"`` = "k\_dpmpp\_2m"; `k_dpmpp_2s_a`: ``"k_dpmpp_2s_a"`` = "k\_dpmpp\_2s\_a"; `k_dpmpp_sde`: ``"k_dpmpp_sde"`` = "k\_dpmpp\_sde"; `k_euler`: ``"k_euler"`` = "k\_euler"; `k_heun`: ``"k_heun"`` = "k\_heun"; `k_lms`: ``"k_lms"`` = "k\_lms" }\>
+• `Const` **ModelGenerationInputStableSamplers**: `Readonly`<{ `DDIM`: ``"DDIM"`` = "DDIM"; `PLMS`: ``"PLMS"`` = "PLMS"; `dpmsolver`: ``"dpmsolver"`` = "dpmsolver"; `k_dpm_2`: ``"k_dpm_2"`` = "k\_dpm\_2"; `k_dpm_2_a`: ``"k_dpm_2_a"`` = "k\_dpm\_2\_a"; `k_dpm_adaptive`: ``"k_dpm_adaptive"`` = "k\_dpm\_adaptive"; `k_dpm_fast`: ``"k_dpm_fast"`` = "k\_dpm\_fast"; `k_dpmpp_2m`: ``"k_dpmpp_2m"`` = "k\_dpmpp\_2m"; `k_dpmpp_2s_a`: ``"k_dpmpp_2s_a"`` = "k\_dpmpp\_2s\_a"; `k_dpmpp_sde`: ``"k_dpmpp_sde"`` = "k\_dpmpp\_sde"; `k_euler`: ``"k_euler"`` = "k\_euler"; `k_heun`: ``"k_heun"`` = "k\_heun"; `k_lms`: ``"k_lms"`` = "k\_lms"; `lcm`: ``"lcm"`` = "lcm" }\>
 
 #### Defined in
 
-[index.ts:11](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L11)
+[index.ts:11](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L11)
 
 ___
 
@@ -218,7 +219,7 @@ ___
 
 #### Defined in
 
-[index.ts:44](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L44)
+[index.ts:45](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L45)
 
 ___
 
@@ -228,7 +229,7 @@ ___
 
 #### Defined in
 
-[index.ts:78](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L78)
+[index.ts:79](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L79)
 
 ___
 
@@ -240,7 +241,7 @@ AI Horde Ratings
 
 #### Defined in
 
-[index.ts:2824](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2824)
+[index.ts:2838](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2838)
 
 ___
 
@@ -250,4 +251,4 @@ ___
 
 #### Defined in
 
-[index.ts:27](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L27)
+[index.ts:28](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L28)

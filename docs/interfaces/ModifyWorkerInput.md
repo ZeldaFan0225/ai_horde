@@ -30,7 +30,7 @@ You can optionally provide a server note which will be seen in the server detail
 
 #### Defined in
 
-[index.ts:1394](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1394)
+[index.ts:1397](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1397)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[index.ts:1386](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1386)
+[index.ts:1389](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1389)
 
 ___
 
@@ -62,7 +62,7 @@ When this is set, it will change the worker's name. No profanity allowed!
 
 #### Defined in
 
-[index.ts:1400](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1400)
+[index.ts:1403](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1403)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[index.ts:1388](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1388)
+[index.ts:1391](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1391)
 
 ___
 
@@ -100,4 +100,4 @@ The team towards which this worker contributes kudos. No profanity allowed!
 
 #### Defined in
 
-[index.ts:1407](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L1407)
+[index.ts:1410](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1410)
