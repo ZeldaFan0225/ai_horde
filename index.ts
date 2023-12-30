@@ -9,6 +9,7 @@ import { join } from "path";
 
 
 export const ModelGenerationInputStableSamplers = Object.freeze({
+    "lcm" : "lcm",
     "k_lms": "k_lms",
     "k_heun" : "k_heun",
     "k_euler" : "k_euler",
@@ -1565,6 +1566,8 @@ export interface ImageGenerationInput {
      * @default false
     */
     dry_run?: boolean,
+    /** If using a service account as a proxy, provide this value to identify the actual account from which this request is coming from. */
+    proxied_account?: string,
 }
 
 export interface ModelGenerationInputStable {
@@ -1790,7 +1793,12 @@ export interface RequestError {
 }
 
 export interface RequestStatusStable extends RequestStatusCheck {
-    generations?: GenerationStable[]
+    generations?: GenerationStable[],
+    gen_metadata?: {
+        type: string,
+        value: string,
+        ref: string
+    }[]
 }
 
 export interface RequestStatusKobold extends RequestStatusCheck {

@@ -1,7 +1,7 @@
 {
   "name": "@zeldafan0225/ai_horde",
   "types": "./index.d.ts",
-  "version": "5.0.8",
+  "version": "5.0.9",
   "description": "A package to interact with the ai horde API",
   "bugs": "https://github.com/ZeldaFan0225/ai_horde/issues",
   "author": "ZeldaFan0225 (https://github.com/ZeldaFan0225)",
