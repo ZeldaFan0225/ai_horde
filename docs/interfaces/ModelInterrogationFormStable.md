@@ -19,7 +19,7 @@ The type of interrogation this is
 
 #### Defined in
 
-[index.ts:2509](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2509)
+[index.ts:2523](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2523)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[index.ts:2510](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2510)
+[index.ts:2524](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2524)

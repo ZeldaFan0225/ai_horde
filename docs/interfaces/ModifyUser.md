@@ -26,7 +26,7 @@ The request concurrency this user has after this request
 
 #### Defined in
 
-[index.ts:2201](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2201)
+[index.ts:2215](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2215)
 
 ___
 
@@ -38,7 +38,7 @@ The user's new moderator status.
 
 #### Defined in
 
-[index.ts:2207](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2207)
+[index.ts:2221](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2221)
 
 ___
 
@@ -50,7 +50,7 @@ The user's new monthly kudos total
 
 #### Defined in
 
-[index.ts:2213](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2213)
+[index.ts:2227](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2227)
 
 ___
 
@@ -62,7 +62,7 @@ The new total Kudos this user has after this request
 
 #### Defined in
 
-[index.ts:2199](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2199)
+[index.ts:2213](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2213)
 
 ___
 
@@ -74,7 +74,7 @@ The user's new public_workers status.
 
 #### Defined in
 
-[index.ts:2209](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2209)
+[index.ts:2223](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2223)
 
 ___
 
@@ -86,7 +86,7 @@ The user's new trusted status
 
 #### Defined in
 
-[index.ts:2215](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2215)
+[index.ts:2229](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2229)
 
 ___
 
@@ -98,7 +98,7 @@ Multiplies the amount of kudos lost when generating images.
 
 #### Defined in
 
-[index.ts:2203](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2203)
+[index.ts:2217](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2217)
 
 ___
 
@@ -110,7 +110,7 @@ The user's new username.
 
 #### Defined in
 
-[index.ts:2211](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2211)
+[index.ts:2225](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2225)
 
 ___
 
@@ -122,4 +122,4 @@ This userWhether this user has been invited to join a worker to the horde and ho
 
 #### Defined in
 
-[index.ts:2205](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2205)
+[index.ts:2219](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2219)

@@ -35,7 +35,7 @@ How many megapixelsteps the workers in this team have been rewarded while part o
 
 #### Defined in
 
-[index.ts:2424](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2424)
+[index.ts:2438](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2438)
 
 ___
 
@@ -51,7 +51,7 @@ The UUID of this team
 
 #### Defined in
 
-[index.ts:2457](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2457)
+[index.ts:2471](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2471)
 
 ___
 
@@ -73,7 +73,7 @@ Anarchy is emergent order.
 
 #### Defined in
 
-[index.ts:2436](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2436)
+[index.ts:2450](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2450)
 
 ___
 
@@ -89,7 +89,7 @@ How many Kudos the workers in this team have been rewarded while part of this te
 
 #### Defined in
 
-[index.ts:2440](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2440)
+[index.ts:2454](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2454)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[index.ts:2449](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2449)
+[index.ts:2463](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2463)
 
 ___
 
@@ -119,7 +119,7 @@ The Name given to this team.
 
 #### Defined in
 
-[index.ts:2455](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2455)
+[index.ts:2469](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2469)
 
 ___
 
@@ -131,7 +131,7 @@ The average performance of the workers in this team, in megapixelsteps per secon
 
 #### Defined in
 
-[index.ts:2426](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2426)
+[index.ts:2440](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2440)
 
 ___
 
@@ -147,7 +147,7 @@ How many images this team's workers have generated
 
 #### Defined in
 
-[index.ts:2438](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2438)
+[index.ts:2452](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2452)
 
 ___
 
@@ -159,7 +159,7 @@ The total expected speed of this team when all workers are working in parallel, 
 
 #### Defined in
 
-[index.ts:2428](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2428)
+[index.ts:2442](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2442)
 
 ___
 
@@ -175,7 +175,7 @@ The total amount of time workers have stayed online while on this team
 
 #### Defined in
 
-[index.ts:2442](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2442)
+[index.ts:2456](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2456)
 
 ___
 
@@ -197,7 +197,7 @@ How many workers have been dedicated to this team
 
 #### Defined in
 
-[index.ts:2447](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2447)
+[index.ts:2461](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2461)
 
 ___
 
@@ -211,4 +211,4 @@ ___
 
 #### Defined in
 
-[index.ts:2448](https://github.com/ZeldaFan0225/ai_horde/blob/d340ba6/index.ts#L2448)
+[index.ts:2462](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2462)
