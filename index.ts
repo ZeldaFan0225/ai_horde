@@ -146,6 +146,8 @@ export class AIHorde {
                 let path = await import("path")
                 try{
                   pckg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json")).toString())  
+                  this.VERSION = pckg.version
+                  this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
                 }catch{
                     pckg = null; 
                 }
