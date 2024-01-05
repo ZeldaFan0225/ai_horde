@@ -29,6 +29,7 @@ async function main() {
         prompt: "The legend of Zelda"
     })
     console.log(generation)
+    console.log(ai_horde.VERSION) // To try to get the version of the library
     
     const check = await ai_horde.getImageGenerationCheck(generation.id)
     console.log(check)
