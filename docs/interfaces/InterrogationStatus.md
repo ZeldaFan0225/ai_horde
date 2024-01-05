@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[index.ts:2616](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2616)
+[index.ts:2627](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2627)
 
 ___
 
@@ -29,4 +29,4 @@ title: Interrogation State
 
 #### Defined in
 
-[index.ts:2615](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2615)
+[index.ts:2626](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2626)

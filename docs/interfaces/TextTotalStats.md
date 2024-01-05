@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[index.ts:2769](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2769)
+[index.ts:2780](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2780)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[index.ts:2768](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2768)
+[index.ts:2779](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2779)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[index.ts:2767](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2767)
+[index.ts:2778](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2778)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[index.ts:2770](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2770)
+[index.ts:2781](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2781)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-[index.ts:2771](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2771)
+[index.ts:2782](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2782)
