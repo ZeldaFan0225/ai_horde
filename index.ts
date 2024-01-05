@@ -143,21 +143,18 @@ export class AIHorde {
         this.VERSION = "Unknown"
         this.#client_agent = options?.client_agent ?? "@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues";
 
-        // This way, the package can be used in the browser, we Use dynamic imports, to handle the case where the package is used in node
-            (async () => {
-                let fs = await import("fs")
-                let path = await import("path")
-                try{
-                  let pckg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json")).toString())  
-                  this.VERSION = pckg.version
-                  this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
-                }catch(_){
-                    // This catch unexpect errors, like the JSON Parse failing
-                }
-            })().catch(_ => {})
+        (async () => {
+            let fs = await import("fs")
+            let path = await import("path")
+            try{
+                let pckg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json")).toString())  
+                this.VERSION = pckg.version
+                this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
+            }catch(_){
+                // This catch unexpect errors, like the JSON Parse failing
+            }
+        })().catch(_ => {})
                 
-
-
 
         this.ratings = new AIHordeRatings({
             api_route: options?.ratings_api_route ?? "https://ratings.aihorde.net/api/v1",
