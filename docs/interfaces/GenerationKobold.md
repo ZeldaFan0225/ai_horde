@@ -33,7 +33,7 @@ The model which generated this image
 
 #### Defined in
 
-[index.ts:1846](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1846)
+[index.ts:1843](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1843)
 
 ___
 
@@ -45,7 +45,7 @@ The seed which generated this text
 
 #### Defined in
 
-[index.ts:1870](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1870)
+[index.ts:1867](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1867)
 
 ___
 
@@ -69,7 +69,7 @@ ok
 
 #### Defined in
 
-[index.ts:1866](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1866)
+[index.ts:1863](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1863)
 
 ___
 
@@ -81,7 +81,7 @@ The generated text
 
 #### Defined in
 
-[index.ts:1868](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1868)
+[index.ts:1865](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1865)
 
 ___
 
@@ -97,7 +97,7 @@ The UUID of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1842](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1842)
+[index.ts:1839](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1839)
 
 ___
 
@@ -113,4 +113,4 @@ The name of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1844](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1844)
+[index.ts:1841](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1841)

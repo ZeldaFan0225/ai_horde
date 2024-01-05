@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[index.ts:2539](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2539)
+[index.ts:2536](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2536)
 
 ___
 
@@ -30,7 +30,7 @@ When True, allows slower workers to pick up this request. Disabling this incurs 
 
 #### Defined in
 
-[index.ts:2543](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2543)
+[index.ts:2540](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2540)
 
 ___
 
@@ -42,4 +42,4 @@ The public URL of the image to interrogate
 
 #### Defined in
 
-[index.ts:2541](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2541)
+[index.ts:2538](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2538)
