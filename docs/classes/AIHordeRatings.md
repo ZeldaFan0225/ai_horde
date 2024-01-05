@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[index.ts:2852](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2852)
+[index.ts:2863](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2863)
 
 ## Methods
 
@@ -60,7 +60,7 @@ RatingsDatasetResponse - The datasets
 
 #### Defined in
 
-[index.ts:2890](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2890)
+[index.ts:2901](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2901)
 
 ___
 
@@ -95,7 +95,7 @@ DatasetImagePopResponse - An images data to rate
 
 #### Defined in
 
-[index.ts:2921](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2921)
+[index.ts:2932](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2932)
 
 ___
 
@@ -126,7 +126,7 @@ RatingsTeamsResponse - The datasets
 
 #### Defined in
 
-[index.ts:2904](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2904)
+[index.ts:2915](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2915)
 
 ___
 
@@ -161,4 +161,4 @@ InterrogationPopPayload
 
 #### Defined in
 
-[index.ts:2945](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2945)
+[index.ts:2956](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2956)
