@@ -140,12 +140,16 @@ export class AIHorde {
             sharedkeys: this.#cache_config.sharedkeys ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.sharedkeys }) : undefined,
         }
         // This way, the package can be used in the browser, we Use dynamic imports, to handle the case where the package is used in node
-        try {
             let pckg: any = null;
             (async () => {
                 let fs = await import("fs")
                 let path = await import("path")
-                pckg = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "package.json")).toString())
+                try{
+                  pckg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json")).toString())  
+                }catch{
+                    pckg = null; 
+                }
+                
             })()
             if (pckg) {
                 this.VERSION = pckg.version
@@ -154,10 +158,6 @@ export class AIHorde {
                 this.VERSION = "Unknown"
                 this.#client_agent = options?.client_agent ?? `@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues`
             }
-        } catch {
-            this.VERSION = "Unknown"
-            this.#client_agent = options?.client_agent ?? `@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues`
-        }
 
 
 
