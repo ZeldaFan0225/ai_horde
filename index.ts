@@ -6,71 +6,71 @@ import SuperMap from "@thunder04/supermap"
 
 
 export const ModelGenerationInputStableSamplers = Object.freeze({
-    "lcm" : "lcm",
+    "lcm": "lcm",
     "k_lms": "k_lms",
-    "k_heun" : "k_heun",
-    "k_euler" : "k_euler",
-    "k_dpm_2" : "k_dpm_2",
-    "k_dpm_2_a" : "k_dpm_2_a",
-    "DDIM" : "DDIM",
-    "PLMS" : "PLMS",
-    "k_dpm_fast" : "k_dpm_fast",
-    "k_dpm_adaptive" : "k_dpm_adaptive",
-    "k_dpmpp_2s_a" : "k_dpmpp_2s_a",
-    "k_dpmpp_2m" : "k_dpmpp_2m",
-    "dpmsolver" : "dpmsolver",
-    "k_dpmpp_sde" : "k_dpmpp_sde"
+    "k_heun": "k_heun",
+    "k_euler": "k_euler",
+    "k_dpm_2": "k_dpm_2",
+    "k_dpm_2_a": "k_dpm_2_a",
+    "DDIM": "DDIM",
+    "PLMS": "PLMS",
+    "k_dpm_fast": "k_dpm_fast",
+    "k_dpm_adaptive": "k_dpm_adaptive",
+    "k_dpmpp_2s_a": "k_dpmpp_2s_a",
+    "k_dpmpp_2m": "k_dpmpp_2m",
+    "dpmsolver": "dpmsolver",
+    "k_dpmpp_sde": "k_dpmpp_sde"
 } as const)
 
-export const SourceImageProcessingTypes = Object.freeze( {
-    "img2img" : "img2img",
-    "inpainting" : "inpainting",
-    "outpainting" : "outpainting"
+export const SourceImageProcessingTypes = Object.freeze({
+    "img2img": "img2img",
+    "inpainting": "inpainting",
+    "outpainting": "outpainting"
 } as const)
 
-export const ModelGenerationInputPostProcessingTypes = Object.freeze( {
-    "GFPGAN" : "GFPGAN",
-    "RealESRGAN_x4plus" : "RealESRGAN_x4plus",
-    "RealESRGAN_x2plus" : "RealESRGAN_x2plus",
-    "RealESRGAN_x4plus_anime_6B" : "RealESRGAN_x4plus_anime_6B",
-    "NMKD_Siax" : "NMKD_Siax",
-    "4x_AnimeSharp" : "4x_AnimeSharp",
-    "strip_background" : "strip_background",
-    "CodeFormers" : "CodeFormers"
+export const ModelGenerationInputPostProcessingTypes = Object.freeze({
+    "GFPGAN": "GFPGAN",
+    "RealESRGAN_x4plus": "RealESRGAN_x4plus",
+    "RealESRGAN_x2plus": "RealESRGAN_x2plus",
+    "RealESRGAN_x4plus_anime_6B": "RealESRGAN_x4plus_anime_6B",
+    "NMKD_Siax": "NMKD_Siax",
+    "4x_AnimeSharp": "4x_AnimeSharp",
+    "strip_background": "strip_background",
+    "CodeFormers": "CodeFormers"
 } as const)
 
-export const ModelInterrogationFormTypes = Object.freeze( {
-    "caption" : "caption",
-    "interrogation" : "interrogation",
-    "nsfw" : "nsfw",
-    "GFPGAN" : "GFPGAN",
-    "RealESRGAN_x4plus" : "RealESRGAN_x4plus",
-    "RealESRGAN_x4plus_anime_6B" : "RealESRGAN_x4plus_anime_6B",
-    "NMKD_Siax" : "NMKD_Siax",
-    "4x_AnimeSharp" : "4x_AnimeSharp",
-    "CodeFormers" : "CodeFormers",
-    "strip_background" : "strip_background"
+export const ModelInterrogationFormTypes = Object.freeze({
+    "caption": "caption",
+    "interrogation": "interrogation",
+    "nsfw": "nsfw",
+    "GFPGAN": "GFPGAN",
+    "RealESRGAN_x4plus": "RealESRGAN_x4plus",
+    "RealESRGAN_x4plus_anime_6B": "RealESRGAN_x4plus_anime_6B",
+    "NMKD_Siax": "NMKD_Siax",
+    "4x_AnimeSharp": "4x_AnimeSharp",
+    "CodeFormers": "CodeFormers",
+    "strip_background": "strip_background"
 } as const)
 
-export const HordeAsyncRequestStates = Object.freeze( {
-    "waiting" : "waiting",
-    "processing" : "processing",
-    "done" : "done",
-    "faulted" : "faulted",
-    "partial" : "partial",
-    "cancelled" : "cancelled"
+export const HordeAsyncRequestStates = Object.freeze({
+    "waiting": "waiting",
+    "processing": "processing",
+    "done": "done",
+    "faulted": "faulted",
+    "partial": "partial",
+    "cancelled": "cancelled"
 } as const)
 
-export const ModelGenerationInputControlTypes = Object.freeze( {
-    "canny" : "canny",
-    "hed" : "hed",
-    "depth" : "depth",
-    "normal" : "normal",
-    "openpose" : "openpose",
-    "seg" : "seg",
-    "scribble" : "scribble",
-    "fakescribbles" : "fakescribbles",
-    "hough" : "hough"
+export const ModelGenerationInputControlTypes = Object.freeze({
+    "canny": "canny",
+    "hed": "hed",
+    "depth": "depth",
+    "normal": "normal",
+    "openpose": "openpose",
+    "seg": "seg",
+    "scribble": "scribble",
+    "fakescribbles": "fakescribbles",
+    "hough": "hough"
 } as const)
 
 export const ModelPayloadTextInversionsStable = Object.freeze({
@@ -125,26 +125,42 @@ export class AIHorde {
             teams: options?.cache?.teams ?? 0,
             sharedkeys: options?.cache?.sharedkeys ?? 0
         }
-        if(Object.values(this.#cache_config).some(v => !Number.isSafeInteger(v) || v < 0)) throw new TypeError("Every cache duration must be a positive safe integer")
+        if (Object.values(this.#cache_config).some(v => !Number.isSafeInteger(v) || v < 0)) throw new TypeError("Every cache duration must be a positive safe integer")
         this.#cache = {
-            users: this.#cache_config.users ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.users}) : undefined,
-            generations_check: this.#cache_config.generations_check ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_check}) : undefined,
-            generations_status: this.#cache_config.generations_status ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_status}) : undefined,
-            interrogations_status: this.#cache_config.interrogations_status ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.interrogations_status}) : undefined,
-            models: this.#cache_config.models ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.models}) : undefined,
-            modes: this.#cache_config.modes ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.modes}) : undefined,
-            news: this.#cache_config.news ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.news}) : undefined,
-            performance: this.#cache_config.performance ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.performance}) : undefined,
-            workers: this.#cache_config.workers ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.workers}) : undefined,
-            teams: this.#cache_config.teams ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.teams}) : undefined,
-            sharedkeys: this.#cache_config.sharedkeys ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.sharedkeys}) : undefined,
+            users: this.#cache_config.users ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.users }) : undefined,
+            generations_check: this.#cache_config.generations_check ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_check }) : undefined,
+            generations_status: this.#cache_config.generations_status ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_status }) : undefined,
+            interrogations_status: this.#cache_config.interrogations_status ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.interrogations_status }) : undefined,
+            models: this.#cache_config.models ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.models }) : undefined,
+            modes: this.#cache_config.modes ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.modes }) : undefined,
+            news: this.#cache_config.news ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.news }) : undefined,
+            performance: this.#cache_config.performance ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.performance }) : undefined,
+            workers: this.#cache_config.workers ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.workers }) : undefined,
+            teams: this.#cache_config.teams ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.teams }) : undefined,
+            sharedkeys: this.#cache_config.sharedkeys ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.sharedkeys }) : undefined,
         }
-        
-        // This way, the package can be used in the browser
-        this.#client_agent = options?.client_agent ?? `@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues`
-        this.VERSION = "Unknown"
+        // This way, the package can be used in the browser, we Use dynamic imports, to handle the case where the package is used in node
+        try {
+            let pckg: any = null;
+            (async () => {
+                let fs = await import("fs")
+                let path = await import("path")
+                pckg = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "package.json")).toString())
+            })()
+            if (pckg) {
+                this.VERSION = pckg.version
+                this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
+            } else {
+                this.VERSION = "Unknown"
+                this.#client_agent = options?.client_agent ?? `@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues`
+            }
+        } catch {
+            this.VERSION = "Unknown"
+            this.#client_agent = options?.client_agent ?? `@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues`
+        }
 
-        
+
+
         this.ratings = new AIHordeRatings({
             api_route: options?.ratings_api_route ?? "https://ratings.aihorde.net/api/v1",
             default_token: options?.default_token,
@@ -179,7 +195,7 @@ export class AIHorde {
         return fields?.join(',')
     }
 
-    async #request(route: string, method: string, options?: {token?: string, fields?: string[], fields_string?: string, body?: any}): Promise<{result: Response, fields_string: string}> {
+    async #request(route: string, method: string, options?: { token?: string, fields?: string[], fields_string?: string, body?: any }): Promise<{ result: Response, fields_string: string }> {
         const fields_string = options?.fields?.join(',') || options?.fields_string || ''
         const t = this.#getToken(options?.token)
 
@@ -187,8 +203,8 @@ export class AIHorde {
             "Client-Agent": this.#client_agent,
             "Content-Type": "application/json"
         }
-        if(options?.token) headers["apikey"] = t;
-        if(fields_string) headers["X-Fields"] = fields_string
+        if (options?.token) headers["apikey"] = t;
+        if (fields_string) headers["X-Fields"] = fields_string
 
         const res = await fetch(`${this.#api_route}${route}`, {
             method,
@@ -196,9 +212,9 @@ export class AIHorde {
             body: options?.body ? JSON.stringify(options.body) : undefined
         })
 
-        if(!res.status.toString().startsWith("2")) throw new APIError(await res.json(), res, method, options?.body)
+        if (!res.status.toString().startsWith("2")) throw new APIError(await res.json(), res, method, options?.body)
 
-        return {result: res, fields_string}
+        return { result: res, fields_string }
     }
 
 
@@ -214,13 +230,13 @@ export class AIHorde {
      */
     async findUser<
         T extends keyof UserDetails
-    >(options?: {token?: string, fields?: T[]}): Promise<Pick<UserDetails, T>> {
-        const {result, fields_string} = await this.#request("/find_user", "GET", options)
+    >(options?: { token?: string, fields?: T[] }): Promise<Pick<UserDetails, T>> {
+        const { result, fields_string } = await this.#request("/find_user", "GET", options)
 
         const data = await result.json() as Pick<UserDetails, T>
-        if(this.#cache_config.users) {
+        if (this.#cache_config.users) {
             const data_with_id = data as Pick<UserDetails, 'id'>
-            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string!, data)
+            if ('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string!, data)
         }
         return data
     }
@@ -235,17 +251,17 @@ export class AIHorde {
      */
     async getUserDetails<
         T extends keyof UserDetails
-    >(id: number, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<UserDetails, T>> {
+    >(id: number, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<UserDetails, T>> {
         const fields_string = this.generateFieldsString(options?.fields)
         const token = this.#getToken(options?.token)
         const temp = !options?.force && this.#cache.users?.get(id.toString() + fields_string)
-        if(temp) return temp
-        const {result} = await this.#request(`/users/${id}`, "GET", {fields_string, token})
+        if (temp) return temp
+        const { result } = await this.#request(`/users/${id}`, "GET", { fields_string, token })
 
         const data = await result.json() as Pick<UserDetails, T>
-        if(this.#cache_config.users) {
+        if (this.#cache_config.users) {
             const data_with_id = data as Pick<UserDetails, 'id'>
-            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string!, data)
+            if ('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string!, data)
         }
         return data
     }
@@ -260,19 +276,19 @@ export class AIHorde {
      */
     async getTeam<
         T extends keyof TeamDetailsStable
-    >(id: string, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<TeamDetailsStable, T>> {
+    >(id: string, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<TeamDetailsStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const token = this.#getToken(options?.token)
         const temp = !options?.force && this.#cache.teams?.get(id + fields_string)
-        if(temp) return temp as Pick<TeamDetailsStable, T>
+        if (temp) return temp as Pick<TeamDetailsStable, T>
 
-        const {result} = await this.#request(`/teams/${id}`, "GET", {token, fields_string})
+        const { result } = await this.#request(`/teams/${id}`, "GET", { token, fields_string })
 
         const data = await result.json() as Pick<TeamDetailsStable, T>
 
-        if(this.#cache_config.teams) {
+        if (this.#cache_config.teams) {
             const data_with_id = data as Pick<TeamDetailsStable, 'id'>
-            if('id' in data_with_id) this.#cache.teams?.set(data_with_id.id + fields_string, data)
+            if ('id' in data_with_id) this.#cache.teams?.set(data_with_id.id + fields_string, data)
         }
         return data
     }
@@ -288,18 +304,18 @@ export class AIHorde {
      */
     async getWorkerDetails<
         T extends keyof WorkerDetailsStable
-    >(id: string, options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<WorkerDetailsStable, T>> {
+    >(id: string, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<WorkerDetailsStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const token = this.#getToken(options?.token)
         const temp = !options?.force && this.#cache.workers?.get(id + fields_string)
-        if(temp) return temp as Pick<WorkerDetailsStable, T>
+        if (temp) return temp as Pick<WorkerDetailsStable, T>
 
-        const {result} = await this.#request(`/workers/${id}`, "GET", {token, fields_string})
+        const { result } = await this.#request(`/workers/${id}`, "GET", { token, fields_string })
 
         const data = await result.json() as Pick<WorkerDetailsStable, T>
-        if(this.#cache_config.workers) {
+        if (this.#cache_config.workers) {
             const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
-            if('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, data)
+            if ('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, data)
         }
         return data
     }
@@ -314,15 +330,15 @@ export class AIHorde {
      */
     async getImageGenerationCheck<
         T extends keyof RequestStatusCheck
-    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusCheck, T>> {
+    >(id: string, options?: { force?: boolean, fields?: T[] }): Promise<Pick<RequestStatusCheck, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.generations_check?.get(id + fields_string)
-        if(temp) return temp as Pick<RequestStatusCheck, T>
+        if (temp) return temp as Pick<RequestStatusCheck, T>
 
-        const {result} = await this.#request(`/generate/check/${id}`, "GET", {fields_string})
+        const { result } = await this.#request(`/generate/check/${id}`, "GET", { fields_string })
 
         const data = await result.json() as Pick<RequestStatusCheck, T>
-        if(this.#cache_config.generations_check) this.#cache.generations_check?.set(id + fields_string, data)
+        if (this.#cache_config.generations_check) this.#cache.generations_check?.set(id + fields_string, data)
         return data
     }
 
@@ -338,15 +354,15 @@ export class AIHorde {
      */
     async getImageGenerationStatus<
         T extends keyof RequestStatusStable
-    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
+    >(id: string, options?: { force?: boolean, fields?: T[] }): Promise<Pick<RequestStatusStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.generations_status?.get(id + fields_string)
-        if(temp) return temp as Pick<RequestStatusStable, T>
+        if (temp) return temp as Pick<RequestStatusStable, T>
 
-        const {result} = await this.#request(`/generate/status/${id}`, "GET", {fields_string})
+        const { result } = await this.#request(`/generate/status/${id}`, "GET", { fields_string })
 
         const data = await result.json() as Pick<RequestStatusStable, T>
-        if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        if (this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
 
@@ -359,15 +375,15 @@ export class AIHorde {
      */
     async getTextGenerationStatus<
         T extends keyof RequestStatusKobold
-    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<RequestStatusKobold, T>> {
+    >(id: string, options?: { force?: boolean, fields?: T[] }): Promise<Pick<RequestStatusKobold, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.generations_status?.get(id + fields_string)
-        if(temp) return temp as Pick<RequestStatusKobold, T>
+        if (temp) return temp as Pick<RequestStatusKobold, T>
 
-        const {result} = await this.#request(`/generate/text/status/${id}`, "GET", {fields_string})
+        const { result } = await this.#request(`/generate/text/status/${id}`, "GET", { fields_string })
 
         const data = await result.json() as Pick<RequestStatusKobold, T>
-        if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        if (this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
 
@@ -380,15 +396,15 @@ export class AIHorde {
      */
     async getInterrogationStatus<
         T extends keyof InterrogationStatus
-    >(id: string, options?: {force?: boolean, fields?: T[]}): Promise<Pick<InterrogationStatus, T>> {
+    >(id: string, options?: { force?: boolean, fields?: T[] }): Promise<Pick<InterrogationStatus, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.interrogations_status?.get(id + fields_string)
-        if(temp) return temp as Pick<InterrogationStatus, T>
+        if (temp) return temp as Pick<InterrogationStatus, T>
 
-        const {result} = await this.#request(`/interrogate/status/${id}`, "GET", {fields_string})
+        const { result } = await this.#request(`/interrogate/status/${id}`, "GET", { fields_string })
 
         const data = await result.json() as Pick<InterrogationStatus, T>
-        if(this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
+        if (this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
         return data
     }
 
@@ -410,15 +426,15 @@ export class AIHorde {
      */
     async getModels<
         T extends keyof ActiveModel
-    >(options?: {force?: boolean, fields?: T[]}): Promise<Pick<ActiveModel, T>[]> {
+    >(options?: { force?: boolean, fields?: T[] }): Promise<Pick<ActiveModel, T>[]> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.models?.get("CACHE-MODELS" + fields_string)
-        if(temp) return temp as Pick<ActiveModel, T>[]
+        if (temp) return temp as Pick<ActiveModel, T>[]
 
-        const {result} = await this.#request(`/status/models`, "GET", {fields_string})
+        const { result } = await this.#request(`/status/models`, "GET", { fields_string })
 
         const data = await result.json() as Pick<ActiveModel, T>[]
-        if(this.#cache_config.models) this.#cache.models?.set("CACHE-MODELS" + fields_string, data)
+        if (this.#cache_config.models) this.#cache.models?.set("CACHE-MODELS" + fields_string, data)
         return data
     }
 
@@ -430,8 +446,8 @@ export class AIHorde {
      */
     async getModel<
         T extends keyof ActiveModel
-    >(model_name: string, options?: {fields?: T[]}): Promise<Pick<ActiveModel, T>[]> {
-        const {result} = await this.#request(`/status/models/${model_name}`, "GET", {fields: options?.fields})
+    >(model_name: string, options?: { fields?: T[] }): Promise<Pick<ActiveModel, T>[]> {
+        const { result } = await this.#request(`/status/models/${model_name}`, "GET", { fields: options?.fields })
 
         const data = await result.json() as Pick<ActiveModel, T>[]
         return data
@@ -447,16 +463,16 @@ export class AIHorde {
      */
     async getModes<
         T extends keyof HordeModes
-    >(options?: {token?: string, force?: boolean, fields?: T[]}): Promise<Pick<HordeModes, T>> {
+    >(options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<HordeModes, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const token = this.#getToken(options?.token)
         const temp = !options?.force && this.#cache.modes?.get("CACHE-MODES" + fields_string)
-        if(temp) return temp as Pick<HordeModes, T>
+        if (temp) return temp as Pick<HordeModes, T>
 
-        const {result} = await this.#request(`/status/modes`, "GET", {token, fields_string})
+        const { result } = await this.#request(`/status/modes`, "GET", { token, fields_string })
 
         const data = await result.json() as Pick<HordeModes, T>
-        if(this.#cache_config.modes) this.#cache.modes?.set("CACHE-MODES" + fields_string, data)
+        if (this.#cache_config.modes) this.#cache.modes?.set("CACHE-MODES" + fields_string, data)
         return data
     }
 
@@ -468,15 +484,15 @@ export class AIHorde {
      */
     async getNews<
         T extends keyof Newspiece
-    >(options?: {force?: boolean, fields?: T[]}): Promise<Pick<Newspiece, T>[]> {
+    >(options?: { force?: boolean, fields?: T[] }): Promise<Pick<Newspiece, T>[]> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.news?.get("CACHE-NEWS" + fields_string)
-        if(temp) return temp as Pick<Newspiece, T>[]
+        if (temp) return temp as Pick<Newspiece, T>[]
 
-        const {result} = await this.#request(`/status/news`, "GET", {fields_string})
+        const { result } = await this.#request(`/status/news`, "GET", { fields_string })
 
         const data = await result.json() as Pick<Newspiece, T>[]
-        if(this.#cache_config.news) this.#cache.news?.set("CACHE-NEWS" + fields_string, data)
+        if (this.#cache_config.news) this.#cache.news?.set("CACHE-NEWS" + fields_string, data)
         return data
     }
 
@@ -488,18 +504,18 @@ export class AIHorde {
      */
     async getPerformance<
         T extends keyof HordePerformanceStable
-    >(options?: {force?: boolean, fields?: T[]}): Promise<Pick<HordePerformanceStable, T>> {
+    >(options?: { force?: boolean, fields?: T[] }): Promise<Pick<HordePerformanceStable, T>> {
         const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const temp = !options?.force && this.#cache.performance?.get("CACHE-PERFORMANCE" + fields_string)
-        if(temp) return temp as Pick<HordePerformanceStable, T>
+        if (temp) return temp as Pick<HordePerformanceStable, T>
 
-        const {result} = await this.#request(`/status/performance`, "GET", {fields_string})
+        const { result } = await this.#request(`/status/performance`, "GET", { fields_string })
 
         const data = await result.json() as Pick<HordePerformanceStable, T>
-        if(this.#cache_config.performance) this.#cache.performance?.set("CACHE-PERFORMANCE" + fields_string, data)
+        if (this.#cache_config.performance) this.#cache.performance?.set("CACHE-PERFORMANCE" + fields_string, data)
         return data
     }
-    
+
     /**
      * A List with the details and statistic of all registered users
      * @param options.fields - Array of fields that will be included in the returned data
@@ -507,17 +523,17 @@ export class AIHorde {
      */
     async getUsers<
         T extends keyof UserDetails
-    >(options?: {force?: boolean, fields?: T[]}): Promise<Pick<UserDetails, T>[]> {
-        const {result, fields_string} = await this.#request(`/users`, "GET", {fields: options?.fields})
+    >(options?: { force?: boolean, fields?: T[] }): Promise<Pick<UserDetails, T>[]> {
+        const { result, fields_string } = await this.#request(`/users`, "GET", { fields: options?.fields })
 
-        const data =  await result.json() as Pick<UserDetails, T>[]
-        if(this.#cache_config.users) data.forEach(d => {
+        const data = await result.json() as Pick<UserDetails, T>[]
+        if (this.#cache_config.users) data.forEach(d => {
             const data_with_id = d as Pick<UserDetails, 'id'>
-            if('id' in data_with_id) this.#cache.users?.set(data_with_id.id! + fields_string, d)
+            if ('id' in data_with_id) this.#cache.users?.set(data_with_id.id! + fields_string, d)
         })
         return data
     }
-    
+
     /**
      * A List with the details of all registered and active workers
      * @param options.fields - Array of fields that will be included in the returned data
@@ -525,17 +541,17 @@ export class AIHorde {
      */
     async getWorkers<
         T extends keyof WorkerDetailsStable
-    >(options?: {fields?: T[]}): Promise<Pick<WorkerDetailsStable, T>[]> {
-        const {result, fields_string} = await this.#request(`/workers`, "GET", {fields: options?.fields})
+    >(options?: { fields?: T[] }): Promise<Pick<WorkerDetailsStable, T>[]> {
+        const { result, fields_string } = await this.#request(`/workers`, "GET", { fields: options?.fields })
 
-        const data =  await result.json() as Pick<WorkerDetailsStable, T>[]
-        if(this.#cache_config.workers) data.forEach(d => {
+        const data = await result.json() as Pick<WorkerDetailsStable, T>[]
+        if (this.#cache_config.workers) data.forEach(d => {
             const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
-            if('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, d)
+            if ('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, d)
         })
         return data
     }
-    
+
 
     /**
      * Details how many images were generated per model for the past day, month and total
@@ -544,13 +560,13 @@ export class AIHorde {
      */
     async getImageModelStats<
         T extends keyof ImageModelStats
-    >(options?: {fields?: T[]}): Promise<Pick<ImageModelStats, T>> {
-        const {result} = await this.#request("/stats/img/models", "GET", {fields: options?.fields})
+    >(options?: { fields?: T[] }): Promise<Pick<ImageModelStats, T>> {
+        const { result } = await this.#request("/stats/img/models", "GET", { fields: options?.fields })
 
         const data = await result.json() as Pick<ImageModelStats, T>
         return data
     }
-    
+
 
     /**
      * Details how many images have been generated in the past minux,hour,day,month and total
@@ -559,13 +575,13 @@ export class AIHorde {
      */
     async getImageTotalStats<
         T extends keyof ImageModelStats
-    >(options?: {fields?: T[]}): Promise<Pick<ImageTotalStats, T>> {
-        const {result} = await this.#request("/stats/img/totals", "GET", {fields: options?.fields})
+    >(options?: { fields?: T[] }): Promise<Pick<ImageTotalStats, T>> {
+        const { result } = await this.#request("/stats/img/totals", "GET", { fields: options?.fields })
 
         const data = await result.json() as Pick<ImageTotalStats, T>
         return data
     }
-    
+
 
     /**
      * Details how many texts were generated per model for the past day, month and total
@@ -574,13 +590,13 @@ export class AIHorde {
      */
     async getTextModelStats<
         T extends keyof ImageModelStats
-    >(options?: {fields?: T[]}): Promise<Pick<TextModelStats, T>> {
-        const {result} = await this.#request("/stats/text/models", "GET", {fields: options?.fields})
+    >(options?: { fields?: T[] }): Promise<Pick<TextModelStats, T>> {
+        const { result } = await this.#request("/stats/text/models", "GET", { fields: options?.fields })
 
         const data = await result.json() as Pick<TextModelStats, T>
         return data
     }
-    
+
 
     /**
      * Details how many images have been generated in the past minux,hour,day,month and total
@@ -589,8 +605,8 @@ export class AIHorde {
      */
     async getTextTotalStats<
         T extends keyof ImageModelStats
-    >(options?: {fields?: T[]}): Promise<Pick<TextTotalStats, T>> {
-        const {result} = await this.#request("/stats/text/totals", "GET", {fields: options?.fields})
+    >(options?: { fields?: T[] }): Promise<Pick<TextTotalStats, T>> {
+        const { result } = await this.#request("/stats/text/totals", "GET", { fields: options?.fields })
 
         const data = await result.json() as Pick<TextTotalStats, T>
         return data
@@ -603,13 +619,13 @@ export class AIHorde {
      */
     async getTeams<
         T extends keyof TeamDetailsStable
-    >(options?: {fields?: T[]}): Promise<Pick<TeamDetailsStable, T>[]> {
-        const {result, fields_string} = await this.#request(`/teams`, "GET", {fields: options?.fields})
+    >(options?: { fields?: T[] }): Promise<Pick<TeamDetailsStable, T>[]> {
+        const { result, fields_string } = await this.#request(`/teams`, "GET", { fields: options?.fields })
 
         const data = await result.json() as Pick<TeamDetailsStable, T>[]
-        if(this.#cache_config.teams) data.forEach(d => {
+        if (this.#cache_config.teams) data.forEach(d => {
             const data_with_id = d as Pick<TeamDetailsStable, 'id'>
-            if('id' in data_with_id) this.#cache.teams?.set(data_with_id.id + fields_string, d)
+            if ('id' in data_with_id) this.#cache.teams?.set(data_with_id.id + fields_string, d)
         })
         return data
     }
@@ -624,13 +640,13 @@ export class AIHorde {
      */
     async getFilters<
         T extends keyof FilterDetails
-    >(query?: {filter_type?: string, contains?: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>[]> {
+    >(query?: { filter_type?: string, contains?: string }, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>[]> {
         const token = this.#getToken(options?.token)
         const params = new URLSearchParams()
-        if(query?.filter_type) params.set("filter_type", query?.filter_type)
-        if(query?.contains) params.set("contains", query?.contains)
+        if (query?.filter_type) params.set("filter_type", query?.filter_type)
+        if (query?.contains) params.set("contains", query?.contains)
 
-        const {result} = await this.#request(`/filters${params.toString() ? `?${params.toString()}` : ""}`, "GET", {token, fields: options?.fields})
+        const { result } = await this.#request(`/filters${params.toString() ? `?${params.toString()}` : ""}`, "GET", { token, fields: options?.fields })
 
         const data = await result.json() as Pick<FilterDetails, T>[]
         return data
@@ -645,15 +661,15 @@ export class AIHorde {
      */
     async getFilter<
         T extends keyof FilterDetails
-    >(filter_id?: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
+    >(filter_id?: string, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/filters/${filter_id}`, "GET", {token, fields: options?.fields})
+        const { result } = await this.#request(`/filters/${filter_id}`, "GET", { token, fields: options?.fields })
 
         const data = await result.json() as Pick<FilterDetails, T>
         return data
     }
-    
+
 
     /**
      * Gets Details about an existing Shared Key for this user
@@ -664,8 +680,8 @@ export class AIHorde {
      */
     async getSharedKey<
         T extends keyof SharedKeyDetails
-    >(sharedkey_id?: string, options?: {token?: string, fields?: T[]}): Promise<Pick<SharedKeyDetails, T>> {
-        const {result} = await this.#request(`/sharedkeys/${sharedkey_id}`, "GET", {fields: options?.fields})
+    >(sharedkey_id?: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SharedKeyDetails, T>> {
+        const { result } = await this.#request(`/sharedkeys/${sharedkey_id}`, "GET", { fields: options?.fields })
 
         const data = await result.json() as Pick<SharedKeyDetails, T>
         return data
@@ -673,8 +689,8 @@ export class AIHorde {
 
 
     /* POST REQUESTS */
-    
-    
+
+
     /**
      * Transfer Kudos to a registered user
      * @param check_data - The prompt to check
@@ -684,14 +700,14 @@ export class AIHorde {
      */
     async postFilters<
         T extends keyof FilterPromptSuspicion
-    >(check_data: FilterCheckPayload, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterPromptSuspicion, T>> {
+    >(check_data: FilterCheckPayload, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterPromptSuspicion, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/filters`, "POST", {token, fields: options?.fields, body: check_data})
+        const { result } = await this.#request(`/filters`, "POST", { token, fields: options?.fields, body: check_data })
 
         return await result.json() as Pick<FilterPromptSuspicion, T>
     }
-    
+
     /**
      * Initiate an Asynchronous request to generate images
      * This method will immediately return with the UUID of the request for generation.
@@ -705,14 +721,14 @@ export class AIHorde {
      */
     async postAsyncImageGenerate<
         T extends keyof RequestAsync
-    >(generation_data: ImageGenerationInput, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestAsync, T>> {
+    >(generation_data: ImageGenerationInput, options?: { token?: string, fields?: T[] }): Promise<Pick<RequestAsync, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/generate/async`, "POST", {token, fields: options?.fields, body: generation_data})
+        const { result } = await this.#request(`/generate/async`, "POST", { token, fields: options?.fields, body: generation_data })
 
         return await result.json() as Pick<RequestAsync, T>
     }
-    
+
 
     /**
      * Initiate an Asynchronous request to generate text
@@ -727,14 +743,14 @@ export class AIHorde {
      */
     async postAsyncTextGenerate<
         T extends keyof RequestAsync
-    >(generation_data: GenerationInputKobold, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestAsync, T>> {
+    >(generation_data: GenerationInputKobold, options?: { token?: string, fields?: T[] }): Promise<Pick<RequestAsync, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/generate/text/async`, "POST", {token, fields: options?.fields, body: generation_data})
+        const { result } = await this.#request(`/generate/text/async`, "POST", { token, fields: options?.fields, body: generation_data })
 
         return await result.json() as Pick<RequestAsync, T>
     }
-    
+
     /**
      * Submit aesthetic ratings for generated images to be used by LAION
      * The request has to have been sent as shared: true.
@@ -749,15 +765,15 @@ export class AIHorde {
      */
     async postRating<
         T extends keyof GenerationSubmitted
-    >(generation_id: string, rating: AestheticsPayload, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
+    >(generation_id: string, rating: AestheticsPayload, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/generate/rate/${generation_id}`, "POST", {token, fields: options?.fields, body: rating})
+        const { result } = await this.#request(`/generate/rate/${generation_id}`, "POST", { token, fields: options?.fields, body: rating })
 
         return await result.json() as Pick<GenerationSubmitted, T>
     }
 
-    
+
     /**
      * Check if there are generation requests queued for fulfillment
      * This endpoint is used by registered workers only
@@ -768,15 +784,15 @@ export class AIHorde {
      */
     async postImageGenerationPop<
         T extends keyof GenerationPayloadStable
-    >(pop_input: PopInputStable, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationPayloadStable, T>> {
+    >(pop_input: PopInputStable, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationPayloadStable, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/generate/pop`, "POST", {token, fields: options?.fields, body: pop_input})
+        const { result } = await this.#request(`/generate/pop`, "POST", { token, fields: options?.fields, body: pop_input })
 
         return await result.json() as Pick<GenerationPayloadStable, T>
     }
 
-    
+
     /**
      * Check if there are generation requests queued for fulfillment
      * This endpoint is used by registered workers only
@@ -787,15 +803,15 @@ export class AIHorde {
      */
     async postTextGenerationPop<
         T extends keyof GenerationPayloadKobold
-    >(pop_input: PopInputKobold, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationPayloadKobold, T>> {
+    >(pop_input: PopInputKobold, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationPayloadKobold, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/generate/text/pop`, "POST", {token, fields: options?.fields, body: pop_input})
+        const { result } = await this.#request(`/generate/text/pop`, "POST", { token, fields: options?.fields, body: pop_input })
 
         return await result.json() as Pick<GenerationPayloadKobold, T>
     }
 
-    
+
     /**
      * Submit a generated image
      * This endpoint is used by registered workers only
@@ -806,15 +822,15 @@ export class AIHorde {
      */
     async postImageGenerationSubmit<
         T extends keyof GenerationSubmitted
-    >(generation_submit: {id: string, generation: string, seed: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
+    >(generation_submit: { id: string, generation: string, seed: string }, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/generate/submit`, "POST", {token, fields: options?.fields, body: generation_submit})
+        const { result } = await this.#request(`/generate/submit`, "POST", { token, fields: options?.fields, body: generation_submit })
 
         return await result.json() as Pick<GenerationSubmitted, T>
     }
 
-    
+
     /**
      * Submit generated text
      * This endpoint is used by registered workers only
@@ -825,14 +841,14 @@ export class AIHorde {
      */
     async postTextGenerationSubmit<
         T extends keyof GenerationSubmitted
-    >(generation_submit: {id: string, generation: string, state: "ok" | "censored" | "faulted"}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
+    >(generation_submit: { id: string, generation: string, state: "ok" | "censored" | "faulted" }, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/generate/text/submit`, "POST", {token, fields: options?.fields, body: generation_submit})
+        const { result } = await this.#request(`/generate/text/submit`, "POST", { token, fields: options?.fields, body: generation_submit })
 
         return await result.json() as Pick<GenerationSubmitted, T>
     }
-    
+
     /**
      * Initiate an Asynchronous request to interrogate an image.
      * This endpoint will immediately return with the UUID of the request for interrogation.
@@ -846,14 +862,14 @@ export class AIHorde {
      */
     async postAsyncInterrogate<
         T extends keyof RequestInterrogationResponse
-    >(interrogate_payload: ModelInterrogationInputStable, options?: {token?: string, fields?: T[]}): Promise<Pick<RequestInterrogationResponse, T>> {
+    >(interrogate_payload: ModelInterrogationInputStable, options?: { token?: string, fields?: T[] }): Promise<Pick<RequestInterrogationResponse, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/interrogate/async`, "POST", {token, fields: options?.fields, body: interrogate_payload})
+        const { result } = await this.#request(`/interrogate/async`, "POST", { token, fields: options?.fields, body: interrogate_payload })
 
         return await result.json() as Pick<RequestInterrogationResponse, T>
     }
-    
+
 
     /**
      * Check if there are interrogation requests queued for fulfillment
@@ -865,15 +881,15 @@ export class AIHorde {
      */
     async postInterrogationPop<
         T extends keyof InterrogationPopPayload
-    >(pop_input: InterrogationPopInput, options?: {token?: string, fields?: T[]}): Promise<Pick<InterrogationPopPayload, T>> {
+    >(pop_input: InterrogationPopInput, options?: { token?: string, fields?: T[] }): Promise<Pick<InterrogationPopPayload, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/interrogate/pop`, "POST", {token, fields: options?.fields, body: pop_input})
+        const { result } = await this.#request(`/interrogate/pop`, "POST", { token, fields: options?.fields, body: pop_input })
 
         return await result.json() as Pick<InterrogationPopPayload, T>
     }
-    
-    
+
+
     /**
      * Submit the results of an interrogated image
      * This endpoint is used by registered workers only
@@ -884,14 +900,14 @@ export class AIHorde {
      */
     async postInterrogationSubmit<
         T extends keyof GenerationSubmitted
-    >(interrogation_submit: {id: string, result: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<GenerationSubmitted, T>> {
+    >(interrogation_submit: { id: string, result: string }, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/interrogate/submit`, "POST", {token, fields: options?.fields, body: interrogation_submit})
+        const { result } = await this.#request(`/interrogate/submit`, "POST", { token, fields: options?.fields, body: interrogation_submit })
 
         return await result.json() as Pick<GenerationSubmitted, T>
     }
-    
+
     /**
      * Transfer Kudos to a registered user
      * @param transfer_data - The data specifiying who to send how many kudos
@@ -901,14 +917,14 @@ export class AIHorde {
      */
     async postKudosTransfer<
         T extends keyof KudosTransferred
-    >(transfer_data: {username: string, amount: number}, options?: {token?: string, fields?: T[]}): Promise<Pick<KudosTransferred, T>> {
+    >(transfer_data: { username: string, amount: number }, options?: { token?: string, fields?: T[] }): Promise<Pick<KudosTransferred, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/kudos/transfer`, "POST", {token, fields: options?.fields, body: transfer_data})
+        const { result } = await this.#request(`/kudos/transfer`, "POST", { token, fields: options?.fields, body: transfer_data })
 
         return await result.json() as Pick<KudosTransferred, T>
     }
-    
+
     /**
      * Receive kudos from the KoboldAI Horde
      * @param user_id - The stable horde user id of the receiving user
@@ -917,15 +933,15 @@ export class AIHorde {
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns null
      */
-    async postKoboldTransfer(user_id: string, transfer_data: {kai_id: string, kudos_amount: number, trusted: boolean}, options?: {token?: string}): Promise<null> {
+    async postKoboldTransfer(user_id: string, transfer_data: { kai_id: string, kudos_amount: number, trusted: boolean }, options?: { token?: string }): Promise<null> {
         const token = this.#getToken(options?.token)
 
-        await this.#request(`/kudos/kai/${user_id}`, "POST", {token, body: transfer_data})
+        await this.#request(`/kudos/kai/${user_id}`, "POST", { token, body: transfer_data })
 
         return null
     }
-    
-    
+
+
     /**
      * Create a new team
      * Only trusted users can create new teams.
@@ -936,16 +952,16 @@ export class AIHorde {
      */
     async createTeam<
         T extends keyof ModifyTeam
-    >(create_payload: CreateTeamInput, options?: {token?: string, fields?: T[]}): Promise<Pick<ModifyTeam, T>> {
+    >(create_payload: CreateTeamInput, options?: { token?: string, fields?: T[] }): Promise<Pick<ModifyTeam, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/teams`, "POST", {token, fields: options?.fields, body: create_payload})
+        const { result } = await this.#request(`/teams`, "POST", { token, fields: options?.fields, body: create_payload })
 
         return await result.json() as Pick<ModifyTeam, T>
     }
 
     /** PUT */
-    
+
     /**
      * Change Horde Modes
      * @param modes - The new status of the Horde
@@ -955,14 +971,14 @@ export class AIHorde {
      */
     async putStatusModes<
         T extends keyof HordeModes
-    >(modes: {maintenance: boolean, shutdown: number, invite_only: boolean, raid: boolean}, options?: {token?: string, fields?: T[]}): Promise<Pick<HordeModes, T>> {
+    >(modes: { maintenance: boolean, shutdown: number, invite_only: boolean, raid: boolean }, options?: { token?: string, fields?: T[] }): Promise<Pick<HordeModes, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/status/modes`, "PUT", {token, fields: options?.fields, body: modes})
+        const { result } = await this.#request(`/status/modes`, "PUT", { token, fields: options?.fields, body: modes })
 
         return await result.json() as Pick<HordeModes, T>
     }
-    
+
     /**
      * Method for horde admins to perform operations on users
      * @param update_payload - The data to change on the target user
@@ -973,15 +989,15 @@ export class AIHorde {
      */
     async updateUser<
         T extends keyof ModifyUser
-    >(update_payload: ModifyUserInput, id: number, options?: {token?: string, fields?: T[]}): Promise<Pick<ModifyUser, T>> {
+    >(update_payload: ModifyUserInput, id: number, options?: { token?: string, fields?: T[] }): Promise<Pick<ModifyUser, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result, fields_string} = await this.#request(`/users/${id}`, "PUT", {token, fields: options?.fields, body: update_payload})
+        const { result, fields_string } = await this.#request(`/users/${id}`, "PUT", { token, fields: options?.fields, body: update_payload })
 
-        if(this.#cache_config.users) this.#cache.users?.delete(id.toString() + fields_string)
+        if (this.#cache_config.users) this.#cache.users?.delete(id.toString() + fields_string)
         return await result.json() as Pick<ModifyUser, T>
     }
-    
+
     /**
      * Put the worker into maintenance or pause mode
      * Maintenance can be set by the owner of the serve or an admin.
@@ -996,16 +1012,16 @@ export class AIHorde {
      */
     async updateWorker<
         T extends keyof ModifyWorker
-    >(update_payload: ModifyWorkerInput, id: string, options?: {token?: string, fields?: T[]}): Promise<ModifyWorker> {
+    >(update_payload: ModifyWorkerInput, id: string, options?: { token?: string, fields?: T[] }): Promise<ModifyWorker> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/workers/${id}`, "PUT", {token, fields: options?.fields, body: update_payload})
+        const { result } = await this.#request(`/workers/${id}`, "PUT", { token, fields: options?.fields, body: update_payload })
 
-        if(this.#cache_config.workers) this.#cache.workers?.delete(id)
+        if (this.#cache_config.workers) this.#cache.workers?.delete(id)
         return await result.json() as Pick<ModifyWorker, T>
     }
-    
-    
+
+
     /**
      * Adds a new regex filer
      * @param create_payload - The data to create the filter with
@@ -1015,15 +1031,15 @@ export class AIHorde {
      */
     async addFilter<
         T extends keyof FilterDetails
-    >(create_payload: PutNewFilter, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
+    >(create_payload: PutNewFilter, id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/filters`, "PUT", {token, fields: options?.fields, body: create_payload})
+        const { result } = await this.#request(`/filters`, "PUT", { token, fields: options?.fields, body: create_payload })
 
         return await result.json() as Pick<FilterDetails, T>
     }
-    
-    
+
+
     /**
      * Create a new SharedKey for this user
      * @param create_payload - The data to create the shared key with
@@ -1033,18 +1049,18 @@ export class AIHorde {
      */
     async putSharedKey<
         T extends keyof SharedKeyDetails
-    >(create_payload: SharedKeyInput, options?: {token?: string, fields?: T[]}): Promise<Pick<SharedKeyDetails, T>> {
+    >(create_payload: SharedKeyInput, options?: { token?: string, fields?: T[] }): Promise<Pick<SharedKeyDetails, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/sharedkeys`, "PUT", {token, fields: options?.fields, body: create_payload})
+        const { result } = await this.#request(`/sharedkeys`, "PUT", { token, fields: options?.fields, body: create_payload })
 
         return await result.json() as Pick<SharedKeyDetails, T>
     }
 
 
     /** PATCH */
-    
-    
+
+
     /**
      * Updates a Team's information
      * @param update_payload - The data to update the team with
@@ -1054,16 +1070,16 @@ export class AIHorde {
      */
     async updateTeam<
         T extends keyof ModifyTeam
-    >(update_payload: ModifyTeamInput, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<ModifyTeam, T>> {
+    >(update_payload: ModifyTeamInput, id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<ModifyTeam, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/teams/${id}`, "PATCH", {token, fields: options?.fields, body: update_payload})
+        const { result } = await this.#request(`/teams/${id}`, "PATCH", { token, fields: options?.fields, body: update_payload })
 
-        if(this.#cache_config.teams) this.#cache.teams?.delete(id)
+        if (this.#cache_config.teams) this.#cache.teams?.delete(id)
         return await result.json() as Pick<ModifyTeam, T>
     }
-    
-    
+
+
     /**
      * Updates an existing regex filer
      * @param update_payload - The data to update the filter with
@@ -1074,15 +1090,15 @@ export class AIHorde {
      */
     async updateFilter<
         T extends keyof FilterDetails
-    >(update_payload: PatchExistingFilter, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<FilterDetails, T>> {
+    >(update_payload: PatchExistingFilter, id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/filters/${id}`, "PATCH", {token, fields: options?.fields, body: update_payload})
+        const { result } = await this.#request(`/filters/${id}`, "PATCH", { token, fields: options?.fields, body: update_payload })
 
         return await result.json() as Pick<FilterDetails, T>
     }
-    
-    
+
+
     /**
      * Modify an existing Shared Key
      * @param update_payload - The data to update the shared key with
@@ -1093,10 +1109,10 @@ export class AIHorde {
      */
     async updateSharedKey<
         T extends keyof SharedKeyDetails
-    >(update_payload: SharedKeyInput, id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<SharedKeyDetails, T>> {
+    >(update_payload: SharedKeyInput, id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SharedKeyDetails, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/sharedkeys/${id}`, "PATCH", {token, fields: options?.fields, body: update_payload})
+        const { result } = await this.#request(`/sharedkeys/${id}`, "PATCH", { token, fields: options?.fields, body: update_payload })
 
         return await result.json() as Pick<SharedKeyDetails, T>
     }
@@ -1104,7 +1120,7 @@ export class AIHorde {
 
     /** DELETE */
 
-    
+
     /**
      * Cancel an unfinished request
      * This request will include all already generated images in base64 encoded .webp files.
@@ -1114,15 +1130,15 @@ export class AIHorde {
      */
     async deleteImageGenerationRequest<
         T extends keyof RequestStatusStable
-    >(id: string, options?: {fields?: T[]}): Promise<Pick<RequestStatusStable, T>> {
-        const {result, fields_string} = await this.#request(`/generate/status/${id}`, "DELETE", {fields: options?.fields})
+    >(id: string, options?: { fields?: T[] }): Promise<Pick<RequestStatusStable, T>> {
+        const { result, fields_string } = await this.#request(`/generate/status/${id}`, "DELETE", { fields: options?.fields })
 
         const data = await result.json() as Pick<RequestStatusStable, T>
-        if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        if (this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
-    
-    
+
+
     /**
      * Cancel an unfinished request
      * This request will include all already generated images in base64 encoded .webp files.
@@ -1132,15 +1148,15 @@ export class AIHorde {
      */
     async deleteTextGenerationRequest<
         T extends keyof RequestStatusKobold
-    >(id: string, options?: {fields?: T[]}): Promise<Pick<RequestStatusKobold, T>> {
-        const {result, fields_string} = await this.#request(`/generate/text/status/${id}`, "DELETE", {fields: options?.fields})
+    >(id: string, options?: { fields?: T[] }): Promise<Pick<RequestStatusKobold, T>> {
+        const { result, fields_string } = await this.#request(`/generate/text/status/${id}`, "DELETE", { fields: options?.fields })
 
         const data = await result.json() as Pick<RequestStatusKobold, T>
-        if(this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        if (this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
 
-    
+
     /**
      * Cancel an unfinished interrogation request
      * This request will return all already interrogated image results.
@@ -1150,14 +1166,14 @@ export class AIHorde {
      */
     async deleteInterrogationRequest<
         T extends keyof InterrogationStatus
-    >(id: string, options?: {fields?: T[]}): Promise<Pick<InterrogationStatus, T>> {
-        const {result, fields_string} = await this.#request(`/interrogate/status/${id}`, "DELETE", {fields: options?.fields})
+    >(id: string, options?: { fields?: T[] }): Promise<Pick<InterrogationStatus, T>> {
+        const { result, fields_string } = await this.#request(`/interrogate/status/${id}`, "DELETE", { fields: options?.fields })
 
         const data = await result.json() as Pick<InterrogationStatus, T>
-        if(this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
+        if (this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
         return data
     }
-    
+
     /**
      * Delete the worker entry
      * This will delete the worker and their statistics. Will not affect the kudos generated by that worker for their owner.
@@ -1170,16 +1186,16 @@ export class AIHorde {
      */
     async deleteWorker<
         T extends keyof DeletedWorker
-    >(id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<DeletedWorker, T>> {
+    >(id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<DeletedWorker, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/workers/${id}`, "DELETE", {token, fields: options?.fields})
+        const { result } = await this.#request(`/workers/${id}`, "DELETE", { token, fields: options?.fields })
 
         const data = await result.json() as Pick<DeletedWorker, T>
         this.#cache.workers?.delete(id)
         return data
     }
-    
+
     /**
      * Delete an existing SharedKey for this user
      * @param id - The targeted Shared Key's ID
@@ -1189,17 +1205,17 @@ export class AIHorde {
      */
     async deleteSharedKey<
         T extends keyof SimpleResponse
-    >(id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<SimpleResponse, T>> {
+    >(id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/sharedkeys/${id}`, "DELETE", {token, fields: options?.fields})
+        const { result } = await this.#request(`/sharedkeys/${id}`, "DELETE", { token, fields: options?.fields })
 
         const data = await result.json() as Pick<SimpleResponse, T>
         this.#cache.sharedkeys?.delete(id)
         return data
     }
-    
-    
+
+
     /**
      * Delete the team entry
      * Only the team's creator or a horde moderator can use this endpoint.
@@ -1211,17 +1227,17 @@ export class AIHorde {
      */
     async deleteTeam<
         T extends keyof DeletedTeam
-    >(id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<DeletedTeam, T>> {
+    >(id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<DeletedTeam, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result, fields_string} = await this.#request(`/teams/${id}`, "DELETE", {token, fields: options?.fields})
+        const { result, fields_string } = await this.#request(`/teams/${id}`, "DELETE", { token, fields: options?.fields })
 
         const data = await result.json() as Pick<DeletedTeam, T>
         this.#cache.teams?.delete(id + fields_string)
         return data
     }
-    
-    
+
+
     /**
      * Remove an IP from timeout
      * Only usable by horde moderators
@@ -1232,16 +1248,16 @@ export class AIHorde {
      */
     async deleteIPTimeout<
         T extends keyof SimpleResponse
-    >(delete_payload: DeleteTimeoutIPInput, options?: {token?: string, fields?: T[]}): Promise<Pick<SimpleResponse, T>> {
+    >(delete_payload: DeleteTimeoutIPInput, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/operations/ipaddr`, "DELETE", {token, fields: options?.fields, body: delete_payload})
+        const { result } = await this.#request(`/operations/ipaddr`, "DELETE", { token, fields: options?.fields, body: delete_payload })
 
         const data = await result.json() as Pick<SimpleResponse, T>
         return data
     }
-    
-    
+
+
     /**
      * Delete a regex filter
      * @param filter_id - The ID of the filter to delete
@@ -1251,10 +1267,10 @@ export class AIHorde {
      */
     async deleteFilter<
         T extends keyof SimpleResponse
-    >(filter_id: string, options?: {token?: string, fields?: T[]}): Promise<Pick<SimpleResponse, T>> {
+    >(filter_id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/filters/${filter_id}`, "DELETE", {token, fields: options?.fields})
+        const { result } = await this.#request(`/filters/${filter_id}`, "DELETE", { token, fields: options?.fields })
 
         const data = await result.json() as Pick<SimpleResponse, T>
         return data
@@ -2856,7 +2872,7 @@ export class AIHordeRatings {
         return token || this.#default_token || "0000000000"
     }
 
-    async #request(route: string, method: string, options?: {token?: string, fields?: string[], fields_string?: string, body?: any, additional_headers?: Record<string, any>}): Promise<{result: Response, fields_string: string}> {
+    async #request(route: string, method: string, options?: { token?: string, fields?: string[], fields_string?: string, body?: any, additional_headers?: Record<string, any> }): Promise<{ result: Response, fields_string: string }> {
         const fields_string = options?.fields?.join(',') || options?.fields_string || ''
         const t = this.#getToken(options?.token)
 
@@ -2865,8 +2881,8 @@ export class AIHordeRatings {
             "Client-Agent": this.#client_agent,
             "Content-Type": "application/json"
         }
-        if(options?.token) headers["apikey"] = t;
-        if(fields_string) headers["X-Fields"] = fields_string
+        if (options?.token) headers["apikey"] = t;
+        if (fields_string) headers["X-Fields"] = fields_string
 
         const res = await fetch(`${this.#api_route}${route}`, {
             method,
@@ -2874,9 +2890,9 @@ export class AIHordeRatings {
             body: options?.body ? JSON.stringify(options.body) : undefined
         })
 
-        if(!res.status.toString().startsWith("2")) throw new APIError(await res.json(), res, method, options?.body)
+        if (!res.status.toString().startsWith("2")) throw new APIError(await res.json(), res, method, options?.body)
 
-        return {result: res, fields_string}
+        return { result: res, fields_string }
     }
 
     /**
@@ -2886,8 +2902,8 @@ export class AIHordeRatings {
      */
     async getDatasets<
         T extends keyof DatasetGetResponse
-    >(options?: {fields?: T[]}): Promise<Pick<DatasetGetResponse, T>[]> {
-        const {result} = await this.#request(`/datasets`, "GET", {fields: options?.fields})
+    >(options?: { fields?: T[] }): Promise<Pick<DatasetGetResponse, T>[]> {
+        const { result } = await this.#request(`/datasets`, "GET", { fields: options?.fields })
 
         const data = await result.json() as Pick<DatasetGetResponse, T>[]
         return data
@@ -2900,8 +2916,8 @@ export class AIHordeRatings {
      */
     async getTeams<
         T extends keyof TeamsGetResponse
-    >(options?: {fields?: T[]}): Promise<Pick<TeamsGetResponse, T>[]> {
-        const {result} = await this.#request(`/teams`, "GET", {fields: options?.fields})
+    >(options?: { fields?: T[] }): Promise<Pick<TeamsGetResponse, T>[]> {
+        const { result } = await this.#request(`/teams`, "GET", { fields: options?.fields })
 
         const data = await result.json() as Pick<TeamsGetResponse, T>[]
         return data
@@ -2917,10 +2933,10 @@ export class AIHordeRatings {
      */
     async getNewRating<
         T extends keyof DatasetImagePopResponse
-    >(image_options?: {dataset_id: string, model_name?: string}, options?: {token?: string, fields?: T[]}): Promise<Pick<DatasetImagePopResponse, T>> {
+    >(image_options?: { dataset_id: string, model_name?: string }, options?: { token?: string, fields?: T[] }): Promise<Pick<DatasetImagePopResponse, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/rating/new${image_options?.dataset_id ? `/${image_options.dataset_id}${image_options?.model_name ? `/${image_options.model_name}` : ""}` : ""}`, "GET", {token, fields: options?.fields})
+        const { result } = await this.#request(`/rating/new${image_options?.dataset_id ? `/${image_options.dataset_id}${image_options?.model_name ? `/${image_options.model_name}` : ""}` : ""}`, "GET", { token, fields: options?.fields })
 
         const data = await result.json() as Pick<DatasetImagePopResponse, T>
         return data
@@ -2928,7 +2944,7 @@ export class AIHordeRatings {
 
 
     /** POST ENDPOINTS */
-    
+
 
     /**
      * Check if there are interrogation requests queued for fulfillment
@@ -2941,10 +2957,10 @@ export class AIHordeRatings {
      */
     async postRating<
         T extends keyof RatePostResponse
-    >(image_id: string, rating: RatePostInput, options?: {token?: string, fields?: T[]}): Promise<Pick<RatePostResponse, T>> {
+    >(image_id: string, rating: RatePostInput, options?: { token?: string, fields?: T[] }): Promise<Pick<RatePostResponse, T>> {
         const token = this.#getToken(options?.token)
 
-        const {result} = await this.#request(`/rating/${image_id}`, "POST", {token, fields: options?.fields, body: rating})
+        const { result } = await this.#request(`/rating/${image_id}`, "POST", { token, fields: options?.fields, body: rating })
 
         return await result.json() as Pick<RatePostResponse, T>
     }
