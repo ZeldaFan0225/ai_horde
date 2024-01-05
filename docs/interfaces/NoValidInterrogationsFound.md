@@ -30,7 +30,7 @@ How many waiting requests were skipped because they require a higher version of 
 
 #### Defined in
 
-[index.ts:2597](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2597)
+[index.ts:2608](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2608)
 
 ___
 
@@ -46,7 +46,7 @@ How many waiting requests were skipped because they demanded a trusted worker wh
 
 #### Defined in
 
-[index.ts:2591](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2591)
+[index.ts:2602](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2602)
 
 ___
 
@@ -62,4 +62,4 @@ How many waiting requests were skipped because they demanded a specific worker.
 
 #### Defined in
 
-[index.ts:2586](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2586)
+[index.ts:2597](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2597)

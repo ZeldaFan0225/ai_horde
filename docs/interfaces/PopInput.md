@@ -49,7 +49,7 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 #### Defined in
 
-[index.ts:1912](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1912)
+[index.ts:1923](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1923)
 
 ___
 
@@ -67,7 +67,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:1905](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1905)
+[index.ts:1916](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1916)
 
 ___
 
@@ -79,7 +79,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:1900](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1900)
+[index.ts:1911](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1911)
 
 ___
 
@@ -91,7 +91,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:1891](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1891)
+[index.ts:1902](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1902)
 
 ___
 
@@ -109,7 +109,7 @@ false
 
 #### Defined in
 
-[index.ts:1898](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1898)
+[index.ts:1909](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1909)
 
 ___
 
@@ -121,7 +121,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:1893](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1893)
+[index.ts:1904](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1904)
 
 ___
 
@@ -145,7 +145,7 @@ false
 
 #### Defined in
 
-[index.ts:1925](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1925)
+[index.ts:1936](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1936)
 
 ___
 
@@ -171,4 +171,4 @@ How many threads this worker is running. This is used to accurately the current 
 
 #### Defined in
 
-[index.ts:1919](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L1919)
+[index.ts:1930](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1930)

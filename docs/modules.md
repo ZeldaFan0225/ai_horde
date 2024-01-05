@@ -133,7 +133,7 @@
 
 #### Defined in
 
-[index.ts:2517](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2517)
+[index.ts:2528](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2528)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 #### Defined in
 
-[index.ts:2515](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2515)
+[index.ts:2526](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2526)
 
 ___
 
@@ -156,7 +156,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:2733](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2733)
+[index.ts:2744](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2744)
 
 ___
 
@@ -169,7 +169,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:2763](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2763)
+[index.ts:2774](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2774)
 
 ## Variables
 
@@ -179,7 +179,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:58](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L58)
+[index.ts:55](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L55)
 
 ___
 
@@ -189,7 +189,7 @@ ___
 
 #### Defined in
 
-[index.ts:67](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L67)
+[index.ts:64](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L64)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[index.ts:34](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L34)
+[index.ts:31](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L31)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 #### Defined in
 
-[index.ts:11](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L11)
+[index.ts:8](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L8)
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 #### Defined in
 
-[index.ts:45](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L45)
+[index.ts:42](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L42)
 
 ___
 
@@ -229,7 +229,7 @@ ___
 
 #### Defined in
 
-[index.ts:79](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L79)
+[index.ts:76](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L76)
 
 ___
 
@@ -241,7 +241,7 @@ AI Horde Ratings
 
 #### Defined in
 
-[index.ts:2838](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L2838)
+[index.ts:2849](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2849)
 
 ___
 
@@ -251,4 +251,4 @@ ___
 
 #### Defined in
 
-[index.ts:28](https://github.com/ZeldaFan0225/ai_horde/blob/1d5fbc0/index.ts#L28)
+[index.ts:25](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L25)
