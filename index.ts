@@ -139,27 +139,23 @@ export class AIHorde {
             teams: this.#cache_config.teams ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.teams }) : undefined,
             sharedkeys: this.#cache_config.sharedkeys ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.sharedkeys }) : undefined,
         }
+
+        this.VERSION = "Unknown"
+        this.#client_agent = options?.client_agent ?? "@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues";
+
         // This way, the package can be used in the browser, we Use dynamic imports, to handle the case where the package is used in node
-            let pckg: any = null;
             (async () => {
                 let fs = await import("fs")
                 let path = await import("path")
                 try{
-                  pckg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json")).toString())  
+                  let pckg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json")).toString())  
                   this.VERSION = pckg.version
                   this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
-                }catch{
-                    pckg = null; 
+                }catch(_){
+                    // This catch unexpect errors, like the JSON Parse failing
                 }
+            })().catch(_ => {})
                 
-            })()
-            if (pckg) {
-                this.VERSION = pckg.version
-                this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
-            } else {
-                this.VERSION = "Unknown"
-                this.#client_agent = options?.client_agent ?? `@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues`
-            }
 
 
 
