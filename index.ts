@@ -1,7 +1,4 @@
 import SuperMap from "@thunder04/supermap"
-import { readFileSync } from "fs"
-import { join } from "path";
-
 
 /*
  * https://github.com/db0/AI-Horde/blob/main/CHANGELOG.md
@@ -143,14 +140,9 @@ export class AIHorde {
             sharedkeys: this.#cache_config.sharedkeys ? new SuperMap({intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.sharedkeys}) : undefined,
         }
         
-        try {
-            let pckg = JSON.parse(readFileSync(join(__dirname, "./package.json"), "utf-8"))
-            this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
-            this.VERSION = pckg.version
-        } catch {
-            this.#client_agent = options?.client_agent ?? `@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues`
-            this.VERSION = "Unknown"
-        }
+        // This way, the package can be used in the browser
+        this.#client_agent = options?.client_agent ?? `@zeldafan0225/ai_horde:Version_Unknown:github.com/ZeldaFan0225/ai_horde/issues`
+        this.VERSION = "Unknown"
 
         
         this.ratings = new AIHordeRatings({
@@ -1683,6 +1675,11 @@ export interface ModelGenerationInputStable {
          * @maxLength 30
          */
         inject_trigger?: string,
+        /**
+         * If true, will consider the LoRa ID as a CivitAI version ID and search accordingly. Ensure the name is an integer
+         * @default false
+         */
+        is_version?: boolean
     }[],
     tis?: {
         /**
