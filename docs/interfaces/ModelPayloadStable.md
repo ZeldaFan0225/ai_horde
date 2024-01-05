@@ -51,7 +51,7 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:1978](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1978)
+[index.ts:1975](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1975)
 
 ___
 
@@ -71,7 +71,7 @@ The number of CLIP language processor layers to skip
 
 #### Defined in
 
-[index.ts:2032](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2032)
+[index.ts:2029](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2029)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[index.ts:2033](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2033)
+[index.ts:2030](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2030)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[index.ts:2039](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2039)
+[index.ts:2036](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2036)
 
 ___
 
@@ -119,7 +119,7 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:1986](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1986)
+[index.ts:1983](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1983)
 
 ___
 
@@ -147,7 +147,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1997](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1997)
+[index.ts:1994](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1994)
 
 ___
 
@@ -165,7 +165,7 @@ false
 
 #### Defined in
 
-[index.ts:2026](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2026)
+[index.ts:2023](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2023)
 
 ___
 
@@ -177,7 +177,7 @@ Set to True to enable karras noise scheduling tweaks
 
 #### Defined in
 
-[index.ts:2014](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2014)
+[index.ts:2011](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2011)
 
 ___
 
@@ -195,7 +195,7 @@ The amount of images to generate
 
 #### Defined in
 
-[index.ts:2044](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2044)
+[index.ts:2041](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2041)
 
 ___
 
@@ -207,7 +207,7 @@ The list of post-processors to apply to the image, in the order to be applied
 
 #### Defined in
 
-[index.ts:2016](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2016)
+[index.ts:2013](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2013)
 
 ___
 
@@ -219,7 +219,7 @@ The prompt which will be sent to Stable Diffusion to generate an image
 
 #### Defined in
 
-[index.ts:2035](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2035)
+[index.ts:2032](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2032)
 
 ___
 
@@ -235,7 +235,7 @@ k_euler
 
 #### Defined in
 
-[index.ts:1965](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1965)
+[index.ts:1962](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1962)
 
 ___
 
@@ -247,7 +247,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:1988](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1988)
+[index.ts:1985](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1985)
 
 ___
 
@@ -267,7 +267,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:2012](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2012)
+[index.ts:2009](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2009)
 
 ___
 
@@ -285,7 +285,7 @@ false
 
 #### Defined in
 
-[index.ts:2021](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2021)
+[index.ts:2018](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2018)
 
 ___
 
@@ -297,7 +297,7 @@ Special Toggles used in the SD Webui. To be documented.
 
 #### Defined in
 
-[index.ts:1969](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L1969)
+[index.ts:1966](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1966)
 
 ___
 
@@ -309,7 +309,7 @@ When true will apply NSFW censoring model on the generation
 
 #### Defined in
 
-[index.ts:2046](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2046)
+[index.ts:2043](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2043)
 
 ___
 
@@ -337,4 +337,4 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:2006](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2006)
+[index.ts:2003](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2003)
