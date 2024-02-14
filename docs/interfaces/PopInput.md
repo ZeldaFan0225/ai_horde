@@ -49,7 +49,7 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 #### Defined in
 
-[index.ts:1920](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1920)
+[index.ts:2035](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2035)
 
 ___
 
@@ -67,7 +67,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:1913](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1913)
+[index.ts:2028](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2028)
 
 ___
 
@@ -79,7 +79,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:1908](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1908)
+[index.ts:2023](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2023)
 
 ___
 
@@ -91,7 +91,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:1899](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1899)
+[index.ts:2014](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2014)
 
 ___
 
@@ -109,7 +109,7 @@ false
 
 #### Defined in
 
-[index.ts:1906](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1906)
+[index.ts:2021](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2021)
 
 ___
 
@@ -121,7 +121,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:1901](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1901)
+[index.ts:2016](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2016)
 
 ___
 
@@ -145,7 +145,7 @@ false
 
 #### Defined in
 
-[index.ts:1933](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1933)
+[index.ts:2048](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2048)
 
 ___
 
@@ -171,4 +171,4 @@ How many threads this worker is running. This is used to accurately the current 
 
 #### Defined in
 
-[index.ts:1927](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1927)
+[index.ts:2042](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2042)

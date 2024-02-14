@@ -30,7 +30,7 @@ When true this image has been censored by the worker's safety filter.
 
 #### Defined in
 
-[index.ts:1854](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1854)
+[index.ts:1969](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1969)
 
 ___
 
@@ -42,7 +42,7 @@ The ID for this image
 
 #### Defined in
 
-[index.ts:1852](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1852)
+[index.ts:1967](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1967)
 
 ___
 
@@ -54,7 +54,7 @@ The generated image as a Base64-encoded .webp file OR a cloudflare r2 download l
 
 #### Defined in
 
-[index.ts:1848](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1848)
+[index.ts:1963](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1963)
 
 ___
 
@@ -70,7 +70,7 @@ The model which generated this image
 
 #### Defined in
 
-[index.ts:1843](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1843)
+[index.ts:1958](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1958)
 
 ___
 
@@ -82,7 +82,7 @@ The seed which generated this image
 
 #### Defined in
 
-[index.ts:1850](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1850)
+[index.ts:1965](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1965)
 
 ___
 
@@ -98,7 +98,7 @@ The UUID of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1839](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1839)
+[index.ts:1954](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1954)
 
 ___
 
@@ -114,4 +114,4 @@ The name of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1841](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1841)
+[index.ts:1956](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1956)

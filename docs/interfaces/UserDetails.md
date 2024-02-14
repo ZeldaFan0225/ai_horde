@@ -43,7 +43,7 @@ How many seconds since this account was created
 
 #### Defined in
 
-[index.ts:2158](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2158)
+[index.ts:2273](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2273)
 
 ___
 
@@ -55,7 +55,7 @@ How many concurrent generations this user may request.
 
 #### Defined in
 
-[index.ts:2131](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2131)
+[index.ts:2246](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2246)
 
 ___
 
@@ -73,7 +73,7 @@ email@example.com
 
 #### Defined in
 
-[index.ts:2153](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2153)
+[index.ts:2268](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2268)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[index.ts:2166](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2166)
+[index.ts:2281](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2281)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[index.ts:2129](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2129)
+[index.ts:2244](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2244)
 
 ___
 
@@ -109,7 +109,7 @@ This user has been flagged for suspicious activity.
 
 #### Defined in
 
-[index.ts:2144](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2144)
+[index.ts:2259](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2259)
 
 ___
 
@@ -121,7 +121,7 @@ The user unique ID. It is always an integer.
 
 #### Defined in
 
-[index.ts:2125](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2125)
+[index.ts:2240](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2240)
 
 ___
 
@@ -133,7 +133,7 @@ The amount of Kudos this user has. The amount of Kudos determines the priority w
 
 #### Defined in
 
-[index.ts:2127](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2127)
+[index.ts:2242](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2242)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 #### Defined in
 
-[index.ts:2136](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2136)
+[index.ts:2251](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2251)
 
 ___
 
@@ -155,7 +155,7 @@ This user is a Horde moderator.
 
 #### Defined in
 
-[index.ts:2135](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2135)
+[index.ts:2250](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2250)
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 #### Defined in
 
-[index.ts:2140](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2140)
+[index.ts:2255](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2255)
 
 ___
 
@@ -177,7 +177,7 @@ If true, this user has not registered using an oauth service.
 
 #### Defined in
 
-[index.ts:2148](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2148)
+[index.ts:2263](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2263)
 
 ___
 
@@ -187,7 +187,7 @@ ___
 
 #### Defined in
 
-[index.ts:2167](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2167)
+[index.ts:2282](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2282)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[index.ts:2146](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2146)
+[index.ts:2261](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2261)
 
 ___
 
@@ -211,7 +211,7 @@ This user is a trusted member of the Horde.
 
 #### Defined in
 
-[index.ts:2142](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2142)
+[index.ts:2257](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2257)
 
 ___
 
@@ -223,7 +223,7 @@ ___
 
 #### Defined in
 
-[index.ts:2162](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2162)
+[index.ts:2277](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2277)
 
 ___
 
@@ -235,7 +235,7 @@ The user's unique Username. It is a combination of their chosen alias plus their
 
 #### Defined in
 
-[index.ts:2123](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2123)
+[index.ts:2238](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2238)
 
 ___
 
@@ -247,7 +247,7 @@ How many workers this user has created (active or inactive)
 
 #### Defined in
 
-[index.ts:2138](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2138)
+[index.ts:2253](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2253)
 
 ___
 
@@ -257,7 +257,7 @@ ___
 
 #### Defined in
 
-[index.ts:2139](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2139)
+[index.ts:2254](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2254)
 
 ___
 
@@ -269,4 +269,4 @@ Whether this user has been invited to join a worker to the horde and how many of
 
 #### Defined in
 
-[index.ts:2133](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2133)
+[index.ts:2248](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2248)

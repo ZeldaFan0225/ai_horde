@@ -16,6 +16,7 @@
 
 ### Properties
 
+- [error\_code](APIError.md#error_code)
 - [errors](APIError.md#errors)
 - [method](APIError.md#method)
 - [rawError](APIError.md#rawerror)
@@ -48,9 +49,19 @@ Error.constructor
 
 #### Defined in
 
-[index.ts:88](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L88)
+[index.ts:199](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L199)
 
 ## Properties
+
+### error\_code
+
+• **error\_code**: `string`
+
+#### Defined in
+
+[index.ts:198](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L198)
+
+___
 
 ### errors
 
@@ -58,7 +69,7 @@ Error.constructor
 
 #### Defined in
 
-[index.ts:87](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L87)
+[index.ts:197](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L197)
 
 ___
 
@@ -68,7 +79,7 @@ ___
 
 #### Defined in
 
-[index.ts:84](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L84)
+[index.ts:194](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L194)
 
 ___
 
@@ -78,7 +89,7 @@ ___
 
 #### Defined in
 
-[index.ts:82](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L82)
+[index.ts:192](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L192)
 
 ___
 
@@ -88,7 +99,7 @@ ___
 
 #### Defined in
 
-[index.ts:86](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L86)
+[index.ts:196](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L196)
 
 ___
 
@@ -98,7 +109,7 @@ ___
 
 #### Defined in
 
-[index.ts:83](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L83)
+[index.ts:193](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L193)
 
 ___
 
@@ -108,7 +119,7 @@ ___
 
 #### Defined in
 
-[index.ts:85](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L85)
+[index.ts:195](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L195)
 
 ## Accessors
 
@@ -126,4 +137,4 @@ Error.name
 
 #### Defined in
 
-[index.ts:98](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L98)
+[index.ts:211](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L211)
