@@ -37,7 +37,7 @@ How many waiting requests were skipped because they demanded a generation with a
 
 #### Defined in
 
-[index.ts:2068](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2068)
+[index.ts:2183](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2183)
 
 ___
 
@@ -53,7 +53,7 @@ How many waiting requests were skipped because they require a higher version of 
 
 #### Defined in
 
-[index.ts:2074](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2074)
+[index.ts:2189](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2189)
 
 ___
 
@@ -65,7 +65,7 @@ How many waiting requests were skipped because they demanded an available soft-p
 
 #### Defined in
 
-[index.ts:2052](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2052)
+[index.ts:2167](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2167)
 
 ___
 
@@ -77,7 +77,7 @@ How many waiting requests were skipped because they demanded a higher max_contex
 
 #### Defined in
 
-[index.ts:2048](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2048)
+[index.ts:2163](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2163)
 
 ___
 
@@ -89,7 +89,7 @@ How many waiting requests were skipped because they demanded more generated toke
 
 #### Defined in
 
-[index.ts:2050](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2050)
+[index.ts:2165](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2165)
 
 ___
 
@@ -105,7 +105,7 @@ How many waiting requests were skipped because they demanded a different model t
 
 #### Defined in
 
-[index.ts:2072](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2072)
+[index.ts:2187](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2187)
 
 ___
 
@@ -121,7 +121,7 @@ How many waiting requests were skipped because they demanded a nsfw generation w
 
 #### Defined in
 
-[index.ts:2066](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2066)
+[index.ts:2181](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2181)
 
 ___
 
@@ -137,7 +137,7 @@ How many waiting requests were skipped because they required higher performance
 
 #### Defined in
 
-[index.ts:2064](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2064)
+[index.ts:2179](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2179)
 
 ___
 
@@ -153,7 +153,7 @@ How many waiting requests were skipped because they demanded a trusted worker wh
 
 #### Defined in
 
-[index.ts:2070](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2070)
+[index.ts:2185](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2185)
 
 ___
 
@@ -169,4 +169,4 @@ How many waiting requests were skipped because they demanded a specific worker
 
 #### Defined in
 
-[index.ts:2062](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2062)
+[index.ts:2177](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2177)

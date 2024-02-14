@@ -13,6 +13,7 @@
 ### Properties
 
 - [message](RequestError.md#message)
+- [rc](RequestError.md#rc)
 
 ## Properties
 
@@ -24,4 +25,16 @@ The error message for this status code.
 
 #### Defined in
 
-[index.ts:1800](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1800)
+[index.ts:1913](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1913)
+
+___
+
+### rc
+
+• **rc**: `string`
+
+The Error code that can be translated into a text
+
+#### Defined in
+
+[index.ts:1915](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1915)

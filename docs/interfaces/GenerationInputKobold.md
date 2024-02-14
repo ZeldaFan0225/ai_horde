@@ -27,7 +27,7 @@ Specify which models are allowed to be used for this request
 
 #### Defined in
 
-[index.ts:1439](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1439)
+[index.ts:1552](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1552)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[index.ts:1425](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1425)
+[index.ts:1538](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1538)
 
 ___
 
@@ -49,7 +49,7 @@ The prompt which will be sent to KoboldAI to generate text
 
 #### Defined in
 
-[index.ts:1424](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1424)
+[index.ts:1537](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1537)
 
 ___
 
@@ -65,7 +65,7 @@ Specify which softpompt needs to be used to service this request
 
 #### Defined in
 
-[index.ts:1430](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1430)
+[index.ts:1543](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1543)
 
 ___
 
@@ -83,7 +83,7 @@ true
 
 #### Defined in
 
-[index.ts:1435](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1435)
+[index.ts:1548](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1548)
 
 ___
 
@@ -95,4 +95,4 @@ Specify which workers are allowed to service this request
 
 #### Defined in
 
-[index.ts:1437](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L1437)
+[index.ts:1550](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1550)
