@@ -21,7 +21,7 @@ The new state of the 'info' var for this worker.
 
 #### Defined in
 
-[index.ts:2349](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2349)
+[index.ts:2346](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2346)
 
 ___
 
@@ -33,7 +33,7 @@ The new state of the 'maintenance' var for this worker. When True, this worker w
 
 #### Defined in
 
-[index.ts:2345](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2345)
+[index.ts:2342](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2342)
 
 ___
 
@@ -45,7 +45,7 @@ The new name for this this worker.
 
 #### Defined in
 
-[index.ts:2351](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2351)
+[index.ts:2348](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2348)
 
 ___
 
@@ -57,4 +57,4 @@ The new state of the 'paused' var for this worker. When True, this worker will n
 
 #### Defined in
 
-[index.ts:2347](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2347)
+[index.ts:2344](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2344)

@@ -19,7 +19,7 @@ The amount of text requests generated during this period.
 
 #### Defined in
 
-[index.ts:2787](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2787)
+[index.ts:2784](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2784)
 
 ___
 
@@ -31,4 +31,4 @@ The amount of tokens generated during this period.
 
 #### Defined in
 
-[index.ts:2789](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2789)
+[index.ts:2786](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2786)
