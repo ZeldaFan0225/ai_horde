@@ -33,7 +33,7 @@ Anarchy is emergent order.
 
 #### Defined in
 
-[index.ts:2435](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2435)
+[index.ts:2432](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2432)
 
 ___
 
@@ -53,4 +53,4 @@ The name of the team. No profanity allowed!
 
 #### Defined in
 
-[index.ts:2428](https://github.com/ZeldaFan0225/ai_horde/blob/ae52afb/index.ts#L2428)
+[index.ts:2425](https://github.com/ZeldaFan0225/ai_horde/blob/90eaabf/index.ts#L2425)
