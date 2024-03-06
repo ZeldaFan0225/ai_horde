@@ -25,7 +25,7 @@ The error message for this status code.
 
 #### Defined in
 
-[index.ts:1913](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1913)
+[index.ts:1914](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1914)
 
 ___
 
@@ -37,4 +37,4 @@ The Error code that can be translated into a text
 
 #### Defined in
 
-[index.ts:1915](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1915)
+[index.ts:1916](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1916)

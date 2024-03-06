@@ -54,7 +54,7 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:1702](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1702)
+[index.ts:1703](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1703)
 
 ___
 
@@ -74,7 +74,7 @@ The number of CLIP language processor layers to skip
 
 #### Defined in
 
-[index.ts:1756](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1756)
+[index.ts:1757](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1757)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[index.ts:1757](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1757)
+[index.ts:1758](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1758)
 
 ___
 
@@ -106,7 +106,7 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:1710](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1710)
+[index.ts:1711](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1711)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[index.ts:1773](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1773)
+[index.ts:1774](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1774)
 
 ___
 
@@ -158,7 +158,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1721](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1721)
+[index.ts:1722](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1722)
 
 ___
 
@@ -176,7 +176,7 @@ false
 
 #### Defined in
 
-[index.ts:1750](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1750)
+[index.ts:1751](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1751)
 
 ___
 
@@ -194,7 +194,7 @@ false
 
 #### Defined in
 
-[index.ts:1762](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1762)
+[index.ts:1763](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1763)
 
 ___
 
@@ -206,7 +206,7 @@ Set to True to enable karras noise scheduling tweaks
 
 #### Defined in
 
-[index.ts:1738](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1738)
+[index.ts:1739](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1739)
 
 ___
 
@@ -216,7 +216,7 @@ ___
 
 #### Defined in
 
-[index.ts:1774](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1774)
+[index.ts:1775](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1775)
 
 ___
 
@@ -236,7 +236,7 @@ The amount of images to generate
 
 #### Defined in
 
-[index.ts:1840](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1840)
+[index.ts:1841](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1841)
 
 ___
 
@@ -248,7 +248,7 @@ The list of post-processors to apply to the image, in the order to be applied
 
 #### Defined in
 
-[index.ts:1740](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1740)
+[index.ts:1741](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1741)
 
 ___
 
@@ -266,13 +266,13 @@ false
 
 #### Defined in
 
-[index.ts:1767](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1767)
+[index.ts:1768](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1768)
 
 ___
 
 ### sampler\_name
 
-• `Optional` **sampler\_name**: ``"lcm"`` \| ``"k_lms"`` \| ``"k_heun"`` \| ``"k_euler"`` \| ``"k_dpm_2"`` \| ``"k_dpm_2_a"`` \| ``"DDIM"`` \| ``"PLMS"`` \| ``"k_dpm_fast"`` \| ``"k_dpm_adaptive"`` \| ``"k_dpmpp_2s_a"`` \| ``"k_dpmpp_2m"`` \| ``"dpmsolver"`` \| ``"k_dpmpp_sde"``
+• `Optional` **sampler\_name**: ``"lcm"`` \| ``"k_lms"`` \| ``"k_heun"`` \| ``"k_euler_a"`` \| ``"k_euler"`` \| ``"k_dpm_2"`` \| ``"k_dpm_2_a"`` \| ``"DDIM"`` \| ``"PLMS"`` \| ``"k_dpm_fast"`` \| ``"k_dpm_adaptive"`` \| ``"k_dpmpp_2s_a"`` \| ``"k_dpmpp_2m"`` \| ``"dpmsolver"`` \| ``"k_dpmpp_sde"``
 
 **`Default`**
 
@@ -282,7 +282,7 @@ k_euler
 
 #### Defined in
 
-[index.ts:1693](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1693)
+[index.ts:1694](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1694)
 
 ___
 
@@ -294,7 +294,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:1712](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1712)
+[index.ts:1713](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1713)
 
 ___
 
@@ -314,7 +314,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:1736](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1736)
+[index.ts:1737](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1737)
 
 ___
 
@@ -324,7 +324,7 @@ ___
 
 #### Defined in
 
-[index.ts:1828](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1828)
+[index.ts:1829](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1829)
 
 ___
 
@@ -348,7 +348,7 @@ ___
 
 #### Defined in
 
-[index.ts:1834](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1834)
+[index.ts:1835](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1835)
 
 ___
 
@@ -366,7 +366,7 @@ false
 
 #### Defined in
 
-[index.ts:1745](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1745)
+[index.ts:1746](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1746)
 
 ___
 
@@ -376,7 +376,7 @@ ___
 
 #### Defined in
 
-[index.ts:1808](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1808)
+[index.ts:1809](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1809)
 
 ___
 
@@ -404,4 +404,4 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1730](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1730)
+[index.ts:1731](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1731)

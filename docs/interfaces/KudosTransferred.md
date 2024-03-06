@@ -18,4 +18,4 @@ The amount of Kudos tranferred
 
 #### Defined in
 
-[index.ts:2491](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2491)
+[index.ts:2492](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2492)
