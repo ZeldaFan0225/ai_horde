@@ -40,7 +40,7 @@ false
 
 #### Defined in
 
-[index.ts:1658](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1658)
+[index.ts:1659](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1659)
 
 ___
 
@@ -58,7 +58,7 @@ false
 
 #### Defined in
 
-[index.ts:1684](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1684)
+[index.ts:1685](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1685)
 
 ___
 
@@ -70,7 +70,7 @@ Specify which models are allowed to be used for this request
 
 #### Defined in
 
-[index.ts:1664](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1664)
+[index.ts:1665](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1665)
 
 ___
 
@@ -88,7 +88,7 @@ false
 
 #### Defined in
 
-[index.ts:1643](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1643)
+[index.ts:1644](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1644)
 
 ___
 
@@ -100,7 +100,7 @@ The parameters for the generation
 
 #### Defined in
 
-[index.ts:1638](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1638)
+[index.ts:1639](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1639)
 
 ___
 
@@ -112,7 +112,7 @@ The prompt which will be sent to Stable Diffusion to generate an image
 
 #### Defined in
 
-[index.ts:1636](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1636)
+[index.ts:1637](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1637)
 
 ___
 
@@ -124,7 +124,7 @@ If using a service account as a proxy, provide this value to identify the actual
 
 #### Defined in
 
-[index.ts:1686](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1686)
+[index.ts:1687](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1687)
 
 ___
 
@@ -136,7 +136,7 @@ If True, the image will be sent via cloudflare r2 download link
 
 #### Defined in
 
-[index.ts:1672](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1672)
+[index.ts:1673](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1673)
 
 ___
 
@@ -154,7 +154,7 @@ true
 
 #### Defined in
 
-[index.ts:1679](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1679)
+[index.ts:1680](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1680)
 
 ___
 
@@ -166,7 +166,7 @@ If True, The image will be shared with LAION for improving their dataset. This w
 
 #### Defined in
 
-[index.ts:1674](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1674)
+[index.ts:1675](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1675)
 
 ___
 
@@ -184,7 +184,7 @@ true
 
 #### Defined in
 
-[index.ts:1653](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1653)
+[index.ts:1654](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1654)
 
 ___
 
@@ -196,7 +196,7 @@ The Base64-encoded webp to use for img2img, max siue 3072 * 3072
 
 #### Defined in
 
-[index.ts:1666](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1666)
+[index.ts:1667](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1667)
 
 ___
 
@@ -208,7 +208,7 @@ If source_processing is set to 'inpainting' or 'outpainting', this parameter can
 
 #### Defined in
 
-[index.ts:1670](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1670)
+[index.ts:1671](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1671)
 
 ___
 
@@ -220,7 +220,7 @@ If source_image is provided, specifies how to process it.
 
 #### Defined in
 
-[index.ts:1668](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1668)
+[index.ts:1669](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1669)
 
 ___
 
@@ -238,7 +238,7 @@ true
 
 #### Defined in
 
-[index.ts:1648](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1648)
+[index.ts:1649](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1649)
 
 ___
 
@@ -250,7 +250,7 @@ If true, the worker list will be treated as a blacklist instead of a whitelist.
 
 #### Defined in
 
-[index.ts:1662](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1662)
+[index.ts:1663](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1663)
 
 ___
 
@@ -262,4 +262,4 @@ Specify which workers are allowed to service this request
 
 #### Defined in
 
-[index.ts:1660](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L1660)
+[index.ts:1661](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1661)

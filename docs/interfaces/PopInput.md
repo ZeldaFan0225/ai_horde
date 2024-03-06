@@ -49,7 +49,7 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 #### Defined in
 
-[index.ts:2035](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2035)
+[index.ts:2036](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2036)
 
 ___
 
@@ -67,7 +67,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:2028](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2028)
+[index.ts:2029](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2029)
 
 ___
 
@@ -79,7 +79,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:2023](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2023)
+[index.ts:2024](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2024)
 
 ___
 
@@ -91,7 +91,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:2014](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2014)
+[index.ts:2015](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2015)
 
 ___
 
@@ -109,7 +109,7 @@ false
 
 #### Defined in
 
-[index.ts:2021](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2021)
+[index.ts:2022](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2022)
 
 ___
 
@@ -121,7 +121,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:2016](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2016)
+[index.ts:2017](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2017)
 
 ___
 
@@ -145,7 +145,7 @@ false
 
 #### Defined in
 
-[index.ts:2048](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2048)
+[index.ts:2049](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2049)
 
 ___
 
@@ -171,4 +171,4 @@ How many threads this worker is running. This is used to accurately the current 
 
 #### Defined in
 
-[index.ts:2042](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2042)
+[index.ts:2043](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2043)

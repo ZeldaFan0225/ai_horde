@@ -26,7 +26,7 @@ How many images were generated or requested
 
 #### Defined in
 
-[index.ts:2215](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2215)
+[index.ts:2216](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2216)
 
 ___
 
@@ -44,7 +44,7 @@ How many images were interrogated generated or requested
 
 #### Defined in
 
-[index.ts:2220](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2220)
+[index.ts:2221](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2221)
 
 ___
 
@@ -62,4 +62,4 @@ How many texts were generated or requested
 
 #### Defined in
 
-[index.ts:2225](https://github.com/ZeldaFan0225/ai_horde/blob/9b3ae88/index.ts#L2225)
+[index.ts:2226](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2226)
