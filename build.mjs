@@ -11,4 +11,4 @@ esbuild.buildSync({
     keepNames: true,
     format: 'cjs',
     bundle: true
-})
+});
