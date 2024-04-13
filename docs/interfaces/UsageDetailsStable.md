@@ -25,7 +25,7 @@ How many megapixelsteps this user has requested
 
 #### Defined in
 
-[index.ts:2315](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2315)
+[index.ts:2337](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2337)
 
 ___
 
@@ -41,4 +41,4 @@ How many images this user has requested
 
 #### Defined in
 
-[index.ts:2313](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2313)
+[index.ts:2335](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2335)

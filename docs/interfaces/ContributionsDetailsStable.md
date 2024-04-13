@@ -29,7 +29,7 @@ How many images this user has generated
 
 #### Defined in
 
-[index.ts:2325](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2325)
+[index.ts:2347](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2347)
 
 ___
 
@@ -41,4 +41,4 @@ How many megapixelsteps this user has generated
 
 #### Defined in
 
-[index.ts:2327](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2327)
+[index.ts:2349](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2349)

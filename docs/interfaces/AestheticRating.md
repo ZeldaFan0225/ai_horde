@@ -33,7 +33,7 @@ The UUID of image being rated
 
 #### Defined in
 
-[index.ts:2768](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2768)
+[index.ts:2790](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2790)
 
 ___
 
@@ -53,4 +53,4 @@ The aesthetic rating 1-10 for this image
 
 #### Defined in
 
-[index.ts:2774](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2774)
+[index.ts:2796](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2796)

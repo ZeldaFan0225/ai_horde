@@ -33,7 +33,7 @@ Words which, when detected will refuse to pick up any jobs
 
 #### Defined in
 
-[index.ts:2000](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2000)
+[index.ts:2022](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2022)
 
 ___
 
@@ -65,7 +65,7 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 #### Defined in
 
-[index.ts:2036](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2036)
+[index.ts:2058](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2058)
 
 ___
 
@@ -87,7 +87,7 @@ The version of the bridge used by this worker
 
 #### Defined in
 
-[index.ts:2029](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2029)
+[index.ts:2051](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2051)
 
 ___
 
@@ -105,7 +105,7 @@ The maximum amount of pixels this worker can generate
 
 #### Defined in
 
-[index.ts:1998](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1998)
+[index.ts:2020](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2020)
 
 ___
 
@@ -121,7 +121,7 @@ Which models this worker is serving
 
 #### Defined in
 
-[index.ts:2024](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2024)
+[index.ts:2046](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2046)
 
 ___
 
@@ -137,7 +137,7 @@ The Name of the Worker
 
 #### Defined in
 
-[index.ts:2015](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2015)
+[index.ts:2037](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2037)
 
 ___
 
@@ -159,7 +159,7 @@ false
 
 #### Defined in
 
-[index.ts:2022](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2022)
+[index.ts:2044](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2044)
 
 ___
 
@@ -175,7 +175,7 @@ Users with priority to use this worker
 
 #### Defined in
 
-[index.ts:2017](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2017)
+[index.ts:2039](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2039)
 
 ___
 
@@ -203,7 +203,7 @@ false
 
 #### Defined in
 
-[index.ts:2049](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2049)
+[index.ts:2071](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2071)
 
 ___
 
@@ -233,4 +233,4 @@ How many threads this worker is running. This is used to accurately the current 
 
 #### Defined in
 
-[index.ts:2043](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2043)
+[index.ts:2065](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2065)
