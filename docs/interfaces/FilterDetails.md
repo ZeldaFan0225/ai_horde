@@ -22,7 +22,7 @@ Description about this regex
 
 #### Defined in
 
-[index.ts:2804](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2804)
+[index.ts:2826](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2826)
 
 ___
 
@@ -42,7 +42,7 @@ The integer defining this filter type
 
 #### Defined in
 
-[index.ts:2800](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2800)
+[index.ts:2822](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2822)
 
 ___
 
@@ -54,7 +54,7 @@ The UUID of this filter
 
 #### Defined in
 
-[index.ts:2789](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2789)
+[index.ts:2811](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2811)
 
 ___
 
@@ -72,7 +72,7 @@ ac.*
 
 #### Defined in
 
-[index.ts:2794](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2794)
+[index.ts:2816](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2816)
 
 ___
 
@@ -84,4 +84,4 @@ The moderator which added or last updated this regex
 
 #### Defined in
 
-[index.ts:2808](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2808)
+[index.ts:2830](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2830)

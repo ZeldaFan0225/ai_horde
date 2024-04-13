@@ -34,7 +34,7 @@ True when all images in this request are done. Else False.
 
 #### Defined in
 
-[index.ts:1940](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1940)
+[index.ts:1962](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1962)
 
 ___
 
@@ -46,7 +46,7 @@ rue when this request caused an internal server error and cannot be completed.
 
 #### Defined in
 
-[index.ts:1942](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1942)
+[index.ts:1964](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1964)
 
 ___
 
@@ -58,7 +58,7 @@ The amount of finished images in this request
 
 #### Defined in
 
-[index.ts:1934](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1934)
+[index.ts:1956](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1956)
 
 ___
 
@@ -70,7 +70,7 @@ If False, this request will not be able to be completed with the pool of workers
 
 #### Defined in
 
-[index.ts:1950](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1950)
+[index.ts:1972](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1972)
 
 ___
 
@@ -82,7 +82,7 @@ The amount of total Kudos this request has consumed until now.
 
 #### Defined in
 
-[index.ts:1948](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1948)
+[index.ts:1970](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1970)
 
 ___
 
@@ -94,7 +94,7 @@ The amount of still processing images in this request
 
 #### Defined in
 
-[index.ts:1936](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1936)
+[index.ts:1958](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1958)
 
 ___
 
@@ -106,7 +106,7 @@ The position in the requests queue. This position is determined by relative Kudo
 
 #### Defined in
 
-[index.ts:1946](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1946)
+[index.ts:1968](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1968)
 
 ___
 
@@ -118,7 +118,7 @@ The expected amount to wait (in seconds) to generate all images in this request
 
 #### Defined in
 
-[index.ts:1944](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1944)
+[index.ts:1966](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1966)
 
 ___
 
@@ -130,4 +130,4 @@ The amount of images waiting to be picked up by a worker
 
 #### Defined in
 
-[index.ts:1938](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L1938)
+[index.ts:1960](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1960)
