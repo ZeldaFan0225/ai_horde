@@ -136,7 +136,8 @@ export const ModelGenerationInputStableSamplers = Object.freeze({
 export const SourceImageProcessingTypes = Object.freeze({
     "img2img": "img2img",
     "inpainting": "inpainting",
-    "outpainting": "outpainting"
+    "outpainting": "outpainting",
+    "remix": "remix"
 } as const)
 
 export const ModelGenerationInputPostProcessingTypes = Object.freeze({
@@ -1685,6 +1686,23 @@ export interface ImageGenerationInput {
     dry_run?: boolean,
     /** If using a service account as a proxy, provide this value to identify the actual account from which this request is coming from. */
     proxied_account?: string,
+    /** 
+     * When true, this request will not use batching. This will allow you to retrieve accurate seeds. Feature is restricted to trusted users and patreons
+     * @default false
+    */
+    disable_batching?: boolean,
+    /** 
+     * When true and the request requires upfront kudos and the account does not have enough The request will be downgraded in steps and resolution so that it does not need upfront kudos.
+     * @default false
+    */
+    allow_downgrade?: boolean,
+    /** 
+     * Provide a URL where the AI Horde will send a POST call after each delivered generation. The request will include the details of the job as well as the request ID.
+     * @example https://haidra.net/00000000-0000-0000-0000-000000000000
+     * @minLength 10
+     * @maxLength 1024
+    */
+    webhook?: string,
 }
 
 export interface ModelGenerationInputStable {
@@ -1772,60 +1790,8 @@ export interface ModelGenerationInputStable {
      * @maximum 1
      */
     facefixer_strength?: number,
-    loras?: {
-        /**
-         * The exact name of the LoRa
-         * @example GlowingRunesAIV6
-         * @minLength 1
-         * @maxLength 255
-         */
-        name: string,
-        /**
-         * The strength of the LoRa to apply to the SD model.
-         * @default 1
-         * @minimum 0
-         * @maximum 5
-         */
-        model?: number,
-        /**
-         * The strength of the LoRa to apply to the clip model.
-         * @default 1
-         * @minimum 0
-         * @maximum 5
-         */
-        clip?: number,
-        /**
-         * If set, will try to discover a trigger for this LoRa which matches or is similar to this string and inject it into the prompt. I 'any' is specified it will be pick the first trigger.
-         * @minLength 1
-         * @maxLength 30
-         */
-        inject_trigger?: string,
-        /**
-         * If true, will consider the LoRa ID as a CivitAI version ID and search accordingly. Ensure the name is an integer
-         * @default false
-         */
-        is_version?: boolean
-    }[],
-    tis?: {
-        /**
-         * The exact name or CivitAI ID of the Textual Inversion.
-         * @example 7808
-         * @minLength 1
-         * @maxLength 255
-         */
-        name: string,
-        /**
-         * if set, will automatically add this TI filename to the prompt or negative prompt accordingly using the provided strength. If this is set to None, then the user will have to manually add the embed to the prompt themselves.
-         */
-        inject_ti?: (typeof ModelPayloadTextInversionsStable[keyof typeof ModelPayloadTextInversionsStable]),
-        /**
-         * The strength with which to apply the TI to the prompt. Only used when inject_ti is not None
-         * @default 1
-         * @minimum -5
-         * @maximum 5
-         */
-        strength?: number
-    }[]
+    loras?: ModelPayloadLorasStable[],
+    tis?: ModelPayloadTextualInversionsStable[]
     special?: Record<string, any>
     /** 
      * @default 30
@@ -1839,6 +1805,62 @@ export interface ModelGenerationInputStable {
      * @maximum 20
     */
     n?: number
+}
+
+export interface ModelPayloadLorasStable {
+    /**
+     * The exact name of the LoRa
+     * @example GlowingRunesAIV6
+     * @minLength 1
+     * @maxLength 255
+     */
+    name: string,
+    /**
+     * The strength of the LoRa to apply to the SD model.
+     * @default 1
+     * @minimum 0
+     * @maximum 5
+     */
+    model?: number,
+    /**
+     * The strength of the LoRa to apply to the clip model.
+     * @default 1
+     * @minimum 0
+     * @maximum 5
+     */
+    clip?: number,
+    /**
+     * If set, will try to discover a trigger for this LoRa which matches or is similar to this string and inject it into the prompt. I 'any' is specified it will be pick the first trigger.
+     * @minLength 1
+     * @maxLength 30
+     */
+    inject_trigger?: string,
+    /**
+     * If true, will consider the LoRa ID as a CivitAI version ID and search accordingly. Ensure the name is an integer
+     * @default false
+     */
+    is_version?: boolean
+}
+
+export interface ModelPayloadTextualInversionsStable {
+    /**
+     * The exact name or CivitAI ID of the Textual Inversion.
+     * @example 7808
+     * @minLength 1
+     * @maxLength 255
+     */
+    name: string,
+    /**
+     * if set, will automatically add this TI filename to the prompt or negative prompt accordingly using the provided strength. If this is set to None, then the user will have to manually add the embed to the prompt themselves.
+     */
+    inject_ti?: (typeof ModelPayloadTextInversionsStable[keyof typeof ModelPayloadTextInversionsStable]),
+    /**
+     * The strength with which to apply the TI to the prompt. Only used when inject_ti is not None
+     * @default 1
+     * @minimum -5
+     * @maximum 5
+     */
+    strength?: number
 }
 
 export interface ModelPayloadRootStable {
