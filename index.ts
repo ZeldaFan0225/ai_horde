@@ -190,6 +190,10 @@ export const ModelPayloadTextInversionsStable = Object.freeze({
     negrpompt: "negprompt"
 } as const)
 
+export const ModelGenerationInputWorkflows = Object.freeze({
+    "qr_code": "qr_code",
+} as const)
+
 export class APIError extends Error {
     rawError: RequestError;
     status: number;
@@ -1670,6 +1674,7 @@ export interface ImageGenerationInput {
     source_processing?: typeof SourceImageProcessingTypes[keyof typeof SourceImageProcessingTypes],
     /** If source_processing is set to 'inpainting' or 'outpainting', this parameter can be optionally provided as the Base64-encoded webp mask of the areas to inpaint. If this arg is not passed, the inpainting/outpainting mask has to be embedded as alpha channel */
     source_mask?: string,
+    extra_source_images?: ExtraSourceImage[],
     /** If True, the image will be sent via cloudflare r2 download link */
     r2?: boolean,
     /** If True, The image will be shared with LAION for improving their dataset. This will also reduce your kudos consumption by 2. For anonymous users, this is always True. */
@@ -1703,6 +1708,19 @@ export interface ImageGenerationInput {
      * @maxLength 1024
     */
     webhook?: string,
+}
+
+export interface ExtraSourceImage {
+    /**
+     * The Base64-encoded webp to use for further processing
+     * @minLength 1
+     */
+    image: string,
+    /**
+     * Optional field, determining the strength to use for the processing
+     * @default 1
+     */
+    strength?: number
 }
 
 export interface ModelGenerationInputStable {
@@ -1791,8 +1809,14 @@ export interface ModelGenerationInputStable {
      */
     facefixer_strength?: number,
     loras?: ModelPayloadLorasStable[],
-    tis?: ModelPayloadTextualInversionsStable[]
-    special?: Record<string, any>
+    tis?: ModelPayloadTextualInversionsStable[],
+    special?: Record<string, any>,
+    extra_texts?: ExtraText[],
+    /**
+     * Explicitly specify the horde-engine workflow to use
+     * @example qr_code
+     */
+    workflow?: (typeof ModelGenerationInputWorkflows[keyof typeof ModelGenerationInputWorkflows]),
     /** 
      * @default 30
      * @minimum 1
@@ -1805,6 +1829,19 @@ export interface ModelGenerationInputStable {
      * @maximum 20
     */
     n?: number
+}
+
+export interface ExtraText {
+    /**
+     * The extra text to send along with this generation
+     * @minLength 1
+     */
+    text: string,
+    /**
+     * The reference which points how and where this text should be used
+     * @minLength 1
+     */
+    reference: string
 }
 
 export interface ModelPayloadLorasStable {
@@ -1939,12 +1976,7 @@ export interface RequestError {
 }
 
 export interface RequestStatusStable extends RequestStatusCheck {
-    generations?: GenerationStable[],
-    gen_metadata?: {
-        type: string,
-        value: string,
-        ref: string
-    }[]
+    generations?: GenerationStable[]
 }
 
 export interface RequestStatusKobold extends RequestStatusCheck {
@@ -1970,6 +2002,8 @@ export interface RequestStatusCheck {
     kudos?: number,
     /** If False, this request will not be able to be completed with the pool of workers currently available */
     is_possible?: boolean,
+    /** If True, These images have been shared with LAION */
+    shared?: boolean,
 }
 
 export interface Generation {
@@ -1989,7 +2023,12 @@ export interface GenerationStable extends Generation {
     /** The ID for this image */
     id?: string,
     /** When true this image has been censored by the worker's safety filter. */
-    censored?: boolean
+    censored?: boolean,
+    gen_metadata?: {
+        type: string,
+        value: string,
+        ref: string
+    }[]
 }
 
 export interface GenerationKobold extends Generation {
