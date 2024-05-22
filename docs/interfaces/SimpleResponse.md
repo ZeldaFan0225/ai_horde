@@ -24,4 +24,4 @@ OK
 
 #### Defined in
 
-[index.ts:2658](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2658)
+[index.ts:2697](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2697)

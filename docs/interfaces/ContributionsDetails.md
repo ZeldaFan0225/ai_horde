@@ -24,4 +24,4 @@ How many images this user has generated
 
 #### Defined in
 
-[index.ts:2354](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2354)
+[index.ts:2393](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2393)

@@ -10,6 +10,7 @@
 - [censor\_nsfw](ImageGenerationInput.md#censor_nsfw)
 - [disable\_batching](ImageGenerationInput.md#disable_batching)
 - [dry\_run](ImageGenerationInput.md#dry_run)
+- [extra\_source\_images](ImageGenerationInput.md#extra_source_images)
 - [models](ImageGenerationInput.md#models)
 - [nsfw](ImageGenerationInput.md#nsfw)
 - [params](ImageGenerationInput.md#params)
@@ -43,7 +44,7 @@ false
 
 #### Defined in
 
-[index.ts:1698](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1698)
+[index.ts:1703](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1703)
 
 ___
 
@@ -61,7 +62,7 @@ false
 
 #### Defined in
 
-[index.ts:1660](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1660)
+[index.ts:1664](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1664)
 
 ___
 
@@ -79,7 +80,7 @@ false
 
 #### Defined in
 
-[index.ts:1693](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1693)
+[index.ts:1698](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1698)
 
 ___
 
@@ -97,7 +98,17 @@ false
 
 #### Defined in
 
-[index.ts:1686](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1686)
+[index.ts:1691](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1691)
+
+___
+
+### extra\_source\_images
+
+• `Optional` **extra\_source\_images**: [`ExtraSourceImage`](ExtraSourceImage.md)[]
+
+#### Defined in
+
+[index.ts:1677](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1677)
 
 ___
 
@@ -109,7 +120,7 @@ Specify which models are allowed to be used for this request
 
 #### Defined in
 
-[index.ts:1666](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1666)
+[index.ts:1670](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1670)
 
 ___
 
@@ -127,7 +138,7 @@ false
 
 #### Defined in
 
-[index.ts:1645](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1645)
+[index.ts:1649](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1649)
 
 ___
 
@@ -139,7 +150,7 @@ The parameters for the generation
 
 #### Defined in
 
-[index.ts:1640](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1640)
+[index.ts:1644](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1644)
 
 ___
 
@@ -151,7 +162,7 @@ The prompt which will be sent to Stable Diffusion to generate an image
 
 #### Defined in
 
-[index.ts:1638](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1638)
+[index.ts:1642](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1642)
 
 ___
 
@@ -163,7 +174,7 @@ If using a service account as a proxy, provide this value to identify the actual
 
 #### Defined in
 
-[index.ts:1688](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1688)
+[index.ts:1693](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1693)
 
 ___
 
@@ -175,7 +186,7 @@ If True, the image will be sent via cloudflare r2 download link
 
 #### Defined in
 
-[index.ts:1674](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1674)
+[index.ts:1679](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1679)
 
 ___
 
@@ -193,7 +204,7 @@ true
 
 #### Defined in
 
-[index.ts:1681](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1681)
+[index.ts:1686](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1686)
 
 ___
 
@@ -205,7 +216,7 @@ If True, The image will be shared with LAION for improving their dataset. This w
 
 #### Defined in
 
-[index.ts:1676](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1676)
+[index.ts:1681](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1681)
 
 ___
 
@@ -223,7 +234,7 @@ true
 
 #### Defined in
 
-[index.ts:1655](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1655)
+[index.ts:1659](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1659)
 
 ___
 
@@ -235,7 +246,7 @@ The Base64-encoded webp to use for img2img, max siue 3072 * 3072
 
 #### Defined in
 
-[index.ts:1668](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1668)
+[index.ts:1672](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1672)
 
 ___
 
@@ -247,7 +258,7 @@ If source_processing is set to 'inpainting' or 'outpainting', this parameter can
 
 #### Defined in
 
-[index.ts:1672](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1672)
+[index.ts:1676](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1676)
 
 ___
 
@@ -259,7 +270,7 @@ If source_image is provided, specifies how to process it.
 
 #### Defined in
 
-[index.ts:1670](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1670)
+[index.ts:1674](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1674)
 
 ___
 
@@ -277,7 +288,7 @@ true
 
 #### Defined in
 
-[index.ts:1650](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1650)
+[index.ts:1654](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1654)
 
 ___
 
@@ -303,7 +314,7 @@ https://haidra.net/00000000-0000-0000-0000-000000000000
 
 #### Defined in
 
-[index.ts:1705](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1705)
+[index.ts:1710](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1710)
 
 ___
 
@@ -315,7 +326,7 @@ If true, the worker list will be treated as a blacklist instead of a whitelist.
 
 #### Defined in
 
-[index.ts:1664](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1664)
+[index.ts:1668](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1668)
 
 ___
 
@@ -327,4 +338,4 @@ Specify which workers are allowed to service this request
 
 #### Defined in
 
-[index.ts:1662](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1662)
+[index.ts:1666](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1666)

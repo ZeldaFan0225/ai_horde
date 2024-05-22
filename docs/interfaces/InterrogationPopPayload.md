@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[index.ts:2747](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2747)
+[index.ts:2786](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2786)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[index.ts:2748](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2748)
+[index.ts:2787](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2787)

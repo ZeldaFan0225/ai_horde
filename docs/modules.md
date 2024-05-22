@@ -27,6 +27,8 @@
 - [DeleteTimeoutIPInput](interfaces/DeleteTimeoutIPInput.md)
 - [DeletedTeam](interfaces/DeletedTeam.md)
 - [DeletedWorker](interfaces/DeletedWorker.md)
+- [ExtraSourceImage](interfaces/ExtraSourceImage.md)
+- [ExtraText](interfaces/ExtraText.md)
 - [FilterCheckPayload](interfaces/FilterCheckPayload.md)
 - [FilterDetails](interfaces/FilterDetails.md)
 - [FilterPromptSuspicion](interfaces/FilterPromptSuspicion.md)
@@ -123,6 +125,7 @@
 - [ModelGenerationInputControlTypes](modules.md#modelgenerationinputcontroltypes)
 - [ModelGenerationInputPostProcessingTypes](modules.md#modelgenerationinputpostprocessingtypes)
 - [ModelGenerationInputStableSamplers](modules.md#modelgenerationinputstablesamplers)
+- [ModelGenerationInputWorkflows](modules.md#modelgenerationinputworkflows)
 - [ModelInterrogationFormTypes](modules.md#modelinterrogationformtypes)
 - [ModelPayloadTextInversionsStable](modules.md#modelpayloadtextinversionsstable)
 - [RatingArtifactsRatings](modules.md#ratingartifactsratings)
@@ -136,7 +139,7 @@
 
 #### Defined in
 
-[index.ts:2663](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2663)
+[index.ts:2702](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2702)
 
 ___
 
@@ -146,7 +149,7 @@ ___
 
 #### Defined in
 
-[index.ts:2661](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2661)
+[index.ts:2700](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2700)
 
 ___
 
@@ -159,7 +162,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:2879](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2879)
+[index.ts:2918](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2918)
 
 ___
 
@@ -172,7 +175,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:2909](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2909)
+[index.ts:2948](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2948)
 
 ## Variables
 
@@ -182,7 +185,7 @@ number - The amount of requests fulfilled for this model
 
 #### Defined in
 
-[index.ts:8](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L8)
+[index.ts:8](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L8)
 
 ___
 
@@ -192,7 +195,7 @@ ___
 
 #### Defined in
 
-[index.ts:167](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L167)
+[index.ts:167](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L167)
 
 ___
 
@@ -202,7 +205,7 @@ ___
 
 #### Defined in
 
-[index.ts:176](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L176)
+[index.ts:176](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L176)
 
 ___
 
@@ -212,7 +215,7 @@ ___
 
 #### Defined in
 
-[index.ts:143](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L143)
+[index.ts:143](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L143)
 
 ___
 
@@ -222,7 +225,17 @@ ___
 
 #### Defined in
 
-[index.ts:118](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L118)
+[index.ts:118](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L118)
+
+___
+
+### ModelGenerationInputWorkflows
+
+• `Const` **ModelGenerationInputWorkflows**: `Readonly`<{ `qr_code`: ``"qr_code"`` = "qr\_code" }\>
+
+#### Defined in
+
+[index.ts:193](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L193)
 
 ___
 
@@ -232,7 +245,7 @@ ___
 
 #### Defined in
 
-[index.ts:154](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L154)
+[index.ts:154](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L154)
 
 ___
 
@@ -242,7 +255,7 @@ ___
 
 #### Defined in
 
-[index.ts:188](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L188)
+[index.ts:188](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L188)
 
 ___
 
@@ -254,7 +267,7 @@ AI Horde Ratings
 
 #### Defined in
 
-[index.ts:2984](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2984)
+[index.ts:3023](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3023)
 
 ___
 
@@ -264,4 +277,4 @@ ___
 
 #### Defined in
 
-[index.ts:136](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L136)
+[index.ts:136](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L136)
