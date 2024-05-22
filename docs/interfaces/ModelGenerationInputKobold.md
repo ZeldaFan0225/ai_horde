@@ -48,7 +48,7 @@ false
 
 #### Defined in
 
-[index.ts:1568](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1568)
+[index.ts:1572](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1572)
 
 ___
 
@@ -66,7 +66,7 @@ false
 
 #### Defined in
 
-[index.ts:1573](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1573)
+[index.ts:1577](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1577)
 
 ___
 
@@ -84,7 +84,7 @@ false
 
 #### Defined in
 
-[index.ts:1578](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1578)
+[index.ts:1582](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1582)
 
 ___
 
@@ -102,7 +102,7 @@ false
 
 #### Defined in
 
-[index.ts:1583](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1583)
+[index.ts:1587](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1587)
 
 ___
 
@@ -128,7 +128,7 @@ Maximum number of tokens to send to the model.
 
 #### Defined in
 
-[index.ts:1590](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1590)
+[index.ts:1594](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1594)
 
 ___
 
@@ -148,7 +148,7 @@ Number of tokens to generate.
 
 #### Defined in
 
-[index.ts:1596](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1596)
+[index.ts:1600](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1600)
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-[index.ts:1563](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1563)
+[index.ts:1567](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1567)
 
 ___
 
@@ -188,7 +188,7 @@ Base repetition penalty value.
 
 #### Defined in
 
-[index.ts:1601](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1601)
+[index.ts:1605](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1605)
 
 ___
 
@@ -200,7 +200,7 @@ Repetition penalty range.
 
 #### Defined in
 
-[index.ts:1603](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1603)
+[index.ts:1607](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1607)
 
 ___
 
@@ -212,7 +212,7 @@ Repetition penalty slope.
 
 #### Defined in
 
-[index.ts:1605](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1605)
+[index.ts:1609](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1609)
 
 ___
 
@@ -224,7 +224,7 @@ Array of integers representing the sampler order to be used
 
 #### Defined in
 
-[index.ts:1629](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1629)
+[index.ts:1633](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1633)
 
 ___
 
@@ -242,7 +242,7 @@ false
 
 #### Defined in
 
-[index.ts:1610](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1610)
+[index.ts:1614](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1614)
 
 ___
 
@@ -254,7 +254,7 @@ Soft prompt to use when generating. If set to the empty string or any other stri
 
 #### Defined in
 
-[index.ts:1612](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1612)
+[index.ts:1616](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1616)
 
 ___
 
@@ -270,7 +270,7 @@ Temperature value.
 
 #### Defined in
 
-[index.ts:1617](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1617)
+[index.ts:1621](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1621)
 
 ___
 
@@ -282,7 +282,7 @@ Tail free sampling value.
 
 #### Defined in
 
-[index.ts:1619](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1619)
+[index.ts:1623](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1623)
 
 ___
 
@@ -294,7 +294,7 @@ Top-a sampling value.
 
 #### Defined in
 
-[index.ts:1621](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1621)
+[index.ts:1625](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1625)
 
 ___
 
@@ -306,7 +306,7 @@ Top-k sampling value.
 
 #### Defined in
 
-[index.ts:1623](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1623)
+[index.ts:1627](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1627)
 
 ___
 
@@ -318,7 +318,7 @@ Top-p sampling value.
 
 #### Defined in
 
-[index.ts:1625](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1625)
+[index.ts:1629](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1629)
 
 ___
 
@@ -330,4 +330,4 @@ Typical sampling value.
 
 #### Defined in
 
-[index.ts:1627](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1627)
+[index.ts:1631](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1631)

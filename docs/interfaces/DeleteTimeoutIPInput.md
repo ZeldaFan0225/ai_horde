@@ -32,4 +32,4 @@ The IP address to remove from timeout
 
 #### Defined in
 
-[index.ts:2650](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2650)
+[index.ts:2689](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2689)

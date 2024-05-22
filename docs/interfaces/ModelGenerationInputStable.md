@@ -10,6 +10,7 @@
 - [clip\_skip](ModelGenerationInputStable.md#clip_skip)
 - [control\_type](ModelGenerationInputStable.md#control_type)
 - [denoising\_strength](ModelGenerationInputStable.md#denoising_strength)
+- [extra\_texts](ModelGenerationInputStable.md#extra_texts)
 - [facefixer\_strength](ModelGenerationInputStable.md#facefixer_strength)
 - [height](ModelGenerationInputStable.md#height)
 - [hires\_fix](ModelGenerationInputStable.md#hires_fix)
@@ -27,6 +28,7 @@
 - [tiling](ModelGenerationInputStable.md#tiling)
 - [tis](ModelGenerationInputStable.md#tis)
 - [width](ModelGenerationInputStable.md#width)
+- [workflow](ModelGenerationInputStable.md#workflow)
 
 ## Properties
 
@@ -54,7 +56,7 @@ Multiple of 0.5
 
 #### Defined in
 
-[index.ts:1721](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1721)
+[index.ts:1739](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1739)
 
 ___
 
@@ -74,7 +76,7 @@ The number of CLIP language processor layers to skip
 
 #### Defined in
 
-[index.ts:1775](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1775)
+[index.ts:1793](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1793)
 
 ___
 
@@ -84,7 +86,7 @@ ___
 
 #### Defined in
 
-[index.ts:1776](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1776)
+[index.ts:1794](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1794)
 
 ___
 
@@ -106,7 +108,17 @@ Multiple of 0.01
 
 #### Defined in
 
-[index.ts:1729](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1729)
+[index.ts:1747](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1747)
+
+___
+
+### extra\_texts
+
+• `Optional` **extra\_texts**: [`ExtraText`](ExtraText.md)[]
+
+#### Defined in
+
+[index.ts:1814](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1814)
 
 ___
 
@@ -130,7 +142,7 @@ ___
 
 #### Defined in
 
-[index.ts:1792](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1792)
+[index.ts:1810](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1810)
 
 ___
 
@@ -158,7 +170,7 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1740](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1740)
+[index.ts:1758](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1758)
 
 ___
 
@@ -176,7 +188,7 @@ false
 
 #### Defined in
 
-[index.ts:1769](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1769)
+[index.ts:1787](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1787)
 
 ___
 
@@ -194,7 +206,7 @@ false
 
 #### Defined in
 
-[index.ts:1781](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1781)
+[index.ts:1799](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1799)
 
 ___
 
@@ -206,7 +218,7 @@ Set to True to enable karras noise scheduling tweaks
 
 #### Defined in
 
-[index.ts:1757](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1757)
+[index.ts:1775](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1775)
 
 ___
 
@@ -216,7 +228,7 @@ ___
 
 #### Defined in
 
-[index.ts:1793](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1793)
+[index.ts:1811](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1811)
 
 ___
 
@@ -236,7 +248,7 @@ The amount of images to generate
 
 #### Defined in
 
-[index.ts:1807](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1807)
+[index.ts:1831](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1831)
 
 ___
 
@@ -248,7 +260,7 @@ The list of post-processors to apply to the image, in the order to be applied
 
 #### Defined in
 
-[index.ts:1759](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1759)
+[index.ts:1777](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1777)
 
 ___
 
@@ -266,7 +278,7 @@ false
 
 #### Defined in
 
-[index.ts:1786](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1786)
+[index.ts:1804](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1804)
 
 ___
 
@@ -282,7 +294,7 @@ k_euler
 
 #### Defined in
 
-[index.ts:1712](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1712)
+[index.ts:1730](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1730)
 
 ___
 
@@ -294,7 +306,7 @@ The seed to use to generete this request.
 
 #### Defined in
 
-[index.ts:1731](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1731)
+[index.ts:1749](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1749)
 
 ___
 
@@ -314,7 +326,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 #### Defined in
 
-[index.ts:1755](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1755)
+[index.ts:1773](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1773)
 
 ___
 
@@ -324,7 +336,7 @@ ___
 
 #### Defined in
 
-[index.ts:1795](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1795)
+[index.ts:1813](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1813)
 
 ___
 
@@ -348,7 +360,7 @@ ___
 
 #### Defined in
 
-[index.ts:1801](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1801)
+[index.ts:1825](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1825)
 
 ___
 
@@ -366,7 +378,7 @@ false
 
 #### Defined in
 
-[index.ts:1764](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1764)
+[index.ts:1782](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1782)
 
 ___
 
@@ -376,7 +388,7 @@ ___
 
 #### Defined in
 
-[index.ts:1794](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1794)
+[index.ts:1812](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1812)
 
 ___
 
@@ -404,4 +416,22 @@ Multiple of 64
 
 #### Defined in
 
-[index.ts:1749](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1749)
+[index.ts:1767](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1767)
+
+___
+
+### workflow
+
+• `Optional` **workflow**: ``"qr_code"``
+
+Explicitly specify the horde-engine workflow to use
+
+**`Example`**
+
+```ts
+qr_code
+```
+
+#### Defined in
+
+[index.ts:1819](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1819)

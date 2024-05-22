@@ -20,7 +20,7 @@ if set, will automatically add this TI filename to the prompt or negative prompt
 
 #### Defined in
 
-[index.ts:1856](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1856)
+[index.ts:1893](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1893)
 
 ___
 
@@ -46,7 +46,7 @@ The exact name or CivitAI ID of the Textual Inversion.
 
 #### Defined in
 
-[index.ts:1852](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1852)
+[index.ts:1889](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1889)
 
 ___
 
@@ -72,4 +72,4 @@ The strength with which to apply the TI to the prompt. Only used when inject_ti 
 
 #### Defined in
 
-[index.ts:1863](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1863)
+[index.ts:1900](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1900)

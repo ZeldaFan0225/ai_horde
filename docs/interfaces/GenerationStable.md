@@ -13,6 +13,7 @@
 ### Properties
 
 - [censored](GenerationStable.md#censored)
+- [gen\_metadata](GenerationStable.md#gen_metadata)
 - [id](GenerationStable.md#id)
 - [img](GenerationStable.md#img)
 - [model](GenerationStable.md#model)
@@ -30,7 +31,17 @@ When true this image has been censored by the worker's safety filter.
 
 #### Defined in
 
-[index.ts:1992](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1992)
+[index.ts:2026](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2026)
+
+___
+
+### gen\_metadata
+
+• `Optional` **gen\_metadata**: { `ref`: `string` ; `type`: `string` ; `value`: `string`  }[]
+
+#### Defined in
+
+[index.ts:2027](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2027)
 
 ___
 
@@ -42,7 +53,7 @@ The ID for this image
 
 #### Defined in
 
-[index.ts:1990](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1990)
+[index.ts:2024](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2024)
 
 ___
 
@@ -54,7 +65,7 @@ The generated image as a Base64-encoded .webp file OR a cloudflare r2 download l
 
 #### Defined in
 
-[index.ts:1986](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1986)
+[index.ts:2020](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2020)
 
 ___
 
@@ -70,7 +81,7 @@ The model which generated this image
 
 #### Defined in
 
-[index.ts:1981](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1981)
+[index.ts:2015](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2015)
 
 ___
 
@@ -82,7 +93,7 @@ The seed which generated this image
 
 #### Defined in
 
-[index.ts:1988](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1988)
+[index.ts:2022](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2022)
 
 ___
 
@@ -98,7 +109,7 @@ The UUID of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1977](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1977)
+[index.ts:2011](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2011)
 
 ___
 
@@ -114,4 +125,4 @@ The name of the worker which generated this image
 
 #### Defined in
 
-[index.ts:1979](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1979)
+[index.ts:2013](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2013)

@@ -21,7 +21,7 @@ Worker should support img2img
 
 #### Defined in
 
-[index.ts:2392](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2392)
+[index.ts:2431](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2431)
 
 ___
 
@@ -33,7 +33,7 @@ List of models workers should have (at least one)
 
 #### Defined in
 
-[index.ts:2396](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2396)
+[index.ts:2435](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2435)
 
 ___
 
@@ -51,7 +51,7 @@ Minimal value of performance for worker to have
 
 #### Defined in
 
-[index.ts:2383](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2383)
+[index.ts:2422](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2422)
 
 ___
 
@@ -69,4 +69,4 @@ Minimal filtered workers amount to resort to the list of first `minLength` worke
 
 #### Defined in
 
-[index.ts:2388](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2388)
+[index.ts:2427](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2427)

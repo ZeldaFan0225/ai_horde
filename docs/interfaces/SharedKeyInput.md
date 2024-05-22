@@ -36,7 +36,7 @@ The amount of days after which this key will expire. If -1, this key will not ex
 
 #### Defined in
 
-[index.ts:2941](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2941)
+[index.ts:2980](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2980)
 
 ___
 
@@ -62,7 +62,7 @@ The Kudos limit assigned to this key. If -1, then anyone with this key can use a
 
 #### Defined in
 
-[index.ts:2934](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2934)
+[index.ts:2973](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2973)
 
 ___
 
@@ -88,4 +88,4 @@ Mutual Aid
 
 #### Defined in
 
-[index.ts:2948](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2948)
+[index.ts:2987](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2987)

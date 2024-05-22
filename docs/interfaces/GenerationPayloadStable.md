@@ -22,7 +22,7 @@ The UUID for this image generation
 
 #### Defined in
 
-[index.ts:2077](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2077)
+[index.ts:2116](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2116)
 
 ___
 
@@ -34,7 +34,7 @@ Which of the available models to use for this request
 
 #### Defined in
 
-[index.ts:2080](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2080)
+[index.ts:2119](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2119)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[index.ts:2075](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2075)
+[index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2114)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[index.ts:2078](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2078)
+[index.ts:2117](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2117)
 
 ___
 
@@ -66,4 +66,4 @@ The Base64-encoded webp to use for img2img
 
 #### Defined in
 
-[index.ts:2082](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2082)
+[index.ts:2121](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2121)

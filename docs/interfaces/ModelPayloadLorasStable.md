@@ -36,7 +36,7 @@ The strength of the LoRa to apply to the clip model.
 
 #### Defined in
 
-[index.ts:1831](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1831)
+[index.ts:1868](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1868)
 
 ___
 
@@ -56,7 +56,7 @@ If set, will try to discover a trigger for this LoRa which matches or is similar
 
 #### Defined in
 
-[index.ts:1837](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1837)
+[index.ts:1874](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1874)
 
 ___
 
@@ -74,7 +74,7 @@ false
 
 #### Defined in
 
-[index.ts:1842](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1842)
+[index.ts:1879](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1879)
 
 ___
 
@@ -100,7 +100,7 @@ The strength of the LoRa to apply to the SD model.
 
 #### Defined in
 
-[index.ts:1824](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1824)
+[index.ts:1861](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1861)
 
 ___
 
@@ -126,4 +126,4 @@ GlowingRunesAIV6
 
 #### Defined in
 
-[index.ts:1817](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L1817)
+[index.ts:1854](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1854)

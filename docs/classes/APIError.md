@@ -49,7 +49,7 @@ Error.constructor
 
 #### Defined in
 
-[index.ts:201](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L201)
+[index.ts:205](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L205)
 
 ## Properties
 
@@ -59,7 +59,7 @@ Error.constructor
 
 #### Defined in
 
-[index.ts:200](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L200)
+[index.ts:204](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L204)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[index.ts:199](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L199)
+[index.ts:203](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L203)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[index.ts:196](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L196)
+[index.ts:200](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L200)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[index.ts:194](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L194)
+[index.ts:198](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L198)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[index.ts:198](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L198)
+[index.ts:202](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L202)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[index.ts:195](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L195)
+[index.ts:199](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L199)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 #### Defined in
 
-[index.ts:197](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L197)
+[index.ts:201](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L201)
 
 ## Accessors
 
@@ -137,4 +137,4 @@ Error.name
 
 #### Defined in
 
-[index.ts:213](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L213)
+[index.ts:217](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L217)
