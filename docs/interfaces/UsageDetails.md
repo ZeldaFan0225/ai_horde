@@ -24,4 +24,4 @@ How many images this user has requested
 
 #### Defined in
 
-[index.ts:2320](https://github.com/ZeldaFan0225/ai_horde/blob/c593245/index.ts#L2320)
+[index.ts:2342](https://github.com/ZeldaFan0225/ai_horde/blob/bd3c116/index.ts#L2342)
