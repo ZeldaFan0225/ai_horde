@@ -82,4 +82,4 @@ const check = await ai_horde.getImageGenerationCheck(generation.id);
 console.log(check);
 ```
 
-See the [auto-generated docs](./docs/classes/export_.md) for more info on methods and parameters.
+See the [auto-generated docs](https://github.com/ZeldaFan0225/ai_horde/blob/main/docs/modules.md) for more info on methods and parameters.
