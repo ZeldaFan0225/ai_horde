@@ -194,6 +194,38 @@ export const ModelGenerationInputWorkflows = Object.freeze({
     "qr_code": "qr_code",
 } as const)
 
+export const RequestSingleWarningCodes = Object.freeze({
+    "NoAvailableWorker": "NoAvailableWorker",
+    "ClipSkipMismatch": "ClipSkipMismatch",
+    "StepsTooFew": "StepsTooFew",
+    "StepsTooMany": "StepsTooMany",
+    "CfgScaleMismatch": "CfgScaleMismatch",
+    "CfgScaleTooSmall": "CfgScaleTooSmall",
+    "CfgScaleTooLarge": "CfgScaleTooLarge",
+    "SamplerMismatch": "SamplerMismatch",
+    "SchedulerMismatch": "SchedulerMismatch",
+} as const)
+
+export const GenerationMetadataStableTypes = Object.freeze({
+    "lora": "lora",
+    "ti": "ti",
+    "censorship": "censorship",
+    "source_image": "source_image",
+    "source_mask": "source_mask",
+    "extra_source_images": "extra_source_images",
+    "batch_index": "batch_index",
+    "information": "information"
+} as const)
+
+export const GenerationMetadataStableValues = Object.freeze({
+    "download_failed": "download_failed",
+    "parse_failed": "parse_failed",
+    "baseline_mismatch": "baseline_mismatch",
+    "csam": "csam",
+    "nsfw": "nsfw",
+    "see_ref": "see_ref"
+} as const)
+
 export class APIError extends Error {
     rawError: RequestError;
     status: number;
@@ -1653,10 +1685,20 @@ export interface ImageGenerationInput {
     */
     trusted_workers?: boolean,
     /** 
+     * When true, only inference backends that are validated by the AI Horde devs will serve this request. When False, non-validated backends will also be used which can increase speed but you may end up with unexpected results.
+     * @default true
+    */
+    validated_backends?: boolean,
+    /** 
      * When True, allows slower workers to pick up this request. Disabling this incurs an extra kudos cost.
      * @default true
     */
     slow_workers?: boolean,
+    /** 
+     * When True, allows very slower workers to pick up this request. Use this when you don't mind waiting a lot.
+     * @default false
+    */
+    extra_slow_workers?: boolean,
     /** 
      * If the request is SFW, and the worker accidentaly generates NSFW, it will send back a censored image.
      * @default false
@@ -1745,6 +1787,12 @@ export interface ModelGenerationInputStable {
      * Multiple of 0.01
     */
     denoising_strength?: number,
+    /**
+     * @example 0.75
+     * @minimum 0
+     * @maximum 1
+     */
+    hires_fix_denoising_strength?: number,
     /** The seed to use to generete this request. */
     seed?: string,
     /** 
@@ -1817,6 +1865,11 @@ export interface ModelGenerationInputStable {
      * @example qr_code
      */
     workflow?: (typeof ModelGenerationInputWorkflows[keyof typeof ModelGenerationInputWorkflows]),
+    /**
+     * Set to True to generate the image using Layer Diffuse, creating an image with a transparent background.
+     * @default false
+     */
+    transparent?: boolean,
     /** 
      * @default 30
      * @minimum 1
@@ -1976,7 +2029,9 @@ export interface RequestError {
 }
 
 export interface RequestStatusStable extends RequestStatusCheck {
-    generations?: GenerationStable[]
+    generations?: GenerationStable[],
+    /** If True, These images have been shared with LAION */
+    shared?: boolean,
 }
 
 export interface RequestStatusKobold extends RequestStatusCheck {
@@ -1988,6 +2043,8 @@ export interface RequestStatusCheck {
     finished?: number,
     /** The amount of still processing images in this request */
     processing?: number,
+    /** The amount of jobs that timed out and had to be restarted or were reported as failed by a worker. */
+    restarted?: number,
     /** The amount of images waiting to be picked up by a worker */
     waiting?: number,
     /** True when all images in this request are done. Else False. */
@@ -2002,8 +2059,6 @@ export interface RequestStatusCheck {
     kudos?: number,
     /** If False, this request will not be able to be completed with the pool of workers currently available */
     is_possible?: boolean,
-    /** If True, These images have been shared with LAION */
-    shared?: boolean,
 }
 
 export interface Generation {
@@ -2031,6 +2086,24 @@ export interface GenerationStable extends Generation {
     }[]
 }
 
+export interface GenerationMetadataStable {
+    /**
+     * The relevance of the metadata field
+     * @example Lora
+     */
+    type: typeof GenerationMetadataStableTypes[keyof typeof GenerationMetadataStableTypes],
+    /**
+     * The value of the metadata field
+     * @example download_failed
+     */
+    value: typeof GenerationMetadataStableValues[keyof typeof GenerationMetadataStableValues],
+    /**
+     * Optionally a reference for the metadata (e.g. a lora ID)
+     * @maxLength 255
+     */
+    ref?: string
+}
+
 export interface GenerationKobold extends Generation {
     /**
      * The state of the generation,
@@ -2047,7 +2120,23 @@ export interface GenerationKobold extends Generation {
 export interface RequestAsync {
     /** The UUID of the request. Use this to retrieve the request status in the future */
     id?: string,
+    /** The expected kudos consumption for this request */
+    kudos?: number,
     /** Any extra information from the horde about this request */
+    message?: string,
+    warnings?: RequestSingleWarning[]
+}
+
+export interface RequestSingleWarning {
+    /**
+     * A unique identifier for this warning.
+     * @example NoAvailableWorker
+     */
+    code?: typeof RequestSingleWarningCodes[keyof typeof RequestSingleWarningCodes],
+    /**
+     * Something that you should be aware about this request, in plain text.
+     * @minLength 1
+     */
     message?: string
 }
 
