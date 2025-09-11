@@ -96,18 +96,18 @@ See the [auto-generated docs](https://github.com/ZeldaFan0225/ai_horde/blob/main
 
 ## Publishing
 
-This package is published to npm automatically when a Git tag with a semantic version is pushed to the repository.
+Releases are published to npm automatically when a GitHub Release is published.
 
-- Tag format: either `vX.Y.Z` or `X.Y.Z` (e.g. `v5.2.1`)
-- The workflow sets the package version from the tag and runs `npm publish`
+- Tag format: either `vX.Y.Z` or `X.Y.Z` (e.g. `v6.0.1`)
+- The workflow checks out the release tag, sets the package version from the tag, builds, and runs `npm publish --provenance`
+- After a successful publish, the workflow syncs `package.json` and `package-lock.json` on the default branch to the new version
 - Maintainers: add an npm Automation Token as the repo secret `NPM_TOKEN`
-- Supply chain: publishes include npm provenance attestation via GitHub OIDC
 
-Example to publish a new version (maintainers only):
+Steps to publish a new version (maintainers only):
 
 1. Update changelog and code as needed
-2. Push a tag, e.g. `git tag v5.2.1 && git push origin v5.2.1`
+2. Create a GitHub Release and set the tag to the new version (e.g. `v6.0.1`), then publish the release
 
 ### Provenance / Attestations
 
-The release workflow uses GitHub’s OIDC to request an ID token and publishes with `--provenance`. On npm, this shows the “Provenance” badge on the package/version page. Consumers can verify the package was built in this repository’s CI and matches the published tarball.
+The publish workflow uses GitHub OIDC to request an ID token and publishes with `--provenance`. On npm, this shows the “Provenance” badge on the package/version page. Consumers can verify the package was built in this repository’s CI and matches the published tarball.

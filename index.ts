@@ -1,8 +1,10 @@
 import SuperMap from "@thunder04/supermap"
 
+
 /*
  * https://github.com/db0/AI-Horde/blob/main/CHANGELOG.md
  */
+
 
 export const ErrorMessages = Object.freeze({
     "MissingPrompt": "The generation prompt was not given",
