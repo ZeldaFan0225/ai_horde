@@ -6,7 +6,7 @@
 
 # Interface: UserRecords
 
-Defined in: [index.ts:3093](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3093)
+Defined in: [index.ts:3093](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3093)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3093](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **contribution**: [`UserThingUsageRecords`](UserThingUsageRecords.md)
 
-Defined in: [index.ts:3095](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3095)
+Defined in: [index.ts:3095](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3095)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [index.ts:3095](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **fulfillment**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
 
-Defined in: [index.ts:3096](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3096)
+Defined in: [index.ts:3096](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3096)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [index.ts:3096](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **request**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
 
-Defined in: [index.ts:3097](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3097)
+Defined in: [index.ts:3097](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3097)
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: [index.ts:3097](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **usage**: [`UserThingUsageRecords`](UserThingUsageRecords.md)
 
-Defined in: [index.ts:3094](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3094)
+Defined in: [index.ts:3094](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3094)

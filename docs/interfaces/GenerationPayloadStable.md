@@ -6,7 +6,7 @@
 
 # Interface: GenerationPayloadStable
 
-Defined in: [index.ts:2916](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2916)
+Defined in: [index.ts:2916](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2916)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2916](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:2919](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2919)
+Defined in: [index.ts:2919](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2919)
 
 The UUID for this image generation
 
@@ -24,7 +24,7 @@ The UUID for this image generation
 
 > `optional` **model**: `string`
 
-Defined in: [index.ts:2922](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2922)
+Defined in: [index.ts:2922](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2922)
 
 Which of the available models to use for this request
 
@@ -34,7 +34,7 @@ Which of the available models to use for this request
 
 > `optional` **payload**: [`ModelPayloadStable`](ModelPayloadStable.md)
 
-Defined in: [index.ts:2917](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2917)
+Defined in: [index.ts:2917](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2917)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [index.ts:2917](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **skipped**: [`NoValidRequestFoundStable`](NoValidRequestFoundStable.md)
 
-Defined in: [index.ts:2920](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2920)
+Defined in: [index.ts:2920](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2920)
 
 ***
 
@@ -50,6 +50,6 @@ Defined in: [index.ts:2920](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **source\_image**: `string`
 
-Defined in: [index.ts:2924](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2924)
+Defined in: [index.ts:2924](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2924)
 
 The Base64-encoded webp to use for img2img

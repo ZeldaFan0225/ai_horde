@@ -6,7 +6,7 @@
 
 # Interface: ModelGenerationInputStable
 
-Defined in: [index.ts:2482](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2482)
+Defined in: [index.ts:2482](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2482)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2482](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **cfg\_scale**: `number`
 
-Defined in: [index.ts:2495](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2495)
+Defined in: [index.ts:2495](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2495)
 
 its how much the AI listens to your prompt, essentially.
 
@@ -40,7 +40,7 @@ Multiple of 0.5
 
 > `optional` **clip\_skip**: `number`
 
-Defined in: [index.ts:2555](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2555)
+Defined in: [index.ts:2555](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2555)
 
 The number of CLIP language processor layers to skip
 
@@ -58,7 +58,7 @@ The number of CLIP language processor layers to skip
 
 > `optional` **control\_type**: `"canny"` \| `"hed"` \| `"depth"` \| `"normal"` \| `"openpose"` \| `"seg"` \| `"scribble"` \| `"fakescribbles"` \| `"hough"`
 
-Defined in: [index.ts:2556](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2556)
+Defined in: [index.ts:2556](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2556)
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: [index.ts:2556](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **denoising\_strength**: `number`
 
-Defined in: [index.ts:2503](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2503)
+Defined in: [index.ts:2503](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2503)
 
 The strength of denoising
 
@@ -86,7 +86,7 @@ Multiple of 0.01
 
 > `optional` **extra\_texts**: [`ExtraText`](ExtraText.md)[]
 
-Defined in: [index.ts:2576](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2576)
+Defined in: [index.ts:2576](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2576)
 
 ***
 
@@ -94,7 +94,7 @@ Defined in: [index.ts:2576](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **facefixer\_strength**: `number`
 
-Defined in: [index.ts:2572](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2572)
+Defined in: [index.ts:2572](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2572)
 
 #### Example
 
@@ -116,7 +116,7 @@ Defined in: [index.ts:2572](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **height**: `number`
 
-Defined in: [index.ts:2520](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2520)
+Defined in: [index.ts:2520](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2520)
 
 The height of the image to generate
 
@@ -142,7 +142,7 @@ Multiple of 64
 
 > `optional` **hires\_fix**: `boolean`
 
-Defined in: [index.ts:2549](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2549)
+Defined in: [index.ts:2549](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2549)
 
 Set to True to process the image at base resolution before upscaling and re-processing
 
@@ -158,7 +158,7 @@ false
 
 > `optional` **hires\_fix\_denoising\_strength**: `number`
 
-Defined in: [index.ts:2509](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2509)
+Defined in: [index.ts:2509](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2509)
 
 #### Example
 
@@ -180,7 +180,7 @@ Defined in: [index.ts:2509](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **image\_is\_control**: `boolean`
 
-Defined in: [index.ts:2561](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2561)
+Defined in: [index.ts:2561](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2561)
 
 Set to True if the image submitted is a pre-generated control map for ControlNet use
 
@@ -196,7 +196,7 @@ false
 
 > `optional` **karras**: `boolean`
 
-Defined in: [index.ts:2537](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2537)
+Defined in: [index.ts:2537](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2537)
 
 Set to True to enable karras noise scheduling tweaks
 
@@ -206,7 +206,7 @@ Set to True to enable karras noise scheduling tweaks
 
 > `optional` **loras**: [`ModelPayloadLorasStable`](ModelPayloadLorasStable.md)[]
 
-Defined in: [index.ts:2573](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2573)
+Defined in: [index.ts:2573](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2573)
 
 ***
 
@@ -214,7 +214,7 @@ Defined in: [index.ts:2573](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **n**: `number`
 
-Defined in: [index.ts:2598](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2598)
+Defined in: [index.ts:2598](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2598)
 
 The amount of images to generate
 
@@ -232,7 +232,7 @@ The amount of images to generate
 
 > `optional` **post\_processing**: (`"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x2plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"`)[]
 
-Defined in: [index.ts:2539](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2539)
+Defined in: [index.ts:2539](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2539)
 
 The list of post-processors to apply to the image, in the order to be applied
 
@@ -242,7 +242,7 @@ The list of post-processors to apply to the image, in the order to be applied
 
 > `optional` **return\_control\_map**: `boolean`
 
-Defined in: [index.ts:2566](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2566)
+Defined in: [index.ts:2566](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2566)
 
 Set to True if you want the ControlNet map returned instead of a generated image
 
@@ -258,7 +258,7 @@ false
 
 > `optional` **sampler\_name**: `"lcm"` \| `"k_lms"` \| `"k_heun"` \| `"k_euler_a"` \| `"k_euler"` \| `"k_dpm_2"` \| `"k_dpm_2_a"` \| `"DDIM"` \| `"PLMS"` \| `"k_dpm_fast"` \| `"k_dpm_adaptive"` \| `"k_dpmpp_2s_a"` \| `"k_dpmpp_2m"` \| `"dpmsolver"` \| `"k_dpmpp_sde"`
 
-Defined in: [index.ts:2486](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2486)
+Defined in: [index.ts:2486](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2486)
 
 #### Default
 
@@ -272,7 +272,7 @@ k_euler
 
 > `optional` **seed**: `string`
 
-Defined in: [index.ts:2511](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2511)
+Defined in: [index.ts:2511](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2511)
 
 The seed to use to generete this request.
 
@@ -282,7 +282,7 @@ The seed to use to generete this request.
 
 > `optional` **seed\_variation**: `number`
 
-Defined in: [index.ts:2535](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2535)
+Defined in: [index.ts:2535](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2535)
 
 If passed with multiple n, the provided seed will be incremented every time by this value
 
@@ -300,7 +300,7 @@ If passed with multiple n, the provided seed will be incremented every time by t
 
 > `optional` **special**: `Record`\<`string`, `any`\>
 
-Defined in: [index.ts:2575](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2575)
+Defined in: [index.ts:2575](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2575)
 
 ***
 
@@ -308,7 +308,7 @@ Defined in: [index.ts:2575](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **steps**: `number`
 
-Defined in: [index.ts:2592](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2592)
+Defined in: [index.ts:2592](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2592)
 
 #### Default
 
@@ -330,7 +330,7 @@ Defined in: [index.ts:2592](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **tiling**: `boolean`
 
-Defined in: [index.ts:2544](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2544)
+Defined in: [index.ts:2544](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2544)
 
 Set to True to create images that stitch together seamlessly
 
@@ -346,7 +346,7 @@ false
 
 > `optional` **tis**: [`ModelPayloadTextualInversionsStable`](ModelPayloadTextualInversionsStable.md)[]
 
-Defined in: [index.ts:2574](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2574)
+Defined in: [index.ts:2574](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2574)
 
 ***
 
@@ -354,7 +354,7 @@ Defined in: [index.ts:2574](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **transparent**: `boolean`
 
-Defined in: [index.ts:2586](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2586)
+Defined in: [index.ts:2586](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2586)
 
 Set to True to generate the image using Layer Diffuse, creating an image with a transparent background.
 
@@ -370,7 +370,7 @@ false
 
 > `optional` **width**: `number`
 
-Defined in: [index.ts:2529](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2529)
+Defined in: [index.ts:2529](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2529)
 
 The width of the image to generate
 
@@ -396,7 +396,7 @@ Multiple of 64
 
 > `optional` **workflow**: `"qr_code"`
 
-Defined in: [index.ts:2581](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2581)
+Defined in: [index.ts:2581](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2581)
 
 Explicitly specify the horde-engine workflow to use
 

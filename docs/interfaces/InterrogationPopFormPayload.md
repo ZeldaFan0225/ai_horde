@@ -6,7 +6,7 @@
 
 # Interface: InterrogationPopFormPayload
 
-Defined in: [index.ts:3556](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3556)
+Defined in: [index.ts:3556](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3556)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3556](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:3558](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3558)
+Defined in: [index.ts:3558](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3558)
 
 The UUID of the interrogation form. Use this to post the results in the future
 
@@ -24,7 +24,7 @@ The UUID of the interrogation form. Use this to post the results in the future
 
 > `optional` **name**: `"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"caption"` \| `"interrogation"` \| `"nsfw"`
 
-Defined in: [index.ts:3563](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3563)
+Defined in: [index.ts:3563](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3563)
 
 The name of this interrogation form
 
@@ -40,7 +40,7 @@ caption
 
 > `optional` **payload**: `Partial`\<`Record`\<`"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"caption"` \| `"interrogation"` \| `"nsfw"`, `string`\>\>
 
-Defined in: [index.ts:3564](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3564)
+Defined in: [index.ts:3564](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3564)
 
 ***
 
@@ -48,6 +48,6 @@ Defined in: [index.ts:3564](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **source\_image**: `string`
 
-Defined in: [index.ts:3566](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3566)
+Defined in: [index.ts:3566](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3566)
 
 The URL From which the source image can be downloaded

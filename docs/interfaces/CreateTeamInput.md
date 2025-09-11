@@ -6,7 +6,7 @@
 
 # Interface: CreateTeamInput
 
-Defined in: [index.ts:3399](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3399)
+Defined in: [index.ts:3399](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3399)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3399](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:3412](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3412)
+Defined in: [index.ts:3412](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3412)
 
 Extra information or comments about this team.
 
@@ -38,7 +38,7 @@ Anarchy is emergent order.
 
 > **name**: `string`
 
-Defined in: [index.ts:3405](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3405)
+Defined in: [index.ts:3405](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3405)
 
 The name of the team. No profanity allowed!
 

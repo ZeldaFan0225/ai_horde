@@ -6,7 +6,7 @@
 
 # Interface: ContributionsDetails
 
-Defined in: [index.ts:3194](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3194)
+Defined in: [index.ts:3194](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3194)
 
 ## Extended by
 
@@ -18,6 +18,6 @@ Defined in: [index.ts:3194](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **fulfillments**: `number`
 
-Defined in: [index.ts:3196](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3196)
+Defined in: [index.ts:3196](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3196)
 
 How many images this user has generated

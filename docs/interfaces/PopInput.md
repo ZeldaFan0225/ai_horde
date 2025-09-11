@@ -6,7 +6,7 @@
 
 # Interface: PopInput
 
-Defined in: [index.ts:2877](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2877)
+Defined in: [index.ts:2877](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2877)
 
 ## Extended by
 
@@ -19,7 +19,7 @@ Defined in: [index.ts:2877](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **bridge\_agent**: `string`
 
-Defined in: [index.ts:2900](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2900)
+Defined in: [index.ts:2900](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2900)
 
 The worker name, version and website
 
@@ -45,7 +45,7 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 > **bridge\_version**: `number`
 
-Defined in: [index.ts:2893](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2893)
+Defined in: [index.ts:2893](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2893)
 
 The version of the bridge used by this worker
 
@@ -61,7 +61,7 @@ The version of the bridge used by this worker
 
 > `optional` **models**: `string`[]
 
-Defined in: [index.ts:2888](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2888)
+Defined in: [index.ts:2888](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2888)
 
 Which models this worker is serving
 
@@ -71,7 +71,7 @@ Which models this worker is serving
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:2879](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2879)
+Defined in: [index.ts:2879](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2879)
 
 The Name of the Worker
 
@@ -81,7 +81,7 @@ The Name of the Worker
 
 > `optional` **nsfw**: `boolean`
 
-Defined in: [index.ts:2886](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2886)
+Defined in: [index.ts:2886](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2886)
 
 Whether this worker can generate NSFW requests or not.
 
@@ -97,7 +97,7 @@ false
 
 > `optional` **priority\_usernames**: `string`[]
 
-Defined in: [index.ts:2881](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2881)
+Defined in: [index.ts:2881](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2881)
 
 Users with priority to use this worker
 
@@ -107,7 +107,7 @@ Users with priority to use this worker
 
 > `optional` **require\_upfront\_kudos**: `boolean`
 
-Defined in: [index.ts:2913](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2913)
+Defined in: [index.ts:2913](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2913)
 
 If True, this worker will only pick up requests where the owner has the required kudos to consume already available
 
@@ -129,7 +129,7 @@ false
 
 > `optional` **threads**: `number`
 
-Defined in: [index.ts:2907](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2907)
+Defined in: [index.ts:2907](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2907)
 
 How many threads this worker is running. This is used to accurately the current power available in the horde
 
