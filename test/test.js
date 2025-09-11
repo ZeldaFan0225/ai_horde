@@ -15,6 +15,13 @@ async function version() {
 
     console.log(RatingArtifactsRatings)
     console.log(await ai_horde.getUserDetails(1))
+    // New endpoint smoke test (no token required)
+    try {
+        const privacy = await ai_horde.getPrivacyDocument({ format: 'html' })
+        console.log('Privacy doc keys:', Object.keys(privacy))
+    } catch (e) {
+        console.log('Privacy doc fetch failed (possibly offline)')
+    }
 }
 
 async function main() {
