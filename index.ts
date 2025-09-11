@@ -9,7 +9,7 @@ export const ErrorMessages = Object.freeze({
     "MissingPrompt": "The generation prompt was not given",
     "CorruptPrompt": "The prompts was rejected as unethical",
     "KudosValidationError": "Something went wrong when transferring kudos. This is a base rc, so you should never typically see it.",
-    "NoValidActions": "Something went wrong when modifying an entity on the horde. This is a base rc, so you should never typically see it.", 
+    "NoValidActions": "Something went wrong when modifying an entity on the horde. This is a base rc, so you should never typically see it.",
     "InvalidSize": "Requested image size is not a multiple of 64",
     "InvalidPromptSize": "Prompt is too large",
     "TooManySteps": "Too many steps requested for image generation",
@@ -37,7 +37,7 @@ export const ErrorMessages = Object.freeze({
     "InpaintingMissingMask": "Missing mask or alpha channel for inpainting",
     "SourceMaskUnnecessary": "Source mask sent without a source image",
     "UnsupportedSampler": "Selected sampler unsupported with selected model",
-    "UnsupportedModel": "The required model name is unsupported with this payload. This is a base rc, so you should never typically see it.", 
+    "UnsupportedModel": "The required model name is unsupported with this payload. This is a base rc, so you should never typically see it.",
     "ControlNetUnsupported": "ControlNet is unsupported in combination with this model",
     "ControlNetSourceMissing": "Missing source image for ControlNet workflow",
     "ControlNetInvalidPayload": "sent CN source and requested CN source at the same time",
@@ -226,6 +226,12 @@ export const GenerationMetadataStableValues = Object.freeze({
     "see_ref": "see_ref"
 } as const)
 
+export const ResponseModelCollectionTypes = Object.freeze({
+    "image": "image",
+    "text": "text",
+    "all": "all",
+} as const)
+
 export class APIError extends Error {
     rawError: RequestError;
     status: number;
@@ -264,6 +270,7 @@ export class AIHorde {
         this.#default_token = options?.default_token
         this.#api_route = options?.api_route ?? "https://aihorde.net/api/v2"
         this.#cache_config = {
+            collections: options?.cache?.collections ?? 0,
             users: options?.cache?.users ?? 0,
             generations_check: options?.cache?.generations_check ?? 0,
             generations_status: options?.cache?.generations_status ?? 0,
@@ -278,6 +285,7 @@ export class AIHorde {
         }
         if (Object.values(this.#cache_config).some(v => !Number.isSafeInteger(v) || v < 0)) throw new TypeError("Every cache duration must be a positive safe integer")
         this.#cache = {
+            collections: this.#cache_config.collections ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.collections }) : undefined,
             users: this.#cache_config.users ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.users }) : undefined,
             generations_check: this.#cache_config.generations_check ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_check }) : undefined,
             generations_status: this.#cache_config.generations_status ? new SuperMap({ intervalTime: options?.cache_interval ?? 1000, expireAfter: this.#cache_config.generations_status }) : undefined,
@@ -297,15 +305,15 @@ export class AIHorde {
         (async () => {
             let fs = await import("fs")
             let path = await import("path")
-            try{
-                let pckg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json")).toString())  
+            try {
+                let pckg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json")).toString())
                 this.VERSION = pckg.version
                 this.#client_agent = options?.client_agent ?? `${pckg.name}:${pckg.version}:${pckg.bugs?.slice(8)}`
-            }catch(_){
+            } catch (_) {
                 // This catch unexpect errors, like the JSON Parse failing
             }
-        })().catch(_ => {})
-                
+        })().catch(_ => { })
+
 
         this.ratings = new AIHordeRatings({
             api_route: options?.ratings_api_route ?? "https://ratings.aihorde.net/api/v1",
@@ -328,6 +336,11 @@ export class AIHorde {
         return this.#cache
     }
 
+    /**
+     * Parse a Client-Agent header back into its components.
+     * @param agent The Client-Agent string in the form name:version:link
+     * @returns Object containing name, version and link
+     */
     parseAgent(agent: string) {
         const [name, version, link] = agent.split(":")
         return {
@@ -337,6 +350,11 @@ export class AIHorde {
         }
     }
 
+    /**
+     * Utility to join an array of field names for X-Fields header.
+     * @param fields Array of field names
+     * @returns Comma-separated string or undefined
+     */
     generateFieldsString(fields?: string[]) {
         return fields?.join(',')
     }
@@ -364,9 +382,297 @@ export class AIHorde {
     }
 
 
-    /* GET REQUESTS */
+    /** COLLECTIONS */
+    /**
+     * Retrieve a collection by its unique name.
+     * @param collection_name Exact name of the collection
+     * @param options.fields Field mask for selective response
+     * @param options.force If true, bypass cache (currently only applies when caching enabled after ID retrieval)
+     * @returns ResponseModelCollection
+     */
+    async getCollectionByName<
+        T extends keyof ResponseModelCollection
+    >(collection_name: string, options?: { fields?: T[], force?: boolean }): Promise<Pick<ResponseModelCollection, T>> {
+        const { result, fields_string } = await this.#request(`/collection_by_name/${collection_name}`, "GET", options)
 
+        const data = await result.json() as Pick<ResponseModelCollection, T>
+        if (this.#cache_config.collections) {
+            const data_with_id = data as Pick<ResponseModelCollection, 'id'>
+            if ('id' in data_with_id) this.#cache.collections?.set(data_with_id.id + fields_string!, data)
+        }
+        return data
+    }
 
+    /**
+     * Displays all existing collections
+     * @param query.sort How to sort returned styles. 'popular' sorts by usage and 'age' sorts by date added. (default: 'popular')
+     * @param query.page Which page of results to return. Each page has 25 styles.
+     * @param query.type Filter by type. Accepts either 'image', 'text' or 'all'.
+     * @param options.token Optional API key (defaults to instance default token)
+     * @param options.fields Field mask for selective response
+     * @param options.force If true, bypass cache (currently only applies when caching enabled after ID retrieval)
+     * @returns ResponseModelCollection[]
+     */
+    async getCollections<
+        T extends keyof ResponseModelCollection
+    >(
+        query?: { sort?: string, page?: number, type?: typeof ResponseModelCollectionTypes[keyof typeof ResponseModelCollectionTypes] },
+        options?: { token?: string, fields?: T[] }
+    ): Promise<Pick<ResponseModelCollection, T>[]> {
+        const qs: string[] = []
+        if (query?.sort) qs.push(`sort=${encodeURIComponent(query.sort)}`)
+        if (typeof query?.page === 'number') qs.push(`page=${query.page}`)
+        if (query?.type) qs.push(`type=${encodeURIComponent(query.type)}`)
+        const route = `/collections${qs.length ? '?' + qs.join('&') : ''}`
+        const { result } = await this.#request(route, "GET", options)
+        return await result.json() as Pick<ResponseModelCollection, T>[]
+    }
+
+    /**
+     * Displays information about a single collection
+     * @param collection_id The unique ID of the collection
+     * @param options.token Optional API key (defaults to instance default token)
+     * @param options.fields Field mask for selective response
+     * @param options.force If true, bypass cache (currently only applies when caching enabled after ID retrieval)
+     * @returns ResponseModelCollection
+     */
+    async getCollection<
+        T extends keyof ResponseModelCollection
+    >(collection_id: string, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<ResponseModelCollection, T>> {
+        const fields_string = this.generateFieldsString(options?.fields)
+        if (!options?.force && fields_string && this.#cache.collections?.has(collection_id + fields_string)) {
+            return this.#cache.collections.get(collection_id + fields_string) as Pick<ResponseModelCollection, T>
+        }
+        if (!options?.force && !fields_string && this.#cache.collections?.has(collection_id)) {
+            return this.#cache.collections.get(collection_id) as Pick<ResponseModelCollection, T>
+        }
+        const { result, fields_string: returned_fields } = await this.#request(`/collections/${collection_id}`, "GET", options)
+        const data = await result.json() as Pick<ResponseModelCollection, T>
+        if (this.#cache_config.collections) {
+            this.#cache.collections?.set(collection_id + (returned_fields || ''), data)
+        }
+        return data
+    }
+
+    /**
+     * Creates a new style collection
+     * @param payload The collection data
+     * @param options.token Optional API key (defaults to instance default token)
+     * @param options.fields Field mask for selective response
+     * @returns CollectionModify
+     */
+    async postCollection<
+        T extends keyof CollectionModify
+    >(payload: InputModelCollection, options?: { token?: string, fields?: T[] }): Promise<Pick<CollectionModify, T>> {
+        const { result } = await this.#request(`/collections`, "POST", { ...options, body: payload })
+        return await result.json() as Pick<CollectionModify, T>
+    }
+
+    /**
+     * Deletes a style collection
+     * @param collection_id The unique ID of the collection
+     * @param options.token Optional API key (defaults to instance default token)
+     * @param options.fields Field mask for selective response
+     * @returns SimpleResponse
+     */
+    async deleteCollection<
+        T extends keyof SimpleResponse
+    >(collection_id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const { result } = await this.#request(`/collections/${collection_id}`, "DELETE", options)
+        return await result.json() as Pick<SimpleResponse, T>
+    }
+
+    /**
+     * Modifies an existing style collection
+     * @param collection_id The unique ID of the collection
+     * @param payload The collection data to modify
+     * @param options.token Optional API key (defaults to instance default token)
+     * @param options.fields Field mask for selective response
+     * @returns CollectionModify
+     */
+    async patchCollection<
+        T extends keyof CollectionModify
+    >(collection_id: string, payload: InputModelCollection, options?: { token?: string, fields?: T[] }): Promise<Pick<CollectionModify, T>> {
+        const { result } = await this.#request(`/collections/${collection_id}`, "PATCH", { ...options, body: payload })
+        return await result.json() as Pick<CollectionModify, T>
+    }
+
+    /** DOCUMENTS */
+    /**
+     * Retrieve the privacy document.
+     * @param query.format Desired format (html | markdown)
+     * @param options.fields Fields mask
+     * @returns HordeDocument
+     */
+    async getPrivacyDocument<
+        T extends keyof HordeDocument
+    >(query?: { format?: 'html' | 'markdown' }, options?: { fields?: T[] }): Promise<Pick<HordeDocument, T>> {
+        const route = `/documents/privacy${query?.format ? `?format=${query.format}` : ''}`
+        const { result } = await this.#request(route, "GET", options as any)
+        return await result.json() as Pick<HordeDocument, T>
+    }
+
+    /**
+     * Retrieve the sponsors document.
+     * @param query.format Desired format (html | markdown)
+     * @param options.fields Fields mask
+     * @returns HordeDocument
+     */
+    async getSponsorsDocument<
+        T extends keyof HordeDocument
+    >(query?: { format?: 'html' | 'markdown' }, options?: { fields?: T[] }): Promise<Pick<HordeDocument, T>> {
+        const route = `/documents/sponsors${query?.format ? `?format=${query.format}` : ''}`
+        const { result } = await this.#request(route, "GET", options as any)
+        return await result.json() as Pick<HordeDocument, T>
+    }
+
+    /**
+     * Retrieve the terms & conditions document.
+     * @param query.format Desired format (html | markdown)
+     * @param options.fields Fields mask
+     * @returns HordeDocument
+     */
+    async getTermsDocument<
+        T extends keyof HordeDocument
+    >(query?: { format?: 'html' | 'markdown' }, options?: { fields?: T[] }): Promise<Pick<HordeDocument, T>> {
+        const route = `/documents/terms${query?.format ? `?format=${query.format}` : ''}`
+        const { result } = await this.#request(route, "GET", options as any)
+        return await result.json() as Pick<HordeDocument, T>
+    }
+
+    /** FILTERS */
+    /**
+     * Transfer Kudos to a registered user
+     * @param check_data - The prompt to check
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterPromptSuspicion
+     */
+    async postFilters<
+        T extends keyof FilterPromptSuspicion
+    >(check_data: FilterCheckPayload, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterPromptSuspicion, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/filters`, "POST", { token, fields: options?.fields, body: check_data })
+
+        return await result.json() as Pick<FilterPromptSuspicion, T>
+    }
+
+    /**
+     * A List of filters
+     * @param query.filter_type - The type of filter to show
+     * @param query.contains - Only return filter containing this word
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails[] - Array of Filter Details
+     */
+    async getFilters<
+        T extends keyof FilterDetails
+    >(query?: { filter_type?: number, contains?: string }, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>[]> {
+        const token = this.#getToken(options?.token)
+        const params = new URLSearchParams()
+        if (query?.filter_type) params.set("filter_type", query?.filter_type.toString())
+        if (query?.contains) params.set("contains", query?.contains)
+
+        const { result } = await this.#request(`/filters${params.toString() ? `?${params.toString()}` : ""}`, "GET", { token, fields: options?.fields })
+
+        const data = await result.json() as Pick<FilterDetails, T>[]
+        return data
+    }
+
+    /**
+     * Adds a new regex filer
+     * @param create_payload - The data to create the filter with
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails
+     */
+    async addFilter<
+        T extends keyof FilterDetails
+    >(create_payload: PutNewFilter, id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/filters`, "PUT", { token, fields: options?.fields, body: create_payload })
+
+        return await result.json() as Pick<FilterDetails, T>
+    }
+
+    /**
+     * A List of regex filters
+     * @param query.filter_type - The type of filter to show
+     * @param query.contains - Only return filter containing this word
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails[] - Array of Filter Details
+     */
+    async getRegexFilters<
+        T extends keyof RegexFilter
+    >(query?: { filter_type?: number }, options?: { token?: string, fields?: T[] }): Promise<Pick<RegexFilter, T>[]> {
+        const token = this.#getToken(options?.token)
+        const params = new URLSearchParams()
+        if (query?.filter_type) params.set("filter_type", query?.filter_type.toString())
+
+        const { result } = await this.#request(`/filters/regex${params.toString() ? `?${params.toString()}` : ""}`, "GET", { token, fields: options?.fields })
+
+        const data = await result.json() as Pick<RegexFilter, T>[]
+        return data
+    }
+
+    /**
+     * Delete a regex filter
+     * @param filter_id - The ID of the filter to delete
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async deleteFilter<
+        T extends keyof SimpleResponse
+    >(filter_id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/filters/${filter_id}`, "DELETE", { token, fields: options?.fields })
+
+        const data = await result.json() as Pick<SimpleResponse, T>
+        return data
+    }
+
+    /**
+     * Updates an existing regex filer
+     * @param update_payload - The data to update the filter with
+     * @param id - The ID of the filter
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails
+     */
+    async updateFilter<
+        T extends keyof FilterDetails
+    >(update_payload: PatchExistingFilter, id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/filters/${id}`, "PATCH", { token, fields: options?.fields, body: update_payload })
+
+        return await result.json() as Pick<FilterDetails, T>
+    }
+
+    /**
+     * Gets Details for a specific filter
+     * @param filter_id - The filter to show
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns FilterDetails - Filter Details
+     */
+    async getFilter<
+        T extends keyof FilterDetails
+    >(filter_id?: string, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/filters/${filter_id}`, "GET", { token, fields: options?.fields })
+
+        const data = await result.json() as Pick<FilterDetails, T>
+        return data
+    }
+
+    /** FIND USER */
     /**
      * Lookup user details based on their API key.
      * This can be used to verify a user exists
@@ -387,83 +693,26 @@ export class AIHorde {
         return data
     }
 
+    /** GENERATE IMAGE */
     /**
-     * Details and statistics about a specific user
-     * @param id - The user ids to get
-     * @param options.token - The token of the requesting user; Has to be Moderator, Admin or Reuqested users token
-     * @param options.force - Set to true to skip cache
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns UserDetails - The user data of the requested user
-     */
-    async getUserDetails<
-        T extends keyof UserDetails
-    >(id: number, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<UserDetails, T>> {
-        const fields_string = this.generateFieldsString(options?.fields)
-        const token = this.#getToken(options?.token)
-        const temp = !options?.force && this.#cache.users?.get(id.toString() + fields_string)
-        if (temp) return temp
-        const { result } = await this.#request(`/users/${id}`, "GET", { fields_string, token })
-
-        const data = await result.json() as Pick<UserDetails, T>
-        if (this.#cache_config.users) {
-            const data_with_id = data as Pick<UserDetails, 'id'>
-            if ('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string!, data)
-        }
-        return data
-    }
-
-    /**
-     * Details of a worker Team
-     * @param id - The teams id to get
+     * Initiate an Asynchronous request to generate images
+     * This method will immediately return with the UUID of the request for generation.
+     * This method will always be accepted, even if there are no workers available currently to fulfill this request.
+     * Perhaps some will appear in the next 10 minutes.
+     * Asynchronous requests live for 10 minutes before being considered stale and being deleted.
+     * @param generation_data - The data to generate the image
      * @param options.token - The token of the requesting user
-     * @param options.force - Set to true to skip cache
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns TeamDetailsStable - The team data
+     * @returns RequestAsync - The id and message for the async generation request
      */
-    async getTeam<
-        T extends keyof TeamDetailsStable
-    >(id: string, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<TeamDetailsStable, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
+    async postAsyncImageGenerate<
+        T extends keyof RequestAsync
+    >(generation_data: ImageGenerationInput, options?: { token?: string, fields?: T[] }): Promise<Pick<RequestAsync, T>> {
         const token = this.#getToken(options?.token)
-        const temp = !options?.force && this.#cache.teams?.get(id + fields_string)
-        if (temp) return temp as Pick<TeamDetailsStable, T>
 
-        const { result } = await this.#request(`/teams/${id}`, "GET", { token, fields_string })
+        const { result } = await this.#request(`/generate/async`, "POST", { token, fields: options?.fields, body: generation_data })
 
-        const data = await result.json() as Pick<TeamDetailsStable, T>
-
-        if (this.#cache_config.teams) {
-            const data_with_id = data as Pick<TeamDetailsStable, 'id'>
-            if ('id' in data_with_id) this.#cache.teams?.set(data_with_id.id + fields_string, data)
-        }
-        return data
-    }
-
-    /**
-     * Details of a registered worker.
-     * This can be used to verify a user exists
-     * @param id - The id of the worker
-     * @param options.token  - Moderator or API key of workers owner (gives more information if requesting user is owner or moderator)
-     * @param options.force - Set to true to skip cache
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns worker details for the requested worker
-     */
-    async getWorkerDetails<
-        T extends keyof WorkerDetailsStable
-    >(id: string, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<WorkerDetailsStable, T>> {
-        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
-        const token = this.#getToken(options?.token)
-        const temp = !options?.force && this.#cache.workers?.get(id + fields_string)
-        if (temp) return temp as Pick<WorkerDetailsStable, T>
-
-        const { result } = await this.#request(`/workers/${id}`, "GET", { token, fields_string })
-
-        const data = await result.json() as Pick<WorkerDetailsStable, T>
-        if (this.#cache_config.workers) {
-            const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
-            if ('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, data)
-        }
-        return data
+        return await result.json() as Pick<RequestAsync, T>
     }
 
     /**
@@ -485,6 +734,63 @@ export class AIHorde {
 
         const data = await result.json() as Pick<RequestStatusCheck, T>
         if (this.#cache_config.generations_check) this.#cache.generations_check?.set(id + fields_string, data)
+        return data
+    }
+
+    /**
+     * Check if there are generation requests queued for fulfillment
+     * This endpoint is used by registered workers only
+     * @param pop_input
+     * @param options.token - The token of the registered user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationPayloadStable
+     */
+    async postImageGenerationPop<
+        T extends keyof GenerationPayloadStable
+    >(pop_input: PopInputStable, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationPayloadStable, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/generate/pop`, "POST", { token, fields: options?.fields, body: pop_input })
+
+        return await result.json() as Pick<GenerationPayloadStable, T>
+    }
+
+    /**
+     * Submit aesthetic ratings for generated images to be used by LAION
+     * The request has to have been sent as shared: true.
+     * You can select the best image in the set, and/or provide a rating for each or some images in the set.
+     * If you select best-of image, you will gain 4 kudos. Each rating is 5 kudos. Best-of will be ignored when ratings conflict with it.
+     * You can never gain more kudos than you spent for this generation. Your reward at max will be your kudos consumption - 1.
+     * @param generation_id - The ID of the generation to rate
+     * @param rating - The data to rating data
+     * @param options.token - The token of the requesting user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationSubmitted - The kudos awarded for the rating
+     */
+    async postImageRating<
+        T extends keyof GenerationSubmitted
+    >(generation_id: string, rating: AestheticsPayload, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/generate/rate/${generation_id}`, "POST", { token, fields: options?.fields, body: rating })
+
+        return await result.json() as Pick<GenerationSubmitted, T>
+    }
+
+    /**
+     * Cancel an unfinished request
+     * This request will include all already generated images in base64 encoded .webp files.
+     * @param id - The targeted generations ID
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestStatusStable
+     */
+    async deleteImageGenerationRequest<
+        T extends keyof RequestStatusStable
+    >(id: string, options?: { fields?: T[] }): Promise<Pick<RequestStatusStable, T>> {
+        const { result, fields_string } = await this.#request(`/generate/status/${id}`, "DELETE", { fields: options?.fields })
+
+        const data = await result.json() as Pick<RequestStatusStable, T>
+        if (this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
         return data
     }
 
@@ -513,6 +819,81 @@ export class AIHorde {
     }
 
     /**
+     * Submit a generated image
+     * This endpoint is used by registered workers only
+     * @param generation_submit
+     * @param options.token - The workers owner API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationSubmitted
+     */
+    async postImageGenerationSubmit<
+        T extends keyof GenerationSubmitted
+    >(generation_submit: { id: string, generation: string, seed: string }, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/generate/submit`, "POST", { token, fields: options?.fields, body: generation_submit })
+
+        return await result.json() as Pick<GenerationSubmitted, T>
+    }
+
+    /** TEXT GENERATION */
+    /**
+     * Initiate an Asynchronous request to generate text
+     * This endpoint will immediately return with the UUID of the request for generation.
+     * This endpoint will always be accepted, even if there are no workers available currently to fulfill this request.
+     * Perhaps some will appear in the next 20 minutes.
+     * Asynchronous requests live for 20 minutes before being considered stale and being deleted.
+     * @param generation_data - The data to generate the text
+     * @param options.token - The token of the requesting user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestAsync - The id and message for the async generation request
+     */
+    async postAsyncTextGenerate<
+        T extends keyof RequestAsync
+    >(generation_data: GenerationInputKobold, options?: { token?: string, fields?: T[] }): Promise<Pick<RequestAsync, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/generate/text/async`, "POST", { token, fields: options?.fields, body: generation_data })
+
+        return await result.json() as Pick<RequestAsync, T>
+    }
+
+    /**
+     * Check if there are generation requests queued for fulfillment
+     * This endpoint is used by registered workers only
+     * @param pop_input
+     * @param options.token - The token of the registered user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationPayloadKobold
+     */
+    async postTextGenerationPop<
+        T extends keyof GenerationPayloadKobold
+    >(pop_input: PopInputKobold, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationPayloadKobold, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/generate/text/pop`, "POST", { token, fields: options?.fields, body: pop_input })
+
+        return await result.json() as Pick<GenerationPayloadKobold, T>
+    }
+
+    /**
+     * Cancel an unfinished request
+     * This request will include all already generated images in base64 encoded .webp files.
+     * @param id - The targeted generations ID
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestStatusKobold
+     */
+    async deleteTextGenerationRequest<
+        T extends keyof RequestStatusKobold
+    >(id: string, options?: { fields?: T[] }): Promise<Pick<RequestStatusKobold, T>> {
+        const { result, fields_string } = await this.#request(`/generate/text/status/${id}`, "DELETE", { fields: options?.fields })
+
+        const data = await result.json() as Pick<RequestStatusKobold, T>
+        if (this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        return data
+    }
+
+    /**
      * This request will include all already generated texts.
      * @param id - The id of the generation
      * @param options.force - Set to true to skip cache
@@ -530,6 +911,81 @@ export class AIHorde {
 
         const data = await result.json() as Pick<RequestStatusKobold, T>
         if (this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        return data
+    }
+
+    /**
+     * Submit generated text
+     * This endpoint is used by registered workers only
+     * @param generation_submit
+     * @param options.token - The workers owner API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationSubmitted
+     */
+    async postTextGenerationSubmit<
+        T extends keyof GenerationSubmitted
+    >(generation_submit: { id: string, generation: string, state: "ok" | "censored" | "faulted" }, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/generate/text/submit`, "POST", { token, fields: options?.fields, body: generation_submit })
+
+        return await result.json() as Pick<GenerationSubmitted, T>
+    }
+
+    /** INTERROGATE IMAGE */
+    /**
+     * Initiate an Asynchronous request to interrogate an image.
+     * This endpoint will immediately return with the UUID of the request for interrogation.
+     * This endpoint will always be accepted, even if there are no workers available currently to fulfill this request.
+     * Perhaps some will appear in the next 20 minutes.
+     * Asynchronous requests live for 20 minutes before being considered stale and being deleted.
+     * @param interrogate_payload
+     * @param options.token - The sending users API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns RequestInterrogationResponse
+     */
+    async postAsyncInterrogate<
+        T extends keyof RequestInterrogationResponse
+    >(interrogate_payload: ModelInterrogationInputStable, options?: { token?: string, fields?: T[] }): Promise<Pick<RequestInterrogationResponse, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/interrogate/async`, "POST", { token, fields: options?.fields, body: interrogate_payload })
+
+        return await result.json() as Pick<RequestInterrogationResponse, T>
+    }
+
+    /**
+     * Check if there are interrogation requests queued for fulfillment
+     * This endpoint is used by registered workers only
+     * @param pop_input
+     * @param options.token - The token of the registered user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns InterrogationPopPayload
+     */
+    async postInterrogationPop<
+        T extends keyof InterrogationPopPayload
+    >(pop_input: InterrogationPopInput, options?: { token?: string, fields?: T[] }): Promise<Pick<InterrogationPopPayload, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/interrogate/pop`, "POST", { token, fields: options?.fields, body: pop_input })
+
+        return await result.json() as Pick<InterrogationPopPayload, T>
+    }
+
+    /**
+     * Cancel an unfinished interrogation request
+     * This request will return all already interrogated image results.
+     * @param id - The targeted generations ID
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns InterrogationStatus
+     */
+    async deleteInterrogationRequest<
+        T extends keyof InterrogationStatus
+    >(id: string, options?: { fields?: T[] }): Promise<Pick<InterrogationStatus, T>> {
+        const { result, fields_string } = await this.#request(`/interrogate/status/${id}`, "DELETE", { fields: options?.fields })
+
+        const data = await result.json() as Pick<InterrogationStatus, T>
+        if (this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
         return data
     }
 
@@ -554,6 +1010,273 @@ export class AIHorde {
         return data
     }
 
+    /**
+     * Submit the results of an interrogated image
+     * This endpoint is used by registered workers only
+     * @param interrogation_submit.id - The ID of the interrogation to submit for
+     * @param interrogation_submit.result - The result of the interrogation
+     * @param options.token - The workers owner API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns GenerationSubmitted
+     */
+    async postInterrogationSubmit<
+        T extends keyof GenerationSubmitted
+    >(interrogation_submit: { id: string, result: string }, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/interrogate/submit`, "POST", { token, fields: options?.fields, body: interrogation_submit })
+
+        return await result.json() as Pick<GenerationSubmitted, T>
+    }
+
+    /** KUDOS */
+    /**
+     * Award Kudos to a registered user
+     * @param award.username - The username of the user to award Kudos to
+     * @param award.amount - The amount of Kudos to award
+     * @param options.token - The API key of the user awarding the Kudos
+     * @param options.fields - Array of fields to include in the response
+     * @returns KudosAwarded - The details of the awarded Kudos
+     */
+    async postKudosAward<
+        T extends keyof KudosAwarded
+    >(award: { username: string, amount: number }, options?: { token?: string, fields?: T[] }): Promise<Pick<KudosAwarded, T>> {
+        const { result } = await this.#request(`/kudos/award`, "POST", { ...options, body: award })
+        return await result.json() as Pick<KudosAwarded, T>
+    }
+
+    /**
+     * Transfer Kudos to a registered user
+     * @param transfer_data.username - The username of the user to transfer Kudos to
+     * @param transfer_data.amount - The amount of Kudos to transfer
+     * @param options.token - The sending users API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns KudosTransferred
+     */
+    async postKudosTransfer<
+        T extends keyof KudosTransferred
+    >(transfer_data: { username: string, amount: number }, options?: { token?: string, fields?: T[] }): Promise<Pick<KudosTransferred, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/kudos/transfer`, "POST", { token, fields: options?.fields, body: transfer_data })
+
+        return await result.json() as Pick<KudosTransferred, T>
+    }
+
+    /** OPERATIONS */
+    /**
+     * Remove a worker's IP block
+     * @param worker_id - The ID of the worker to unblock
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async deleteBlockedWorkerIP<
+        T extends keyof SimpleResponse
+    >(worker_id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const { result } = await this.#request(`/operations/block_worker_ipaddr/${worker_id}`, "DELETE", options)
+        return await result.json() as Pick<SimpleResponse, T>
+    }
+
+    /**
+     * Block worker's from a specific IP for 24 hours
+     * @param worker_id - The ID of the worker to block
+     * @param payload - The data to block the worker's IP address
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async blockWorkerIP<
+        T extends keyof SimpleResponse
+    >(worker_id: string, payload: AddWorkerTimeout, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const { result } = await this.#request(`/operations/block_worker_ipaddr/${worker_id}`, "PUT", { ...options, body: payload })
+        return await result.json() as Pick<SimpleResponse, T>
+    }
+    
+    /**
+     * Add ann IP or CIDR to timeout
+     * @param payload - The data to block the IP address
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async addIPTimeout<
+        T extends keyof SimpleResponse
+    >(payload: AddTimeoutIPInput, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const { result } = await this.#request(`/operations/ipaddr`, "POST", { ...options, body: payload })
+        return await result.json() as Pick<SimpleResponse, T>
+    }
+
+    /**
+     * Remove an IP from timeout
+     * @param payload - The data to block the IP address
+     * @param options.token - Optional API key (defaults to instance default token); Must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async deleteIPTimeoutOperation<
+        T extends keyof SimpleResponse
+    >(payload: DeleteTimeoutIPInput, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const { result } = await this.#request(`/operations/ipaddr`, "DELETE", { ...options, body: payload })
+        return await result.json() as Pick<SimpleResponse, T>
+    }
+
+    /**
+     * Return all existing IP Block timeouts
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns IPTimeout[] - Array of IPTimeout entries
+     */
+    async getIPTimeouts<
+        T extends keyof IPTimeout
+    >(options?: { token?: string, fields?: T[] }): Promise<Pick<IPTimeout, T>[]> {
+        const { result } = await this.#request(`/operations/ipaddr`, "GET", options)
+        return await result.json() as Pick<IPTimeout, T>[]
+    }
+
+    /**
+     * Check if an IP or CIDR in timeout
+     * @param ipaddr - The IP address or CIDR to check
+     * @param options.token - Moderators API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns IPTimeout[] - Array of IPTimeout entries
+     */
+    async getIPTimeout<
+        T extends keyof IPTimeout
+    >(ipaddr: string, options?: { token?: string, fields?: T[] }): Promise<Pick<IPTimeout, T>[]> {
+        const { result } = await this.#request(`/operations/ipaddr/${ipaddr}`, "GET", options)
+        return await result.json() as Pick<IPTimeout, T>[]
+    }
+
+    /** SHARED KEYS */
+    /**
+     * Create a new SharedKey for this user
+     * @param create_payload - The data to create the shared key with
+     * @param options.token - The User API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SharedKeyDetails
+     */
+    async putSharedKey<
+        T extends keyof SharedKeyDetails
+    >(create_payload: SharedKeyInput, options?: { token?: string, fields?: T[] }): Promise<Pick<SharedKeyDetails, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/sharedkeys`, "PUT", { token, fields: options?.fields, body: create_payload })
+
+        return await result.json() as Pick<SharedKeyDetails, T>
+    }
+
+    /**
+     * Delete an existing SharedKey for this user
+     * @param id - The targeted Shared Key's ID
+     * @param options.token - The worker owners API key or a Moderators API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async deleteSharedKey<
+        T extends keyof SimpleResponse
+    >(id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/sharedkeys/${id}`, "DELETE", { token, fields: options?.fields })
+
+        const data = await result.json() as Pick<SimpleResponse, T>
+        this.#cache.sharedkeys?.delete(id)
+        return data
+    }
+
+    /**
+     * Modify an existing Shared Key
+     * @param update_payload - The data to update the shared key with
+     * @param id - The ID of the shared key
+     * @param options.token - The User API key
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SharedKeyDetails
+     */
+    async updateSharedKey<
+        T extends keyof SharedKeyDetails
+    >(update_payload: SharedKeyInput, id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SharedKeyDetails, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/sharedkeys/${id}`, "PATCH", { token, fields: options?.fields, body: update_payload })
+
+        return await result.json() as Pick<SharedKeyDetails, T>
+    }
+
+    /**
+     * Gets Details about an existing Shared Key for this user
+     * @param sharedkey_id - The shared key to show
+     * @param options.token - The sending users API key; User must be a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SharedKeyDetails - Shared Key Details
+     */
+    async getSharedKey<
+        T extends keyof SharedKeyDetails
+    >(sharedkey_id?: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SharedKeyDetails, T>> {
+        const { result } = await this.#request(`/sharedkeys/${sharedkey_id}`, "GET", { fields: options?.fields })
+
+        const data = await result.json() as Pick<SharedKeyDetails, T>
+        return data
+    }
+
+    /** STATS */
+    /**
+     * Details how many images were generated per model for the past day, month and total
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns ImageModelStats - The stats
+     */
+    async getImageModelStats<
+        T extends keyof ImageModelStats
+    >(options?: { fields?: T[] }): Promise<Pick<ImageModelStats, T>> {
+        const { result } = await this.#request("/stats/img/models", "GET", { fields: options?.fields })
+
+        const data = await result.json() as Pick<ImageModelStats, T>
+        return data
+    }
+
+    /**
+     * Details how many images have been generated in the past minux,hour,day,month and total
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns ImageTotalStats - The stats
+     */
+    async getImageTotalStats<
+        T extends keyof ImageModelStats
+    >(options?: { fields?: T[] }): Promise<Pick<ImageTotalStats, T>> {
+        const { result } = await this.#request("/stats/img/totals", "GET", { fields: options?.fields })
+
+        const data = await result.json() as Pick<ImageTotalStats, T>
+        return data
+    }
+
+    /**
+     * Details how many texts were generated per model for the past day, month and total
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns TextModelStats - The stats
+     */
+    async getTextModelStats<
+        T extends keyof ImageModelStats
+    >(options?: { fields?: T[] }): Promise<Pick<TextModelStats, T>> {
+        const { result } = await this.#request("/stats/text/models", "GET", { fields: options?.fields })
+
+        const data = await result.json() as Pick<TextModelStats, T>
+        return data
+    }
+
+    /**
+     * Details how many images have been generated in the past minux,hour,day,month and total
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns TextTotalStats - The stats
+     */
+    async getTextTotalStats<
+        T extends keyof ImageModelStats
+    >(options?: { fields?: T[] }): Promise<Pick<TextTotalStats, T>> {
+        const { result } = await this.#request("/stats/text/totals", "GET", { fields: options?.fields })
+
+        const data = await result.json() as Pick<TextTotalStats, T>
+        return data
+    }
+
+    /** STATUS */
     /**
      * If this loads, this node is available
      * @returns true - If request was successful, if not throws error
@@ -623,6 +1346,23 @@ export class AIHorde {
     }
 
     /**
+     * Change Horde Modes
+     * @param modes - The new status of the Horde
+     * @param options.token - Optional API key (defaults to instance default token); Must be a Administrator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns HordeModes
+     */
+    async putMode<
+        T extends keyof HordeModes
+    >(modes: { maintenance: boolean, shutdown: number, invite_only: boolean, raid: boolean }, options?: { token?: string, fields?: T[] }): Promise<Pick<HordeModes, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/status/modes`, "PUT", { token, fields: options?.fields, body: modes })
+
+        return await result.json() as Pick<HordeModes, T>
+    }
+
+    /**
      * Read the latest happenings on the horde
      * @param options.force - Set to true to skip cache
      * @param options.fields - Array of fields that will be included in the returned data
@@ -662,100 +1402,251 @@ export class AIHorde {
         return data
     }
 
+    /** IMAGE STYLES */
     /**
-     * A List with the details and statistic of all registered users
+     * Create a new image style
+     * @param payload - The data to create the image style
+     * @param options.token - Optional API key (defaults to instance default token)
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns UserDetails[] - An array of all users data
+     * @returns StyleModify
      */
-    async getUsers<
-        T extends keyof UserDetails
-    >(options?: { force?: boolean, fields?: T[] }): Promise<Pick<UserDetails, T>[]> {
-        const { result, fields_string } = await this.#request(`/users`, "GET", { fields: options?.fields })
-
-        const data = await result.json() as Pick<UserDetails, T>[]
-        if (this.#cache_config.users) data.forEach(d => {
-            const data_with_id = d as Pick<UserDetails, 'id'>
-            if ('id' in data_with_id) this.#cache.users?.set(data_with_id.id! + fields_string, d)
-        })
-        return data
+    async postImageStyle<
+        T extends keyof StyleModify
+    >(payload: ModelStyleInputStable, options?: { token?: string, fields?: T[] }): Promise<Pick<StyleModify, T>> {
+        const { result } = await this.#request(`/styles/image`, "POST", { ...options, body: payload })
+        return await result.json() as Pick<StyleModify, T>
     }
 
     /**
-     * A List with the details of all registered and active workers
+     * Get a list of all image styles
+     * @param query.sort - Sort the results by a specific field. Prefix with '-' for descending order
+     * @param query.page - The page of results to return
+     * @param query.tag - Filter results by a specific tag
+     * @param query.model - Filter results by a specific model
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns An array of all workers data
+     * @returns StyleStable
      */
-    async getWorkers<
-        T extends keyof WorkerDetailsStable
-    >(options?: { fields?: T[] }): Promise<Pick<WorkerDetailsStable, T>[]> {
-        const { result, fields_string } = await this.#request(`/workers`, "GET", { fields: options?.fields })
-
-        const data = await result.json() as Pick<WorkerDetailsStable, T>[]
-        if (this.#cache_config.workers) data.forEach(d => {
-            const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
-            if ('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, d)
-        })
-        return data
+    async getImageStyles<
+        T extends keyof StyleStable
+    >(query?: { sort?: string, page?: number, tag?: string, model?: string }, options?: { fields?: T[] }): Promise<Pick<StyleStable, T>[]> {
+        const qs: string[] = []
+        if (query?.sort) qs.push(`sort=${encodeURIComponent(query.sort)}`)
+        if (typeof query?.page === 'number') qs.push(`page=${query.page}`)
+        if (query?.tag) qs.push(`tag=${encodeURIComponent(query.tag)}`)
+        if (query?.model) qs.push(`model=${encodeURIComponent(query.model)}`)
+        const { result } = await this.#request(`/styles/image${qs.length ? '?' + qs.join('&') : ''}`, "GET", options as any)
+        return await result.json() as Pick<StyleStable, T>[]
     }
 
-
     /**
-     * Details how many images were generated per model for the past day, month and total
+     * Delete an image style
+     * @param style_id - The ID of the image style to delete
+     * @param options.token - Optional API key (defaults to instance default token)
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns ImageModelStats - The stats
+     * @returns SimpleResponse
      */
-    async getImageModelStats<
-        T extends keyof ImageModelStats
-    >(options?: { fields?: T[] }): Promise<Pick<ImageModelStats, T>> {
-        const { result } = await this.#request("/stats/img/models", "GET", { fields: options?.fields })
-
-        const data = await result.json() as Pick<ImageModelStats, T>
-        return data
+    async deleteImageStyle<
+        T extends keyof SimpleResponse
+    >(style_id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const { result } = await this.#request(`/styles/image/${style_id}`, "DELETE", options)
+        return await result.json() as Pick<SimpleResponse, T>
     }
 
-
     /**
-     * Details how many images have been generated in the past minux,hour,day,month and total
+     * Update an image style
+     * @param style_id - The ID of the image style to update
+     * @param payload - The data to update the image style
+     * @param options.token - Optional API key (defaults to instance default token)
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns ImageTotalStats - The stats
+     * @returns StyleModify
      */
-    async getImageTotalStats<
-        T extends keyof ImageModelStats
-    >(options?: { fields?: T[] }): Promise<Pick<ImageTotalStats, T>> {
-        const { result } = await this.#request("/stats/img/totals", "GET", { fields: options?.fields })
-
-        const data = await result.json() as Pick<ImageTotalStats, T>
-        return data
+    async patchImageStyle<
+        T extends keyof StyleModify
+    >(style_id: string, payload: ModelStylePatchStable, options?: { token?: string, fields?: T[] }): Promise<Pick<StyleModify, T>> {
+        const { result } = await this.#request(`/styles/image/${style_id}`, "PATCH", { ...options, body: payload })
+        return await result.json() as Pick<StyleModify, T>
     }
 
-
     /**
-     * Details how many texts were generated per model for the past day, month and total
+     * Displays information about an image style
+     * @param style_id - The ID of the image style to retrieve
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns TextModelStats - The stats
+     * @returns StyleStable
      */
-    async getTextModelStats<
-        T extends keyof ImageModelStats
-    >(options?: { fields?: T[] }): Promise<Pick<TextModelStats, T>> {
-        const { result } = await this.#request("/stats/text/models", "GET", { fields: options?.fields })
-
-        const data = await result.json() as Pick<TextModelStats, T>
-        return data
+    async getImageStyle<
+        T extends keyof StyleStable
+    >(style_id: string, options?: { fields?: T[] }): Promise<Pick<StyleStable, T>> {
+        const { result } = await this.#request(`/styles/image/${style_id}`, "GET", options as any)
+        return await result.json() as Pick<StyleStable, T>
     }
 
+    /**
+     * Create an image style example
+     * @param style_id - The ID of the image style to add an example to
+     * @param payload - The data for the example
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns StyleModify
+     */
+    async postImageStyleExample<
+        T extends keyof StyleModify
+    >(style_id: string, payload: InputStyleExamplePost, options?: { token?: string, fields?: T[] }): Promise<Pick<StyleModify, T>> {
+        const { result } = await this.#request(`/styles/image/${style_id}/example`, "POST", { ...options, body: payload })
+        return await result.json() as Pick<StyleModify, T>
+    }
 
     /**
-     * Details how many images have been generated in the past minux,hour,day,month and total
+     * Displays information about an image style example
+     * @param style_id - The ID of the image style
+     * @param example_id - The ID of the example to retrieve
+     * @param options.token - Moderators API key
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns TextTotalStats - The stats
+     * @returns SimpleResponse
      */
-    async getTextTotalStats<
-        T extends keyof ImageModelStats
-    >(options?: { fields?: T[] }): Promise<Pick<TextTotalStats, T>> {
-        const { result } = await this.#request("/stats/text/totals", "GET", { fields: options?.fields })
+    async deleteImageStyleExample<
+        T extends keyof SimpleResponse
+    >(style_id: string, example_id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const { result } = await this.#request(`/styles/image/${style_id}/example/${example_id}`, "DELETE", options)
+        return await result.json() as Pick<SimpleResponse, T>
+    }
 
-        const data = await result.json() as Pick<TextTotalStats, T>
-        return data
+    /**
+     * Modify an existing image style example
+     * @param style_id - The ID of the image style to add an example to
+     * @param example_id - The ID of the example to create
+     * @param payload - The data for the example
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns StyleModify
+     */
+    async patchImageStyleExample<
+        T extends keyof StyleModify
+    >(style_id: string, example_id: string, payload: InputStyleExamplePost, options?: { token?: string, fields?: T[] }): Promise<Pick<StyleModify, T>> {
+        const { result } = await this.#request(`/styles/image/${style_id}/example/${example_id}`, "PATCH", { ...options, body: payload })
+        return await result.json() as Pick<StyleModify, T>
+    }
+
+    /**
+     * Seeks an image style by name and displays its information
+     * @param style_name - The name of the image style to retrieve
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns StyleStable
+     */
+    async getImageStyleByName<
+        T extends keyof StyleStable
+    >(style_name: string, options?: { fields?: T[] }): Promise<Pick<StyleStable, T>> {
+        const { result } = await this.#request(`/styles/image_by_name/${style_name}`, "GET", options as any)
+        return await result.json() as Pick<StyleStable, T>
+    }
+
+    /** TEXT STYLES */
+    /**
+     * Creates a new text style
+     * @param payload - The data for the new text style
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns StyleModify
+     */
+    async postTextStyle<
+        T extends keyof StyleModify
+    >(payload: ModelStyleInputKobold, options?: { token?: string, fields?: T[] }): Promise<Pick<StyleModify, T>> {
+        const { result } = await this.#request(`/styles/text`, "POST", { ...options, body: payload })
+        return await result.json() as Pick<StyleModify, T>
+    }
+
+    /**
+     * Retrieves information about all text styles
+     * @param query.sort - Sort the results by a specific field. Prefix with '-' for descending order
+     * @param query.page - The page of results to return
+     * @param query.tag - Filter results by a specific tag
+     * @param query.model - Filter results by a specific model
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns StyleKobold
+     */
+    async getTextStyles<
+        T extends keyof StyleKobold
+    >(query?: { sort?: string, page?: number, tag?: string, model?: string }, options?: { fields?: T[] }): Promise<Pick<StyleKobold, T>[]> {
+        const qs: string[] = []
+        if (query?.sort) qs.push(`sort=${encodeURIComponent(query.sort)}`)
+        if (typeof query?.page === 'number') qs.push(`page=${query.page}`)
+        if (query?.tag) qs.push(`tag=${encodeURIComponent(query.tag)}`)
+        if (query?.model) qs.push(`model=${encodeURIComponent(query.model)}`)
+        const { result } = await this.#request(`/styles/text${qs.length ? '?' + qs.join('&') : ''}`, "GET", options as any)
+        return await result.json() as Pick<StyleKobold, T>[]
+    }
+
+    /**
+     * Deletes a text style by its ID
+     * @param style_id - The ID of the text style to delete
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async deleteTextStyle<
+        T extends keyof SimpleResponse
+    >(style_id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const { result } = await this.#request(`/styles/text/${style_id}`, "DELETE", options)
+        return await result.json() as Pick<SimpleResponse, T>
+    }
+
+    /**
+     * Modifies a text style
+     * @param style_id - The ID of the text style to update
+     * @param payload - The updated data for the text style
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns StyleModify
+     */
+    async patchTextStyle<
+        T extends keyof StyleModify
+    >(style_id: string, payload: ModelStylePatchKobold, options?: { token?: string, fields?: T[] }): Promise<Pick<StyleModify, T>> {
+        const { result } = await this.#request(`/styles/text/${style_id}`, "PATCH", { ...options, body: payload })
+        return await result.json() as Pick<StyleModify, T>
+    }
+
+    /**
+     * Displays information about a single text style
+     * @param style_id - The ID of the text style to retrieve
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns The requested text style
+     */
+    async getTextStyle<
+        T extends keyof StyleKobold
+    >(style_id: string, options?: { fields?: T[] }): Promise<Pick<StyleKobold, T>> {
+        const { result } = await this.#request(`/styles/text/${style_id}`, "GET", options as any)
+        return await result.json() as Pick<StyleKobold, T>
+    }
+
+    /**
+     * Seeks a text style by name and displays its information
+     * @param style_name - The name of the text style to retrieve
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns The requested text style
+     */
+    async getTextStyleByName<
+        T extends keyof StyleKobold
+    >(style_name: string, options?: { fields?: T[] }): Promise<Pick<StyleKobold, T>> {
+        const { result } = await this.#request(`/styles/text_by_name/${style_name}`, "GET", options as any)
+        return await result.json() as Pick<StyleKobold, T>
+    }
+
+    /** TEAMS */
+    /**
+     * Create a new team
+     * Only trusted users can create new teams.
+     * @param create_payload - The data to create the team with
+     * @param options.token - The API key of a trusted user
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns ModifyTeam
+     */
+    async createTeam<
+        T extends keyof ModifyTeam
+    >(create_payload: CreateTeamInput, options?: { token?: string, fields?: T[] }): Promise<Pick<ModifyTeam, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result } = await this.#request(`/teams`, "POST", { token, fields: options?.fields, body: create_payload })
+
+        return await result.json() as Pick<ModifyTeam, T>
     }
 
     /**
@@ -777,440 +1668,30 @@ export class AIHorde {
     }
 
     /**
-     * A List of filters
-     * @param query.filter_type - The type of filter to show
-     * @param query.contains - Only return filter containing this word
-     * @param options.token - The sending users API key; User must be a moderator
+     * Delete the team entry
+     * Only the team's creator or a horde moderator can use this endpoint.
+     * This action is unrecoverable!
+     * @param id - The targeted teams ID
+     * @param options.token - Optional API key (defaults to instance default token); Must be the team creator or a moderator
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns FilterDetails[] - Array of Filter Details
+     * @returns DeletedTeam
      */
-    async getFilters<
-        T extends keyof FilterDetails
-    >(query?: { filter_type?: string, contains?: string }, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>[]> {
+    async deleteTeam<
+        T extends keyof DeletedTeam
+    >(id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<DeletedTeam, T>> {
         const token = this.#getToken(options?.token)
-        const params = new URLSearchParams()
-        if (query?.filter_type) params.set("filter_type", query?.filter_type)
-        if (query?.contains) params.set("contains", query?.contains)
 
-        const { result } = await this.#request(`/filters${params.toString() ? `?${params.toString()}` : ""}`, "GET", { token, fields: options?.fields })
+        const { result, fields_string } = await this.#request(`/teams/${id}`, "DELETE", { token, fields: options?.fields })
 
-        const data = await result.json() as Pick<FilterDetails, T>[]
+        const data = await result.json() as Pick<DeletedTeam, T>
+        this.#cache.teams?.delete(id + fields_string)
         return data
     }
-
-    /**
-     * Gets Details for a specific filter
-     * @param filter_id - The filter to show
-     * @param options.token - The sending users API key; User must be a moderator
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns FilterDetails - Filter Details
-     */
-    async getFilter<
-        T extends keyof FilterDetails
-    >(filter_id?: string, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/filters/${filter_id}`, "GET", { token, fields: options?.fields })
-
-        const data = await result.json() as Pick<FilterDetails, T>
-        return data
-    }
-
-
-    /**
-     * Gets Details about an existing Shared Key for this user
-     * @param sharedkey_id - The shared key to show
-     * @param options.token - The sending users API key; User must be a moderator
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns FilterDetails - Filter Details
-     */
-    async getSharedKey<
-        T extends keyof SharedKeyDetails
-    >(sharedkey_id?: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SharedKeyDetails, T>> {
-        const { result } = await this.#request(`/sharedkeys/${sharedkey_id}`, "GET", { fields: options?.fields })
-
-        const data = await result.json() as Pick<SharedKeyDetails, T>
-        return data
-    }
-
-
-    /* POST REQUESTS */
-
-
-    /**
-     * Transfer Kudos to a registered user
-     * @param check_data - The prompt to check
-     * @param options.token - The sending users API key; User must be a moderator
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns FilterPromptSuspicion
-     */
-    async postFilters<
-        T extends keyof FilterPromptSuspicion
-    >(check_data: FilterCheckPayload, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterPromptSuspicion, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/filters`, "POST", { token, fields: options?.fields, body: check_data })
-
-        return await result.json() as Pick<FilterPromptSuspicion, T>
-    }
-
-    /**
-     * Initiate an Asynchronous request to generate images
-     * This method will immediately return with the UUID of the request for generation.
-     * This method will always be accepted, even if there are no workers available currently to fulfill this request.
-     * Perhaps some will appear in the next 10 minutes.
-     * Asynchronous requests live for 10 minutes before being considered stale and being deleted.
-     * @param generation_data - The data to generate the image
-     * @param options.token - The token of the requesting user
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns RequestAsync - The id and message for the async generation request
-     */
-    async postAsyncImageGenerate<
-        T extends keyof RequestAsync
-    >(generation_data: ImageGenerationInput, options?: { token?: string, fields?: T[] }): Promise<Pick<RequestAsync, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/generate/async`, "POST", { token, fields: options?.fields, body: generation_data })
-
-        return await result.json() as Pick<RequestAsync, T>
-    }
-
-
-    /**
-     * Initiate an Asynchronous request to generate text
-     * This endpoint will immediately return with the UUID of the request for generation.
-     * This endpoint will always be accepted, even if there are no workers available currently to fulfill this request.
-     * Perhaps some will appear in the next 20 minutes.
-     * Asynchronous requests live for 20 minutes before being considered stale and being deleted.
-     * @param generation_data - The data to generate the text
-     * @param options.token - The token of the requesting user
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns RequestAsync - The id and message for the async generation request
-     */
-    async postAsyncTextGenerate<
-        T extends keyof RequestAsync
-    >(generation_data: GenerationInputKobold, options?: { token?: string, fields?: T[] }): Promise<Pick<RequestAsync, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/generate/text/async`, "POST", { token, fields: options?.fields, body: generation_data })
-
-        return await result.json() as Pick<RequestAsync, T>
-    }
-
-    /**
-     * Submit aesthetic ratings for generated images to be used by LAION
-     * The request has to have been sent as shared: true.
-     * You can select the best image in the set, and/or provide a rating for each or some images in the set.
-     * If you select best-of image, you will gain 4 kudos. Each rating is 5 kudos. Best-of will be ignored when ratings conflict with it.
-     * You can never gain more kudos than you spent for this generation. Your reward at max will be your kudos consumption - 1.
-     * @param generation_id - The ID of the generation to rate
-     * @param rating - The data to rating data
-     * @param options.token - The token of the requesting user
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns GenerationSubmitted - The kudos awarded for the rating
-     */
-    async postRating<
-        T extends keyof GenerationSubmitted
-    >(generation_id: string, rating: AestheticsPayload, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/generate/rate/${generation_id}`, "POST", { token, fields: options?.fields, body: rating })
-
-        return await result.json() as Pick<GenerationSubmitted, T>
-    }
-
-
-    /**
-     * Check if there are generation requests queued for fulfillment
-     * This endpoint is used by registered workers only
-     * @param pop_input
-     * @param options.token - The token of the registered user
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns GenerationPayloadStable
-     */
-    async postImageGenerationPop<
-        T extends keyof GenerationPayloadStable
-    >(pop_input: PopInputStable, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationPayloadStable, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/generate/pop`, "POST", { token, fields: options?.fields, body: pop_input })
-
-        return await result.json() as Pick<GenerationPayloadStable, T>
-    }
-
-
-    /**
-     * Check if there are generation requests queued for fulfillment
-     * This endpoint is used by registered workers only
-     * @param pop_input
-     * @param options.token - The token of the registered user
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns GenerationPayloadKobold
-     */
-    async postTextGenerationPop<
-        T extends keyof GenerationPayloadKobold
-    >(pop_input: PopInputKobold, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationPayloadKobold, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/generate/text/pop`, "POST", { token, fields: options?.fields, body: pop_input })
-
-        return await result.json() as Pick<GenerationPayloadKobold, T>
-    }
-
-
-    /**
-     * Submit a generated image
-     * This endpoint is used by registered workers only
-     * @param generation_submit
-     * @param options.token - The workers owner API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns GenerationSubmitted
-     */
-    async postImageGenerationSubmit<
-        T extends keyof GenerationSubmitted
-    >(generation_submit: { id: string, generation: string, seed: string }, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/generate/submit`, "POST", { token, fields: options?.fields, body: generation_submit })
-
-        return await result.json() as Pick<GenerationSubmitted, T>
-    }
-
-
-    /**
-     * Submit generated text
-     * This endpoint is used by registered workers only
-     * @param generation_submit
-     * @param options.token - The workers owner API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns GenerationSubmitted
-     */
-    async postTextGenerationSubmit<
-        T extends keyof GenerationSubmitted
-    >(generation_submit: { id: string, generation: string, state: "ok" | "censored" | "faulted" }, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/generate/text/submit`, "POST", { token, fields: options?.fields, body: generation_submit })
-
-        return await result.json() as Pick<GenerationSubmitted, T>
-    }
-
-    /**
-     * Initiate an Asynchronous request to interrogate an image.
-     * This endpoint will immediately return with the UUID of the request for interrogation.
-     * This endpoint will always be accepted, even if there are no workers available currently to fulfill this request.
-     * Perhaps some will appear in the next 20 minutes.
-     * Asynchronous requests live for 20 minutes before being considered stale and being deleted.
-     * @param interrogate_payload
-     * @param options.token - The sending users API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns RequestInterrogationResponse
-     */
-    async postAsyncInterrogate<
-        T extends keyof RequestInterrogationResponse
-    >(interrogate_payload: ModelInterrogationInputStable, options?: { token?: string, fields?: T[] }): Promise<Pick<RequestInterrogationResponse, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/interrogate/async`, "POST", { token, fields: options?.fields, body: interrogate_payload })
-
-        return await result.json() as Pick<RequestInterrogationResponse, T>
-    }
-
-
-    /**
-     * Check if there are interrogation requests queued for fulfillment
-     * This endpoint is used by registered workers only
-     * @param pop_input
-     * @param options.token - The token of the registered user
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns InterrogationPopPayload
-     */
-    async postInterrogationPop<
-        T extends keyof InterrogationPopPayload
-    >(pop_input: InterrogationPopInput, options?: { token?: string, fields?: T[] }): Promise<Pick<InterrogationPopPayload, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/interrogate/pop`, "POST", { token, fields: options?.fields, body: pop_input })
-
-        return await result.json() as Pick<InterrogationPopPayload, T>
-    }
-
-
-    /**
-     * Submit the results of an interrogated image
-     * This endpoint is used by registered workers only
-     * @param generation_submit
-     * @param options.token - The workers owner API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns GenerationSubmitted
-     */
-    async postInterrogationSubmit<
-        T extends keyof GenerationSubmitted
-    >(interrogation_submit: { id: string, result: string }, options?: { token?: string, fields?: T[] }): Promise<Pick<GenerationSubmitted, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/interrogate/submit`, "POST", { token, fields: options?.fields, body: interrogation_submit })
-
-        return await result.json() as Pick<GenerationSubmitted, T>
-    }
-
-    /**
-     * Transfer Kudos to a registered user
-     * @param transfer_data - The data specifiying who to send how many kudos
-     * @param options.token - The sending users API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns KudosTransferred
-     */
-    async postKudosTransfer<
-        T extends keyof KudosTransferred
-    >(transfer_data: { username: string, amount: number }, options?: { token?: string, fields?: T[] }): Promise<Pick<KudosTransferred, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/kudos/transfer`, "POST", { token, fields: options?.fields, body: transfer_data })
-
-        return await result.json() as Pick<KudosTransferred, T>
-    }
-
-    /**
-     * Receive kudos from the KoboldAI Horde
-     * @param user_id - The stable horde user id of the receiving user
-     * @param transfer_data - The data specifiying who to send how many kudos
-     * @param options.token - The sending users API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns null
-     */
-    async postKoboldTransfer(user_id: string, transfer_data: { kai_id: string, kudos_amount: number, trusted: boolean }, options?: { token?: string }): Promise<null> {
-        const token = this.#getToken(options?.token)
-
-        await this.#request(`/kudos/kai/${user_id}`, "POST", { token, body: transfer_data })
-
-        return null
-    }
-
-
-    /**
-     * Create a new team
-     * Only trusted users can create new teams.
-     * @param create_payload - The data to create the team with
-     * @param options.token - The API key of a trusted user
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns ModifyTeam
-     */
-    async createTeam<
-        T extends keyof ModifyTeam
-    >(create_payload: CreateTeamInput, options?: { token?: string, fields?: T[] }): Promise<Pick<ModifyTeam, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/teams`, "POST", { token, fields: options?.fields, body: create_payload })
-
-        return await result.json() as Pick<ModifyTeam, T>
-    }
-
-    /** PUT */
-
-    /**
-     * Change Horde Modes
-     * @param modes - The new status of the Horde
-     * @param options.token - Requires Admin API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns HordeModes
-     */
-    async putStatusModes<
-        T extends keyof HordeModes
-    >(modes: { maintenance: boolean, shutdown: number, invite_only: boolean, raid: boolean }, options?: { token?: string, fields?: T[] }): Promise<Pick<HordeModes, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/status/modes`, "PUT", { token, fields: options?.fields, body: modes })
-
-        return await result.json() as Pick<HordeModes, T>
-    }
-
-    /**
-     * Method for horde admins to perform operations on users
-     * @param update_payload - The data to change on the target user
-     * @param id - The targeted users ID
-     * @param options.token - Requires Admin API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns ModifyUser
-     */
-    async updateUser<
-        T extends keyof ModifyUser
-    >(update_payload: ModifyUserInput, id: number, options?: { token?: string, fields?: T[] }): Promise<Pick<ModifyUser, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result, fields_string } = await this.#request(`/users/${id}`, "PUT", { token, fields: options?.fields, body: update_payload })
-
-        if (this.#cache_config.users) this.#cache.users?.delete(id.toString() + fields_string)
-        return await result.json() as Pick<ModifyUser, T>
-    }
-
-    /**
-     * Put the worker into maintenance or pause mode
-     * Maintenance can be set by the owner of the serve or an admin.
-     * When in maintenance, the worker will receive a 503 request when trying to retrieve new requests. Use this to avoid disconnecting your worker in the middle of a generation
-     * Paused can be set only by the admins of this Horde.
-     * When in paused mode, the worker will not be given any requests to generate.
-     * @param update_payload - The data to change on the target worker
-     * @param id - The targeted workers ID
-     * @param options.token - The worker owners API key or Admin API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns ModifyWorker
-     */
-    async updateWorker<
-        T extends keyof ModifyWorker
-    >(update_payload: ModifyWorkerInput, id: string, options?: { token?: string, fields?: T[] }): Promise<ModifyWorker> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/workers/${id}`, "PUT", { token, fields: options?.fields, body: update_payload })
-
-        if (this.#cache_config.workers) this.#cache.workers?.delete(id)
-        return await result.json() as Pick<ModifyWorker, T>
-    }
-
-
-    /**
-     * Adds a new regex filer
-     * @param create_payload - The data to create the filter with
-     * @param options.token - The Moderator API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns FilterDetails
-     */
-    async addFilter<
-        T extends keyof FilterDetails
-    >(create_payload: PutNewFilter, id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/filters`, "PUT", { token, fields: options?.fields, body: create_payload })
-
-        return await result.json() as Pick<FilterDetails, T>
-    }
-
-
-    /**
-     * Create a new SharedKey for this user
-     * @param create_payload - The data to create the shared key with
-     * @param options.token - The User API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns SharedKeyInput
-     */
-    async putSharedKey<
-        T extends keyof SharedKeyDetails
-    >(create_payload: SharedKeyInput, options?: { token?: string, fields?: T[] }): Promise<Pick<SharedKeyDetails, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/sharedkeys`, "PUT", { token, fields: options?.fields, body: create_payload })
-
-        return await result.json() as Pick<SharedKeyDetails, T>
-    }
-
-
-    /** PATCH */
-
 
     /**
      * Updates a Team's information
      * @param update_payload - The data to update the team with
-     * @param options.token - The Moderator or Creator API key
+     * @param options.token - Optional API key (defaults to instance default token); Must be the team creator or a moderator
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns ModifyTeam
      */
@@ -1225,98 +1706,198 @@ export class AIHorde {
         return await result.json() as Pick<ModifyTeam, T>
     }
 
-
     /**
-     * Updates an existing regex filer
-     * @param update_payload - The data to update the filter with
-     * @param id - The ID of the filter
-     * @param options.token - The Moderator API key
+     * Details of a worker Team
+     * @param id - The teams id to get
+     * @param options.token - The token of the requesting user
+     * @param options.force - Set to true to skip cache
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns FilterDetails
+     * @returns TeamDetailsStable - The team data
      */
-    async updateFilter<
-        T extends keyof FilterDetails
-    >(update_payload: PatchExistingFilter, id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<FilterDetails, T>> {
+    async getTeam<
+        T extends keyof TeamDetailsStable
+    >(id: string, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<TeamDetailsStable, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const token = this.#getToken(options?.token)
+        const temp = !options?.force && this.#cache.teams?.get(id + fields_string)
+        if (temp) return temp as Pick<TeamDetailsStable, T>
 
-        const { result } = await this.#request(`/filters/${id}`, "PATCH", { token, fields: options?.fields, body: update_payload })
+        const { result } = await this.#request(`/teams/${id}`, "GET", { token, fields_string })
 
-        return await result.json() as Pick<FilterDetails, T>
-    }
+        const data = await result.json() as Pick<TeamDetailsStable, T>
 
-
-    /**
-     * Modify an existing Shared Key
-     * @param update_payload - The data to update the shared key with
-     * @param id - The ID of the shared key
-     * @param options.token - The User API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns SharedKeyDetails
-     */
-    async updateSharedKey<
-        T extends keyof SharedKeyDetails
-    >(update_payload: SharedKeyInput, id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SharedKeyDetails, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/sharedkeys/${id}`, "PATCH", { token, fields: options?.fields, body: update_payload })
-
-        return await result.json() as Pick<SharedKeyDetails, T>
-    }
-
-
-    /** DELETE */
-
-
-    /**
-     * Cancel an unfinished request
-     * This request will include all already generated images in base64 encoded .webp files.
-     * @param id - The targeted generations ID
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns RequestStatusStable
-     */
-    async deleteImageGenerationRequest<
-        T extends keyof RequestStatusStable
-    >(id: string, options?: { fields?: T[] }): Promise<Pick<RequestStatusStable, T>> {
-        const { result, fields_string } = await this.#request(`/generate/status/${id}`, "DELETE", { fields: options?.fields })
-
-        const data = await result.json() as Pick<RequestStatusStable, T>
-        if (this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        if (this.#cache_config.teams) {
+            const data_with_id = data as Pick<TeamDetailsStable, 'id'>
+            if ('id' in data_with_id) this.#cache.teams?.set(data_with_id.id + fields_string, data)
+        }
         return data
     }
 
-
+    /** USERS */
     /**
-     * Cancel an unfinished request
-     * This request will include all already generated images in base64 encoded .webp files.
-     * @param id - The targeted generations ID
+     * A List with the details and statistic of all registered users
+     * @param options.force - Set to true to skip cache
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns RequestStatusKobold
+     * @returns UserDetails[] - An array of all users data
      */
-    async deleteTextGenerationRequest<
-        T extends keyof RequestStatusKobold
-    >(id: string, options?: { fields?: T[] }): Promise<Pick<RequestStatusKobold, T>> {
-        const { result, fields_string } = await this.#request(`/generate/text/status/${id}`, "DELETE", { fields: options?.fields })
+    async getUsers<
+        T extends keyof UserDetails
+    >(options?: { force?: boolean, fields?: T[] }): Promise<Pick<UserDetails, T>[]> {
+        const { result, fields_string } = await this.#request(`/users`, "GET", { fields: options?.fields })
 
-        const data = await result.json() as Pick<RequestStatusKobold, T>
-        if (this.#cache_config.generations_status) this.#cache.generations_status?.set(id + fields_string, data)
+        const data = await result.json() as Pick<UserDetails, T>[]
+        if (this.#cache_config.users) data.forEach(d => {
+            const data_with_id = d as Pick<UserDetails, 'id'>
+            if ('id' in data_with_id) this.#cache.users?.set(data_with_id.id! + fields_string, d)
+        })
         return data
     }
 
+    /**
+     * Delete the user entry
+     * Only the user or a horde moderator can use this endpoint.
+     * A deleted user will initially be hidden and cannot be used anymore
+     * After a month of being set as deleted, the same request will wipe the user permanently this action is then irreversible!
+     * @param id - The targeted users ID
+     * @param options.token - Optional API key (defaults to instance default token); Must be the user themselves or a moderator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async deleteUser<
+        T extends keyof SimpleResponse
+    >(id: number, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const token = this.#getToken(options?.token)
+        const { result, fields_string } = await this.#request(`/users/${id}`, "DELETE", { token, fields: options?.fields })
+        const data = await result.json() as Pick<SimpleResponse, T>
+        this.#cache.users?.delete(id.toString() + fields_string)
+        return data
+    }
 
     /**
-     * Cancel an unfinished interrogation request
-     * This request will return all already interrogated image results.
-     * @param id - The targeted generations ID
+     * Details and statistics about a specific user
+     * @param id - The user ids to get
+     * @param options.token - Optional API key (defaults to instance default token);
+     * @param options.force - Set to true to skip cache
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns InterrogationStatus
+     * @returns UserDetails - The user data of the requested user
      */
-    async deleteInterrogationRequest<
-        T extends keyof InterrogationStatus
-    >(id: string, options?: { fields?: T[] }): Promise<Pick<InterrogationStatus, T>> {
-        const { result, fields_string } = await this.#request(`/interrogate/status/${id}`, "DELETE", { fields: options?.fields })
+    async getUserDetails<
+        T extends keyof UserDetails
+    >(id: number, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<UserDetails, T>> {
+        const fields_string = this.generateFieldsString(options?.fields)
+        const token = this.#getToken(options?.token)
+        const temp = !options?.force && this.#cache.users?.get(id.toString() + fields_string)
+        if (temp) return temp
+        const { result } = await this.#request(`/users/${id}`, "GET", { fields_string, token })
 
-        const data = await result.json() as Pick<InterrogationStatus, T>
-        if (this.#cache_config.interrogations_status) this.#cache.interrogations_status?.set(id + fields_string, data)
+        const data = await result.json() as Pick<UserDetails, T>
+        if (this.#cache_config.users) {
+            const data_with_id = data as Pick<UserDetails, 'id'>
+            if ('id' in data_with_id) this.#cache.users?.set(data_with_id.id + fields_string!, data)
+        }
+        return data
+    }
+
+    /**
+     * Method for horde admins to perform operations on users
+     * @param update_payload - The data to change on the target user
+     * @param id - The targeted users ID
+     * @param options.token - Optional API key (defaults to instance default token); Must be a horde Administrator
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns ModifyUser
+     */
+    async updateUser<
+        T extends keyof ModifyUser
+    >(update_payload: ModifyUserInput, id: number, options?: { token?: string, fields?: T[] }): Promise<Pick<ModifyUser, T>> {
+        const token = this.#getToken(options?.token)
+
+        const { result, fields_string } = await this.#request(`/users/${id}`, "PUT", { token, fields: options?.fields, body: update_payload })
+
+        if (this.#cache_config.users) this.#cache.users?.delete(id.toString() + fields_string)
+        return await result.json() as Pick<ModifyUser, T>
+    }
+
+    /** WORKER MESSAGES */
+    /**
+     * Creates a New Worker Message
+     * @param payload - The message payload
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns ResponseModelMessage
+     */
+    async postWorkerMessage<
+        T extends keyof ResponseModelMessage
+    >(payload: ResponseModelMessage, options?: { token?: string, fields?: T[] }): Promise<Pick<ResponseModelMessage, T>> {
+        const { result } = await this.#request(`/workers/messages`, "POST", { ...options, body: payload })
+        return await result.json() as Pick<ResponseModelMessage, T>
+    }
+
+    /**
+     * List Worker Messages
+     * @param query.user_id - Filter by the user ID of the worker owner
+     * @param query.worker_id - Filter by the worker ID
+     * @param query.validity - Filter by validity status ('valid', 'invalid', 'all')
+     * @param query.page - The page of results to return 
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns ResponseModelMessage[] - An array of worker messages
+     */
+    async getWorkerMessages<
+        T extends keyof ResponseModelMessage
+    >(query?: { user_id?: string, worker_id?: string, validity?: string, page?: number }, options?: { token?: string, fields?: T[] }): Promise<Pick<ResponseModelMessage, T>[]> {
+        const qs: string[] = []
+        if (query?.user_id) qs.push(`user_id=${encodeURIComponent(query.user_id)}`)
+        if (query?.worker_id) qs.push(`worker_id=${encodeURIComponent(query.worker_id)}`)
+        if (query?.validity) qs.push(`validity=${encodeURIComponent(query.validity)}`)
+        if (typeof query?.page === 'number') qs.push(`page=${query.page}`)
+        const { result } = await this.#request(`/workers/messages${qs.length ? '?' + qs.join('&') : ''}`, "GET", options)
+        return await result.json() as Pick<ResponseModelMessage, T>[]
+    }
+
+    /**
+     * Delete a Worker Message
+     * @param message_id - The ID of the message to delete
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns SimpleResponse
+     */
+    async deleteWorkerMessage<
+        T extends keyof SimpleResponse
+    >(message_id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+        const { result } = await this.#request(`/workers/messages/${message_id}`, "DELETE", options)
+        return await result.json() as Pick<SimpleResponse, T>
+    }
+
+    /**
+     * Displays a Worker Message
+     * @param message_id - The ID of the message to display
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns ResponseModelMessage
+     */
+    async getWorkerMessage<
+        T extends keyof ResponseModelMessage
+    >(message_id: string, options?: { fields?: T[] }): Promise<Pick<ResponseModelMessage, T>> {
+        const { result } = await this.#request(`/workers/messages/${message_id}`, "GET", options as any)
+        return await result.json() as Pick<ResponseModelMessage, T>
+    }
+
+    /** WORKERS */
+    /**
+     * A List with the details of all registered and active workers
+     * @param options.fields - Array of fields that will be included in the returned data
+     * @returns An array of all workers data
+     */
+    async getWorkers<
+        T extends keyof WorkerDetailsStable
+    >(options?: { fields?: T[] }): Promise<Pick<WorkerDetailsStable, T>[]> {
+        const { result, fields_string } = await this.#request(`/workers`, "GET", { fields: options?.fields })
+
+        const data = await result.json() as Pick<WorkerDetailsStable, T>[]
+        if (this.#cache_config.workers) data.forEach(d => {
+            const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
+            if ('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, d)
+        })
         return data
     }
 
@@ -1326,7 +1907,7 @@ export class AIHorde {
      * Only the worker's owner and an admin can use this endpoint.
      * This action is unrecoverable!
      * @param id - The targeted workers ID
-     * @param options.token - The worker owners API key or a Moderators API key
+     * @param options.token - Optional API key (defaults to instance default token)
      * @param options.fields - Array of fields that will be included in the returned data
      * @returns DeletedWorker
      */
@@ -1343,89 +1924,220 @@ export class AIHorde {
     }
 
     /**
-     * Delete an existing SharedKey for this user
-     * @param id - The targeted Shared Key's ID
-     * @param options.token - The worker owners API key or a Moderators API key
+     * Details of a registered worker.
+     * Can retrieve the details of a worker even if inactive
+     * (A worker is considered inactive if it has not checked in for 5 minutes)
+     * @param id - The id of the worker
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.force - Set to true to skip cache
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns SimpleResponse
+     * @returns worker details for the requested worker
      */
-    async deleteSharedKey<
-        T extends keyof SimpleResponse
-    >(id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+    async getWorkerDetails<
+        T extends keyof WorkerDetailsStable
+    >(id: string, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<WorkerDetailsStable, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const token = this.#getToken(options?.token)
+        const temp = !options?.force && this.#cache.workers?.get(id + fields_string)
+        if (temp) return temp as Pick<WorkerDetailsStable, T>
 
-        const { result } = await this.#request(`/sharedkeys/${id}`, "DELETE", { token, fields: options?.fields })
+        const { result } = await this.#request(`/workers/${id}`, "GET", { token, fields_string })
 
-        const data = await result.json() as Pick<SimpleResponse, T>
-        this.#cache.sharedkeys?.delete(id)
+        const data = await result.json() as Pick<WorkerDetailsStable, T>
+        if (this.#cache_config.workers) {
+            const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
+            if ('id' in data_with_id) this.#cache.workers?.set(data_with_id.id + fields_string, data)
+        }
         return data
     }
 
-
     /**
-     * Delete the team entry
-     * Only the team's creator or a horde moderator can use this endpoint.
-     * This action is unrecoverable!
-     * @param id - The targeted teams ID
-     * @param options.token - The worker owners API key or a Moderators API key
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns DeletedTeam
+     * Retrieve details of a registered worker by its name.
+     * Can retrieve details even if the worker is currently inactive (hasn't checked in for 5 minutes).
+     * @param worker_name - The case-insensitive name of the worker to fetch
+     * @param options.token - Optional API key (defaults to instance default token)
+     * @param options.force - Set to true to bypass local cache
+     * @param options.fields - Specific fields to include using the X-Fields mask
+     * @returns Worker details for the specified worker name
      */
-    async deleteTeam<
-        T extends keyof DeletedTeam
-    >(id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<DeletedTeam, T>> {
+    async getWorkerByName<
+        T extends keyof WorkerDetailsStable
+    >(worker_name: string, options?: { token?: string, force?: boolean, fields?: T[] }): Promise<Pick<WorkerDetailsStable, T>> {
+        const fields_string = options?.fields?.length ? options.fields.join(',') : ''
         const token = this.#getToken(options?.token)
+        const cache_key = `NAME-${worker_name}` + fields_string
+        const temp = !options?.force && this.#cache.workers?.get(cache_key)
+        if (temp) return temp as Pick<WorkerDetailsStable, T>
 
-        const { result, fields_string } = await this.#request(`/teams/${id}`, "DELETE", { token, fields: options?.fields })
-
-        const data = await result.json() as Pick<DeletedTeam, T>
-        this.#cache.teams?.delete(id + fields_string)
+        const { result } = await this.#request(`/workers/name/${encodeURIComponent(worker_name)}`, "GET", { token, fields_string })
+        const data = await result.json() as Pick<WorkerDetailsStable, T>
+        if (this.#cache_config.workers) {
+            const data_with_id = data as Pick<WorkerDetailsStable, 'id'>
+            if ('id' in data_with_id) {
+                this.#cache.workers?.set(data_with_id.id + fields_string, data)
+                this.#cache.workers?.set(cache_key, data)
+            }
+        }
         return data
     }
 
-
     /**
-     * Remove an IP from timeout
-     * Only usable by horde moderators
-     * @param ip - The IP address
-     * @param options.token - Moderators API key
+     * Put the worker into maintenance or pause mode
+     * Maintenance can be set by the owner of the serve or an admin.
+     * When in maintenance, the worker will receive a 503 request when trying to retrieve new requests. Use this to avoid disconnecting your worker in the middle of a generation
+     * Paused can be set only by the admins of this Horde.
+     * When in paused mode, the worker will not be given any requests to generate.
+     * @param update_payload - The data to change on the target worker
+     * @param id - The targeted workers ID
+     * @param options.token - Optional API key (defaults to instance default token)
      * @param options.fields - Array of fields that will be included in the returned data
-     * @returns SimpleResponse
+     * @returns ModifyWorker
      */
-    async deleteIPTimeout<
-        T extends keyof SimpleResponse
-    >(delete_payload: DeleteTimeoutIPInput, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
+    async updateWorker<
+        T extends keyof ModifyWorker
+    >(update_payload: ModifyWorkerInput, id: string, options?: { token?: string, fields?: T[] }): Promise<ModifyWorker> {
         const token = this.#getToken(options?.token)
 
-        const { result } = await this.#request(`/operations/ipaddr`, "DELETE", { token, fields: options?.fields, body: delete_payload })
+        const { result } = await this.#request(`/workers/${id}`, "PUT", { token, fields: options?.fields, body: update_payload })
 
-        const data = await result.json() as Pick<SimpleResponse, T>
-        return data
-    }
-
-
-    /**
-     * Delete a regex filter
-     * @param filter_id - The ID of the filter to delete
-     * @param options.token - The sending users API key; User must be a moderator
-     * @param options.fields - Array of fields that will be included in the returned data
-     * @returns SimpleResponse
-     */
-    async deleteFilter<
-        T extends keyof SimpleResponse
-    >(filter_id: string, options?: { token?: string, fields?: T[] }): Promise<Pick<SimpleResponse, T>> {
-        const token = this.#getToken(options?.token)
-
-        const { result } = await this.#request(`/filters/${filter_id}`, "DELETE", { token, fields: options?.fields })
-
-        const data = await result.json() as Pick<SimpleResponse, T>
-        return data
+        if (this.#cache_config.workers) this.#cache.workers?.delete(id)
+        return await result.json() as Pick<ModifyWorker, T>
     }
 }
 
 
 /* INTERNAL TYPES */
 
+export interface ResponseModelCollection {
+    /** The UUID of the collection. Use this to use this collection of retrieve its information in the future. */
+    id?: string;
+    /**
+     * The name for the collection. Case-sensitive and unique per user.
+     * @minLength 1
+     * @maxLength 100
+     */
+    name?: string;
+    /**
+     * The kind of styles stored in this collection.
+     * @example image
+     */
+    type?: typeof ResponseModelCollectionTypes[keyof Omit<typeof ResponseModelCollectionTypes, "all">];
+    /**
+     * Extra information about this collection.
+     * @minLength 1
+     * @maxLength 1000
+     */
+    info?: string;
+    /**
+     * When true this collection will be listed among all collection publicly.When false, information about this collection can only be seen by people who know its ID or name.
+     * @default true
+     */
+    public?: boolean;
+    styles?: ResponseModelStylesShort[];
+    /**
+     * The amount of times this collection has been used in generations.
+     */
+    use_count?: number;
+}
+
+export interface ResponseModelStylesShort {
+    /**
+     * The unique name for this style
+     * @example db0#1::style::my awesome style
+     */
+    name?: string;
+    /**
+     * The ID of this style
+     * @example 00000000-0000-0000-0000-000000000000
+     */
+    id?: string;
+}
+
+/* Additional Interfaces for newly added endpoints */
+export interface InputModelCollection {
+    name?: string
+    info?: string
+    public?: boolean
+    styles?: string[]
+}
+
+export interface CollectionModify {
+    id?: string
+    message?: string
+    warnings?: RequestSingleWarning[]
+}
+
+export interface HordeDocument {
+    html?: string
+    markdown?: string
+}
+
+export interface ModelStyleInputParamsStable {
+    sampler_name?: string
+    cfg_scale?: number
+    denoising_strength?: number
+    hires_fix_denoising_strength?: number
+    height?: number
+    width?: number
+    post_processing?: string[]
+    karras?: boolean
+    tiling?: boolean
+    hires_fix?: boolean
+    clip_skip?: number
+    facefixer_strength?: number
+    loras?: ModelPayloadLorasStable[]
+    tis?: ModelPayloadTextualInversionsStable[]
+    special?: Record<string, any>
+    workflow?: string
+    transparent?: boolean
+    steps?: number
+}
+
+export interface ModelStyleInputStable {
+    name: string
+    info?: string
+    prompt?: string
+    params?: ModelStyleInputParamsStable
+    public?: boolean
+    nsfw?: boolean
+    tags?: string[]
+    models?: string[]
+    sharedkey?: string
+}
+
+export interface ModelStylePatchStable extends Partial<ModelStyleInputStable> { }
+
+export interface StyleExample extends InputStyleExamplePost { id?: string }
+
+export interface InputStyleExamplePost { url?: string, primary?: boolean }
+
+export interface StyleStable extends ModelStyleInputStable { id?: string, use_count?: number, creator?: string, examples?: StyleExample[], shared_key?: SharedKeyDetails }
+
+export interface ModelStyleInputKobold {
+    name: string
+    info?: string
+    prompt?: string
+    params?: Record<string, any>
+    public?: boolean
+    nsfw?: boolean
+    tags?: string[]
+    models?: string[]
+}
+
+export interface ModelStylePatchKobold extends Partial<ModelStyleInputKobold> { }
+
+export interface StyleKobold extends ModelStyleInputKobold { id?: string, use_count?: number, creator?: string }
+
+export interface StyleModify { id?: string, message?: string, warnings?: RequestSingleWarning[] }
+
+export interface ResponseModelMessage { worker_id?: string, message: string, origin?: string, expiry?: number }
+export interface ResponseModelMessagePop { id?: string, message?: string, origin?: string, expiry?: string }
+
+export interface KudosAwarded { awarded?: number }
+
+export interface AddTimeoutIPInput { ipaddr: string, hours: number }
+export interface IPTimeout { ipaddr: string, seconds: number }
+export interface AddWorkerTimeout { days: number }
 
 export interface AIHordeInitOptions {
     /** The configuration for caching results */
@@ -1446,6 +2158,8 @@ export interface AIHordeInitOptions {
 }
 
 export interface AIHordeCacheConfiguration {
+    /** How long to cache a collections for in Milliseconds */
+    collections?: number,
     /** How long to cache a specific user for in Milliseconds */
     users?: number,
     /** How long to cache generation check data for in Milliseconds */
@@ -1471,6 +2185,7 @@ export interface AIHordeCacheConfiguration {
 }
 
 interface AIHordeCache {
+    collections?: SuperMap<string, ResponseModelCollection>,
     users?: SuperMap<string, UserDetails>,
     generations_check?: SuperMap<string, RequestStatusCheck>,
     generations_status?: SuperMap<string, RequestStatusStable>,
@@ -2932,6 +3647,20 @@ export interface FilterPromptSuspicion {
     /** Rates how suspicious the provided prompt is. A suspicion of 2 means it would be blocked. */
     suspicion: string,
     matches: string[]
+}
+
+export interface RegexFilter {
+    /**
+     * The integer defining this filter type
+     * @minimum 10
+     * @maximum 29
+     * @example 10
+     */
+    filter_type: number,
+    /**
+     * The full regex for this filter type
+     */
+    regex: string
 }
 
 export interface FilterDetails {
