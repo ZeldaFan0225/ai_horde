@@ -1,63 +1,49 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / TextTotalStats
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / TextTotalStats
 
 # Interface: TextTotalStats
 
-## Table of contents
-
-### Properties
-
-- [day](TextTotalStats.md#day)
-- [hour](TextTotalStats.md#hour)
-- [minute](TextTotalStats.md#minute)
-- [month](TextTotalStats.md#month)
-- [total](TextTotalStats.md#total)
+Defined in: [index.ts:3768](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3768)
 
 ## Properties
 
-### day
+### day?
 
-• `Optional` **day**: [`SinglePeriodTextStats`](SinglePeriodTextStats.md)
+> `optional` **day**: [`SinglePeriodTextStats`](SinglePeriodTextStats.md)
 
-#### Defined in
+Defined in: [index.ts:3771](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3771)
 
-[index.ts:2954](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2954)
+***
 
-___
+### hour?
 
-### hour
+> `optional` **hour**: [`SinglePeriodTextStats`](SinglePeriodTextStats.md)
 
-• `Optional` **hour**: [`SinglePeriodTextStats`](SinglePeriodTextStats.md)
+Defined in: [index.ts:3770](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3770)
 
-#### Defined in
+***
 
-[index.ts:2953](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2953)
+### minute?
 
-___
+> `optional` **minute**: [`SinglePeriodTextStats`](SinglePeriodTextStats.md)
 
-### minute
+Defined in: [index.ts:3769](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3769)
 
-• `Optional` **minute**: [`SinglePeriodTextStats`](SinglePeriodTextStats.md)
+***
 
-#### Defined in
+### month?
 
-[index.ts:2952](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2952)
+> `optional` **month**: [`SinglePeriodTextStats`](SinglePeriodTextStats.md)
 
-___
+Defined in: [index.ts:3772](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3772)
 
-### month
+***
 
-• `Optional` **month**: [`SinglePeriodTextStats`](SinglePeriodTextStats.md)
+### total?
 
-#### Defined in
+> `optional` **total**: [`SinglePeriodTextStats`](SinglePeriodTextStats.md)
 
-[index.ts:2955](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2955)
-
-___
-
-### total
-
-• `Optional` **total**: [`SinglePeriodTextStats`](SinglePeriodTextStats.md)
-
-#### Defined in
-
-[index.ts:2956](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2956)
+Defined in: [index.ts:3773](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3773)

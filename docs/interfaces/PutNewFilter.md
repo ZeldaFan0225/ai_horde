@@ -1,61 +1,53 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / PutNewFilter
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / PutNewFilter
 
 # Interface: PutNewFilter
 
-## Table of contents
-
-### Properties
-
-- [description](PutNewFilter.md#description)
-- [filter\_type](PutNewFilter.md#filter_type)
-- [regex](PutNewFilter.md#regex)
+Defined in: [index.ts:3707](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3707)
 
 ## Properties
 
 ### description
 
-• **description**: `string`
+> **description**: `string`
+
+Defined in: [index.ts:3722](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3722)
 
 Description about this regex
 
-#### Defined in
-
-[index.ts:2905](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2905)
-
-___
+***
 
 ### filter\_type
 
-• **filter\_type**: `number`
+> **filter\_type**: `number`
+
+Defined in: [index.ts:3718](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3718)
 
 The integer defining this filter type
 
-**`Minimum`**
+#### Minimum
 
 10
 
-**`Maximum`**
+#### Maximum
 
 29
 
-#### Defined in
-
-[index.ts:2901](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2901)
-
-___
+***
 
 ### regex
 
-• **regex**: `string`
+> **regex**: `string`
+
+Defined in: [index.ts:3712](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3712)
 
 The regex for this filter.
 
-**`Example`**
+#### Example
 
 ```ts
 ac.*
 ```
-
-#### Defined in
-
-[index.ts:2895](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2895)

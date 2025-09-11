@@ -1,34 +1,29 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / MonthlyKudos
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / MonthlyKudos
 
 # Interface: MonthlyKudos
 
-## Table of contents
-
-### Properties
-
-- [amount](MonthlyKudos.md#amount)
-- [last\_received](MonthlyKudos.md#last_received)
+Defined in: [index.ts:3165](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3165)
 
 ## Properties
 
-### amount
+### amount?
 
-• `Optional` **amount**: `number`
+> `optional` **amount**: `number`
+
+Defined in: [index.ts:3167](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3167)
 
 How much recurring Kudos this user receives monthly.
 
-#### Defined in
+***
 
-[index.ts:2364](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2364)
+### last\_received?
 
-___
+> `optional` **last\_received**: `string`
 
-### last\_received
-
-• `Optional` **last\_received**: `string`
+Defined in: [index.ts:3172](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3172)
 
 Last date this user received monthly Kudos.
-
-#### Defined in
-
-[index.ts:2369](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2369)

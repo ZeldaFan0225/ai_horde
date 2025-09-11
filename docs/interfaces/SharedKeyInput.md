@@ -1,91 +1,83 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / SharedKeyInput
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / SharedKeyInput
 
 # Interface: SharedKeyInput
 
-## Table of contents
-
-### Properties
-
-- [expiry](SharedKeyInput.md#expiry)
-- [kudos](SharedKeyInput.md#kudos)
-- [name](SharedKeyInput.md#name)
+Defined in: [index.ts:3783](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3783)
 
 ## Properties
 
-### expiry
+### expiry?
 
-• `Optional` **expiry**: `number`
+> `optional` **expiry**: `number`
+
+Defined in: [index.ts:3797](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3797)
 
 The amount of days after which this key will expire. If -1, this key will not expire
 
-**`Default`**
+#### Default
 
 ```ts
 -1
 ```
 
-**`Example`**
+#### Example
 
 ```ts
 30
 ```
 
-**`Minimum`**
+#### Minimum
 
 -1
 
-#### Defined in
+***
 
-[index.ts:2980](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2980)
+### kudos?
 
-___
+> `optional` **kudos**: `number`
 
-### kudos
-
-• `Optional` **kudos**: `number`
+Defined in: [index.ts:3790](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3790)
 
 The Kudos limit assigned to this key. If -1, then anyone with this key can use an unlimited amount of kudos from this account.
 
-**`Default`**
+#### Default
 
 ```ts
 5000
 ```
 
-**`Minimum`**
+#### Minimum
 
 1
 
-**`Maximum`**
+#### Maximum
 
 50000000
 
-#### Defined in
+***
 
-[index.ts:2973](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2973)
+### name?
 
-___
+> `optional` **name**: `string`
 
-### name
-
-• `Optional` **name**: `string`
+Defined in: [index.ts:3804](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3804)
 
 A descriptive name for this key
 
-**`Example`**
+#### Example
 
 ```ts
 Mutual Aid
 ```
 
-**`Min Length`**
+#### Min Length
 
 3
 
-**`Max Length`**
+#### Max Length
 
 255
-
-#### Defined in
-
-[index.ts:2987](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2987)

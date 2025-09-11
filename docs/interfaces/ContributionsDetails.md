@@ -1,27 +1,23 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ContributionsDetails
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ContributionsDetails
 
 # Interface: ContributionsDetails
 
-## Hierarchy
+Defined in: [index.ts:3194](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3194)
 
-- **`ContributionsDetails`**
+## Extended by
 
-  ↳ [`ContributionsDetailsStable`](ContributionsDetailsStable.md)
-
-## Table of contents
-
-### Properties
-
-- [fulfillments](ContributionsDetails.md#fulfillments)
+- [`ContributionsDetailsStable`](ContributionsDetailsStable.md)
 
 ## Properties
 
-### fulfillments
+### fulfillments?
 
-• `Optional` **fulfillments**: `number`
+> `optional` **fulfillments**: `number`
+
+Defined in: [index.ts:3196](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3196)
 
 How many images this user has generated
-
-#### Defined in
-
-[index.ts:2393](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2393)

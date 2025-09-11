@@ -14,10 +14,13 @@ jobs:
     name: Publish
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+  contents: write
+  id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Use Node.js
         uses: actions/setup-node@v4
@@ -48,4 +51,26 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           # For first publish of a scoped package, --access public is required. Safe to use subsequently.
-          npm publish --access public
+          npm publish --provenance --access public
+
+      - name: Commit version bump back to default branch
+        if: ${{ always() }}
+        env:
+          VERSION: ${{ steps.ver.outputs.version }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          echo "Updating package.json and lockfile on $DEFAULT_BRANCH to version $VERSION"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$DEFAULT_BRANCH":"$DEFAULT_BRANCH" --update-head-ok
+          git checkout "$DEFAULT_BRANCH"
+          # Apply the same version bump on the default branch
+          npm version "$VERSION" --no-git-tag-version
+          # Stage and commit only the relevant files
+          git add package.json package-lock.json || true
+          if git diff --cached --quiet; then
+            echo "No version changes to commit."
+          else
+            git commit -m "chore(release): v$VERSION"
+            git push origin "$DEFAULT_BRANCH"
+          fi

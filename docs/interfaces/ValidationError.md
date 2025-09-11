@@ -1,59 +1,49 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ValidationError
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ValidationError
 
 # Interface: ValidationError
 
-## Hierarchy
+Defined in: [index.ts:2734](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2734)
+
+## Extends
 
 - [`RequestError`](RequestError.md)
-
-  ↳ **`ValidationError`**
-
-## Table of contents
-
-### Properties
-
-- [errors](ValidationError.md#errors)
-- [message](ValidationError.md#message)
-- [rc](ValidationError.md#rc)
 
 ## Properties
 
 ### errors
 
-• **errors**: `Record`<`string`, `string`\>
+> **errors**: `Record`\<`string`, `string`\>
 
-#### Defined in
+Defined in: [index.ts:2735](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2735)
 
-[index.ts:1968](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1968)
-
-___
+***
 
 ### message
 
-• **message**: `string`
+> **message**: `string`
+
+Defined in: [index.ts:2740](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2740)
 
 The error message for this status code.
 
 #### Inherited from
 
-[RequestError](RequestError.md).[message](RequestError.md#message)
+[`RequestError`](RequestError.md).[`message`](RequestError.md#message)
 
-#### Defined in
-
-[index.ts:1973](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1973)
-
-___
+***
 
 ### rc
 
-• **rc**: `string`
+> **rc**: `string`
+
+Defined in: [index.ts:2742](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2742)
 
 The Error code that can be translated into a text
 
 #### Inherited from
 
-[RequestError](RequestError.md).[rc](RequestError.md#rc)
-
-#### Defined in
-
-[index.ts:1975](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1975)
+[`RequestError`](RequestError.md).[`rc`](RequestError.md#rc)

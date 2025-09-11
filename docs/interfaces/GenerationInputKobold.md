@@ -1,98 +1,81 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / GenerationInputKobold
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / GenerationInputKobold
 
 # Interface: GenerationInputKobold
 
-**`Link`**
+Defined in: [index.ts:2287](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2287)
+
+## Link
 
 https://aihorde.net/api/
 
-## Table of contents
-
-### Properties
-
-- [models](GenerationInputKobold.md#models)
-- [params](GenerationInputKobold.md#params)
-- [prompt](GenerationInputKobold.md#prompt)
-- [softprompt](GenerationInputKobold.md#softprompt)
-- [trusted\_workers](GenerationInputKobold.md#trusted_workers)
-- [workers](GenerationInputKobold.md#workers)
-
 ## Properties
 
-### models
+### models?
 
-• `Optional` **models**: `string`[]
+> `optional` **models**: `string`[]
+
+Defined in: [index.ts:2304](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2304)
 
 Specify which models are allowed to be used for this request
 
-#### Defined in
+***
 
-[index.ts:1558](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1558)
+### params?
 
-___
+> `optional` **params**: [`ModelGenerationInputKobold`](ModelGenerationInputKobold.md)
 
-### params
+Defined in: [index.ts:2290](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2290)
 
-• `Optional` **params**: [`ModelGenerationInputKobold`](ModelGenerationInputKobold.md)
+***
 
-#### Defined in
+### prompt?
 
-[index.ts:1544](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1544)
+> `optional` **prompt**: `string`
 
-___
-
-### prompt
-
-• `Optional` **prompt**: `string`
+Defined in: [index.ts:2289](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2289)
 
 The prompt which will be sent to KoboldAI to generate text
 
-#### Defined in
+***
 
-[index.ts:1543](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1543)
+### softprompt?
 
-___
+> `optional` **softprompt**: `string`
 
-### softprompt
-
-• `Optional` **softprompt**: `string`
+Defined in: [index.ts:2295](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2295)
 
 Specify which softpompt needs to be used to service this request
 
-**`Min Length`**
+#### Min Length
 
 1
 
-#### Defined in
+***
 
-[index.ts:1549](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1549)
+### trusted\_workers?
 
-___
+> `optional` **trusted\_workers**: `boolean`
 
-### trusted\_workers
-
-• `Optional` **trusted\_workers**: `boolean`
+Defined in: [index.ts:2300](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2300)
 
 When true, only trusted workers will serve this request. When False, Evaluating workers will also be used which can increase speed but adds more risk!
 
-**`Default`**
+#### Default
 
 ```ts
 true
 ```
 
-#### Defined in
+***
 
-[index.ts:1554](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1554)
+### workers?
 
-___
+> `optional` **workers**: `string`[]
 
-### workers
-
-• `Optional` **workers**: `string`[]
+Defined in: [index.ts:2302](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2302)
 
 Specify which workers are allowed to service this request
-
-#### Defined in
-
-[index.ts:1556](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1556)

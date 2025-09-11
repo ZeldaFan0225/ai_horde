@@ -1,86 +1,69 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / UserKudosDetails
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / UserKudosDetails
 
 # Interface: UserKudosDetails
 
-## Table of contents
-
-### Properties
-
-- [accumulated](UserKudosDetails.md#accumulated)
-- [admin](UserKudosDetails.md#admin)
-- [awarded](UserKudosDetails.md#awarded)
-- [gifted](UserKudosDetails.md#gifted)
-- [received](UserKudosDetails.md#received)
-- [recurring](UserKudosDetails.md#recurring)
+Defined in: [index.ts:3150](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3150)
 
 ## Properties
 
-### accumulated
+### accumulated?
 
-• `Optional` **accumulated**: `number`
+> `optional` **accumulated**: `number`
+
+Defined in: [index.ts:3152](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3152)
 
 The ammount of Kudos accumulated or used for generating images.
 
-#### Defined in
+***
 
-[index.ts:2349](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2349)
+### admin?
 
-___
+> `optional` **admin**: `number`
 
-### admin
-
-• `Optional` **admin**: `number`
+Defined in: [index.ts:3156](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3156)
 
 The amount of Kudos this user has been given by the Horde admins.
 
-#### Defined in
+***
 
-[index.ts:2353](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2353)
+### awarded?
 
-___
+> `optional` **awarded**: `number`
 
-### awarded
-
-• `Optional` **awarded**: `number`
+Defined in: [index.ts:3162](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3162)
 
 The amount of Kudos this user has received from rating images.
 
-#### Defined in
+***
 
-[index.ts:2359](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2359)
+### gifted?
 
-___
+> `optional` **gifted**: `number`
 
-### gifted
-
-• `Optional` **gifted**: `number`
+Defined in: [index.ts:3154](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3154)
 
 The amount of Kudos this user has given to other users.
 
-#### Defined in
+***
 
-[index.ts:2351](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2351)
+### received?
 
-___
+> `optional` **received**: `number`
 
-### received
-
-• `Optional` **received**: `number`
+Defined in: [index.ts:3158](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3158)
 
 The amount of Kudos this user has been given by other users.
 
-#### Defined in
+***
 
-[index.ts:2355](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2355)
+### recurring?
 
-___
+> `optional` **recurring**: `number`
 
-### recurring
-
-• `Optional` **recurring**: `number`
+Defined in: [index.ts:3160](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3160)
 
 The amount of Kudos this user has received from recurring rewards.
-
-#### Defined in
-
-[index.ts:2357](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2357)

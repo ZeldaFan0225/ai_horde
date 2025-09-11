@@ -1,125 +1,99 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ModifyUser
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ModifyUser
 
 # Interface: ModifyUser
 
-## Table of contents
-
-### Properties
-
-- [concurrency](ModifyUser.md#concurrency)
-- [moderator](ModifyUser.md#moderator)
-- [monthly\_kudos](ModifyUser.md#monthly_kudos)
-- [new\_kudos](ModifyUser.md#new_kudos)
-- [public\_workers](ModifyUser.md#public_workers)
-- [trusted](ModifyUser.md#trusted)
-- [usage\_multiplier](ModifyUser.md#usage_multiplier)
-- [username](ModifyUser.md#username)
-- [worker\_invited](ModifyUser.md#worker_invited)
+Defined in: [index.ts:3199](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3199)
 
 ## Properties
 
-### concurrency
+### concurrency?
 
-• `Optional` **concurrency**: `number`
+> `optional` **concurrency**: `number`
+
+Defined in: [index.ts:3203](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3203)
 
 The request concurrency this user has after this request
 
-#### Defined in
+***
 
-[index.ts:2400](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2400)
+### moderator?
 
-___
+> `optional` **moderator**: `boolean`
 
-### moderator
-
-• `Optional` **moderator**: `boolean`
+Defined in: [index.ts:3209](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3209)
 
 The user's new moderator status.
 
-#### Defined in
+***
 
-[index.ts:2406](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2406)
+### monthly\_kudos?
 
-___
+> `optional` **monthly\_kudos**: `number`
 
-### monthly\_kudos
-
-• `Optional` **monthly\_kudos**: `number`
+Defined in: [index.ts:3215](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3215)
 
 The user's new monthly kudos total
 
-#### Defined in
+***
 
-[index.ts:2412](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2412)
+### new\_kudos?
 
-___
+> `optional` **new\_kudos**: `number`
 
-### new\_kudos
-
-• `Optional` **new\_kudos**: `number`
+Defined in: [index.ts:3201](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3201)
 
 The new total Kudos this user has after this request
 
-#### Defined in
+***
 
-[index.ts:2398](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2398)
+### public\_workers?
 
-___
+> `optional` **public\_workers**: `number`
 
-### public\_workers
-
-• `Optional` **public\_workers**: `number`
+Defined in: [index.ts:3211](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3211)
 
 The user's new public_workers status.
 
-#### Defined in
+***
 
-[index.ts:2408](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2408)
+### trusted?
 
-___
+> `optional` **trusted**: `boolean`
 
-### trusted
-
-• `Optional` **trusted**: `boolean`
+Defined in: [index.ts:3217](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3217)
 
 The user's new trusted status
 
-#### Defined in
+***
 
-[index.ts:2414](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2414)
+### usage\_multiplier?
 
-___
+> `optional` **usage\_multiplier**: `number`
 
-### usage\_multiplier
-
-• `Optional` **usage\_multiplier**: `number`
+Defined in: [index.ts:3205](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3205)
 
 Multiplies the amount of kudos lost when generating images.
 
-#### Defined in
+***
 
-[index.ts:2402](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2402)
+### username?
 
-___
+> `optional` **username**: `string`
 
-### username
-
-• `Optional` **username**: `string`
+Defined in: [index.ts:3213](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3213)
 
 The user's new username.
 
-#### Defined in
+***
 
-[index.ts:2410](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2410)
+### worker\_invited?
 
-___
+> `optional` **worker\_invited**: `number`
 
-### worker\_invited
-
-• `Optional` **worker\_invited**: `number`
+Defined in: [index.ts:3207](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3207)
 
 This userWhether this user has been invited to join a worker to the horde and how many of them. When 0, this user cannot add (new) workers to the horde.
-
-#### Defined in
-
-[index.ts:2404](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2404)

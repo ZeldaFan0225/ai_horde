@@ -1,34 +1,29 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / DeletedWorker
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / DeletedWorker
 
 # Interface: DeletedWorker
 
-## Table of contents
-
-### Properties
-
-- [deleted\_id](DeletedWorker.md#deleted_id)
-- [deleted\_name](DeletedWorker.md#deleted_name)
+Defined in: [index.ts:3331](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3331)
 
 ## Properties
 
-### deleted\_id
+### deleted\_id?
 
-• `Optional` **deleted\_id**: `string`
+> `optional` **deleted\_id**: `string`
+
+Defined in: [index.ts:3333](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3333)
 
 The ID of the deleted worker
 
-#### Defined in
+***
 
-[index.ts:2530](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2530)
+### deleted\_name?
 
-___
+> `optional` **deleted\_name**: `string`
 
-### deleted\_name
-
-• `Optional` **deleted\_name**: `string`
+Defined in: [index.ts:3335](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3335)
 
 The Name of the deleted worker
-
-#### Defined in
-
-[index.ts:2532](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2532)

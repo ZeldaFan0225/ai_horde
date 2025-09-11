@@ -1,55 +1,44 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / Generation
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / Generation
 
 # Interface: Generation
 
-## Hierarchy
+Defined in: [index.ts:2778](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2778)
 
-- **`Generation`**
+## Extended by
 
-  ↳ [`GenerationStable`](GenerationStable.md)
-
-  ↳ [`GenerationKobold`](GenerationKobold.md)
-
-## Table of contents
-
-### Properties
-
-- [model](Generation.md#model)
-- [worker\_id](Generation.md#worker_id)
-- [worker\_name](Generation.md#worker_name)
+- [`GenerationStable`](GenerationStable.md)
+- [`GenerationKobold`](GenerationKobold.md)
 
 ## Properties
 
-### model
+### model?
 
-• `Optional` **model**: `string`
+> `optional` **model**: `string`
+
+Defined in: [index.ts:2784](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2784)
 
 The model which generated this image
 
-#### Defined in
+***
 
-[index.ts:2015](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2015)
+### worker\_id?
 
-___
+> `optional` **worker\_id**: `string`
 
-### worker\_id
-
-• `Optional` **worker\_id**: `string`
+Defined in: [index.ts:2780](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2780)
 
 The UUID of the worker which generated this image
 
-#### Defined in
+***
 
-[index.ts:2011](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2011)
+### worker\_name?
 
-___
+> `optional` **worker\_name**: `string`
 
-### worker\_name
-
-• `Optional` **worker\_name**: `string`
+Defined in: [index.ts:2782](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2782)
 
 The name of the worker which generated this image
-
-#### Defined in
-
-[index.ts:2013](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2013)

@@ -1,4 +1,6 @@
-@zeldafan0225/ai_horde / [Exports](modules.md)
+**@zeldafan0225/ai_horde**
+
+***
 
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
@@ -84,4 +86,17 @@ const check = await ai_horde.getImageGenerationCheck(generation.id);
 console.log(check);
 ```
 
-See the [auto-generated docs](./docs/classes/export_.md) for more info on methods and parameters.
+See the [auto-generated docs](https://github.com/ZeldaFan0225/ai_horde/blob/main/docs/modules.md) for more info on methods and parameters.
+
+## Publishing
+
+This package is published to npm automatically when a Git tag with a semantic version is pushed to the repository.
+
+- Tag format: either `vX.Y.Z` or `X.Y.Z` (e.g. `v5.2.1`)
+- The workflow sets the package version from the tag and runs `npm publish`
+- Maintainers: add an npm Automation Token as the repo secret `NPM_TOKEN`
+
+Example to publish a new version (maintainers only):
+
+1. Update changelog and code as needed
+2. Push a tag, e.g. `git tag v5.2.1 && git push origin v5.2.1`

@@ -1,73 +1,65 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / AestheticsPayload
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / AestheticsPayload
 
 # Interface: AestheticsPayload
 
-## Table of contents
-
-### Properties
-
-- [best](AestheticsPayload.md#best)
-- [ratings](AestheticsPayload.md#ratings)
-- [team](AestheticsPayload.md#team)
+Defined in: [index.ts:3607](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3607)
 
 ## Properties
 
-### best
+### best?
 
-• `Optional` **best**: `string`
+> `optional` **best**: `string`
+
+Defined in: [index.ts:3614](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3614)
 
 The UUID of the best image in this generation batch (only used when 2+ images generated). If 2+ aesthetic ratings are also provided, then they take precedence if they're not tied.
 
-**`Example`**
+#### Example
 
 ```ts
 6038971e-f0b0-4fdd-a3bb-148f561f815e
 ```
 
-**`Min Length`**
+#### Min Length
 
 36
 
-**`Max Length`**
+#### Max Length
 
 36
 
-#### Defined in
+***
 
-[index.ts:2811](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2811)
+### ratings?
 
-___
+> `optional` **ratings**: [`AestheticRating`](AestheticRating.md)[]
 
-### ratings
+Defined in: [index.ts:3622](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3622)
 
-• `Optional` **ratings**: [`AestheticRating`](AestheticRating.md)[]
+***
 
-#### Defined in
+### team?
 
-[index.ts:2819](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2819)
+> `optional` **team**: `string`
 
-___
-
-### team
-
-• `Optional` **team**: `string`
+Defined in: [index.ts:3621](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3621)
 
 The team towards which this ratings contributes. It not is passed, it will leave the ratings without a team.
 
-**`Example`**
+#### Example
 
 ```ts
 0bed257b-e57c-4327-ac64-40cdfb1ac5e6
 ```
 
-**`Min Length`**
+#### Min Length
 
 36
 
-**`Max Length`**
+#### Max Length
 
 36
-
-#### Defined in
-
-[index.ts:2818](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2818)

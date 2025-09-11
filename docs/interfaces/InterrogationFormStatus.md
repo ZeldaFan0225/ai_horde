@@ -1,45 +1,37 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / InterrogationFormStatus
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / InterrogationFormStatus
 
 # Interface: InterrogationFormStatus
 
-## Table of contents
-
-### Properties
-
-- [form](InterrogationFormStatus.md#form)
-- [result](InterrogationFormStatus.md#result)
-- [state](InterrogationFormStatus.md#state)
+Defined in: [index.ts:3593](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3593)
 
 ## Properties
 
-### form
+### form?
 
-• `Optional` **form**: `string`
+> `optional` **form**: `string`
+
+Defined in: [index.ts:3595](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3595)
 
 The name of this interrogation form
 
-#### Defined in
+***
 
-[index.ts:2792](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2792)
+### result?
 
-___
+> `optional` **result**: `Partial`\<`Record`\<`"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"caption"` \| `"interrogation"` \| `"nsfw"`, `Record`\<`string`, `any`\>\>\>
 
-### result
+Defined in: [index.ts:3598](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3598)
 
-• `Optional` **result**: `Partial`<`Record`<``"GFPGAN"`` \| ``"RealESRGAN_x4plus"`` \| ``"RealESRGAN_x4plus_anime_6B"`` \| ``"NMKD_Siax"`` \| ``"4x_AnimeSharp"`` \| ``"strip_background"`` \| ``"CodeFormers"`` \| ``"caption"`` \| ``"interrogation"`` \| ``"nsfw"``, `Record`<`string`, `any`\>\>\>
+***
 
-#### Defined in
+### state?
 
-[index.ts:2795](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2795)
+> `optional` **state**: `"waiting"` \| `"processing"` \| `"done"` \| `"faulted"` \| `"partial"` \| `"cancelled"`
 
-___
-
-### state
-
-• `Optional` **state**: ``"waiting"`` \| ``"processing"`` \| ``"done"`` \| ``"faulted"`` \| ``"partial"`` \| ``"cancelled"``
+Defined in: [index.ts:3597](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3597)
 
 title: Interrogation State
-
-#### Defined in
-
-[index.ts:2794](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2794)

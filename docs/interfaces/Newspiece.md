@@ -1,47 +1,39 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / Newspiece
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / Newspiece
 
 # Interface: Newspiece
 
-## Table of contents
-
-### Properties
-
-- [date\_published](Newspiece.md#date_published)
-- [importance](Newspiece.md#importance)
-- [newspiece](Newspiece.md#newspiece)
+Defined in: [index.ts:3390](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3390)
 
 ## Properties
 
-### date\_published
+### date\_published?
 
-• `Optional` **date\_published**: `string`
+> `optional` **date\_published**: `string`
+
+Defined in: [index.ts:3392](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3392)
 
 The date this newspiece was published
 
-#### Defined in
+***
 
-[index.ts:2589](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2589)
+### importance?
 
-___
+> `optional` **importance**: `string`
 
-### importance
-
-• `Optional` **importance**: `string`
+Defined in: [index.ts:3396](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3396)
 
 How critical this piece of news is.
 
-#### Defined in
+***
 
-[index.ts:2593](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2593)
+### newspiece?
 
-___
+> `optional` **newspiece**: `string`
 
-### newspiece
-
-• `Optional` **newspiece**: `string`
+Defined in: [index.ts:3394](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3394)
 
 The actual piece of news
-
-#### Defined in
-
-[index.ts:2591](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2591)

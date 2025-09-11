@@ -1,32 +1,27 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ModelInterrogationFormStable
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ModelInterrogationFormStable
 
 # Interface: ModelInterrogationFormStable
 
-## Table of contents
-
-### Properties
-
-- [name](ModelInterrogationFormStable.md#name)
-- [payload](ModelInterrogationFormStable.md#payload)
+Defined in: [index.ts:3507](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3507)
 
 ## Properties
 
 ### name
 
-• **name**: ``"GFPGAN"`` \| ``"RealESRGAN_x4plus"`` \| ``"RealESRGAN_x4plus_anime_6B"`` \| ``"NMKD_Siax"`` \| ``"4x_AnimeSharp"`` \| ``"strip_background"`` \| ``"CodeFormers"`` \| ``"caption"`` \| ``"interrogation"`` \| ``"nsfw"``
+> **name**: `"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"caption"` \| `"interrogation"` \| `"nsfw"`
+
+Defined in: [index.ts:3511](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3511)
 
 The type of interrogation this is
 
-#### Defined in
+***
 
-[index.ts:2708](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2708)
+### payload?
 
-___
+> `optional` **payload**: [`InterrogationPopFormPayload`](InterrogationPopFormPayload.md)
 
-### payload
-
-• `Optional` **payload**: [`InterrogationPopFormPayload`](InterrogationPopFormPayload.md)
-
-#### Defined in
-
-[index.ts:2709](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2709)
+Defined in: [index.ts:3512](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3512)

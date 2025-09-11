@@ -5,7 +5,7 @@
   "plugin": ["typedoc-plugin-markdown"],
   "out": "docs",
   "hideBreadcrumbs": false,
-  "hideInPageTOC": false,
+  "hidePageTitle": false,
   "excludePrivate": true,
   "excludeProtected": true,
   "excludeExternals": true,

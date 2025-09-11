@@ -1,112 +1,95 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / InterrogationPopInput
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / InterrogationPopInput
 
 # Interface: InterrogationPopInput
 
-## Table of contents
-
-### Properties
-
-- [amount](InterrogationPopInput.md#amount)
-- [bridge\_version](InterrogationPopInput.md#bridge_version)
-- [forms](InterrogationPopInput.md#forms)
-- [name](InterrogationPopInput.md#name)
-- [priority\_usernames](InterrogationPopInput.md#priority_usernames)
-- [threads](InterrogationPopInput.md#threads)
+Defined in: [index.ts:3530](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3530)
 
 ## Properties
 
-### amount
+### amount?
 
-• `Optional` **amount**: `number`
+> `optional` **amount**: `number`
+
+Defined in: [index.ts:3541](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3541)
 
 The amount of forms to pop at the same time
 
-**`Default`**
+#### Default
 
 ```ts
 1
 ```
 
-#### Defined in
+***
 
-[index.ts:2738](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2738)
+### bridge\_version?
 
-___
+> `optional` **bridge\_version**: `number`
 
-### bridge\_version
-
-• `Optional` **bridge\_version**: `number`
+Defined in: [index.ts:3546](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3546)
 
 The version of the bridge used by this worker
 
-**`Default`**
+#### Default
 
 ```ts
 1
 ```
 
-#### Defined in
+***
 
-[index.ts:2743](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2743)
+### forms?
 
-___
+> `optional` **forms**: (`"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"caption"` \| `"interrogation"` \| `"nsfw"`)[]
 
-### forms
-
-• `Optional` **forms**: (``"GFPGAN"`` \| ``"RealESRGAN_x4plus"`` \| ``"RealESRGAN_x4plus_anime_6B"`` \| ``"NMKD_Siax"`` \| ``"4x_AnimeSharp"`` \| ``"strip_background"`` \| ``"CodeFormers"`` \| ``"caption"`` \| ``"interrogation"`` \| ``"nsfw"``)[]
+Defined in: [index.ts:3536](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3536)
 
 The type of interrogation this worker can fulfull
 
-#### Defined in
+***
 
-[index.ts:2733](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2733)
+### name?
 
-___
+> `optional` **name**: `string`
 
-### name
-
-• `Optional` **name**: `string`
+Defined in: [index.ts:3532](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3532)
 
 The Name of the Worker
 
-#### Defined in
+***
 
-[index.ts:2729](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2729)
+### priority\_usernames?
 
-___
+> `optional` **priority\_usernames**: `string`[]
 
-### priority\_usernames
-
-• `Optional` **priority\_usernames**: `string`[]
+Defined in: [index.ts:3534](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3534)
 
 Users with priority to use this worker
 
-#### Defined in
+***
 
-[index.ts:2731](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2731)
+### threads?
 
-___
+> `optional` **threads**: `number`
 
-### threads
-
-• `Optional` **threads**: `number`
+Defined in: [index.ts:3553](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3553)
 
 How many threads this worker is running. This is used to accurately estimate the power available in the horde.
 
-**`Default`**
+#### Default
 
 ```ts
 1
 ```
 
-**`Minimum`**
+#### Minimum
 
 1
 
-**`Maximum`**
+#### Maximum
 
 10
-
-#### Defined in
-
-[index.ts:2750](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2750)

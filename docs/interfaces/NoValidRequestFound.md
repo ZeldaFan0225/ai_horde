@@ -1,107 +1,84 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / NoValidRequestFound
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / NoValidRequestFound
 
 # Interface: NoValidRequestFound
 
-## Hierarchy
+Defined in: [index.ts:3040](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3040)
 
-- **`NoValidRequestFound`**
+## Extended by
 
-  ↳ [`NoValidRequestFoundKobold`](NoValidRequestFoundKobold.md)
-
-  ↳ [`NoValidRequestFoundStable`](NoValidRequestFoundStable.md)
-
-## Table of contents
-
-### Properties
-
-- [blacklist](NoValidRequestFound.md#blacklist)
-- [bridge\_version](NoValidRequestFound.md#bridge_version)
-- [models](NoValidRequestFound.md#models)
-- [nsfw](NoValidRequestFound.md#nsfw)
-- [performance](NoValidRequestFound.md#performance)
-- [untrusted](NoValidRequestFound.md#untrusted)
-- [worker\_id](NoValidRequestFound.md#worker_id)
+- [`NoValidRequestFoundKobold`](NoValidRequestFoundKobold.md)
+- [`NoValidRequestFoundStable`](NoValidRequestFoundStable.md)
 
 ## Properties
 
-### blacklist
+### blacklist?
 
-• `Optional` **blacklist**: `number`
+> `optional` **blacklist**: `number`
+
+Defined in: [index.ts:3048](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3048)
 
 How many waiting requests were skipped because they demanded a generation with a word that this worker does not accept
 
-#### Defined in
+***
 
-[index.ts:2245](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2245)
+### bridge\_version?
 
-___
+> `optional` **bridge\_version**: `number`
 
-### bridge\_version
-
-• `Optional` **bridge\_version**: `number`
+Defined in: [index.ts:3054](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3054)
 
 How many waiting requests were skipped because they require a higher version of the bridge than this worker is running (upgrade if you see this in your skipped list)
 
-#### Defined in
+***
 
-[index.ts:2251](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2251)
+### models?
 
-___
+> `optional` **models**: `number`
 
-### models
-
-• `Optional` **models**: `number`
+Defined in: [index.ts:3052](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3052)
 
 How many waiting requests were skipped because they demanded a different model than what this worker provides
 
-#### Defined in
+***
 
-[index.ts:2249](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2249)
+### nsfw?
 
-___
+> `optional` **nsfw**: `number`
 
-### nsfw
-
-• `Optional` **nsfw**: `number`
+Defined in: [index.ts:3046](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3046)
 
 How many waiting requests were skipped because they demanded a nsfw generation which this worker does not provide
 
-#### Defined in
+***
 
-[index.ts:2243](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2243)
+### performance?
 
-___
+> `optional` **performance**: `number`
 
-### performance
-
-• `Optional` **performance**: `number`
+Defined in: [index.ts:3044](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3044)
 
 How many waiting requests were skipped because they required higher performance
 
-#### Defined in
+***
 
-[index.ts:2241](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2241)
+### untrusted?
 
-___
+> `optional` **untrusted**: `number`
 
-### untrusted
-
-• `Optional` **untrusted**: `number`
+Defined in: [index.ts:3050](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3050)
 
 How many waiting requests were skipped because they demanded a trusted worker which this worker is not
 
-#### Defined in
+***
 
-[index.ts:2247](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2247)
+### worker\_id?
 
-___
+> `optional` **worker\_id**: `number`
 
-### worker\_id
-
-• `Optional` **worker\_id**: `number`
+Defined in: [index.ts:3042](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3042)
 
 How many waiting requests were skipped because they demanded a specific worker
-
-#### Defined in
-
-[index.ts:2239](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2239)

@@ -1,67 +1,52 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / TeamDetailsStable
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / TeamDetailsStable
 
 # Interface: TeamDetailsStable
 
-## Hierarchy
+Defined in: [index.ts:3424](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3424)
+
+## Extends
 
 - [`TeamDetails`](TeamDetails.md)
 
-  ↳ **`TeamDetailsStable`**
-
-## Table of contents
-
-### Properties
-
-- [contributions](TeamDetailsStable.md#contributions)
-- [id](TeamDetailsStable.md#id)
-- [info](TeamDetailsStable.md#info)
-- [kudos](TeamDetailsStable.md#kudos)
-- [models](TeamDetailsStable.md#models)
-- [name](TeamDetailsStable.md#name)
-- [performance](TeamDetailsStable.md#performance)
-- [requests\_fulfilled](TeamDetailsStable.md#requests_fulfilled)
-- [speed](TeamDetailsStable.md#speed)
-- [uptime](TeamDetailsStable.md#uptime)
-- [worker\_count](TeamDetailsStable.md#worker_count)
-- [workers](TeamDetailsStable.md#workers)
-
 ## Properties
 
-### contributions
+### contributions?
 
-• `Optional` **contributions**: `number`
+> `optional` **contributions**: `number`
+
+Defined in: [index.ts:3426](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3426)
 
 How many megapixelsteps the workers in this team have been rewarded while part of this team.
 
-#### Defined in
+***
 
-[index.ts:2623](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2623)
+### id?
 
-___
+> `optional` **id**: `string`
 
-### id
-
-• `Optional` **id**: `string`
+Defined in: [index.ts:3459](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3459)
 
 The UUID of this team
 
 #### Inherited from
 
-[TeamDetails](TeamDetails.md).[id](TeamDetails.md#id)
+[`TeamDetails`](TeamDetails.md).[`id`](TeamDetails.md#id)
 
-#### Defined in
+***
 
-[index.ts:2656](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2656)
+### info?
 
-___
+> `optional` **info**: `string`
 
-### info
-
-• `Optional` **info**: `string`
+Defined in: [index.ts:3438](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3438)
 
 Extra information or comments about this team provided by its owner
 
-**`Example`**
+#### Example
 
 ```ts
 Anarchy is emergent order.
@@ -69,123 +54,107 @@ Anarchy is emergent order.
 
 #### Inherited from
 
-[TeamDetails](TeamDetails.md).[info](TeamDetails.md#info)
+[`TeamDetails`](TeamDetails.md).[`info`](TeamDetails.md#info)
 
-#### Defined in
+***
 
-[index.ts:2635](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2635)
+### kudos?
 
-___
+> `optional` **kudos**: `number`
 
-### kudos
-
-• `Optional` **kudos**: `number`
+Defined in: [index.ts:3442](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3442)
 
 How many Kudos the workers in this team have been rewarded while part of this team.
 
 #### Inherited from
 
-[TeamDetails](TeamDetails.md).[kudos](TeamDetails.md#kudos)
+[`TeamDetails`](TeamDetails.md).[`kudos`](TeamDetails.md#kudos)
 
-#### Defined in
+***
 
-[index.ts:2639](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2639)
+### models?
 
-___
+> `optional` **models**: [`ActiveModelLite`](ActiveModelLite.md)[]
 
-### models
-
-• `Optional` **models**: [`ActiveModelLite`](ActiveModelLite.md)[]
+Defined in: [index.ts:3451](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3451)
 
 #### Inherited from
 
-[TeamDetails](TeamDetails.md).[models](TeamDetails.md#models)
+[`TeamDetails`](TeamDetails.md).[`models`](TeamDetails.md#models)
 
-#### Defined in
+***
 
-[index.ts:2648](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2648)
+### name?
 
-___
+> `optional` **name**: `string`
 
-### name
-
-• `Optional` **name**: `string`
+Defined in: [index.ts:3457](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3457)
 
 The Name given to this team.
 
 #### Inherited from
 
-[TeamDetails](TeamDetails.md).[name](TeamDetails.md#name)
+[`TeamDetails`](TeamDetails.md).[`name`](TeamDetails.md#name)
 
-#### Defined in
+***
 
-[index.ts:2654](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2654)
+### performance?
 
-___
+> `optional` **performance**: `number`
 
-### performance
-
-• `Optional` **performance**: `number`
+Defined in: [index.ts:3428](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3428)
 
 The average performance of the workers in this team, in megapixelsteps per second.
 
-#### Defined in
+***
 
-[index.ts:2625](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2625)
+### requests\_fulfilled?
 
-___
+> `optional` **requests\_fulfilled**: `number`
 
-### requests\_fulfilled
-
-• `Optional` **requests\_fulfilled**: `number`
+Defined in: [index.ts:3440](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3440)
 
 How many images this team's workers have generated
 
 #### Inherited from
 
-[TeamDetails](TeamDetails.md).[requests_fulfilled](TeamDetails.md#requests_fulfilled)
+[`TeamDetails`](TeamDetails.md).[`requests_fulfilled`](TeamDetails.md#requests_fulfilled)
 
-#### Defined in
+***
 
-[index.ts:2637](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2637)
+### speed?
 
-___
+> `optional` **speed**: `number`
 
-### speed
-
-• `Optional` **speed**: `number`
+Defined in: [index.ts:3430](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3430)
 
 The total expected speed of this team when all workers are working in parallel, in megapixelsteps per second.
 
-#### Defined in
+***
 
-[index.ts:2627](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2627)
+### uptime?
 
-___
+> `optional` **uptime**: `number`
 
-### uptime
-
-• `Optional` **uptime**: `number`
+Defined in: [index.ts:3444](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3444)
 
 The total amount of time workers have stayed online while on this team
 
 #### Inherited from
 
-[TeamDetails](TeamDetails.md).[uptime](TeamDetails.md#uptime)
+[`TeamDetails`](TeamDetails.md).[`uptime`](TeamDetails.md#uptime)
 
-#### Defined in
+***
 
-[index.ts:2641](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2641)
+### worker\_count?
 
-___
+> `optional` **worker\_count**: `number`
 
-### worker\_count
-
-• `Optional` **worker\_count**: `number`
+Defined in: [index.ts:3449](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3449)
 
 How many workers have been dedicated to this team
 
-**`Example`**
+#### Example
 
 ```ts
 10
@@ -193,22 +162,16 @@ How many workers have been dedicated to this team
 
 #### Inherited from
 
-[TeamDetails](TeamDetails.md).[worker_count](TeamDetails.md#worker_count)
+[`TeamDetails`](TeamDetails.md).[`worker_count`](TeamDetails.md#worker_count)
 
-#### Defined in
+***
 
-[index.ts:2646](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2646)
+### workers?
 
-___
+> `optional` **workers**: [`WorkerDetailsLite`](WorkerDetailsLite.md)[]
 
-### workers
-
-• `Optional` **workers**: [`WorkerDetailsLite`](WorkerDetailsLite.md)[]
+Defined in: [index.ts:3450](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3450)
 
 #### Inherited from
 
-[TeamDetails](TeamDetails.md).[workers](TeamDetails.md#workers)
-
-#### Defined in
-
-[index.ts:2647](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2647)
+[`TeamDetails`](TeamDetails.md).[`workers`](TeamDetails.md#workers)

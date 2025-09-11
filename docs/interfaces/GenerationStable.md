@@ -1,128 +1,115 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / GenerationStable
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / GenerationStable
 
 # Interface: GenerationStable
 
-## Hierarchy
+Defined in: [index.ts:2787](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2787)
+
+## Extends
 
 - [`Generation`](Generation.md)
 
-  ↳ **`GenerationStable`**
-
-## Table of contents
-
-### Properties
-
-- [censored](GenerationStable.md#censored)
-- [gen\_metadata](GenerationStable.md#gen_metadata)
-- [id](GenerationStable.md#id)
-- [img](GenerationStable.md#img)
-- [model](GenerationStable.md#model)
-- [seed](GenerationStable.md#seed)
-- [worker\_id](GenerationStable.md#worker_id)
-- [worker\_name](GenerationStable.md#worker_name)
-
 ## Properties
 
-### censored
+### censored?
 
-• `Optional` **censored**: `boolean`
+> `optional` **censored**: `boolean`
+
+Defined in: [index.ts:2795](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2795)
 
 When true this image has been censored by the worker's safety filter.
 
-#### Defined in
+***
 
-[index.ts:2026](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2026)
+### gen\_metadata?
 
-___
+> `optional` **gen\_metadata**: `object`[]
 
-### gen\_metadata
+Defined in: [index.ts:2796](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2796)
 
-• `Optional` **gen\_metadata**: { `ref`: `string` ; `type`: `string` ; `value`: `string`  }[]
+#### ref
 
-#### Defined in
+> **ref**: `string`
 
-[index.ts:2027](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2027)
+#### type
 
-___
+> **type**: `string`
 
-### id
+#### value
 
-• `Optional` **id**: `string`
+> **value**: `string`
+
+***
+
+### id?
+
+> `optional` **id**: `string`
+
+Defined in: [index.ts:2793](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2793)
 
 The ID for this image
 
-#### Defined in
+***
 
-[index.ts:2024](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2024)
+### img?
 
-___
+> `optional` **img**: `string`
 
-### img
-
-• `Optional` **img**: `string`
+Defined in: [index.ts:2789](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2789)
 
 The generated image as a Base64-encoded .webp file OR a cloudflare r2 download link
 
-#### Defined in
+***
 
-[index.ts:2020](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2020)
+### model?
 
-___
+> `optional` **model**: `string`
 
-### model
-
-• `Optional` **model**: `string`
+Defined in: [index.ts:2784](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2784)
 
 The model which generated this image
 
 #### Inherited from
 
-[Generation](Generation.md).[model](Generation.md#model)
+[`Generation`](Generation.md).[`model`](Generation.md#model)
 
-#### Defined in
+***
 
-[index.ts:2015](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2015)
+### seed?
 
-___
+> `optional` **seed**: `string`
 
-### seed
-
-• `Optional` **seed**: `string`
+Defined in: [index.ts:2791](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2791)
 
 The seed which generated this image
 
-#### Defined in
+***
 
-[index.ts:2022](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2022)
+### worker\_id?
 
-___
+> `optional` **worker\_id**: `string`
 
-### worker\_id
-
-• `Optional` **worker\_id**: `string`
+Defined in: [index.ts:2780](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2780)
 
 The UUID of the worker which generated this image
 
 #### Inherited from
 
-[Generation](Generation.md).[worker_id](Generation.md#worker_id)
+[`Generation`](Generation.md).[`worker_id`](Generation.md#worker_id)
 
-#### Defined in
+***
 
-[index.ts:2011](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2011)
+### worker\_name?
 
-___
+> `optional` **worker\_name**: `string`
 
-### worker\_name
-
-• `Optional` **worker\_name**: `string`
+Defined in: [index.ts:2782](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2782)
 
 The name of the worker which generated this image
 
 #### Inherited from
 
-[Generation](Generation.md).[worker_name](Generation.md#worker_name)
-
-#### Defined in
-
-[index.ts:2013](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2013)
+[`Generation`](Generation.md).[`worker_name`](Generation.md#worker_name)

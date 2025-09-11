@@ -1,164 +1,192 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / AIHordeRatings
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / AIHordeRatings
 
 # Class: AIHordeRatings
 
-## Table of contents
-
-### Constructors
-
-- [constructor](AIHordeRatings.md#constructor)
-
-### Methods
-
-- [getDatasets](AIHordeRatings.md#getdatasets)
-- [getNewRating](AIHordeRatings.md#getnewrating)
-- [getTeams](AIHordeRatings.md#getteams)
-- [postRating](AIHordeRatings.md#postrating)
+Defined in: [index.ts:3850](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3850)
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new AIHordeRatings**(`options`)
+> **new AIHordeRatings**(`options`): `AIHordeRatings`
+
+Defined in: [index.ts:3854](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3854)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options` | [`AIHordeRatingsInitOptions`](../interfaces/AIHordeRatingsInitOptions.md) |
+##### options
 
-#### Defined in
+[`AIHordeRatingsInitOptions`](../interfaces/AIHordeRatingsInitOptions.md)
 
-[index.ts:3037](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3037)
+#### Returns
+
+`AIHordeRatings`
 
 ## Methods
 
-### getDatasets
+### getDatasets()
 
-▸ **getDatasets**<`T`\>(`options?`): `Promise`<`Pick`<[`DatasetGetResponse`](../interfaces/DatasetGetResponse.md), `T`\>[]\>
+> **getDatasets**\<`T`\>(`options?`): `Promise`\<`Pick`\<[`DatasetGetResponse`](../interfaces/DatasetGetResponse.md), `T`\>[]\>
+
+Defined in: [index.ts:3892](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3892)
 
 Display all datasets
 
-#### Type parameters
+#### Type Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends keyof [`DatasetGetResponse`](../interfaces/DatasetGetResponse.md) |
+##### T
+
+`T` *extends* keyof [`DatasetGetResponse`](../interfaces/DatasetGetResponse.md)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | `Object` | - |
-| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+##### options?
+
+###### fields?
+
+`T`[]
+
+Array of fields that will be included in the returned data
 
 #### Returns
 
-`Promise`<`Pick`<[`DatasetGetResponse`](../interfaces/DatasetGetResponse.md), `T`\>[]\>
+`Promise`\<`Pick`\<[`DatasetGetResponse`](../interfaces/DatasetGetResponse.md), `T`\>[]\>
 
 RatingsDatasetResponse - The datasets
 
-#### Defined in
+***
 
-[index.ts:3075](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3075)
+### getNewRating()
 
-___
+> **getNewRating**\<`T`\>(`image_options?`, `options?`): `Promise`\<`Pick`\<[`DatasetImagePopResponse`](../interfaces/DatasetImagePopResponse.md), `T`\>\>
 
-### getNewRating
-
-▸ **getNewRating**<`T`\>(`image_options?`, `options?`): `Promise`<`Pick`<[`DatasetImagePopResponse`](../interfaces/DatasetImagePopResponse.md), `T`\>\>
+Defined in: [index.ts:3923](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3923)
 
 Retrieve an image to rate from the default dataset
 
-#### Type parameters
+#### Type Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends keyof [`DatasetImagePopResponse`](../interfaces/DatasetImagePopResponse.md) |
+##### T
+
+`T` *extends* keyof [`DatasetImagePopResponse`](../interfaces/DatasetImagePopResponse.md)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `image_options?` | `Object` | - |
-| `image_options.dataset_id` | `string` | The ID of the dataset to get an image from |
-| `image_options.model_name?` | `string` | The model name to get an image from |
-| `options?` | `Object` | - |
-| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
-| `options.token?` | `string` | The token of the requesting user |
+##### image\_options?
+
+###### dataset_id
+
+`string`
+
+The ID of the dataset to get an image from
+
+###### model_name?
+
+`string`
+
+The model name to get an image from
+
+##### options?
+
+###### fields?
+
+`T`[]
+
+Array of fields that will be included in the returned data
+
+###### token?
+
+`string`
+
+The token of the requesting user
 
 #### Returns
 
-`Promise`<`Pick`<[`DatasetImagePopResponse`](../interfaces/DatasetImagePopResponse.md), `T`\>\>
+`Promise`\<`Pick`\<[`DatasetImagePopResponse`](../interfaces/DatasetImagePopResponse.md), `T`\>\>
 
 DatasetImagePopResponse - An images data to rate
 
-#### Defined in
+***
 
-[index.ts:3106](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3106)
+### getTeams()
 
-___
+> **getTeams**\<`T`\>(`options?`): `Promise`\<`Pick`\<[`TeamsGetResponse`](../interfaces/TeamsGetResponse.md), `T`\>[]\>
 
-### getTeams
-
-▸ **getTeams**<`T`\>(`options?`): `Promise`<`Pick`<[`TeamsGetResponse`](../interfaces/TeamsGetResponse.md), `T`\>[]\>
+Defined in: [index.ts:3906](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3906)
 
 Display all public teams
 
-#### Type parameters
+#### Type Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends keyof [`TeamsGetResponse`](../interfaces/TeamsGetResponse.md) |
+##### T
+
+`T` *extends* keyof [`TeamsGetResponse`](../interfaces/TeamsGetResponse.md)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | `Object` | - |
-| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
+##### options?
+
+###### fields?
+
+`T`[]
+
+Array of fields that will be included in the returned data
 
 #### Returns
 
-`Promise`<`Pick`<[`TeamsGetResponse`](../interfaces/TeamsGetResponse.md), `T`\>[]\>
+`Promise`\<`Pick`\<[`TeamsGetResponse`](../interfaces/TeamsGetResponse.md), `T`\>[]\>
 
 RatingsTeamsResponse - The datasets
 
-#### Defined in
+***
 
-[index.ts:3089](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3089)
+### postRating()
 
-___
+> **postRating**\<`T`\>(`image_id`, `rating`, `options?`): `Promise`\<`Pick`\<[`RatePostResponse`](../interfaces/RatePostResponse.md), `T`\>\>
 
-### postRating
-
-▸ **postRating**<`T`\>(`image_id`, `rating`, `options?`): `Promise`<`Pick`<[`RatePostResponse`](../interfaces/RatePostResponse.md), `T`\>\>
+Defined in: [index.ts:3947](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3947)
 
 Check if there are interrogation requests queued for fulfillment
 This endpoint is used by registered workers only
 
-#### Type parameters
+#### Type Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends keyof [`RatePostResponse`](../interfaces/RatePostResponse.md) |
+##### T
+
+`T` *extends* keyof [`RatePostResponse`](../interfaces/RatePostResponse.md)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `image_id` | `string` | The ID if the Image you want to rate |
-| `rating` | [`RatePostInput`](../interfaces/RatePostInput.md) |  |
-| `options?` | `Object` | - |
-| `options.fields?` | `T`[] | Array of fields that will be included in the returned data |
-| `options.token?` | `string` | The token of the requesting user |
+##### image\_id
+
+`string`
+
+The ID if the Image you want to rate
+
+##### rating
+
+[`RatePostInput`](../interfaces/RatePostInput.md)
+
+##### options?
+
+###### fields?
+
+`T`[]
+
+Array of fields that will be included in the returned data
+
+###### token?
+
+`string`
+
+The token of the requesting user
 
 #### Returns
 
-`Promise`<`Pick`<[`RatePostResponse`](../interfaces/RatePostResponse.md), `T`\>\>
+`Promise`\<`Pick`\<[`RatePostResponse`](../interfaces/RatePostResponse.md), `T`\>\>
 
 InterrogationPopPayload
-
-#### Defined in
-
-[index.ts:3130](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3130)

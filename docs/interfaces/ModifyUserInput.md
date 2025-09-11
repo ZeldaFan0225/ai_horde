@@ -1,211 +1,179 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ModifyUserInput
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ModifyUserInput
 
 # Interface: ModifyUserInput
 
-## Table of contents
-
-### Properties
-
-- [concurrency](ModifyUserInput.md#concurrency)
-- [contact](ModifyUserInput.md#contact)
-- [kudos](ModifyUserInput.md#kudos)
-- [moderator](ModifyUserInput.md#moderator)
-- [monthly\_kudos](ModifyUserInput.md#monthly_kudos)
-- [public\_workers](ModifyUserInput.md#public_workers)
-- [reset\_suspicion](ModifyUserInput.md#reset_suspicion)
-- [trusted](ModifyUserInput.md#trusted)
-- [usage\_multiplier](ModifyUserInput.md#usage_multiplier)
-- [username](ModifyUserInput.md#username)
-- [worker\_invited](ModifyUserInput.md#worker_invited)
+Defined in: [index.ts:2201](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2201)
 
 ## Properties
 
-### concurrency
+### concurrency?
 
-• `Optional` **concurrency**: `number`
+> `optional` **concurrency**: `number`
+
+Defined in: [index.ts:2209](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2209)
 
 The amount of concurrent request this user can have
 
-**`Minimum`**
+#### Minimum
 
 0
 
-**`Maximum`**
+#### Maximum
 
 100
 
-#### Defined in
+***
 
-[index.ts:1463](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1463)
+### contact?
 
-___
+> `optional` **contact**: `string`
 
-### contact
-
-• `Optional` **contact**: `string`
+Defined in: [index.ts:2252](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2252)
 
 Contact details for the horde admins to reach the user in case of emergency. This is only visible to horde moderators.
 
-**`Example`**
+#### Example
 
 ```ts
 email@example.com
 ```
 
-**`Min Length`**
+#### Min Length
 
 5
 
-**`Max Length`**
+#### Max Length
 
 500
 
-#### Defined in
+***
 
-[index.ts:1506](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1506)
+### kudos?
 
-___
+> `optional` **kudos**: `number`
 
-### kudos
-
-• `Optional` **kudos**: `number`
+Defined in: [index.ts:2203](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2203)
 
 The amount of kudos to modify (can be negative)
 
-#### Defined in
+***
 
-[index.ts:1457](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1457)
+### moderator?
 
-___
+> `optional` **moderator**: `boolean`
 
-### moderator
-
-• `Optional` **moderator**: `boolean`
+Defined in: [index.ts:2222](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2222)
 
 Set to true to Make this user a horde moderator
 
-**`Example`**
+#### Example
 
 ```ts
 false
 ```
 
-#### Defined in
+***
 
-[index.ts:1476](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1476)
+### monthly\_kudos?
 
-___
+> `optional` **monthly\_kudos**: `number`
 
-### monthly\_kudos
-
-• `Optional` **monthly\_kudos**: `number`
+Defined in: [index.ts:2232](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2232)
 
 When specified, will start assigning the user monthly kudos, starting now!
 
-**`Minimum`**
+#### Minimum
 
 0
 
-#### Defined in
+***
 
-[index.ts:1486](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1486)
+### public\_workers?
 
-___
+> `optional` **public\_workers**: `boolean`
 
-### public\_workers
-
-• `Optional` **public\_workers**: `boolean`
+Defined in: [index.ts:2227](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2227)
 
 Set to true to Make this user a display their worker IDs
 
-**`Example`**
+#### Example
 
 ```ts
 false
 ```
 
-#### Defined in
+***
 
-[index.ts:1481](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1481)
+### reset\_suspicion?
 
-___
+> `optional` **reset\_suspicion**: `boolean`
 
-### reset\_suspicion
-
-• `Optional` **reset\_suspicion**: `boolean`
+Defined in: [index.ts:2245](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2245)
 
 Set the user's suspicion back to 0
 
-#### Defined in
+***
 
-[index.ts:1499](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1499)
+### trusted?
 
-___
+> `optional` **trusted**: `boolean`
 
-### trusted
-
-• `Optional` **trusted**: `boolean`
+Defined in: [index.ts:2243](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2243)
 
 When set to true,the user and their servers will not be affected by suspicion
 
-**`Example`**
+#### Example
 
 ```ts
 false
 ```
 
-#### Defined in
+***
 
-[index.ts:1497](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1497)
+### usage\_multiplier?
 
-___
+> `optional` **usage\_multiplier**: `number`
 
-### usage\_multiplier
-
-• `Optional` **usage\_multiplier**: `number`
+Defined in: [index.ts:2215](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2215)
 
 The amount by which to multiply the users kudos consumption
 
-**`Minimum`**
+#### Minimum
 
 0.1
 
-**`Maximum`**
+#### Maximum
 
 10
 
-#### Defined in
+***
 
-[index.ts:1469](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1469)
+### username?
 
-___
+> `optional` **username**: `string`
 
-### username
-
-• `Optional` **username**: `string`
+Defined in: [index.ts:2238](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2238)
 
 When specified, will change the username. No profanity allowed!
 
-**`Min Length`**
+#### Min Length
 
 3
 
-**`Max Length`**
+#### Max Length
 
 100
 
-#### Defined in
+***
 
-[index.ts:1492](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1492)
+### worker\_invited?
 
-___
+> `optional` **worker\_invited**: `number`
 
-### worker\_invited
-
-• `Optional` **worker\_invited**: `number`
+Defined in: [index.ts:2217](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2217)
 
 Set to the amount of workers this user is allowed to join to the horde when in worker invite-only mode.
-
-#### Defined in
-
-[index.ts:1471](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1471)

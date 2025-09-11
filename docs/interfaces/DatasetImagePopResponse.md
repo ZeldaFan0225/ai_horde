@@ -1,65 +1,57 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / DatasetImagePopResponse
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / DatasetImagePopResponse
 
 # Interface: DatasetImagePopResponse
 
-## Table of contents
-
-### Properties
-
-- [dataset\_id](DatasetImagePopResponse.md#dataset_id)
-- [id](DatasetImagePopResponse.md#id)
-- [url](DatasetImagePopResponse.md#url)
+Defined in: [index.ts:4016](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L4016)
 
 ## Properties
 
-### dataset\_id
+### dataset\_id?
 
-• `Optional` **dataset\_id**: `string`
+> `optional` **dataset\_id**: `string`
+
+Defined in: [index.ts:4031](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L4031)
 
 The UUID of the dataset in which this image belongs
 
-**`Example`**
+#### Example
 
 ```ts
 00000000-0000-0000-0000-000000000000
 ```
 
-#### Defined in
+***
 
-[index.ts:3214](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3214)
+### id?
 
-___
+> `optional` **id**: `string`
 
-### id
-
-• `Optional` **id**: `string`
+Defined in: [index.ts:4021](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L4021)
 
 The UUID of the image to rate
 
-**`Example`**
+#### Example
 
 ```ts
 00000000-0000-0000-0000-000000000000
 ```
 
-#### Defined in
+***
 
-[index.ts:3204](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3204)
+### url?
 
-___
+> `optional` **url**: `string`
 
-### url
-
-• `Optional` **url**: `string`
+Defined in: [index.ts:4026](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L4026)
 
 The URL from which to download the image
 
-**`Example`**
+#### Example
 
 ```ts
 https://cdn.droom.cloud/00000000-0000-0000-0000-000000000000.webp
 ```
-
-#### Defined in
-
-[index.ts:3209](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3209)

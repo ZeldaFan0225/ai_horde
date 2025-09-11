@@ -1,140 +1,121 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / APIError
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / APIError
 
 # Class: APIError
 
-## Hierarchy
+Defined in: [index.ts:235](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L235)
+
+## Extends
 
 - `Error`
 
-  ↳ **`APIError`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](APIError.md#constructor)
-
-### Properties
-
-- [error\_code](APIError.md#error_code)
-- [errors](APIError.md#errors)
-- [method](APIError.md#method)
-- [rawError](APIError.md#rawerror)
-- [requestBody](APIError.md#requestbody)
-- [status](APIError.md#status)
-- [url](APIError.md#url)
-
-### Accessors
-
-- [name](APIError.md#name)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new APIError**(`rawError`, `core_res`, `method?`, `requestBody?`)
+> **new APIError**(`rawError`, `core_res`, `method`, `requestBody?`): `APIError`
+
+Defined in: [index.ts:243](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L243)
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `rawError` | [`RequestError`](../interfaces/RequestError.md) \| [`ValidationError`](../interfaces/ValidationError.md) | `undefined` |
-| `core_res` | `Response` | `undefined` |
-| `method` | `string` | `"GET"` |
-| `requestBody?` | `any` | `undefined` |
+##### rawError
+
+[`RequestError`](../interfaces/RequestError.md) | [`ValidationError`](../interfaces/ValidationError.md)
+
+##### core\_res
+
+`Response`
+
+##### method
+
+`string` = `"GET"`
+
+##### requestBody?
+
+`any`
+
+#### Returns
+
+`APIError`
 
 #### Overrides
 
-Error.constructor
-
-#### Defined in
-
-[index.ts:205](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L205)
+`Error.constructor`
 
 ## Properties
 
 ### error\_code
 
-• **error\_code**: `string`
+> **error\_code**: `string`
 
-#### Defined in
+Defined in: [index.ts:242](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L242)
 
-[index.ts:204](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L204)
-
-___
+***
 
 ### errors
 
-• **errors**: `Record`<`string`, `string`\>
+> **errors**: `Record`\<`string`, `string`\>
 
-#### Defined in
+Defined in: [index.ts:241](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L241)
 
-[index.ts:203](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L203)
-
-___
+***
 
 ### method
 
-• **method**: `string`
+> **method**: `string`
 
-#### Defined in
+Defined in: [index.ts:238](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L238)
 
-[index.ts:200](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L200)
-
-___
+***
 
 ### rawError
 
-• **rawError**: [`RequestError`](../interfaces/RequestError.md)
+> **rawError**: [`RequestError`](../interfaces/RequestError.md)
 
-#### Defined in
+Defined in: [index.ts:236](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L236)
 
-[index.ts:198](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L198)
-
-___
+***
 
 ### requestBody
 
-• **requestBody**: `any`
+> **requestBody**: `any`
 
-#### Defined in
+Defined in: [index.ts:240](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L240)
 
-[index.ts:202](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L202)
-
-___
+***
 
 ### status
 
-• **status**: `number`
+> **status**: `number`
 
-#### Defined in
+Defined in: [index.ts:237](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L237)
 
-[index.ts:199](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L199)
-
-___
+***
 
 ### url
 
-• **url**: `string`
+> **url**: `string`
 
-#### Defined in
-
-[index.ts:201](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L201)
+Defined in: [index.ts:239](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L239)
 
 ## Accessors
 
 ### name
 
-• `get` **name**(): `string`
+#### Get Signature
 
-#### Returns
+> **get** **name**(): `string`
+
+Defined in: [index.ts:255](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L255)
+
+##### Returns
 
 `string`
 
 #### Overrides
 
-Error.name
-
-#### Defined in
-
-[index.ts:217](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L217)
+`Error.name`
