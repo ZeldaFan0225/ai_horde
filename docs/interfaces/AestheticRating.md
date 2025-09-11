@@ -6,7 +6,7 @@
 
 # Interface: AestheticRating
 
-Defined in: [index.ts:3625](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3625)
+Defined in: [index.ts:3625](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3625)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3625](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > **id**: `string`
 
-Defined in: [index.ts:3632](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3632)
+Defined in: [index.ts:3632](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3632)
 
 The UUID of image being rated
 
@@ -38,7 +38,7 @@ The UUID of image being rated
 
 > **rating**: `number`
 
-Defined in: [index.ts:3638](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3638)
+Defined in: [index.ts:3638](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3638)
 
 The aesthetic rating 1-10 for this image
 

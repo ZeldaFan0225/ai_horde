@@ -6,7 +6,7 @@
 
 # Interface: ModelStyleInputStable
 
-Defined in: [index.ts:2095](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2095)
+Defined in: [index.ts:2095](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2095)
 
 ## Extended by
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:2095](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:2097](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2097)
+Defined in: [index.ts:2097](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2097)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [index.ts:2097](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **models**: `string`[]
 
-Defined in: [index.ts:2103](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2103)
+Defined in: [index.ts:2103](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2103)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [index.ts:2103](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > **name**: `string`
 
-Defined in: [index.ts:2096](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2096)
+Defined in: [index.ts:2096](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2096)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [index.ts:2096](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **nsfw**: `boolean`
 
-Defined in: [index.ts:2101](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2101)
+Defined in: [index.ts:2101](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2101)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [index.ts:2101](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **params**: [`ModelStyleInputParamsStable`](ModelStyleInputParamsStable.md)
 
-Defined in: [index.ts:2099](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2099)
+Defined in: [index.ts:2099](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2099)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [index.ts:2099](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **prompt**: `string`
 
-Defined in: [index.ts:2098](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2098)
+Defined in: [index.ts:2098](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2098)
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: [index.ts:2098](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **public**: `boolean`
 
-Defined in: [index.ts:2100](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2100)
+Defined in: [index.ts:2100](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2100)
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: [index.ts:2100](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **sharedkey**: `string`
 
-Defined in: [index.ts:2104](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2104)
+Defined in: [index.ts:2104](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2104)
 
 ***
 
@@ -82,4 +82,4 @@ Defined in: [index.ts:2104](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **tags**: `string`[]
 
-Defined in: [index.ts:2102](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2102)
+Defined in: [index.ts:2102](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2102)

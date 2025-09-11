@@ -6,7 +6,7 @@
 
 # Interface: TeamDetails
 
-Defined in: [index.ts:3433](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3433)
+Defined in: [index.ts:3433](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3433)
 
 ## Extends
 
@@ -22,7 +22,7 @@ Defined in: [index.ts:3433](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:3459](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3459)
+Defined in: [index.ts:3459](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3459)
 
 The UUID of this team
 
@@ -36,7 +36,7 @@ The UUID of this team
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:3438](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3438)
+Defined in: [index.ts:3438](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3438)
 
 Extra information or comments about this team provided by its owner
 
@@ -52,7 +52,7 @@ Anarchy is emergent order.
 
 > `optional` **kudos**: `number`
 
-Defined in: [index.ts:3442](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3442)
+Defined in: [index.ts:3442](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3442)
 
 How many Kudos the workers in this team have been rewarded while part of this team.
 
@@ -62,7 +62,7 @@ How many Kudos the workers in this team have been rewarded while part of this te
 
 > `optional` **models**: [`ActiveModelLite`](ActiveModelLite.md)[]
 
-Defined in: [index.ts:3451](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3451)
+Defined in: [index.ts:3451](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3451)
 
 ***
 
@@ -70,7 +70,7 @@ Defined in: [index.ts:3451](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:3457](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3457)
+Defined in: [index.ts:3457](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3457)
 
 The Name given to this team.
 
@@ -84,7 +84,7 @@ The Name given to this team.
 
 > `optional` **requests\_fulfilled**: `number`
 
-Defined in: [index.ts:3440](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3440)
+Defined in: [index.ts:3440](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3440)
 
 How many images this team's workers have generated
 
@@ -94,7 +94,7 @@ How many images this team's workers have generated
 
 > `optional` **uptime**: `number`
 
-Defined in: [index.ts:3444](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3444)
+Defined in: [index.ts:3444](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3444)
 
 The total amount of time workers have stayed online while on this team
 
@@ -104,7 +104,7 @@ The total amount of time workers have stayed online while on this team
 
 > `optional` **worker\_count**: `number`
 
-Defined in: [index.ts:3449](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3449)
+Defined in: [index.ts:3449](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3449)
 
 How many workers have been dedicated to this team
 
@@ -120,4 +120,4 @@ How many workers have been dedicated to this team
 
 > `optional` **workers**: [`WorkerDetailsLite`](WorkerDetailsLite.md)[]
 
-Defined in: [index.ts:3450](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3450)
+Defined in: [index.ts:3450](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3450)

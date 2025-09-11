@@ -6,7 +6,7 @@
 
 # Interface: GenerationInputKobold
 
-Defined in: [index.ts:2287](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2287)
+Defined in: [index.ts:2287](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2287)
 
 ## Link
 
@@ -18,7 +18,7 @@ https://aihorde.net/api/
 
 > `optional` **models**: `string`[]
 
-Defined in: [index.ts:2304](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2304)
+Defined in: [index.ts:2304](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2304)
 
 Specify which models are allowed to be used for this request
 
@@ -28,7 +28,7 @@ Specify which models are allowed to be used for this request
 
 > `optional` **params**: [`ModelGenerationInputKobold`](ModelGenerationInputKobold.md)
 
-Defined in: [index.ts:2290](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2290)
+Defined in: [index.ts:2290](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2290)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [index.ts:2290](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **prompt**: `string`
 
-Defined in: [index.ts:2289](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2289)
+Defined in: [index.ts:2289](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2289)
 
 The prompt which will be sent to KoboldAI to generate text
 
@@ -46,7 +46,7 @@ The prompt which will be sent to KoboldAI to generate text
 
 > `optional` **softprompt**: `string`
 
-Defined in: [index.ts:2295](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2295)
+Defined in: [index.ts:2295](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2295)
 
 Specify which softpompt needs to be used to service this request
 
@@ -60,7 +60,7 @@ Specify which softpompt needs to be used to service this request
 
 > `optional` **trusted\_workers**: `boolean`
 
-Defined in: [index.ts:2300](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2300)
+Defined in: [index.ts:2300](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2300)
 
 When true, only trusted workers will serve this request. When False, Evaluating workers will also be used which can increase speed but adds more risk!
 
@@ -76,6 +76,6 @@ true
 
 > `optional` **workers**: `string`[]
 
-Defined in: [index.ts:2302](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2302)
+Defined in: [index.ts:2302](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2302)
 
 Specify which workers are allowed to service this request

@@ -6,7 +6,7 @@
 
 # Interface: ModelInterrogationInputStable
 
-Defined in: [index.ts:3515](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3515)
+Defined in: [index.ts:3515](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3515)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3515](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > **forms**: [`ModelInterrogationFormStable`](ModelInterrogationFormStable.md)[]
 
-Defined in: [index.ts:3516](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3516)
+Defined in: [index.ts:3516](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3516)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [index.ts:3516](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **slow\_workers**: `boolean`
 
-Defined in: [index.ts:3520](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3520)
+Defined in: [index.ts:3520](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3520)
 
 When True, allows slower workers to pick up this request. Disabling this incurs an extra kudos cost.
 
@@ -32,6 +32,6 @@ When True, allows slower workers to pick up this request. Disabling this incurs 
 
 > **source\_image**: `string`
 
-Defined in: [index.ts:3518](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3518)
+Defined in: [index.ts:3518](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3518)
 
 The public URL of the image to interrogate

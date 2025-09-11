@@ -6,7 +6,7 @@
 
 # Interface: AIHordeCacheConfiguration
 
-Defined in: [index.ts:2159](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2159)
+Defined in: [index.ts:2159](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2159)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2159](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **collections**: `number`
 
-Defined in: [index.ts:2161](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2161)
+Defined in: [index.ts:2161](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2161)
 
 How long to cache a collections for in Milliseconds
 
@@ -24,7 +24,7 @@ How long to cache a collections for in Milliseconds
 
 > `optional` **generations\_check**: `number`
 
-Defined in: [index.ts:2165](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2165)
+Defined in: [index.ts:2165](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2165)
 
 How long to cache generation check data for in Milliseconds
 
@@ -34,7 +34,7 @@ How long to cache generation check data for in Milliseconds
 
 > `optional` **generations\_status**: `number`
 
-Defined in: [index.ts:2167](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2167)
+Defined in: [index.ts:2167](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2167)
 
 How long to cache generation status data for in Milliseconds
 
@@ -44,7 +44,7 @@ How long to cache generation status data for in Milliseconds
 
 > `optional` **interrogations\_status**: `number`
 
-Defined in: [index.ts:2169](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2169)
+Defined in: [index.ts:2169](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2169)
 
 How long to cache interrogation status data for in Milliseconds
 
@@ -54,7 +54,7 @@ How long to cache interrogation status data for in Milliseconds
 
 > `optional` **models**: `number`
 
-Defined in: [index.ts:2171](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2171)
+Defined in: [index.ts:2171](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2171)
 
 How long to cache models for in Milliseconds
 
@@ -64,7 +64,7 @@ How long to cache models for in Milliseconds
 
 > `optional` **modes**: `number`
 
-Defined in: [index.ts:2173](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2173)
+Defined in: [index.ts:2173](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2173)
 
 How long to cache modes for in Milliseconds
 
@@ -74,7 +74,7 @@ How long to cache modes for in Milliseconds
 
 > `optional` **news**: `number`
 
-Defined in: [index.ts:2175](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2175)
+Defined in: [index.ts:2175](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2175)
 
 How long to cache news for in Milliseconds
 
@@ -84,7 +84,7 @@ How long to cache news for in Milliseconds
 
 > `optional` **performance**: `number`
 
-Defined in: [index.ts:2177](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2177)
+Defined in: [index.ts:2177](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2177)
 
 How long to cache performance for in Milliseconds
 
@@ -94,7 +94,7 @@ How long to cache performance for in Milliseconds
 
 > `optional` **sharedkeys**: `number`
 
-Defined in: [index.ts:2183](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2183)
+Defined in: [index.ts:2183](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2183)
 
 How long to cache sharedkeys for in Milliseconds
 
@@ -104,7 +104,7 @@ How long to cache sharedkeys for in Milliseconds
 
 > `optional` **teams**: `number`
 
-Defined in: [index.ts:2181](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2181)
+Defined in: [index.ts:2181](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2181)
 
 How long to cache teams for in Milliseconds
 
@@ -114,7 +114,7 @@ How long to cache teams for in Milliseconds
 
 > `optional` **users**: `number`
 
-Defined in: [index.ts:2163](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2163)
+Defined in: [index.ts:2163](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2163)
 
 How long to cache a specific user for in Milliseconds
 
@@ -124,6 +124,6 @@ How long to cache a specific user for in Milliseconds
 
 > `optional` **workers**: `number`
 
-Defined in: [index.ts:2179](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2179)
+Defined in: [index.ts:2179](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2179)
 
 How long to cache workers for in Milliseconds

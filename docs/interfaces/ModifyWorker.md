@@ -6,7 +6,7 @@
 
 # Interface: ModifyWorker
 
-Defined in: [index.ts:3320](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3320)
+Defined in: [index.ts:3320](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3320)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3320](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:3326](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3326)
+Defined in: [index.ts:3326](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3326)
 
 The new state of the 'info' var for this worker.
 
@@ -24,7 +24,7 @@ The new state of the 'info' var for this worker.
 
 > `optional` **maintenance**: `boolean`
 
-Defined in: [index.ts:3322](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3322)
+Defined in: [index.ts:3322](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3322)
 
 The new state of the 'maintenance' var for this worker. When True, this worker will not pick up any new requests.
 
@@ -34,7 +34,7 @@ The new state of the 'maintenance' var for this worker. When True, this worker w
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:3328](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3328)
+Defined in: [index.ts:3328](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3328)
 
 The new name for this this worker.
 
@@ -44,6 +44,6 @@ The new name for this this worker.
 
 > `optional` **paused**: `boolean`
 
-Defined in: [index.ts:3324](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3324)
+Defined in: [index.ts:3324](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3324)
 
 The new state of the 'paused' var for this worker. When True, this worker will not be given any new requests.

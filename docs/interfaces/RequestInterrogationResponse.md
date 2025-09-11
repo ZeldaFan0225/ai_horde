@@ -6,7 +6,7 @@
 
 # Interface: RequestInterrogationResponse
 
-Defined in: [index.ts:3523](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3523)
+Defined in: [index.ts:3523](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3523)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3523](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:3525](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3525)
+Defined in: [index.ts:3525](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3525)
 
 The UUID of the request. Use this to retrieve the request status in the future
 
@@ -24,6 +24,6 @@ The UUID of the request. Use this to retrieve the request status in the future
 
 > `optional` **message**: `string`
 
-Defined in: [index.ts:3527](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3527)
+Defined in: [index.ts:3527](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3527)
 
 Any extra information from the horde about this request

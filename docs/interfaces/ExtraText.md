@@ -6,7 +6,7 @@
 
 # Interface: ExtraText
 
-Defined in: [index.ts:2601](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2601)
+Defined in: [index.ts:2601](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2601)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2601](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > **reference**: `string`
 
-Defined in: [index.ts:2611](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2611)
+Defined in: [index.ts:2611](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2611)
 
 The reference which points how and where this text should be used
 
@@ -28,7 +28,7 @@ The reference which points how and where this text should be used
 
 > **text**: `string`
 
-Defined in: [index.ts:2606](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2606)
+Defined in: [index.ts:2606](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2606)
 
 The extra text to send along with this generation
 

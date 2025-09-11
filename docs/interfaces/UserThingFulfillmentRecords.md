@@ -6,7 +6,7 @@
 
 # Interface: UserThingFulfillmentRecords
 
-Defined in: [index.ts:3075](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3075)
+Defined in: [index.ts:3075](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3075)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3075](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3a
 
 > `optional` **image**: `number`
 
-Defined in: [index.ts:3080](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3080)
+Defined in: [index.ts:3080](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3080)
 
 How many images were generated or requested
 
@@ -30,7 +30,7 @@ How many images were generated or requested
 
 > `optional` **interrogation**: `number`
 
-Defined in: [index.ts:3085](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3085)
+Defined in: [index.ts:3085](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3085)
 
 How many images were interrogated generated or requested
 
@@ -46,7 +46,7 @@ How many images were interrogated generated or requested
 
 > `optional` **text**: `number`
 
-Defined in: [index.ts:3090](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3090)
+Defined in: [index.ts:3090](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3090)
 
 How many texts were generated or requested
 
