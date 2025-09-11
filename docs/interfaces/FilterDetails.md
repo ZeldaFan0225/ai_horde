@@ -6,7 +6,7 @@
 
 # Interface: FilterDetails
 
-Defined in: [index.ts:3665](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3665)
+Defined in: [index.ts:3666](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3666)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3665](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **description**: `string`
 
-Defined in: [index.ts:3682](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3682)
+Defined in: [index.ts:3683](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3683)
 
 Description about this regex
 
@@ -24,7 +24,7 @@ Description about this regex
 
 > **filter\_type**: `number`
 
-Defined in: [index.ts:3678](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3678)
+Defined in: [index.ts:3679](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3679)
 
 The integer defining this filter type
 
@@ -42,7 +42,7 @@ The integer defining this filter type
 
 > **id**: `string`
 
-Defined in: [index.ts:3667](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3667)
+Defined in: [index.ts:3668](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3668)
 
 The UUID of this filter
 
@@ -52,7 +52,7 @@ The UUID of this filter
 
 > **regex**: `string`
 
-Defined in: [index.ts:3672](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3672)
+Defined in: [index.ts:3673](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3673)
 
 The regex for this filter.
 
@@ -68,6 +68,6 @@ ac.*
 
 > **user**: `string`
 
-Defined in: [index.ts:3686](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3686)
+Defined in: [index.ts:3687](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3687)
 
 The moderator which added or last updated this regex

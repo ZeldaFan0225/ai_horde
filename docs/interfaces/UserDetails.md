@@ -6,7 +6,7 @@
 
 # Interface: UserDetails
 
-Defined in: [index.ts:3101](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3101)
+Defined in: [index.ts:3102](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3102)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3101](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **account\_age**: `number`
 
-Defined in: [index.ts:3138](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3138)
+Defined in: [index.ts:3139](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3139)
 
 How many seconds since this account was created
 
@@ -30,7 +30,7 @@ How many seconds since this account was created
 
 > `optional` **concurrency**: `number`
 
-Defined in: [index.ts:3111](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3111)
+Defined in: [index.ts:3112](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3112)
 
 How many concurrent generations this user may request.
 
@@ -40,7 +40,7 @@ How many concurrent generations this user may request.
 
 > `optional` **contact**: `string`
 
-Defined in: [index.ts:3133](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3133)
+Defined in: [index.ts:3134](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3134)
 
 (Privileged) Contact details for the horde admins to reach the user in case of emergency.
 
@@ -56,7 +56,7 @@ email@example.com
 
 > `optional` **contributions**: [`ContributionsDetailsStable`](ContributionsDetailsStable.md)
 
-Defined in: [index.ts:3146](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3146)
+Defined in: [index.ts:3147](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3147)
 
 #### Deprecated
 
@@ -66,7 +66,7 @@ Defined in: [index.ts:3146](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **evaluating\_kudos**: `number`
 
-Defined in: [index.ts:3109](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3109)
+Defined in: [index.ts:3110](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3110)
 
 (Privileged) The amount of Evaluating Kudos this untrusted user has from generations and uptime. When this number reaches 50000, they automatically become trusted.
 
@@ -76,7 +76,7 @@ Defined in: [index.ts:3109](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **flagged**: `boolean`
 
-Defined in: [index.ts:3124](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3124)
+Defined in: [index.ts:3125](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3125)
 
 This user has been flagged for suspicious activity.
 
@@ -86,7 +86,7 @@ This user has been flagged for suspicious activity.
 
 > `optional` **id**: `number`
 
-Defined in: [index.ts:3105](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3105)
+Defined in: [index.ts:3106](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3106)
 
 The user unique ID. It is always an integer.
 
@@ -96,7 +96,7 @@ The user unique ID. It is always an integer.
 
 > `optional` **kudos**: `number`
 
-Defined in: [index.ts:3107](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3107)
+Defined in: [index.ts:3108](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3108)
 
 The amount of Kudos this user has. The amount of Kudos determines the priority when requesting image generations.
 
@@ -106,7 +106,7 @@ The amount of Kudos this user has. The amount of Kudos determines the priority w
 
 > `optional` **kudos\_details**: [`UserKudosDetails`](UserKudosDetails.md)
 
-Defined in: [index.ts:3116](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3116)
+Defined in: [index.ts:3117](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3117)
 
 ***
 
@@ -114,7 +114,7 @@ Defined in: [index.ts:3116](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **moderator**: `boolean`
 
-Defined in: [index.ts:3115](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3115)
+Defined in: [index.ts:3116](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3116)
 
 This user is a Horde moderator.
 
@@ -124,7 +124,7 @@ This user is a Horde moderator.
 
 > `optional` **monthly\_kudos**: [`MonthlyKudos`](MonthlyKudos.md)
 
-Defined in: [index.ts:3120](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3120)
+Defined in: [index.ts:3121](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3121)
 
 ***
 
@@ -132,7 +132,7 @@ Defined in: [index.ts:3120](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **pseudonymous**: `boolean`
 
-Defined in: [index.ts:3128](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3128)
+Defined in: [index.ts:3129](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3129)
 
 If true, this user has not registered using an oauth service.
 
@@ -142,7 +142,7 @@ If true, this user has not registered using an oauth service.
 
 > `optional` **records**: [`UserRecords`](UserRecords.md)
 
-Defined in: [index.ts:3147](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3147)
+Defined in: [index.ts:3148](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3148)
 
 ***
 
@@ -150,7 +150,7 @@ Defined in: [index.ts:3147](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **suspicious**: `number`
 
-Defined in: [index.ts:3126](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3126)
+Defined in: [index.ts:3127](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3127)
 
 (Privileged) How much suspicion this user has accumulated
 
@@ -160,7 +160,7 @@ Defined in: [index.ts:3126](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **trusted**: `boolean`
 
-Defined in: [index.ts:3122](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3122)
+Defined in: [index.ts:3123](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3123)
 
 This user is a trusted member of the Horde.
 
@@ -170,7 +170,7 @@ This user is a trusted member of the Horde.
 
 > `optional` **usage**: [`UsageDetailsStable`](UsageDetailsStable.md)
 
-Defined in: [index.ts:3142](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3142)
+Defined in: [index.ts:3143](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3143)
 
 #### Deprecated
 
@@ -180,7 +180,7 @@ Defined in: [index.ts:3142](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **username**: `string`
 
-Defined in: [index.ts:3103](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3103)
+Defined in: [index.ts:3104](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3104)
 
 The user's unique Username. It is a combination of their chosen alias plus their ID.
 
@@ -190,7 +190,7 @@ The user's unique Username. It is a combination of their chosen alias plus their
 
 > `optional` **worker\_count**: `number`
 
-Defined in: [index.ts:3118](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3118)
+Defined in: [index.ts:3119](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3119)
 
 How many workers this user has created (active or inactive)
 
@@ -200,7 +200,7 @@ How many workers this user has created (active or inactive)
 
 > `optional` **worker\_ids**: `string`[]
 
-Defined in: [index.ts:3119](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3119)
+Defined in: [index.ts:3120](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3120)
 
 ***
 
@@ -208,6 +208,6 @@ Defined in: [index.ts:3119](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **worker\_invited**: `number`
 
-Defined in: [index.ts:3113](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3113)
+Defined in: [index.ts:3114](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3114)
 
 Whether this user has been invited to join a worker to the horde and how many of them. When 0, this user cannot add (new) workers to the horde.

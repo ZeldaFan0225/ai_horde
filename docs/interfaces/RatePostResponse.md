@@ -6,7 +6,7 @@
 
 # Interface: RatePostResponse
 
-Defined in: [index.ts:4062](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L4062)
+Defined in: [index.ts:4063](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L4063)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:4062](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > **message**: `string`
 
-Defined in: [index.ts:4073](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L4073)
+Defined in: [index.ts:4074](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L4074)
 
 Any extra information about the submitted rating
 
@@ -30,7 +30,7 @@ Rating submitted
 
 > **reward**: `number`
 
-Defined in: [index.ts:4068](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L4068)
+Defined in: [index.ts:4069](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L4069)
 
 The amount of kudos awarded for this rating
 

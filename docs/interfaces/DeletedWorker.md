@@ -6,7 +6,7 @@
 
 # Interface: DeletedWorker
 
-Defined in: [index.ts:3331](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3331)
+Defined in: [index.ts:3332](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3332)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3331](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **deleted\_id**: `string`
 
-Defined in: [index.ts:3333](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3333)
+Defined in: [index.ts:3334](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3334)
 
 The ID of the deleted worker
 
@@ -24,6 +24,6 @@ The ID of the deleted worker
 
 > `optional` **deleted\_name**: `string`
 
-Defined in: [index.ts:3335](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3335)
+Defined in: [index.ts:3336](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3336)
 
 The Name of the deleted worker

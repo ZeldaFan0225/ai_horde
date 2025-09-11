@@ -6,7 +6,7 @@
 
 # Interface: FilterCheckPayload
 
-Defined in: [index.ts:3641](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3641)
+Defined in: [index.ts:3642](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3642)
 
 ## Properties
 
@@ -14,4 +14,4 @@ Defined in: [index.ts:3641](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > **prompt**: `string`
 
-Defined in: [index.ts:3642](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3642)
+Defined in: [index.ts:3643](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3643)

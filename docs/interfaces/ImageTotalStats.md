@@ -6,7 +6,7 @@
 
 # Interface: ImageTotalStats
 
-Defined in: [index.ts:3738](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3738)
+Defined in: [index.ts:3739](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3739)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3738](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **day**: [`SinglePeriodImageStats`](SinglePeriodImageStats.md)
 
-Defined in: [index.ts:3741](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3741)
+Defined in: [index.ts:3742](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3742)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [index.ts:3741](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **hour**: [`SinglePeriodImageStats`](SinglePeriodImageStats.md)
 
-Defined in: [index.ts:3740](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3740)
+Defined in: [index.ts:3741](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3741)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [index.ts:3740](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **minute**: [`SinglePeriodImageStats`](SinglePeriodImageStats.md)
 
-Defined in: [index.ts:3739](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3739)
+Defined in: [index.ts:3740](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3740)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [index.ts:3739](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **month**: [`SinglePeriodImageStats`](SinglePeriodImageStats.md)
 
-Defined in: [index.ts:3742](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3742)
+Defined in: [index.ts:3743](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3743)
 
 ***
 
@@ -46,4 +46,4 @@ Defined in: [index.ts:3742](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **total**: [`SinglePeriodImageStats`](SinglePeriodImageStats.md)
 
-Defined in: [index.ts:3743](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3743)
+Defined in: [index.ts:3744](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3744)

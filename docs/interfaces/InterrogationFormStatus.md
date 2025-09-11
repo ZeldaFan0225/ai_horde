@@ -6,7 +6,7 @@
 
 # Interface: InterrogationFormStatus
 
-Defined in: [index.ts:3593](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3593)
+Defined in: [index.ts:3594](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3594)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3593](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **form**: `string`
 
-Defined in: [index.ts:3595](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3595)
+Defined in: [index.ts:3596](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3596)
 
 The name of this interrogation form
 
@@ -24,7 +24,7 @@ The name of this interrogation form
 
 > `optional` **result**: `Partial`\<`Record`\<`"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"caption"` \| `"interrogation"` \| `"nsfw"`, `Record`\<`string`, `any`\>\>\>
 
-Defined in: [index.ts:3598](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3598)
+Defined in: [index.ts:3599](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3599)
 
 ***
 
@@ -32,6 +32,6 @@ Defined in: [index.ts:3598](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **state**: `"waiting"` \| `"processing"` \| `"done"` \| `"faulted"` \| `"partial"` \| `"cancelled"`
 
-Defined in: [index.ts:3597](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3597)
+Defined in: [index.ts:3598](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3598)
 
 title: Interrogation State

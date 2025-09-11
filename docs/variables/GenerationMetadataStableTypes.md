@@ -8,4 +8,4 @@
 
 > `const` **GenerationMetadataStableTypes**: `Readonly`\<\{ `batch_index`: `"batch_index"`; `censorship`: `"censorship"`; `extra_source_images`: `"extra_source_images"`; `information`: `"information"`; `lora`: `"lora"`; `source_image`: `"source_image"`; `source_mask`: `"source_mask"`; `ti`: `"ti"`; \}\>
 
-Defined in: [index.ts:209](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L209)
+Defined in: [index.ts:210](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L210)

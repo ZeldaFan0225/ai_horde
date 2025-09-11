@@ -6,7 +6,7 @@
 
 # Interface: DeleteTimeoutIPInput
 
-Defined in: [index.ts:3485](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3485)
+Defined in: [index.ts:3486](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3486)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3485](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > **ipaddr**: `string`
 
-Defined in: [index.ts:3492](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3492)
+Defined in: [index.ts:3493](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3493)
 
 The IP address to remove from timeout
 

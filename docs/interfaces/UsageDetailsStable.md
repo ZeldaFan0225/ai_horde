@@ -6,7 +6,7 @@
 
 # Interface: UsageDetailsStable
 
-Defined in: [index.ts:3175](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3175)
+Defined in: [index.ts:3176](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3176)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:3175](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **megapixelsteps**: `number`
 
-Defined in: [index.ts:3179](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3179)
+Defined in: [index.ts:3180](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3180)
 
 How many megapixelsteps this user has requested
 
@@ -28,7 +28,7 @@ How many megapixelsteps this user has requested
 
 > `optional` **requests**: `number`
 
-Defined in: [index.ts:3177](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3177)
+Defined in: [index.ts:3178](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3178)
 
 How many images this user has requested
 

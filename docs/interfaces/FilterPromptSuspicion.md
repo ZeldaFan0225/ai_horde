@@ -6,7 +6,7 @@
 
 # Interface: FilterPromptSuspicion
 
-Defined in: [index.ts:3645](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3645)
+Defined in: [index.ts:3646](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3646)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3645](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > **matches**: `string`[]
 
-Defined in: [index.ts:3648](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3648)
+Defined in: [index.ts:3649](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3649)
 
 ***
 
@@ -22,6 +22,6 @@ Defined in: [index.ts:3648](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > **suspicion**: `string`
 
-Defined in: [index.ts:3647](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3647)
+Defined in: [index.ts:3648](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3648)
 
 Rates how suspicious the provided prompt is. A suspicion of 2 means it would be blocked.

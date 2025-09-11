@@ -6,7 +6,7 @@
 
 # Interface: DatasetGetResponse
 
-Defined in: [index.ts:3975](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3975)
+Defined in: [index.ts:3976](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3976)
 
 API Interfaces
 
@@ -16,7 +16,7 @@ API Interfaces
 
 > `optional` **description**: `string`
 
-Defined in: [index.ts:3990](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3990)
+Defined in: [index.ts:3991](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3991)
 
 The description of this dataset
 
@@ -32,7 +32,7 @@ This is a dataset of images of cats
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:3980](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3980)
+Defined in: [index.ts:3981](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3981)
 
 The unique identifier for this dataset
 
@@ -48,7 +48,7 @@ The unique identifier for this dataset
 
 > `optional` **image\_count**: `number`
 
-Defined in: [index.ts:3995](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3995)
+Defined in: [index.ts:3996](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3996)
 
 The number of images in this dataset
 
@@ -64,7 +64,7 @@ The number of images in this dataset
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:3985](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3985)
+Defined in: [index.ts:3986](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3986)
 
 The name of this dataset
 
