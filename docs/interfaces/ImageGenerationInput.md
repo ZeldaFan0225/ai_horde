@@ -6,7 +6,7 @@
 
 # Interface: ImageGenerationInput
 
-Defined in: [index.ts:2386](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2386)
+Defined in: [index.ts:2387](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2387)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2386](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **allow\_downgrade**: `boolean`
 
-Defined in: [index.ts:2459](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2459)
+Defined in: [index.ts:2460](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2460)
 
 When true and the request requires upfront kudos and the account does not have enough The request will be downgraded in steps and resolution so that it does not need upfront kudos.
 
@@ -30,7 +30,7 @@ false
 
 > `optional` **censor\_nsfw**: `boolean`
 
-Defined in: [index.ts:2420](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2420)
+Defined in: [index.ts:2421](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2421)
 
 If the request is SFW, and the worker accidentaly generates NSFW, it will send back a censored image.
 
@@ -46,7 +46,7 @@ false
 
 > `optional` **disable\_batching**: `boolean`
 
-Defined in: [index.ts:2454](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2454)
+Defined in: [index.ts:2455](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2455)
 
 When true, this request will not use batching. This will allow you to retrieve accurate seeds. Feature is restricted to trusted users and patreons
 
@@ -62,7 +62,7 @@ false
 
 > `optional` **dry\_run**: `boolean`
 
-Defined in: [index.ts:2447](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2447)
+Defined in: [index.ts:2448](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2448)
 
 When false, the endpoint will simply return the cost of the request in kudos and exit.
 
@@ -78,7 +78,7 @@ false
 
 > `optional` **extra\_slow\_workers**: `boolean`
 
-Defined in: [index.ts:2415](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2415)
+Defined in: [index.ts:2416](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2416)
 
 When True, allows very slower workers to pick up this request. Use this when you don't mind waiting a lot.
 
@@ -94,7 +94,7 @@ false
 
 > `optional` **extra\_source\_images**: [`ExtraSourceImage`](ExtraSourceImage.md)[]
 
-Defined in: [index.ts:2433](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2433)
+Defined in: [index.ts:2434](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2434)
 
 ***
 
@@ -102,7 +102,7 @@ Defined in: [index.ts:2433](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **models**: `string`[]
 
-Defined in: [index.ts:2426](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2426)
+Defined in: [index.ts:2427](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2427)
 
 Specify which models are allowed to be used for this request
 
@@ -112,7 +112,7 @@ Specify which models are allowed to be used for this request
 
 > `optional` **nsfw**: `boolean`
 
-Defined in: [index.ts:2395](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2395)
+Defined in: [index.ts:2396](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2396)
 
 Set to true if this request is NSFW. This will skip workers which censor images.
 
@@ -128,7 +128,7 @@ false
 
 > `optional` **params**: [`ModelGenerationInputStable`](ModelGenerationInputStable.md)
 
-Defined in: [index.ts:2390](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2390)
+Defined in: [index.ts:2391](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2391)
 
 The parameters for the generation
 
@@ -138,7 +138,7 @@ The parameters for the generation
 
 > **prompt**: `string`
 
-Defined in: [index.ts:2388](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2388)
+Defined in: [index.ts:2389](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2389)
 
 The prompt which will be sent to Stable Diffusion to generate an image
 
@@ -148,7 +148,7 @@ The prompt which will be sent to Stable Diffusion to generate an image
 
 > `optional` **proxied\_account**: `string`
 
-Defined in: [index.ts:2449](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2449)
+Defined in: [index.ts:2450](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2450)
 
 If using a service account as a proxy, provide this value to identify the actual account from which this request is coming from.
 
@@ -158,7 +158,7 @@ If using a service account as a proxy, provide this value to identify the actual
 
 > `optional` **r2**: `boolean`
 
-Defined in: [index.ts:2435](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2435)
+Defined in: [index.ts:2436](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2436)
 
 If True, the image will be sent via cloudflare r2 download link
 
@@ -168,7 +168,7 @@ If True, the image will be sent via cloudflare r2 download link
 
 > `optional` **replacement\_filter**: `boolean`
 
-Defined in: [index.ts:2442](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2442)
+Defined in: [index.ts:2443](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2443)
 
 If enabled, suspicious prompts are sanitized through a string replacement filter instead.
 
@@ -184,7 +184,7 @@ true
 
 > `optional` **shared**: `boolean`
 
-Defined in: [index.ts:2437](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2437)
+Defined in: [index.ts:2438](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2438)
 
 If True, The image will be shared with LAION for improving their dataset. This will also reduce your kudos consumption by 2. For anonymous users, this is always True.
 
@@ -194,7 +194,7 @@ If True, The image will be shared with LAION for improving their dataset. This w
 
 > `optional` **slow\_workers**: `boolean`
 
-Defined in: [index.ts:2410](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2410)
+Defined in: [index.ts:2411](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2411)
 
 When True, allows slower workers to pick up this request. Disabling this incurs an extra kudos cost.
 
@@ -210,7 +210,7 @@ true
 
 > `optional` **source\_image**: `string`
 
-Defined in: [index.ts:2428](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2428)
+Defined in: [index.ts:2429](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2429)
 
 The Base64-encoded webp to use for img2img, max siue 3072 * 3072
 
@@ -220,7 +220,7 @@ The Base64-encoded webp to use for img2img, max siue 3072 * 3072
 
 > `optional` **source\_mask**: `string`
 
-Defined in: [index.ts:2432](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2432)
+Defined in: [index.ts:2433](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2433)
 
 If source_processing is set to 'inpainting' or 'outpainting', this parameter can be optionally provided as the Base64-encoded webp mask of the areas to inpaint. If this arg is not passed, the inpainting/outpainting mask has to be embedded as alpha channel
 
@@ -230,7 +230,7 @@ If source_processing is set to 'inpainting' or 'outpainting', this parameter can
 
 > `optional` **source\_processing**: `"img2img"` \| `"inpainting"` \| `"outpainting"` \| `"remix"`
 
-Defined in: [index.ts:2430](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2430)
+Defined in: [index.ts:2431](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2431)
 
 If source_image is provided, specifies how to process it.
 
@@ -240,7 +240,7 @@ If source_image is provided, specifies how to process it.
 
 > `optional` **trusted\_workers**: `boolean`
 
-Defined in: [index.ts:2400](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2400)
+Defined in: [index.ts:2401](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2401)
 
 When true, only trusted workers will serve this request. When False, Evaluating workers will also be used which can increase speed but adds more risk!
 
@@ -256,7 +256,7 @@ true
 
 > `optional` **validated\_backends**: `boolean`
 
-Defined in: [index.ts:2405](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2405)
+Defined in: [index.ts:2406](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2406)
 
 When true, only inference backends that are validated by the AI Horde devs will serve this request. When False, non-validated backends will also be used which can increase speed but you may end up with unexpected results.
 
@@ -272,7 +272,7 @@ true
 
 > `optional` **webhook**: `string`
 
-Defined in: [index.ts:2466](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2466)
+Defined in: [index.ts:2467](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2467)
 
 Provide a URL where the AI Horde will send a POST call after each delivered generation. The request will include the details of the job as well as the request ID.
 
@@ -296,7 +296,7 @@ https://haidra.net/00000000-0000-0000-0000-000000000000
 
 > `optional` **worker\_blacklist**: `boolean`
 
-Defined in: [index.ts:2424](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2424)
+Defined in: [index.ts:2425](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2425)
 
 If true, the worker list will be treated as a blacklist instead of a whitelist.
 
@@ -306,6 +306,6 @@ If true, the worker list will be treated as a blacklist instead of a whitelist.
 
 > `optional` **workers**: `string`[]
 
-Defined in: [index.ts:2422](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2422)
+Defined in: [index.ts:2423](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2423)
 
 Specify which workers are allowed to service this request

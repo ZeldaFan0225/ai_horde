@@ -6,7 +6,7 @@
 
 # Interface: ActiveModelLite
 
-Defined in: [index.ts:3347](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3347)
+Defined in: [index.ts:3348](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3348)
 
 ## Extended by
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:3347](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **count**: `number`
 
-Defined in: [index.ts:3351](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3351)
+Defined in: [index.ts:3352](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3352)
 
 How many workers in this horde are running this model.
 
@@ -28,6 +28,6 @@ How many workers in this horde are running this model.
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:3349](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3349)
+Defined in: [index.ts:3350](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3350)
 
 The name of a model available by workers in this horde.

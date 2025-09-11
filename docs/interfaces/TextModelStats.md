@@ -6,7 +6,7 @@
 
 # Interface: TextModelStats
 
-Defined in: [index.ts:3755](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3755)
+Defined in: [index.ts:3756](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3756)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3755](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **day**: [`SinglePeriodTextModelStats`](../type-aliases/SinglePeriodTextModelStats.md)
 
-Defined in: [index.ts:3756](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3756)
+Defined in: [index.ts:3757](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3757)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [index.ts:3756](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **month**: [`SinglePeriodTextModelStats`](../type-aliases/SinglePeriodTextModelStats.md)
 
-Defined in: [index.ts:3757](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3757)
+Defined in: [index.ts:3758](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3758)
 
 ***
 
@@ -30,4 +30,4 @@ Defined in: [index.ts:3757](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **total**: [`SinglePeriodTextModelStats`](../type-aliases/SinglePeriodTextModelStats.md)
 
-Defined in: [index.ts:3758](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3758)
+Defined in: [index.ts:3759](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3759)

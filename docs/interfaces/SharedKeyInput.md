@@ -6,7 +6,7 @@
 
 # Interface: SharedKeyInput
 
-Defined in: [index.ts:3783](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3783)
+Defined in: [index.ts:3784](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3784)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3783](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **expiry**: `number`
 
-Defined in: [index.ts:3797](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3797)
+Defined in: [index.ts:3798](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3798)
 
 The amount of days after which this key will expire. If -1, this key will not expire
 
@@ -40,7 +40,7 @@ The amount of days after which this key will expire. If -1, this key will not ex
 
 > `optional` **kudos**: `number`
 
-Defined in: [index.ts:3790](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3790)
+Defined in: [index.ts:3791](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3791)
 
 The Kudos limit assigned to this key. If -1, then anyone with this key can use an unlimited amount of kudos from this account.
 
@@ -64,7 +64,7 @@ The Kudos limit assigned to this key. If -1, then anyone with this key can use a
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:3804](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3804)
+Defined in: [index.ts:3805](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3805)
 
 A descriptive name for this key
 

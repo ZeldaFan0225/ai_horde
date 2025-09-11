@@ -6,7 +6,7 @@
 
 # Interface: ModelGenerationInputKobold
 
-Defined in: [index.ts:2307](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2307)
+Defined in: [index.ts:2308](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2308)
 
 ## Extended by
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:2307](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **frmtadsnsp**: `boolean`
 
-Defined in: [index.ts:2318](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2318)
+Defined in: [index.ts:2319](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2319)
 
 Input formatting option. When enabled, adds a leading space to your input if there is no trailing whitespace at the end of the previous action.
 
@@ -34,7 +34,7 @@ false
 
 > `optional` **frmtrmblln**: `boolean`
 
-Defined in: [index.ts:2323](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2323)
+Defined in: [index.ts:2324](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2324)
 
 Output formatting option. When enabled, replaces all occurrences of two or more consecutive newlines in the output with one newline.
 
@@ -50,7 +50,7 @@ false
 
 > `optional` **frmtrmspch**: `boolean`
 
-Defined in: [index.ts:2328](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2328)
+Defined in: [index.ts:2329](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2329)
 
 Output formatting option. When enabled, removes #/@%}{+=~|^<> from the output.
 
@@ -66,7 +66,7 @@ false
 
 > `optional` **frmttriminc**: `boolean`
 
-Defined in: [index.ts:2333](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2333)
+Defined in: [index.ts:2334](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2334)
 
 Output formatting option. When enabled, removes some characters from the end of the output such that the output doesn't end in the middle of a sentence. If the output is less than one sentence long, does nothing.
 
@@ -82,7 +82,7 @@ false
 
 > `optional` **max\_context\_length**: `number`
 
-Defined in: [index.ts:2340](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2340)
+Defined in: [index.ts:2341](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2341)
 
 Maximum number of tokens to send to the model.
 
@@ -106,7 +106,7 @@ Maximum number of tokens to send to the model.
 
 > `optional` **max\_length**: `number`
 
-Defined in: [index.ts:2346](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2346)
+Defined in: [index.ts:2347](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2347)
 
 Number of tokens to generate.
 
@@ -124,7 +124,7 @@ Number of tokens to generate.
 
 > `optional` **n**: `number`
 
-Defined in: [index.ts:2313](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2313)
+Defined in: [index.ts:2314](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2314)
 
 #### Example
 
@@ -146,7 +146,7 @@ Defined in: [index.ts:2313](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **rep\_pen**: `number`
 
-Defined in: [index.ts:2351](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2351)
+Defined in: [index.ts:2352](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2352)
 
 Base repetition penalty value.
 
@@ -160,7 +160,7 @@ Base repetition penalty value.
 
 > `optional` **rep\_pen\_range**: `number`
 
-Defined in: [index.ts:2353](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2353)
+Defined in: [index.ts:2354](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2354)
 
 Repetition penalty range.
 
@@ -170,7 +170,7 @@ Repetition penalty range.
 
 > `optional` **rep\_pen\_slope**: `number`
 
-Defined in: [index.ts:2355](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2355)
+Defined in: [index.ts:2356](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2356)
 
 Repetition penalty slope.
 
@@ -180,7 +180,7 @@ Repetition penalty slope.
 
 > `optional` **sample\_order**: `number`[]
 
-Defined in: [index.ts:2379](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2379)
+Defined in: [index.ts:2380](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2380)
 
 Array of integers representing the sampler order to be used
 
@@ -190,7 +190,7 @@ Array of integers representing the sampler order to be used
 
 > `optional` **singleline**: `boolean`
 
-Defined in: [index.ts:2360](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2360)
+Defined in: [index.ts:2361](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2361)
 
 Output formatting option. When enabled, removes everything after the first line of the output, including the newline.
 
@@ -206,7 +206,7 @@ false
 
 > `optional` **soft\_prompt**: `string`
 
-Defined in: [index.ts:2362](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2362)
+Defined in: [index.ts:2363](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2363)
 
 Soft prompt to use when generating. If set to the empty string or any other string containing no non-whitespace characters, uses no soft prompt.
 
@@ -216,7 +216,7 @@ Soft prompt to use when generating. If set to the empty string or any other stri
 
 > `optional` **temperature**: `number`
 
-Defined in: [index.ts:2367](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2367)
+Defined in: [index.ts:2368](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2368)
 
 Temperature value.
 
@@ -230,7 +230,7 @@ Temperature value.
 
 > `optional` **tfs**: `number`
 
-Defined in: [index.ts:2369](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2369)
+Defined in: [index.ts:2370](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2370)
 
 Tail free sampling value.
 
@@ -240,7 +240,7 @@ Tail free sampling value.
 
 > `optional` **top\_a**: `number`
 
-Defined in: [index.ts:2371](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2371)
+Defined in: [index.ts:2372](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2372)
 
 Top-a sampling value.
 
@@ -250,7 +250,7 @@ Top-a sampling value.
 
 > `optional` **top\_k**: `number`
 
-Defined in: [index.ts:2373](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2373)
+Defined in: [index.ts:2374](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2374)
 
 Top-k sampling value.
 
@@ -260,7 +260,7 @@ Top-k sampling value.
 
 > `optional` **top\_p**: `number`
 
-Defined in: [index.ts:2375](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2375)
+Defined in: [index.ts:2376](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2376)
 
 Top-p sampling value.
 
@@ -270,6 +270,6 @@ Top-p sampling value.
 
 > `optional` **typical**: `number`
 
-Defined in: [index.ts:2377](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2377)
+Defined in: [index.ts:2378](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2378)
 
 Typical sampling value.

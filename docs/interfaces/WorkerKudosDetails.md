@@ -6,7 +6,7 @@
 
 # Interface: WorkerKudosDetails
 
-Defined in: [index.ts:3313](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3313)
+Defined in: [index.ts:3314](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3314)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3313](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **generated**: `number`
 
-Defined in: [index.ts:3315](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3315)
+Defined in: [index.ts:3316](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3316)
 
 How much Kudos this worker has received for generating images
 
@@ -24,6 +24,6 @@ How much Kudos this worker has received for generating images
 
 > `optional` **uptime**: `number`
 
-Defined in: [index.ts:3317](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3317)
+Defined in: [index.ts:3318](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3318)
 
 How much Kudos this worker has received for staying online longer

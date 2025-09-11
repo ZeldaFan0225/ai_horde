@@ -6,7 +6,7 @@
 
 # Interface: GenerationSubmitted
 
-Defined in: [index.ts:3057](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3057)
+Defined in: [index.ts:3058](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3058)
 
 ## Properties
 
@@ -14,6 +14,6 @@ Defined in: [index.ts:3057](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **reward**: `number`
 
-Defined in: [index.ts:3059](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3059)
+Defined in: [index.ts:3060](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3060)
 
 The amount of kudos gained for submitting this request

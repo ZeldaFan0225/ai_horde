@@ -6,7 +6,7 @@
 
 # Interface: PutNewFilter
 
-Defined in: [index.ts:3707](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3707)
+Defined in: [index.ts:3708](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3708)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3707](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > **description**: `string`
 
-Defined in: [index.ts:3722](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3722)
+Defined in: [index.ts:3723](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3723)
 
 Description about this regex
 
@@ -24,7 +24,7 @@ Description about this regex
 
 > **filter\_type**: `number`
 
-Defined in: [index.ts:3718](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3718)
+Defined in: [index.ts:3719](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3719)
 
 The integer defining this filter type
 
@@ -42,7 +42,7 @@ The integer defining this filter type
 
 > **regex**: `string`
 
-Defined in: [index.ts:3712](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3712)
+Defined in: [index.ts:3713](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3713)
 
 The regex for this filter.
 

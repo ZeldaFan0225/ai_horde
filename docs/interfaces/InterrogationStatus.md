@@ -6,7 +6,7 @@
 
 # Interface: InterrogationStatus
 
-Defined in: [index.ts:3601](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3601)
+Defined in: [index.ts:3602](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3602)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3601](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **forms**: [`InterrogationFormStatus`](InterrogationFormStatus.md)[]
 
-Defined in: [index.ts:3604](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3604)
+Defined in: [index.ts:3605](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3605)
 
 ***
 
@@ -22,6 +22,6 @@ Defined in: [index.ts:3604](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **state**: `"waiting"` \| `"processing"` \| `"done"` \| `"faulted"` \| `"partial"` \| `"cancelled"`
 
-Defined in: [index.ts:3603](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3603)
+Defined in: [index.ts:3604](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3604)
 
 title: Interrogation State

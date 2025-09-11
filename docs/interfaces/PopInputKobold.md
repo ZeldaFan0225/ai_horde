@@ -6,7 +6,7 @@
 
 # Interface: PopInputKobold
 
-Defined in: [index.ts:2867](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2867)
+Defined in: [index.ts:2868](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2868)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:2867](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **blacklist**: `string`[]
 
-Defined in: [index.ts:2874](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2874)
+Defined in: [index.ts:2875](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2875)
 
 Words which, when detected will refuse to pick up any jobs
 
@@ -28,7 +28,7 @@ Words which, when detected will refuse to pick up any jobs
 
 > `optional` **bridge\_agent**: `string`
 
-Defined in: [index.ts:2900](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2900)
+Defined in: [index.ts:2901](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2901)
 
 The worker name, version and website
 
@@ -58,7 +58,7 @@ AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 
 > **bridge\_version**: `number`
 
-Defined in: [index.ts:2893](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2893)
+Defined in: [index.ts:2894](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2894)
 
 The version of the bridge used by this worker
 
@@ -78,7 +78,7 @@ The version of the bridge used by this worker
 
 > `optional` **max\_pixels**: `number`
 
-Defined in: [index.ts:2872](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2872)
+Defined in: [index.ts:2873](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2873)
 
 The maximum amount of pixels this worker can generate
 
@@ -94,7 +94,7 @@ The maximum amount of pixels this worker can generate
 
 > `optional` **models**: `string`[]
 
-Defined in: [index.ts:2888](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2888)
+Defined in: [index.ts:2889](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2889)
 
 Which models this worker is serving
 
@@ -108,7 +108,7 @@ Which models this worker is serving
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:2879](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2879)
+Defined in: [index.ts:2880](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2880)
 
 The Name of the Worker
 
@@ -122,7 +122,7 @@ The Name of the Worker
 
 > `optional` **nsfw**: `boolean`
 
-Defined in: [index.ts:2886](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2886)
+Defined in: [index.ts:2887](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2887)
 
 Whether this worker can generate NSFW requests or not.
 
@@ -142,7 +142,7 @@ false
 
 > `optional` **priority\_usernames**: `string`[]
 
-Defined in: [index.ts:2881](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2881)
+Defined in: [index.ts:2882](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2882)
 
 Users with priority to use this worker
 
@@ -156,7 +156,7 @@ Users with priority to use this worker
 
 > `optional` **require\_upfront\_kudos**: `boolean`
 
-Defined in: [index.ts:2913](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2913)
+Defined in: [index.ts:2914](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2914)
 
 If True, this worker will only pick up requests where the owner has the required kudos to consume already available
 
@@ -182,7 +182,7 @@ false
 
 > `optional` **threads**: `number`
 
-Defined in: [index.ts:2907](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2907)
+Defined in: [index.ts:2908](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2908)
 
 How many threads this worker is running. This is used to accurately the current power available in the horde
 

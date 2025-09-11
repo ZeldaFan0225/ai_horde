@@ -6,7 +6,7 @@
 
 # Interface: SinglePeriodTextStats
 
-Defined in: [index.ts:3776](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3776)
+Defined in: [index.ts:3777](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3777)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3776](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > `optional` **requests**: `number`
 
-Defined in: [index.ts:3778](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3778)
+Defined in: [index.ts:3779](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3779)
 
 The amount of text requests generated during this period.
 
@@ -24,6 +24,6 @@ The amount of text requests generated during this period.
 
 > `optional` **tokens**: `number`
 
-Defined in: [index.ts:3780](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L3780)
+Defined in: [index.ts:3781](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3781)
 
 The amount of tokens generated during this period.

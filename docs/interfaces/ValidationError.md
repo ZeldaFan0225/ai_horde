@@ -6,7 +6,7 @@
 
 # Interface: ValidationError
 
-Defined in: [index.ts:2734](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2734)
+Defined in: [index.ts:2735](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2735)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:2734](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > **errors**: `Record`\<`string`, `string`\>
 
-Defined in: [index.ts:2735](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2735)
+Defined in: [index.ts:2736](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2736)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [index.ts:2735](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49
 
 > **message**: `string`
 
-Defined in: [index.ts:2740](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2740)
+Defined in: [index.ts:2741](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2741)
 
 The error message for this status code.
 
@@ -40,7 +40,7 @@ The error message for this status code.
 
 > **rc**: `string`
 
-Defined in: [index.ts:2742](https://github.com/ZeldaFan0225/ai_horde/blob/b59c49116e5e8c472a5e51bbe3d1a4f284b0c6ea/index.ts#L2742)
+Defined in: [index.ts:2743](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2743)
 
 The Error code that can be translated into a text
 
