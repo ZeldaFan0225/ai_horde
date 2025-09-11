@@ -1,65 +1,57 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / NoValidInterrogationsFound
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / NoValidInterrogationsFound
 
 # Interface: NoValidInterrogationsFound
 
-## Table of contents
-
-### Properties
-
-- [bridge\_version](NoValidInterrogationsFound.md#bridge_version)
-- [untrusted](NoValidInterrogationsFound.md#untrusted)
-- [worker\_id](NoValidInterrogationsFound.md#worker_id)
+Defined in: [index.ts:3569](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3569)
 
 ## Properties
 
-### bridge\_version
+### bridge\_version?
 
-• `Optional` **bridge\_version**: `number`
+> `optional` **bridge\_version**: `number`
+
+Defined in: [index.ts:3585](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3585)
 
 How many waiting requests were skipped because they require a higher version of the bridge than this worker is running (upgrade if you see this in your skipped list).
 
-**`Example`**
+#### Example
 
 ```ts
 0
 ```
 
-**`Minimum`**
+#### Minimum
 
 0
 
-#### Defined in
+***
 
-[index.ts:2782](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2782)
+### untrusted?
 
-___
+> `optional` **untrusted**: `number`
 
-### untrusted
-
-• `Optional` **untrusted**: `number`
+Defined in: [index.ts:3579](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3579)
 
 How many waiting requests were skipped because they demanded a trusted worker which this worker is not.
 
-**`Minimum`**
+#### Minimum
 
 0
 
-#### Defined in
+***
 
-[index.ts:2776](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2776)
+### worker\_id?
 
-___
+> `optional` **worker\_id**: `number`
 
-### worker\_id
-
-• `Optional` **worker\_id**: `number`
+Defined in: [index.ts:3574](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3574)
 
 How many waiting requests were skipped because they demanded a specific worker.
 
-**`Minimum`**
+#### Minimum
 
 0
-
-#### Defined in
-
-[index.ts:2771](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2771)

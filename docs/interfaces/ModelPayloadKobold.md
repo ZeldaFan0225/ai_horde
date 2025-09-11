@@ -1,47 +1,28 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ModelPayloadKobold
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ModelPayloadKobold
 
 # Interface: ModelPayloadKobold
 
-## Hierarchy
+Defined in: [index.ts:2382](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2382)
+
+## Extends
 
 - [`ModelGenerationInputKobold`](ModelGenerationInputKobold.md)
 
-  ↳ **`ModelPayloadKobold`**
-
-## Table of contents
-
-### Properties
-
-- [frmtadsnsp](ModelPayloadKobold.md#frmtadsnsp)
-- [frmtrmblln](ModelPayloadKobold.md#frmtrmblln)
-- [frmtrmspch](ModelPayloadKobold.md#frmtrmspch)
-- [frmttriminc](ModelPayloadKobold.md#frmttriminc)
-- [max\_context\_length](ModelPayloadKobold.md#max_context_length)
-- [max\_length](ModelPayloadKobold.md#max_length)
-- [n](ModelPayloadKobold.md#n)
-- [prompt](ModelPayloadKobold.md#prompt)
-- [rep\_pen](ModelPayloadKobold.md#rep_pen)
-- [rep\_pen\_range](ModelPayloadKobold.md#rep_pen_range)
-- [rep\_pen\_slope](ModelPayloadKobold.md#rep_pen_slope)
-- [sample\_order](ModelPayloadKobold.md#sample_order)
-- [singleline](ModelPayloadKobold.md#singleline)
-- [soft\_prompt](ModelPayloadKobold.md#soft_prompt)
-- [temperature](ModelPayloadKobold.md#temperature)
-- [tfs](ModelPayloadKobold.md#tfs)
-- [top\_a](ModelPayloadKobold.md#top_a)
-- [top\_k](ModelPayloadKobold.md#top_k)
-- [top\_p](ModelPayloadKobold.md#top_p)
-- [typical](ModelPayloadKobold.md#typical)
-
 ## Properties
 
-### frmtadsnsp
+### frmtadsnsp?
 
-• `Optional` **frmtadsnsp**: `boolean`
+> `optional` **frmtadsnsp**: `boolean`
+
+Defined in: [index.ts:2318](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2318)
 
 Input formatting option. When enabled, adds a leading space to your input if there is no trailing whitespace at the end of the previous action.
 
-**`Example`**
+#### Example
 
 ```ts
 false
@@ -49,21 +30,19 @@ false
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[frmtadsnsp](ModelGenerationInputKobold.md#frmtadsnsp)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`frmtadsnsp`](ModelGenerationInputKobold.md#frmtadsnsp)
 
-#### Defined in
+***
 
-[index.ts:1572](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1572)
+### frmtrmblln?
 
-___
+> `optional` **frmtrmblln**: `boolean`
 
-### frmtrmblln
-
-• `Optional` **frmtrmblln**: `boolean`
+Defined in: [index.ts:2323](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2323)
 
 Output formatting option. When enabled, replaces all occurrences of two or more consecutive newlines in the output with one newline.
 
-**`Example`**
+#### Example
 
 ```ts
 false
@@ -71,21 +50,19 @@ false
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[frmtrmblln](ModelGenerationInputKobold.md#frmtrmblln)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`frmtrmblln`](ModelGenerationInputKobold.md#frmtrmblln)
 
-#### Defined in
+***
 
-[index.ts:1577](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1577)
+### frmtrmspch?
 
-___
+> `optional` **frmtrmspch**: `boolean`
 
-### frmtrmspch
-
-• `Optional` **frmtrmspch**: `boolean`
+Defined in: [index.ts:2328](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2328)
 
 Output formatting option. When enabled, removes #/@%}{+=~|^<> from the output.
 
-**`Example`**
+#### Example
 
 ```ts
 false
@@ -93,21 +70,19 @@ false
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[frmtrmspch](ModelGenerationInputKobold.md#frmtrmspch)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`frmtrmspch`](ModelGenerationInputKobold.md#frmtrmspch)
 
-#### Defined in
+***
 
-[index.ts:1582](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1582)
+### frmttriminc?
 
-___
+> `optional` **frmttriminc**: `boolean`
 
-### frmttriminc
-
-• `Optional` **frmttriminc**: `boolean`
+Defined in: [index.ts:2333](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2333)
 
 Output formatting option. When enabled, removes some characters from the end of the output such that the output doesn't end in the middle of a sentence. If the output is less than one sentence long, does nothing.
 
-**`Example`**
+#### Example
 
 ```ts
 false
@@ -115,181 +90,163 @@ false
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[frmttriminc](ModelGenerationInputKobold.md#frmttriminc)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`frmttriminc`](ModelGenerationInputKobold.md#frmttriminc)
 
-#### Defined in
+***
 
-[index.ts:1587](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1587)
+### max\_context\_length?
 
-___
+> `optional` **max\_context\_length**: `number`
 
-### max\_context\_length
-
-• `Optional` **max\_context\_length**: `number`
+Defined in: [index.ts:2340](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2340)
 
 Maximum number of tokens to send to the model.
 
-**`Example`**
+#### Example
 
 ```ts
 1024
 ```
 
-**`Minimum`**
+#### Minimum
 
 80
 
-**`Maximum`**
+#### Maximum
 
 2048
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[max_context_length](ModelGenerationInputKobold.md#max_context_length)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`max_context_length`](ModelGenerationInputKobold.md#max_context_length)
 
-#### Defined in
+***
 
-[index.ts:1594](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1594)
+### max\_length?
 
-___
+> `optional` **max\_length**: `number`
 
-### max\_length
-
-• `Optional` **max\_length**: `number`
+Defined in: [index.ts:2346](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2346)
 
 Number of tokens to generate.
 
-**`Minimum`**
+#### Minimum
 
 16
 
-**`Maximum`**
+#### Maximum
 
 512
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[max_length](ModelGenerationInputKobold.md#max_length)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`max_length`](ModelGenerationInputKobold.md#max_length)
 
-#### Defined in
+***
 
-[index.ts:1600](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1600)
+### n?
 
-___
+> `optional` **n**: `number`
 
-### n
+Defined in: [index.ts:2313](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2313)
 
-• `Optional` **n**: `number`
-
-**`Example`**
+#### Example
 
 ```ts
 1
 ```
 
-**`Minimum`**
+#### Minimum
 
 1
 
-**`Maximum`**
+#### Maximum
 
 20
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[n](ModelGenerationInputKobold.md#n)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`n`](ModelGenerationInputKobold.md#n)
 
-#### Defined in
+***
 
-[index.ts:1567](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1567)
+### prompt?
 
-___
+> `optional` **prompt**: `string`
 
-### prompt
+Defined in: [index.ts:2383](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2383)
 
-• `Optional` **prompt**: `string`
+***
 
-#### Defined in
+### rep\_pen?
 
-[index.ts:1637](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1637)
+> `optional` **rep\_pen**: `number`
 
-___
-
-### rep\_pen
-
-• `Optional` **rep\_pen**: `number`
+Defined in: [index.ts:2351](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2351)
 
 Base repetition penalty value.
 
-**`Maximum`**
+#### Maximum
 
 1
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[rep_pen](ModelGenerationInputKobold.md#rep_pen)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`rep_pen`](ModelGenerationInputKobold.md#rep_pen)
 
-#### Defined in
+***
 
-[index.ts:1605](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1605)
+### rep\_pen\_range?
 
-___
+> `optional` **rep\_pen\_range**: `number`
 
-### rep\_pen\_range
-
-• `Optional` **rep\_pen\_range**: `number`
+Defined in: [index.ts:2353](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2353)
 
 Repetition penalty range.
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[rep_pen_range](ModelGenerationInputKobold.md#rep_pen_range)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`rep_pen_range`](ModelGenerationInputKobold.md#rep_pen_range)
 
-#### Defined in
+***
 
-[index.ts:1607](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1607)
+### rep\_pen\_slope?
 
-___
+> `optional` **rep\_pen\_slope**: `number`
 
-### rep\_pen\_slope
-
-• `Optional` **rep\_pen\_slope**: `number`
+Defined in: [index.ts:2355](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2355)
 
 Repetition penalty slope.
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[rep_pen_slope](ModelGenerationInputKobold.md#rep_pen_slope)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`rep_pen_slope`](ModelGenerationInputKobold.md#rep_pen_slope)
 
-#### Defined in
+***
 
-[index.ts:1609](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1609)
+### sample\_order?
 
-___
+> `optional` **sample\_order**: `number`[]
 
-### sample\_order
-
-• `Optional` **sample\_order**: `number`[]
+Defined in: [index.ts:2379](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2379)
 
 Array of integers representing the sampler order to be used
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[sample_order](ModelGenerationInputKobold.md#sample_order)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`sample_order`](ModelGenerationInputKobold.md#sample_order)
 
-#### Defined in
+***
 
-[index.ts:1633](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1633)
+### singleline?
 
-___
+> `optional` **singleline**: `boolean`
 
-### singleline
-
-• `Optional` **singleline**: `boolean`
+Defined in: [index.ts:2360](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2360)
 
 Output formatting option. When enabled, removes everything after the first line of the output, including the newline.
 
-**`Example`**
+#### Example
 
 ```ts
 false
@@ -297,124 +254,106 @@ false
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[singleline](ModelGenerationInputKobold.md#singleline)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`singleline`](ModelGenerationInputKobold.md#singleline)
 
-#### Defined in
+***
 
-[index.ts:1614](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1614)
+### soft\_prompt?
 
-___
+> `optional` **soft\_prompt**: `string`
 
-### soft\_prompt
-
-• `Optional` **soft\_prompt**: `string`
+Defined in: [index.ts:2362](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2362)
 
 Soft prompt to use when generating. If set to the empty string or any other string containing no non-whitespace characters, uses no soft prompt.
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[soft_prompt](ModelGenerationInputKobold.md#soft_prompt)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`soft_prompt`](ModelGenerationInputKobold.md#soft_prompt)
 
-#### Defined in
+***
 
-[index.ts:1616](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1616)
+### temperature?
 
-___
+> `optional` **temperature**: `number`
 
-### temperature
-
-• `Optional` **temperature**: `number`
+Defined in: [index.ts:2367](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2367)
 
 Temperature value.
 
-**`Minimum`**
+#### Minimum
 
 0
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[temperature](ModelGenerationInputKobold.md#temperature)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`temperature`](ModelGenerationInputKobold.md#temperature)
 
-#### Defined in
+***
 
-[index.ts:1621](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1621)
+### tfs?
 
-___
+> `optional` **tfs**: `number`
 
-### tfs
-
-• `Optional` **tfs**: `number`
+Defined in: [index.ts:2369](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2369)
 
 Tail free sampling value.
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[tfs](ModelGenerationInputKobold.md#tfs)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`tfs`](ModelGenerationInputKobold.md#tfs)
 
-#### Defined in
+***
 
-[index.ts:1623](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1623)
+### top\_a?
 
-___
+> `optional` **top\_a**: `number`
 
-### top\_a
-
-• `Optional` **top\_a**: `number`
+Defined in: [index.ts:2371](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2371)
 
 Top-a sampling value.
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[top_a](ModelGenerationInputKobold.md#top_a)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`top_a`](ModelGenerationInputKobold.md#top_a)
 
-#### Defined in
+***
 
-[index.ts:1625](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1625)
+### top\_k?
 
-___
+> `optional` **top\_k**: `number`
 
-### top\_k
-
-• `Optional` **top\_k**: `number`
+Defined in: [index.ts:2373](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2373)
 
 Top-k sampling value.
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[top_k](ModelGenerationInputKobold.md#top_k)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`top_k`](ModelGenerationInputKobold.md#top_k)
 
-#### Defined in
+***
 
-[index.ts:1627](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1627)
+### top\_p?
 
-___
+> `optional` **top\_p**: `number`
 
-### top\_p
-
-• `Optional` **top\_p**: `number`
+Defined in: [index.ts:2375](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2375)
 
 Top-p sampling value.
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[top_p](ModelGenerationInputKobold.md#top_p)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`top_p`](ModelGenerationInputKobold.md#top_p)
 
-#### Defined in
+***
 
-[index.ts:1629](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1629)
+### typical?
 
-___
+> `optional` **typical**: `number`
 
-### typical
-
-• `Optional` **typical**: `number`
+Defined in: [index.ts:2377](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2377)
 
 Typical sampling value.
 
 #### Inherited from
 
-[ModelGenerationInputKobold](ModelGenerationInputKobold.md).[typical](ModelGenerationInputKobold.md#typical)
-
-#### Defined in
-
-[index.ts:1631](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1631)
+[`ModelGenerationInputKobold`](ModelGenerationInputKobold.md).[`typical`](ModelGenerationInputKobold.md#typical)

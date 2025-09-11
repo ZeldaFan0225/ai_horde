@@ -1,87 +1,73 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / FilterDetails
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / FilterDetails
 
 # Interface: FilterDetails
 
-## Table of contents
-
-### Properties
-
-- [description](FilterDetails.md#description)
-- [filter\_type](FilterDetails.md#filter_type)
-- [id](FilterDetails.md#id)
-- [regex](FilterDetails.md#regex)
-- [user](FilterDetails.md#user)
+Defined in: [index.ts:3665](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3665)
 
 ## Properties
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
+
+Defined in: [index.ts:3682](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3682)
 
 Description about this regex
 
-#### Defined in
-
-[index.ts:2865](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2865)
-
-___
+***
 
 ### filter\_type
 
-• **filter\_type**: `number`
+> **filter\_type**: `number`
+
+Defined in: [index.ts:3678](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3678)
 
 The integer defining this filter type
 
-**`Minimum`**
+#### Minimum
 
 10
 
-**`Maximum`**
+#### Maximum
 
 29
 
-#### Defined in
-
-[index.ts:2861](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2861)
-
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
+
+Defined in: [index.ts:3667](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3667)
 
 The UUID of this filter
 
-#### Defined in
-
-[index.ts:2850](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2850)
-
-___
+***
 
 ### regex
 
-• **regex**: `string`
+> **regex**: `string`
+
+Defined in: [index.ts:3672](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3672)
 
 The regex for this filter.
 
-**`Example`**
+#### Example
 
 ```ts
 ac.*
 ```
 
-#### Defined in
-
-[index.ts:2855](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2855)
-
-___
+***
 
 ### user
 
-• **user**: `string`
+> **user**: `string`
+
+Defined in: [index.ts:3686](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3686)
 
 The moderator which added or last updated this regex
-
-#### Defined in
-
-[index.ts:2869](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2869)

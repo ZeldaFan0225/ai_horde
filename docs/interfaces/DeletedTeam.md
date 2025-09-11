@@ -1,34 +1,29 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / DeletedTeam
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / DeletedTeam
 
 # Interface: DeletedTeam
 
-## Table of contents
-
-### Properties
-
-- [deleted\_id](DeletedTeam.md#deleted_id)
-- [deleted\_name](DeletedTeam.md#deleted_name)
+Defined in: [index.ts:3478](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3478)
 
 ## Properties
 
-### deleted\_id
+### deleted\_id?
 
-• `Optional` **deleted\_id**: `string`
+> `optional` **deleted\_id**: `string`
+
+Defined in: [index.ts:3480](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3480)
 
 The ID of the deleted team
 
-#### Defined in
+***
 
-[index.ts:2677](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2677)
+### deleted\_name?
 
-___
+> `optional` **deleted\_name**: `string`
 
-### deleted\_name
-
-• `Optional` **deleted\_name**: `string`
+Defined in: [index.ts:3482](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3482)
 
 The Name of the deleted team
-
-#### Defined in
-
-[index.ts:2679](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2679)

@@ -1,30 +1,25 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / InterrogationPopPayload
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / InterrogationPopPayload
 
 # Interface: InterrogationPopPayload
 
-## Table of contents
-
-### Properties
-
-- [forms](InterrogationPopPayload.md#forms)
-- [skipped](InterrogationPopPayload.md#skipped)
+Defined in: [index.ts:3588](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3588)
 
 ## Properties
 
 ### forms
 
-• **forms**: [`InterrogationPopFormPayload`](InterrogationPopFormPayload.md)
+> **forms**: [`InterrogationPopFormPayload`](InterrogationPopFormPayload.md)
 
-#### Defined in
+Defined in: [index.ts:3589](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3589)
 
-[index.ts:2786](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2786)
+***
 
-___
+### skipped?
 
-### skipped
+> `optional` **skipped**: [`NoValidInterrogationsFound`](NoValidInterrogationsFound.md)
 
-• `Optional` **skipped**: [`NoValidInterrogationsFound`](NoValidInterrogationsFound.md)
-
-#### Defined in
-
-[index.ts:2787](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2787)
+Defined in: [index.ts:3590](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3590)

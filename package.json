@@ -31,9 +31,9 @@
   },
   "devDependencies": {
     "@types/node": "^20.2.5",
-    "esbuild": "^0.17.19",
-    "typedoc": "^0.26.8",
-    "typedoc-plugin-markdown": "^3.15.3",
+    "esbuild": "^0.25.9",
+    "typedoc": "^0.28.12",
+    "typedoc-plugin-markdown": "^4.8.1",
     "typescript": "^5.6.3"
   },
   "dependencies": {

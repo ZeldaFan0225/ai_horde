@@ -1,47 +1,39 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ModifyTeam
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ModifyTeam
 
 # Interface: ModifyTeam
 
-## Table of contents
-
-### Properties
-
-- [id](ModifyTeam.md#id)
-- [info](ModifyTeam.md#info)
-- [name](ModifyTeam.md#name)
+Defined in: [index.ts:3415](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3415)
 
 ## Properties
 
-### id
+### id?
 
-• `Optional` **id**: `string`
+> `optional` **id**: `string`
+
+Defined in: [index.ts:3417](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3417)
 
 The ID of the team
 
-#### Defined in
+***
 
-[index.ts:2614](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2614)
+### info?
 
-___
+> `optional` **info**: `string`
 
-### info
-
-• `Optional` **info**: `string`
+Defined in: [index.ts:3421](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3421)
 
 The Info of the team
 
-#### Defined in
+***
 
-[index.ts:2618](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2618)
+### name?
 
-___
+> `optional` **name**: `string`
 
-### name
-
-• `Optional` **name**: `string`
+Defined in: [index.ts:3419](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3419)
 
 The Name of the team
-
-#### Defined in
-
-[index.ts:2616](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2616)

@@ -1,56 +1,51 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / AestheticRating
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / AestheticRating
 
 # Interface: AestheticRating
 
-## Table of contents
-
-### Properties
-
-- [id](AestheticRating.md#id)
-- [rating](AestheticRating.md#rating)
+Defined in: [index.ts:3625](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3625)
 
 ## Properties
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
+
+Defined in: [index.ts:3632](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3632)
 
 The UUID of image being rated
 
-**`Example`**
+#### Example
 
 ```ts
 6038971e-f0b0-4fdd-a3bb-148f561f815e
 ```
 
-**`Min Length`**
+#### Min Length
 
 36
 
-**`Max Length`**
+#### Max Length
 
 36
 
-#### Defined in
-
-[index.ts:2829](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2829)
-
-___
+***
 
 ### rating
 
-• **rating**: `number`
+> **rating**: `number`
+
+Defined in: [index.ts:3638](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3638)
 
 The aesthetic rating 1-10 for this image
 
-**`Minimum`**
+#### Minimum
 
 1
 
-**`Maximum`**
+#### Maximum
 
 10
-
-#### Defined in
-
-[index.ts:2835](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2835)

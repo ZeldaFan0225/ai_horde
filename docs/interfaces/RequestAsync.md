@@ -1,34 +1,47 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / RequestAsync
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / RequestAsync
 
 # Interface: RequestAsync
 
-## Table of contents
-
-### Properties
-
-- [id](RequestAsync.md#id)
-- [message](RequestAsync.md#message)
+Defined in: [index.ts:2834](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2834)
 
 ## Properties
 
-### id
+### id?
 
-• `Optional` **id**: `string`
+> `optional` **id**: `string`
+
+Defined in: [index.ts:2836](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2836)
 
 The UUID of the request. Use this to retrieve the request status in the future
 
-#### Defined in
+***
 
-[index.ts:2049](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2049)
+### kudos?
 
-___
+> `optional` **kudos**: `number`
 
-### message
+Defined in: [index.ts:2838](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2838)
 
-• `Optional` **message**: `string`
+The expected kudos consumption for this request
+
+***
+
+### message?
+
+> `optional` **message**: `string`
+
+Defined in: [index.ts:2840](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2840)
 
 Any extra information from the horde about this request
 
-#### Defined in
+***
 
-[index.ts:2051](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2051)
+### warnings?
+
+> `optional` **warnings**: [`RequestSingleWarning`](RequestSingleWarning.md)[]
+
+Defined in: [index.ts:2841](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2841)

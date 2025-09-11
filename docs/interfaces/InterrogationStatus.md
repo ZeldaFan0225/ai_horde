@@ -1,32 +1,27 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / InterrogationStatus
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / InterrogationStatus
 
 # Interface: InterrogationStatus
 
-## Table of contents
-
-### Properties
-
-- [forms](InterrogationStatus.md#forms)
-- [state](InterrogationStatus.md#state)
+Defined in: [index.ts:3601](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3601)
 
 ## Properties
 
-### forms
+### forms?
 
-• `Optional` **forms**: [`InterrogationFormStatus`](InterrogationFormStatus.md)[]
+> `optional` **forms**: [`InterrogationFormStatus`](InterrogationFormStatus.md)[]
 
-#### Defined in
+Defined in: [index.ts:3604](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3604)
 
-[index.ts:2801](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2801)
+***
 
-___
+### state?
 
-### state
+> `optional` **state**: `"waiting"` \| `"processing"` \| `"done"` \| `"faulted"` \| `"partial"` \| `"cancelled"`
 
-• `Optional` **state**: ``"waiting"`` \| ``"processing"`` \| ``"done"`` \| ``"faulted"`` \| ``"partial"`` \| ``"cancelled"``
+Defined in: [index.ts:3603](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3603)
 
 title: Interrogation State
-
-#### Defined in
-
-[index.ts:2800](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2800)

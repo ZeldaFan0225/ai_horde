@@ -1,52 +1,41 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / UserRecords
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / UserRecords
 
 # Interface: UserRecords
 
-## Table of contents
-
-### Properties
-
-- [contribution](UserRecords.md#contribution)
-- [fulfillment](UserRecords.md#fulfillment)
-- [request](UserRecords.md#request)
-- [usage](UserRecords.md#usage)
+Defined in: [index.ts:3093](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3093)
 
 ## Properties
 
-### contribution
+### contribution?
 
-• `Optional` **contribution**: [`UserThingUsageRecords`](UserThingUsageRecords.md)
+> `optional` **contribution**: [`UserThingUsageRecords`](UserThingUsageRecords.md)
 
-#### Defined in
+Defined in: [index.ts:3095](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3095)
 
-[index.ts:2292](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2292)
+***
 
-___
+### fulfillment?
 
-### fulfillment
+> `optional` **fulfillment**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
 
-• `Optional` **fulfillment**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
+Defined in: [index.ts:3096](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3096)
 
-#### Defined in
+***
 
-[index.ts:2293](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2293)
+### request?
 
-___
+> `optional` **request**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
 
-### request
+Defined in: [index.ts:3097](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3097)
 
-• `Optional` **request**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
+***
 
-#### Defined in
+### usage?
 
-[index.ts:2294](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2294)
+> `optional` **usage**: [`UserThingUsageRecords`](UserThingUsageRecords.md)
 
-___
-
-### usage
-
-• `Optional` **usage**: [`UserThingUsageRecords`](UserThingUsageRecords.md)
-
-#### Defined in
-
-[index.ts:2291](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2291)
+Defined in: [index.ts:3094](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3094)

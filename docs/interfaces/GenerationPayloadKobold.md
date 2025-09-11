@@ -1,69 +1,55 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / GenerationPayloadKobold
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / GenerationPayloadKobold
 
 # Interface: GenerationPayloadKobold
 
-## Table of contents
-
-### Properties
-
-- [id](GenerationPayloadKobold.md#id)
-- [model](GenerationPayloadKobold.md#model)
-- [payload](GenerationPayloadKobold.md#payload)
-- [skipped](GenerationPayloadKobold.md#skipped)
-- [softprompt](GenerationPayloadKobold.md#softprompt)
+Defined in: [index.ts:2927](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2927)
 
 ## Properties
 
-### id
+### id?
 
-• `Optional` **id**: `string`
+> `optional` **id**: `string`
+
+Defined in: [index.ts:2930](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2930)
 
 The UUID for this text
 
-#### Defined in
+***
 
-[index.ts:2127](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2127)
+### model?
 
-___
+> `optional` **model**: `string`
 
-### model
-
-• `Optional` **model**: `string`
+Defined in: [index.ts:2935](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2935)
 
 Which of the available models to use for this request
 
-#### Defined in
+***
 
-[index.ts:2132](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2132)
+### payload?
 
-___
+> `optional` **payload**: [`ModelPayloadKobold`](ModelPayloadKobold.md)
 
-### payload
+Defined in: [index.ts:2928](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2928)
 
-• `Optional` **payload**: [`ModelPayloadKobold`](ModelPayloadKobold.md)
+***
 
-#### Defined in
+### skipped?
 
-[index.ts:2125](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2125)
+> `optional` **skipped**: [`NoValidRequestFoundKobold`](NoValidRequestFoundKobold.md)
 
-___
+Defined in: [index.ts:2931](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2931)
 
-### skipped
+***
 
-• `Optional` **skipped**: [`NoValidRequestFoundKobold`](NoValidRequestFoundKobold.md)
+### softprompt?
 
-#### Defined in
+> `optional` **softprompt**: `string`
 
-[index.ts:2128](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2128)
-
-___
-
-### softprompt
-
-• `Optional` **softprompt**: `string`
+Defined in: [index.ts:2933](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2933)
 
 The soft prompt requested for this generation
-
-#### Defined in
-
-[index.ts:2130](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2130)

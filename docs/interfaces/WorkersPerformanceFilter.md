@@ -1,72 +1,61 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / WorkersPerformanceFilter
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / WorkersPerformanceFilter
 
 # Interface: WorkersPerformanceFilter
 
-## Table of contents
-
-### Properties
-
-- [img2img](WorkersPerformanceFilter.md#img2img)
-- [models](WorkersPerformanceFilter.md#models)
-- [performance](WorkersPerformanceFilter.md#performance)
-- [size](WorkersPerformanceFilter.md#size)
+Defined in: [index.ts:3220](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3220)
 
 ## Properties
 
-### img2img
+### img2img?
 
-• `Optional` **img2img**: `boolean`
+> `optional` **img2img**: `boolean`
+
+Defined in: [index.ts:3234](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3234)
 
 Worker should support img2img
 
-#### Defined in
+***
 
-[index.ts:2431](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2431)
+### models?
 
-___
+> `optional` **models**: `string`[]
 
-### models
-
-• `Optional` **models**: `string`[]
+Defined in: [index.ts:3238](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3238)
 
 List of models workers should have (at least one)
 
-#### Defined in
+***
 
-[index.ts:2435](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2435)
+### performance?
 
-___
+> `optional` **performance**: `number`
 
-### performance
-
-• `Optional` **performance**: `number`
+Defined in: [index.ts:3225](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3225)
 
 Minimal value of performance for worker to have
 
-**`Default`**
+#### Default
 
 ```ts
 1.5
 ```
 
-#### Defined in
+***
 
-[index.ts:2422](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2422)
+### size?
 
-___
+> `optional` **size**: `number`
 
-### size
-
-• `Optional` **size**: `number`
+Defined in: [index.ts:3230](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3230)
 
 Minimal filtered workers amount to resort to the list of first `minLength` workers sorted by `performance` value
 
-**`Default`**
+#### Default
 
 ```ts
 5
 ```
-
-#### Defined in
-
-[index.ts:2427](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2427)

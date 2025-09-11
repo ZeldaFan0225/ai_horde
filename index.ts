@@ -410,7 +410,6 @@ export class AIHorde {
      * @param query.type Filter by type. Accepts either 'image', 'text' or 'all'.
      * @param options.token Optional API key (defaults to instance default token)
      * @param options.fields Field mask for selective response
-     * @param options.force If true, bypass cache (currently only applies when caching enabled after ID retrieval)
      * @returns ResponseModelCollection[]
      */
     async getCollections<

@@ -1,65 +1,57 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / UserThingFulfillmentRecords
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / UserThingFulfillmentRecords
 
 # Interface: UserThingFulfillmentRecords
 
-## Table of contents
-
-### Properties
-
-- [image](UserThingFulfillmentRecords.md#image)
-- [interrogation](UserThingFulfillmentRecords.md#interrogation)
-- [text](UserThingFulfillmentRecords.md#text)
+Defined in: [index.ts:3075](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3075)
 
 ## Properties
 
-### image
+### image?
 
-• `Optional` **image**: `number`
+> `optional` **image**: `number`
+
+Defined in: [index.ts:3080](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3080)
 
 How many images were generated or requested
 
-**`Default`**
+#### Default
 
 ```ts
 0
 ```
 
-#### Defined in
+***
 
-[index.ts:2277](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2277)
+### interrogation?
 
-___
+> `optional` **interrogation**: `number`
 
-### interrogation
-
-• `Optional` **interrogation**: `number`
+Defined in: [index.ts:3085](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3085)
 
 How many images were interrogated generated or requested
 
-**`Default`**
+#### Default
 
 ```ts
 0
 ```
 
-#### Defined in
+***
 
-[index.ts:2282](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2282)
+### text?
 
-___
+> `optional` **text**: `number`
 
-### text
-
-• `Optional` **text**: `number`
+Defined in: [index.ts:3090](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3090)
 
 How many texts were generated or requested
 
-**`Default`**
+#### Default
 
 ```ts
 0
 ```
-
-#### Defined in
-
-[index.ts:2287](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2287)

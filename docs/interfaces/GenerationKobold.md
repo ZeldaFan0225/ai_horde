@@ -1,116 +1,97 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / GenerationKobold
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / GenerationKobold
 
 # Interface: GenerationKobold
 
-## Hierarchy
+Defined in: [index.ts:2821](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2821)
+
+## Extends
 
 - [`Generation`](Generation.md)
 
-  ↳ **`GenerationKobold`**
-
-## Table of contents
-
-### Properties
-
-- [model](GenerationKobold.md#model)
-- [seed](GenerationKobold.md#seed)
-- [state](GenerationKobold.md#state)
-- [text](GenerationKobold.md#text)
-- [worker\_id](GenerationKobold.md#worker_id)
-- [worker\_name](GenerationKobold.md#worker_name)
-
 ## Properties
 
-### model
+### model?
 
-• `Optional` **model**: `string`
+> `optional` **model**: `string`
+
+Defined in: [index.ts:2784](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2784)
 
 The model which generated this image
 
 #### Inherited from
 
-[Generation](Generation.md).[model](Generation.md#model)
+[`Generation`](Generation.md).[`model`](Generation.md#model)
 
-#### Defined in
-
-[index.ts:2015](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2015)
-
-___
+***
 
 ### seed
 
-• **seed**: `number`
+> **seed**: `number`
+
+Defined in: [index.ts:2831](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2831)
 
 The seed which generated this text
 
-#### Defined in
-
-[index.ts:2044](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2044)
-
-___
+***
 
 ### state
 
-• **state**: ``"ok"`` \| ``"censored"``
+> **state**: `"ok"` \| `"censored"`
+
+Defined in: [index.ts:2827](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2827)
 
 The state of the generation,
 
-**`Default`**
+#### Default
 
 ```ts
 ok
 ```
 
-**`Example`**
+#### Example
 
 ```ts
 ok
 ```
 
-#### Defined in
+***
 
-[index.ts:2040](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2040)
+### text?
 
-___
+> `optional` **text**: `string`
 
-### text
-
-• `Optional` **text**: `string`
+Defined in: [index.ts:2829](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2829)
 
 The generated text
 
-#### Defined in
+***
 
-[index.ts:2042](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2042)
+### worker\_id?
 
-___
+> `optional` **worker\_id**: `string`
 
-### worker\_id
-
-• `Optional` **worker\_id**: `string`
+Defined in: [index.ts:2780](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2780)
 
 The UUID of the worker which generated this image
 
 #### Inherited from
 
-[Generation](Generation.md).[worker_id](Generation.md#worker_id)
+[`Generation`](Generation.md).[`worker_id`](Generation.md#worker_id)
 
-#### Defined in
+***
 
-[index.ts:2011](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2011)
+### worker\_name?
 
-___
+> `optional` **worker\_name**: `string`
 
-### worker\_name
-
-• `Optional` **worker\_name**: `string`
+Defined in: [index.ts:2782](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2782)
 
 The name of the worker which generated this image
 
 #### Inherited from
 
-[Generation](Generation.md).[worker_name](Generation.md#worker_name)
-
-#### Defined in
-
-[index.ts:2013](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2013)
+[`Generation`](Generation.md).[`worker_name`](Generation.md#worker_name)

@@ -1,69 +1,55 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / GenerationPayloadStable
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / GenerationPayloadStable
 
 # Interface: GenerationPayloadStable
 
-## Table of contents
-
-### Properties
-
-- [id](GenerationPayloadStable.md#id)
-- [model](GenerationPayloadStable.md#model)
-- [payload](GenerationPayloadStable.md#payload)
-- [skipped](GenerationPayloadStable.md#skipped)
-- [source\_image](GenerationPayloadStable.md#source_image)
+Defined in: [index.ts:2916](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2916)
 
 ## Properties
 
-### id
+### id?
 
-• `Optional` **id**: `string`
+> `optional` **id**: `string`
+
+Defined in: [index.ts:2919](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2919)
 
 The UUID for this image generation
 
-#### Defined in
+***
 
-[index.ts:2116](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2116)
+### model?
 
-___
+> `optional` **model**: `string`
 
-### model
-
-• `Optional` **model**: `string`
+Defined in: [index.ts:2922](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2922)
 
 Which of the available models to use for this request
 
-#### Defined in
+***
 
-[index.ts:2119](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2119)
+### payload?
 
-___
+> `optional` **payload**: [`ModelPayloadStable`](ModelPayloadStable.md)
 
-### payload
+Defined in: [index.ts:2917](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2917)
 
-• `Optional` **payload**: [`ModelPayloadStable`](ModelPayloadStable.md)
+***
 
-#### Defined in
+### skipped?
 
-[index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2114)
+> `optional` **skipped**: [`NoValidRequestFoundStable`](NoValidRequestFoundStable.md)
 
-___
+Defined in: [index.ts:2920](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2920)
 
-### skipped
+***
 
-• `Optional` **skipped**: [`NoValidRequestFoundStable`](NoValidRequestFoundStable.md)
+### source\_image?
 
-#### Defined in
+> `optional` **source\_image**: `string`
 
-[index.ts:2117](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2117)
-
-___
-
-### source\_image
-
-• `Optional` **source\_image**: `string`
+Defined in: [index.ts:2924](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2924)
 
 The Base64-encoded webp to use for img2img
-
-#### Defined in
-
-[index.ts:2121](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2121)

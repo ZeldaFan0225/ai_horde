@@ -1,65 +1,57 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / TeamsGetResponse
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / TeamsGetResponse
 
 # Interface: TeamsGetResponse
 
-## Table of contents
-
-### Properties
-
-- [id](TeamsGetResponse.md#id)
-- [is\_private](TeamsGetResponse.md#is_private)
-- [team\_name](TeamsGetResponse.md#team_name)
+Defined in: [index.ts:3998](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3998)
 
 ## Properties
 
-### id
+### id?
 
-• `Optional` **id**: `string`
+> `optional` **id**: `string`
+
+Defined in: [index.ts:4003](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L4003)
 
 The unique identifier for this team
 
-**`Example`**
+#### Example
 
 ```ts
 00000000-0000-0000-0000-000000000000
 ```
 
-#### Defined in
+***
 
-[index.ts:3186](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3186)
+### is\_private?
 
-___
+> `optional` **is\_private**: `boolean`
 
-### is\_private
-
-• `Optional` **is\_private**: `boolean`
+Defined in: [index.ts:4013](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L4013)
 
 Whether this team is private or not
 
-**`Example`**
+#### Example
 
 ```ts
 false
 ```
 
-#### Defined in
+***
 
-[index.ts:3196](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3196)
+### team\_name?
 
-___
+> `optional` **team\_name**: `string`
 
-### team\_name
-
-• `Optional` **team\_name**: `string`
+Defined in: [index.ts:4008](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L4008)
 
 The name of this team
 
-**`Example`**
+#### Example
 
 ```ts
 My Team
 ```
-
-#### Defined in
-
-[index.ts:3191](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3191)

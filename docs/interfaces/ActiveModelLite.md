@@ -1,40 +1,33 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ActiveModelLite
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ActiveModelLite
 
 # Interface: ActiveModelLite
 
-## Hierarchy
+Defined in: [index.ts:3347](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3347)
 
-- **`ActiveModelLite`**
+## Extended by
 
-  ↳ [`ActiveModel`](ActiveModel.md)
-
-## Table of contents
-
-### Properties
-
-- [count](ActiveModelLite.md#count)
-- [name](ActiveModelLite.md#name)
+- [`ActiveModel`](ActiveModel.md)
 
 ## Properties
 
-### count
+### count?
 
-• `Optional` **count**: `number`
+> `optional` **count**: `number`
+
+Defined in: [index.ts:3351](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3351)
 
 How many workers in this horde are running this model.
 
-#### Defined in
+***
 
-[index.ts:2548](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2548)
+### name?
 
-___
+> `optional` **name**: `string`
 
-### name
-
-• `Optional` **name**: `string`
+Defined in: [index.ts:3349](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3349)
 
 The name of a model available by workers in this horde.
-
-#### Defined in
-
-[index.ts:2546](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2546)

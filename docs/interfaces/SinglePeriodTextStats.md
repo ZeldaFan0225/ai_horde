@@ -1,34 +1,29 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / SinglePeriodTextStats
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / SinglePeriodTextStats
 
 # Interface: SinglePeriodTextStats
 
-## Table of contents
-
-### Properties
-
-- [requests](SinglePeriodTextStats.md#requests)
-- [tokens](SinglePeriodTextStats.md#tokens)
+Defined in: [index.ts:3776](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3776)
 
 ## Properties
 
-### requests
+### requests?
 
-• `Optional` **requests**: `number`
+> `optional` **requests**: `number`
+
+Defined in: [index.ts:3778](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3778)
 
 The amount of text requests generated during this period.
 
-#### Defined in
+***
 
-[index.ts:2961](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2961)
+### tokens?
 
-___
+> `optional` **tokens**: `number`
 
-### tokens
-
-• `Optional` **tokens**: `number`
+Defined in: [index.ts:3780](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3780)
 
 The amount of tokens generated during this period.
-
-#### Defined in
-
-[index.ts:2963](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2963)

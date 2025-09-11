@@ -1,60 +1,49 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ModifyWorker
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ModifyWorker
 
 # Interface: ModifyWorker
 
-## Table of contents
-
-### Properties
-
-- [info](ModifyWorker.md#info)
-- [maintenance](ModifyWorker.md#maintenance)
-- [name](ModifyWorker.md#name)
-- [paused](ModifyWorker.md#paused)
+Defined in: [index.ts:3320](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3320)
 
 ## Properties
 
-### info
+### info?
 
-• `Optional` **info**: `string`
+> `optional` **info**: `string`
+
+Defined in: [index.ts:3326](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3326)
 
 The new state of the 'info' var for this worker.
 
-#### Defined in
+***
 
-[index.ts:2523](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2523)
+### maintenance?
 
-___
+> `optional` **maintenance**: `boolean`
 
-### maintenance
-
-• `Optional` **maintenance**: `boolean`
+Defined in: [index.ts:3322](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3322)
 
 The new state of the 'maintenance' var for this worker. When True, this worker will not pick up any new requests.
 
-#### Defined in
+***
 
-[index.ts:2519](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2519)
+### name?
 
-___
+> `optional` **name**: `string`
 
-### name
-
-• `Optional` **name**: `string`
+Defined in: [index.ts:3328](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3328)
 
 The new name for this this worker.
 
-#### Defined in
+***
 
-[index.ts:2525](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2525)
+### paused?
 
-___
+> `optional` **paused**: `boolean`
 
-### paused
-
-• `Optional` **paused**: `boolean`
+Defined in: [index.ts:3324](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3324)
 
 The new state of the 'paused' var for this worker. When True, this worker will not be given any new requests.
-
-#### Defined in
-
-[index.ts:2521](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2521)

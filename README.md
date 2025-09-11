@@ -17,6 +17,16 @@ This package allows you to communicate with the [AI Horde](https://aihorde.net/)
 **DISCLAIMER:**
 THIS PACKAGE/REPOSITORY IS IN NO WAY ASSOCIATED TO THE CREATORS OF AI HORDE
 
+## Versions 6.0.0 and later
+
+v6 focuses on API coverage, consistency, and cleanup.
+
+- Minor breaking changes:
+- Some method signatures got small adjustments for consistency.
+- JSDoc/TypeDoc aligns with the current options; remove/adjust any usage of undocumented options.
+
+Starting with Version 6.0.0 publishing is automatically done through a GitHub Action.
+
 ## Versions 5.0.0 and later
 
 Version 5.0.0 introduces some breaking changes:
@@ -91,8 +101,13 @@ This package is published to npm automatically when a Git tag with a semantic ve
 - Tag format: either `vX.Y.Z` or `X.Y.Z` (e.g. `v5.2.1`)
 - The workflow sets the package version from the tag and runs `npm publish`
 - Maintainers: add an npm Automation Token as the repo secret `NPM_TOKEN`
+- Supply chain: publishes include npm provenance attestation via GitHub OIDC
 
 Example to publish a new version (maintainers only):
 
 1. Update changelog and code as needed
 2. Push a tag, e.g. `git tag v5.2.1 && git push origin v5.2.1`
+
+### Provenance / Attestations
+
+The release workflow uses GitHub’s OIDC to request an ID token and publishes with `--provenance`. On npm, this shows the “Provenance” badge on the package/version page. Consumers can verify the package was built in this repository’s CI and matches the published tarball.

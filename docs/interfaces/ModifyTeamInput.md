@@ -1,56 +1,51 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ModifyTeamInput
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ModifyTeamInput
 
 # Interface: ModifyTeamInput
 
-## Table of contents
-
-### Properties
-
-- [info](ModifyTeamInput.md#info)
-- [name](ModifyTeamInput.md#name)
+Defined in: [index.ts:3462](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3462)
 
 ## Properties
 
-### info
+### info?
 
-• `Optional` **info**: `string`
+> `optional` **info**: `string`
+
+Defined in: [index.ts:3475](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3475)
 
 Extra information or comments about this team.
 
-**`Example`**
+#### Example
 
 ```ts
 Anarchy is emergent order.
 ```
 
-**`Min Length`**
+#### Min Length
 
 3
 
-**`Max Length`**
+#### Max Length
 
 1000
 
-#### Defined in
+***
 
-[index.ts:2672](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2672)
+### name?
 
-___
+> `optional` **name**: `string`
 
-### name
-
-• `Optional` **name**: `string`
+Defined in: [index.ts:3468](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3468)
 
 The name of the team. No profanity allowed!
 
-**`Min Length`**
+#### Min Length
 
 3
 
-**`Max Length`**
+#### Max Length
 
 100
-
-#### Defined in
-
-[index.ts:2665](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2665)

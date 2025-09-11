@@ -1,44 +1,37 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / UsageDetailsStable
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / UsageDetailsStable
 
 # Interface: UsageDetailsStable
 
-## Hierarchy
+Defined in: [index.ts:3175](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3175)
+
+## Extends
 
 - [`UsageDetails`](UsageDetails.md)
 
-  ↳ **`UsageDetailsStable`**
-
-## Table of contents
-
-### Properties
-
-- [megapixelsteps](UsageDetailsStable.md#megapixelsteps)
-- [requests](UsageDetailsStable.md#requests)
-
 ## Properties
 
-### megapixelsteps
+### megapixelsteps?
 
-• `Optional` **megapixelsteps**: `number`
+> `optional` **megapixelsteps**: `number`
+
+Defined in: [index.ts:3179](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3179)
 
 How many megapixelsteps this user has requested
 
-#### Defined in
+***
 
-[index.ts:2376](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2376)
+### requests?
 
-___
+> `optional` **requests**: `number`
 
-### requests
-
-• `Optional` **requests**: `number`
+Defined in: [index.ts:3177](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3177)
 
 How many images this user has requested
 
 #### Overrides
 
-[UsageDetails](UsageDetails.md).[requests](UsageDetails.md#requests)
-
-#### Defined in
-
-[index.ts:2374](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2374)
+[`UsageDetails`](UsageDetails.md).[`requests`](UsageDetails.md#requests)

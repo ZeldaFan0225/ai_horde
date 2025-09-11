@@ -1,92 +1,75 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / AIHordeInitOptions
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / AIHordeInitOptions
 
 # Interface: AIHordeInitOptions
 
-## Table of contents
-
-### Properties
-
-- [api\_route](AIHordeInitOptions.md#api_route)
-- [cache](AIHordeInitOptions.md#cache)
-- [cache\_interval](AIHordeInitOptions.md#cache_interval)
-- [client\_agent](AIHordeInitOptions.md#client_agent)
-- [default\_token](AIHordeInitOptions.md#default_token)
-- [ratings\_api\_route](AIHordeInitOptions.md#ratings_api_route)
+Defined in: [index.ts:2141](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2141)
 
 ## Properties
 
-### api\_route
+### api\_route?
 
-• `Optional` **api\_route**: `string`
+> `optional` **api\_route**: `string`
+
+Defined in: [index.ts:2152](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2152)
 
 The base api domain + route to use for requests
 
-#### Defined in
+***
 
-[index.ts:1409](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1409)
+### cache?
 
-___
+> `optional` **cache**: [`AIHordeCacheConfiguration`](AIHordeCacheConfiguration.md)
 
-### cache
-
-• `Optional` **cache**: [`AIHordeCacheConfiguration`](AIHordeCacheConfiguration.md)
+Defined in: [index.ts:2143](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2143)
 
 The configuration for caching results
 
-#### Defined in
+***
 
-[index.ts:1400](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1400)
+### cache\_interval?
 
-___
+> `optional` **cache\_interval**: `number`
 
-### cache\_interval
-
-• `Optional` **cache\_interval**: `number`
+Defined in: [index.ts:2148](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2148)
 
 The interval to check expired data in the cache
 
-**`Default`**
+#### Default
 
 ```ts
 1000
 ```
 
-#### Defined in
+***
 
-[index.ts:1405](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1405)
+### client\_agent?
 
-___
+> `optional` **client\_agent**: `string`
 
-### client\_agent
-
-• `Optional` **client\_agent**: `string`
+Defined in: [index.ts:2156](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2156)
 
 The client agent to pass in the requests.
 
-#### Defined in
+***
 
-[index.ts:1413](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1413)
+### default\_token?
 
-___
+> `optional` **default\_token**: `string`
 
-### default\_token
-
-• `Optional` **default\_token**: `string`
+Defined in: [index.ts:2150](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2150)
 
 The default token to use for requests
 
-#### Defined in
+***
 
-[index.ts:1407](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1407)
+### ratings\_api\_route?
 
-___
+> `optional` **ratings\_api\_route**: `string`
 
-### ratings\_api\_route
-
-• `Optional` **ratings\_api\_route**: `string`
+Defined in: [index.ts:2154](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2154)
 
 The ratings api domain + route to use for requests
-
-#### Defined in
-
-[index.ts:1411](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1411)

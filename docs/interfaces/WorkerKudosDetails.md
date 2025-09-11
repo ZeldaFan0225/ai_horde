@@ -1,34 +1,29 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / WorkerKudosDetails
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / WorkerKudosDetails
 
 # Interface: WorkerKudosDetails
 
-## Table of contents
-
-### Properties
-
-- [generated](WorkerKudosDetails.md#generated)
-- [uptime](WorkerKudosDetails.md#uptime)
+Defined in: [index.ts:3313](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3313)
 
 ## Properties
 
-### generated
+### generated?
 
-• `Optional` **generated**: `number`
+> `optional` **generated**: `number`
+
+Defined in: [index.ts:3315](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3315)
 
 How much Kudos this worker has received for generating images
 
-#### Defined in
+***
 
-[index.ts:2512](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2512)
+### uptime?
 
-___
+> `optional` **uptime**: `number`
 
-### uptime
-
-• `Optional` **uptime**: `number`
+Defined in: [index.ts:3317](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3317)
 
 How much Kudos this worker has received for staying online longer
-
-#### Defined in
-
-[index.ts:2514](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2514)

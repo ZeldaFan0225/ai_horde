@@ -1,86 +1,75 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / DatasetGetResponse
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / DatasetGetResponse
 
 # Interface: DatasetGetResponse
 
+Defined in: [index.ts:3975](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3975)
+
 API Interfaces
-
-## Table of contents
-
-### Properties
-
-- [description](DatasetGetResponse.md#description)
-- [id](DatasetGetResponse.md#id)
-- [image\_count](DatasetGetResponse.md#image_count)
-- [name](DatasetGetResponse.md#name)
 
 ## Properties
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
+
+Defined in: [index.ts:3990](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3990)
 
 The description of this dataset
 
-**`Example`**
+#### Example
 
 ```ts
 This is a dataset of images of cats
 ```
 
-#### Defined in
+***
 
-[index.ts:3173](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3173)
+### id?
 
-___
+> `optional` **id**: `string`
 
-### id
-
-• `Optional` **id**: `string`
+Defined in: [index.ts:3980](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3980)
 
 The unique identifier for this dataset
 
-**`Example`**
+#### Example
 
 ```ts
 00000000-0000-0000-0000-000000000000
 ```
 
-#### Defined in
+***
 
-[index.ts:3163](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3163)
+### image\_count?
 
-___
+> `optional` **image\_count**: `number`
 
-### image\_count
-
-• `Optional` **image\_count**: `number`
+Defined in: [index.ts:3995](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3995)
 
 The number of images in this dataset
 
-**`Example`**
+#### Example
 
 ```ts
 100
 ```
 
-#### Defined in
+***
 
-[index.ts:3178](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3178)
+### name?
 
-___
+> `optional` **name**: `string`
 
-### name
-
-• `Optional` **name**: `string`
+Defined in: [index.ts:3985](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3985)
 
 The name of this dataset
 
-**`Example`**
+#### Example
 
 ```ts
 My Dataset
 ```
-
-#### Defined in
-
-[index.ts:3168](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3168)

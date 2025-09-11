@@ -1,61 +1,53 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / PatchExistingFilter
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / PatchExistingFilter
 
 # Interface: PatchExistingFilter
 
-## Table of contents
-
-### Properties
-
-- [description](PatchExistingFilter.md#description)
-- [filter\_type](PatchExistingFilter.md#filter_type)
-- [regex](PatchExistingFilter.md#regex)
+Defined in: [index.ts:3689](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3689)
 
 ## Properties
 
-### description
+### description?
 
-• `Optional` **description**: `string`
+> `optional` **description**: `string`
+
+Defined in: [index.ts:3704](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3704)
 
 Description about this regex
 
-#### Defined in
+***
 
-[index.ts:2887](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2887)
+### filter\_type?
 
-___
+> `optional` **filter\_type**: `number`
 
-### filter\_type
-
-• `Optional` **filter\_type**: `number`
+Defined in: [index.ts:3700](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3700)
 
 The integer defining this filter type
 
-**`Minimum`**
+#### Minimum
 
 10
 
-**`Maximum`**
+#### Maximum
 
 29
 
-#### Defined in
+***
 
-[index.ts:2883](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2883)
+### regex?
 
-___
+> `optional` **regex**: `string`
 
-### regex
-
-• `Optional` **regex**: `string`
+Defined in: [index.ts:3694](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3694)
 
 The regex for this filter.
 
-**`Example`**
+#### Example
 
 ```ts
 ac.*
 ```
-
-#### Defined in
-
-[index.ts:2877](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2877)

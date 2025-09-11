@@ -1,272 +1,213 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / UserDetails
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / UserDetails
 
 # Interface: UserDetails
 
-## Table of contents
-
-### Properties
-
-- [account\_age](UserDetails.md#account_age)
-- [concurrency](UserDetails.md#concurrency)
-- [contact](UserDetails.md#contact)
-- [contributions](UserDetails.md#contributions)
-- [evaluating\_kudos](UserDetails.md#evaluating_kudos)
-- [flagged](UserDetails.md#flagged)
-- [id](UserDetails.md#id)
-- [kudos](UserDetails.md#kudos)
-- [kudos\_details](UserDetails.md#kudos_details)
-- [moderator](UserDetails.md#moderator)
-- [monthly\_kudos](UserDetails.md#monthly_kudos)
-- [pseudonymous](UserDetails.md#pseudonymous)
-- [records](UserDetails.md#records)
-- [suspicious](UserDetails.md#suspicious)
-- [trusted](UserDetails.md#trusted)
-- [usage](UserDetails.md#usage)
-- [username](UserDetails.md#username)
-- [worker\_count](UserDetails.md#worker_count)
-- [worker\_ids](UserDetails.md#worker_ids)
-- [worker\_invited](UserDetails.md#worker_invited)
+Defined in: [index.ts:3101](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3101)
 
 ## Properties
 
-### account\_age
+### account\_age?
 
-• `Optional` **account\_age**: `number`
+> `optional` **account\_age**: `number`
+
+Defined in: [index.ts:3138](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3138)
 
 How many seconds since this account was created
 
-**`Example`**
+#### Example
 
 ```ts
 60
 ```
 
-#### Defined in
+***
 
-[index.ts:2335](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2335)
+### concurrency?
 
-___
+> `optional` **concurrency**: `number`
 
-### concurrency
-
-• `Optional` **concurrency**: `number`
+Defined in: [index.ts:3111](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3111)
 
 How many concurrent generations this user may request.
 
-#### Defined in
+***
 
-[index.ts:2308](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2308)
+### contact?
 
-___
+> `optional` **contact**: `string`
 
-### contact
-
-• `Optional` **contact**: `string`
+Defined in: [index.ts:3133](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3133)
 
 (Privileged) Contact details for the horde admins to reach the user in case of emergency.
 
-**`Example`**
+#### Example
 
 ```ts
 email@example.com
 ```
 
-#### Defined in
+***
 
-[index.ts:2330](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2330)
+### ~~contributions?~~
 
-___
+> `optional` **contributions**: [`ContributionsDetailsStable`](ContributionsDetailsStable.md)
 
-### contributions
+Defined in: [index.ts:3146](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3146)
 
-• `Optional` **contributions**: [`ContributionsDetailsStable`](ContributionsDetailsStable.md)
+#### Deprecated
 
-**`Deprecated`**
+***
 
-#### Defined in
+### evaluating\_kudos?
 
-[index.ts:2343](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2343)
+> `optional` **evaluating\_kudos**: `number`
 
-___
-
-### evaluating\_kudos
-
-• `Optional` **evaluating\_kudos**: `number`
+Defined in: [index.ts:3109](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3109)
 
 (Privileged) The amount of Evaluating Kudos this untrusted user has from generations and uptime. When this number reaches 50000, they automatically become trusted.
 
-#### Defined in
+***
 
-[index.ts:2306](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2306)
+### flagged?
 
-___
+> `optional` **flagged**: `boolean`
 
-### flagged
-
-• `Optional` **flagged**: `boolean`
+Defined in: [index.ts:3124](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3124)
 
 This user has been flagged for suspicious activity.
 
-#### Defined in
+***
 
-[index.ts:2321](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2321)
+### id?
 
-___
+> `optional` **id**: `number`
 
-### id
-
-• `Optional` **id**: `number`
+Defined in: [index.ts:3105](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3105)
 
 The user unique ID. It is always an integer.
 
-#### Defined in
+***
 
-[index.ts:2302](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2302)
+### kudos?
 
-___
+> `optional` **kudos**: `number`
 
-### kudos
-
-• `Optional` **kudos**: `number`
+Defined in: [index.ts:3107](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3107)
 
 The amount of Kudos this user has. The amount of Kudos determines the priority when requesting image generations.
 
-#### Defined in
+***
 
-[index.ts:2304](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2304)
+### kudos\_details?
 
-___
+> `optional` **kudos\_details**: [`UserKudosDetails`](UserKudosDetails.md)
 
-### kudos\_details
+Defined in: [index.ts:3116](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3116)
 
-• `Optional` **kudos\_details**: [`UserKudosDetails`](UserKudosDetails.md)
+***
 
-#### Defined in
+### moderator?
 
-[index.ts:2313](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2313)
+> `optional` **moderator**: `boolean`
 
-___
-
-### moderator
-
-• `Optional` **moderator**: `boolean`
+Defined in: [index.ts:3115](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3115)
 
 This user is a Horde moderator.
 
-#### Defined in
+***
 
-[index.ts:2312](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2312)
+### monthly\_kudos?
 
-___
+> `optional` **monthly\_kudos**: [`MonthlyKudos`](MonthlyKudos.md)
 
-### monthly\_kudos
+Defined in: [index.ts:3120](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3120)
 
-• `Optional` **monthly\_kudos**: [`MonthlyKudos`](MonthlyKudos.md)
+***
 
-#### Defined in
+### pseudonymous?
 
-[index.ts:2317](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2317)
+> `optional` **pseudonymous**: `boolean`
 
-___
-
-### pseudonymous
-
-• `Optional` **pseudonymous**: `boolean`
+Defined in: [index.ts:3128](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3128)
 
 If true, this user has not registered using an oauth service.
 
-#### Defined in
+***
 
-[index.ts:2325](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2325)
+### records?
 
-___
+> `optional` **records**: [`UserRecords`](UserRecords.md)
 
-### records
+Defined in: [index.ts:3147](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3147)
 
-• `Optional` **records**: [`UserRecords`](UserRecords.md)
+***
 
-#### Defined in
+### suspicious?
 
-[index.ts:2344](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2344)
+> `optional` **suspicious**: `number`
 
-___
-
-### suspicious
-
-• `Optional` **suspicious**: `number`
+Defined in: [index.ts:3126](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3126)
 
 (Privileged) How much suspicion this user has accumulated
 
-#### Defined in
+***
 
-[index.ts:2323](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2323)
+### trusted?
 
-___
+> `optional` **trusted**: `boolean`
 
-### trusted
-
-• `Optional` **trusted**: `boolean`
+Defined in: [index.ts:3122](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3122)
 
 This user is a trusted member of the Horde.
 
-#### Defined in
+***
 
-[index.ts:2319](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2319)
+### ~~usage?~~
 
-___
+> `optional` **usage**: [`UsageDetailsStable`](UsageDetailsStable.md)
 
-### usage
+Defined in: [index.ts:3142](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3142)
 
-• `Optional` **usage**: [`UsageDetailsStable`](UsageDetailsStable.md)
+#### Deprecated
 
-**`Deprecated`**
+***
 
-#### Defined in
+### username?
 
-[index.ts:2339](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2339)
+> `optional` **username**: `string`
 
-___
-
-### username
-
-• `Optional` **username**: `string`
+Defined in: [index.ts:3103](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3103)
 
 The user's unique Username. It is a combination of their chosen alias plus their ID.
 
-#### Defined in
+***
 
-[index.ts:2300](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2300)
+### worker\_count?
 
-___
+> `optional` **worker\_count**: `number`
 
-### worker\_count
-
-• `Optional` **worker\_count**: `number`
+Defined in: [index.ts:3118](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3118)
 
 How many workers this user has created (active or inactive)
 
-#### Defined in
+***
 
-[index.ts:2315](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2315)
+### worker\_ids?
 
-___
+> `optional` **worker\_ids**: `string`[]
 
-### worker\_ids
+Defined in: [index.ts:3119](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3119)
 
-• `Optional` **worker\_ids**: `string`[]
+***
 
-#### Defined in
+### worker\_invited?
 
-[index.ts:2316](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2316)
+> `optional` **worker\_invited**: `number`
 
-___
-
-### worker\_invited
-
-• `Optional` **worker\_invited**: `number`
+Defined in: [index.ts:3113](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3113)
 
 Whether this user has been invited to join a worker to the horde and how many of them. When 0, this user cannot add (new) workers to the horde.
-
-#### Defined in
-
-[index.ts:2310](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2310)

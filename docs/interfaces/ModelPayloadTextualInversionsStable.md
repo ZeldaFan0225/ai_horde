@@ -1,75 +1,67 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ModelPayloadTextualInversionsStable
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ModelPayloadTextualInversionsStable
 
 # Interface: ModelPayloadTextualInversionsStable
 
-## Table of contents
-
-### Properties
-
-- [inject\_ti](ModelPayloadTextualInversionsStable.md#inject_ti)
-- [name](ModelPayloadTextualInversionsStable.md#name)
-- [strength](ModelPayloadTextualInversionsStable.md#strength)
+Defined in: [index.ts:2649](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2649)
 
 ## Properties
 
-### inject\_ti
+### inject\_ti?
 
-• `Optional` **inject\_ti**: ``"prompt"`` \| ``"negprompt"``
+> `optional` **inject\_ti**: `"prompt"` \| `"negprompt"`
+
+Defined in: [index.ts:2660](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2660)
 
 if set, will automatically add this TI filename to the prompt or negative prompt accordingly using the provided strength. If this is set to None, then the user will have to manually add the embed to the prompt themselves.
 
-#### Defined in
-
-[index.ts:1893](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1893)
-
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
+
+Defined in: [index.ts:2656](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2656)
 
 The exact name or CivitAI ID of the Textual Inversion.
 
-**`Example`**
+#### Example
 
 ```ts
 7808
 ```
 
-**`Min Length`**
+#### Min Length
 
 1
 
-**`Max Length`**
+#### Max Length
 
 255
 
-#### Defined in
+***
 
-[index.ts:1889](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1889)
+### strength?
 
-___
+> `optional` **strength**: `number`
 
-### strength
-
-• `Optional` **strength**: `number`
+Defined in: [index.ts:2667](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2667)
 
 The strength with which to apply the TI to the prompt. Only used when inject_ti is not None
 
-**`Default`**
+#### Default
 
 ```ts
 1
 ```
 
-**`Minimum`**
+#### Minimum
 
 -5
 
-**`Maximum`**
+#### Maximum
 
 5
-
-#### Defined in
-
-[index.ts:1900](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1900)

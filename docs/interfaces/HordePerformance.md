@@ -1,53 +1,43 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / HordePerformance
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / HordePerformance
 
 # Interface: HordePerformance
 
-## Hierarchy
+Defined in: [index.ts:3381](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3381)
 
-- **`HordePerformance`**
+## Extended by
 
-  ↳ [`HordePerformanceStable`](HordePerformanceStable.md)
-
-## Table of contents
-
-### Properties
-
-- [queued\_requests](HordePerformance.md#queued_requests)
-- [thread\_count](HordePerformance.md#thread_count)
-- [worker\_count](HordePerformance.md#worker_count)
+- [`HordePerformanceStable`](HordePerformanceStable.md)
 
 ## Properties
 
-### queued\_requests
+### queued\_requests?
 
-• `Optional` **queued\_requests**: `number`
+> `optional` **queued\_requests**: `number`
+
+Defined in: [index.ts:3383](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3383)
 
 The amount of waiting and processing requests currently in this Horde
 
-#### Defined in
+***
 
-[index.ts:2580](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2580)
+### thread\_count?
 
-___
+> `optional` **thread\_count**: `number`
 
-### thread\_count
-
-• `Optional` **thread\_count**: `number`
+Defined in: [index.ts:3387](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3387)
 
 How many worker threads are actively processing prompt generations in this Horde in the past 5 minutes
 
-#### Defined in
+***
 
-[index.ts:2584](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2584)
+### worker\_count?
 
-___
+> `optional` **worker\_count**: `number`
 
-### worker\_count
-
-• `Optional` **worker\_count**: `number`
+Defined in: [index.ts:3385](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3385)
 
 How many workers are actively processing image generations in this Horde in the past 5 minutes
-
-#### Defined in
-
-[index.ts:2582](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2582)

@@ -1,19 +1,20 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / RatePostInput
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / RatePostInput
 
 # Interface: RatePostInput
 
-## Table of contents
-
-### Properties
-
-- [artifacts](RatePostInput.md#artifacts)
-- [rating](RatePostInput.md#rating)
+Defined in: [index.ts:4039](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L4039)
 
 ## Properties
 
-### artifacts
+### artifacts?
 
-• `Optional` **artifacts**: ``"FLAWLESS"`` \| ``"LITTLE_FLAWS"`` \| ``"SOME_FLAWS"`` \| ``"OBVIOUS_FLAWS"`` \| ``"HARMFUL_FLAWS"`` \| ``"GARBAGE"``
+> `optional` **artifacts**: `"FLAWLESS"` \| `"LITTLE_FLAWS"` \| `"SOME_FLAWS"` \| `"OBVIOUS_FLAWS"` \| `"HARMFUL_FLAWS"` \| `"GARBAGE"`
+
+Defined in: [index.ts:4059](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L4059)
 
 The artifacts rating for this image.
 0 for flawless generation that perfectly fits to the prompt.
@@ -23,46 +24,40 @@ The artifacts rating for this image.
 4 for flaws that look obviously wrong & significantly harm the aesthetic experience.
 5 for flaws that make the image look like total garbage
 
-**`Example`**
+#### Example
 
 ```ts
 1
 ```
 
-**`Minimum`**
+#### Minimum
 
 0
 
-**`Maximum`**
+#### Maximum
 
 5
 
-#### Defined in
-
-[index.ts:3242](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3242)
-
-___
+***
 
 ### rating
 
-• **rating**: `number`
+> **rating**: `number`
+
+Defined in: [index.ts:4046](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L4046)
 
 The aesthetic rating for this image. How much do you like this image subjectively and in isolation from comparison with other images or with its own prompt.
 
-**`Example`**
+#### Example
 
 ```ts
 5
 ```
 
-**`Minimum`**
+#### Minimum
 
 1
 
-**`Maximum`**
+#### Maximum
 
 10
-
-#### Defined in
-
-[index.ts:3229](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3229)

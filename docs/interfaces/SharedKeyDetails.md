@@ -1,73 +1,59 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / SharedKeyDetails
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / SharedKeyDetails
 
 # Interface: SharedKeyDetails
 
-## Table of contents
-
-### Properties
-
-- [expiry](SharedKeyDetails.md#expiry)
-- [id](SharedKeyDetails.md#id)
-- [kudos](SharedKeyDetails.md#kudos)
-- [username](SharedKeyDetails.md#username)
-- [utilized](SharedKeyDetails.md#utilized)
+Defined in: [index.ts:3807](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3807)
 
 ## Properties
 
-### expiry
+### expiry?
 
-• `Optional` **expiry**: `string`
+> `optional` **expiry**: `string`
+
+Defined in: [index.ts:3823](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3823)
 
 The date at which this API key will expire.
 
-#### Defined in
+***
 
-[index.ts:3006](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3006)
+### id?
 
-___
+> `optional` **id**: `string`
 
-### id
-
-• `Optional` **id**: `string`
+Defined in: [index.ts:3811](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3811)
 
 The SharedKey ID
 
-#### Defined in
+***
 
-[index.ts:2994](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2994)
+### kudos?
 
-___
+> `optional` **kudos**: `number`
 
-### kudos
-
-• `Optional` **kudos**: `number`
+Defined in: [index.ts:3819](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3819)
 
 The Kudos limit assigned to this key
 
-#### Defined in
+***
 
-[index.ts:3002](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3002)
+### username?
 
-___
+> `optional` **username**: `string`
 
-### username
-
-• `Optional` **username**: `string`
+Defined in: [index.ts:3815](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3815)
 
 The owning user's unique Username. It is a combination of their chosen alias plus their ID.
 
-#### Defined in
+***
 
-[index.ts:2998](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2998)
+### utilized?
 
-___
+> `optional` **utilized**: `number`
 
-### utilized
-
-• `Optional` **utilized**: `number`
+Defined in: [index.ts:3827](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3827)
 
 How mych kudos has been utilized via this shared key until now.
-
-#### Defined in
-
-[index.ts:3010](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L3010)

@@ -1,103 +1,89 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / ModifyWorkerInput
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / ModifyWorkerInput
 
 # Interface: ModifyWorkerInput
 
-## Table of contents
-
-### Properties
-
-- [info](ModifyWorkerInput.md#info)
-- [maintenance](ModifyWorkerInput.md#maintenance)
-- [name](ModifyWorkerInput.md#name)
-- [paused](ModifyWorkerInput.md#paused)
-- [team](ModifyWorkerInput.md#team)
+Defined in: [index.ts:2255](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2255)
 
 ## Properties
 
-### info
+### info?
 
-• `Optional` **info**: `string`
+> `optional` **info**: `string`
+
+Defined in: [index.ts:2265](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2265)
 
 You can optionally provide a server note which will be seen in the server details. No profanity allowed!
 
-**`Min Length`**
+#### Min Length
 
 5
 
-**`Max Length`**
+#### Max Length
 
 1000
 
-#### Defined in
+***
 
-[index.ts:1519](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1519)
+### maintenance?
 
-___
+> `optional` **maintenance**: `boolean`
 
-### maintenance
-
-• `Optional` **maintenance**: `boolean`
+Defined in: [index.ts:2257](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2257)
 
 (Mods only) Set to true to put this worker into maintenance.
 
-#### Defined in
+***
 
-[index.ts:1511](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1511)
+### name?
 
-___
+> `optional` **name**: `string`
 
-### name
-
-• `Optional` **name**: `string`
+Defined in: [index.ts:2271](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2271)
 
 When this is set, it will change the worker's name. No profanity allowed!
 
-**`Min Length`**
+#### Min Length
 
 5
 
-**`Max Length`**
+#### Max Length
 
 100
 
-#### Defined in
+***
 
-[index.ts:1525](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1525)
+### paused?
 
-___
+> `optional` **paused**: `boolean`
 
-### paused
-
-• `Optional` **paused**: `boolean`
+Defined in: [index.ts:2259](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2259)
 
 (Mods only) Set to true to pause this worker.
 
-#### Defined in
+***
 
-[index.ts:1513](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1513)
+### team?
 
-___
+> `optional` **team**: `string`
 
-### team
-
-• `Optional` **team**: `string`
+Defined in: [index.ts:2278](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L2278)
 
 The team towards which this worker contributes kudos. No profanity allowed!
 
-**`Example`**
+#### Example
 
 ```ts
 0bed257b-e57c-4327-ac64-40cdfb1ac5e6
 ```
 
-**`Min Length`**
+#### Min Length
 
 3
 
-**`Max Length`**
+#### Max Length
 
 100
-
-#### Defined in
-
-[index.ts:1532](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L1532)

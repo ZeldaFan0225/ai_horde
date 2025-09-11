@@ -1,320 +1,258 @@
-[@zeldafan0225/ai_horde](../README.md) / [Exports](../modules.md) / WorkerDetails
+[**@zeldafan0225/ai_horde**](../README.md)
+
+***
+
+[@zeldafan0225/ai_horde](../globals.md) / WorkerDetails
 
 # Interface: WorkerDetails
 
-## Hierarchy
+Defined in: [index.ts:3254](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3254)
+
+## Extends
 
 - [`WorkerDetailsLite`](WorkerDetailsLite.md)
 
-  ↳ **`WorkerDetails`**
+## Extended by
 
-  ↳↳ [`WorkerDetailsStable`](WorkerDetailsStable.md)
-
-## Table of contents
-
-### Properties
-
-- [bridge\_agent](WorkerDetails.md#bridge_agent)
-- [contact](WorkerDetails.md#contact)
-- [id](WorkerDetails.md#id)
-- [info](WorkerDetails.md#info)
-- [kudos\_details](WorkerDetails.md#kudos_details)
-- [kudos\_rewards](WorkerDetails.md#kudos_rewards)
-- [maintenance\_mode](WorkerDetails.md#maintenance_mode)
-- [models](WorkerDetails.md#models)
-- [name](WorkerDetails.md#name)
-- [nsfw](WorkerDetails.md#nsfw)
-- [online](WorkerDetails.md#online)
-- [owner](WorkerDetails.md#owner)
-- [paused](WorkerDetails.md#paused)
-- [performance](WorkerDetails.md#performance)
-- [requests\_fulfilled](WorkerDetails.md#requests_fulfilled)
-- [suspicious](WorkerDetails.md#suspicious)
-- [team](WorkerDetails.md#team)
-- [threads](WorkerDetails.md#threads)
-- [trusted](WorkerDetails.md#trusted)
-- [uncompleted\_jobs](WorkerDetails.md#uncompleted_jobs)
-- [uptime](WorkerDetails.md#uptime)
+- [`WorkerDetailsStable`](WorkerDetailsStable.md)
 
 ## Properties
 
-### bridge\_agent
+### bridge\_agent?
 
-• `Optional` **bridge\_agent**: `string`
+> `optional` **bridge\_agent**: `string`
+
+Defined in: [index.ts:3301](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3301)
 
 The bridge agent name, version and website
 @default: unknown:0:unknown
 @example: AI Horde Worker:11:https://github.com/db0/AI-Horde-Worker
 @maxLength: 1000
 
-#### Defined in
+***
 
-[index.ts:2498](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2498)
+### contact?
 
-___
+> `optional` **contact**: `string`
 
-### contact
-
-• `Optional` **contact**: `string`
+Defined in: [index.ts:3294](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3294)
 
 (Privileged) Contact details for the horde admins to reach the owner of this worker in emergencies.
 
-**`Example`**
+#### Example
 
 ```ts
 email@example.com
 ```
 
-**`Min Length`**
+#### Min Length
 
 5
 
-**`Max Length`**
+#### Max Length
 
 500
 
-#### Defined in
+***
 
-[index.ts:2491](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2491)
+### id?
 
-___
+> `optional` **id**: `string`
 
-### id
-
-• `Optional` **id**: `string`
+Defined in: [index.ts:3308](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3308)
 
 The UUID of this worker.
 
 #### Inherited from
 
-[WorkerDetailsLite](WorkerDetailsLite.md).[id](WorkerDetailsLite.md#id)
+[`WorkerDetailsLite`](WorkerDetailsLite.md).[`id`](WorkerDetailsLite.md#id)
 
-#### Defined in
+***
 
-[index.ts:2505](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2505)
+### info?
 
-___
+> `optional` **info**: `string`
 
-### info
-
-• `Optional` **info**: `string`
+Defined in: [index.ts:3271](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3271)
 
 Extra information or comments about this worker provided by its owner.
 
-#### Defined in
+***
 
-[index.ts:2468](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2468)
+### kudos\_details?
 
-___
+> `optional` **kudos\_details**: [`WorkerKudosDetails`](WorkerKudosDetails.md)
 
-### kudos\_details
+Defined in: [index.ts:3259](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3259)
 
-• `Optional` **kudos\_details**: [`WorkerKudosDetails`](WorkerKudosDetails.md)
+***
 
-#### Defined in
+### kudos\_rewards?
 
-[index.ts:2456](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2456)
+> `optional` **kudos\_rewards**: `number`
 
-___
-
-### kudos\_rewards
-
-• `Optional` **kudos\_rewards**: `number`
+Defined in: [index.ts:3258](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3258)
 
 How many Kudos this worker has been rewarded in total.
 
-#### Defined in
+***
 
-[index.ts:2455](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2455)
+### maintenance\_mode?
 
-___
+> `optional` **maintenance\_mode**: `boolean`
 
-### maintenance\_mode
-
-• `Optional` **maintenance\_mode**: `boolean`
+Defined in: [index.ts:3267](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3267)
 
 When True, this worker will not pick up any new requests
 
-#### Defined in
+***
 
-[index.ts:2464](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2464)
+### models?
 
-___
+> `optional` **models**: `string`[]
 
-### models
-
-• `Optional` **models**: `string`[]
+Defined in: [index.ts:3286](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3286)
 
 Which models this worker if offerring
 
-#### Defined in
+***
 
-[index.ts:2483](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2483)
+### name?
 
-___
+> `optional` **name**: `string`
 
-### name
-
-• `Optional` **name**: `string`
+Defined in: [index.ts:3306](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3306)
 
 The Name given to this worker.
 
 #### Inherited from
 
-[WorkerDetailsLite](WorkerDetailsLite.md).[name](WorkerDetailsLite.md#name)
+[`WorkerDetailsLite`](WorkerDetailsLite.md).[`name`](WorkerDetailsLite.md#name)
 
-#### Defined in
+***
 
-[index.ts:2503](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2503)
+### nsfw?
 
-___
+> `optional` **nsfw**: `boolean`
 
-### nsfw
-
-• `Optional` **nsfw**: `boolean`
+Defined in: [index.ts:3273](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3273)
 
 Whether this worker can generate NSFW requests or not.
 
-#### Defined in
+***
 
-[index.ts:2470](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2470)
+### online?
 
-___
+> `optional` **online**: `boolean`
 
-### online
-
-• `Optional` **online**: `boolean`
+Defined in: [index.ts:3310](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3310)
 
 True if the worker has checked-in the past 5 minutes.
 
 #### Inherited from
 
-[WorkerDetailsLite](WorkerDetailsLite.md).[online](WorkerDetailsLite.md#online)
+[`WorkerDetailsLite`](WorkerDetailsLite.md).[`online`](WorkerDetailsLite.md#online)
 
-#### Defined in
+***
 
-[index.ts:2507](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2507)
+### owner?
 
-___
+> `optional` **owner**: `string`
 
-### owner
-
-• `Optional` **owner**: `string`
+Defined in: [index.ts:3275](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3275)
 
 Privileged or public if the owner has allowed it. The alias of the owner of this worker.
 
-#### Defined in
+***
 
-[index.ts:2472](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2472)
+### paused?
 
-___
+> `optional` **paused**: `boolean`
 
-### paused
-
-• `Optional` **paused**: `boolean`
+Defined in: [index.ts:3269](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3269)
 
 (Privileged) When True, this worker not be given any new requests.
 
-#### Defined in
+***
 
-[index.ts:2466](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2466)
+### performance?
 
-___
+> `optional` **performance**: `string`
 
-### performance
-
-• `Optional` **performance**: `string`
+Defined in: [index.ts:3261](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3261)
 
 The average performance of this worker in human readable form.
 
-#### Defined in
+***
 
-[index.ts:2458](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2458)
+### requests\_fulfilled?
 
-___
+> `optional` **requests\_fulfilled**: `number`
 
-### requests\_fulfilled
-
-• `Optional` **requests\_fulfilled**: `number`
+Defined in: [index.ts:3256](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3256)
 
 How many images this worker has generated.
 
-#### Defined in
+***
 
-[index.ts:2453](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2453)
+### suspicious?
 
-___
+> `optional` **suspicious**: `number`
 
-### suspicious
-
-• `Optional` **suspicious**: `number`
+Defined in: [index.ts:3279](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3279)
 
 (Privileged) How much suspicion this worker has accumulated
 
-#### Defined in
+***
 
-[index.ts:2476](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2476)
+### team?
 
-___
+> `optional` **team**: [`TeamDetailsLite`](TeamDetailsLite.md)
 
-### team
+Defined in: [index.ts:3287](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3287)
 
-• `Optional` **team**: [`TeamDetailsLite`](TeamDetailsLite.md)
+***
 
-#### Defined in
+### threads?
 
-[index.ts:2484](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2484)
+> `optional` **threads**: `number`
 
-___
-
-### threads
-
-• `Optional` **threads**: `number`
+Defined in: [index.ts:3263](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3263)
 
 How many threads this worker is running.
 
-#### Defined in
+***
 
-[index.ts:2460](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2460)
+### trusted?
 
-___
+> `optional` **trusted**: `boolean`
 
-### trusted
-
-• `Optional` **trusted**: `boolean`
+Defined in: [index.ts:3277](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3277)
 
 The worker is trusted to return valid generations.
 
-#### Defined in
+***
 
-[index.ts:2474](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2474)
+### uncompleted\_jobs?
 
-___
+> `optional` **uncompleted\_jobs**: `number`
 
-### uncompleted\_jobs
-
-• `Optional` **uncompleted\_jobs**: `number`
+Defined in: [index.ts:3284](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3284)
 
 How many jobs this worker has left uncompleted after it started them.
 
-**`Example`**
+#### Example
 
 ```ts
 0
 ```
 
-#### Defined in
+***
 
-[index.ts:2481](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2481)
+### uptime?
 
-___
+> `optional` **uptime**: `number`
 
-### uptime
-
-• `Optional` **uptime**: `number`
+Defined in: [index.ts:3265](https://github.com/ZeldaFan0225/ai_horde/blob/c69e3aa7407916d9484a84d0ca370da3c14f748a/index.ts#L3265)
 
 The amount of seconds this worker has been online for this Horde.
-
-#### Defined in
-
-[index.ts:2462](https://github.com/ZeldaFan0225/ai_horde/blob/a3ac80c/index.ts#L2462)
