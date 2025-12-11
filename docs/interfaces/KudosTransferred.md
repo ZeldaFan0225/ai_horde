@@ -6,7 +6,7 @@
 
 # Interface: KudosTransferred
 
-Defined in: [index.ts:3355](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3355)
+Defined in: [index.ts:3355](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3355)
 
 ## Properties
 
@@ -14,6 +14,6 @@ Defined in: [index.ts:3355](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **transferred**: `number`
 
-Defined in: [index.ts:3357](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3357)
+Defined in: [index.ts:3357](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3357)
 
 The amount of Kudos tranferred

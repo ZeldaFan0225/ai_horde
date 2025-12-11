@@ -6,7 +6,7 @@
 
 # Interface: ResponseModelCollection
 
-Defined in: [index.ts:2011](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2011)
+Defined in: [index.ts:2011](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2011)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2011](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:2013](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2013)
+Defined in: [index.ts:2013](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2013)
 
 The UUID of the collection. Use this to use this collection of retrieve its information in the future.
 
@@ -24,7 +24,7 @@ The UUID of the collection. Use this to use this collection of retrieve its info
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:2030](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2030)
+Defined in: [index.ts:2030](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2030)
 
 Extra information about this collection.
 
@@ -42,7 +42,7 @@ Extra information about this collection.
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:2019](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2019)
+Defined in: [index.ts:2019](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2019)
 
 The name for the collection. Case-sensitive and unique per user.
 
@@ -60,7 +60,7 @@ The name for the collection. Case-sensitive and unique per user.
 
 > `optional` **public**: `boolean`
 
-Defined in: [index.ts:2035](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2035)
+Defined in: [index.ts:2035](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2035)
 
 When true this collection will be listed among all collection publicly.When false, information about this collection can only be seen by people who know its ID or name.
 
@@ -76,7 +76,7 @@ true
 
 > `optional` **styles**: [`ResponseModelStylesShort`](ResponseModelStylesShort.md)[]
 
-Defined in: [index.ts:2036](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2036)
+Defined in: [index.ts:2036](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2036)
 
 ***
 
@@ -84,7 +84,7 @@ Defined in: [index.ts:2036](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **type**: `"image"` \| `"text"`
 
-Defined in: [index.ts:2024](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2024)
+Defined in: [index.ts:2024](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2024)
 
 The kind of styles stored in this collection.
 
@@ -100,6 +100,6 @@ image
 
 > `optional` **use\_count**: `number`
 
-Defined in: [index.ts:2040](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2040)
+Defined in: [index.ts:2040](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2040)
 
 The amount of times this collection has been used in generations.

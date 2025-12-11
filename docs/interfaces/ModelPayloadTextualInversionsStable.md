@@ -6,7 +6,7 @@
 
 # Interface: ModelPayloadTextualInversionsStable
 
-Defined in: [index.ts:2650](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2650)
+Defined in: [index.ts:2650](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2650)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2650](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **inject\_ti**: `"prompt"` \| `"negprompt"`
 
-Defined in: [index.ts:2661](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2661)
+Defined in: [index.ts:2661](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2661)
 
 if set, will automatically add this TI filename to the prompt or negative prompt accordingly using the provided strength. If this is set to None, then the user will have to manually add the embed to the prompt themselves.
 
@@ -24,7 +24,7 @@ if set, will automatically add this TI filename to the prompt or negative prompt
 
 > **name**: `string`
 
-Defined in: [index.ts:2657](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2657)
+Defined in: [index.ts:2657](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2657)
 
 The exact name or CivitAI ID of the Textual Inversion.
 
@@ -48,7 +48,7 @@ The exact name or CivitAI ID of the Textual Inversion.
 
 > `optional` **strength**: `number`
 
-Defined in: [index.ts:2668](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2668)
+Defined in: [index.ts:2668](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2668)
 
 The strength with which to apply the TI to the prompt. Only used when inject_ti is not None
 

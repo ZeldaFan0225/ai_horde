@@ -6,7 +6,7 @@
 
 # Interface: UserKudosDetails
 
-Defined in: [index.ts:3151](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3151)
+Defined in: [index.ts:3151](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3151)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3151](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **accumulated**: `number`
 
-Defined in: [index.ts:3153](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3153)
+Defined in: [index.ts:3153](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3153)
 
 The ammount of Kudos accumulated or used for generating images.
 
@@ -24,7 +24,7 @@ The ammount of Kudos accumulated or used for generating images.
 
 > `optional` **admin**: `number`
 
-Defined in: [index.ts:3157](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3157)
+Defined in: [index.ts:3157](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3157)
 
 The amount of Kudos this user has been given by the Horde admins.
 
@@ -34,7 +34,7 @@ The amount of Kudos this user has been given by the Horde admins.
 
 > `optional` **awarded**: `number`
 
-Defined in: [index.ts:3163](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3163)
+Defined in: [index.ts:3163](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3163)
 
 The amount of Kudos this user has received from rating images.
 
@@ -44,7 +44,7 @@ The amount of Kudos this user has received from rating images.
 
 > `optional` **gifted**: `number`
 
-Defined in: [index.ts:3155](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3155)
+Defined in: [index.ts:3155](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3155)
 
 The amount of Kudos this user has given to other users.
 
@@ -54,7 +54,7 @@ The amount of Kudos this user has given to other users.
 
 > `optional` **received**: `number`
 
-Defined in: [index.ts:3159](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3159)
+Defined in: [index.ts:3159](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3159)
 
 The amount of Kudos this user has been given by other users.
 
@@ -64,6 +64,6 @@ The amount of Kudos this user has been given by other users.
 
 > `optional` **recurring**: `number`
 
-Defined in: [index.ts:3161](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3161)
+Defined in: [index.ts:3161](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3161)
 
 The amount of Kudos this user has received from recurring rewards.

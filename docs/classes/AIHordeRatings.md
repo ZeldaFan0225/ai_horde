@@ -6,7 +6,7 @@
 
 # Class: AIHordeRatings
 
-Defined in: [index.ts:3851](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3851)
+Defined in: [index.ts:3851](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3851)
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3851](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > **new AIHordeRatings**(`options`): `AIHordeRatings`
 
-Defined in: [index.ts:3855](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3855)
+Defined in: [index.ts:3855](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3855)
 
 #### Parameters
 
@@ -32,7 +32,7 @@ Defined in: [index.ts:3855](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > **getDatasets**\<`T`\>(`options?`): `Promise`\<`Pick`\<[`DatasetGetResponse`](../interfaces/DatasetGetResponse.md), `T`\>[]\>
 
-Defined in: [index.ts:3893](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3893)
+Defined in: [index.ts:3893](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3893)
 
 Display all datasets
 
@@ -64,7 +64,7 @@ RatingsDatasetResponse - The datasets
 
 > **getNewRating**\<`T`\>(`image_options?`, `options?`): `Promise`\<`Pick`\<[`DatasetImagePopResponse`](../interfaces/DatasetImagePopResponse.md), `T`\>\>
 
-Defined in: [index.ts:3924](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3924)
+Defined in: [index.ts:3924](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3924)
 
 Retrieve an image to rate from the default dataset
 
@@ -116,7 +116,7 @@ DatasetImagePopResponse - An images data to rate
 
 > **getTeams**\<`T`\>(`options?`): `Promise`\<`Pick`\<[`TeamsGetResponse`](../interfaces/TeamsGetResponse.md), `T`\>[]\>
 
-Defined in: [index.ts:3907](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3907)
+Defined in: [index.ts:3907](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3907)
 
 Display all public teams
 
@@ -148,7 +148,7 @@ RatingsTeamsResponse - The datasets
 
 > **postRating**\<`T`\>(`image_id`, `rating`, `options?`): `Promise`\<`Pick`\<[`RatePostResponse`](../interfaces/RatePostResponse.md), `T`\>\>
 
-Defined in: [index.ts:3948](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3948)
+Defined in: [index.ts:3948](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3948)
 
 Check if there are interrogation requests queued for fulfillment
 This endpoint is used by registered workers only

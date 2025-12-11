@@ -8,4 +8,4 @@
 
 > `const` **ResponseModelCollectionTypes**: `Readonly`\<\{ `all`: `"all"`; `image`: `"image"`; `text`: `"text"`; \}\>
 
-Defined in: [index.ts:230](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L230)
+Defined in: [index.ts:230](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L230)

@@ -6,7 +6,7 @@
 
 # Interface: SharedKeyDetails
 
-Defined in: [index.ts:3808](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3808)
+Defined in: [index.ts:3808](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3808)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3808](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **expiry**: `string`
 
-Defined in: [index.ts:3824](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3824)
+Defined in: [index.ts:3824](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3824)
 
 The date at which this API key will expire.
 
@@ -24,7 +24,7 @@ The date at which this API key will expire.
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:3812](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3812)
+Defined in: [index.ts:3812](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3812)
 
 The SharedKey ID
 
@@ -34,7 +34,7 @@ The SharedKey ID
 
 > `optional` **kudos**: `number`
 
-Defined in: [index.ts:3820](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3820)
+Defined in: [index.ts:3820](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3820)
 
 The Kudos limit assigned to this key
 
@@ -44,7 +44,7 @@ The Kudos limit assigned to this key
 
 > `optional` **username**: `string`
 
-Defined in: [index.ts:3816](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3816)
+Defined in: [index.ts:3816](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3816)
 
 The owning user's unique Username. It is a combination of their chosen alias plus their ID.
 
@@ -54,6 +54,6 @@ The owning user's unique Username. It is a combination of their chosen alias plu
 
 > `optional` **utilized**: `number`
 
-Defined in: [index.ts:3828](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3828)
+Defined in: [index.ts:3828](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3828)
 
 How mych kudos has been utilized via this shared key until now.

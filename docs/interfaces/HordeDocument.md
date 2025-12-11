@@ -6,7 +6,7 @@
 
 # Interface: HordeDocument
 
-Defined in: [index.ts:2070](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2070)
+Defined in: [index.ts:2070](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2070)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2070](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **html**: `string`
 
-Defined in: [index.ts:2071](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2071)
+Defined in: [index.ts:2071](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2071)
 
 ***
 
@@ -22,4 +22,4 @@ Defined in: [index.ts:2071](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **markdown**: `string`
 
-Defined in: [index.ts:2072](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2072)
+Defined in: [index.ts:2072](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2072)

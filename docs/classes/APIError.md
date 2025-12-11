@@ -6,7 +6,7 @@
 
 # Class: APIError
 
-Defined in: [index.ts:236](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L236)
+Defined in: [index.ts:236](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L236)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:236](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d27
 
 > **new APIError**(`rawError`, `core_res`, `method`, `requestBody?`): `APIError`
 
-Defined in: [index.ts:244](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L244)
+Defined in: [index.ts:244](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L244)
 
 #### Parameters
 
@@ -52,7 +52,7 @@ Defined in: [index.ts:244](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d27
 
 > **error\_code**: `string`
 
-Defined in: [index.ts:243](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L243)
+Defined in: [index.ts:243](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L243)
 
 ***
 
@@ -60,7 +60,7 @@ Defined in: [index.ts:243](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d27
 
 > **errors**: `Record`\<`string`, `string`\>
 
-Defined in: [index.ts:242](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L242)
+Defined in: [index.ts:242](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L242)
 
 ***
 
@@ -68,7 +68,7 @@ Defined in: [index.ts:242](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d27
 
 > **method**: `string`
 
-Defined in: [index.ts:239](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L239)
+Defined in: [index.ts:239](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L239)
 
 ***
 
@@ -76,7 +76,7 @@ Defined in: [index.ts:239](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d27
 
 > **rawError**: [`RequestError`](../interfaces/RequestError.md)
 
-Defined in: [index.ts:237](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L237)
+Defined in: [index.ts:237](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L237)
 
 ***
 
@@ -84,7 +84,7 @@ Defined in: [index.ts:237](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d27
 
 > **requestBody**: `any`
 
-Defined in: [index.ts:241](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L241)
+Defined in: [index.ts:241](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L241)
 
 ***
 
@@ -92,7 +92,7 @@ Defined in: [index.ts:241](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d27
 
 > **status**: `number`
 
-Defined in: [index.ts:238](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L238)
+Defined in: [index.ts:238](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L238)
 
 ***
 
@@ -100,7 +100,7 @@ Defined in: [index.ts:238](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d27
 
 > **url**: `string`
 
-Defined in: [index.ts:240](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L240)
+Defined in: [index.ts:240](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L240)
 
 ## Accessors
 
@@ -110,7 +110,7 @@ Defined in: [index.ts:240](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d27
 
 > **get** **name**(): `string`
 
-Defined in: [index.ts:256](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L256)
+Defined in: [index.ts:256](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L256)
 
 ##### Returns
 
