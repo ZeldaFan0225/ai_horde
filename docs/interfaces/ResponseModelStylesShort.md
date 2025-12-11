@@ -6,7 +6,7 @@
 
 # Interface: ResponseModelStylesShort
 
-Defined in: [index.ts:2043](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2043)
+Defined in: [index.ts:2043](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2043)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2043](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:2053](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2053)
+Defined in: [index.ts:2053](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2053)
 
 The ID of this style
 
@@ -30,7 +30,7 @@ The ID of this style
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:2048](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2048)
+Defined in: [index.ts:2048](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2048)
 
 The unique name for this style
 

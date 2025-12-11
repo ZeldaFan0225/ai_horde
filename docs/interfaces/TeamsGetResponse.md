@@ -6,7 +6,7 @@
 
 # Interface: TeamsGetResponse
 
-Defined in: [index.ts:3999](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3999)
+Defined in: [index.ts:3999](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3999)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3999](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:4004](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L4004)
+Defined in: [index.ts:4004](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L4004)
 
 The unique identifier for this team
 
@@ -30,7 +30,7 @@ The unique identifier for this team
 
 > `optional` **is\_private**: `boolean`
 
-Defined in: [index.ts:4014](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L4014)
+Defined in: [index.ts:4014](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L4014)
 
 Whether this team is private or not
 
@@ -46,7 +46,7 @@ false
 
 > `optional` **team\_name**: `string`
 
-Defined in: [index.ts:4009](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L4009)
+Defined in: [index.ts:4009](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L4009)
 
 The name of this team
 

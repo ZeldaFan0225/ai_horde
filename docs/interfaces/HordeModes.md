@@ -6,7 +6,7 @@
 
 # Interface: HordeModes
 
-Defined in: [index.ts:3360](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3360)
+Defined in: [index.ts:3360](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3360)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3360](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **invite\_only\_mode**: `boolean`
 
-Defined in: [index.ts:3364](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3364)
+Defined in: [index.ts:3364](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3364)
 
 When True, this Horde will not only accept worker explicitly invited to join.
 
@@ -24,7 +24,7 @@ When True, this Horde will not only accept worker explicitly invited to join.
 
 > `optional` **maintenance\_mode**: `boolean`
 
-Defined in: [index.ts:3362](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3362)
+Defined in: [index.ts:3362](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3362)
 
 When True, this Horde will not accept new requests for image generation, but will finish processing the ones currently in the queue.
 
@@ -34,6 +34,6 @@ When True, this Horde will not accept new requests for image generation, but wil
 
 > `optional` **raid\_mode**: `boolean`
 
-Defined in: [index.ts:3366](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3366)
+Defined in: [index.ts:3366](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3366)
 
 When True, this Horde will not always provide full information in order to throw off attackers.

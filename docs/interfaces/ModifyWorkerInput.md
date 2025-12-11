@@ -6,7 +6,7 @@
 
 # Interface: ModifyWorkerInput
 
-Defined in: [index.ts:2256](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2256)
+Defined in: [index.ts:2256](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2256)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2256](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:2266](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2266)
+Defined in: [index.ts:2266](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2266)
 
 You can optionally provide a server note which will be seen in the server details. No profanity allowed!
 
@@ -32,7 +32,7 @@ You can optionally provide a server note which will be seen in the server detail
 
 > `optional` **maintenance**: `boolean`
 
-Defined in: [index.ts:2258](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2258)
+Defined in: [index.ts:2258](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2258)
 
 (Mods only) Set to true to put this worker into maintenance.
 
@@ -42,7 +42,7 @@ Defined in: [index.ts:2258](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:2272](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2272)
+Defined in: [index.ts:2272](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2272)
 
 When this is set, it will change the worker's name. No profanity allowed!
 
@@ -60,7 +60,7 @@ When this is set, it will change the worker's name. No profanity allowed!
 
 > `optional` **paused**: `boolean`
 
-Defined in: [index.ts:2260](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2260)
+Defined in: [index.ts:2260](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2260)
 
 (Mods only) Set to true to pause this worker.
 
@@ -70,7 +70,7 @@ Defined in: [index.ts:2260](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **team**: `string`
 
-Defined in: [index.ts:2279](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2279)
+Defined in: [index.ts:2279](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2279)
 
 The team towards which this worker contributes kudos. No profanity allowed!
 

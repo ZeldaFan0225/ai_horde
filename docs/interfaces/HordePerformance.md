@@ -6,7 +6,7 @@
 
 # Interface: HordePerformance
 
-Defined in: [index.ts:3382](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3382)
+Defined in: [index.ts:3382](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3382)
 
 ## Extended by
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:3382](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **queued\_requests**: `number`
 
-Defined in: [index.ts:3384](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3384)
+Defined in: [index.ts:3384](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3384)
 
 The amount of waiting and processing requests currently in this Horde
 
@@ -28,7 +28,7 @@ The amount of waiting and processing requests currently in this Horde
 
 > `optional` **thread\_count**: `number`
 
-Defined in: [index.ts:3388](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3388)
+Defined in: [index.ts:3388](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3388)
 
 How many worker threads are actively processing prompt generations in this Horde in the past 5 minutes
 
@@ -38,6 +38,6 @@ How many worker threads are actively processing prompt generations in this Horde
 
 > `optional` **worker\_count**: `number`
 
-Defined in: [index.ts:3386](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3386)
+Defined in: [index.ts:3386](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3386)
 
 How many workers are actively processing image generations in this Horde in the past 5 minutes

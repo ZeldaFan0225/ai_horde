@@ -6,7 +6,7 @@
 
 # Interface: InputStyleExamplePost
 
-Defined in: [index.ts:2112](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2112)
+Defined in: [index.ts:2112](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2112)
 
 ## Extended by
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:2112](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **primary**: `boolean`
 
-Defined in: [index.ts:2112](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2112)
+Defined in: [index.ts:2112](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2112)
 
 ***
 
@@ -26,4 +26,4 @@ Defined in: [index.ts:2112](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **url**: `string`
 
-Defined in: [index.ts:2112](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2112)
+Defined in: [index.ts:2112](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2112)

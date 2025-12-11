@@ -6,7 +6,7 @@
 
 # Interface: ModifyUser
 
-Defined in: [index.ts:3200](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3200)
+Defined in: [index.ts:3200](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3200)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3200](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **concurrency**: `number`
 
-Defined in: [index.ts:3204](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3204)
+Defined in: [index.ts:3204](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3204)
 
 The request concurrency this user has after this request
 
@@ -24,7 +24,7 @@ The request concurrency this user has after this request
 
 > `optional` **moderator**: `boolean`
 
-Defined in: [index.ts:3210](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3210)
+Defined in: [index.ts:3210](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3210)
 
 The user's new moderator status.
 
@@ -34,7 +34,7 @@ The user's new moderator status.
 
 > `optional` **monthly\_kudos**: `number`
 
-Defined in: [index.ts:3216](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3216)
+Defined in: [index.ts:3216](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3216)
 
 The user's new monthly kudos total
 
@@ -44,7 +44,7 @@ The user's new monthly kudos total
 
 > `optional` **new\_kudos**: `number`
 
-Defined in: [index.ts:3202](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3202)
+Defined in: [index.ts:3202](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3202)
 
 The new total Kudos this user has after this request
 
@@ -54,7 +54,7 @@ The new total Kudos this user has after this request
 
 > `optional` **public\_workers**: `number`
 
-Defined in: [index.ts:3212](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3212)
+Defined in: [index.ts:3212](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3212)
 
 The user's new public_workers status.
 
@@ -64,7 +64,7 @@ The user's new public_workers status.
 
 > `optional` **trusted**: `boolean`
 
-Defined in: [index.ts:3218](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3218)
+Defined in: [index.ts:3218](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3218)
 
 The user's new trusted status
 
@@ -74,7 +74,7 @@ The user's new trusted status
 
 > `optional` **usage\_multiplier**: `number`
 
-Defined in: [index.ts:3206](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3206)
+Defined in: [index.ts:3206](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3206)
 
 Multiplies the amount of kudos lost when generating images.
 
@@ -84,7 +84,7 @@ Multiplies the amount of kudos lost when generating images.
 
 > `optional` **username**: `string`
 
-Defined in: [index.ts:3214](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3214)
+Defined in: [index.ts:3214](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3214)
 
 The user's new username.
 
@@ -94,6 +94,6 @@ The user's new username.
 
 > `optional` **worker\_invited**: `number`
 
-Defined in: [index.ts:3208](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L3208)
+Defined in: [index.ts:3208](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3208)
 
 This userWhether this user has been invited to join a worker to the horde and how many of them. When 0, this user cannot add (new) workers to the horde.

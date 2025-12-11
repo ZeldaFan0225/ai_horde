@@ -6,7 +6,7 @@
 
 # Interface: GenerationKobold
 
-Defined in: [index.ts:2822](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2822)
+Defined in: [index.ts:2822](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2822)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:2822](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **model**: `string`
 
-Defined in: [index.ts:2785](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2785)
+Defined in: [index.ts:2785](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2785)
 
 The model which generated this image
 
@@ -32,7 +32,7 @@ The model which generated this image
 
 > **seed**: `number`
 
-Defined in: [index.ts:2832](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2832)
+Defined in: [index.ts:2832](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2832)
 
 The seed which generated this text
 
@@ -42,7 +42,7 @@ The seed which generated this text
 
 > **state**: `"ok"` \| `"censored"`
 
-Defined in: [index.ts:2828](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2828)
+Defined in: [index.ts:2828](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2828)
 
 The state of the generation,
 
@@ -64,7 +64,7 @@ ok
 
 > `optional` **text**: `string`
 
-Defined in: [index.ts:2830](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2830)
+Defined in: [index.ts:2830](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2830)
 
 The generated text
 
@@ -74,7 +74,7 @@ The generated text
 
 > `optional` **worker\_id**: `string`
 
-Defined in: [index.ts:2781](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2781)
+Defined in: [index.ts:2781](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2781)
 
 The UUID of the worker which generated this image
 
@@ -88,7 +88,7 @@ The UUID of the worker which generated this image
 
 > `optional` **worker\_name**: `string`
 
-Defined in: [index.ts:2783](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2783)
+Defined in: [index.ts:2783](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2783)
 
 The name of the worker which generated this image
 

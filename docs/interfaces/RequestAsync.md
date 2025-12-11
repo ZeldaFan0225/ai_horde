@@ -6,7 +6,7 @@
 
 # Interface: RequestAsync
 
-Defined in: [index.ts:2835](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2835)
+Defined in: [index.ts:2835](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2835)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2835](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:2837](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2837)
+Defined in: [index.ts:2837](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2837)
 
 The UUID of the request. Use this to retrieve the request status in the future
 
@@ -24,7 +24,7 @@ The UUID of the request. Use this to retrieve the request status in the future
 
 > `optional` **kudos**: `number`
 
-Defined in: [index.ts:2839](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2839)
+Defined in: [index.ts:2839](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2839)
 
 The expected kudos consumption for this request
 
@@ -34,7 +34,7 @@ The expected kudos consumption for this request
 
 > `optional` **message**: `string`
 
-Defined in: [index.ts:2841](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2841)
+Defined in: [index.ts:2841](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2841)
 
 Any extra information from the horde about this request
 
@@ -44,4 +44,4 @@ Any extra information from the horde about this request
 
 > `optional` **warnings**: [`RequestSingleWarning`](RequestSingleWarning.md)[]
 
-Defined in: [index.ts:2842](https://github.com/ZeldaFan0225/ai_horde/blob/b5c3d2787f56d64bc6e238cde2e8dc2b3b4fc144/index.ts#L2842)
+Defined in: [index.ts:2842](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2842)
