@@ -8,4 +8,4 @@
 
 > `const` **GenerationMetadataStableValues**: `Readonly`\<\{ `baseline_mismatch`: `"baseline_mismatch"`; `csam`: `"csam"`; `download_failed`: `"download_failed"`; `nsfw`: `"nsfw"`; `parse_failed`: `"parse_failed"`; `see_ref`: `"see_ref"`; \}\>
 
-Defined in: [index.ts:221](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L221)
+Defined in: [index.ts:221](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L221)

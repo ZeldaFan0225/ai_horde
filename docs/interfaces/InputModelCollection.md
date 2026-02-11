@@ -6,7 +6,7 @@
 
 # Interface: InputModelCollection
 
-Defined in: [index.ts:2057](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2057)
+Defined in: [index.ts:2057](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2057)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2057](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:2059](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2059)
+Defined in: [index.ts:2059](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2059)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [index.ts:2059](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:2058](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2058)
+Defined in: [index.ts:2058](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2058)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [index.ts:2058](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865
 
 > `optional` **public**: `boolean`
 
-Defined in: [index.ts:2060](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2060)
+Defined in: [index.ts:2060](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2060)
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: [index.ts:2060](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865
 
 > `optional` **styles**: `string`[]
 
-Defined in: [index.ts:2061](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2061)
+Defined in: [index.ts:2061](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2061)

@@ -6,7 +6,7 @@
 
 # Interface: ResponseModelMessagePop
 
-Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2134)
+Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2134)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865
 
 > `optional` **expiry**: `string`
 
-Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2134)
+Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2134)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2134)
+Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2134)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865
 
 > `optional` **message**: `string`
 
-Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2134)
+Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2134)
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865
 
 > `optional` **origin**: `string`
 
-Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L2134)
+Defined in: [index.ts:2134](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2134)

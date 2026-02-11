@@ -6,7 +6,7 @@
 
 # Interface: UsageDetails
 
-Defined in: [index.ts:3183](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3183)
+Defined in: [index.ts:3183](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3183)
 
 ## Extended by
 
@@ -18,6 +18,6 @@ Defined in: [index.ts:3183](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865
 
 > `optional` **requests**: `number`
 
-Defined in: [index.ts:3185](https://github.com/ZeldaFan0225/ai_horde/blob/c9c865fd277a7580c7dc2e4e7da271afa2d35ff5/index.ts#L3185)
+Defined in: [index.ts:3185](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3185)
 
 How many images this user has requested
