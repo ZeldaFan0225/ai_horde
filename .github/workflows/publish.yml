@@ -1,6 +1,8 @@
 # Publishes to npm when a GitHub Release is published. The release tag's version is used for the package.
 # Authenticates via npm Trusted Publishing (OIDC), no token secret needed. The package's trusted publisher
 # on npmjs.com must be set to: ZeldaFan0225 / ai_horde / publish.yml
+# The version is only *staged*: a maintainer has to approve it with 2FA on npmjs.com (Staged Packages tab)
+# or via `npm stage approve <stage-id>` before it goes live.
 
 name: Publish to npm on release
 
@@ -31,12 +33,13 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # Staged publishing needs Node >= 22.14.0
+          node-version: 22
           registry-url: 'https://registry.npmjs.org'
 
-      # Trusted Publishing needs npm >= 11.5.1, Node 20 ships with npm 10
+      # Staged publishing needs npm >= 11.15.0, Node 22 ships with an older npm
       - name: Update npm
-        run: npm install -g npm@11
+        run: npm install -g npm@^11.15.0
 
       - name: Derive version from release tag
         id: ver
@@ -58,10 +61,10 @@ jobs:
       - name: Build
         run: npm run build --if-present
 
-      - name: Publish to npm
+      - name: Stage publish to npm
         run: |
-          # For first publish of a scoped package, --access public is required. Safe to use subsequently.
-          npm publish --provenance --access public
+          # Submits the version for approval; it is not installable until a maintainer approves it with 2FA.
+          npm stage publish --provenance --access public
 
       - name: Checkout default branch for commit
         if: ${{ success() }}
