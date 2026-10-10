@@ -8,6 +8,10 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to publish (e.g. v6.1.0). Run this from main so the current workflow is used.'
+        required: true
 
 jobs:
   publish:
@@ -22,7 +26,7 @@ jobs:
         with:
           fetch-depth: 0
           # Checkout the release tag to build the exact sources being released
-          ref: ${{ github.event.release.tag_name || github.ref_name }}
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
 
       - name: Use Node.js
         uses: actions/setup-node@v4
@@ -38,7 +42,7 @@ jobs:
         id: ver
         shell: bash
         env:
-          TAG_NAME: ${{ github.event.release.tag_name || github.ref_name }}
+          TAG_NAME: ${{ github.event.release.tag_name || inputs.tag }}
         run: |
           RAW_TAG="${TAG_NAME}"
           VERSION="${RAW_TAG#v}"
