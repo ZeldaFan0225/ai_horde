@@ -2,6 +2,9 @@ name: Update Docs
 
 on:
     push:
+        # Only branches: a tag push checks out a detached HEAD and pushing the docs commit back to the tag fails
+        branches:
+            - main
         paths:
             - "index.ts"
 
