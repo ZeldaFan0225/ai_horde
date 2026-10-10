@@ -6,7 +6,7 @@
 
 # Interface: ContributionsDetailsStable
 
-Defined in: [index.ts:3188](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3188)
+Defined in: [index.ts:4108](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4108)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:3188](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **fulfillments**: `number`
 
-Defined in: [index.ts:3190](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3190)
+Defined in: [index.ts:4110](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4110)
 
 How many images this user has generated
 
@@ -32,6 +32,10 @@ How many images this user has generated
 
 > `optional` **megapixelsteps**: `number`
 
-Defined in: [index.ts:3192](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3192)
+Defined in: [index.ts:4112](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4112)
 
 How many megapixelsteps this user has generated
+
+#### Overrides
+
+[`ContributionsDetails`](ContributionsDetails.md).[`megapixelsteps`](ContributionsDetails.md#megapixelsteps)

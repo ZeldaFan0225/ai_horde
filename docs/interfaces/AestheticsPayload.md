@@ -6,7 +6,7 @@
 
 # Interface: AestheticsPayload
 
-Defined in: [index.ts:3608](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3608)
+Defined in: [index.ts:5036](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5036)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3608](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **best**: `string`
 
-Defined in: [index.ts:3615](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3615)
+Defined in: [index.ts:5043](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5043)
 
 The UUID of the best image in this generation batch (only used when 2+ images generated). If 2+ aesthetic ratings are also provided, then they take precedence if they're not tied.
 
@@ -38,15 +38,15 @@ The UUID of the best image in this generation batch (only used when 2+ images ge
 
 > `optional` **ratings**: [`AestheticRating`](AestheticRating.md)[]
 
-Defined in: [index.ts:3623](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3623)
+Defined in: [index.ts:5052](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5052)
 
 ***
 
-### team?
+### ~~team?~~
 
 > `optional` **team**: `string`
 
-Defined in: [index.ts:3622](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3622)
+Defined in: [index.ts:5051](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5051)
 
 The team towards which this ratings contributes. It not is passed, it will leave the ratings without a team.
 
@@ -63,3 +63,7 @@ The team towards which this ratings contributes. It not is passed, it will leave
 #### Max Length
 
 36
+
+#### Deprecated
+
+No longer part of the AI Horde API

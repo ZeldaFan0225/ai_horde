@@ -6,7 +6,7 @@
 
 # Interface: GenerationKobold
 
-Defined in: [index.ts:2822](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2822)
+Defined in: [index.ts:3558](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3558)
 
 ## Extends
 
@@ -14,11 +14,19 @@ Defined in: [index.ts:2822](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 ## Properties
 
+### gen\_metadata?
+
+> `optional` **gen\_metadata**: [`GenerationMetadataKobold`](GenerationMetadataKobold.md)[]
+
+Defined in: [index.ts:3572](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3572)
+
+***
+
 ### model?
 
 > `optional` **model**: `string`
 
-Defined in: [index.ts:2785](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2785)
+Defined in: [index.ts:3520](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3520)
 
 The model which generated this image
 
@@ -28,21 +36,27 @@ The model which generated this image
 
 ***
 
-### seed
+### seed?
 
-> **seed**: `number`
+> `optional` **seed**: `number`
 
-Defined in: [index.ts:2832](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2832)
+Defined in: [index.ts:3571](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3571)
 
 The seed which generated this text
+
+#### Default
+
+```ts
+0
+```
 
 ***
 
 ### state
 
-> **state**: `"ok"` \| `"censored"`
+> **state**: `"csam"` \| `"ok"` \| `"censored"`
 
-Defined in: [index.ts:2828](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2828)
+Defined in: [index.ts:3564](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3564)
 
 The state of the generation,
 
@@ -58,13 +72,17 @@ ok
 ok
 ```
 
+#### Overrides
+
+[`Generation`](Generation.md).[`state`](Generation.md#state)
+
 ***
 
 ### text?
 
 > `optional` **text**: `string`
 
-Defined in: [index.ts:2830](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2830)
+Defined in: [index.ts:3566](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3566)
 
 The generated text
 
@@ -74,7 +92,7 @@ The generated text
 
 > `optional` **worker\_id**: `string`
 
-Defined in: [index.ts:2781](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2781)
+Defined in: [index.ts:3516](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3516)
 
 The UUID of the worker which generated this image
 
@@ -88,7 +106,7 @@ The UUID of the worker which generated this image
 
 > `optional` **worker\_name**: `string`
 
-Defined in: [index.ts:2783](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2783)
+Defined in: [index.ts:3518](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3518)
 
 The name of the worker which generated this image
 

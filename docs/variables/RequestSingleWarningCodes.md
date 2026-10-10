@@ -6,6 +6,6 @@
 
 # Variable: RequestSingleWarningCodes
 
-> `const` **RequestSingleWarningCodes**: `Readonly`\<\{ `CfgScaleMismatch`: `"CfgScaleMismatch"`; `CfgScaleTooLarge`: `"CfgScaleTooLarge"`; `CfgScaleTooSmall`: `"CfgScaleTooSmall"`; `ClipSkipMismatch`: `"ClipSkipMismatch"`; `NoAvailableWorker`: `"NoAvailableWorker"`; `SamplerMismatch`: `"SamplerMismatch"`; `SchedulerMismatch`: `"SchedulerMismatch"`; `StepsTooFew`: `"StepsTooFew"`; `StepsTooMany`: `"StepsTooMany"`; \}\>
+> `const` **RequestSingleWarningCodes**: `Readonly`\<\{ `CfgPPScaleTooLarge`: `"CfgPPScaleTooLarge"`; `CfgScaleMismatch`: `"CfgScaleMismatch"`; `CfgScaleTooLarge`: `"CfgScaleTooLarge"`; `CfgScaleTooSmall`: `"CfgScaleTooSmall"`; `ClipSkipMismatch`: `"ClipSkipMismatch"`; `NoAvailableWorker`: `"NoAvailableWorker"`; `SamplerMismatch`: `"SamplerMismatch"`; `SchedulerMismatch`: `"SchedulerMismatch"`; `StepsTooFew`: `"StepsTooFew"`; `StepsTooMany`: `"StepsTooMany"`; \}\>
 
-Defined in: [index.ts:198](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L198)
+Defined in: [index.ts:428](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L428)

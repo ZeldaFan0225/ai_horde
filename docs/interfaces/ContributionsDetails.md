@@ -6,7 +6,7 @@
 
 # Interface: ContributionsDetails
 
-Defined in: [index.ts:3195](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3195)
+Defined in: [index.ts:4115](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4115)
 
 ## Extended by
 
@@ -18,6 +18,16 @@ Defined in: [index.ts:3195](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **fulfillments**: `number`
 
-Defined in: [index.ts:3197](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3197)
+Defined in: [index.ts:4117](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4117)
 
 How many images this user has generated
+
+***
+
+### megapixelsteps?
+
+> `optional` **megapixelsteps**: `number`
+
+Defined in: [index.ts:4119](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4119)
+
+How many megapixelsteps this user has generated

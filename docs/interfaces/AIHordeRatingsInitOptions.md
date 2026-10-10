@@ -6,7 +6,7 @@
 
 # Interface: AIHordeRatingsInitOptions
 
-Defined in: [index.ts:3963](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3963)
+Defined in: [index.ts:5491](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5491)
 
 Internal Interfaces
 
@@ -16,7 +16,7 @@ Internal Interfaces
 
 > `optional` **api\_route**: `string`
 
-Defined in: [index.ts:3967](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3967)
+Defined in: [index.ts:5495](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5495)
 
 The base api domain + route to use for requests
 
@@ -26,7 +26,7 @@ The base api domain + route to use for requests
 
 > **client\_agent**: `string`
 
-Defined in: [index.ts:3969](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3969)
+Defined in: [index.ts:5497](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5497)
 
 The client agent to pass in the requests.
 
@@ -36,6 +36,6 @@ The client agent to pass in the requests.
 
 > `optional` **default\_token**: `string`
 
-Defined in: [index.ts:3965](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3965)
+Defined in: [index.ts:5493](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5493)
 
 The default token to use for requests

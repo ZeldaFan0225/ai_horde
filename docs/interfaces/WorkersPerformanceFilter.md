@@ -6,7 +6,7 @@
 
 # Interface: WorkersPerformanceFilter
 
-Defined in: [index.ts:3221](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3221)
+Defined in: [index.ts:4165](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4165)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3221](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **img2img**: `boolean`
 
-Defined in: [index.ts:3235](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3235)
+Defined in: [index.ts:4179](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4179)
 
 Worker should support img2img
 
@@ -24,7 +24,7 @@ Worker should support img2img
 
 > `optional` **models**: `string`[]
 
-Defined in: [index.ts:3239](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3239)
+Defined in: [index.ts:4183](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4183)
 
 List of models workers should have (at least one)
 
@@ -34,7 +34,7 @@ List of models workers should have (at least one)
 
 > `optional` **performance**: `number`
 
-Defined in: [index.ts:3226](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3226)
+Defined in: [index.ts:4170](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4170)
 
 Minimal value of performance for worker to have
 
@@ -50,7 +50,7 @@ Minimal value of performance for worker to have
 
 > `optional` **size**: `number`
 
-Defined in: [index.ts:3231](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3231)
+Defined in: [index.ts:4175](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4175)
 
 Minimal filtered workers amount to resort to the list of first `minLength` workers sorted by `performance` value
 

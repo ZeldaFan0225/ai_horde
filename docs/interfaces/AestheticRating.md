@@ -6,15 +6,33 @@
 
 # Interface: AestheticRating
 
-Defined in: [index.ts:3626](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3626)
+Defined in: [index.ts:5055](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5055)
 
 ## Properties
+
+### artifacts?
+
+> `optional` **artifacts**: `number`
+
+Defined in: [index.ts:5074](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5074)
+
+The artifacts rating for this image. 0 for flawless generation that perfectly fits to the prompt. 1 for small, hardly recognizable flaws. 2 small flaws that can easily be spotted, but don't harm the aesthetic experience. 3 for flaws that look obviously wrong, but only mildly harm the aesthetic experience. 4 for flaws that look obviously wrong & significantly harm the aesthetic experience. 5 for flaws that make the image look like total garbage.
+
+#### Minimum
+
+0
+
+#### Maximum
+
+5
+
+***
 
 ### id
 
 > **id**: `string`
 
-Defined in: [index.ts:3633](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3633)
+Defined in: [index.ts:5062](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5062)
 
 The UUID of image being rated
 
@@ -38,7 +56,7 @@ The UUID of image being rated
 
 > **rating**: `number`
 
-Defined in: [index.ts:3639](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3639)
+Defined in: [index.ts:5068](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5068)
 
 The aesthetic rating 1-10 for this image
 

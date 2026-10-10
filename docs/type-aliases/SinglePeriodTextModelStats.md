@@ -8,7 +8,7 @@
 
 > **SinglePeriodTextModelStats** = `Record`\<`string`, `number`\>
 
-Defined in: [index.ts:3766](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3766)
+Defined in: [index.ts:5228](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5228)
 
 string - Model Name
 number - The amount of requests fulfilled for this model

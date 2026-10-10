@@ -6,7 +6,7 @@
 
 # Interface: RatePostInput
 
-Defined in: [index.ts:4040](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L4040)
+Defined in: [index.ts:5568](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5568)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:4040](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **artifacts**: `"FLAWLESS"` \| `"LITTLE_FLAWS"` \| `"SOME_FLAWS"` \| `"OBVIOUS_FLAWS"` \| `"HARMFUL_FLAWS"` \| `"GARBAGE"`
 
-Defined in: [index.ts:4060](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L4060)
+Defined in: [index.ts:5588](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5588)
 
 The artifacts rating for this image.
 0 for flawless generation that perfectly fits to the prompt.
@@ -44,7 +44,7 @@ The artifacts rating for this image.
 
 > **rating**: `number`
 
-Defined in: [index.ts:4047](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L4047)
+Defined in: [index.ts:5575](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5575)
 
 The aesthetic rating for this image. How much do you like this image subjectively and in isolation from comparison with other images or with its own prompt.
 

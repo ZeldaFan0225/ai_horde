@@ -6,15 +6,15 @@
 
 # Interface: ExtraSourceImage
 
-Defined in: [index.ts:2470](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2470)
+Defined in: [index.ts:3193](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3193)
 
 ## Properties
 
-### image
+### image?
 
-> **image**: `string`
+> `optional` **image**: `string`
 
-Defined in: [index.ts:2475](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2475)
+Defined in: [index.ts:3198](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3198)
 
 The Base64-encoded webp to use for further processing
 
@@ -28,7 +28,7 @@ The Base64-encoded webp to use for further processing
 
 > `optional` **strength**: `number`
 
-Defined in: [index.ts:2480](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2480)
+Defined in: [index.ts:3203](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3203)
 
 Optional field, determining the strength to use for the processing
 

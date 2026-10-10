@@ -6,7 +6,7 @@
 
 # Interface: ModelPayloadLorasStable
 
-Defined in: [index.ts:2615](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2615)
+Defined in: [index.ts:3367](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3367)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2615](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **clip**: `number`
 
-Defined in: [index.ts:2636](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2636)
+Defined in: [index.ts:3388](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3388)
 
 The strength of the LoRa to apply to the clip model.
 
@@ -26,7 +26,7 @@ The strength of the LoRa to apply to the clip model.
 
 #### Minimum
 
-0
+-5
 
 #### Maximum
 
@@ -38,7 +38,7 @@ The strength of the LoRa to apply to the clip model.
 
 > `optional` **inject\_trigger**: `string`
 
-Defined in: [index.ts:2642](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2642)
+Defined in: [index.ts:3394](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3394)
 
 If set, will try to discover a trigger for this LoRa which matches or is similar to this string and inject it into the prompt. I 'any' is specified it will be pick the first trigger.
 
@@ -56,7 +56,7 @@ If set, will try to discover a trigger for this LoRa which matches or is similar
 
 > `optional` **is\_version**: `boolean`
 
-Defined in: [index.ts:2647](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2647)
+Defined in: [index.ts:3399](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3399)
 
 If true, will consider the LoRa ID as a CivitAI version ID and search accordingly. Ensure the name is an integer
 
@@ -72,7 +72,7 @@ false
 
 > `optional` **model**: `number`
 
-Defined in: [index.ts:2629](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2629)
+Defined in: [index.ts:3381](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3381)
 
 The strength of the LoRa to apply to the SD model.
 
@@ -84,7 +84,7 @@ The strength of the LoRa to apply to the SD model.
 
 #### Minimum
 
-0
+-5
 
 #### Maximum
 
@@ -96,7 +96,7 @@ The strength of the LoRa to apply to the SD model.
 
 > **name**: `string`
 
-Defined in: [index.ts:2622](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2622)
+Defined in: [index.ts:3374](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3374)
 
 The exact name of the LoRa
 

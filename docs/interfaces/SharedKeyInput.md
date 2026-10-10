@@ -6,7 +6,7 @@
 
 # Interface: SharedKeyInput
 
-Defined in: [index.ts:3784](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3784)
+Defined in: [index.ts:5253](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5253)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3784](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **expiry**: `number`
 
-Defined in: [index.ts:3798](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3798)
+Defined in: [index.ts:5267](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5267)
 
 The amount of days after which this key will expire. If -1, this key will not expire
 
@@ -40,7 +40,7 @@ The amount of days after which this key will expire. If -1, this key will not ex
 
 > `optional` **kudos**: `number`
 
-Defined in: [index.ts:3791](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3791)
+Defined in: [index.ts:5260](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5260)
 
 The Kudos limit assigned to this key. If -1, then anyone with this key can use an unlimited amount of kudos from this account.
 
@@ -52,7 +52,7 @@ The Kudos limit assigned to this key. If -1, then anyone with this key can use a
 
 #### Minimum
 
-1
+-1
 
 #### Maximum
 
@@ -60,11 +60,83 @@ The Kudos limit assigned to this key. If -1, then anyone with this key can use a
 
 ***
 
+### max\_image\_pixels?
+
+> `optional` **max\_image\_pixels**: `number`
+
+Defined in: [index.ts:5281](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5281)
+
+The maximum amount of image pixels this key can generate per job. -1 means unlimited.
+
+#### Default
+
+```ts
+-1
+```
+
+#### Minimum
+
+-1
+
+#### Maximum
+
+4194304
+
+***
+
+### max\_image\_steps?
+
+> `optional` **max\_image\_steps**: `number`
+
+Defined in: [index.ts:5288](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5288)
+
+The maximum amount of image steps this key can use per job. -1 means unlimited.
+
+#### Default
+
+```ts
+-1
+```
+
+#### Minimum
+
+-1
+
+#### Maximum
+
+500
+
+***
+
+### max\_text\_tokens?
+
+> `optional` **max\_text\_tokens**: `number`
+
+Defined in: [index.ts:5295](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5295)
+
+The maximum amount of text tokens this key can generate per job. -1 means unlimited.
+
+#### Default
+
+```ts
+-1
+```
+
+#### Minimum
+
+-1
+
+#### Maximum
+
+500
+
+***
+
 ### name?
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:3805](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3805)
+Defined in: [index.ts:5274](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5274)
 
 A descriptive name for this key
 

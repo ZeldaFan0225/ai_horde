@@ -6,7 +6,7 @@
 
 # Interface: RequestStatusStable
 
-Defined in: [index.ts:2746](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2746)
+Defined in: [index.ts:3466](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3466)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:2746](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **done**: `boolean`
 
-Defined in: [index.ts:2766](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2766)
+Defined in: [index.ts:3486](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3486)
 
 True when all images in this request are done. Else False.
 
@@ -28,11 +28,51 @@ True when all images in this request are done. Else False.
 
 ***
 
+### eligible\_worker\_threads?
+
+> `optional` **eligible\_worker\_threads**: `number`
+
+Defined in: [index.ts:3506](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3506)
+
+The total advertised generation threads across eligible workers. These threads may still be busy.
+
+#### Default
+
+```ts
+0
+```
+
+#### Inherited from
+
+[`RequestStatusCheck`](RequestStatusCheck.md).[`eligible_worker_threads`](RequestStatusCheck.md#eligible_worker_threads)
+
+***
+
+### eligible\_workers?
+
+> `optional` **eligible\_workers**: `number`
+
+Defined in: [index.ts:3501](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3501)
+
+The number of recently active workers that currently pass all known capability gates for this request. Eligible workers may still be busy.
+
+#### Default
+
+```ts
+0
+```
+
+#### Inherited from
+
+[`RequestStatusCheck`](RequestStatusCheck.md).[`eligible_workers`](RequestStatusCheck.md#eligible_workers)
+
+***
+
 ### faulted?
 
 > `optional` **faulted**: `boolean`
 
-Defined in: [index.ts:2768](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2768)
+Defined in: [index.ts:3488](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3488)
 
 rue when this request caused an internal server error and cannot be completed.
 
@@ -46,7 +86,7 @@ rue when this request caused an internal server error and cannot be completed.
 
 > `optional` **finished**: `number`
 
-Defined in: [index.ts:2758](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2758)
+Defined in: [index.ts:3478](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3478)
 
 The amount of finished images in this request
 
@@ -60,7 +100,7 @@ The amount of finished images in this request
 
 > `optional` **generations**: [`GenerationStable`](GenerationStable.md)[]
 
-Defined in: [index.ts:2747](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2747)
+Defined in: [index.ts:3467](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3467)
 
 ***
 
@@ -68,7 +108,7 @@ Defined in: [index.ts:2747](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **is\_possible**: `boolean`
 
-Defined in: [index.ts:2776](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2776)
+Defined in: [index.ts:3496](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3496)
 
 If False, this request will not be able to be completed with the pool of workers currently available
 
@@ -82,7 +122,7 @@ If False, this request will not be able to be completed with the pool of workers
 
 > `optional` **kudos**: `number`
 
-Defined in: [index.ts:2774](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2774)
+Defined in: [index.ts:3494](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3494)
 
 The amount of total Kudos this request has consumed until now.
 
@@ -92,11 +132,31 @@ The amount of total Kudos this request has consumed until now.
 
 ***
 
+### might\_stall?
+
+> `optional` **might\_stall**: `boolean`
+
+Defined in: [index.ts:3511](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3511)
+
+True when newly arrived compatible work has persistently entered ahead of this request faster than eligible workers clear work.
+
+#### Default
+
+```ts
+false
+```
+
+#### Inherited from
+
+[`RequestStatusCheck`](RequestStatusCheck.md).[`might_stall`](RequestStatusCheck.md#might_stall)
+
+***
+
 ### processing?
 
 > `optional` **processing**: `number`
 
-Defined in: [index.ts:2760](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2760)
+Defined in: [index.ts:3480](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3480)
 
 The amount of still processing images in this request
 
@@ -110,7 +170,7 @@ The amount of still processing images in this request
 
 > `optional` **queue\_position**: `number`
 
-Defined in: [index.ts:2772](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2772)
+Defined in: [index.ts:3492](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3492)
 
 The position in the requests queue. This position is determined by relative Kudos amounts.
 
@@ -124,7 +184,7 @@ The position in the requests queue. This position is determined by relative Kudo
 
 > `optional` **restarted**: `number`
 
-Defined in: [index.ts:2762](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2762)
+Defined in: [index.ts:3482](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3482)
 
 The amount of jobs that timed out and had to be restarted or were reported as failed by a worker.
 
@@ -138,7 +198,7 @@ The amount of jobs that timed out and had to be restarted or were reported as fa
 
 > `optional` **shared**: `boolean`
 
-Defined in: [index.ts:2749](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2749)
+Defined in: [index.ts:3469](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3469)
 
 If True, These images have been shared with LAION
 
@@ -148,7 +208,7 @@ If True, These images have been shared with LAION
 
 > `optional` **wait\_time**: `number`
 
-Defined in: [index.ts:2770](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2770)
+Defined in: [index.ts:3490](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3490)
 
 The expected amount to wait (in seconds) to generate all images in this request
 
@@ -162,7 +222,7 @@ The expected amount to wait (in seconds) to generate all images in this request
 
 > `optional` **waiting**: `number`
 
-Defined in: [index.ts:2764](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2764)
+Defined in: [index.ts:3484](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3484)
 
 The amount of images waiting to be picked up by a worker
 

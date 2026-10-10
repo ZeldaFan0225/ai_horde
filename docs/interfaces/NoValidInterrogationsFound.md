@@ -6,7 +6,7 @@
 
 # Interface: NoValidInterrogationsFound
 
-Defined in: [index.ts:3570](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3570)
+Defined in: [index.ts:4996](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4996)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3570](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **bridge\_version**: `number`
 
-Defined in: [index.ts:3586](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3586)
+Defined in: [index.ts:5012](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5012)
 
 How many waiting requests were skipped because they require a higher version of the bridge than this worker is running (upgrade if you see this in your skipped list).
 
@@ -34,7 +34,7 @@ How many waiting requests were skipped because they require a higher version of 
 
 > `optional` **untrusted**: `number`
 
-Defined in: [index.ts:3580](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3580)
+Defined in: [index.ts:5006](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5006)
 
 How many waiting requests were skipped because they demanded a trusted worker which this worker is not.
 
@@ -48,7 +48,7 @@ How many waiting requests were skipped because they demanded a trusted worker wh
 
 > `optional` **worker\_id**: `number`
 
-Defined in: [index.ts:3575](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3575)
+Defined in: [index.ts:5001](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5001)
 
 How many waiting requests were skipped because they demanded a specific worker.
 

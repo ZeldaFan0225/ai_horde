@@ -6,7 +6,7 @@
 
 # Interface: FilterDetails
 
-Defined in: [index.ts:3666](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3666)
+Defined in: [index.ts:5106](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5106)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3666](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **description**: `string`
 
-Defined in: [index.ts:3683](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3683)
+Defined in: [index.ts:5123](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5123)
 
 Description about this regex
 
@@ -24,7 +24,7 @@ Description about this regex
 
 > **filter\_type**: `number`
 
-Defined in: [index.ts:3679](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3679)
+Defined in: [index.ts:5119](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5119)
 
 The integer defining this filter type
 
@@ -42,7 +42,7 @@ The integer defining this filter type
 
 > **id**: `string`
 
-Defined in: [index.ts:3668](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3668)
+Defined in: [index.ts:5108](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5108)
 
 The UUID of this filter
 
@@ -52,7 +52,7 @@ The UUID of this filter
 
 > **regex**: `string`
 
-Defined in: [index.ts:3673](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3673)
+Defined in: [index.ts:5113](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5113)
 
 The regex for this filter.
 
@@ -64,10 +64,26 @@ ac.*
 
 ***
 
+### replacement?
+
+> `optional` **replacement**: `string`
+
+Defined in: [index.ts:5128](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5128)
+
+The replacement string for this regex.
+
+#### Default
+
+```ts
+""
+```
+
+***
+
 ### user
 
 > **user**: `string`
 
-Defined in: [index.ts:3687](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3687)
+Defined in: [index.ts:5132](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5132)
 
 The moderator which added or last updated this regex

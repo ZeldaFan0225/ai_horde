@@ -6,7 +6,7 @@
 
 # Interface: RatingRequestError
 
-Defined in: [index.ts:4035](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L4035)
+Defined in: [index.ts:5563](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5563)
 
 ## Properties
 
@@ -14,6 +14,6 @@ Defined in: [index.ts:4035](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > **message**: `string`
 
-Defined in: [index.ts:4037](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L4037)
+Defined in: [index.ts:5565](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5565)
 
 The error message for this status code.

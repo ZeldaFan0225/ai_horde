@@ -6,7 +6,7 @@
 
 # Interface: GenerationMetadataStable
 
-Defined in: [index.ts:2804](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2804)
+Defined in: [index.ts:3540](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3540)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:2804](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **ref**: `string`
 
-Defined in: [index.ts:2819](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2819)
+Defined in: [index.ts:3555](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3555)
 
 Optionally a reference for the metadata (e.g. a lora ID)
 
@@ -26,9 +26,9 @@ Optionally a reference for the metadata (e.g. a lora ID)
 
 ### type
 
-> **type**: `"lora"` \| `"ti"` \| `"censorship"` \| `"source_image"` \| `"source_mask"` \| `"extra_source_images"` \| `"batch_index"` \| `"information"`
+> **type**: `"lora"` \| `"ti"` \| `"censorship"` \| `"source_image"` \| `"source_mask"` \| `"extra_source_images"` \| `"batch_index"` \| `"information"` \| `"aesthetic_score"`
 
-Defined in: [index.ts:2809](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2809)
+Defined in: [index.ts:3545](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3545)
 
 The relevance of the metadata field
 
@@ -44,7 +44,7 @@ Lora
 
 > **value**: `"nsfw"` \| `"download_failed"` \| `"parse_failed"` \| `"baseline_mismatch"` \| `"csam"` \| `"see_ref"`
 
-Defined in: [index.ts:2814](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2814)
+Defined in: [index.ts:3550](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3550)
 
 The value of the metadata field
 

@@ -6,12 +6,22 @@
 
 # Interface: FilterCheckPayload
 
-Defined in: [index.ts:3642](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3642)
+Defined in: [index.ts:5077](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5077)
 
 ## Properties
+
+### filter\_type?
+
+> `optional` **filter\_type**: `number`
+
+Defined in: [index.ts:5080](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5080)
+
+Only check against filters of this type
+
+***
 
 ### prompt
 
 > **prompt**: `string`
 
-Defined in: [index.ts:3643](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3643)
+Defined in: [index.ts:5078](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5078)

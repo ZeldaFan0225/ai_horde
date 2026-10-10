@@ -6,7 +6,7 @@
 
 # Interface: Generation
 
-Defined in: [index.ts:2779](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2779)
+Defined in: [index.ts:3514](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3514)
 
 ## Extended by
 
@@ -19,9 +19,25 @@ Defined in: [index.ts:2779](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **model**: `string`
 
-Defined in: [index.ts:2785](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2785)
+Defined in: [index.ts:3520](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3520)
 
 The model which generated this image
+
+***
+
+### state?
+
+> `optional` **state**: `"csam"` \| `"ok"` \| `"censored"`
+
+Defined in: [index.ts:3525](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3525)
+
+OBSOLETE (Use the gen_metadata field). The state of this generation.
+
+#### Default
+
+```ts
+ok
+```
 
 ***
 
@@ -29,7 +45,7 @@ The model which generated this image
 
 > `optional` **worker\_id**: `string`
 
-Defined in: [index.ts:2781](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2781)
+Defined in: [index.ts:3516](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3516)
 
 The UUID of the worker which generated this image
 
@@ -39,6 +55,6 @@ The UUID of the worker which generated this image
 
 > `optional` **worker\_name**: `string`
 
-Defined in: [index.ts:2783](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2783)
+Defined in: [index.ts:3518](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3518)
 
 The name of the worker which generated this image

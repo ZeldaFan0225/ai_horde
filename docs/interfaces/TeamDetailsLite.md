@@ -6,7 +6,7 @@
 
 # Interface: TeamDetailsLite
 
-Defined in: [index.ts:3456](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3456)
+Defined in: [index.ts:4568](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4568)
 
 ## Extended by
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:3456](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:3460](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3460)
+Defined in: [index.ts:4572](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4572)
 
 The UUID of this team
 
@@ -28,6 +28,6 @@ The UUID of this team
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:3458](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3458)
+Defined in: [index.ts:4570](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4570)
 
 The Name given to this team.

@@ -6,11 +6,12 @@
 
 # Interface: WorkerDetailsLite
 
-Defined in: [index.ts:3305](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3305)
+Defined in: [index.ts:4272](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4272)
 
 ## Extended by
 
 - [`WorkerDetails`](WorkerDetails.md)
+- [`PausedWorkerReview`](PausedWorkerReview.md)
 
 ## Properties
 
@@ -18,7 +19,7 @@ Defined in: [index.ts:3305](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:3309](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3309)
+Defined in: [index.ts:4278](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4278)
 
 The UUID of this worker.
 
@@ -28,7 +29,7 @@ The UUID of this worker.
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:3307](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3307)
+Defined in: [index.ts:4276](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4276)
 
 The Name given to this worker.
 
@@ -38,6 +39,16 @@ The Name given to this worker.
 
 > `optional` **online**: `boolean`
 
-Defined in: [index.ts:3311](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3311)
+Defined in: [index.ts:4280](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4280)
 
 True if the worker has checked-in the past 5 minutes.
+
+***
+
+### type?
+
+> `optional` **type**: `"interrogation"` \| `"image"` \| `"text"`
+
+Defined in: [index.ts:4274](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4274)
+
+The Type of worker this is.

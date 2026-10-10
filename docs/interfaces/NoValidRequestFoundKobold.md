@@ -6,7 +6,7 @@
 
 # Interface: NoValidRequestFoundKobold
 
-Defined in: [index.ts:3027](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3027)
+Defined in: [index.ts:3861](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3861)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:3027](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **blacklist**: `number`
 
-Defined in: [index.ts:3049](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3049)
+Defined in: [index.ts:3897](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3897)
 
 How many waiting requests were skipped because they demanded a generation with a word that this worker does not accept
 
@@ -32,7 +32,7 @@ How many waiting requests were skipped because they demanded a generation with a
 
 > `optional` **bridge\_version**: `number`
 
-Defined in: [index.ts:3055](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3055)
+Defined in: [index.ts:3903](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3903)
 
 How many waiting requests were skipped because they require a higher version of the bridge than this worker is running (upgrade if you see this in your skipped list)
 
@@ -42,11 +42,25 @@ How many waiting requests were skipped because they require a higher version of 
 
 ***
 
+### kudos?
+
+> `optional` **kudos**: `number`
+
+Defined in: [index.ts:3905](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3905)
+
+How many waiting requests were skipped because the user didn't have enough kudos when this worker requires upfront kudos.
+
+#### Inherited from
+
+[`NoValidRequestFound`](NoValidRequestFound.md).[`kudos`](NoValidRequestFound.md#kudos)
+
+***
+
 ### matching\_softprompt?
 
 > `optional` **matching\_softprompt**: `number`
 
-Defined in: [index.ts:3033](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3033)
+Defined in: [index.ts:3867](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3867)
 
 How many waiting requests were skipped because they demanded an available soft-prompt which this worker does not have.
 
@@ -56,7 +70,7 @@ How many waiting requests were skipped because they demanded an available soft-p
 
 > `optional` **max\_context\_length**: `number`
 
-Defined in: [index.ts:3029](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3029)
+Defined in: [index.ts:3863](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3863)
 
 How many waiting requests were skipped because they demanded a higher max_context_length than what this worker provides.
 
@@ -66,7 +80,7 @@ How many waiting requests were skipped because they demanded a higher max_contex
 
 > `optional` **max\_length**: `number`
 
-Defined in: [index.ts:3031](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3031)
+Defined in: [index.ts:3865](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3865)
 
 How many waiting requests were skipped because they demanded more generated tokens that what this worker can provide.
 
@@ -76,7 +90,7 @@ How many waiting requests were skipped because they demanded more generated toke
 
 > `optional` **models**: `number`
 
-Defined in: [index.ts:3053](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3053)
+Defined in: [index.ts:3901](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3901)
 
 How many waiting requests were skipped because they demanded a different model than what this worker provides
 
@@ -90,7 +104,7 @@ How many waiting requests were skipped because they demanded a different model t
 
 > `optional` **nsfw**: `number`
 
-Defined in: [index.ts:3047](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3047)
+Defined in: [index.ts:3895](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3895)
 
 How many waiting requests were skipped because they demanded a nsfw generation which this worker does not provide
 
@@ -104,7 +118,7 @@ How many waiting requests were skipped because they demanded a nsfw generation w
 
 > `optional` **performance**: `number`
 
-Defined in: [index.ts:3045](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3045)
+Defined in: [index.ts:3893](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3893)
 
 How many waiting requests were skipped because they required higher performance
 
@@ -118,7 +132,7 @@ How many waiting requests were skipped because they required higher performance
 
 > `optional` **untrusted**: `number`
 
-Defined in: [index.ts:3051](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3051)
+Defined in: [index.ts:3899](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3899)
 
 How many waiting requests were skipped because they demanded a trusted worker which this worker is not
 
@@ -132,7 +146,7 @@ How many waiting requests were skipped because they demanded a trusted worker wh
 
 > `optional` **worker\_id**: `number`
 
-Defined in: [index.ts:3043](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3043)
+Defined in: [index.ts:3891](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3891)
 
 How many waiting requests were skipped because they demanded a specific worker
 

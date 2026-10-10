@@ -6,29 +6,29 @@
 
 # Interface: ExtraText
 
-Defined in: [index.ts:2602](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2602)
+Defined in: [index.ts:3354](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3354)
 
 ## Properties
 
-### reference
+### reference?
 
-> **reference**: `string`
+> `optional` **reference**: `string`
 
-Defined in: [index.ts:2612](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2612)
+Defined in: [index.ts:3364](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3364)
 
 The reference which points how and where this text should be used
 
 #### Min Length
 
-1
+3
 
 ***
 
-### text
+### text?
 
-> **text**: `string`
+> `optional` **text**: `string`
 
-Defined in: [index.ts:2607](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2607)
+Defined in: [index.ts:3359](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3359)
 
 The extra text to send along with this generation
 

@@ -6,17 +6,67 @@
 
 # Interface: ModifyUser
 
-Defined in: [index.ts:3200](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3200)
+Defined in: [index.ts:4122](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4122)
 
 ## Properties
+
+### admin\_comment?
+
+> `optional` **admin\_comment**: `string`
+
+Defined in: [index.ts:4160](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4160)
+
+The new admin comment.
+
+***
 
 ### concurrency?
 
 > `optional` **concurrency**: `number`
 
-Defined in: [index.ts:3204](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3204)
+Defined in: [index.ts:4126](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4126)
 
 The request concurrency this user has after this request
+
+***
+
+### contact?
+
+> `optional` **contact**: `string`
+
+Defined in: [index.ts:4158](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4158)
+
+The new contact details.
+
+***
+
+### customizer?
+
+> `optional` **customizer**: `boolean`
+
+Defined in: [index.ts:4144](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4144)
+
+The user's new customizer status.
+
+***
+
+### education?
+
+> `optional` **education**: `boolean`
+
+Defined in: [index.ts:4150](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4150)
+
+The user's new education status.
+
+***
+
+### flagged?
+
+> `optional` **flagged**: `boolean`
+
+Defined in: [index.ts:4142](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4142)
+
+The user's new flagged status.
 
 ***
 
@@ -24,7 +74,7 @@ The request concurrency this user has after this request
 
 > `optional` **moderator**: `boolean`
 
-Defined in: [index.ts:3210](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3210)
+Defined in: [index.ts:4132](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4132)
 
 The user's new moderator status.
 
@@ -34,7 +84,7 @@ The user's new moderator status.
 
 > `optional` **monthly\_kudos**: `number`
 
-Defined in: [index.ts:3216](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3216)
+Defined in: [index.ts:4138](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4138)
 
 The user's new monthly kudos total
 
@@ -44,19 +94,59 @@ The user's new monthly kudos total
 
 > `optional` **new\_kudos**: `number`
 
-Defined in: [index.ts:3202](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3202)
+Defined in: [index.ts:4124](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4124)
 
 The new total Kudos this user has after this request
 
 ***
 
+### new\_suspicion?
+
+> `optional` **new\_suspicion**: `number`
+
+Defined in: [index.ts:4156](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4156)
+
+The user's new suspiciousness rating.
+
+***
+
+### proxy\_passkey?
+
+> `optional` **proxy\_passkey**: `string`
+
+Defined in: [index.ts:4162](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4162)
+
+The new service account proxy passkey.
+
+***
+
 ### public\_workers?
 
-> `optional` **public\_workers**: `number`
+> `optional` **public\_workers**: `boolean`
 
-Defined in: [index.ts:3212](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3212)
+Defined in: [index.ts:4134](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4134)
 
 The user's new public_workers status.
+
+***
+
+### service?
+
+> `optional` **service**: `boolean`
+
+Defined in: [index.ts:4148](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4148)
+
+The user's new service status.
+
+***
+
+### special?
+
+> `optional` **special**: `boolean`
+
+Defined in: [index.ts:4152](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4152)
+
+The user's new special status.
 
 ***
 
@@ -64,9 +154,19 @@ The user's new public_workers status.
 
 > `optional` **trusted**: `boolean`
 
-Defined in: [index.ts:3218](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3218)
+Defined in: [index.ts:4140](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4140)
 
 The user's new trusted status
+
+***
+
+### undeleted?
+
+> `optional` **undeleted**: `boolean`
+
+Defined in: [index.ts:4154](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4154)
+
+True if the user was undeleted with this operation.
 
 ***
 
@@ -74,7 +174,7 @@ The user's new trusted status
 
 > `optional` **usage\_multiplier**: `number`
 
-Defined in: [index.ts:3206](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3206)
+Defined in: [index.ts:4128](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4128)
 
 Multiplies the amount of kudos lost when generating images.
 
@@ -84,9 +184,19 @@ Multiplies the amount of kudos lost when generating images.
 
 > `optional` **username**: `string`
 
-Defined in: [index.ts:3214](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3214)
+Defined in: [index.ts:4136](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4136)
 
 The user's new username.
+
+***
+
+### vpn?
+
+> `optional` **vpn**: `boolean`
+
+Defined in: [index.ts:4146](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4146)
+
+The user's new vpn status.
 
 ***
 
@@ -94,6 +204,6 @@ The user's new username.
 
 > `optional` **worker\_invited**: `number`
 
-Defined in: [index.ts:3208](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3208)
+Defined in: [index.ts:4130](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4130)
 
 This userWhether this user has been invited to join a worker to the horde and how many of them. When 0, this user cannot add (new) workers to the horde.

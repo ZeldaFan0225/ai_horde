@@ -6,17 +6,41 @@
 
 # Interface: GenerationPayloadKobold
 
-Defined in: [index.ts:2928](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2928)
+Defined in: [index.ts:3829](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3829)
 
 ## Properties
+
+### extra\_source\_images?
+
+> `optional` **extra\_source\_images**: [`ExtraSourceImage`](ExtraSourceImage.md)[]
+
+Defined in: [index.ts:3837](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3837)
+
+***
 
 ### id?
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:2931](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2931)
+Defined in: [index.ts:3832](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3832)
 
 The UUID for this text
+
+***
+
+### ids?
+
+> `optional` **ids**: `string`[]
+
+Defined in: [index.ts:3833](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3833)
+
+***
+
+### messages?
+
+> `optional` **messages**: [`ResponseModelMessagePop`](ResponseModelMessagePop.md)[]
+
+Defined in: [index.ts:3834](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3834)
 
 ***
 
@@ -24,7 +48,7 @@ The UUID for this text
 
 > `optional` **model**: `string`
 
-Defined in: [index.ts:2936](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2936)
+Defined in: [index.ts:3842](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3842)
 
 Which of the available models to use for this request
 
@@ -34,7 +58,7 @@ Which of the available models to use for this request
 
 > `optional` **payload**: [`ModelPayloadKobold`](ModelPayloadKobold.md)
 
-Defined in: [index.ts:2929](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2929)
+Defined in: [index.ts:3830](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3830)
 
 ***
 
@@ -42,7 +66,7 @@ Defined in: [index.ts:2929](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **skipped**: [`NoValidRequestFoundKobold`](NoValidRequestFoundKobold.md)
 
-Defined in: [index.ts:2932](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2932)
+Defined in: [index.ts:3838](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3838)
 
 ***
 
@@ -50,6 +74,16 @@ Defined in: [index.ts:2932](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **softprompt**: `string`
 
-Defined in: [index.ts:2934](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2934)
+Defined in: [index.ts:3840](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3840)
 
 The soft prompt requested for this generation
+
+***
+
+### ttl?
+
+> `optional` **ttl**: `number`
+
+Defined in: [index.ts:3836](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3836)
+
+The amount of seconds before this job is considered stale and aborted.

@@ -6,7 +6,12 @@
 
 # Interface: RequestAsync
 
-Defined in: [index.ts:2835](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2835)
+Defined in: [index.ts:3587](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3587)
+
+## Extended by
+
+- [`RequestAsyncStable`](RequestAsyncStable.md)
+- [`RequestAsyncKobold`](RequestAsyncKobold.md)
 
 ## Properties
 
@@ -14,7 +19,7 @@ Defined in: [index.ts:2835](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:2837](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2837)
+Defined in: [index.ts:3589](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3589)
 
 The UUID of the request. Use this to retrieve the request status in the future
 
@@ -24,7 +29,7 @@ The UUID of the request. Use this to retrieve the request status in the future
 
 > `optional` **kudos**: `number`
 
-Defined in: [index.ts:2839](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2839)
+Defined in: [index.ts:3591](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3591)
 
 The expected kudos consumption for this request
 
@@ -34,7 +39,7 @@ The expected kudos consumption for this request
 
 > `optional` **message**: `string`
 
-Defined in: [index.ts:2841](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2841)
+Defined in: [index.ts:3593](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3593)
 
 Any extra information from the horde about this request
 
@@ -44,4 +49,4 @@ Any extra information from the horde about this request
 
 > `optional` **warnings**: [`RequestSingleWarning`](RequestSingleWarning.md)[]
 
-Defined in: [index.ts:2842](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2842)
+Defined in: [index.ts:3594](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3594)

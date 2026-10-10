@@ -6,7 +6,7 @@
 
 # Interface: PatchExistingFilter
 
-Defined in: [index.ts:3690](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3690)
+Defined in: [index.ts:5135](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5135)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3690](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **description**: `string`
 
-Defined in: [index.ts:3705](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3705)
+Defined in: [index.ts:5150](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5150)
 
 Description about this regex
 
@@ -24,7 +24,7 @@ Description about this regex
 
 > `optional` **filter\_type**: `number`
 
-Defined in: [index.ts:3701](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3701)
+Defined in: [index.ts:5146](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5146)
 
 The integer defining this filter type
 
@@ -42,7 +42,7 @@ The integer defining this filter type
 
 > `optional` **regex**: `string`
 
-Defined in: [index.ts:3695](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3695)
+Defined in: [index.ts:5140](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5140)
 
 The regex for this filter.
 
@@ -50,4 +50,20 @@ The regex for this filter.
 
 ```ts
 ac.*
+```
+
+***
+
+### replacement?
+
+> `optional` **replacement**: `string`
+
+Defined in: [index.ts:5155](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5155)
+
+The replacement string for this regex.
+
+#### Default
+
+```ts
+""
 ```

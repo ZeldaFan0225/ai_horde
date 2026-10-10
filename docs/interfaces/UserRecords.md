@@ -6,7 +6,7 @@
 
 # Interface: UserRecords
 
-Defined in: [index.ts:3094](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3094)
+Defined in: [index.ts:3971](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3971)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3094](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **contribution**: [`UserThingUsageRecords`](UserThingUsageRecords.md)
 
-Defined in: [index.ts:3096](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3096)
+Defined in: [index.ts:3973](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3973)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [index.ts:3096](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **fulfillment**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
 
-Defined in: [index.ts:3097](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3097)
+Defined in: [index.ts:3974](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3974)
 
 ***
 
@@ -30,7 +30,15 @@ Defined in: [index.ts:3097](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **request**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
 
-Defined in: [index.ts:3098](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3098)
+Defined in: [index.ts:3975](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3975)
+
+***
+
+### style?
+
+> `optional` **style**: [`UserThingFulfillmentRecords`](UserThingFulfillmentRecords.md)
+
+Defined in: [index.ts:3976](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3976)
 
 ***
 
@@ -38,4 +46,4 @@ Defined in: [index.ts:3098](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **usage**: [`UserThingUsageRecords`](UserThingUsageRecords.md)
 
-Defined in: [index.ts:3095](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3095)
+Defined in: [index.ts:3972](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3972)

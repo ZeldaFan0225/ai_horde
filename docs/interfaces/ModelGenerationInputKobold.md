@@ -6,7 +6,11 @@
 
 # Interface: ModelGenerationInputKobold
 
-Defined in: [index.ts:2308](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2308)
+Defined in: [index.ts:2940](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2940)
+
+## Extends
+
+- [`ModelPayloadRootKobold`](ModelPayloadRootKobold.md)
 
 ## Extended by
 
@@ -14,11 +18,67 @@ Defined in: [index.ts:2308](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 ## Properties
 
+### dynatemp\_exponent?
+
+> `optional` **dynatemp\_exponent**: `number`
+
+Defined in: [index.ts:3089](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3089)
+
+Dynamic temperature exponent value.
+
+#### Default
+
+```ts
+1
+```
+
+#### Minimum
+
+0
+
+#### Maximum
+
+5
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`dynatemp_exponent`](ModelPayloadRootKobold.md#dynatemp_exponent)
+
+***
+
+### dynatemp\_range?
+
+> `optional` **dynatemp\_range**: `number`
+
+Defined in: [index.ts:3082](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3082)
+
+Dynamic temperature range value.
+
+#### Default
+
+```ts
+0
+```
+
+#### Minimum
+
+0
+
+#### Maximum
+
+5
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`dynatemp_range`](ModelPayloadRootKobold.md#dynatemp_range)
+
+***
+
 ### frmtadsnsp?
 
 > `optional` **frmtadsnsp**: `boolean`
 
-Defined in: [index.ts:2319](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2319)
+Defined in: [index.ts:2981](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2981)
 
 Input formatting option. When enabled, adds a leading space to your input if there is no trailing whitespace at the end of the previous action.
 
@@ -28,13 +88,17 @@ Input formatting option. When enabled, adds a leading space to your input if the
 false
 ```
 
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`frmtadsnsp`](ModelPayloadRootKobold.md#frmtadsnsp)
+
 ***
 
 ### frmtrmblln?
 
 > `optional` **frmtrmblln**: `boolean`
 
-Defined in: [index.ts:2324](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2324)
+Defined in: [index.ts:2986](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2986)
 
 Output formatting option. When enabled, replaces all occurrences of two or more consecutive newlines in the output with one newline.
 
@@ -44,13 +108,17 @@ Output formatting option. When enabled, replaces all occurrences of two or more 
 false
 ```
 
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`frmtrmblln`](ModelPayloadRootKobold.md#frmtrmblln)
+
 ***
 
 ### frmtrmspch?
 
 > `optional` **frmtrmspch**: `boolean`
 
-Defined in: [index.ts:2329](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2329)
+Defined in: [index.ts:2991](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2991)
 
 Output formatting option. When enabled, removes #/@%}{+=~|^<> from the output.
 
@@ -60,13 +128,17 @@ Output formatting option. When enabled, removes #/@%}{+=~|^<> from the output.
 false
 ```
 
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`frmtrmspch`](ModelPayloadRootKobold.md#frmtrmspch)
+
 ***
 
 ### frmttriminc?
 
 > `optional` **frmttriminc**: `boolean`
 
-Defined in: [index.ts:2334](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2334)
+Defined in: [index.ts:2996](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2996)
 
 Output formatting option. When enabled, removes some characters from the end of the output such that the output doesn't end in the middle of a sentence. If the output is less than one sentence long, does nothing.
 
@@ -76,20 +148,24 @@ Output formatting option. When enabled, removes some characters from the end of 
 false
 ```
 
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`frmttriminc`](ModelPayloadRootKobold.md#frmttriminc)
+
 ***
 
 ### max\_context\_length?
 
 > `optional` **max\_context\_length**: `number`
 
-Defined in: [index.ts:2341](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2341)
+Defined in: [index.ts:2966](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2966)
 
 Maximum number of tokens to send to the model.
 
-#### Example
+#### Default
 
 ```ts
-1024
+2048
 ```
 
 #### Minimum
@@ -98,7 +174,11 @@ Maximum number of tokens to send to the model.
 
 #### Maximum
 
-2048
+1048576
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`max_context_length`](ModelPayloadRootKobold.md#max_context_length)
 
 ***
 
@@ -106,9 +186,15 @@ Maximum number of tokens to send to the model.
 
 > `optional` **max\_length**: `number`
 
-Defined in: [index.ts:2347](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2347)
+Defined in: [index.ts:2973](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2973)
 
 Number of tokens to generate.
+
+#### Default
+
+```ts
+80
+```
 
 #### Minimum
 
@@ -116,7 +202,39 @@ Number of tokens to generate.
 
 #### Maximum
 
-512
+4096
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`max_length`](ModelPayloadRootKobold.md#max_length)
+
+***
+
+### min\_p?
+
+> `optional` **min\_p**: `number`
+
+Defined in: [index.ts:3068](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3068)
+
+Min-p sampling value.
+
+#### Default
+
+```ts
+0
+```
+
+#### Minimum
+
+0
+
+#### Maximum
+
+1
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`min_p`](ModelPayloadRootKobold.md#min_p)
 
 ***
 
@@ -124,7 +242,7 @@ Number of tokens to generate.
 
 > `optional` **n**: `number`
 
-Defined in: [index.ts:2314](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2314)
+Defined in: [index.ts:2959](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2959)
 
 #### Example
 
@@ -140,19 +258,31 @@ Defined in: [index.ts:2314](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 20
 
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`n`](ModelPayloadRootKobold.md#n)
+
 ***
 
 ### rep\_pen?
 
 > `optional` **rep\_pen**: `number`
 
-Defined in: [index.ts:2352](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2352)
+Defined in: [index.ts:3002](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3002)
 
 Base repetition penalty value.
 
-#### Maximum
+#### Minimum
 
 1
+
+#### Maximum
+
+3
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`rep_pen`](ModelPayloadRootKobold.md#rep_pen)
 
 ***
 
@@ -160,9 +290,21 @@ Base repetition penalty value.
 
 > `optional` **rep\_pen\_range**: `number`
 
-Defined in: [index.ts:2354](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2354)
+Defined in: [index.ts:3008](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3008)
 
 Repetition penalty range.
+
+#### Minimum
+
+0
+
+#### Maximum
+
+4096
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`rep_pen_range`](ModelPayloadRootKobold.md#rep_pen_range)
 
 ***
 
@@ -170,19 +312,49 @@ Repetition penalty range.
 
 > `optional` **rep\_pen\_slope**: `number`
 
-Defined in: [index.ts:2356](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2356)
+Defined in: [index.ts:3014](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3014)
 
 Repetition penalty slope.
 
+#### Minimum
+
+0
+
+#### Maximum
+
+10
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`rep_pen_slope`](ModelPayloadRootKobold.md#rep_pen_slope)
+
 ***
 
-### sample\_order?
+### ~~sample\_order?~~
 
 > `optional` **sample\_order**: `number`[]
 
-Defined in: [index.ts:2380](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2380)
+Defined in: [index.ts:2950](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2950)
 
 Array of integers representing the sampler order to be used
+
+#### Deprecated
+
+Misspelled and ignored by the API; use sampler_order instead
+
+***
+
+### sampler\_order?
+
+> `optional` **sampler\_order**: `number`[]
+
+Defined in: [index.ts:3057](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3057)
+
+Array of integers representing the sampler order to be used
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`sampler_order`](ModelPayloadRootKobold.md#sampler_order)
 
 ***
 
@@ -190,7 +362,7 @@ Array of integers representing the sampler order to be used
 
 > `optional` **singleline**: `boolean`
 
-Defined in: [index.ts:2361](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2361)
+Defined in: [index.ts:3019](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3019)
 
 Output formatting option. When enabled, removes everything after the first line of the output, including the newline.
 
@@ -200,15 +372,65 @@ Output formatting option. When enabled, removes everything after the first line 
 false
 ```
 
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`singleline`](ModelPayloadRootKobold.md#singleline)
+
 ***
 
-### soft\_prompt?
+### smoothing\_factor?
+
+> `optional` **smoothing\_factor**: `number`
+
+Defined in: [index.ts:3075](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3075)
+
+Quadratic sampling value.
+
+#### Default
+
+```ts
+0
+```
+
+#### Minimum
+
+0
+
+#### Maximum
+
+10
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`smoothing_factor`](ModelPayloadRootKobold.md#smoothing_factor)
+
+***
+
+### ~~soft\_prompt?~~
 
 > `optional` **soft\_prompt**: `string`
 
-Defined in: [index.ts:2363](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2363)
+Defined in: [index.ts:2945](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2945)
 
 Soft prompt to use when generating. If set to the empty string or any other string containing no non-whitespace characters, uses no soft prompt.
+
+#### Deprecated
+
+No longer part of the AI Horde API. Use GenerationInputKobold.softprompt instead
+
+***
+
+### stop\_sequence?
+
+> `optional` **stop\_sequence**: `string`[]
+
+Defined in: [index.ts:3061](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3061)
+
+Sequences which will stop the generation when encountered
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`stop_sequence`](ModelPayloadRootKobold.md#stop_sequence)
 
 ***
 
@@ -216,7 +438,7 @@ Soft prompt to use when generating. If set to the empty string or any other stri
 
 > `optional` **temperature**: `number`
 
-Defined in: [index.ts:2368](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2368)
+Defined in: [index.ts:3025](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3025)
 
 Temperature value.
 
@@ -224,15 +446,35 @@ Temperature value.
 
 0
 
+#### Maximum
+
+5
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`temperature`](ModelPayloadRootKobold.md#temperature)
+
 ***
 
 ### tfs?
 
 > `optional` **tfs**: `number`
 
-Defined in: [index.ts:2370](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2370)
+Defined in: [index.ts:3031](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3031)
 
 Tail free sampling value.
+
+#### Minimum
+
+0
+
+#### Maximum
+
+1
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`tfs`](ModelPayloadRootKobold.md#tfs)
 
 ***
 
@@ -240,9 +482,21 @@ Tail free sampling value.
 
 > `optional` **top\_a**: `number`
 
-Defined in: [index.ts:2372](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2372)
+Defined in: [index.ts:3037](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3037)
 
 Top-a sampling value.
+
+#### Minimum
+
+0
+
+#### Maximum
+
+1
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`top_a`](ModelPayloadRootKobold.md#top_a)
 
 ***
 
@@ -250,9 +504,21 @@ Top-a sampling value.
 
 > `optional` **top\_k**: `number`
 
-Defined in: [index.ts:2374](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2374)
+Defined in: [index.ts:3043](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3043)
 
 Top-k sampling value.
+
+#### Minimum
+
+0
+
+#### Maximum
+
+200
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`top_k`](ModelPayloadRootKobold.md#top_k)
 
 ***
 
@@ -260,9 +526,21 @@ Top-k sampling value.
 
 > `optional` **top\_p**: `number`
 
-Defined in: [index.ts:2376](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2376)
+Defined in: [index.ts:3049](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3049)
 
 Top-p sampling value.
+
+#### Minimum
+
+0.001
+
+#### Maximum
+
+1
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`top_p`](ModelPayloadRootKobold.md#top_p)
 
 ***
 
@@ -270,6 +548,32 @@ Top-p sampling value.
 
 > `optional` **typical**: `number`
 
-Defined in: [index.ts:2378](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2378)
+Defined in: [index.ts:3055](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3055)
 
 Typical sampling value.
+
+#### Minimum
+
+0
+
+#### Maximum
+
+1
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`typical`](ModelPayloadRootKobold.md#typical)
+
+***
+
+### use\_default\_badwordsids?
+
+> `optional` **use\_default\_badwordsids**: `boolean`
+
+Defined in: [index.ts:3059](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3059)
+
+When True, uses the default KoboldAI bad word IDs.
+
+#### Inherited from
+
+[`ModelPayloadRootKobold`](ModelPayloadRootKobold.md).[`use_default_badwordsids`](ModelPayloadRootKobold.md#use_default_badwordsids)

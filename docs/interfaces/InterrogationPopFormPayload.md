@@ -6,25 +6,15 @@
 
 # Interface: InterrogationPopFormPayload
 
-Defined in: [index.ts:3557](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3557)
+Defined in: [index.ts:4976](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4976)
 
 ## Properties
 
-### id?
+### form?
 
-> `optional` **id**: `string`
+> `optional` **form**: `"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x2plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"4xNomos8kSC"` \| `"4xLSDIRplus"` \| `"4xNomosWebPhoto_RealPLKSR"` \| `"4xNomos2_realplksr_dysample"` \| `"4xNomos2_hq_dat2"` \| `"2xModernSpanimationV1"` \| `"GFPGANv1.3"` \| `"RestoreFormer"` \| `"caption"` \| `"interrogation"` \| `"nsfw"` \| `"vectorize"` \| `"palette"` \| `"describe"` \| `"aesthetic"` \| `"annotation"`
 
-Defined in: [index.ts:3559](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3559)
-
-The UUID of the interrogation form. Use this to post the results in the future
-
-***
-
-### name?
-
-> `optional` **name**: `"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"caption"` \| `"interrogation"` \| `"nsfw"`
-
-Defined in: [index.ts:3564](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3564)
+Defined in: [index.ts:4983](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4983)
 
 The name of this interrogation form
 
@@ -36,11 +26,45 @@ caption
 
 ***
 
+### id?
+
+> `optional` **id**: `string`
+
+Defined in: [index.ts:4978](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4978)
+
+The UUID of the interrogation form. Use this to post the results in the future
+
+***
+
+### ~~name?~~
+
+> `optional` **name**: `"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x2plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"4xNomos8kSC"` \| `"4xLSDIRplus"` \| `"4xNomosWebPhoto_RealPLKSR"` \| `"4xNomos2_realplksr_dysample"` \| `"4xNomos2_hq_dat2"` \| `"2xModernSpanimationV1"` \| `"GFPGANv1.3"` \| `"RestoreFormer"` \| `"caption"` \| `"interrogation"` \| `"nsfw"` \| `"vectorize"` \| `"palette"` \| `"describe"` \| `"aesthetic"` \| `"annotation"`
+
+Defined in: [index.ts:4988](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4988)
+
+The name of this interrogation form
+
+#### Deprecated
+
+The API returns this as 'form'
+
+***
+
 ### payload?
 
-> `optional` **payload**: `Partial`\<`Record`\<`"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"caption"` \| `"interrogation"` \| `"nsfw"`, `string`\>\>
+> `optional` **payload**: [`ModelInterrogationFormPayloadStable`](ModelInterrogationFormPayloadStable.md)
 
-Defined in: [index.ts:3565](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3565)
+Defined in: [index.ts:4989](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4989)
+
+***
+
+### r2\_upload?
+
+> `optional` **r2\_upload**: `string`
+
+Defined in: [index.ts:4993](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4993)
+
+The URL in which the post-processed image can be uploaded.
 
 ***
 
@@ -48,6 +72,6 @@ Defined in: [index.ts:3565](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **source\_image**: `string`
 
-Defined in: [index.ts:3567](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3567)
+Defined in: [index.ts:4991](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4991)
 
 The URL From which the source image can be downloaded

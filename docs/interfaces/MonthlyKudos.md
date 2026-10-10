@@ -6,7 +6,7 @@
 
 # Interface: MonthlyKudos
 
-Defined in: [index.ts:3166](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3166)
+Defined in: [index.ts:4084](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4084)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3166](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **amount**: `number`
 
-Defined in: [index.ts:3168](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3168)
+Defined in: [index.ts:4086](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4086)
 
 How much recurring Kudos this user receives monthly.
 
@@ -24,6 +24,6 @@ How much recurring Kudos this user receives monthly.
 
 > `optional` **last\_received**: `string`
 
-Defined in: [index.ts:3173](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3173)
+Defined in: [index.ts:4091](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4091)
 
 Last date this user received monthly Kudos.

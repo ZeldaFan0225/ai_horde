@@ -6,7 +6,7 @@
 
 # Interface: GenerationStable
 
-Defined in: [index.ts:2788](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2788)
+Defined in: [index.ts:3528](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3528)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:2788](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **censored**: `boolean`
 
-Defined in: [index.ts:2796](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2796)
+Defined in: [index.ts:3536](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3536)
 
 When true this image has been censored by the worker's safety filter.
 
@@ -26,21 +26,9 @@ When true this image has been censored by the worker's safety filter.
 
 ### gen\_metadata?
 
-> `optional` **gen\_metadata**: `object`[]
+> `optional` **gen\_metadata**: [`GenerationMetadataStable`](GenerationMetadataStable.md)[]
 
-Defined in: [index.ts:2797](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2797)
-
-#### ref
-
-> **ref**: `string`
-
-#### type
-
-> **type**: `string`
-
-#### value
-
-> **value**: `string`
+Defined in: [index.ts:3537](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3537)
 
 ***
 
@@ -48,7 +36,7 @@ Defined in: [index.ts:2797](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:2794](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2794)
+Defined in: [index.ts:3534](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3534)
 
 The ID for this image
 
@@ -58,7 +46,7 @@ The ID for this image
 
 > `optional` **img**: `string`
 
-Defined in: [index.ts:2790](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2790)
+Defined in: [index.ts:3530](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3530)
 
 The generated image as a Base64-encoded .webp file OR a cloudflare r2 download link
 
@@ -68,7 +56,7 @@ The generated image as a Base64-encoded .webp file OR a cloudflare r2 download l
 
 > `optional` **model**: `string`
 
-Defined in: [index.ts:2785](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2785)
+Defined in: [index.ts:3520](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3520)
 
 The model which generated this image
 
@@ -82,9 +70,29 @@ The model which generated this image
 
 > `optional` **seed**: `string`
 
-Defined in: [index.ts:2792](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2792)
+Defined in: [index.ts:3532](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3532)
 
 The seed which generated this image
+
+***
+
+### state?
+
+> `optional` **state**: `"csam"` \| `"ok"` \| `"censored"`
+
+Defined in: [index.ts:3525](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3525)
+
+OBSOLETE (Use the gen_metadata field). The state of this generation.
+
+#### Default
+
+```ts
+ok
+```
+
+#### Inherited from
+
+[`Generation`](Generation.md).[`state`](Generation.md#state)
 
 ***
 
@@ -92,7 +100,7 @@ The seed which generated this image
 
 > `optional` **worker\_id**: `string`
 
-Defined in: [index.ts:2781](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2781)
+Defined in: [index.ts:3516](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3516)
 
 The UUID of the worker which generated this image
 
@@ -106,7 +114,7 @@ The UUID of the worker which generated this image
 
 > `optional` **worker\_name**: `string`
 
-Defined in: [index.ts:2783](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2783)
+Defined in: [index.ts:3518](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3518)
 
 The name of the worker which generated this image
 

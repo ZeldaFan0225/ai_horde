@@ -6,7 +6,7 @@
 
 # Interface: CreateTeamInput
 
-Defined in: [index.ts:3400](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3400)
+Defined in: [index.ts:4510](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4510)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3400](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:3413](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3413)
+Defined in: [index.ts:4523](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4523)
 
 Extra information or comments about this team.
 
@@ -38,7 +38,7 @@ Anarchy is emergent order.
 
 > **name**: `string`
 
-Defined in: [index.ts:3406](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3406)
+Defined in: [index.ts:4516](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4516)
 
 The name of the team. No profanity allowed!
 

@@ -6,7 +6,7 @@
 
 # Interface: ModifyTeam
 
-Defined in: [index.ts:3416](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3416)
+Defined in: [index.ts:4526](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4526)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3416](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:3418](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3418)
+Defined in: [index.ts:4528](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4528)
 
 The ID of the team
 
@@ -24,7 +24,7 @@ The ID of the team
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:3422](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3422)
+Defined in: [index.ts:4532](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4532)
 
 The Info of the team
 
@@ -34,6 +34,6 @@ The Info of the team
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:3420](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3420)
+Defined in: [index.ts:4530](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4530)
 
 The Name of the team

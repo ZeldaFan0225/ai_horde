@@ -8,4 +8,4 @@
 
 > **InterrogationFormResult** = `Partial`\<`Record`\<*typeof* [`ModelInterrogationFormTypes`](../variables/ModelInterrogationFormTypes.md)\[keyof *typeof* [`ModelInterrogationFormTypes`](../variables/ModelInterrogationFormTypes.md)\], `Record`\<`string`, `any`\>\>\>
 
-Defined in: [index.ts:3506](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3506)
+Defined in: [index.ts:4897](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4897)

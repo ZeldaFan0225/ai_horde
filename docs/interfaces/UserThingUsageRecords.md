@@ -6,7 +6,7 @@
 
 # Interface: UserThingUsageRecords
 
-Defined in: [index.ts:3063](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3063)
+Defined in: [index.ts:3940](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3940)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3063](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **megapixelsteps**: `number`
 
-Defined in: [index.ts:3068](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3068)
+Defined in: [index.ts:3945](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3945)
 
 How many megapixelsteps this user has generated or requested
 
@@ -30,7 +30,7 @@ How many megapixelsteps this user has generated or requested
 
 > `optional` **tokens**: `number`
 
-Defined in: [index.ts:3073](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3073)
+Defined in: [index.ts:3950](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L3950)
 
 How many tokens this user has generated or requested
 

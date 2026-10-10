@@ -6,7 +6,7 @@
 
 # Interface: TeamDetails
 
-Defined in: [index.ts:3434](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3434)
+Defined in: [index.ts:4544](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4544)
 
 ## Extends
 
@@ -18,11 +18,21 @@ Defined in: [index.ts:3434](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 ## Properties
 
+### creator?
+
+> `optional` **creator**: `string`
+
+Defined in: [index.ts:4557](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4557)
+
+The alias of the user which created this team.
+
+***
+
 ### id?
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:3460](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3460)
+Defined in: [index.ts:4572](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4572)
 
 The UUID of this team
 
@@ -36,7 +46,7 @@ The UUID of this team
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:3439](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3439)
+Defined in: [index.ts:4549](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4549)
 
 Extra information or comments about this team provided by its owner
 
@@ -52,7 +62,7 @@ Anarchy is emergent order.
 
 > `optional` **kudos**: `number`
 
-Defined in: [index.ts:3443](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3443)
+Defined in: [index.ts:4553](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4553)
 
 How many Kudos the workers in this team have been rewarded while part of this team.
 
@@ -62,7 +72,7 @@ How many Kudos the workers in this team have been rewarded while part of this te
 
 > `optional` **models**: [`ActiveModelLite`](ActiveModelLite.md)[]
 
-Defined in: [index.ts:3452](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3452)
+Defined in: [index.ts:4564](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4564)
 
 ***
 
@@ -70,7 +80,7 @@ Defined in: [index.ts:3452](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **name**: `string`
 
-Defined in: [index.ts:3458](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3458)
+Defined in: [index.ts:4570](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4570)
 
 The Name given to this team.
 
@@ -84,7 +94,7 @@ The Name given to this team.
 
 > `optional` **requests\_fulfilled**: `number`
 
-Defined in: [index.ts:3441](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3441)
+Defined in: [index.ts:4551](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4551)
 
 How many images this team's workers have generated
 
@@ -94,7 +104,7 @@ How many images this team's workers have generated
 
 > `optional` **uptime**: `number`
 
-Defined in: [index.ts:3445](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3445)
+Defined in: [index.ts:4555](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4555)
 
 The total amount of time workers have stayed online while on this team
 
@@ -104,7 +114,7 @@ The total amount of time workers have stayed online while on this team
 
 > `optional` **worker\_count**: `number`
 
-Defined in: [index.ts:3450](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3450)
+Defined in: [index.ts:4562](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4562)
 
 How many workers have been dedicated to this team
 
@@ -120,4 +130,4 @@ How many workers have been dedicated to this team
 
 > `optional` **workers**: [`WorkerDetailsLite`](WorkerDetailsLite.md)[]
 
-Defined in: [index.ts:3451](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3451)
+Defined in: [index.ts:4563](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4563)

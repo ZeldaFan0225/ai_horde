@@ -6,7 +6,7 @@
 
 # Interface: DeletedTeam
 
-Defined in: [index.ts:3479](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3479)
+Defined in: [index.ts:4591](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4591)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3479](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **deleted\_id**: `string`
 
-Defined in: [index.ts:3481](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3481)
+Defined in: [index.ts:4593](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4593)
 
 The ID of the deleted team
 
@@ -24,6 +24,6 @@ The ID of the deleted team
 
 > `optional` **deleted\_name**: `string`
 
-Defined in: [index.ts:3483](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3483)
+Defined in: [index.ts:4595](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4595)
 
 The Name of the deleted team

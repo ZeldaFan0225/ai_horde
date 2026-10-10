@@ -6,7 +6,7 @@
 
 # Interface: KudosAwarded
 
-Defined in: [index.ts:2136](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2136)
+Defined in: [index.ts:2668](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2668)
 
 ## Properties
 
@@ -14,4 +14,4 @@ Defined in: [index.ts:2136](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **awarded**: `number`
 
-Defined in: [index.ts:2136](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2136)
+Defined in: [index.ts:2668](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2668)

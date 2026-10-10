@@ -6,15 +6,15 @@
 
 # Interface: InterrogationPopPayload
 
-Defined in: [index.ts:3589](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3589)
+Defined in: [index.ts:5015](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5015)
 
 ## Properties
 
-### forms
+### forms?
 
-> **forms**: [`InterrogationPopFormPayload`](InterrogationPopFormPayload.md)
+> `optional` **forms**: [`InterrogationPopFormPayload`](InterrogationPopFormPayload.md)[]
 
-Defined in: [index.ts:3590](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3590)
+Defined in: [index.ts:5016](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5016)
 
 ***
 
@@ -22,4 +22,4 @@ Defined in: [index.ts:3590](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **skipped**: [`NoValidInterrogationsFound`](NoValidInterrogationsFound.md)
 
-Defined in: [index.ts:3591](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3591)
+Defined in: [index.ts:5017](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5017)

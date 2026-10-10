@@ -6,24 +6,24 @@
 
 # Interface: SinglePeriodImageStats
 
-Defined in: [index.ts:3747](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3747)
+Defined in: [index.ts:5202](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5202)
 
 ## Properties
 
-### requests?
+### images?
 
-> `optional` **requests**: `number`
+> `optional` **images**: `number`
 
-Defined in: [index.ts:3749](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3749)
+Defined in: [index.ts:5204](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5204)
 
-The amount of text requests generated during this period.
+The amount of images generated during this period.
 
 ***
 
-### tokens?
+### ps?
 
-> `optional` **tokens**: `number`
+> `optional` **ps**: `number`
 
-Defined in: [index.ts:3751](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3751)
+Defined in: [index.ts:5206](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L5206)
 
-The amount of tokens generated during this period.
+The amount of pixelsteps generated during this period.

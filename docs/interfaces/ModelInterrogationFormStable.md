@@ -6,15 +6,15 @@
 
 # Interface: ModelInterrogationFormStable
 
-Defined in: [index.ts:3508](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3508)
+Defined in: [index.ts:4899](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4899)
 
 ## Properties
 
 ### name
 
-> **name**: `"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"caption"` \| `"interrogation"` \| `"nsfw"`
+> **name**: `"GFPGAN"` \| `"RealESRGAN_x4plus"` \| `"RealESRGAN_x2plus"` \| `"RealESRGAN_x4plus_anime_6B"` \| `"NMKD_Siax"` \| `"4x_AnimeSharp"` \| `"strip_background"` \| `"CodeFormers"` \| `"4xNomos8kSC"` \| `"4xLSDIRplus"` \| `"4xNomosWebPhoto_RealPLKSR"` \| `"4xNomos2_realplksr_dysample"` \| `"4xNomos2_hq_dat2"` \| `"2xModernSpanimationV1"` \| `"GFPGANv1.3"` \| `"RestoreFormer"` \| `"caption"` \| `"interrogation"` \| `"nsfw"` \| `"vectorize"` \| `"palette"` \| `"describe"` \| `"aesthetic"` \| `"annotation"`
 
-Defined in: [index.ts:3512](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3512)
+Defined in: [index.ts:4903](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4903)
 
 The type of interrogation this is
 
@@ -22,6 +22,6 @@ The type of interrogation this is
 
 ### payload?
 
-> `optional` **payload**: [`InterrogationPopFormPayload`](InterrogationPopFormPayload.md)
+> `optional` **payload**: [`ModelInterrogationFormPayloadStable`](ModelInterrogationFormPayloadStable.md)
 
-Defined in: [index.ts:3513](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3513)
+Defined in: [index.ts:4904](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4904)

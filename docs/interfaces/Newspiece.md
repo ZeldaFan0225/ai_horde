@@ -6,7 +6,7 @@
 
 # Interface: Newspiece
 
-Defined in: [index.ts:3391](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3391)
+Defined in: [index.ts:4376](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4376)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:3391](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **date\_published**: `string`
 
-Defined in: [index.ts:3393](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3393)
+Defined in: [index.ts:4378](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4378)
 
 The date this newspiece was published
 
@@ -24,9 +24,17 @@ The date this newspiece was published
 
 > `optional` **importance**: `string`
 
-Defined in: [index.ts:3397](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3397)
+Defined in: [index.ts:4382](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4382)
 
 How critical this piece of news is.
+
+***
+
+### more\_info\_urls?
+
+> `optional` **more\_info\_urls**: `string`[]
+
+Defined in: [index.ts:4386](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4386)
 
 ***
 
@@ -34,6 +42,24 @@ How critical this piece of news is.
 
 > `optional` **newspiece**: `string`
 
-Defined in: [index.ts:3395](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L3395)
+Defined in: [index.ts:4380](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4380)
 
 The actual piece of news
+
+***
+
+### tags?
+
+> `optional` **tags**: `string`[]
+
+Defined in: [index.ts:4383](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4383)
+
+***
+
+### title?
+
+> `optional` **title**: `string`
+
+Defined in: [index.ts:4385](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L4385)
+
+The title of this newspiece.

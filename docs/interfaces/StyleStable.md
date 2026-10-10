@@ -6,7 +6,7 @@
 
 # Interface: StyleStable
 
-Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2114)
+Defined in: [index.ts:2585](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2585)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **creator**: `string`
 
-Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2114)
+Defined in: [index.ts:2588](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2588)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **examples**: [`StyleExample`](StyleExample.md)[]
 
-Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2114)
+Defined in: [index.ts:2591](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2591)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **id**: `string`
 
-Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2114)
+Defined in: [index.ts:2586](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2586)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **info**: `string`
 
-Defined in: [index.ts:2098](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2098)
+Defined in: [index.ts:2565](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2565)
 
 #### Inherited from
 
@@ -54,7 +54,7 @@ Defined in: [index.ts:2098](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **models**: `string`[]
 
-Defined in: [index.ts:2104](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2104)
+Defined in: [index.ts:2575](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2575)
 
 #### Inherited from
 
@@ -66,7 +66,7 @@ Defined in: [index.ts:2104](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > **name**: `string`
 
-Defined in: [index.ts:2097](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2097)
+Defined in: [index.ts:2564](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2564)
 
 #### Inherited from
 
@@ -78,7 +78,7 @@ Defined in: [index.ts:2097](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **nsfw**: `boolean`
 
-Defined in: [index.ts:2102](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2102)
+Defined in: [index.ts:2573](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2573)
 
 #### Inherited from
 
@@ -86,11 +86,25 @@ Defined in: [index.ts:2102](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 ***
 
+### parameter\_policy?
+
+> `optional` **parameter\_policy**: `null` \| [`StyleParameterPolicy`](StyleParameterPolicy.md)
+
+Defined in: [index.ts:2569](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2569)
+
+Which params a request using this style may set, and the limits on them.
+
+#### Inherited from
+
+[`ModelStyleInputStable`](ModelStyleInputStable.md).[`parameter_policy`](ModelStyleInputStable.md#parameter_policy)
+
+***
+
 ### params?
 
 > `optional` **params**: [`ModelStyleInputParamsStable`](ModelStyleInputParamsStable.md)
 
-Defined in: [index.ts:2100](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2100)
+Defined in: [index.ts:2567](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2567)
 
 #### Inherited from
 
@@ -102,7 +116,7 @@ Defined in: [index.ts:2100](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **prompt**: `string`
 
-Defined in: [index.ts:2099](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2099)
+Defined in: [index.ts:2566](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2566)
 
 #### Inherited from
 
@@ -114,7 +128,7 @@ Defined in: [index.ts:2099](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **public**: `boolean`
 
-Defined in: [index.ts:2101](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2101)
+Defined in: [index.ts:2572](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2572)
 
 #### Inherited from
 
@@ -124,9 +138,11 @@ Defined in: [index.ts:2101](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 ### shared\_key?
 
-> `optional` **shared\_key**: [`SharedKeyDetails`](SharedKeyDetails.md)
+> `optional` **shared\_key**: `null` \| [`SharedKeyDetails`](SharedKeyDetails.md)
 
-Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2114)
+Defined in: [index.ts:2593](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2593)
+
+The shared key requests using this style generate under. Only served on the single-style routes to the style's owner; null otherwise.
 
 ***
 
@@ -134,7 +150,7 @@ Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **sharedkey**: `string`
 
-Defined in: [index.ts:2105](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2105)
+Defined in: [index.ts:2576](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2576)
 
 #### Inherited from
 
@@ -146,7 +162,7 @@ Defined in: [index.ts:2105](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 > `optional` **tags**: `string`[]
 
-Defined in: [index.ts:2103](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2103)
+Defined in: [index.ts:2574](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2574)
 
 #### Inherited from
 
@@ -154,8 +170,32 @@ Defined in: [index.ts:2103](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d
 
 ***
 
+### template\_fields?
+
+> `optional` **template\_fields**: [`StyleTemplateField`](StyleTemplateField.md)[]
+
+Defined in: [index.ts:2571](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2571)
+
+The placeholders this style's prompt accepts from the request, at most 16 of them.
+
+#### Inherited from
+
+[`ModelStyleInputStable`](ModelStyleInputStable.md).[`template_fields`](ModelStyleInputStable.md#template_fields)
+
+***
+
+### updated?
+
+> `optional` **updated**: `string`
+
+Defined in: [index.ts:2590](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2590)
+
+When this style was last modified, so a client can tell whether a cached copy is stale.
+
+***
+
 ### use\_count?
 
 > `optional` **use\_count**: `number`
 
-Defined in: [index.ts:2114](https://github.com/ZeldaFan0225/ai_horde/blob/a0891d9ce6ca39a6473f1302e5ef49aa3a38c290/index.ts#L2114)
+Defined in: [index.ts:2587](https://github.com/ZeldaFan0225/ai_horde/blob/4232778fabb62dc06f923e72f812a7436db99273/index.ts#L2587)
