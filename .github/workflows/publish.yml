@@ -1,5 +1,6 @@
 # Publishes to npm when a GitHub Release is published. The release tag's version is used for the package.
-# Requires a repository secret NPM_TOKEN with an npm automation token.
+# Authenticates via npm Trusted Publishing (OIDC), no token secret needed. The package's trusted publisher
+# on npmjs.com must be set to: ZeldaFan0225 / ai_horde / publish.yml
 
 name: Publish to npm on release
 
@@ -29,6 +30,10 @@ jobs:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
 
+      # Trusted Publishing needs npm >= 11.5.1, Node 20 ships with npm 10
+      - name: Update npm
+        run: npm install -g npm@11
+
       - name: Derive version from release tag
         id: ver
         shell: bash
@@ -50,8 +55,6 @@ jobs:
         run: npm run build --if-present
 
       - name: Publish to npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           # For first publish of a scoped package, --access public is required. Safe to use subsequently.
           npm publish --provenance --access public
